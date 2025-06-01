@@ -68853,7 +68853,7 @@ src="/equations/derangement_symbol.svg"
   eqNumber === 5 ? "/equations/joule-hertz_relationship.svg" :
   eqNumber === 6 ? "/equations/hertz-joule_relationship.svg" :
   eqNumber === 7 ? "/equations/hertz-electron_volt_relationship.svg" :
-  eqNumber === 8 ? "/equations/natural_unit_of_action_in_eVs.svg" :
+  eqNumber === 8 ? "/equations/natural_unit_of_action_in_evs.svg" :
   eqNumber === 9 ? "/equations/reduced_planck_constant.svg" :
   eqNumber === 10 ? "/equations/planck_constant.svg" :
   eqNumber === 11 ? "/equations/quantum_of_circulation.svg" :
@@ -68912,7 +68912,7 @@ src="/equations/derangement_symbol.svg"
   eqNumber === 63 ? "/equations/proton_magnetic_shielding_correction.svg" :
   eqNumber === 64 ? "/equations/helion_g_factor.svg" :
   eqNumber === 65 ? "/equations/helion_magnetic_moment_to_nuclear_magneton_ratio.svg" :
-  eqNumber === 66 ? "/equations/helion_magnetic_moment_to_Bohr_magneton_ratio.svg" :
+  eqNumber === 66 ? "/equations/helion_magnetic_moment_to_bohr_magneton_ratio.svg" :
   eqNumber === 67 ? "/equations/shielded_helion_magnetic_moment_to_bohr_magneton_ratio.svg" :
   eqNumber === 68 ? "/equations/shielded_helion_magnetic_moment_to_nuclear_magneton_ratio.svg" :
   eqNumber === 69 ? "/equations/proton-neutron_magnetic_moment_ratio.svg" :
@@ -68962,7 +68962,7 @@ src="/equations/derangement_symbol.svg"
   eqNumber === 111 ? "/equations/conventional_value_of_ampere-90.svg" :
   eqNumber === 112 ? "/equations/conventional_value_of_coulomb-90.svg" :
   eqNumber === 113 ? "/equations/shielded_proton_magnetic_moment_to_nuclear_magneton_ratio.svg" :
-  eqNumber === 114 ? "/equations/shielded_proton_magnetic_moment_to_Bohr_magneton_ratio.svg" :
+  eqNumber === 114 ? "/equations/shielded_proton_magnetic_moment_to_bohr_magneton_ratio.svg" :
   eqNumber === 115 ? "/equations/kilogram-kelvin_relationship.svg" :
   eqNumber === 116 ? "/equations/atomic_mass_unit-kelvin_relationship.svg" :
   eqNumber === 117 ? "/equations/kelvin-atomic_mass_unit_relationship.svg" :
@@ -69053,7 +69053,7 @@ src="/equations/derangement_symbol.svg"
   eqNumber === 200 ? "/equations/natural_unit_of_time.svg" :
   eqNumber === 201 ? "/equations/atomic_mass_unit-hertz_relationship.svg" :
   eqNumber === 202 ? "/equations/kilogram-hertz_relationship.svg" :
-  eqNumber === 203 ? "/equations/rydberg_constant_times_hc_in_J.svg" :
+  eqNumber === 203 ? "/equations/rydberg_constant_times_hc_in_j.svg" :
   eqNumber === 204 ? "/equations/hartree_energy.svg" :
   eqNumber === 205 ? "/equations/joule-hartree_relationship.svg" :
   eqNumber === 206 ? "/equations/boltzmann_constant.svg" :
@@ -69071,7 +69071,7 @@ src="/equations/derangement_symbol.svg"
   eqNumber === 217 ? "/equations/josephson_constant.svg" :
   eqNumber === 218 ? "/equations/elementary_charge_over_h-bar.svg" :
   eqNumber === 219 ? "/equations/magnetic_flux_quantum.svg" :
-  eqNumber === 220 ? "/equations/reduced_planck_constant_in_eV_s.svg" :
+  eqNumber === 220 ? "/equations/reduced_planck_constant_in_ev_s.svg" :
   eqNumber === 221 ? "/equations/planck_constant_in_ev_per_hz.svg" :
   eqNumber === 222 ? "/equations/first_radiation_constant.svg" :
   eqNumber === 223 ? "/equations/first_radiation_constant_for_spectral_radiance.svg" :
@@ -69107,7 +69107,7 @@ src="/equations/derangement_symbol.svg"
 
   eqNumber === 253 ? "/equations/deuteron_g_factor.svg" :
   eqNumber === 254 ? "/equations/deuteron_magnetic_moment_to_nuclear_magneton_ratio.svg" :
-  eqNumber === 255 ? "/equations/deuteron_magnetic_moment_to_Bohr_magneton_ratio.svg" :
+  eqNumber === 255 ? "/equations/deuteron_magnetic_moment_to_bohr_magneton_ratio.svg" :
   eqNumber === 256 ? "/equations/wien_frequency_displacement_law_constant.svg" :
   eqNumber === 257 ? "/equations/boltzmann_constant_in_hz_per_k.svg" :
   eqNumber === 258 ? "/equations/kelvin-hertz_relationship.svg" :
