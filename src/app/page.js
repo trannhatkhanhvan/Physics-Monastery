@@ -392,7 +392,7 @@ export default function Home() {
     src="/equations/electron_mass_symbol.svg"
     alt="m_e"
     style={{
-      height: "0.8em",
+      height: "0.7em",
       verticalAlign: "-0.2em",
       display: "inline",
     }}
@@ -402,8 +402,8 @@ export default function Home() {
     src="/equations/planck_mass.svg"
     alt="m_p"
     style={{
-      height: "0.9em",
-      verticalAlign: "-0.4em",
+      height: "0.8em",
+      verticalAlign: "-0.3em",
       display: "inline",
     }}
   />{" "}
@@ -569,8 +569,8 @@ export default function Home() {
     src="/equations/planck_mass.svg"
     alt="m_p"
     style={{
-      height: "0.9em",
-      verticalAlign: "-0.2em",
+      height: "0.8em",
+      verticalAlign: "-0.3em",
       display: "inline",
     }}
   />{" "}
@@ -590,7 +590,7 @@ export default function Home() {
     src="/equations/electron_mass_symbol.svg"
     alt="m_e"
     style={{
-      height: "0.8em",
+      height: "0.7em",
       verticalAlign: "-0.2em",
       display: "inline",
     }}
@@ -720,7 +720,7 @@ export default function Home() {
         alt="hyperfine transition frequency of Cs-133 equation"
         style={{
       display: "inline-block",
-      width: "350px",   // ✅ Set the width to exactly what you want
+      width: "330px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
       />
@@ -790,7 +790,7 @@ export default function Home() {
     alt="m_p"
     style={{
       height: "0.8em",
-      verticalAlign: "-0.2em",
+      verticalAlign: "-0.3em",
       display: "inline",
     }}
   />{" "}
@@ -1190,7 +1190,8 @@ export default function Home() {
     lineHeight: "1.5em"
   }}
 >
-  Where
+  Where{" "}
+
   <img
   src="/equations/pi.svg"
   alt="π"
@@ -1368,7 +1369,7 @@ export default function Home() {
         alt="hertz-joule relationship equation"
         style={{
       display: "inline-block",
-      width: "400px",   // ✅ Set the width to exactly what you want
+      width: "370px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
       />
@@ -1566,7 +1567,7 @@ export default function Home() {
         alt="hertz-electron volt relationship equation"
         style={{
       display: "inline-block",
-      width: "400px",   // ✅ Set the width to exactly what you want
+      width: "390px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
       />
@@ -1764,7 +1765,7 @@ export default function Home() {
         alt="natural unit of action in eV s equation"
         style={{
       display: "inline-block",
-      width: "350px",   // ✅ Set the width to exactly what you want
+      width: "330px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
       />
@@ -1976,7 +1977,7 @@ export default function Home() {
         alt="reduced Planck constant equation"
         style={{
       display: "inline-block",
-      width: "330px",   // ✅ Set the width to exactly what you want
+      width: "300px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
       />
@@ -2047,7 +2048,7 @@ export default function Home() {
     alt="x_theta"
     style={{
       height: "0.8em",
-      verticalAlign: "-0.2em",
+      verticalAlign: "-0.25em",
       display: "inline",
     }}
   />{" "}
@@ -2083,8 +2084,8 @@ export default function Home() {
     src="/equations/h-bar_symbol.svg"
     alt="☐"
     style={{
-      height: "0.9em",
-      verticalAlign: "-0.1em",
+      height: "0.75em",
+      verticalAlign: "-0.0em",
       display: "inline",
     }}
   />{" "}
@@ -2108,8 +2109,8 @@ export default function Home() {
     src="/equations/h-bar_symbol.svg"
     alt="☐"
     style={{
-      height: "0.9em",
-      verticalAlign: "-0.1em",
+      height: "0.75em",
+      verticalAlign: "-0.0em",
       display: "inline",
     }}
   />{" "}
@@ -2146,8 +2147,8 @@ export default function Home() {
     src="/equations/h-bar_symbol.svg"
     alt="☐"
     style={{
-      height: "0.9em",
-      verticalAlign: "-0.1em",
+      height: "0.75em",
+      verticalAlign: "-0.0em",
       display: "inline",
     }}
   />{" "}
@@ -2187,7 +2188,7 @@ export default function Home() {
     alt="Planck constant equation"
     style={{
       display: "inline-block",
-      width: "350px",   // ✅ Set the width to exactly what you want
+      width: "310px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -2304,8 +2305,8 @@ export default function Home() {
     src="/equations/h_symbol.svg"
     alt="☐"
     style={{
-      height: "0.8em",
-      verticalAlign: "-0.1em",
+      height: "0.75em",
+      verticalAlign: "-0.0em",
       display: "inline",
     }}
   />{" "}
@@ -2329,8 +2330,8 @@ export default function Home() {
     src="/equations/h_symbol.svg"
     alt="☐"
     style={{
-      height: "0.8em",
-      verticalAlign: "-0.1em",
+      height: "0.75em",
+      verticalAlign: "-0.0em",
       display: "inline",
     }}
   />{" "}
@@ -2367,8 +2368,8 @@ export default function Home() {
     src="/equations/h_symbol.svg"
     alt="☐"
     style={{
-      height: "0.8em",
-      verticalAlign: "-0.1em",
+      height: "0.75em",
+      verticalAlign: "-0.0em",
       display: "inline",
     }}
   />{" "}
@@ -2408,7 +2409,7 @@ export default function Home() {
     alt="quantum of circulation equation"
     style={{
       display: "inline-block",
-      width: "320px",   // ✅ Set the width to exactly what you want
+      width: "310px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -2536,7 +2537,7 @@ export default function Home() {
     src="/equations/q_c_symbol.svg"
     alt="q_c"
     style={{
-      height: "0.8em",
+      height: "0.7em",
       verticalAlign: "-0.1em",
       display: "inline",
     }}
@@ -2560,7 +2561,7 @@ export default function Home() {
     src="/equations/q_c_symbol.svg"
     alt="q_c"
     style={{
-      height: "0.8em",
+      height: "0.7em",
       verticalAlign: "-0.1em",
       display: "inline",
     }}
@@ -2598,7 +2599,7 @@ export default function Home() {
     src="/equations/q_c_symbol.svg"
     alt="q_c"
     style={{
-      height: "0.8em",
+      height: "0.7em",
       verticalAlign: "-0.1em",
       display: "inline",
     }}
@@ -2639,7 +2640,7 @@ export default function Home() {
     alt="quantum of circulation times 2 equation"
     style={{
       display: "inline-block",
-      width: "350px",   // ✅ Set the width to exactly what you want
+      width: "315px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -2989,7 +2990,7 @@ export default function Home() {
     src="/equations/mu_b_symbol.svg"
     alt="mu_B"
     style={{
-      height: "0.75em",
+      height: "0.7em",
       verticalAlign: "-0.1em",
       display: "inline",
     }}
@@ -2997,7 +2998,7 @@ export default function Home() {
   src="/equations/euler_s_number.svg"
   alt="e"
   style={{
-    height: "0.55em",
+    height: "0.5em",
     verticalAlign: "-0.0em",
     display: "inline",
   }}
@@ -3021,7 +3022,7 @@ export default function Home() {
     src="/equations/mu_b_symbol.svg"
     alt="mu_B"
     style={{
-      height: "0.75em",
+      height: "0.7em",
       verticalAlign: "-0.1em",
       display: "inline",
     }}
@@ -3029,7 +3030,7 @@ export default function Home() {
   src="/equations/euler_s_number.svg"
   alt="e"
   style={{
-    height: "0.55em",
+    height: "0.5em",
     verticalAlign: "-0.0em",
     display: "inline",
   }}
@@ -3067,7 +3068,7 @@ export default function Home() {
     src="/equations/mu_b_symbol.svg"
     alt="mu_B"
     style={{
-      height: "0.75em",
+      height: "0.7em",
       verticalAlign: "-0.1em",
       display: "inline",
     }}
@@ -3075,7 +3076,7 @@ export default function Home() {
   src="/equations/euler_s_number.svg"
   alt="e"
   style={{
-    height: "0.55em",
+    height: "0.5em",
     verticalAlign: "-0.0em",
     display: "inline",
   }}
@@ -3235,7 +3236,7 @@ export default function Home() {
     src="/equations/mu_n_symbol.svg"
     alt="mu_N"
     style={{
-      height: "0.75em",
+      height: "0.7em",
       verticalAlign: "-0.1em",
       display: "inline",
     }}
@@ -3243,7 +3244,7 @@ export default function Home() {
   src="/equations/euler_s_number.svg"
   alt="e"
   style={{
-    height: "0.55em",
+    height: "0.5em",
     verticalAlign: "-0.0em",
     display: "inline",
   }}
@@ -3268,7 +3269,7 @@ export default function Home() {
     src="/equations/mu_n_symbol.svg"
     alt="mu_N"
     style={{
-      height: "0.75em",
+      height: "0.7em",
       verticalAlign: "-0.1em",
       display: "inline",
     }}
@@ -3276,7 +3277,7 @@ export default function Home() {
   src="/equations/euler_s_number.svg"
   alt="e"
   style={{
-    height: "0.55em",
+    height: "0.5em",
     verticalAlign: "-0.0em",
     display: "inline",
   }}
@@ -3314,7 +3315,7 @@ export default function Home() {
     src="/equations/mu_n_symbol.svg"
     alt="mu_N"
     style={{
-      height: "0.75em",
+      height: "0.7em",
       verticalAlign: "-0.1em",
       display: "inline",
     }}
@@ -3322,7 +3323,7 @@ export default function Home() {
   src="/equations/euler_s_number.svg"
   alt="e"
   style={{
-    height: "0.55em",
+    height: "0.5em",
     verticalAlign: "-0.0em",
     display: "inline",
   }}
@@ -3505,7 +3506,7 @@ export default function Home() {
     alt="G_0^-1"
     style={{
       height: "1em",
-      verticalAlign: "-0em",
+      verticalAlign: "-0.2em",
       display: "inline",
     }}
   />{" "} = 1.29064037306099... &times; 10<sup>4</sup> <span>Ω</span>
@@ -3529,7 +3530,7 @@ export default function Home() {
     alt="G_0^-1"
     style={{
       height: "1em",
-      verticalAlign: "-0.1em",
+      verticalAlign: "-0.2em",
       display: "inline",
     }}
   />{" "}
@@ -3567,7 +3568,7 @@ export default function Home() {
     alt="G_0^-1"
     style={{
       height: "1em",
-      verticalAlign: "-0.1em",
+      verticalAlign: "-0.2em",
       display: "inline",
     }}
   />{" "}
@@ -3749,7 +3750,7 @@ export default function Home() {
     alt="G_0"
     style={{
       height: "1em",
-      verticalAlign: "-0em",
+      verticalAlign: "-0.2em",
       display: "inline",
     }}
   />{" "} = 7.74809172928871... &times; 10<sup>-5</sup> S
@@ -3773,7 +3774,7 @@ export default function Home() {
     alt="G_0"
     style={{
       height: "1em",
-      verticalAlign: "-0.1em",
+      verticalAlign: "-0.2em",
       display: "inline",
     }}
   />{" "}
@@ -3811,7 +3812,7 @@ export default function Home() {
     alt="G_0"
     style={{
       height: "1em",
-      verticalAlign: "-0.1em",
+      verticalAlign: "-0.2em",
       display: "inline",
     }}
   />{" "}
@@ -3853,7 +3854,7 @@ export default function Home() {
     alt="electron volt equation"
     style={{
       display: "inline-block",
-      width: "350px",   // ✅ Set the width to exactly what you want
+      width: "330px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -4055,7 +4056,7 @@ export default function Home() {
     alt="joule-electron volt relationship equation"
     style={{
       display: "inline-block",
-      width: "380px",   // ✅ Set the width to exactly what you want
+      width: "360px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -4240,7 +4241,7 @@ export default function Home() {
     alt="electron charge to mass quotient equation"
     style={{
       display: "inline-block",
-      width: "330px",   // ✅ Set the width to exactly what you want
+      width: "320px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -4288,8 +4289,8 @@ export default function Home() {
   src="/equations/electron_mass_symbol.svg"
   alt="m_e"
   style={{
-    height: "0.55em",
-    verticalAlign: "-0.0em",
+    height: "0.75em",
+    verticalAlign: "-0.2em",
     display: "inline",
   }}
 />{" "}
@@ -4487,7 +4488,7 @@ export default function Home() {
     alt="proton charge to mass quotient equation"
     style={{
       display: "inline-block",
-      width: "300px",   // ✅ Set the width to exactly what you want
+      width: "280px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -4535,8 +4536,8 @@ export default function Home() {
   src="/equations/proton_mass_symbol.svg"
   alt="m_+"
   style={{
-    height: "0.55em",
-    verticalAlign: "-0.0em",
+    height: "0.75em",
+    verticalAlign: "-0.2em",
     display: "inline",
   }}
 />{" "}
@@ -5370,8 +5371,8 @@ export default function Home() {
   src="/equations/electron_g_factor_symbol.svg"
   alt="g_e"
   style={{
-    height: "0.8em",
-    verticalAlign: "-0.1em",
+    height: "0.75em",
+    verticalAlign: "-0.2em",
     display: "inline",
   }}
 />{" "} = -2.00231930436157...
@@ -5394,8 +5395,8 @@ export default function Home() {
     src="/equations/electron_g_factor_symbol.svg"
     alt="g_e"
     style={{
-      height: "0.8em",
-      verticalAlign: "-0.1em",
+      height: "0.75em",
+      verticalAlign: "-0.2em",
       display: "inline",
     }}
   />{" "} = -2.00231930436092(36)
@@ -5431,8 +5432,8 @@ export default function Home() {
     src="/equations/electron_g_factor_symbol.svg"
     alt="g_e"
     style={{
-      height: "0.8em",
-      verticalAlign: "-0.1em",
+      height: "0.75em",
+      verticalAlign: "-0.2em",
       display: "inline",
     }}
   />{" "} = -2.00231930436256(35)
@@ -5590,7 +5591,7 @@ export default function Home() {
   src="/equations/mu_e_symbol.svg"
   alt="mu_e"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5599,7 +5600,7 @@ export default function Home() {
   src="/equations/mu_b_symbol.svg"
   alt="mu_B"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5623,7 +5624,7 @@ export default function Home() {
   src="/equations/mu_e_symbol.svg"
   alt="mu_e"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5632,7 +5633,7 @@ export default function Home() {
   src="/equations/mu_b_symbol.svg"
   alt="mu_B"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5669,7 +5670,7 @@ export default function Home() {
   src="/equations/mu_e_symbol.svg"
   alt="mu_e"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5678,7 +5679,7 @@ export default function Home() {
   src="/equations/mu_b_symbol.svg"
   alt="mu_B"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5859,7 +5860,7 @@ export default function Home() {
   src="/equations/mu_e_symbol.svg"
   alt="mu_e"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5868,7 +5869,7 @@ export default function Home() {
   src="/equations/mu_n_symbol.svg"
   alt="mu_B"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5892,7 +5893,7 @@ export default function Home() {
   src="/equations/mu_e_symbol.svg"
   alt="mu_e"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5901,7 +5902,7 @@ export default function Home() {
   src="/equations/mu_n_symbol.svg"
   alt="mu_N"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5938,7 +5939,7 @@ export default function Home() {
   src="/equations/mu_e_symbol.svg"
   alt="mu_e"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5947,7 +5948,7 @@ export default function Home() {
   src="/equations/mu_n_symbol.svg"
   alt="mu_N"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.1em",
     display: "inline",
   }}
@@ -5988,7 +5989,7 @@ export default function Home() {
     alt="neutron-proton mass difference equation"
     style={{
       display: "inline-block",
-      width: "300px",   // ✅ Set the width to exactly what you want
+      width: "280px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -6084,8 +6085,8 @@ export default function Home() {
   src="/equations/mass_difference_symbol.svg"
   alt="m_delta"
   style={{
-    height: "0.8em",
-    verticalAlign: "-0.1em",
+    height: "0.7em",
+    verticalAlign: "-0.2em",
     display: "inline",
   }}
 />{" "} = 2.30557408578486... &times; 10<sup>-30</sup> kg
@@ -6108,8 +6109,8 @@ export default function Home() {
   src="/equations/mass_difference_symbol.svg"
   alt="m_delta"
   style={{
-    height: "0.8em",
-    verticalAlign: "-0.1em",
+    height: "0.7em",
+    verticalAlign: "-0.2em",
     display: "inline",
   }}
 />{" "} = 2.30557461(67) &times; 10<sup>-30</sup> kg
@@ -6145,8 +6146,8 @@ export default function Home() {
   src="/equations/mass_difference_symbol.svg"
   alt="m_delta"
   style={{
-    height: "0.8em",
-    verticalAlign: "-0.1em",
+    height: "0.7em",
+    verticalAlign: "-0.2em",
     display: "inline",
   }}
 />{" "} = 2.30557435(82) &times; 10<sup>-30</sup> kg
@@ -6186,7 +6187,7 @@ export default function Home() {
     alt="Coulomb's constant equation"
     style={{
       display: "inline-block",
-      width: "280px",   // ✅ Set the width to exactly what you want
+      width: "270px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -6601,7 +6602,7 @@ export default function Home() {
     alt="vacuum electric permittivity equation"
     style={{
       display: "inline-block",
-      width: "300px",   // ✅ Set the width to exactly what you want
+      width: "290px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -6842,7 +6843,7 @@ export default function Home() {
     alt="atomic unit of time equation"
     style={{
       display: "inline-block",
-      width: "320px",   // ✅ Set the width to exactly what you want
+      width: "310px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -7928,7 +7929,7 @@ export default function Home() {
     alt="hartree-inverse meter relationship equation"
     style={{
       display: "inline-block",
-      width: "330px",   // ✅ Set the width to exactly what you want
+      width: "350px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -8162,7 +8163,7 @@ export default function Home() {
     alt="inverse meter-hartree relationship equation"
     style={{
       display: "inline-block",
-      width: "330px",   // ✅ Set the width to exactly what you want
+      width: "380px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -8396,7 +8397,7 @@ export default function Home() {
     alt="vacuum magnetic permeability equation"
     style={{
       display: "inline-block",
-      width: "310px",   // ✅ Set the width to exactly what you want
+      width: "330px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -8536,7 +8537,7 @@ export default function Home() {
   src="/equations/mu_0_symbol.svg"
   alt="mu_0"
   style={{
-    height: "0.8em",
+    height: "0.7em",
     verticalAlign: "-0.2em",
     display: "inline",
   }}
@@ -8561,7 +8562,7 @@ export default function Home() {
   src="/equations/mu_0_symbol.svg"
   alt="mu_0"
   style={{
-    height: "0.8em",
+    height: "0.7em",
     verticalAlign: "-0.2em",
     display: "inline",
   }}
@@ -8599,7 +8600,7 @@ export default function Home() {
   src="/equations/mu_0_symbol.svg"
   alt="mu_0"
   style={{
-    height: "0.8em",
+    height: "0.7em",
     verticalAlign: "-0.2em",
     display: "inline",
   }}
@@ -8685,7 +8686,7 @@ export default function Home() {
   src="/equations/muon_mass_symbol.svg"
   alt="m_mu"
   style={{
-    height: "0.9em",
+    height: "0.85em",
     verticalAlign: "-0.3em",
     display: "inline",
   }}
@@ -8755,7 +8756,7 @@ export default function Home() {
   src="/equations/mu_e_symbol.svg"
   alt="mu_e"
   style={{
-    height: "0.8em",
+    height: "0.7em",
     verticalAlign: "-0.2em",
     display: "inline",
   }}
@@ -8764,7 +8765,7 @@ export default function Home() {
   src="/equations/mu_mu_symbol.svg"
   alt="mu_mu"
   style={{
-    height: "0.9em",
+    height: "0.8em",
     verticalAlign: "-0.3em",
     display: "inline",
   }}
@@ -8789,7 +8790,7 @@ export default function Home() {
   src="/equations/mu_e_symbol.svg"
   alt="mu_e"
   style={{
-    height: "0.8em",
+    height: "0.7em",
     verticalAlign: "-0.2em",
     display: "inline",
   }}
@@ -8798,7 +8799,7 @@ export default function Home() {
   src="/equations/mu_mu_symbol.svg"
   alt="mu_mu"
   style={{
-    height: "0.9em",
+    height: "0.8em",
     verticalAlign: "-0.3em",
     display: "inline",
   }}
@@ -8836,7 +8837,7 @@ export default function Home() {
   src="/equations/mu_e_symbol.svg"
   alt="mu_e"
   style={{
-    height: "0.8em",
+    height: "0.7em",
     verticalAlign: "-0.2em",
     display: "inline",
   }}
@@ -8845,7 +8846,7 @@ export default function Home() {
   src="/equations/mu_mu_symbol.svg"
   alt="mu_mu"
   style={{
-    height: "0.9em",
+    height: "0.8em",
     verticalAlign: "-0.3em",
     display: "inline",
   }}
@@ -8994,7 +8995,7 @@ export default function Home() {
   src="/equations/g_symbol.svg"
   alt="G"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.0em",
     display: "inline",
   }}
@@ -9019,7 +9020,7 @@ export default function Home() {
   src="/equations/g_symbol.svg"
   alt="G"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.0em",
     display: "inline",
   }}
@@ -9057,7 +9058,7 @@ export default function Home() {
   src="/equations/g_symbol.svg"
   alt="G"
   style={{
-    height: "0.8em",
+    height: "0.75em",
     verticalAlign: "-0.0em",
     display: "inline",
   }}
@@ -9358,7 +9359,7 @@ GeV{" "}
     alt="muon mass equation"
     style={{
       display: "inline-block",
-      width: "380px",   // ✅ Set the width to exactly what you want
+      width: "390px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -9775,7 +9776,7 @@ GeV{" "}
     alt="triton mass equation"
     style={{
       display: "inline-block",
-      width: "380px",   // ✅ Set the width to exactly what you want
+      width: "390px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -10134,7 +10135,7 @@ and{" "}
     alt="luminous efficacy equation"
     style={{
       display: "inline-block",
-      width: "400px",   // ✅ Set the width to exactly what you want
+      width: "410px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -10285,7 +10286,7 @@ and{" "}
   src="/equations/luminous_symbol.svg"
   alt="K_cd"
   style={{
-    height: "0.75em",
+    height: "0.85em",
     verticalAlign: "-0.2em",
     display: "inline",
   }}
@@ -10310,7 +10311,7 @@ and{" "}
   src="/equations/luminous_symbol.svg"
   alt="K_cd"
   style={{
-    height: "0.75em",
+    height: "0.85em",
     verticalAlign: "-0.2em",
     display: "inline",
   }}
@@ -10348,7 +10349,7 @@ and{" "}
   src="/equations/luminous_symbol.svg"
   alt="K_cd"
   style={{
-    height: "0.75em",
+    height: "0.85em",
     verticalAlign: "-0.2em",
     display: "inline",
   }}
@@ -10415,7 +10416,7 @@ and{" "}
     alt="electron mass equation"
     style={{
       display: "inline-block",
-      width: "370px",   // ✅ Set the width to exactly what you want
+      width: "380px",   // ✅ Set the width to exactly what you want
       height: "auto"
     }}
   />
@@ -68826,26 +68827,27 @@ src="/equations/derangement_symbol.svg"
       {/* Equation Column */}
       <div
         style={{
-          width: "90%",
-          maxWidth: "1200px",
-          height: "calc(100vh - 160px)",
-          margin: "0 auto",
-          overflowY: "scroll",
-          paddingRight: "40px",
-          paddingTop: "10px",
-          display: "block"
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-end"
-          }}
-        >
-          {Array.from({ length: equationsPerColumn }, (_, i) => {
-            const eqNumber = startIndex + i + 1;
-            const srcPath =
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
+    height: "calc(100vh - 160px)",
+    overflowY: "scroll",
+    paddingTop: "10px",
+  }}
+>
+  {/* Inner column of equations */}
+  <div
+    style={{
+      width: "90%",
+      maxWidth: "1200px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-end"
+    }}
+  >
+    {Array.from({ length: equationsPerColumn }, (_, i) => {
+      const eqNumber = startIndex + i + 1;
+      const srcPath =
   eqNumber === 1 ? "/equations/hartree-kelvin_relationship.svg" :
   eqNumber === 2 ? "/equations/kelvin-hartree_relationship.svg" :
   eqNumber === 3 ? "/equations/hyperfine_transition_frequency_of_cs-133.svg" :
