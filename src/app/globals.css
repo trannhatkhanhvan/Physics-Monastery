@@ -1,15 +1,10 @@
+/* Import Tailwind base if needed */
 @import "tailwindcss";
 
+/* Theme color variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +18,529 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 180px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 100vh;
+  scroll-behavior: smooth;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.logo {
+  width: 125px;
+  margin-left: -14px;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+.logo-spacer {
+  height: 0.01rem;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0.1rem 0;
+  font-family: "Times New Roman", serif;
+  font-size: 13.0px;
+  padding: 0.2rem 0.2rem;
+  padding-left: 1.4rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background 0.3s;
+}
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-youtube-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  padding-left: 1.0rem;
+}
+
+.menu-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.menu-icon:hover {
+  transform: scale(1.1);
+}
+
+.menu-youtube-links img:first-child {
+  transform: translateX(7.0px);
+}
+
+
+.menu-youtube-links a:last-child {
+  margin-left: -30px; /* Try adjusting this value */
+}
+
+
+.separator {
+  width: 100%;
+  border-bottom: 2.5px solid rgba(255, 0, 0, 0.2);
+  margin: 0.5rem 0;
+}
+
+/* Layout Container */
+.layout-container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Overlay (used by multiple pages) */
+.symbol-overlay,
+.constants-overlay {
+  position: fixed;
+  top: 0;
+  left: 180px;
+  width: calc(100vw - 180px);
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Shared Page Styles */
+.symbol-legend-page,
+.constants-of-nature-page,
+.hyperbolic-partition-page {
+  position: relative;
+  min-height: 100vh;
+  font-family: "Times New Roman", serif;
+  color: white;
+  overflow-x: hidden;
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Main Content Area */
+.main-content {
+  padding-left: 180px;                 /* ✅ Push content away from sidebar */
+  width: 100vw;                        /* ✅ Let content take full width */
+  max-width: 100vw;                    /* ✅ Don’t restrict content width */
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  background-color: transparent;
+  color: white;
+  z-index: 1;
+}
+
+
+/* Legend and Partition Page Specifics */
+.legend-content,
+.partition-content,
+.hyperbolic-partition-content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.legend-title {
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.legend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 16px;
+}
+
+.legend-left {
+  text-align: left;
+  margin-left: 0.5rem;
+}
+
+.legend-right {
+  text-align: right;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.legend-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.legend-link:hover {
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+.equation-line,
+.equation-line-left {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.equation-line {
+  justify-content: center;
+}
+
+.equation-line-left {
+  justify-content: flex-start;
+}
+
+.equation-line img {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.equation-description {
+  text-indent: 2em;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+}
+
+.constants-main-content {
+  margin-left: 0;              /* ✅ Remove sidebar offset */
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  background-color: transparent;
+  color: white;
+  z-index: 1;
+}
+
+
+.constants-main-content {
+  margin-left: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+}
+
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;   /* Keep alignment tight */
+  line-height: 0;           /* Prevent vertical stretching */
+}
+
+.custom-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-family: "Times New Roman", serif;
+  color: white;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  line-height: normal;
+}
+
+.tooltip-container:hover .custom-tooltip {
+  opacity: 1;
+}
+
+.menu-youtube-links a:hover {
+  background: transparent;
+}
+
+.menu-youtube-links a:focus,
+.menu-youtube-links a:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.menu-youtube-links a img:focus,
+.menu-youtube-links a img:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.tooltip-thad {
+  left: 30px;         /* move 10px from the left edge of the container */
+}
+
+.binomial-constructor-page {
+  background-image: url('/backgrounds/starfield.png');
+  background-size: cover;
+  background-position: center;
+  overflow-y: scroll;
+  height: 100vh;
+  position: relative;
+}
+
+.binomial-constructor-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+
+.binomial-constructor-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.external-transform-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.external-transform-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.home-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.home-page {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.planck-constants-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.planck-constants-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.coherent-units-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+
+.layout-container.coherent-units-page {
+  background-image: url('/your-background-image.jpg'); /* use your correct image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.coherent-units-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.simplest-manifold-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.simplest-manifold-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.combinatorics-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.combinatorics-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.animated-math-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.animated-math-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.monastery-events-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.monastery-events-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.supporters-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.supporters-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.contact-us-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.contact-us-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.zhe-value-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 2.0rem;  /* only horizontal spacing */
+  row-gap: 0rem;       /* no vertical spacing */
+  flex-wrap: wrap;
+}
+
+
+.zhe-values-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.zhe-image-column {
+  flex: 0 0 auto;
+}
+
+.zhe-diagram {
+  width: 105px;
+  height: 105px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+
+.inline-symbol {
+  height: 1em;
+  vertical-align: middle;
+  margin-left: 0.3em;
 }

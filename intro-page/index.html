@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intro Video</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;   /* Adjust to your desired size */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="intro-video" autoplay muted playsinline>
+    <source src="logo_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    const video = document.getElementById('intro-video');
+
+    video.play().catch(error => {
+      console.error('Autoplay error:', error);
+    });
+
+    video.addEventListener('ended', () => {
+      console.log('Video ended. Redirecting...');
+      window.location.href = 'https://physicsmonastery.earth';
+    });
+
+    setTimeout(() => {
+      console.log('Fallback redirect.');
+      window.location.href = 'https://physicsmonastery.earth';
+    }, 5000); // fallback after 5 seconds
+  </script>
+
+</body>
+</html>

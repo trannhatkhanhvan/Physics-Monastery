@@ -11,6 +11,8 @@
   "dependencies": {
     "katex": "^0.16.22",
     "next": "15.3.2",
+    "nodemailer": "^7.0.3",
+    "pdfjs-dist": "^5.3.31",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-katex": "^3.1.0"
