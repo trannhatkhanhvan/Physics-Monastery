@@ -173,7 +173,7 @@ export default function ExternalTransformSpace() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     hyperbolic figure eight knot
-  </a>'s <i>twisted</i> zeros.
+  </a>&apos;s <i>twisted</i> zeros.
         </p>
 
         <div style={{ height: '1.5rem' }} />
