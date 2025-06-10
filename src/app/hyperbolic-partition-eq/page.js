@@ -50,7 +50,7 @@ export default function HyperbolicPartitionEq() {
   >
     Planck mass
   </a> gap.
-  It's 4 solutions&nbsp;
+  It&apos;s 4 solutions&nbsp;
   <img src="/equations/zhe_1.svg" alt="zhe_1" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
   <img src="/equations/zhe_2.svg" alt="zhe_2" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
   <img src="/equations/zhe_3.svg" alt="zhe_3" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />{' '}

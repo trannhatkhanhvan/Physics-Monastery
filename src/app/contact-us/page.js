@@ -40,7 +40,7 @@ export default function ContactUs() {
         <div className="legend-title">contact us</div>
 
         <p className="equation-description">
-          We'd love to hear from you. Whether you have questions, ideas, or want to get involved, feel free to reach out.
+          We&apos;d love to hear from you. Whether you have questions, ideas, or want to get involved, feel free to reach out.
         </p>
 
         <form

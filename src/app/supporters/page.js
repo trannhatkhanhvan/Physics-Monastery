@@ -15,7 +15,7 @@ export default function Supporters() {
         <div className="legend-title">supporters</div>
 
         <p className="equation-description">
-          The Physics Monastery's research is made possible by <a
+          The Physics Monastery&apos;s research is made possible by <a
             href="https://www.wolframalpha.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -93,7 +93,7 @@ export default function Supporters() {
     <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
       <li>Tim Dodge</li>
       <li>L</li>
-      <li>Cully O'Meara</li>
+      <li>Cully O&apos;Meara</li>
       <li>Joakim Pettersson</li>
       <li>Duarte Cunha Leáo</li>
       <li>Yishai Mendelsohn</li>

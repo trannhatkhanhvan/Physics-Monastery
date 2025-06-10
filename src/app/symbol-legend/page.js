@@ -471,7 +471,7 @@ export default function SymbolLegend() {
               rel="noopener noreferrer"
               className="legend-link"
           >
-            Gieseking's constant
+            Gieseking&apos;s constant
           </a>
       ),
     },
@@ -531,7 +531,7 @@ export default function SymbolLegend() {
               rel="noopener noreferrer"
               className="legend-link"
           >
-            Catalan's constant
+            Catalan&apos;s constant
           </a>
       ),
     },
@@ -1120,7 +1120,7 @@ export default function SymbolLegend() {
               rel="noopener noreferrer"
               className="legend-link"
           >
-            Gauss's constant
+            Gauss&apos;s constant
           </a>
       ),
     },
@@ -1187,7 +1187,7 @@ export default function SymbolLegend() {
               rel="noopener noreferrer"
               className="legend-link"
           >
-            Ramanujan's 1<sup>st</sup> continued fraction constant
+            Ramanujan&apos;s 1<sup>st</sup> continued fraction constant
           </a>
       ),
     },
@@ -1224,7 +1224,7 @@ export default function SymbolLegend() {
               rel="noopener noreferrer"
               className="legend-link"
           >
-            Euler's number
+            Euler&apos;s number
           </a>
       ),
     },
@@ -1284,7 +1284,7 @@ export default function SymbolLegend() {
               rel="noopener noreferrer"
               className="legend-link"
           >
-            Sierpi&#324;ski's constant
+            Sierpi&#324;ski&apos;s constant
           </a>
       ),
     },

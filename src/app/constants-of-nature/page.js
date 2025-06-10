@@ -51,7 +51,7 @@ export default function Home() {
         24: "electron magnetic moment to Bohr magneton ratio",
         25: "electron magnetic moment to nuclear magneton ratio",
         26: "neutron-proton mass difference",
-        27: "Coulomb's constant",
+        27: "Coulomb&apos;s constant",
         28: "atomic unit of permittivity",
         29: "vacuum electric permittivity",
         30: "atomic unit of time",
@@ -3885,7 +3885,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = the Euler's number,{" "}
+                    = the Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -4085,7 +4085,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -4279,7 +4279,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -4524,7 +4524,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -4780,7 +4780,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -5037,7 +5037,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -6132,7 +6132,7 @@ export default function Home() {
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    Coulomb's constant
+                    Coulomb&apos;s constant
                 </div>
 
                 {/* 2. Empty Line */}
@@ -6142,7 +6142,7 @@ export default function Home() {
                 <div style={{textAlign: "right"}}>
                     <img
                         src="/equations/coulomb_s_constant.svg"
-                        alt="Coulomb's constant equation"
+                        alt="Coulomb&apos;s constant equation"
                         style={{
                             display: "inline-block",
                             width: "270px",   // ✅ Set the width to exactly what you want
@@ -27761,7 +27761,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = the Euler's number,{" "}
+                    = the Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -28003,7 +28003,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = the Euler's number,{" "}
+                    = the Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -28291,7 +28291,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = the Euler's number,{" "}
+                    = the Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -31174,7 +31174,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Catalan's constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -31423,7 +31423,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Catalan's constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -31672,7 +31672,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Catalan's constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -31928,7 +31928,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking's constant,{" "}
+                    = Gieseking&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -32195,7 +32195,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking's constant,{" "}
+                    = Gieseking&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -34143,7 +34143,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking's constant,{" "}
+                    = Gieseking&apos;s constant,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
@@ -34410,7 +34410,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking's constant,{" "}
+                    = Gieseking&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -34639,7 +34639,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking's constant,{" "}
+                    = Gieseking&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -35920,7 +35920,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Ramanujan's 1<sup>st</sup> continued fraction constant,{" "}
+                    = Ramanujan&apos;s 1<sup>st</sup> continued fraction constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -36143,7 +36143,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Ramanujan's 1<sup>st</sup> continued fraction constant,{" "}
+                    = Ramanujan&apos;s 1<sup>st</sup> continued fraction constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -36394,7 +36394,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Ramanujan's 1<sup>st</sup> continued fraction constant,{" "}
+                    = Ramanujan&apos;s 1<sup>st</sup> continued fraction constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -44806,7 +44806,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Ramanujan's 1<sup>st</sup> continued fraction constant,{" "}
+                    = Ramanujan&apos;s 1<sup>st</sup> continued fraction constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -45084,7 +45084,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/pi.svg"
@@ -50714,7 +50714,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking's constant,{" "}
+                    = Gieseking&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -50992,7 +50992,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking's constant,{" "}
+                    = Gieseking&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -51215,7 +51215,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking's constant,{" "}
+                    = Gieseking&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -53031,7 +53031,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -53261,7 +53261,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -53458,7 +53458,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -54760,7 +54760,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/pi.svg"
@@ -55513,7 +55513,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Ramanujan's 1<sup>st</sup> continued fraction constant,{" "}
+                    = Ramanujan&apos;s 1<sup>st</sup> continued fraction constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -55734,7 +55734,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Ramanujan's 1<sup>st</sup> continued fraction constant,{" "}
+                    = Ramanujan&apos;s 1<sup>st</sup> continued fraction constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -55966,7 +55966,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Ramanujan's 1<sup>st</sup> continued fraction constant,{" "}
+                    = Ramanujan&apos;s 1<sup>st</sup> continued fraction constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -56174,7 +56174,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Ramanujan's 1<sup>st</sup> continued fraction constant,{" "}
+                    = Ramanujan&apos;s 1<sup>st</sup> continued fraction constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -59674,7 +59674,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Catalan's constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/universal_parabolic_constant.svg"
@@ -59895,7 +59895,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Catalan's constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/universal_parabolic_constant.svg"
@@ -60140,7 +60140,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Catalan's constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/electron_mass_symbol.svg"
@@ -62424,7 +62424,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -62678,7 +62678,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -62932,7 +62932,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -63186,7 +63186,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -63440,7 +63440,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -63694,7 +63694,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -63948,7 +63948,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -64202,7 +64202,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -64456,7 +64456,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -64710,7 +64710,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -64964,7 +64964,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -65218,7 +65218,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number,{" "}
+                    = Euler&apos;s number,{" "}
 
                     <img
                         src="/equations/euler-mascheroni_constant.svg"
@@ -67706,7 +67706,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking's constant,{" "}
+                    = Gieseking&apos;s constant,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
@@ -67750,7 +67750,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Catalan's constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"

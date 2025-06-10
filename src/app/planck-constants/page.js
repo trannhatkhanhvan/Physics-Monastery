@@ -267,7 +267,7 @@ export default function PlanckConstants() {
             onMouseOver={e => (e.target.style.color = 'yellow')}
             onMouseOut={e => (e.target.style.color = 'inherit')}
           >
-            Euler's number
+            Euler&apos;s number
           </a>, <img
             src="/equations/w_we.svg"
             alt="W_We"

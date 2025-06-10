@@ -137,7 +137,7 @@ export default function SimplestManifold() {
             onMouseOver={e => (e.target.style.color = 'yellow')}
             onMouseOut={e => (e.target.style.color = 'inherit')}
           >
-            Gieseking's constant for the minimum 3-manifold
+            Gieseking&apos;s constant for the minimum 3-manifold
           </a>.</p>
         <div style={{ height: '2rem' }} />
 
@@ -204,7 +204,7 @@ export default function SimplestManifold() {
             onMouseOver={e => (e.target.style.color = 'yellow')}
             onMouseOut={e => (e.target.style.color = 'inherit')}
           >
-            Catalan's constant
+            Catalan&apos;s constant
           </a>—<img
             src="/equations/catalan_s_constant.svg"
             alt="K"
