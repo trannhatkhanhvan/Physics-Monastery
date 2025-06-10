@@ -38,7 +38,7 @@ export default function BinomialConstructor() {
   >
     hyperbolic figure eight knot
   </a>,
-          and its coherent external transform space—defined by the the volume of the {' '}
+          and its coherent external transform space—defined by the volume of the {' '}
   <a
     href="https://mathworld.wolfram.com/HyperspherePacking.html"
     target="_blank"
@@ -188,7 +188,7 @@ export default function BinomialConstructor() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     hyperbolic partition equation
-  </a>'s simple (one-dimensional) transforms.
+  </a>&apos;s simple (one-dimensional) transforms.
           Those transforms include: two polar expressions (expressed in powers of <img
             src="/equations/zhe_r.svg"
             alt="zhe_r"
@@ -218,69 +218,69 @@ export default function BinomialConstructor() {
     <img src="/equations/2-part_products_1_and_2.svg" alt="2-part products 1 and 2" style={{ height: '13px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/3-part_products_1.svg" alt="2-part products 5 and 6" style={{ height: '13px', width: 'auto' }} />
+    <img src="/equations/3-part_products_1.svg" alt="3-part products 1" style={{ height: '13px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/2-part_sums_plus.svg" alt="2-part products 5 and 6" style={{ height: '18px', width: 'auto' }} />
+    <img src="/equations/2-part_sums_plus.svg" alt="2-part sums plus" style={{ height: '18px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/3-part_sums_plus_1.svg" alt="2-part products 5 and 6" style={{ height: '18px', width: 'auto' }} />
+    <img src="/equations/3-part_sums_plus_1.svg" alt="3-part sums plus" style={{ height: '18px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/2-part_quadrances_plus_1.svg" alt="2-part products 5 and 6" style={{ height: '23px', width: 'auto' }} />
+    <img src="/equations/2-part_quadrances_plus_1.svg" alt="2-part quadrances plus 1" style={{ height: '23px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/3-part_quadrances_plus_1.svg" alt="2-part products 5 and 6" style={{ height: '24px', width: 'auto' }} />
+    <img src="/equations/3-part_quadrances_plus_1.svg" alt="3-part quadrances plus 1" style={{ height: '24px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
     <img src="/equations/2-part_products_3_and_4.svg" alt="2-part products 3 and 4" style={{ height: '13px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/3-part_products_2.svg" alt="2-part products 5 and 6" style={{ height: '13px', width: 'auto' }} />
+    <img src="/equations/3-part_products_2.svg" alt="3-part products 2" style={{ height: '13px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/2-part_sums_minus.svg" alt="2-part products 5 and 6" style={{ height: '18px', width: 'auto' }} />
+    <img src="/equations/2-part_sums_minus.svg" alt="2-part sums minus" style={{ height: '18px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/3-part_sums_minus_1.svg" alt="2-part products 5 and 6" style={{ height: '18px', width: 'auto' }} />
+    <img src="/equations/3-part_sums_minus_1.svg" alt="3-part sums minus 1" style={{ height: '18px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/2-part_quadrances_minus_1.svg" alt="2-part products 5 and 6" style={{ height: '23px', width: 'auto' }} />
+    <img src="/equations/2-part_quadrances_minus_1.svg" alt="2-part quadrances minus 1" style={{ height: '23px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/3-part_quadrances_minus_1.svg" alt="2-part products 5 and 6" style={{ height: '24px', width: 'auto' }} />
-  </div>
-  {/* ⬇️ Empty slot */}
-  <div />
-  {/* ⬇️ Empty slot */}
-  <div />
-  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/2-part_sums_plus_3.svg" alt="2-part products 5 and 6" style={{ height: '18px', width: 'auto' }} />
-  </div>
-  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/3-part_sums_plus_2.svg" alt="2-part products 5 and 6" style={{ height: '18px', width: 'auto' }} />
-  </div>
-  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/2-part_quadrances_plus_3.svg" alt="2-part products 5 and 6" style={{ height: '23px', width: 'auto' }} />
-  </div>
-  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/3-part_quadrances_plus_2.svg" alt="2-part products 5 and 6" style={{ height: '24px', width: 'auto' }} />
+    <img src="/equations/3-part_quadrances_minus_1.svg" alt="3-part quadrances minus 1" style={{ height: '24px', width: 'auto' }} />
   </div>
   {/* ⬇️ Empty slot */}
   <div />
   {/* ⬇️ Empty slot */}
   <div />
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/2-part_sums_minus_3.svg" alt="2-part products 5 and 6" style={{ height: '18px', width: 'auto' }} />
+    <img src="/equations/2-part_sums_plus_3.svg" alt="2-part sums plus 3" style={{ height: '18px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/3-part_sums_minus_2.svg" alt="2-part products 5 and 6" style={{ height: '18px', width: 'auto' }} />
+    <img src="/equations/3-part_sums_plus_2.svg" alt="3-part sums plus 2" style={{ height: '18px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/2-part_quadrances_minus_3.svg" alt="2-part products 5 and 6" style={{ height: '23px', width: 'auto' }} />
+    <img src="/equations/2-part_quadrances_plus_3.svg" alt="2-part quadrances plus 3" style={{ height: '23px', width: 'auto' }} />
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img src="/equations/3-part_quadrances_minus_2.svg" alt="2-part products 5 and 6" style={{ height: '24px', width: 'auto' }} />
+    <img src="/equations/3-part_quadrances_plus_2.svg" alt="3-part quadrances plus 2" style={{ height: '24px', width: 'auto' }} />
+  </div>
+  {/* ⬇️ Empty slot */}
+  <div />
+  {/* ⬇️ Empty slot */}
+  <div />
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <img src="/equations/2-part_sums_minus_3.svg" alt="2-part sums minus 3" style={{ height: '18px', width: 'auto' }} />
+  </div>
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <img src="/equations/3-part_sums_minus_2.svg" alt="2-part sums minus 2" style={{ height: '18px', width: 'auto' }} />
+  </div>
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <img src="/equations/2-part_quadrances_minus_3.svg" alt="2-part quadrances minus 3" style={{ height: '23px', width: 'auto' }} />
+  </div>
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <img src="/equations/3-part_quadrances_minus_2.svg" alt="3-part quadrances minus 2" style={{ height: '24px', width: 'auto' }} />
   </div>
 
 </div>
