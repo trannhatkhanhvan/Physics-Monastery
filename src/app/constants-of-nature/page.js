@@ -761,7 +761,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -1003,7 +1003,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -1200,7 +1200,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -1396,7 +1396,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -1592,7 +1592,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
                     eV = the electron volt,{" "}
 
                     <img
@@ -2210,7 +2210,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -2430,7 +2430,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -2660,7 +2660,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -3379,7 +3379,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -3632,7 +3632,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -4747,7 +4747,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_charge.svg"
@@ -5004,7 +5004,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_charge.svg"
@@ -5294,7 +5294,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_theta.svg"
@@ -5512,7 +5512,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_theta.svg"
@@ -5779,7 +5779,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_theta.svg"
@@ -6587,7 +6587,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -7023,7 +7023,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -7242,7 +7242,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/electron_mass_symbol.svg"
@@ -7450,7 +7450,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/electron_mass_symbol.svg"
@@ -7682,7 +7682,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/electron_mass_symbol.svg"
@@ -7914,7 +7914,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/electron_mass_symbol.svg"
@@ -8135,7 +8135,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -8367,7 +8367,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -8650,7 +8650,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -8887,7 +8887,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -9116,7 +9116,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -9342,7 +9342,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/neutron_mass_symbol.svg"
@@ -9552,7 +9552,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -9751,7 +9751,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_mass.svg"
@@ -10120,7 +10120,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -10595,7 +10595,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/electron_mass_symbol.svg"
@@ -10854,7 +10854,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/electron_mass_symbol.svg"
@@ -11113,7 +11113,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/neutron_mass_symbol.svg"
@@ -11372,7 +11372,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/proton_mass_symbol.svg"
@@ -11653,7 +11653,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -11984,7 +11984,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -12240,7 +12240,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -12494,7 +12494,7 @@ export default function Home() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -12724,7 +12724,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -12978,7 +12978,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -13254,7 +13254,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -13464,7 +13464,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -13742,7 +13742,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/proton_mass_symbol.svg"
@@ -14034,7 +14034,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/proton_mass_symbol.svg"
@@ -14315,7 +14315,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/electron_mass_symbol.svg"
@@ -14596,7 +14596,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/proton_mass_symbol.svg"
@@ -14850,7 +14850,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/neutron_mass_symbol.svg"
@@ -15082,7 +15082,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -17782,7 +17782,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -18030,7 +18030,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -25453,7 +25453,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -25759,7 +25759,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -26427,7 +26427,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -26686,7 +26686,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -28614,7 +28614,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -28873,7 +28873,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/s_symbol.svg"
@@ -29174,7 +29174,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -29385,7 +29385,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/universal_parabolic_constant.svg"
@@ -30110,7 +30110,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <i>S</i> = the Sierpi&#324;ski constant,{" "}
 
@@ -30396,7 +30396,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -31163,7 +31163,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/catalan_s_constant.svg"
@@ -31412,7 +31412,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/catalan_s_constant.svg"
@@ -31661,7 +31661,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/catalan_s_constant.svg"
@@ -31862,7 +31862,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/s_symbol.svg"
@@ -32129,7 +32129,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/s_symbol.svg"
@@ -33631,7 +33631,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/gamma_function.svg"
@@ -33898,7 +33898,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
@@ -34805,7 +34805,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -35017,7 +35017,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -35227,7 +35227,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     eV = the electron-volt,{" "}
 
@@ -35439,7 +35439,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -36339,7 +36339,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -41474,7 +41474,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -41763,7 +41763,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/omega_1_constant.svg"
@@ -42041,7 +42041,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/omega_1_constant.svg"
@@ -42310,7 +42310,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/omega_1_constant.svg"
@@ -42564,7 +42564,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/omega_1_constant.svg"
@@ -43288,7 +43288,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     K = 1 Kelvin,{" "}
 
@@ -43587,7 +43587,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     K = 1 Kelvin,{" "}
 
@@ -43952,7 +43952,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -44182,7 +44182,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -44412,7 +44412,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -44642,7 +44642,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -45095,7 +45095,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -45371,7 +45371,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -45581,7 +45581,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/continued_fraction_constant.svg"
@@ -45859,7 +45859,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -46102,7 +46102,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -46369,7 +46369,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -46636,7 +46636,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -46824,7 +46824,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -47032,7 +47032,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -47507,7 +47507,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
@@ -47750,7 +47750,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -48024,7 +48024,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -48278,7 +48278,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -48547,7 +48547,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -51425,7 +51425,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -51692,7 +51692,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -51893,7 +51893,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -52180,7 +52180,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -52381,7 +52381,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -52637,7 +52637,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -52834,7 +52834,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -53053,7 +53053,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -53480,7 +53480,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/s_symbol.svg"
@@ -53966,7 +53966,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     MHz = the megahertz,{" "}
 
@@ -54246,7 +54246,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/l_constant.svg"
@@ -54771,7 +54771,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -55281,7 +55281,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -56362,7 +56362,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -56526,7 +56526,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -56723,7 +56723,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
@@ -56955,7 +56955,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -57152,7 +57152,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -57384,7 +57384,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -57616,7 +57616,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -57848,7 +57848,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -58080,7 +58080,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -58312,7 +58312,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -59663,7 +59663,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/catalan_s_constant.svg"
@@ -59884,7 +59884,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/catalan_s_constant.svg"
@@ -60129,7 +60129,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/catalan_s_constant.svg"
@@ -60407,7 +60407,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -60670,7 +60670,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -60902,7 +60902,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -61110,7 +61110,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -61318,7 +61318,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/lambda_peak.svg"
@@ -61568,7 +61568,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -61776,7 +61776,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -61984,7 +61984,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -62192,7 +62192,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -65866,7 +65866,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -66096,7 +66096,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -66326,7 +66326,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -66556,7 +66556,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -66797,7 +66797,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -67038,7 +67038,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -67279,7 +67279,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -67520,7 +67520,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/s_symbol.svg"
@@ -67739,7 +67739,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/catalan_s_constant.svg"
@@ -67971,7 +67971,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes' constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/neutron_mass_symbol.svg"

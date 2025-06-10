@@ -167,7 +167,7 @@ export default function SimplestManifold() {
             onMouseOver={e => (e.target.style.color = 'yellow')}
             onMouseOut={e => (e.target.style.color = 'inherit')}
           >
-            Archimedes' constant
+            Archimedes&apos; constant
           </a>.</p>
         <div style={{ height: '2rem' }} />
 

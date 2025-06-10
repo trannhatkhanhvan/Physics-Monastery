@@ -241,7 +241,7 @@ export default function PlanckConstants() {
             onMouseOver={e => (e.target.style.color = 'yellow')}
             onMouseOut={e => (e.target.style.color = 'inherit')}
           >
-            Archimedes' constant
+            Archimedes&apos; constant
           </a>, <img
             src="/equations/i.svg"
             alt="i"

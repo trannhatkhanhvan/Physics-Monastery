@@ -880,7 +880,7 @@ export default function SymbolLegend() {
               rel="noopener noreferrer"
               className="legend-link"
           >
-            Archimedes' constant
+            Archimedes&apos; constant
           </a>
       ),
     },
