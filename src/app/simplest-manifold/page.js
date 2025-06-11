@@ -5,11 +5,10 @@ import LayoutWrapper from '@/components/LayoutWrapper';
 import '../globals.css';
 
 export default function SimplestManifold() {
-  const [modalVideo, setModalVideo] = useState(null);
-
+  const [modalVideoId, setModalVideoId] = useState(null);
   const videos = [
-    { filename: 'figure_eight_knot_movie_1.mp4', thumbnail: 'fek_thumbnail_1.jpg' },
-    { filename: 'figure_eight_knot_movie_2.mp4', thumbnail: 'fek_thumbnail_2.jpg' }
+    { id: 'kHKY8Jzadug'},
+    { id: 'QN8J-nRjzNY'}
   ];
 
   return (
@@ -20,7 +19,7 @@ export default function SimplestManifold() {
 
         <p className="equation-description">
           Here we introduce the simplest self-persistent stage in topology—the hyperbolic figure eight knot.
-          This topology is defined as a double-cover of the simplest possible 3-manifold ( the {' '}
+          This topology is defined as a double-cover of the simplest possible 3-manifold ( the{' '}
           <a
             href="https://en.wikipedia.org/wiki/Gieseking_manifold"
             target="_blank"
@@ -35,31 +34,53 @@ export default function SimplestManifold() {
 
         <div style={{ height: '2rem' }} />
 
-        {/* ✅ Video Grid with Pop-up Modal Behavior */}
+        {/* 🎥 Video grid */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-          {videos.map(({ filename, thumbnail }, index) => (
+          {videos.map(({ id, title }, index) => (
             <div key={index} style={{ textAlign: 'center' }}>
-              <video
-                src={`/videos/${filename}`}
-                poster={`/videos/${thumbnail}`}
-                controls
-                muted
-                onClick={() => setModalVideo(filename)}
-                style={{
-                  height: '160px',
-                  width: 'auto',
-                  cursor: 'pointer',
-                  borderRadius: '0.3rem',
-                  boxShadow: '0 0 8px rgba(0,0,0,0.3)',
-                }}
-              />
+              <div style={{ position: 'relative', width: '320px', height: '180px' }}>
+                <img
+                  src={`/videos/${id}_thumbnail.jpg`}
+                  alt="Video thumbnail"
+                  width="320"
+                  height="180"
+                  onClick={() => setModalVideoId(id)}
+                  style={{
+                    borderRadius: '0.4rem',
+                    boxShadow: '0 0 8px rgba(0,0,0,0.3)',
+                    cursor: 'pointer',
+                    objectFit: 'cover',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    pointerEvents: 'none',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 0,
+                      height: 0,
+                      borderTop: '12px solid transparent',
+                      borderBottom: '12px solid transparent',
+                      borderLeft: '18px solid white',
+                      filter: 'drop-shadow(0 0 3px black)',
+                    }}
+                  />
+                </div>
+              </div>
+              <div style={{ marginTop: '0.5rem' }}>{title}</div>
             </div>
           ))}
         </div>
 
         <div style={{ height: '1rem' }} />
 
-        <p className="equation-description">Videos by Jeff Chapple, based on work by {' '}
+        <p className="equation-description">Videos by Jeff Chapple, based on work by{' '}
           <a
             href="https://www.thingiverse.com/thing:1668611"
             target="_blank"
@@ -270,38 +291,49 @@ export default function SimplestManifold() {
 
       </div>
 
-      {/* ✅ Modal for Full-Size Video View */}
-      {modalVideo && (
-        <div
-          onClick={() => setModalVideo(null)}
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            paddingLeft: '180px', // match sidebar
-            backgroundColor: 'rgba(0,0,0,0.85)',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            zIndex: 9999,
-          }}
-        >
-          <video
-            src={`/videos/${modalVideo}`}
-            controls
-            autoPlay
-            onClick={(e) => e.stopPropagation()}
+           {modalVideoId && (
+          <div
+            onClick={() => setModalVideoId(null)}
             style={{
-              maxWidth: 'calc(100vw - 200px)',
-              maxHeight: '80vh',
-              borderRadius: '0.5rem',
-              boxShadow: '0 0 24px black'
+              position: 'fixed',
+              top: 0,
+              bottom: 0,
+              left: '180px',
+              right: 0,
+              backgroundColor: 'rgba(0,0,0,0.85)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              zIndex: 9999,
             }}
-          />
-        </div>
-      )}
+          >
+            <div
+              style={{
+                position: 'relative',
+                width: '800px',
+                height: '450px',
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <iframe
+                width="800"
+                height="450"
+                src={`https://www.youtube.com/embed/${modalVideoId}?autoplay=1`}
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                style={{
+                  borderRadius: '0.4rem',
+                  boxShadow: '0 0 24px black',
+                  width: '100%',
+                  height: '100%',
+                }}
+              />
+            </div>
+          </div>
+        )}
+
+
     </LayoutWrapper>
   );
 }

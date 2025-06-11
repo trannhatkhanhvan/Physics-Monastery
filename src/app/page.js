@@ -71,16 +71,21 @@ export default function HomePage() {
         {/* Paragraph and overlay container */}
         {showParagraph && (
           <div
-            style={{
-              marginTop: '20rem', // Adjust vertical positioning here
-              backgroundColor: 'rgba(0, 0, 0, 0.60)',
-              padding: '1.5rem',
-              borderRadius: '1rem',
-              maxWidth: '52rem',
-              transition: 'opacity 2s ease-in-out',
-              opacity: showParagraph ? 1 : 0,
-            }}
-          >
+  style={{
+    position: 'absolute',
+    bottom: '2rem', // same vertical gap you liked
+    left: '50%',
+    transform: 'translateX(-50%)',
+    backgroundColor: 'rgba(0, 0, 0, 0.60)',
+    padding: '1.5rem',
+    borderRadius: '1rem',
+    maxWidth: '52rem',
+    width: '90vw',
+    transition: 'opacity 2s ease-in-out',
+    opacity: showParagraph ? 1 : 0,
+  }}
+>
+
             <p
               style={{
                 fontSize: '1.1rem',

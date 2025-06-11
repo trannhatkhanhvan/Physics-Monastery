@@ -29,12 +29,12 @@ export default function PlanckConstants() {
     'planck_mass_3d.png'
   ];
 
-  const videoFilenames = [
-    'planck_time.mp4',
-    'planck_length.mp4',
-    'planck_charge.mp4',
-    'planck_temperature.mp4',
-    'planck_mass.mp4'
+  const videoYouTubeIDs = [
+    '3MH9gyNuscA',
+    'aHIc7732vy0',
+    'yBXzPSHHtJM',
+    'vQwunytYJAM',
+    'NGPv-oH_BDE'
   ];
 
   const [is3D, setIs3D] = useState(true);
@@ -58,7 +58,7 @@ export default function PlanckConstants() {
           >
             constants of Nature
           </a>.
-            Here we showcase their phase plots, 3D and 2D surface plots, and their quantized plane-wave definitions.
+          Here we showcase their phase plots, 3D and 2D surface plots, and their quantized plane-wave definitions.
         </p>
 
         <div style={{ height: '2rem' }} />
@@ -73,31 +73,49 @@ export default function PlanckConstants() {
 
         <div style={{ height: '2rem' }} />
 
-        {/* Video grid with thumbnails */}
-<div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-  {videoFilenames.map((filename, index) => {
-    const thumbnail = filename.replace('.mp4', '_thumbnail.jpg');
-    return (
-      <div key={index} style={{ textAlign: 'center' }}>
-        <video
-          src={`/videos/${filename}`}
-          poster={`/videos/${thumbnail}`}
-          controls
-          muted
-          onClick={() => setModalVideo(filename)}
-          style={{
-            height: '100px',
-            width: 'auto',
-            cursor: 'pointer',
-            borderRadius: '0.3rem',
-            boxShadow: '0 0 8px rgba(0,0,0,0.3)',
-          }}
-        />
-        <div style={{ marginTop: '0.5rem' }}>{constants[index]}</div>
-      </div>
-    );
-  })}
-</div>
+        {/* Updated YouTube-style video thumbnails */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+          {videoYouTubeIDs.map((id, index) => (
+            <div key={index} style={{ textAlign: 'center' }}>
+              <div style={{ position: 'relative', width: '320px', height: '180px' }}>
+                <img
+                  src={`/videos/${id}_thumbnail.jpg`}
+                  alt={constants[index]}
+                  width="320"
+                  height="180"
+                  onClick={() => setModalVideo(id)}
+                  style={{
+                    borderRadius: '0.4rem',
+                    boxShadow: '0 0 8px rgba(0,0,0,0.3)',
+                    cursor: 'pointer',
+                    objectFit: 'cover',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    pointerEvents: 'none',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 0,
+                      height: 0,
+                      borderTop: '12px solid transparent',
+                      borderBottom: '12px solid transparent',
+                      borderLeft: '18px solid white',
+                      filter: 'drop-shadow(0 0 3px black)',
+                    }}
+                  />
+                </div>
+              </div>
+              <div style={{ marginTop: '0.5rem' }}>{constants[index]}</div>
+            </div>
+          ))}
+        </div>
 
         <div style={{ height: '2rem' }} />
 
@@ -422,67 +440,75 @@ export default function PlanckConstants() {
       </div>
 
       {/* Image Modal */}
-{modalImage && (
-  <div
-    onClick={() => setModalImage(null)}
-    style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(0,0,0,0.85)',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      zIndex: 9999, // Higher than menu bar
-    }}
-  >
-    <img
-      src={modalImage}
-      alt="Full size"
-      onClick={(e) => e.stopPropagation()}
-      style={{
-        maxWidth: '90vw',
-        maxHeight: '90vh',
-        borderRadius: '0.5rem',
-        boxShadow: '0 0 24px black',
-      }}
-    />
-  </div>
-)}
+      {modalImage && (
+        <div
+          onClick={() => setModalImage(null)}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0,0,0,0.85)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 9999,
+          }}
+        >
+          <img
+            src={modalImage}
+            alt="Full size"
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: '90vw',
+              maxHeight: '90vh',
+              borderRadius: '0.5rem',
+              boxShadow: '0 0 24px black',
+            }}
+          />
+        </div>
+      )}
 
-{/* Video Modal */}
-{modalVideo && (
-  <div
-    onClick={() => setModalVideo(null)}
-    style={{
-      position: 'fixed',
-      inset: 0,
-      paddingLeft: '180px', // matches sidebar width
-      backgroundColor: 'rgba(0,0,0,0.85)',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      zIndex: 9999,
-    }}
-  >
-    <video
-      src={`/videos/${modalVideo}`}
-      controls
-      autoPlay
-      onClick={(e) => e.stopPropagation()}
-      style={{
-        maxWidth: 'calc(100vw - 200px)', // give a bit of margin
-        maxHeight: '80vh',
-        borderRadius: '0.5rem',
-        boxShadow: '0 0 24px black',
-      }}
-    />
-  </div>
-)}
-
-
+      {/* Video Modal */}
+      {modalVideo && (
+        <div
+          onClick={() => setModalVideo(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            paddingLeft: '180px',
+            backgroundColor: 'rgba(0,0,0,0.85)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 9999,
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: 'relative',
+              width: 'calc(100vw - 240px)',
+              maxWidth: '960px',
+              aspectRatio: '16/9',
+              borderRadius: '0.5rem',
+              overflow: 'hidden',
+              boxShadow: '0 0 24px black',
+              backgroundColor: '#000',
+            }}
+          >
+            <iframe
+              src={`https://www.youtube.com/embed/${modalVideo}?autoplay=1`}
+              title="YouTube video"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              style={{ width: '100%', height: '100%' }}
+            />
+          </div>
+        </div>
+      )}
     </LayoutWrapper>
   );
 }
