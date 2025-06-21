@@ -22,7 +22,7 @@ body {
 
 /* Sidebar Styles */
 .sidebar {
-  width: 180px;
+  width: 168px;
   background-color: #000;
   color: #fff;
   display: flex;
@@ -59,16 +59,16 @@ body {
   width: 100%;
 }
 
-.menu a {
+.menu a.menu-text-link {
   color: #fff;
   text-decoration: none;
-  margin: 0.1rem 0;
+  margin: 0.05rem 0;
   font-family: "Times New Roman", serif;
-  font-size: 13.0px;
-  padding: 0.2rem 0.2rem;
-  padding-left: 1.4rem;
+  font-size: 13px;
   width: 100%;
   box-sizing: border-box;
+  padding: 0.1rem 0.1rem 0.1rem 1.0rem; /* Top, Right, Bottom, Left */
+  text-align: left;
   transition: background 0.3s;
 }
 
@@ -80,9 +80,9 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  gap: 0.7rem;
   margin: 0.5rem 0;
-  padding-left: 1.0rem;
+  padding-left: 0.8rem;
 }
 
 .menu-icon {
@@ -110,9 +110,12 @@ body {
 
 .separator {
   width: 100%;
-  border-bottom: 2.5px solid rgba(255, 0, 0, 0.2);
-  margin: 0.5rem 0;
+  height: 1.5px;
+  background-color: rgba(255, 0, 0, 0.4);
+  margin: 0.35rem 0;
+  flex-shrink: 0;
 }
+
 
 /* Layout Container */
 .layout-container {
@@ -127,8 +130,8 @@ body {
 .constants-overlay {
   position: fixed;
   top: 0;
-  left: 180px;
-  width: calc(100vw - 180px);
+  left: 168px;
+  width: calc(100vw - 168px);
   height: 100vh;
   background: rgba(0, 0, 0, 0.75);
   z-index: 0;
@@ -152,7 +155,7 @@ body {
 
 /* Main Content Area */
 .main-content {
-  padding-left: 180px;                 /* ✅ Push content away from sidebar */
+  padding-left: 168px;                 /* ✅ Push content away from sidebar */
   width: 100vw;                        /* ✅ Let content take full width */
   max-width: 100vw;
   min-height: 100vh;
@@ -171,7 +174,7 @@ body {
 .hyperbolic-partition-content {
   position: relative;
   z-index: 1;
-  padding: 3rem 1rem;
+  padding: 1rem 1rem;
   max-width: 800px;
   margin: 0 auto;
   display: flex;
@@ -544,3 +547,20 @@ body {
   vertical-align: middle;
   margin-left: 0.3em;
 }
+
+.books-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.books-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+

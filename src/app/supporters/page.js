@@ -1,5 +1,8 @@
 'use client';
 
+import React from 'react';
+
+
 import LayoutWrapper from '@/components/LayoutWrapper';
 import '../globals.css';
 import Image from 'next/image';
@@ -92,12 +95,12 @@ export default function Supporters() {
   <div style={{ display: 'grid', gridTemplateColumns: 'auto auto', columnGap: '1.5rem' }}>
     <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
       <li>Tim Dodge</li>
+      <li>Attie Retief</li>
       <li>L</li>
       <li>Cully O&apos;Meara</li>
       <li>Joakim Pettersson</li>
       <li>Duarte Cunha Leáo</li>
       <li>Yishai Mendelsohn</li>
-      <li>Christoph Schiller</li>
       <li>Rongomai Bailey</li>
       <li>Harvey Summers</li>
       <li>Joseph Mavor</li>
@@ -106,8 +109,8 @@ export default function Supporters() {
     </ul>
     <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
       <li>Natural Philosopher</li>
+      <li>Natural Philosopher</li>
       <li>Advocate</li>
-      <li>Volunteer</li>
       <li>Volunteer</li>
       <li>Volunteer</li>
       <li>Volunteer</li>
@@ -127,7 +130,7 @@ export default function Supporters() {
       <li>Gregg Stadhams</li>
       <li>Seth Lamancusa</li>
       <li>Alex Shevchenko</li>
-      <li>Attie Retief</li>
+      <li>Christoph Schiller</li>
       <li>James Rohan</li>
       <li>InvaderH</li>
       <li>Nikhil</li>

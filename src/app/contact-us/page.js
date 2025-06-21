@@ -40,7 +40,7 @@ export default function ContactUs() {
         <div className="legend-title">contact us</div>
 
         <p className="equation-description">
-          We&apos;d love to hear from you. Whether you have questions, ideas, or want to get involved, feel free to reach out.
+          If you want to get involved in this project, or want to participate in a Physics Monastery event, feel free to reach out.
         </p>
 
         <form

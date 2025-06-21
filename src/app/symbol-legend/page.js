@@ -742,9 +742,9 @@ export default function SymbolLegend() {
                 src="/equations/power_tower_of_i.svg"
                 alt="power tower of i"
                 style={{
-                  height: '23px',
+                  height: '19px',
                   width: 'auto',
-                  verticalAlign: '-0.0em',
+                  verticalAlign: '-0.2em',
                   display: 'inline',
                 }}
             />
@@ -790,27 +790,16 @@ export default function SymbolLegend() {
       left: (
           <>
             <img
-                src="/equations/i.svg"
-                alt="i"
+                src="/equations/i_symbol_legend.svg"
+                alt="i=(-1)^1/2"
                 style={{
-                  height: '13.5px',           // Set preferred height
+                  height: '20px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.1em',
+                  verticalAlign: '-0.25em',
                   display: 'inline',
                 }}
             />
-            {' = 0 + 1'}
-            <img
-                src="/equations/i.svg"
-                alt="i"
-                style={{
-                  height: '12px', // adjust size as needed
-                  width: 'auto',
-                  verticalAlign: '-0.0em',
-                  display: 'inline',
-                  marginLeft: '0.2em', // optional spacing
-                }}
-            />
+
           </>
       ),
       right: (
@@ -831,10 +820,40 @@ export default function SymbolLegend() {
       left: (
           <>
             <img
+                src="/equations/igr_symbol_legend.svg"
+                alt="phi_i=(-1)^1/3"
+                style={{
+                  height: '21px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.25em',
+                  display: 'inline',
+                }}
+            />
+
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathforums.com/t/imaginary-golden-ratio.17605/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            imaginary golden ratio
+          </a>
+      ),
+    },
+
+
+// 26
+    {
+      left: (
+          <>
+            <img
                 src="/equations/w_we.svg"
                 alt="W_We"
                 style={{
-                  height: '16px',           // Set preferred height
+                  height: '14px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
                   verticalAlign: '-0.25em',
                   display: 'inline',
@@ -856,7 +875,7 @@ export default function SymbolLegend() {
     },
 
 
-// 26
+// 27
     {
       left: (
           <>
@@ -886,7 +905,7 @@ export default function SymbolLegend() {
     },
 
 
-// 27
+// 28
     {
       left: (
           <>
@@ -916,7 +935,7 @@ export default function SymbolLegend() {
     },
 
 
-// 28
+// 29
     {
       left: (
           <>
@@ -946,7 +965,7 @@ export default function SymbolLegend() {
     },
 
 
-// 29
+// 30
     {
       left: (
           <>
@@ -976,7 +995,7 @@ export default function SymbolLegend() {
     },
 
 
-// 30
+// 31
     {
       left: (
           <>
@@ -1006,7 +1025,7 @@ export default function SymbolLegend() {
     },
 
 
-// 31
+// 32
     {
       left: (
           <>
@@ -1036,7 +1055,7 @@ export default function SymbolLegend() {
     },
 
 
-// 32
+// 33
     {
       left: (
           <>
@@ -1066,7 +1085,7 @@ export default function SymbolLegend() {
     },
 
 
-// 33
+// 34
     {
       left: (
           <>
@@ -1096,7 +1115,7 @@ export default function SymbolLegend() {
     },
 
 
-// 34
+// 35
     {
       left: (
           <>
@@ -1133,7 +1152,7 @@ export default function SymbolLegend() {
     },
 
 
-// 35
+// 36
     {
       left: (
           <>
@@ -1163,7 +1182,7 @@ export default function SymbolLegend() {
     },
 
 
-// 36
+// 37
     {
       left: (
           <>
@@ -1200,7 +1219,7 @@ export default function SymbolLegend() {
     },
 
 
-// 37
+// 38
     {
       left: (
           <>
@@ -1230,7 +1249,7 @@ export default function SymbolLegend() {
     },
 
 
-// 38
+// 39
     {
       left: (
           <>
@@ -1260,7 +1279,7 @@ export default function SymbolLegend() {
     },
 
 
-// 38
+// 40
     {
       left: (
           <>
@@ -1290,7 +1309,7 @@ export default function SymbolLegend() {
     },
 
 
-// 39
+// 41
     {
       left: (
           <>
@@ -1320,7 +1339,7 @@ export default function SymbolLegend() {
     },
 
 
-// 40
+// 42
     {
       left: (
           <>
@@ -1350,7 +1369,7 @@ export default function SymbolLegend() {
     },
 
 
-// 41
+// 43
     {
       left: (
           <>
@@ -1380,7 +1399,7 @@ export default function SymbolLegend() {
     },
 
 
-// 42
+// 44
     {
       left: (
           <>
@@ -1410,7 +1429,7 @@ export default function SymbolLegend() {
     },
 
 
-// 43
+// 45
     {
       left: (
           <>
@@ -1447,7 +1466,7 @@ export default function SymbolLegend() {
     },
 
 
-// 44
+// 46
     {
       left: (
           <>
@@ -1477,7 +1496,7 @@ export default function SymbolLegend() {
     },
 
 
-// 45
+// 47
     {
       left: (
           <>
@@ -1507,7 +1526,7 @@ export default function SymbolLegend() {
     },
 
 
-// 45
+// 48
     {
       left: (
           <>
@@ -1537,7 +1556,7 @@ export default function SymbolLegend() {
     },
 
 
-// 45
+// 49
     {
       left: (
           <>
@@ -1574,7 +1593,7 @@ export default function SymbolLegend() {
     },
 
 
-// 46
+// 50
     {
       left: (
           <>
@@ -1606,7 +1625,7 @@ export default function SymbolLegend() {
     },
 
 
-// 47
+// 51
     {
       left: (
           <>
@@ -1638,7 +1657,7 @@ export default function SymbolLegend() {
     },
 
 
-// 48
+// 52
     {
       left: (
           <>
@@ -1670,7 +1689,7 @@ export default function SymbolLegend() {
     },
 
 
-// 48
+// 53
     {
       left: (
           <>
@@ -1711,7 +1730,7 @@ export default function SymbolLegend() {
     },
 
 
-// 50
+// 54
     {
       left: (
           <>
@@ -1743,7 +1762,7 @@ export default function SymbolLegend() {
     },
 
 
-// 51
+// 55
     {
       left: (
           <>
@@ -1782,7 +1801,7 @@ export default function SymbolLegend() {
     },
 
 
-// 52
+// 56
     {
       left: (
           <>
@@ -1819,7 +1838,7 @@ export default function SymbolLegend() {
     },
 
 
-// 53
+// 57
     {
       left: (
           <>
@@ -1848,7 +1867,7 @@ export default function SymbolLegend() {
     },
 
 
-// 54
+// 58
     {
       left: (
           <>
@@ -1877,7 +1896,7 @@ export default function SymbolLegend() {
     },
 
 
-// 55
+// 59
     {
       left: (
           <>
@@ -1906,7 +1925,7 @@ export default function SymbolLegend() {
     },
 
 
-// 56
+// 60
     {
       left: (
           <>

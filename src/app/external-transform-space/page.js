@@ -127,7 +127,7 @@ export default function ExternalTransformSpace() {
             alt="!5"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
           />, 35, 18, 32, and 8 ) define its structure.
-  The first is associated with the{' '}
+  The first factors into the{' '}
   <a
     href="https://en.wikipedia.org/wiki/120-cell"
     target="_blank"
@@ -141,7 +141,7 @@ export default function ExternalTransformSpace() {
   >
     120-cell
   </a>
-  —which contains examples of <i>every</i> relationship among <i>all</i> the convex regular polytopes found in the first 4 dimensions. The coherent divisors of that structure (44, 35, 18, 32, and 8) define the quantized powers of the{' '}
+  —which contains examples of <i>every</i> relationship among <i>all</i> the convex regular polytopes found in the first 4 dimensions. The coherent divisors of that structure ( 44, 35, 18, 32, and 8 ) define the quantized powers of the{' '}
   <a
     href="/planck-constants"
     target="_blank"
@@ -160,7 +160,7 @@ export default function ExternalTransformSpace() {
         <div style={{ height: '1.5rem' }} />
 
         <p className="equation-description">
-          And the controlling root of that structure—the term raised to the highest power—is equal to the product of the {' '}
+          The controlling root of that structure—its highest power component—is equal to the product of the {' '}
   <a
     href="/simplest-manifold"
     target="_blank"
@@ -174,6 +174,38 @@ export default function ExternalTransformSpace() {
   >
     hyperbolic figure eight knot
   </a>&apos;s <i>twisted</i> zeros.
+        </p>
+
+        <div style={{ height: '1.5rem' }} />
+
+        <p className="equation-description">
+          The hyperbolic figure eight knot's constructive zeros.
+        </p>
+
+        <div style={{ height: '1.5rem' }} />
+
+        <div className="equation-line" style={{ marginLeft: '-4.4rem' }}>
+          <img
+            src="/equations/constructive_zero_1.svg"
+            alt="1st constructive zero"
+            style={{ height: '44px', width: 'auto' }}
+          />
+        </div>
+
+        <div style={{ height: '1.5rem' }} />
+
+        <div className="equation-line" style={{ marginLeft: '-4.4rem' }}>
+          <img
+            src="/equations/constructive_zero_2.svg"
+            alt="2nd constructive zero"
+            style={{ height: '44px', width: 'auto' }}
+          />
+        </div>
+
+        <div style={{ height: '1.5rem' }} />
+
+        <p className="equation-description">
+          The hyperbolic figure eight knot's <i>twisted</i> zeros.
         </p>
 
         <div style={{ height: '1.5rem' }} />

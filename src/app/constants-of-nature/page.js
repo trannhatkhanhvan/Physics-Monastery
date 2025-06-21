@@ -5,7 +5,7 @@ import 'katex/dist/katex.min.css';
 import { InlineMath } from 'react-katex';
 import LayoutWrapper from '@/components/LayoutWrapper';
 
-export default function Home() {
+export default function ConstantsOfNature() {
   const columnTitles = [
     "Polar transforms: angle",
     "Polar transforms: radius",

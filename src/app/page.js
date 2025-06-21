@@ -73,14 +73,14 @@ export default function HomePage() {
           <div
   style={{
     position: 'absolute',
-    bottom: '2rem', // same vertical gap you liked
-    left: '50%',
-    transform: 'translateX(-50%)',
-    backgroundColor: 'rgba(0, 0, 0, 0.60)',
-    padding: '1.5rem',
+    bottom: '1.5rem',                 // ⬅️ Bottom padding restored
+    left: '1.5rem',                   // ⬅️ from left edge
+    right: '1.5rem',                  // ⬅️ from right edge
+    margin: '0 auto',
+    backgroundColor: 'rgba(0, 0, 0, 0.65)',
+    padding: '1.0rem',
     borderRadius: '1rem',
-    maxWidth: '52rem',
-    width: '90vw',
+    maxWidth: '52rem',              // ⬅️ Still caps max width
     transition: 'opacity 2s ease-in-out',
     opacity: showParagraph ? 1 : 0,
   }}
@@ -88,14 +88,14 @@ export default function HomePage() {
 
             <p
               style={{
-                fontSize: '1.1rem',
+                fontSize: '1.0rem',
                 color: 'white',
                 textAlign: 'justify',
                 textIndent: '2em',
                 margin: 0,
               }}
             >
-              At the Physics Monastery, we are dedicated to uncovering the hidden structure of Nature—not through speculation, but by systematically decoding the precise relationships embedded in the physical constants of Nature. Everything explored here is part of a larger effort to reveal how all 288 physical constants arise from a coherent geometric foundation. Our goal is simple: to understand why the universe is the way it is—and to show that its structure is intelligible, inevitable, and breathtakingly elegant.
+              At the Physics Monastery, we are dedicated to uncovering the hidden structure of reality—by systematically decoding the precise relationships embedded in the physical constants of Nature. Everything explored here is part of a larger effort to reveal how all 288 physical constants arise from a coherent geometric foundation. Our goal is simple: to understand why the Universe is the way it is—to gain intelligible access to its atomic structure.
             </p>
           </div>
         )}

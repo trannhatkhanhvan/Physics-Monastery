@@ -96,6 +96,21 @@ export default function HyperbolicPartitionEq() {
           </div>
         </div>
 
+        <div style={{ height: '1.0rem' }} />
+
+        <p className="equation-description" style={{ marginTop: '2rem' }}>
+  The first of those quadrances is <a
+              href="https://physics.nist.gov/cgi-bin/cuu/Value?alph"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            the fine structure constant
+          </a> &nbsp;
+  <img src="/equations/zhe_1_squared_equation.svg" alt="zhe_squared=alpha" style={{ height: '21px', width: 'auto', verticalAlign: '-0.30em', display: 'inline' }} />.
+</p>
+        <div style={{ height: '1.0rem' }} />
+
         <p className="equation-description" style={{ marginTop: '2rem' }}>
   In polar coordinates&nbsp;
   <img src="/equations/zhe_3.svg" alt="zhe_3" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />{' '}
@@ -153,21 +168,6 @@ export default function HyperbolicPartitionEq() {
 <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
   <img src="/equations/zhe_bi_product_sum.svg" alt="zhe bi product sum" style={{ height: '17px', width: 'auto' }} />
 </div>
-
-
-        <div style={{ height: '1.0rem' }} />
-
-        <p className="equation-description" style={{ marginTop: '2rem' }}>
-  The first of those quadrances is <a
-              href="https://physics.nist.gov/cgi-bin/cuu/Value?alph"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            the fine structure constant
-          </a> &nbsp;
-  <img src="/equations/zhe_1_squared_equation.svg" alt="zhe_squared=alpha" style={{ height: '21px', width: 'auto', verticalAlign: '-0.30em', display: 'inline' }} />.
-</p>
 
         <div style={{ height: '3.5rem' }} />
 

@@ -18,6 +18,7 @@ export default function LayoutWrapper({ children }) {
     pathname === '/simplest-manifold' ? 'simplest-manifold-page' :
     pathname === '/combinatorics' ? 'combinatorics-page' :
     pathname === '/animated-math' ? 'animated-math-page' :
+    pathname === '/books' ? 'books-page' :
     pathname === '/monastery-events' ? 'monastery-events-page' :
     pathname === '/supporters' ? 'supporters-page' :
     pathname === '/contact-us' ? 'contact-us-page' :
@@ -33,19 +34,19 @@ export default function LayoutWrapper({ children }) {
         <div className="separator"></div>
 
         <nav className="menu">
-          <a href="/constants-of-nature">Constants of Nature</a>
-          <a href="/symbol-legend">Symbol Legend</a>
+          <a href="/constants-of-nature" className="menu-text-link">Constants of Nature</a>
+          <a href="/symbol-legend" className="menu-text-link">Symbol Legend</a>
 
           <div className="separator"></div>
 
-          <a href="/hyperbolic-partition-eq">Hyperbolic Partition Eq</a>
-          <a href="/binomial-constructor">Binomial Constructor</a>
-          <a href="/external-transform-space">External Transform Space</a>
+          <a href="/hyperbolic-partition-eq" className="menu-text-link">Hyperbolic Partition Eq</a>
+          <a href="/binomial-constructor" className="menu-text-link">Binomial Constructor</a>
+          <a href="/external-transform-space" className="menu-text-link">External Transform Space</a>
 
           <div className="separator"></div>
 
-          <a href="/planck-constants">Planck Constants</a>
-          <a href="/coherent-units">Coherent Units</a>
+          <a href="/planck-constants" className="menu-text-link">Planck Constants</a>
+          <a href="/coherent-units" className="menu-text-link">Coherent Units</a>
 
           <div className="separator"></div>
 
@@ -57,13 +58,13 @@ export default function LayoutWrapper({ children }) {
       rel="noopener noreferrer"
     >
       <img
-  src="/Thad-logo.jpg"
-  alt=""
-  className="menu-icon"
-  aria-label="Thad's YouTube Channel"
-/>
-      <span className="custom-tooltip tooltip-thad">Thad Roberts</span>
+        src="/Thad-logo.jpg"
+        alt=""
+        className="menu-icon"
+        aria-label="Thad's YouTube Channel"
+      />
     </a>
+    <div className="custom-tooltip tooltip-thad">Thad Roberts</div>
   </div>
 
   <div className="tooltip-container">
@@ -78,23 +79,41 @@ export default function LayoutWrapper({ children }) {
         className="menu-icon"
         aria-label="Memes' YouTube Channel"
       />
-      <span className="custom-tooltip">Memes of Destruction</span>
     </a>
+    <div className="custom-tooltip">Memes of Destruction</div>
+  </div>
+
+  <div className="tooltip-container">
+    <a
+      href="https://www.youtube.com/watch?v=aSz5BjExs9o"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="/tedx.jpg"
+        alt=""
+        className="menu-icon"
+        aria-label="Ted Talk"
+      />
+    </a>
+    <div className="custom-tooltip">Ted Talk</div>
   </div>
 </div>
 
 
-          <div className="separator"></div>
-
-          <a href="/simplest-manifold">Simplest Manifold</a>
-          <a href="/combinatorics">Combinatorics</a>
-          <a href="/animated-math">Animated Math</a>
 
           <div className="separator"></div>
 
-          <a href="/monastery-events">Monastery Events</a>
-          <a href="/supporters">Supporters</a>
-          <a href="/contact-us">Contact Us</a>
+          <a href="/simplest-manifold" className="menu-text-link">Simplest Manifold</a>
+          <a href="/combinatorics" className="menu-text-link">Combinatorics</a>
+          <a href="/animated-math" className="menu-text-link">Animated Math</a>
+
+          <div className="separator"></div>
+
+          <a href="/books" className="menu-text-link">Books</a>
+          <a href="/monastery-events" className="menu-text-link">Monastery Events</a>
+          <a href="/supporters" className="menu-text-link">Supporters</a>
+          <a href="/contact-us" className="menu-text-link">Contact Us</a>
         </nav>
       </div>
 
