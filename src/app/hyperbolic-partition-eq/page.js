@@ -84,8 +84,8 @@ export default function HyperbolicPartitionEq() {
             {[
               { src: 'zhe_1.svg', value: '0.0854245431533304 ...' },
               { src: 'zhe_2.svg', value: '3.66756753485501 ...' },
-              { src: 'zhe_3.svg', value: '− 1.87649603900417 ... + 4.06615262615972 ...', imag: true },
-              { src: 'zhe_4.svg', value: '− 1.87649603900417 ... − 4.06615262615972 ...', imag: true },
+              { src: 'zhe_3.svg', value: '- 1.87649603900417 ... + 4.06615262615972 ...', imag: true },
+              { src: 'zhe_4.svg', value: '- 1.87649603900417 ... - 4.06615262615972 ...', imag: true },
             ].map(({ src, value, imag }, i) => (
               <div key={i} className="equation-line-left" style={{ marginBottom: '0.4rem', paddingLeft: '2.0rem' }}>
                 <img src={`/equations/${src}`} alt={src} style={{ height: '14px', width: 'auto', position: 'relative', top: '3px' }} />
