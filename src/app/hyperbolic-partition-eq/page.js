@@ -1,4 +1,6 @@
 'use client';
+export const dynamic = 'force-dynamic';
+
 
 import LayoutWrapper from '@/components/LayoutWrapper';
 import '../globals.css';
@@ -47,7 +49,7 @@ export default function HyperbolicPartitionEq() {
             onMouseOut={(e) => (e.target.style.color = 'inherit')}
           >
             Planck mass
-          </a>{' '}gap. {"It's 4 solutions "}
+          </a>{' '}gap. It&apos;s 4 solutions
           <img src="/equations/zhe_1.svg" alt="zhe_1" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
           <img src="/equations/zhe_2.svg" alt="zhe_2" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
           <img src="/equations/zhe_3.svg" alt="zhe_3" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} /> and{' '}
@@ -82,7 +84,7 @@ export default function HyperbolicPartitionEq() {
               { src: 'zhe_3.svg', value: '-1.87649603900417 ... + 4.06615262615972 ...', imag: true },
               { src: 'zhe_4.svg', value: '-1.87649603900417 ... - 4.06615262615972 ...', imag: true }].map(({ src, value, imag }, i) => (
               <div key={i} className="equation-line-left" style={{ marginBottom: '0.4rem', paddingLeft: '2.0rem' }}>
-                <img src={'/equations/' + src} alt={src} style={{ height: '14px', width: 'auto', position: 'relative', top: '3px' }} />
+                <img src={"/equations/" + src} alt={src} style={{ height: '14px', width: 'auto', position: 'relative', top: '3px' }} />
                 <span style={{ marginLeft: '0.4em' }}>= {value}</span>
                 {imag && (
                   <img src="/equations/i.svg" alt="i" style={{ height: '13px', width: 'auto', position: 'relative', top: '-2px', marginLeft: '0.3em' }} />
@@ -111,29 +113,10 @@ export default function HyperbolicPartitionEq() {
 
         <p className="equation-description" style={{ marginTop: '2rem' }}>
           In polar coordinates{' '}
-          <img
-            src="/equations/zhe_3.svg"
-            alt="zhe_3"
-            style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
-          />{' '}
-          and{' '}
-          <img
-            src="/equations/zhe_4.svg"
-            alt="zhe_4"
-            style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
-          />{' '}
-          are expressed as{' '}
-          <img
-            src="/equations/zhe_3_polar_equation.svg"
-            alt="zhe_3_polar"
-            style={{ height: '22px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
-          />{' '}
-          and{' '}
-          <img
-            src="/equations/zhe_4_polar_equation.svg"
-            alt="zhe_4_polar"
-            style={{ height: '22px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
-          />, where:
+          <img src="/equations/zhe_3.svg" alt="zhe_3" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />{' '}and{' '}
+          <img src="/equations/zhe_4.svg" alt="zhe_4" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />{' '}are expressed as{' '}
+          <img src="/equations/zhe_3_polar_equation.svg" alt="zhe_3_polar" style={{ height: '22px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />{' '}and{' '}
+          <img src="/equations/zhe_4_polar_equation.svg" alt="zhe_4_polar" style={{ height: '22px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />, where:
         </p>
 
         <div style={{ height: '2.0rem' }} />
@@ -185,10 +168,7 @@ export default function HyperbolicPartitionEq() {
 
         <div style={{ height: '3.5rem' }} />
 
-        <div
-          className="zhe-image-column"
-          style={{ display: 'flex', justifyContent: 'center', marginBottom: '-5rem' }}
-        >
+        <div className="zhe-image-column" style={{ display: 'flex', justifyContent: 'center', marginBottom: '-5rem' }}>
           <svg viewBox="-5 -5 10 10" width="400" height="400">
             <line x1="-5" y1="0" x2="5" y2="0" stroke="white" strokeWidth="0.02" />
             <line x1="0" y1="-5" x2="0" y2="5" stroke="white" strokeWidth="0.02" />
