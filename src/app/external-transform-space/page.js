@@ -179,7 +179,7 @@ export default function ExternalTransformSpace() {
         <div style={{ height: '1.5rem' }} />
 
         <p className="equation-description">
-          The hyperbolic figure eight knot's constructive zeros.
+          The hyperbolic figure eight knot&apos;s constructive zeros.
         </p>
 
         <div style={{ height: '1.5rem' }} />
@@ -205,7 +205,7 @@ export default function ExternalTransformSpace() {
         <div style={{ height: '1.5rem' }} />
 
         <p className="equation-description">
-          The hyperbolic figure eight knot's <i>twisted</i> zeros.
+          The hyperbolic figure eight knot&apos;s <i>twisted</i> zeros.
         </p>
 
         <div style={{ height: '1.5rem' }} />
