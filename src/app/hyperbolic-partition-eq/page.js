@@ -89,7 +89,7 @@ export default function HyperbolicPartitionEq() {
             ].map(({ src, value, imag }, i) => (
               <div key={i} className="equation-line-left" style={{ marginBottom: '0.4rem', paddingLeft: '2.0rem' }}>
                 <img src={`/equations/${src}`} alt={src} style={{ height: '14px', width: 'auto', position: 'relative', top: '3px' }} />
-                <span style={{ marginLeft: '0.4em' }}>{`= ${value}`}</span>
+                <span style={{ marginLeft: '0.4em' }}>= {value}</span>
                 {imag && <img src="/equations/i.svg" alt="i" style={{ height: '13px', width: 'auto', position: 'relative', top: '-2px', marginLeft: '0.3em' }} />}
               </div>
             ))}
@@ -127,11 +127,11 @@ export default function HyperbolicPartitionEq() {
         <div className="zhe-values-column">
           <div className="equation-line-left" style={{ marginBottom: '0.4rem', paddingLeft: '2.0rem' }}>
             <img src="/equations/zhe_r.svg" alt="zhe_r" style={{ height: '14px', width: 'auto', position: 'relative', top: '3px' }} />
-            {' = 4.47826244916751 ...'}
+            <span>= 4.47826244916751 ...</span>
           </div>
           <div className="equation-line-left" style={{ marginBottom: '0.4rem', paddingLeft: '2.0rem' }}>
             <img src="/equations/zhe_theta.svg" alt="zhe_theta" style={{ height: '14px', width: 'auto', position: 'relative', top: '3px' }} />
-            {' = 2.00316562310924 ...'}
+            <span>= 2.00316562310924 ...</span>
           </div>
         </div>
 
