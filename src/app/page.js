@@ -95,7 +95,7 @@ export default function HomePage() {
                 margin: 0,
               }}
             >
-              At the Physics Monastery, we are dedicated to uncovering the hidden structure of reality—by systematically decoding the precise relationships embedded in the physical constants of Nature. Everything explored here is part of a larger effort to reveal how all 288 physical constants arise from a coherent geometric foundation. Our goal is simple: to understand why the Universe is the way it is—to gain intelligible access to its atomic structure.
+              Here we work to unveil the hidden structure of reality—by systematically decoding the precise relationships embedded in the physical constants of Nature. Our goal is simple: to understand why the Universe is the way it is—to gain intelligible access to the geometric rules of atomic structure. To discover how all 288 physical constants arise from a single coherent geometric foundation.
             </p>
           </div>
         )}

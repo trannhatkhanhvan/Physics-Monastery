@@ -16,7 +16,7 @@ export default function HyperbolicPartitionEq() {
           <img
             src="/equations/hyperbolic_partition_equation.svg"
             alt="Hyperbolic Partition Equation"
-            style={{ height: '48px', width: 'auto' }}
+            style={{ height: '42px', width: 'auto' }}
           />
         </div>
 
@@ -60,19 +60,19 @@ export default function HyperbolicPartitionEq() {
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line" style={{ marginLeft: '-7.5rem' }}>
-          <img src="/equations/hyperbolic_partition_product.svg" alt="Hyperbolic Partition Product" style={{ height: '19px', width: 'auto' }} />
+          <img src="/equations/hyperbolic_partition_product.svg" alt="Hyperbolic Partition Product" style={{ height: '17px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '0.8rem' }} />
 
-        <div className="equation-line" style={{ marginLeft: '-3.4rem' }}>
-          <img src="/equations/hyperbolic_partition_sum.svg" alt="Hyperbolic Partition Sum" style={{ height: '19px', width: 'auto' }} />
+        <div className="equation-line" style={{ marginLeft: '-3.8rem' }}>
+          <img src="/equations/hyperbolic_partition_sum.svg" alt="Hyperbolic Partition Sum" style={{ height: '17px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '0.8rem' }} />
 
-        <div className="equation-line" style={{ marginLeft: '1.2rem' }}>
-          <img src="/equations/hyperbolic_partition_quadrance.svg" alt="Hyperbolic Partition Quadrance" style={{ height: '22.0px', width: 'auto' }} />
+        <div className="equation-line" style={{ marginLeft: '0.7rem' }}>
+          <img src="/equations/hyperbolic_partition_quadrance.svg" alt="Hyperbolic Partition Quadrance" style={{ height: '20px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '2rem' }} />

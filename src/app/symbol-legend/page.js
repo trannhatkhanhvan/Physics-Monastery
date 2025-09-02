@@ -169,12 +169,42 @@ export default function SymbolLegend() {
 
 // Spacer row
     {
-      left: <div style={{height: '0.5rem'}}></div>,
+      left: <div style={{height: '0.75rem'}}></div>,
       right: '',
     },
 
-
 // 6
+    {
+      left: (
+          <>
+            <img
+                src="/equations/box_symbol.svg"
+                alt="box"
+                style={{
+                  height: '14.5px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.05em',
+                  display: 'inline',
+                }}
+            />
+            {' = 0.999999199973626 ... × 10'}
+            <sup>-7</sup>
+
+          </>
+      ),
+      right: (
+          <a
+              href="/binomial-constructor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            hyperbolic inversion boundary
+          </a>
+      ),
+    },
+
+// 7
     {
       left: (
           <>
@@ -203,7 +233,7 @@ export default function SymbolLegend() {
     },
 
 
-// 7
+// 8
     {
       left: (
           <>
@@ -233,12 +263,12 @@ export default function SymbolLegend() {
 
 // Spacer row
     {
-      left: <div style={{height: '0.5rem'}}></div>,
+      left: <div style={{height: '0.75rem'}}></div>,
       right: '',
     },
 
 
-// 8
+// 9
     {
       left: (
           <>
@@ -268,7 +298,7 @@ export default function SymbolLegend() {
     },
 
 
-// 9
+// 10
     {
       left: (
           <>
@@ -298,7 +328,7 @@ export default function SymbolLegend() {
     },
 
 
-// 10
+// 11
     {
       left: (
           <>
@@ -339,7 +369,7 @@ export default function SymbolLegend() {
     },
 
 
-// 11
+// 12
     {
       left: (
           <>
@@ -380,7 +410,7 @@ export default function SymbolLegend() {
     },
 
 
-// 12
+// 13
     {
       left: (
           <>
@@ -410,7 +440,7 @@ export default function SymbolLegend() {
     },
 
 
-// 13
+// 14
     {
       left: (
           <>
@@ -442,12 +472,12 @@ export default function SymbolLegend() {
 
 // Spacer row
     {
-      left: <div style={{height: '0.5rem'}}></div>,
+      left: <div style={{height: '0.75rem'}}></div>,
       right: '',
     },
 
 
-// 14
+// 15
     {
       left: (
           <>
@@ -477,7 +507,7 @@ export default function SymbolLegend() {
     },
 
 
-// 15
+// 16
     {
       left: (
           <>
@@ -507,7 +537,7 @@ export default function SymbolLegend() {
     },
 
 
-// 16
+// 17
     {
       left: (
           <>
@@ -537,7 +567,7 @@ export default function SymbolLegend() {
     },
 
 
-// 17
+// 18
     {
       left: (
           <>
@@ -567,7 +597,7 @@ export default function SymbolLegend() {
     },
 
 
-// 18
+// 19
     {
       left: (
           <>
@@ -597,7 +627,7 @@ export default function SymbolLegend() {
     },
 
 
-// 19
+// 20
     {
       left: (
           <>
@@ -638,7 +668,7 @@ export default function SymbolLegend() {
     },
 
 
-// 20
+// 21
     {
       left: (
           <>
@@ -667,74 +697,13 @@ export default function SymbolLegend() {
       ),
     },
 
-
-// 21
+      // Spacer row
     {
-      left: (
-          <>
-            <img
-                src="/equations/plastic_constant.svg"
-                alt="P"
-                style={{
-                  height: '13px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.0em',
-                  display: 'inline',
-                }}
-            />
-            {' = 1.32471795724474 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://mathworld.wolfram.com/PlasticConstant.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            plastic constant
-          </a>
-      ),
-    },
-
-
-// 22
-    {
-      left: (
-          <>
-            <img
-                src="/equations/madelung_constant.svg"
-                alt="M"
-                style={{
-                  height: '13px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.0em',
-                  display: 'inline',
-                }}
-            />
-            {' = − 1.74756459463318 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://en.wikipedia.org/wiki/Madelung_constant"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            Madelung constant
-          </a>
-      ),
-    },
-
-// Spacer row
-    {
-      left: <div style={{height: '0.5rem'}}></div>,
+      left: <div style={{height: '0.75rem'}}></div>,
       right: '',
     },
 
-
-// 23
+// 22
     {
       left: (
           <>
@@ -785,7 +754,7 @@ export default function SymbolLegend() {
     },
 
 
-// 24
+// 23
     {
       left: (
           <>
@@ -815,7 +784,7 @@ export default function SymbolLegend() {
     },
 
 
-// 25
+// 24
     {
       left: (
           <>
@@ -844,98 +813,7 @@ export default function SymbolLegend() {
       ),
     },
 
-
-// 26
-    {
-      left: (
-          <>
-            <img
-                src="/equations/w_we.svg"
-                alt="W_We"
-                style={{
-                  height: '14px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.25em',
-                  display: 'inline',
-                }}
-            />
-            {' = 0.47494937998792 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://mathworld.wolfram.com/WeierstrassConstant.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            Weierstrass constant
-          </a>
-      ),
-    },
-
-
-// 27
-    {
-      left: (
-          <>
-            <img
-                src="/equations/pi.svg"
-                alt="pi"
-                style={{
-                  height: '8.5px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.0em',
-                  display: 'inline',
-                }}
-            />
-            {' = 3.14159265358979 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://en.wikipedia.org/wiki/Pi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            Archimedes&apos; constant
-          </a>
-      ),
-    },
-
-
-// 28
-    {
-      left: (
-          <>
-            <img
-                src="/equations/universal_parabolic_constant.svg"
-                alt="P_up"
-                style={{
-                  height: '16px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.2em',
-                  display: 'inline',
-                }}
-            />
-            {' = 2.29558714939263 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://en.wikipedia.org/wiki/Universal_parabolic_constant"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            universal parabolic constant
-          </a>
-      ),
-    },
-
-
-// 29
+// 25
     {
       left: (
           <>
@@ -965,7 +843,67 @@ export default function SymbolLegend() {
     },
 
 
-// 30
+// 26
+    {
+      left: (
+          <>
+            <img
+                src="/equations/pi.svg"
+                alt="pi"
+                style={{
+                  height: '8.5px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.0em',
+                  display: 'inline',
+                }}
+            />
+            {' = 3.14159265358979 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://en.wikipedia.org/wiki/Pi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            Archimedes&apos; constant
+          </a>
+      ),
+    },
+
+
+// 27
+    {
+      left: (
+          <>
+            <img
+                src="/equations/universal_parabolic_constant.svg"
+                alt="P_up"
+                style={{
+                  height: '16px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.2em',
+                  display: 'inline',
+                }}
+            />
+            {' = 2.29558714939263 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://en.wikipedia.org/wiki/Universal_parabolic_constant"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            universal parabolic constant
+          </a>
+      ),
+    },
+
+
+// 28
     {
       left: (
           <>
@@ -995,7 +933,7 @@ export default function SymbolLegend() {
     },
 
 
-// 31
+// 29
     {
       left: (
           <>
@@ -1025,7 +963,7 @@ export default function SymbolLegend() {
     },
 
 
-// 32
+// 30
     {
       left: (
           <>
@@ -1055,7 +993,7 @@ export default function SymbolLegend() {
     },
 
 
-// 33
+// 31
     {
       left: (
           <>
@@ -1085,7 +1023,7 @@ export default function SymbolLegend() {
     },
 
 
-// 34
+// 32
     {
       left: (
           <>
@@ -1115,7 +1053,7 @@ export default function SymbolLegend() {
     },
 
 
-// 35
+// 33
     {
       left: (
           <>
@@ -1144,15 +1082,43 @@ export default function SymbolLegend() {
       ),
     },
 
+// 34
+    {
+      left: (
+          <>
+            <img
+                src="/equations/w_we.svg"
+                alt="W_We"
+                style={{
+                  height: '14px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.25em',
+                  display: 'inline',
+                }}
+            />
+            {' = 0.47494937998792 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/WeierstrassConstant.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            Weierstrass constant
+          </a>
+      ),
+    },
 
 // Spacer row
     {
-      left: <div style={{height: '0.5rem'}}></div>,
+      left: <div style={{height: '0.75rem'}}></div>,
       right: '',
     },
 
 
-// 36
+// 35
     {
       left: (
           <>
@@ -1182,7 +1148,7 @@ export default function SymbolLegend() {
     },
 
 
-// 37
+// 36
     {
       left: (
           <>
@@ -1212,14 +1178,73 @@ export default function SymbolLegend() {
     },
 
 
+
+// 37
+    {
+      left: (
+          <>
+            <img
+                src="/equations/fibonacci_factorial.svg"
+                alt="F_FF"
+                style={{
+                  height: '16px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.2em',
+                  display: 'inline',
+                }}
+            />
+            {' = 1.22674201072035 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/FibonacciFactorialConstant.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            Fibonacci factorial constant
+          </a>
+      ),
+    },
+
+// 38
+    {
+      left: (
+          <>
+            <img
+                src="/equations/madelung_constant.svg"
+                alt="M"
+                style={{
+                  height: '13px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.0em',
+                  display: 'inline',
+                }}
+            />
+            {' = − 1.74756459463318 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://en.wikipedia.org/wiki/Madelung_constant"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            Madelung constant
+          </a>
+      ),
+    },
+
 // Spacer row
     {
-      left: <div style={{height: '0.5rem'}}></div>,
+      left: <div style={{height: '0.75rem'}}></div>,
       right: '',
     },
 
 
-// 38
+// 39
     {
       left: (
           <>
@@ -1249,7 +1274,7 @@ export default function SymbolLegend() {
     },
 
 
-// 39
+// 40
     {
       left: (
           <>
@@ -1257,7 +1282,7 @@ export default function SymbolLegend() {
                 src="/equations/euler-mascheroni_constant.svg"
                 alt="y"
                 style={{
-                  height: '13px',           // Set preferred height
+                  height: '12px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
                   verticalAlign: '-0.2em',
                   display: 'inline',
@@ -1279,7 +1304,36 @@ export default function SymbolLegend() {
     },
 
 
-// 40
+// 41
+    {
+      left: (
+          <>
+            <img
+                src="/equations/g_k_constant.svg"
+                alt="A"
+                style={{
+                  height: '13px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.0em',
+                  display: 'inline',
+                }}
+            />
+            {' = 1.28242712910062 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/Glaisher-KinkelinConstant.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            Glasher-Kinkelin constant
+          </a>
+      ),
+    },
+
+// 42
     {
       left: (
           <>
@@ -1309,37 +1363,37 @@ export default function SymbolLegend() {
     },
 
 
-// 41
+// 43
     {
       left: (
           <>
             <img
-                src="/equations/d_do.svg"
-                alt="D_Do"
+                src="/equations/j_0-1.svg"
+                alt="j_0,1"
                 style={{
-                  height: '16px',           // Set preferred height
+                  height: '17px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
                   verticalAlign: '-0.2em',
                   display: 'inline',
                 }}
             />
-            {' = 0.739085133215160 ...'}
+            {' = 2.404825557695772 ...'}
           </>
       ),
       right: (
           <a
-              href="https://en.wikipedia.org/wiki/Dottie_number"
+              href="https://mathworld.wolfram.com/BesselFunctionZeros.html"
               target="_blank"
               rel="noopener noreferrer"
               className="legend-link"
           >
-            Dottie number
+            1<sup>st</sup> root of the Bessel function
           </a>
       ),
     },
 
 
-// 42
+// 44
     {
       left: (
           <>
@@ -1369,13 +1423,13 @@ export default function SymbolLegend() {
     },
 
 
-// 43
+// 45
     {
       left: (
           <>
             <img
-                src="/equations/j_0-1.svg"
-                alt="j_0,1"
+                src="/equations/d_do.svg"
+                alt="D_Do"
                 style={{
                   height: '16px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
@@ -1383,23 +1437,235 @@ export default function SymbolLegend() {
                   display: 'inline',
                 }}
             />
-            {' = 2.404825557695772 ...'}
+            {' = 0.739085133215160 ...'}
           </>
       ),
       right: (
           <a
-              href="https://mathworld.wolfram.com/BesselFunctionZeros.html"
+              href="https://en.wikipedia.org/wiki/Dottie_number"
               target="_blank"
               rel="noopener noreferrer"
               className="legend-link"
           >
-            1<sup>st</sup> root of the Bessel function
+            Dottie number
+          </a>
+      ),
+    },
+
+// 46
+    {
+      left: (
+          <>
+            <img
+                src="/equations/l_ll.svg"
+                alt="L_LL"
+                style={{
+                  height: '16px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.2em',
+                  display: 'inline',
+                }}
+            />
+            {' = 0.662743419349181 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://en.wikipedia.org/wiki/Dottie_number"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            Laplace limit
           </a>
       ),
     },
 
 
-// 44
+// Spacer row
+    {
+      left: <div style={{height: '0.75rem'}}></div>,
+      right: '',
+    },
+
+// 48
+    {
+      left: (
+          <>
+            <img
+                src="/equations/alpha_f.svg"
+                alt="alpha_F"
+                style={{
+                  height: '13px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.2em',
+                  display: 'inline',
+                }}
+            />
+            {' = 2.50290787509589 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://en.wikipedia.org/wiki/Feigenbaum_constants"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            alpha Feigenbaum constant
+          </a>
+      ),
+    },
+
+
+// 49
+    {
+      left: (
+          <>
+            <img
+                src="/equations/del_f.svg"
+                alt="del_F"
+                style={{
+                  height: '16px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.2em',
+                  display: 'inline',
+                }}
+            />
+            {' = 4.66920160910299 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://en.wikipedia.org/wiki/Feigenbaum_constants"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            delta Feigenbaum constant
+          </a>
+      ),
+    },
+
+// 50
+    {
+      left: (
+          <>
+            <img
+                src="/equations/plastic_constant.svg"
+                alt="P"
+                style={{
+                  height: '13px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.0em',
+                  display: 'inline',
+                }}
+            />
+            {' = 1.32471795724474 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/PlasticConstant.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            plastic constant
+          </a>
+      ),
+    },
+
+// 51
+    {
+      left: (
+          <>
+            <img
+                src="/equations/silver_constant.svg"
+                alt="S"
+                style={{
+                  height: '13px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.0em',
+                  display: 'inline',
+                }}
+            />
+            {' = 3.24697960371714 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/SilverConstant.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            silver constant
+          </a>
+      ),
+    },
+
+
+// 52
+    {
+      left: (
+          <>
+            <img
+                src="/equations/c_q.svg"
+                alt="C_Q"
+                style={{
+                  height: '18px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.2em',
+                  display: 'inline',
+                }}
+            />
+            {' = 0.605443657196732 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/QRSConstant.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            QRS constant
+          </a>
+      ),
+    },
+
+
+// 53
+    {
+      left: (
+          <>
+            <img
+                src="/equations/c_qa.svg"
+                alt="C_QA"
+                style={{
+                  height: '18px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.2em',
+                  display: 'inline',
+                }}
+            />
+            {' = 2.03816937970215 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/QRSConstant.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            associated QRS constant
+          </a>
+      ),
+    },
+
+// 54
     {
       left: (
           <>
@@ -1429,171 +1695,14 @@ export default function SymbolLegend() {
     },
 
 
-// 45
-    {
-      left: (
-          <>
-            <img
-                src="/equations/c_kl.svg"
-                alt="C_KL"
-                style={{
-                  height: '16px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.2em',
-                  display: 'inline',
-                }}
-            />
-            {' = 1.78723165018296 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://mathworld.wolfram.com/Komornik-LoretiConstant.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            Komornik-Loreti constant
-          </a>
-      ),
-    },
-
-
 // Spacer row
     {
-      left: <div style={{height: '0.5rem'}}></div>,
+      left: <div style={{height: '0.75rem'}}></div>,
       right: '',
     },
 
 
-// 46
-    {
-      left: (
-          <>
-            <img
-                src="/equations/c_q.svg"
-                alt="C_Q"
-                style={{
-                  height: '17px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.2em',
-                  display: 'inline',
-                }}
-            />
-            {' = 0.605443657196732 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://mathworld.wolfram.com/QRSConstant.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            QRS constant
-          </a>
-      ),
-    },
-
-
-// 47
-    {
-      left: (
-          <>
-            <img
-                src="/equations/c_qa.svg"
-                alt="C_QA"
-                style={{
-                  height: '17px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.2em',
-                  display: 'inline',
-                }}
-            />
-            {' = 2.03816937970215 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://mathworld.wolfram.com/QRSConstant.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            associated QRS constant
-          </a>
-      ),
-    },
-
-
-// 48
-    {
-      left: (
-          <>
-            <img
-                src="/equations/alpha_f.svg"
-                alt="alpha_F"
-                style={{
-                  height: '13px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.2em',
-                  display: 'inline',
-                }}
-            />
-            {' = 2.50290787509589 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://www.wolframalpha.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            https://en.wikipedia.org/wiki/Feigenbaum_constants
-          </a>
-      ),
-    },
-
-
-// 49
-    {
-      left: (
-          <>
-            <img
-                src="/equations/del_f.svg"
-                alt="del_F"
-                style={{
-                  height: '16px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.2em',
-                  display: 'inline',
-                }}
-            />
-            {' = 4.66920160910299 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://www.wolframalpha.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            https://en.wikipedia.org/wiki/Feigenbaum_constants
-          </a>
-      ),
-    },
-
-
-// Spacer row
-    {
-      left: <div style={{height: '0.5rem'}}></div>,
-      right: '',
-    },
-
-
-// 50
+// 55
     {
       left: (
           <>
@@ -1625,7 +1734,7 @@ export default function SymbolLegend() {
     },
 
 
-// 51
+// 56
     {
       left: (
           <>
@@ -1657,7 +1766,7 @@ export default function SymbolLegend() {
     },
 
 
-// 52
+// 57
     {
       left: (
           <>
@@ -1689,7 +1798,7 @@ export default function SymbolLegend() {
     },
 
 
-// 53
+// 58
     {
       left: (
           <>
@@ -1730,7 +1839,7 @@ export default function SymbolLegend() {
     },
 
 
-// 54
+// 59
     {
       left: (
           <>
@@ -1762,7 +1871,7 @@ export default function SymbolLegend() {
     },
 
 
-// 55
+// 60
     {
       left: (
           <>
@@ -1801,7 +1910,7 @@ export default function SymbolLegend() {
     },
 
 
-// 56
+// 61
     {
       left: (
           <>
@@ -1833,12 +1942,12 @@ export default function SymbolLegend() {
 
     // Spacer row
     {
-      left: <div style={{height: '0.5rem'}}></div>,
+      left: <div style={{height: '0.75rem'}}></div>,
       right: '',
     },
 
 
-// 57
+// 62
     {
       left: (
           <>
@@ -1867,7 +1976,7 @@ export default function SymbolLegend() {
     },
 
 
-// 58
+// 63
     {
       left: (
           <>
@@ -1896,7 +2005,7 @@ export default function SymbolLegend() {
     },
 
 
-// 59
+// 64
     {
       left: (
           <>
@@ -1925,7 +2034,7 @@ export default function SymbolLegend() {
     },
 
 
-// 60
+// 65
     {
       left: (
           <>

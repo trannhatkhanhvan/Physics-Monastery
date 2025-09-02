@@ -99,7 +99,7 @@ export default function SimplestManifold() {
         <div style={{ height: '2rem' }} />
 
         <div className="equation-line">
-          <img src="/equations/v_fe_equation.svg" alt="Equation 1" style={{ height: '52px', width: 'auto' }} />
+          <img src="/equations/v_fe_equation.svg" alt="Equation 1" style={{ height: '48px', width: 'auto' }} />
         </div>
         <div style={{ height: '2rem' }} />
 
@@ -145,7 +145,7 @@ export default function SimplestManifold() {
           </a>, <img
             src="/equations/v_fe_2_g_gi.svg"
             alt="V_fe=2G_Gi"
-            style={{ height: '18px', width: 'auto', display: 'inline-block', position: 'relative', top: '1px' }}
+            style={{ height: '16px', width: 'auto', display: 'inline-block', position: 'relative', top: '0px' }}
           />, and <img
             src="/equations/g_gi.svg"
             alt="G_Gi"
@@ -163,8 +163,8 @@ export default function SimplestManifold() {
         <div style={{ height: '2rem' }} />
 
         <div className="equation-line" style={{ display: 'flex', justifyContent: 'center', gap: '4rem' }}>
-          <img src="/equations/imaginary_golden_ratio_equation.svg" alt="Equation 5a" style={{ height: '28px', width: 'auto' }} />
-          <img src="/equations/i_equation.svg" alt="Equation 5b" style={{ height: '28px', width: 'auto' }} />
+          <img src="/equations/imaginary_golden_ratio_equation.svg" alt="Equation 5a" style={{ height: '26px', width: 'auto' }} />
+          <img src="/equations/i_equation.svg" alt="Equation 5b" style={{ height: '26px', width: 'auto' }} />
         </div>
         <div style={{ height: '2.5rem' }} />
 
@@ -172,14 +172,14 @@ export default function SimplestManifold() {
         <div style={{ height: '2rem' }} />
 
         <div className="equation-line">
-          <img src="/equations/real_conjugate_equation.svg" alt="Equation 2" style={{ height: '52px', width: 'auto' }} />
+          <img src="/equations/real_conjugate_equation.svg" alt="Equation 2" style={{ height: '48px', width: 'auto' }} />
         </div>
         <div style={{ height: '2rem' }} />
 
         <p className="equation-description">Where <img
             src="/equations/pi.svg"
             alt="pi"
-            style={{ height: '9px', width: 'auto', display: 'inline-block', position: 'relative', top: '-1px' }}
+            style={{ height: '9px', width: 'auto', display: 'inline-block', position: 'relative', top: '0px' }}
           /> = <a
             href="https://en.wikipedia.org/wiki/Pi"
             target="_blank"
@@ -192,12 +192,12 @@ export default function SimplestManifold() {
           </a>.</p>
         <div style={{ height: '2rem' }} />
 
-        <p className="equation-description">These constructions pull apart into two dilogarithm pieces, made of identical real and inverse imagainry parts.</p>
+        <p className="equation-description">These constructions pull apart into two dilogarithms, made of identical real and inverse imagainry parts.</p>
         <div style={{ height: '2rem' }} />
 
         <div className="equation-line" style={{ display: 'flex', justifyContent: 'center', gap: '4rem' }}>
-          <img src="/equations/li_2_inverse.svg" alt="Equation 5a" style={{ height: '52px', width: 'auto' }} />
-          <img src="/equations/li_2_regular.svg" alt="Equation 5b" style={{ height: '52px', width: 'auto' }} />
+          <img src="/equations/li_2_inverse.svg" alt="Equation 5a" style={{ height: '48px', width: 'auto' }} />
+          <img src="/equations/li_2_regular.svg" alt="Equation 5b" style={{ height: '48px', width: 'auto' }} />
         </div>
         <div style={{ height: '2rem' }} />
 
@@ -234,7 +234,7 @@ export default function SimplestManifold() {
         <div style={{ height: '2rem' }} />
 
         <div className="equation-line" style={{ display: 'flex', justifyContent: 'center' }}>
-  <img src="/equations/2k_equation.svg" alt="Equation 2" style={{ height: '64px', width: 'auto', position: 'relative', top: '0px', left: '-151px' }} />
+  <img src="/equations/2k_equation.svg" alt="Equation 2" style={{ height: '58px', width: 'auto', position: 'relative', top: '0px', left: '-151px' }} />
 </div>
         <div style={{ height: '2rem' }} />
 
@@ -242,8 +242,8 @@ export default function SimplestManifold() {
         <div style={{ height: '2rem' }} />
 
         <div className="equation-line" style={{ display: 'flex', justifyContent: 'center', gap: '4rem' }}>
-          <img src="/equations/neutron_electron_radius_ratio.svg" alt="Equation 5a" style={{ height: '52px', width: 'auto', position: 'relative', top: '0px', left: '-0px' }} />
-          <img src="/equations/neutron_proton_radius_ratio.svg" alt="Equation 5b" style={{ height: '46px', width: 'auto', position: 'relative', top: '4px', left: '-0px' }} />
+          <img src="/equations/neutron_electron_radius_ratio.svg" alt="Equation 5a" style={{ height: '48px', width: 'auto', position: 'relative', top: '0px', left: '-0px' }} />
+          <img src="/equations/neutron_proton_radius_ratio.svg" alt="Equation 5b" style={{ height: '42px', width: 'auto', position: 'relative', top: '4px', left: '-0px' }} />
         </div>
         <div style={{ height: '2rem' }} />
 

@@ -31,12 +31,31 @@ export default function BooksPage() {
 
   const bookList = [
     {
-      title: 'The Logic of Persistence',
-      thumb: '/books/logic_of_persistence_cover.jpg',
-      full: '/books/logic.jpg',
-      alt: 'The Logic of Persistence Cover',
-      link: 'https://www.youtube.com/watch?v=vRPYe9ZotcM&list=PLEvMwDb3CwhQBHKmFcYzM2QkkFOlO-4Gr&t',
+      title: 'Einstein’s Intuition',
+      isEinstein: true, // 🔑 used to trigger custom rendering
     },
+
+    {
+    title: 'The Constants of Nature',
+    thumb: '/books/the_constants_of_nature_cover.jpg',
+    alt: 'The Constants of Nature Cover',
+    link: 'https://www.amazon.com/Constants-Nature-Numbers-Deepest-Universe/dp/1400032253/ref=pd_lpo_d_sccl_1/147-4333305-7685738?pd_rd_w=jF4dZ&content-id=amzn1.sym.4c8c52db-06f8-4e42-8e56-912796f2ea6c&pf_rd_p=4c8c52db-06f8-4e42-8e56-912796f2ea6c&pf_rd_r=RBMFYBY33WV5E5Q95TST&pd_rd_wg=gyTMG&pd_rd_r=dd594ee7-349f-4043-9905-bf7b5562b7f7&pd_rd_i=1400032253&psc=1',
+  },
+
+    {
+    title: 'The Elegant Universe',
+    thumb: '/books/the_elegant_universe_cover.jpg',
+    alt: 'The Elegant Universe',
+    link: 'https://www.amazon.com/Elegant-Universe-Superstrings-Dimensions-Ultimate/dp/B002D1P31U',
+  },
+
+    {
+    title: 'Gauge fields, Knots and Gravity',
+    thumb: '/books/gauge_fields_knots_and_gravity_cover.jpg',
+    alt: 'Gauge fields, Knots and Gravity',
+    link: 'https://www.amazon.com/GAUGE-FIELDS-KNOTS-GRAVITY-Everything/dp/9810220340',
+  },
+
     {
       title: '44 derangements',
       thumb: '/books/44_derangements_cover.jpg',
@@ -44,10 +63,70 @@ export default function BooksPage() {
       alt: '44 Derangements Cover',
       link: 'https://www.amazon.com/derangements-shape-persistence-Thad-Roberts-ebook/dp/B09VV9MLCV',
     },
+
     {
-      title: 'Einstein’s Intuition',
-      isEinstein: true, // 🔑 used to trigger custom rendering
-    },
+    title: 'Geometry, Topology and Physics',
+    thumb: '/books/geometry_topology_and_physics_cover.jpg',
+    alt: 'Geometry, Topology and Physics',
+    link: 'https://www.amazon.com/Geometry-Topology-Physics-Graduate-Student/dp/0750306068/ref=pd_lpo_d_sccl_1/147-4333305-7685738?pd_rd_w=rNm9V&content-id=amzn1.sym.4c8c52db-06f8-4e42-8e56-912796f2ea6c&pf_rd_p=4c8c52db-06f8-4e42-8e56-912796f2ea6c&pf_rd_r=NWTA24M6FM8NKFBCMC2M&pd_rd_wg=I5hM1&pd_rd_r=d0cf8f4a-5fe4-43e9-be68-8a5d0e892d2e&pd_rd_i=0750306068&psc=1',
+  },
+
+    {
+    title: 'The Metaphysics Within Physics',
+    thumb: '/books/the_metaphysics_within_physics_cover.jpg',
+    alt: 'The Metaphysics Within Physics',
+    link: 'https://www.amazon.com/Metaphysics-Within-Physics-Tim-Maudlin/dp/0199575371',
+  },
+
+    {
+    title: 'The Road to Reality',
+    thumb: '/books/the_road_to_reality_cover.jpg',
+    alt: 'The Road to Reality',
+    link: 'https://www.amazon.com/Road-Reality-Complete-Guide-Universe/dp/0679776311',
+  },
+
+    {
+    title: 'A Brief History of Time',
+    thumb: '/books/a_brief_history_of_time_cover.jpg',
+    alt: 'A Brief History of Time',
+    link: 'https://www.amazon.com/Brief-History-Time-Black-Holes/dp/055305340X',
+  },
+
+    {
+    title: 'Spacetime and Geometry',
+    thumb: '/books/spacetime_and_geometry_cover.jpg',
+    alt: 'Spacetime and Geometry',
+    link: 'https://www.google.com/books/edition/Spacetime_and_Geometry/1XSmDwAAQBAJ?hl=en&gbpv=1&dq=spacetime+and+geometry+book+amazon&printsec=frontcover',
+  },
+
+    {
+    title: 'Probability Theory',
+    thumb: '/books/probability_theory_cover.jpg',
+    alt: 'Probability Theory',
+    link: 'https://www.amazon.com/Probability-Theory-Science-T-Jaynes/dp/0521592712',
+  },
+
+    {
+    title: 'The Geometry of Physics',
+    thumb: '/books/the_geometry_of_physics_cover.jpg',
+    alt: 'The Geometry of Physics',
+    link: 'https://www.amazon.com/Geometry-Physics-Theodore-Frankel-ebook/dp/B009ZRNNGW',
+  },
+
+    {
+    title: 'Geometric Algebra for Physicists',
+    thumb: '/books/geometric_algebra_for_physicists_cover.jpg',
+    alt: 'Geometric Algebra for Physicists',
+    link: 'https://www.amazon.com/Geometric-Algebra-Physicists-Chris-Doran/dp/0521715954',
+  },
+
+    {
+    title: 'Warped Passages',
+    thumb: '/books/warped_passages_cover.jpg',
+    alt: 'Warped Passages',
+    link: 'https://www.amazon.com/Warped-Passages-Unraveling-Mysteries-Dimensions/dp/0060531088',
+  },
+
     {
       title: 'Passages',
       thumb: '/books/passages_cover.jpg',
@@ -55,20 +134,7 @@ export default function BooksPage() {
       alt: 'Passages Cover',
       link: 'https://www.amazon.com/Passages-Thad-Roberts-ebook/dp/B07TFDKTGC',
     },
-    {
-      title: 'Source Code',
-      thumb: '/books/source_code_cover.jpg',
-      full: '/books/logic.jpg',
-      alt: 'Source Code Cover',
-      link: 'https://www.amazon.com/Source-Code-persistence-Thad-Roberts-ebook/dp/B08ZCF9T99',
-    },
-    {
-      title: 'A Perfect Universe',
-      thumb: '/books/perfect_universe_cover.jpg',
-      full: '/books/logic.jpg',
-      alt: 'A Perfect Universe Cover',
-      link: 'https://www.amazon.com/Perfect-Universe-Thad-Roberts-ebook/dp/B085B8QZMS',
-    },
+
   ];
 
   return (
@@ -76,15 +142,7 @@ export default function BooksPage() {
       <div className="symbol-overlay" />
 
       <div className="partition-content">
-        <div className="legend-title">books</div>
-
-        <div style={{ height: '1rem' }} />
-
-        <p className="equation-description">
-          The books below curate the major steps in my journey toward understanding the constants of Nature through geometry.
-        </p>
-
-        <div style={{ height: '2rem' }} />
+        <div className="legend-title"> related books</div>
 
         {/* ✅ Book cover gallery */}
         <div
@@ -107,7 +165,7 @@ export default function BooksPage() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        height: '300px',
+        height: '270px',
       }}
     >
       {/* Floating toggle controls */}
@@ -139,7 +197,7 @@ export default function BooksPage() {
           src={einsteinVariants[einsteinIndex].thumb}
           alt={einsteinVariants[einsteinIndex].alt}
           style={{
-            height: '300px',
+            height: '270px',
             width: 'auto',
             cursor: 'pointer',
             borderRadius: '0.4rem',
@@ -165,7 +223,7 @@ export default function BooksPage() {
                   src={book.thumb}
                   alt={book.alt}
                   style={{
-                    height: '300px',
+                    height: '270px',
                     width: 'auto',
                     cursor: 'pointer',
                     borderRadius: '0.4rem',

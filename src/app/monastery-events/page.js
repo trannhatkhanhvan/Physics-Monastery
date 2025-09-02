@@ -7,7 +7,7 @@ import '../globals.css';
 export default function MonasteryEvents() {
   const [activeImage, setActiveImage] = useState(null);
 
-  const photoList = Array.from({ length: 15 }, (_, i) => {
+  const photoList = Array.from({ length: 18 }, (_, i) => {
     const index = i + 1;
     return {
       thumb: `/photos/thumbnails/photo_${index}_thumb.jpg`,
@@ -25,21 +25,66 @@ export default function MonasteryEvents() {
       <div className="partition-content">
         <div className="legend-title">Physics Monastery events</div>
 
-        <div style={{ height: '1rem' }} />
-
         <p className="equation-description">
-          Interested in volunteering at the Physics Monastery? {' '}
-          <a
-            href="contact-us"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: 'inherit', textDecoration: 'none' }}
-            onMouseOver={e => (e.target.style.color = 'yellow')}
-            onMouseOut={e => (e.target.style.color = 'inherit')}
-          >
-            Contact us
-          </a> to participate in research retreats and collaborative problem-solving sessions.
-        </p>
+  The next Physics Monastery Science Retreat will be November 1–8, 2025, in Logan, Utah.
+</p>
+
+<div style={{ height: '1rem' }} />
+
+<div className="equation-description" style={{ whiteSpace: 'pre-wrap', textIndent: 0 }}>
+{`         Join us as we dive into the following topics:
+
+                 primes
+                 the Riemann zeta function
+                 the gamma function
+                 modular arithmetic
+                 unimodular lattices
+                 
+                 the Euclidean algorithm
+                 continued fractions
+                 fractals
+                 the Mandelbrot set
+                 recursion
+                 
+                 the language of Calculus
+                 the geometries available to Calculus: manifolds
+                 the simplest manifold: Gieseking's manifold
+                 and its double cover: the hyperbolic figure eight knot
+                 
+                 the laws of physics
+                     forces
+                     built-in rules of interaction
+                     built-in limits
+                     
+                 288 constants of Nature
+                 288 internal symmetries available to the hyperbolic figure eight knot
+                 1 external transform space: the 24-dimensional unit hypersphere
+                 117 23-dimensional reduced versions of that transform space
+                 118 self-persistent forms: atoms
+
+         Outdoor retreat activities available:
+                 jem stone mining
+                 trilobite hunting
+                 warm spring caves
+                 west desert canals`}
+</div>
+
+<div style={{ height: '2rem' }} />
+
+<p className="equation-description">
+  <a
+    href="/contact-us"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ color: 'inherit', textDecoration: 'none' }}
+    onMouseOver={(e) => (e.currentTarget.style.color = 'yellow')}
+    onMouseOut={(e) => (e.currentTarget.style.color = 'inherit')}
+  >
+    Contact us
+  </a>{' '}
+  to participate in this collaborative problem-solving session.
+</p>
+
 
         <div style={{ height: '2rem' }} />
 

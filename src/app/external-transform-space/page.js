@@ -16,8 +16,8 @@ export default function ExternalTransformSpace() {
         <div className="equation-line">
           <img
             src="/equations/v_24_equation.svg"
-            alt="Hyperbolic Partition Equation"
-            style={{ height: '48px', width: 'auto' }}
+            alt="volume of the 24d unit hypersphere"
+            style={{ height: '42px', width: 'auto' }}
           />
         </div>
 
@@ -26,8 +26,8 @@ export default function ExternalTransformSpace() {
         <div className="equation-line" style={{ marginLeft: '-1.5rem' }}>
   <img
     src="/equations/leech_lattice_equation.svg"
-    alt="Hyperbolic Partition Equation"
-    style={{ height: '48px', width: 'auto' }}
+    alt="Leech lattice density"
+    style={{ height: '42px', width: 'auto' }}
   />
 </div>
 
@@ -188,7 +188,7 @@ export default function ExternalTransformSpace() {
           <img
             src="/equations/constructive_zero_1.svg"
             alt="1st constructive zero"
-            style={{ height: '44px', width: 'auto' }}
+            style={{ height: '42px', width: 'auto' }}
           />
         </div>
 
@@ -198,7 +198,7 @@ export default function ExternalTransformSpace() {
           <img
             src="/equations/constructive_zero_2.svg"
             alt="2nd constructive zero"
-            style={{ height: '44px', width: 'auto' }}
+            style={{ height: '42px', width: 'auto' }}
           />
         </div>
 
@@ -214,7 +214,7 @@ export default function ExternalTransformSpace() {
           <img
             src="/equations/twisted_zero_1.svg"
             alt="Hyperbolic Partition Equation"
-            style={{ height: '48px', width: 'auto' }}
+            style={{ height: '46px', width: 'auto' }}
           />
         </div>
 
@@ -224,17 +224,17 @@ export default function ExternalTransformSpace() {
           <img
             src="/equations/twisted_zero_2.svg"
             alt="Hyperbolic Partition Equation"
-            style={{ height: '48px', width: 'auto' }}
+            style={{ height: '46px', width: 'auto' }}
           />
         </div>
 
         <div style={{ height: '1.5rem' }} />
 
-        <div className="equation-line" style={{ marginLeft: '8.2rem' }}>
+        <div className="equation-line" style={{ marginLeft: '7.5rem' }}>
           <img
             src="/equations/twisted_zero_product.svg"
             alt="Hyperbolic Partition Equation"
-            style={{ height: '43.0px', width: 'auto' }}
+            style={{ height: '41.0px', width: 'auto' }}
           />
         </div>
 

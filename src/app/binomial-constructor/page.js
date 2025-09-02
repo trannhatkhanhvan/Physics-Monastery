@@ -17,7 +17,7 @@ export default function BinomialConstructor() {
           <img
             src="/equations/binomial_constructor_equation.svg"
             alt="binomial constructor equation"
-            style={{ height: '35px', width: 'auto' }}
+            style={{ height: '30px', width: 'auto' }}
           />
         </div>
 
@@ -97,7 +97,7 @@ export default function BinomialConstructor() {
             src="/equations/box_symbol.svg"
             alt="box symbol"
             style={{ height: '15px', width: 'auto', verticalAlign: '-0.1em', display: 'inline' }}
-          /> = the internal inversion boundary of the minimal hyperbolic structure.
+          /> = the hyperbolic inversion boundary.
 
         </p>
 
@@ -107,7 +107,7 @@ export default function BinomialConstructor() {
           <img
             src="/equations/box_symbol_equation.svg"
             alt="box symbol equation"
-            style={{ height: '52px', width: 'auto' }}
+            style={{ height: '48px', width: 'auto' }}
           />
         </div>
 

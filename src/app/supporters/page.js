@@ -38,7 +38,7 @@ export default function Supporters() {
           >
             NIST/CODATA
           </a>
-, and a growing community of supporters who believe in the pursuit of deep understanding and the unification of physical law.
+, and a growing community of supporters who believe in the pursuit of deep understanding and the unification of physical law. Thank you all!
         </p>
 
         {/* ✅ Double-column list of names */}
@@ -97,6 +97,7 @@ export default function Supporters() {
       <li>Tim Dodge</li>
       <li>Attie Retief</li>
       <li>L</li>
+      <li>Mike Godzina</li>
       <li>Cully O&apos;Meara</li>
       <li>Joakim Pettersson</li>
       <li>Duarte Cunha Leáo</li>
@@ -110,6 +111,7 @@ export default function Supporters() {
     <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
       <li>Natural Philosopher</li>
       <li>Natural Philosopher</li>
+      <li>Advocate</li>
       <li>Advocate</li>
       <li>Volunteer</li>
       <li>Volunteer</li>
@@ -138,8 +140,10 @@ export default function Supporters() {
       <li>bspidel</li>
       <li>beads</li>
       <li>Jim</li>
+      <li>Dan Girshovich</li>
     </ul>
     <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
+      <li>Volunteer</li>
       <li>Volunteer</li>
       <li>Volunteer</li>
       <li>Volunteer</li>
