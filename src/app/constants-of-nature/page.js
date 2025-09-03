@@ -9165,7 +9165,7 @@ export default function ConstantsOfNature() {
                             display: "inline",
                         }}
                     />{" "}
-                    = Euler's number, and{" "}
+                    = Euler&rsquo;s number, and{" "}
                     <img
                         src="/equations/zeta_first_negative_one.svg"
                         alt="zeta'(-1)"
@@ -9174,7 +9174,7 @@ export default function ConstantsOfNature() {
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
-                    />{" "} the 1<sup>st</sup> derivative of the Reimann zeta function at -1.
+                    />{" "} the 1<sup>st</sup> derivative of the Riemann zeta function at -1.
                   </span>
                 </div>
             </div>
@@ -70037,7 +70037,7 @@ J ⋮ kg{" "}
 
 </div> {/* end column flex */}
 
-{/* Footer title pinned in the scroll container's bottom padding */}
+{/* Footer title pinned in the scroll containers bottom padding */}
 <div
   style={{
     position: "fixed",          // ← pin to the bottom of the viewport/footer
