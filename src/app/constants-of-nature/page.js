@@ -20,6 +20,19 @@ const BREAKS_BY_COLUMN = [
   [3, 7, 12, 24, 26, 28],          // column 8
 ];
 
+// Per-column horizontal nudges (negative = left, positive = right)
+const COLUMN_X_SHIFT = [
+  -44, // column 1
+  -36, // column 2
+  -25, // column 3
+  -40, // column 4
+  -44, // column 5
+  -48, // column 6
+  -42, // column 7
+  -44, // column 8
+];
+
+
 
 export default function ConstantsOfNature() {
   const columnTitles = [
@@ -33,23 +46,41 @@ export default function ConstantsOfNature() {
     "Column 8 of 8 — Cartesian transforms: 3-part quadrances"
   ];
 
-  const totalColumns = 8;
-  const equationsPerColumn = 36;
-  const [columnIndex, setColumnIndex] = useState(2);
-  const startIndex = columnIndex * equationsPerColumn;
-  const [popupContent, setPopupContent] = useState(null);
-  const [hoveredEq, setHoveredEq] = useState(null);
-    useEffect(() => {
-    if (!popupContent) return;                 // only listen when a popup is open
-    function onKey(e) {
-      if (e.key === "Escape") setPopupContent(null);
-    }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [popupContent]);
+const totalColumns = 8;
+const equationsPerColumn = 36;
+
+/* --- STATE (keep these first) --- */
+const [columnIndex, setColumnIndex] = useState(2);
+const [popupEq, setPopupEq] = useState(null);
+const [hoveredEq, setHoveredEq] = useState(null);
+
+/* --- DERIVED FROM STATE --- */
+const startIndex = columnIndex * equationsPerColumn;
+
+/* --- HANDLERS --- */
+const nextColumn = () => setColumnIndex(c => (c + 1) % totalColumns);
+const prevColumn = () => setColumnIndex(c => (c - 1 + totalColumns) % totalColumns);
+
+/* --- DEBUG: confirm clicks change state --- */
+useEffect(() => {
+  console.log('[constants] columnIndex now', columnIndex, 'startIndex', startIndex);
+}, [columnIndex, startIndex]);
+
+/* --- Escape closes popup --- */
+useEffect(() => {
+  if (popupEq == null) return;
+  function onKey(e) {
+    if (e.key === 'Escape') setPopupEq(null);
+  }
+  window.addEventListener('keydown', onKey);
+  return () => window.removeEventListener('keydown', onKey);
+}, [popupEq]);
 
 
-    const GROUP_SPACER_HEIGHT = "35px"; // height of the spacer
+/* --- constants --- */
+const GROUP_SPACER_HEIGHT = '35px';
+
+
 
     const equationNames = {
         1: "hartree-kelvin relationship",
@@ -69535,97 +69566,105 @@ J ⋮ kg{" "}
 
     return (
   <LayoutWrapper>
-    <div className="constants-of-nature-page" style={{ position: "relative" }}>
+    <div className="constants-of-nature-page" style={{ position: "relative", overflowX: "visible" }}>
       <div className="constants-overlay" />
 
-      {/* Left Arrow */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "20px",
-          transform: "translateY(-50%)",
-          zIndex: 10,
-        }}
-      >
-        <button
-          onClick={() =>
-            setColumnIndex((columnIndex - 1 + totalColumns) % totalColumns)
-          }
-          style={{
-            fontSize: "40px",
-            color: "white",
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-            <path d="M16 5v14L5 12z" />
-          </svg>
-        </button>
-      </div>
+     {/* Left Arrow */}
+<div
+  style={{
+    position: "fixed",          // ← fixed so transforms/parents can't affect it
+    top: "50%",
+    left: "185px",              // 165px sidebar + 20px offset
+    transform: "translateY(-50%)",
+    zIndex: 2000,               // ← above everything
+    pointerEvents: "auto",
+  }}
+>
+  <button
+    type="button"
+    onClick={() => setColumnIndex(c => (c - 1 + totalColumns) % totalColumns)}
+    style={{
+      fontSize: "40px",
+      color: "white",
+      background: "none",
+      border: "none",
+      cursor: "pointer",
+      padding: 0,
+    }}
+  >
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M16 5v14L5 12z" />
+    </svg>
+  </button>
+</div>
 
-      {/* Right Arrow */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          right: "20px",
-          transform: "translateY(-50%)",
-          zIndex: 10,
-        }}
-      >
-        <button
-          onClick={() =>
-            setColumnIndex((columnIndex + 1) % totalColumns)
-          }
-          style={{
-            fontSize: "40px",
-            color: "white",
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </button>
-      </div>
+{/* Right Arrow */}
+<div
+  style={{
+    position: "fixed",
+    top: "50%",
+    right: "20px",
+    transform: "translateY(-50%)",
+    zIndex: 2000,
+    pointerEvents: "auto",
+  }}
+>
+  <button
+    type="button"
+    onClick={() => setColumnIndex(c => (c + 1) % totalColumns)}
+    style={{
+      fontSize: "40px",
+      color: "white",
+      background: "none",
+      border: "none",
+      cursor: "pointer",
+      padding: 0,
+    }}
+  >
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M8 5v14l11-7z" />
+    </svg>
+  </button>
+</div>
+
+
+
+
 
       {/* Main content area */}
       <div
   style={{
-    position: "absolute",
-    top: 0,
-    left: "50%",
-    transform: "translateX(-50%)",
+    position: "relative",
     backgroundColor: "transparent",
     color: "white",
     minHeight: "100vh",
-    padding: "0",
+    padding: 0,
     overflow: "visible",
     fontFamily: "sans-serif",
     zIndex: 1,
-    width: "800px", // force content to fixed width
   }}
 >
 
+
         <div style={{ position: "relative", zIndex: 2, minHeight: "100vh" }}>
-          {/* Title */}
-          <div
-            style={{
-              textAlign: "center",
-              fontSize: "24px",
-              fontWeight: "normal",
-              fontFamily: "'Times New Roman', Times, serif",
-              paddingTop: "7.0px",
-              paddingBottom: "7.0px",
-            }}
-          >
-            Constants of Nature
-          </div>
+         
+            
+            {/* Title (centered across the area to the right of the sidebar) */}
+<div
+  style={{
+    width: "calc(100vw - 165px)",
+    textAlign: "center",
+    fontSize: "24px",
+    fontWeight: "normal",
+    fontFamily: "'Times New Roman', Times, serif",
+    paddingTop: "7px",
+    paddingBottom: "7px",
+  }}
+>
+  Constants of Nature
+</div>
+
+
 
           {/* Scrollable equations column */}
 <div
@@ -69633,31 +69672,37 @@ J ⋮ kg{" "}
     width: "100%",
     paddingTop: "0px",
     position: "relative",
+    pointerEvents: "auto",
   }}
 >
   <div
     style={{
       height: "calc(100vh - 100px)",
-      overflowY: "scroll",
-      overflowX: "visible",
       paddingTop: "4px",
+      paddingRight: "48px",
       paddingBottom: "64px",
       boxSizing: "border-box",
-      display: "flex",
-      justifyContent: "center", // ✅ centers the equation column
-        position: "relative",
+      display: "block",
+      overflowY: "auto",
+      overflowX: "visible",
+      position: "relative",
+      pointerEvents: "auto",
     }}
   >
     <div
-  style={{
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-end",
-    width: "max-content",
-    maxWidth: "800px",
-    transform: "translateX(-44px)", // ✅ force manual shift to the left
-  }}
->
+      key={columnIndex}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-end",
+        width: "fit-content",
+        maxWidth: "100%",
+        margin: "0 auto",
+        transform: `translateX(${COLUMN_X_SHIFT[columnIndex] ?? 0}px)`,
+        pointerEvents: "auto",
+      }}
+    >
+
 
 
 
@@ -69972,65 +70017,83 @@ J ⋮ kg{" "}
                     const constantName = equationNames[eqNumber];
 
                     return (
-    <div key={eqNumber} style={{ display: "contents" }}>
-      {/* Equation row */}
-      <div
-        style={{
-          position: "relative",
-          marginBottom: isBreakHere ? `calc(${GROUP_SPACER_HEIGHT} + 4px)` : "4px",
-          display: "flex",
-          justifyContent: "flex-end",
-          width: "100%",
-          cursor: "pointer",
-        }}
-        onMouseEnter={() => setHoveredEq(eqNumber)}
-        onMouseLeave={() => setHoveredEq(null)}
-        onClick={() => setPopupContent(popupContents[eqNumber])}
-      >
-        {/* Yellow border box with equation */}
-        <div
-          style={{
-            padding: "8px 8px",
-            borderRadius: "12px",
-            border:
-              hoveredEq === eqNumber
-                ? "1.5px solid yellow"
-                : "1.5px solid transparent",
-            transition: "border 0.2s ease",
-            display: "inline-block",
-          }}
-        >
-          <img
-            src={srcPath}
-            alt={`Equation ${eqNumber}`}
-            style={{ maxWidth: "100%", height: "auto" }}
-          />
-        </div>
-
-        {/* Name label to the right */}
-        {hoveredEq === eqNumber && (
-          <div
-            style={{
-              position: "absolute",
-              left: "100%",
-              top: "50%",
-              transform: "translate(12px, -50%)",
-              color: "white",
-              fontSize: "16px",
-              fontFamily: "'Times New Roman', Times, serif",
-              whiteSpace: "nowrap",
-              zIndex: 100,
-              backgroundColor: "transparent",
-              padding: "2px 6px",
-              borderRadius: "4px",
-            }}
-          >
-            {constantName}
-          </div>
-        )}
-      </div>
-
+    <div key={eqNumber}>
+  {/* Equation row */}
+<div
+  style={{
+    position: "relative",
+    marginBottom: isBreakHere ? `calc(${GROUP_SPACER_HEIGHT} + 4px)` : "4px",
+    display: "flex",
+    justifyContent: "flex-end",
+    width: "100%",
+    cursor: "pointer",
+    pointerEvents: "auto",
+  }}
+>
+  {/* Clickable equation: neutral button + inner wrapper border */}
+  <button
+    type="button"
+    onClick={() => setPopupEq(eqNumber)}
+    onMouseEnter={() => setHoveredEq(eqNumber)}
+    onMouseLeave={() => setHoveredEq(null)}
+    style={{
+      appearance: "none",
+      WebkitAppearance: "none",
+      background: "transparent",
+      border: 0,
+      padding: 0,
+      margin: 0,
+      outline: "none",
+      cursor: "pointer",
+      display: "inline-block",
+    }}
+  >
+    <div
+      style={{
+        padding: "8px 8px",
+        borderRadius: "12px",
+        border:
+          hoveredEq === eqNumber
+            ? "1.5px solid yellow"
+            : "1.5px solid transparent",
+        transition: "border 0.2s ease",
+        display: "inline-block",
+      }}
+    >
+      <img
+        src={srcPath}
+        alt={`Equation ${eqNumber}`}
+        style={{ maxWidth: "100%", height: "auto", display: "block" }}
+      />
     </div>
+  </button>
+
+  {/* Name label to the right (state-driven) */}
+  {hoveredEq === eqNumber && (
+    <div
+      style={{
+        position: "absolute",
+        left: "100%",
+        top: "50%",
+        transform: "translate(12px, -50%)",
+        color: "white",
+        fontSize: "16px",
+        fontFamily: "'Times New Roman', Times, serif",
+        whiteSpace: "nowrap",
+        zIndex: 100,
+        backgroundColor: "transparent",
+        padding: "2px 6px",
+        borderRadius: "4px",
+        pointerEvents: "none",
+      }}
+    >
+      {constantName}
+    </div>
+  )}
+</div>
+
+</div>
+
   );
 
 })}
@@ -70040,15 +70103,15 @@ J ⋮ kg{" "}
 {/* Footer title pinned in the scroll containers bottom padding */}
 <div
   style={{
-    position: "fixed",          // ← pin to the bottom of the viewport/footer
-    left: 0,
+    position: "fixed",
+    left: "165px",
     right: 0,
     bottom: 0,
     zIndex: 5,
     display: "flex",
-    justifyContent: "center",   // center the inner block horizontally
-    alignItems: "center",       // center vertically within the bar
-    height: "64px",             // matches your footer gutter height
+    justifyContent: "center",
+    alignItems: "center",
+    height: "64px",
     pointerEvents: "none",
   }}
 >
@@ -70061,7 +70124,7 @@ J ⋮ kg{" "}
       opacity: 0.95,
       margin: 0,
       padding: 0,
-      transform: "translateY(7px)",   // ← nudge DOWN; use -2px to nudge UP
+      transform: "translateY(7px)",
     }}
   >
 
@@ -70078,54 +70141,48 @@ J ⋮ kg{" "}
     </div> {/* end main content area */}
   </div> {/* end page container */}
       {/* Modal renderer */}
-{popupContent && (
+{popupEq != null && (
   <div
-  /* no onClick here */
-  style={{
-    position: "fixed",
-    top: 0,
-    bottom: 0,
-    left: "168px",
-    right: 0,
-    background: "rgba(0,0,0,0.1)",
-    zIndex: 1000,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "24px 20px",
-    pointerEvents: "none",   // ← allow scroll/click-through outside the box
-  }}
->
-
-
-
+    onClick={() => setPopupEq(null)}
+    style={{
+      position: "fixed",
+      top: 0,
+      bottom: 0,
+      left: "165px",
+      right: 0,
+      background: "rgba(0,0,0,0.1)",
+      zIndex: 1000,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "24px 20px",
+      pointerEvents: "auto",
+    }}
+    role="dialog"
+    aria-modal="true"
+  >
     <div
-  onClick={(e) => e.stopPropagation()}
-  style={{
-    width: "min(800px, 100%)",
-    maxHeight: "calc(100vh - 140px)",
-    overflowY: "auto",
-    background: "rgba(15,15,15,0.98)",
-    border: "1px solid transparent",
-    borderRadius: "12px",
-    padding: "20px",
-    color: "white",
-    boxShadow: [
-      "0 20px 40px -10px rgba(0,0,0,0.35)",  // black shadow pulled away from edge
-      "0 0 40px 7px rgba(255,0,0,0.35)",    // outer red glow (soft)
-      "0 0 0 0.25px rgba(255,0,0,0.55)"         // crisp 1px red edge (no blur)
-    ].join(", "),
-    pointerEvents: "auto",
-  }}
->
-
-
-
-
-
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        width: "min(800px, 100%)",
+        maxHeight: "calc(100vh - 140px)",
+        overflowY: "auto",
+        background: "rgba(15,15,15,0.98)",
+        border: "1px solid transparent",
+        borderRadius: "12px",
+        padding: "20px",
+        color: "white",
+        boxShadow: [
+          "0 20px 40px -10px rgba(0,0,0,0.35)",
+          "0 0 40px 7px rgba(255,0,0,0.35)",
+          "0 0 0 0.25px rgba(255,0,0,0.55)"
+        ].join(", "),
+        pointerEvents: "auto",
+      }}
+    >
       <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "8px" }}>
         <button
-          onClick={() => setPopupContent(null)}
+          onClick={() => setPopupEq(null)}
           style={{
             background: "transparent",
             border: "1px solid #888",
@@ -70139,7 +70196,11 @@ J ⋮ kg{" "}
         </button>
       </div>
 
-      {popupContent}
+      {popupContents[popupEq] ?? (
+        <div style={{ color: "white" }}>
+          (No popup content found for equation #{popupEq})
+        </div>
+      )}
     </div>
   </div>
 )}

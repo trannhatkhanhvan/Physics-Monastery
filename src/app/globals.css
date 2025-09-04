@@ -122,8 +122,10 @@ body {
   display: flex;
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow-x: visible; /* ← let contents extend left/right */
+  overflow-y: hidden;  /* keep vertical behavior the same */
 }
+
 
 /* Background Overlay (used by multiple pages) */
 .symbol-overlay,
@@ -248,24 +250,19 @@ body {
 }
 
 .constants-main-content {
-  margin-left: 0;              /* ✅ Remove sidebar offset */
-  width: 100vw;
-  max-width: 100vw;
+  margin-left: 165px;                       /* space for the left sidebar */
+  width: calc(100vw - 165px);
+  max-width: calc(100vw - 165px);
   min-height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
   position: relative;
-  background-color: transparent;
+  background: transparent;
   color: white;
   z-index: 1;
+
+  overflow-y: auto;
+  overflow-x: visible;                      /* <-- lets hover labels extend to the right */
 }
 
-
-.constants-main-content {
-  margin-left: 0 !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
-}
 
 
 .tooltip-container {
@@ -563,4 +560,24 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+/* Keep buttons neutral ONLY on this page so no global/UA styles fight you */
+.main-content.constants-of-nature-page button {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}
+
+/* Let the right-side hover label extend beyond the column */
+.main-content.constants-of-nature-page { overflow-x: visible; }
+
+/* CSS-driven hover label: hidden by default, shown when the button is hovered */
+.main-content.constants-of-nature-page .eqName { display: none; }
+.main-content.constants-of-nature-page .eqBtn:hover + .eqName { display: block; }
 
