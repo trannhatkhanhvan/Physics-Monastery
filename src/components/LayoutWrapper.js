@@ -38,20 +38,32 @@ export default function LayoutWrapper({ children }) {
           <a href="/constants-of-nature" className="menu-text-link">Constants of Nature</a>
           <a href="/symbol-legend" className="menu-text-link">Symbol Legend</a>
           <a href="/288" className="menu-text-link">288</a>
+          <div className="tooltip-container">
+  <a
+    href="https://www.wolframalpha.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/images/wolframalpha_icon.png"
+      alt="WolframAlpha"
+      className="wolframalpha-logo"
+    />
+  </a>
+</div>
 
           <div className="separator"></div>
 
+          <a href="/simplest-manifold" className="menu-text-link">Simplest Manifold</a>
+          <a href="/external-transform-space" className="menu-text-link">External Transform Space</a>
           <a href="/hyperbolic-partition-eq" className="menu-text-link">Hyperbolic Partition Eq</a>
           <a href="/binomial-constructor" className="menu-text-link">Binomial Constructor</a>
-          <a href="/external-transform-space" className="menu-text-link">External Transform Space</a>
-          <a href="/simplest-manifold" className="menu-text-link">Simplest Manifold</a>
+
 
           <div className="separator"></div>
 
           <a href="/planck-constants" className="menu-text-link">Planck Constants</a>
           <a href="/coherent-units" className="menu-text-link">Coherent Units</a>
-
-          <div className="separator"></div>
 
           <a href="/animated-math" className="menu-text-link">Animated Math</a>
           <a href="/combinatorics" className="menu-text-link">Combinatorics</a>
@@ -111,10 +123,12 @@ export default function LayoutWrapper({ children }) {
 
           <div className="separator"></div>
 
-          <a href="/books" className="menu-text-link">Books</a>
           <a href="/supporters" className="menu-text-link">Supporters</a>
           <a href="/monastery-events" className="menu-text-link">Monastery Events</a>
+          <a href="/books" className="menu-text-link">Books</a>
           <a href="/contact-us" className="menu-text-link">Contact Us</a>
+
+
         </nav>
       </div>
 

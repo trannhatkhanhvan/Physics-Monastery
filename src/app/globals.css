@@ -581,3 +581,16 @@ body {
 .main-content.constants-of-nature-page .eqName { display: none; }
 .main-content.constants-of-nature-page .eqBtn:hover + .eqName { display: block; }
 
+.wolframalpha-logo {
+  width: 88px;
+  height: auto;
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 15px;
+}
+
+
+
+
+
