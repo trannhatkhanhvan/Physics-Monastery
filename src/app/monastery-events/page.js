@@ -63,7 +63,7 @@ export default function MonasteryEvents() {
                  118 self-persistent forms: atoms
 
          Outdoor retreat activities available:
-                 jem stone mining
+                 gem stone mining
                  trilobite hunting
                  warm spring caves
                  west desert canals`}
