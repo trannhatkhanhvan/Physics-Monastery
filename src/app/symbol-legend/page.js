@@ -118,7 +118,7 @@ export default function SymbolLegend() {
             />
             {' = 1.41678698590795 ... × 10'}
             <sup>32</sup>
-            {' kg'}
+            {' K'}
           </>
       ),
       right: (
