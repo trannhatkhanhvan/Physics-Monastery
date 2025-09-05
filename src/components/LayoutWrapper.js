@@ -84,7 +84,7 @@ export default function LayoutWrapper({ children }) {
         aria-label="Thad's YouTube Channel"
       />
     </a>
-    <div className="custom-tooltip tooltip-thad">Thad Roberts</div>
+    <div className="custom-tooltip tooltip-thad">Thad</div>
   </div>
 
   <div className="tooltip-container">
