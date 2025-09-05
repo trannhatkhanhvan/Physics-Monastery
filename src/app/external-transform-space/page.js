@@ -127,7 +127,7 @@ export default function ExternalTransformSpace() {
             alt="!5"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
           />, 35, 18, 32, and 8 ) define its structure.
-  The first divisor introduces the vertex structure of the{' '}
+  The first divisor introduces the structure of the{' '}
   <a
     href="https://en.wikipedia.org/wiki/120-cell"
     target="_blank"
@@ -140,8 +140,24 @@ export default function ExternalTransformSpace() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     120-cell
-  </a>
-  —which contains examples of <i>every</i> relationship among <i>all</i> the convex regular polytopes found in the first 4 dimensions. The remaining divisors ( 44, 35, 18, 32, and 8 ) define the quantized powers of the{' '}
+  </a>{' '}( a compound of 120 regular
+  <a
+    href="https://en.wikipedia.org/wiki/5-cell"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      color: 'inherit',
+      textDecoration: 'none',
+    }}
+    onMouseOver={e => (e.target.style.color = 'yellow')}
+    onMouseOut={e => (e.target.style.color = 'inherit')}
+  >
+    &nbsp;<img
+            src="/equations/red-5.svg"
+            alt="5"
+            style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
+          />-cells
+  </a>{' '})—which contains examples of <i>every</i> relationship among <i>all</i> the convex regular polytopes found in the first 4 dimensions. The remaining divisors ( 44, 35, 18, 32, and 8 ) define the quantized powers of the{' '}
   <a
     href="/planck-constants"
     target="_blank"
@@ -154,7 +170,7 @@ export default function ExternalTransformSpace() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     Planck constants
-  </a>.
+  </a>—which define the division boundaries that connect that space.
 </p>
 
         <div style={{ height: '1.5rem' }} />
@@ -230,11 +246,11 @@ export default function ExternalTransformSpace() {
 
         <div style={{ height: '1.5rem' }} />
 
-        <div className="equation-line" style={{ marginLeft: '7.5rem' }}>
+        <div className="equation-line" style={{ marginLeft: '7.65rem' }}>
           <img
             src="/equations/twisted_zero_product.svg"
             alt="Hyperbolic Partition Equation"
-            style={{ height: '41.0px', width: 'auto' }}
+            style={{ height: '42.0px', width: 'auto' }}
           />
         </div>
 
