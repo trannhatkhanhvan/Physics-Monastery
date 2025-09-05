@@ -238,7 +238,7 @@ export default function SimplestManifold() {
 </div>
         <div style={{ height: '2rem' }} />
 
-        <p className="equation-description">These constructions naturally divide the world up into electron, proton, and neutron radii.</p>
+        <p className="equation-description">These dilogarithmic constructions naturally divide the world up into electron, proton, and neutron radii.</p>
         <div style={{ height: '2rem' }} />
 
         <div className="equation-line" style={{ display: 'flex', justifyContent: 'center', gap: '4rem' }}>
