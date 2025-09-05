@@ -95,7 +95,7 @@ export default function HomePage() {
                 margin: 0,
               }}
             >
-              Unveiling the hidden structure of reality—by systematically decoding the precise relationships embedded in the physical constants of Nature. Our goal is to understand why the Universe is the way it is—to reveal the geometric rules underlying atomic structure and the coherent geometric foundation from which all 288 physical constants arise.
+              Unveiling the hidden structure of reality—by systematically decoding the precise relationships embedded in the physical constants of Nature. Our goal is to understand why the Universe is the way it is—to reveal the rules underlying atomic logic and the coherent geometric foundation from which all 288 physical constants arise.
             </p>
           </div>
         )}
