@@ -132,22 +132,22 @@ export default function HyperbolicPartitionEq() {
         <div style={{ height: '1.8rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-          <img src="/equations/zhe_big_product.svg" alt="zhe big product" style={{ height: '60px', width: 'auto', marginRight: '2.5rem' }} />
-          <img src="/equations/zhe_big_sum.svg" alt="zhe big sum" style={{ height: '60px', width: 'auto', marginRight: '2.5rem' }} />
+          <img src="/equations/zhe_big_product.svg" alt="zhe big product" style={{ height: '60px', width: 'auto', marginRight: '4.3rem' }} />
+          <img src="/equations/zhe_big_sum.svg" alt="zhe big sum" style={{ height: '60px', width: 'auto', marginRight: '4.3rem' }} />
           <img src="/equations/zhe_big_quadrance.svg" alt="zhe big quadrance" style={{ height: '60px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-          <img src="/equations/zhe_3_zhe_4_product.svg" alt="zhe_3 zhe_4 product" style={{ height: '21px', width: 'auto', marginRight: '4rem' }} />
+          <img src="/equations/zhe_3_zhe_4_product.svg" alt="zhe_3 zhe_4 product" style={{ height: '21px', width: 'auto', marginRight: '3.8rem' }} />
           <img src="/equations/zhe_1_zhe_2_product.svg" alt="zhe_1 zhe_2 product" style={{ height: '46px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-          <img src="/equations/zhe_negative_one.svg" alt="zhe -1" style={{ height: '45px', width: 'auto', marginRight: '4rem' }} />
+          <img src="/equations/zhe_negative_one.svg" alt="zhe -1" style={{ height: '45px', width: 'auto', marginRight: '3rem' }} />
           <img src="/equations/zhe_inversion.svg" alt="zhe inversion" style={{ height: '45px', width: 'auto' }} />
         </div>
 

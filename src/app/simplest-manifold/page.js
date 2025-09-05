@@ -115,7 +115,7 @@ export default function SimplestManifold() {
             onMouseOver={e => (e.target.style.color = 'yellow')}
             onMouseOut={e => (e.target.style.color = 'inherit')}
           >
-            the polylogarithm of order 2 (the dilogarithm)
+            the polylogarithm of order 2 ( the dilogarithm )
           </a>, <img
             src="/equations/i.svg"
             alt="i"
@@ -238,7 +238,7 @@ export default function SimplestManifold() {
 </div>
         <div style={{ height: '2rem' }} />
 
-        <p className="equation-description">These dilogarithmic constructions naturally divide the world up into electron, proton, and neutron radii.</p>
+        <p className="equation-description">These dilogarithm constructions naturally divide the world up into electron, proton, and neutron radii.</p>
         <div style={{ height: '2rem' }} />
 
         <div className="equation-line" style={{ display: 'flex', justifyContent: 'center', gap: '4rem' }}>

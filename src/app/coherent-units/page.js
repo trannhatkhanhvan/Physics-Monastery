@@ -18,7 +18,7 @@ export default function CoherentUnits() {
             alt="5"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
           /> coherent units (or bases) of atomic logic, the: second, meter, coulomb, kelvin, and kilogram.
-        Each of these bases defines a unit in the internally consistent constructive logic of persistent forms (atoms).
+        Each of these bases defines a unit in the internally consistent constructive logic of persistent forms ( atoms ).
       </div>
 
       <div style={{ height: '2.0rem' }} />
@@ -70,7 +70,7 @@ export default function CoherentUnits() {
             alt="5"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
           /> derived units of atomic logic, the: megahertz, femtometer, electron-volt, megaelectron-volt, and the gigaelectron-volt.
-        These are defined as products of powers of the base units (or combinations of the base units) without any additional numerical factor other than one.
+        These are defined as products of powers of the base units ( or combinations of the base units ) without any additional numerical factor other than one.
         That is, every derived unit has a value of {' '}
   <a
     href="https://en.wikipedia.org/wiki/International_System_of_Units?"
@@ -107,11 +107,11 @@ export default function CoherentUnits() {
 
       <div className="equation-description">
         Note, the mol is not a unit of measure—it has no dimension. It is a numeric amount, found to be special in atomic constructions.
-        The candela is a unit of luminous intensity—an amount of lumens (a unit based on the sensitivity of the human eye) divided by 4<img
+        The candela is a unit of luminous intensity—an amount of lumens ( a unit based on the sensitivity of the human eye ) divided by 4<img
             src="/equations/pi.svg"
             alt="pi"
             style={{ height: '9px', width: 'auto', display: 'inline-block', position: 'relative', top: '-1px' }}
-          /> steradians (the geometric unit of solid angle).
+          /> steradians ( the geometric unit of solid angle ).
       </div>
 
       <div style={{ height: '13.0rem' }} />

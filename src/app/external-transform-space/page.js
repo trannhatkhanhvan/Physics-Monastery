@@ -118,7 +118,7 @@ export default function ExternalTransformSpace() {
         <div style={{ height: '1.5rem' }} />
 
         <p className="equation-description">
-  The coherent divisors of that space ( &nbsp;<img
+  The divisors of that space ( &nbsp;<img
             src="/equations/factorial_5_symbol.svg"
             alt="5!"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
@@ -126,7 +126,7 @@ export default function ExternalTransformSpace() {
             src="/equations/derangement_5_symbol.svg"
             alt="!5"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
-          />, 35, 18, 32, and 8 ) define its structure.
+          />, 35, 18, 32, and 8 ) define how it is coherently structured.
   The first divisor introduces the structure of the{' '}
   <a
     href="https://en.wikipedia.org/wiki/120-cell"
@@ -170,7 +170,7 @@ export default function ExternalTransformSpace() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     Planck constants
-  </a>—which define the division boundaries that connect that space.
+  </a>—which define the division boundaries connecting that space.
 </p>
 
         <div style={{ height: '1.5rem' }} />

@@ -48,16 +48,7 @@ export default function PlanckConstants() {
         <div className="legend-title">the Planck constants</div>
 
         <p className="equation-description">
-          The Planck constants are the coherent building blocks that structure all physical <a
-            href="/constants-of-nature"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: 'inherit', textDecoration: 'none' }}
-            onMouseOver={e => (e.target.style.color = 'yellow')}
-            onMouseOut={e => (e.target.style.color = 'inherit')}
-          >
-            constants of Nature
-          </a>.
+          The Planck constants define the boundaries of the coherent bases of atomic logic.
           Here we showcase their phase plots, 3D and 2D surface plots, and their quantized plane-wave definitions.
         </p>
 
