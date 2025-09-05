@@ -101,7 +101,7 @@ export default function BinomialConstructor() {
 
         </p>
 
-        <div style={{ height: '2.0rem' }} />
+        <div style={{ height: '1.2rem' }} />
 
         <div className="equation-line">
           <img
@@ -111,7 +111,7 @@ export default function BinomialConstructor() {
           />
         </div>
 
-        <div style={{ height: '2.0rem' }} />
+        <div style={{ height: '1.5rem' }} />
 
         <p className="equation-description">
           Where{" "}
@@ -171,7 +171,7 @@ export default function BinomialConstructor() {
   </a>.
         </p>
 
-        <div style={{ height: '2rem' }} />
+        <div style={{ height: '2.5rem' }} />
 
         <p className="equation-description">
           Every constant of Nature is coherently maintained by this bi-part structure,
@@ -202,7 +202,7 @@ export default function BinomialConstructor() {
           the 2-part sums, the 3-part sums, the 2-part quadrances, and the 3-part quadrances.
         </p>
 
-        <div style={{ height: '1rem' }} />
+        <div style={{ height: '1.0rem' }} />
 
         <div
   style={{
@@ -285,7 +285,7 @@ export default function BinomialConstructor() {
 
 </div>
 
-        <div style={{ height: '1rem' }} />
+        <div style={{ height: '1.0rem' }} />
 
         <p className="equation-description">
           Check the{' '}
@@ -301,7 +301,7 @@ export default function BinomialConstructor() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     Constants of Nature
-  </a> page to see which simple transform each constant uses.
+  </a> page to see which transform each constant uses.
         </p>
 
         <div style={{ height: '12.5rem' }} />

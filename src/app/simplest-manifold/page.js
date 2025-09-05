@@ -18,7 +18,7 @@ export default function SimplestManifold() {
         <div className="legend-title">the simplest manifold</div>
 
         <p className="equation-description">
-          Here we introduce the simplest self-persistent stage in topology—the hyperbolic figure eight knot.
+          The simplest self-persistent stage in topology is the hyperbolic figure eight knot.
           This topology is defined as a double-cover of the simplest possible 3-manifold ( the{' '}
           <a
             href="https://en.wikipedia.org/wiki/Gieseking_manifold"
@@ -115,7 +115,7 @@ export default function SimplestManifold() {
             onMouseOver={e => (e.target.style.color = 'yellow')}
             onMouseOut={e => (e.target.style.color = 'inherit')}
           >
-            the polylogarithm of order 2 (the dilogarithm )
+            the polylogarithm of order 2 (the dilogarithm)
           </a>, <img
             src="/equations/i.svg"
             alt="i"

@@ -118,7 +118,7 @@ export default function ExternalTransformSpace() {
         <div style={{ height: '1.5rem' }} />
 
         <p className="equation-description">
-  The divisors of that space ( &nbsp;<img
+  The coherent divisors of that space ( &nbsp;<img
             src="/equations/factorial_5_symbol.svg"
             alt="5!"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
@@ -127,7 +127,7 @@ export default function ExternalTransformSpace() {
             alt="!5"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
           />, 35, 18, 32, and 8 ) define its structure.
-  The first factors into the{' '}
+  The first divisor introduces the vertex structure of the{' '}
   <a
     href="https://en.wikipedia.org/wiki/120-cell"
     target="_blank"
@@ -141,7 +141,7 @@ export default function ExternalTransformSpace() {
   >
     120-cell
   </a>
-  —which contains examples of <i>every</i> relationship among <i>all</i> the convex regular polytopes found in the first 4 dimensions. The coherent divisors of that structure ( 44, 35, 18, 32, and 8 ) define the quantized powers of the{' '}
+  —which contains examples of <i>every</i> relationship among <i>all</i> the convex regular polytopes found in the first 4 dimensions. The remaining divisors ( 44, 35, 18, 32, and 8 ) define the quantized powers of the{' '}
   <a
     href="/planck-constants"
     target="_blank"
@@ -179,7 +179,7 @@ export default function ExternalTransformSpace() {
         <div style={{ height: '1.5rem' }} />
 
         <p className="equation-description">
-          The hyperbolic figure eight knot&apos;s constructive zeros.
+          The hyperbolic figure eight knot&apos;s constructive zeros are:
         </p>
 
         <div style={{ height: '1.5rem' }} />
@@ -205,7 +205,7 @@ export default function ExternalTransformSpace() {
         <div style={{ height: '1.5rem' }} />
 
         <p className="equation-description">
-          The hyperbolic figure eight knot&apos;s <i>twisted</i> zeros.
+          And the hyperbolic figure eight knot&apos;s <i>twisted</i> zeros are:
         </p>
 
         <div style={{ height: '1.5rem' }} />

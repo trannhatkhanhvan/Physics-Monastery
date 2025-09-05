@@ -69,7 +69,7 @@ export default function CoherentUnits() {
             src="/equations/red-5.svg"
             alt="5"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
-          /> derived units of atomic logic, the: megahertz, femtometer, electron-volt, mega electron-volt, and the giga electron-volt.
+          /> derived units of atomic logic, the: megahertz, femtometer, electron-volt, megaelectron-volt, and the gigaelectron-volt.
         These are defined as products of powers of the base units (or combinations of the base units) without any additional numerical factor other than one.
         That is, every derived unit has a value of {' '}
   <a
@@ -106,7 +106,7 @@ export default function CoherentUnits() {
       <div style={{ height: '2.0rem' }} />
 
       <div className="equation-description">
-        Note, the mol is not a unit of measure—it is a unit of amount, found to be special in atomic constructions.
+        Note, the mol is not a unit of measure—it has no dimension. It is a numeric amount, found to be special in atomic constructions.
         The candela is a unit of luminous intensity—an amount of lumens (a unit based on the sensitivity of the human eye) divided by 4<img
             src="/equations/pi.svg"
             alt="pi"

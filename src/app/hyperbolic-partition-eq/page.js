@@ -23,7 +23,7 @@ export default function HyperbolicPartitionEq() {
         <div style={{ height: '2.0rem' }} />
 
         <p className="equation-description">
-          The hyperbolic partition equation encodes the allowable transformations of the{' '}
+          The hyperbolic partition equation encodes the symmetry transformations available to the{' '}
           <a
             href="/simplest-manifold"
             target="_blank"
@@ -31,15 +31,7 @@ export default function HyperbolicPartitionEq() {
             className="legend-link"
           >
             figure-eight knot complement
-          </a>, hyperbolically partitioning the{' '}
-          <a
-            href="/constants-of-nature"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="legend-link"
-          >
-            288 constants of Nature
-          </a>{' '}inside the{' '}
+          </a>. Each transition is bounded by the{' '}
           <a
             href="/planck-constants"
             target="_blank"
@@ -49,12 +41,12 @@ export default function HyperbolicPartitionEq() {
             onMouseOut={(e) => (e.target.style.color = 'inherit')}
           >
             Planck mass
-          </a>{' '}gap. It&apos;s 4 solutions
+          </a>{' '}gap. It&apos;s 4 solutions{' '}
           <img src="/equations/zhe_1.svg" alt="zhe_1" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
           <img src="/equations/zhe_2.svg" alt="zhe_2" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
           <img src="/equations/zhe_3.svg" alt="zhe_3" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} /> and{' '}
           <img src="/equations/zhe_4.svg" alt="zhe_4" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />
-          —the hyperbolic partition constants—possess the following product, sum and quadrance.
+          {' '}define the hyperbolic partition constants—possessing the following product, sum and quadrance relationships.
         </p>
 
         <div style={{ height: '2.0rem' }} />
@@ -94,7 +86,6 @@ export default function HyperbolicPartitionEq() {
           </div>
         </div>
 
-        <div style={{ height: '1.0rem' }} />
 
         <p className="equation-description" style={{ marginTop: '2rem' }}>
           The first of those quadrances is{' '}
@@ -109,7 +100,7 @@ export default function HyperbolicPartitionEq() {
           <img src="/equations/zhe_1_squared_equation.svg" alt="zhe_squared=alpha" style={{ height: '21px', width: 'auto', verticalAlign: '-0.30em', display: 'inline' }} />.
         </p>
 
-        <div style={{ height: '1.0rem' }} />
+        <div style={{ height: '0.5rem' }} />
 
         <p className="equation-description" style={{ marginTop: '2rem' }}>
           In polar coordinates{' '}
