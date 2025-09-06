@@ -185,7 +185,7 @@ export default function BinomialConstructor() {
             alt="zhe_r"
             style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
           />),
-          and 6 Cartesian expressions—the 2–part products, the 3–part products,
+          and 6 Cartesian expressions:the 2–part products, the 3–part products,
           the 2–part sums, the 3–part sums, the 2–part quadrances, and the 3–part quadrances.
         </p>
 
