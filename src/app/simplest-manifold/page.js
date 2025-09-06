@@ -19,7 +19,7 @@ export default function SimplestManifold() {
 
         <p className="equation-description">
           The simplest self-persistent stage in topology is the hyperbolic figure eight knot.
-          This topology is defined as a double-cover of the simplest possible 3-manifold ( the{' '}
+          This topology is defined as a double-cover of the simplest possible 3–manifold ( the{' '}
           <a
             href="https://en.wikipedia.org/wiki/Gieseking_manifold"
             target="_blank"

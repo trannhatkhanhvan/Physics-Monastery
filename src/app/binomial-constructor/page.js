@@ -38,7 +38,7 @@ export default function BinomialConstructor() {
   >
     hyperbolic figure eight knot
   </a>,
-          and its coherent external transform space—defined by the volume of the {' '}
+          and its coherent external transform space—the volume of the {' '}
   <a
     href="https://mathworld.wolfram.com/HyperspherePacking.html"
     target="_blank"
@@ -51,19 +51,6 @@ export default function BinomialConstructor() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     24-dimensional unit hypersphere
-  </a>, or the density of the {' '}
-  <a
-    href="https://en.wikipedia.org/wiki/Leech_lattice"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{
-      color: 'inherit',
-      textDecoration: 'none',
-    }}
-    onMouseOver={e => (e.target.style.color = 'yellow')}
-    onMouseOut={e => (e.target.style.color = 'inherit')}
-  >
-    Leech lattice
   </a>.
           Where <img
             src="/equations/a_external.svg"
@@ -174,8 +161,7 @@ export default function BinomialConstructor() {
         <div style={{ height: '2.5rem' }} />
 
         <p className="equation-description">
-          Every constant of Nature is coherently maintained by this bi-part structure,
-          using one of the {' '}
+          Every constant of Nature uses one of the {' '}
   <a
     href="/hyperbolic-partition-eq"
     target="_blank"
@@ -188,7 +174,8 @@ export default function BinomialConstructor() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     hyperbolic partition equation
-  </a>&apos;s simple ( one-dimensional ) transforms.
+  </a>&apos;s simple ( one–dimensional ) transforms—defining a symmetric transform coherently maintained by this bi–part structure.
+
           Those transforms include: two polar expressions ( expressed in powers of <img
             src="/equations/zhe_r.svg"
             alt="zhe_r"
@@ -198,8 +185,8 @@ export default function BinomialConstructor() {
             alt="zhe_theta"
             style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
           /> ),
-          and 6 Cartesian expressions—the 2-part products, the 3-part products,
-          the 2-part sums, the 3-part sums, the 2-part quadrances, and the 3-part quadrances.
+          and 6 Cartesian expressions—the 2–part products, the 3–part products,
+          the 2–part sums, the 3–part sums, the 2–part quadrances, and the 3–part quadrances.
         </p>
 
         <div style={{ height: '1.0rem' }} />

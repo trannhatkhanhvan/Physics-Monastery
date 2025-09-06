@@ -61,11 +61,11 @@ export default function ExternalTransformSpace() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     24-dimensional unit hypersphere
-  </a>—<img
+  </a>{' '}({' '}<img
             src="/equations/v_24_symbol.svg"
             alt="V_24"
             style={{ height: '16px', width: 'auto', display: 'inline-block', position: 'relative', top: '0px' }}
-          />, which also defines the density of the {' '}
+          />{' '}), and the density of the {' '}
   <a
     href="https://en.wikipedia.org/wiki/Leech_lattice"
     target="_blank"
@@ -77,16 +77,16 @@ export default function ExternalTransformSpace() {
     onMouseOver={e => (e.target.style.color = 'yellow')}
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
-    Leech lattice
-  </a>—<img
+    Leech lattice{' '}
+  </a>( <img
             src="/equations/leech_lattice_symbol.svg"
             alt="rho_Leech"
             style={{ height: '12px', width: 'auto', display: 'inline-block', position: 'relative', top: '1px' }}
-          />. Where &nbsp;<img
+          />{' '}). Where &nbsp;<img
             src="/equations/factorial_5_symbol.svg"
             alt="5!"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
-          /> = 120—the <a
+          /> = 120 ( the <a
               href="https://en.wikipedia.org/wiki/Factorial"
               target="_blank"
               rel="noopener noreferrer"
@@ -97,11 +97,11 @@ export default function ExternalTransformSpace() {
             src="/equations/red-5.svg"
             alt="5"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
-          />, and &nbsp;<img
+          />{' '}), and &nbsp;<img
             src="/equations/derangement_5_symbol.svg"
             alt="!5"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
-          /> = 44—the <a
+          /> = 44 ( the <a
               href="https://en.wikipedia.org/wiki/Derangement"
               target="_blank"
               rel="noopener noreferrer"
@@ -112,13 +112,13 @@ export default function ExternalTransformSpace() {
             src="/equations/red-5.svg"
             alt="5"
             style={{ height: '14px', width: 'auto', display: 'inline-block', position: 'relative', top: '-3px' }}
-          />.
+          />{' '}).
         </p>
 
         <div style={{ height: '1.5rem' }} />
 
         <p className="equation-description">
-  The divisors of that space ( &nbsp;<img
+  The divisors of that space (&nbsp;<img
             src="/equations/factorial_5_symbol.svg"
             alt="5!"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
@@ -139,7 +139,7 @@ export default function ExternalTransformSpace() {
     onMouseOver={e => (e.target.style.color = 'yellow')}
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
-    120-cell
+    120–cell
   </a>{' '}( a compound of 120 regular
   <a
     href="https://en.wikipedia.org/wiki/5-cell"
@@ -156,8 +156,8 @@ export default function ExternalTransformSpace() {
             src="/equations/red-5.svg"
             alt="5"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
-          />-cells
-  </a>{' '})—which contains examples of <i>every</i> relationship among <i>all</i> the convex regular polytopes found in the first 4 dimensions. The remaining divisors ( 44, 35, 18, 32, and 8 ) define the quantized powers of the{' '}
+          />–cells
+  </a>{' '}), which contains examples of <i>every</i> relationship among <i>all</i> the convex regular polytopes found in the first 4 dimensions. The remaining divisors ( 44, 35, 18, 32, and 8 ) define the quantized powers of the{' '}
   <a
     href="/planck-constants"
     target="_blank"
@@ -170,13 +170,13 @@ export default function ExternalTransformSpace() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     Planck constants
-  </a>—which define the division boundaries connecting that space.
+  </a>—the division boundaries connecting that space.
 </p>
 
         <div style={{ height: '1.5rem' }} />
 
         <p className="equation-description">
-          The controlling root of that structure—its highest power component—is equal to the product of the {' '}
+          The controlling root of that structure ( its highest power component ) is equal to the product of the {' '}
   <a
     href="/simplest-manifold"
     target="_blank"

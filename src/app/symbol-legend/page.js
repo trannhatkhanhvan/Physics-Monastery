@@ -150,7 +150,7 @@ export default function SymbolLegend() {
                 }}
             />
             {' = 2.17642683817579 ... × 10'}
-            <sup>-8</sup>
+            <sup>–8</sup>
             {' kg'}
           </>
       ),
@@ -188,7 +188,7 @@ export default function SymbolLegend() {
                 }}
             />
             {' = 0.999999199973626 ... × 10'}
-            <sup>-7</sup>
+            <sup>–7</sup>
 
           </>
       ),
