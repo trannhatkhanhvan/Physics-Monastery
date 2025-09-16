@@ -165,34 +165,34 @@ const GROUP_SPACER_HEIGHT = '35px';
         78: "atomic unit of velocity",
         79: "atomic unit of momentum",
         80: "natural unit of momentum",
-        81: "joule-kilogram relationship",
-        82: "joule-atomic mass unit relationship",
-        83: "electron volt-kilogram relationship",
-        84: "kilogram-joule relationship",
+        81: "natural unit of momentum in MeV/c",
+        82: "atomic mass constant energy equivalent in MeV",
+        83: "kilogram-joule relationship",
+        84: "joule-kilogram relationship",
         85: "atomic mass unit-joule relationship",
-        86: "atomic mass constant energy equivalent in MeV",
+        86: "joule-atomic mass unit relationship",
         87: "kilogram-electron volt relationship",
-        88: "neutron-proton mass energy equivalent in MeV",
+        88: "electron volt-kilogram relationship",
         89: "neutron-proton mass difference energy equivalent",
-        90: "electron mass energy equivalent",
-        91: "muon mass energy equivalent",
-        92: "proton mass energy equivalent",
-        93: "neutron mass energy equivalent",
-        94: "tau mass energy equivalent",
-        95: "deuteron mass energy equivalent",
-        96: "helion mass energy equivalent",
-        97: "triton mass energy equivalent",
-        98: "alpha particle mass energy equivalent",
-        99: "natural unit of momentum in MeV/c",
-        100: "natural unit of energy in MeV",
-        101: "muon mass energy equivalent in MeV",
-        102: "proton mass energy equivalent in MeV",
-        103: "neutron mass energy equivalent in MeV",
-        104: "tau energy equivalent",
-        105: "deuteron mass energy equivalent in MeV",
-        106: "helion mass energy equivalent in MeV",
-        107: "triton mass energy equivalent in MeV",
-        108: "alpha particle mass energy equivalent in MeV",
+        90: "neutron-proton mass energy equivalent in MeV",
+        91: "natural unit of energy in MeV",
+        92: "muon mass energy equivalent in MeV",
+        93: "proton mass energy equivalent in MeV",
+        94: "neutron mass energy equivalent in MeV",
+        95: "tau energy equivalent",
+        96: "deuteron mass energy equivalent in MeV",
+        97: "helion mass energy equivalent in MeV",
+        98: "triton mass energy equivalent in MeV",
+        99: "alpha particle mass energy equivalent in MeV",
+        100: "electron mass energy equivalent",
+        101: "muon mass energy equivalent",
+        102: "proton mass energy equivalent",
+        103: "neutron mass energy equivalent",
+        104: "tau mass energy equivalent",
+        105: "deuteron mass energy equivalent",
+        106: "helion mass energy equivalent",
+        107: "triton mass energy equivalent",
+        108: "alpha particle mass energy equivalent",
 
         109: "Bohr magneton in inverse meter per tesla",
         110: "nuclear magneton in inverse meter per tesla",
@@ -18425,7 +18425,9 @@ A<sub>mdm</sub>{" "}
         ),
 
 
-        74: (
+
+
+74: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -18673,7 +18675,10 @@ A<sub>mdm</sub>{" "}
         ),
 
 
-        75: (
+
+
+
+75: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -18892,7 +18897,9 @@ A<sub>mdm</sub>{" "}
         ),
 
 
-        76: (
+
+
+76: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -19100,7 +19107,11 @@ A<sub>mdm</sub>{" "}
         ),
 
 
-        77: (
+
+
+
+
+77: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -19286,7 +19297,12 @@ Hz ⋮ 1/m{" "}
         ),
 
 
-        78: (
+
+
+
+
+
+78: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -19483,7 +19499,12 @@ A<sub>vel</sub>{" "}
         ),
 
 
-        79: (
+
+
+
+
+
+79: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -19691,7 +19712,10 @@ A<sub>mom</sub>{" "}
         ),
 
 
-        80: (
+
+
+
+80: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -19914,6 +19938,8 @@ A<sub>mom</sub>{" "}
 
 
 
+        
+        
 81: (
             <div
                 style={{
@@ -19925,7 +19951,7 @@ A<sub>mom</sub>{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    joule-kilogram relationship
+                    natural unit of momentum in MeV/c
                 </div>
 
                 {/* 2. Empty Line */}
@@ -19934,11 +19960,11 @@ A<sub>mom</sub>{" "}
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/joule-kilogram_relationship.svg"
-                        alt="joule-kilogram relationship equation"
+                        src="/equations/natural_unit_of_momentum_in_mev_per_c.svg"
+                        alt="natural unit of momentum in MeV/c equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "440px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -19960,16 +19986,7 @@ A<sub>mom</sub>{" "}
                 >
                     Where{" "}
 
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
+                    MeV = the megaelectron-volt,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -19981,6 +19998,28 @@ A<sub>mom</sub>{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
+
+                    <img
+                        src="/equations/electron_mass_symbol.svg"
+                        alt="m_e"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the electron mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
 
                     <img
                         src="/equations/i.svg"
@@ -20041,8 +20080,16 @@ A<sub>mom</sub>{" "}
                     }}
                 >
   <span>
-  J ⋮ kg{" "}
-      = 1.11265005688611... &times; 10<sup>-17</sup> kg
+  <img
+      src="/equations/n_mom_dot.svg"
+      alt="N_mom dot"
+      style={{
+          height: "1em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 5.10998950205585... &times; 10<sup>-1</sup> MeV/c
 </span>
 
                     <span>prediction</span>
@@ -20058,12 +20105,21 @@ A<sub>mom</sub>{" "}
                     }}
                 >
   <span>
-J ⋮ kg{" "}
-      = 1.112650056 &times; 10<sup>-17</sup> kg
+   <img
+       src="/equations/n_mom_dot.svg"
+       alt="N_mom dot"
+       style={{
+           height: "1em",
+           verticalAlign: "-0.2em",
+           display: "inline",
+       }}
+   />{" "}
+      = 5.1099895069(16) &times; 10<sup>-1</sup> MeV/c
+
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?jkg|search_for=joule"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?malc2|search_for=energy"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -20074,7 +20130,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = 0.00"}
+                        {", σ = 3.06"}
   </span>
                 </div>
 
@@ -20088,11 +20144,19 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
- J ⋮ kg{" "}
-      = 1.112650056 &times; 10<sup>-17</sup> kg
+  <img
+      src="/equations/n_mom_dot.svg"
+      alt="N_mom dot"
+      style={{
+          height: "1em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 5.1099895000(15) &times; 10<sup>-1</sup> MeV/c
   </span>
                     <span>
-    CODATA 2018, σ = 0.00
+    CODATA 2018, σ = 1.33
   </span>
                 </div>
 
@@ -20100,7 +20164,15 @@ J ⋮ kg{" "}
         ),
 
 
-        82: (
+
+
+
+
+
+
+
+
+82: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -20111,7 +20183,7 @@ J ⋮ kg{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    joule-atomic mass unit relationship
+                    atomic mass constant energy equivalent in MeV
                 </div>
 
                 {/* 2. Empty Line */}
@@ -20120,11 +20192,11 @@ J ⋮ kg{" "}
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/joule-atomic_mass_unit_relationship.svg"
-                        alt="joule-atomic mass unit relationship equation"
+                        src="/equations/atomic_mass_constant_energy_equivalent_in_mev.svg"
+                        alt="atomic mass constant energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
+                            width: "370px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -20157,16 +20229,7 @@ J ⋮ kg{" "}
                     />{" "}
                     = the atomic mass constant,{" "}
 
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
+                    MeV = the megaelectron-volt,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -20178,6 +20241,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
 
                     <img
                         src="/equations/i.svg"
@@ -20238,16 +20312,16 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  J ⋮ <img
-      src="/equations/atomic_mass_constant_symbol.svg"
-      alt="A_mass"
+  <img
+      src="/equations/e_a_mass_dot.svg"
+      alt="E_A_mass dot"
       style={{
-          height: "0.9em",
+          height: "1.2em",
           verticalAlign: "-0.2em",
           display: "inline",
       }}
   />{" "}
-      = 6.70053525691318... &times; 10<sup>9</sup> u
+      = 9.31494102230152... &times; 10<sup>2</sup> MeV
 </span>
 
                     <span>prediction</span>
@@ -20263,20 +20337,20 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  J ⋮ <img
-      src="/equations/atomic_mass_constant_symbol.svg"
-      alt="A_mass"
+  <img
+      src="/equations/e_a_mass_dot.svg"
+      alt="E_A_mass dot"
       style={{
-          height: "0.9em",
+          height: "1.2em",
           verticalAlign: "-0.2em",
           display: "inline",
       }}
   />{" "}
-      = 6.7005352471(21) &times; 10<sup>9</sup> u
+      = 9.3149410372(29) &times; 10<sup>2</sup> MeV
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?ju|search_for=joule"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?muc2mev|search_for=mass"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -20287,7 +20361,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = 4.66"}
+                        {", σ = 5.14"}
   </span>
                 </div>
 
@@ -20301,19 +20375,19 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
- J ⋮ <img
-      src="/equations/atomic_mass_constant_symbol.svg"
-      alt="A_mass"
+  <img
+      src="/equations/e_a_mass_dot.svg"
+      alt="E_A_mass dot"
       style={{
-          height: "0.9em",
+          height: "1.2em",
           verticalAlign: "-0.2em",
           display: "inline",
       }}
   />{" "}
-      = 6.7005352565(20) &times; 10<sup>9</sup> u
+      = 9.3149410242(28) &times; 10<sup>2</sup> MeV
   </span>
                     <span>
-    CODATA 2018, σ = 0.20
+    CODATA 2018, σ = 0.67
   </span>
                 </div>
 
@@ -20323,195 +20397,9 @@ J ⋮ kg{" "}
 
 
 
+
+        
 83: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "10px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    electron volt-kilogram relationship
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/electron_volt-kilogram_relationship.svg"
-                        alt="electron volt-kilogram relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "360px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "16px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    eV = the electron-volt,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/i.svg"
-                        alt="i"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the imaginary unit,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  eV ⋮ kg{" "}
-      = 1.78266192320666... &times; 10<sup>-36</sup> kg
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  eV ⋮ kg{" "}
-      = 1.78266192321 &times; 10<sup>-36</sup> kg
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?evkg|search_for=kilogram"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = 0.20"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- eV ⋮ kg{" "}
-      = 1.78266192321 &times; 10<sup>-36</sup> kg
-  </span>
-                    <span>
-    CODATA 2018, σ = 0.20
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-        84: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -20697,7 +20585,202 @@ J ⋮ kg{" "}
         ),
 
 
-        85: (
+
+
+
+
+
+84: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "10px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    joule-kilogram relationship
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div style={{textAlign: "right"}}>
+                    <img
+                        src="/equations/joule-kilogram_relationship.svg"
+                        alt="joule-kilogram relationship equation"
+                        style={{
+                            display: "inline-block",
+                            width: "350px",   // ✅ Set the width to exactly what you want
+                            height: "auto"
+                        }}
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/i.svg"
+                        alt="i"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the imaginary unit,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  J ⋮ kg{" "}
+      = 1.11265005688611... &times; 10<sup>-17</sup> kg
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+J ⋮ kg{" "}
+      = 1.112650056 &times; 10<sup>-17</sup> kg
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?jkg|search_for=joule"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = 0.00"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ J ⋮ kg{" "}
+      = 1.112650056 &times; 10<sup>-17</sup> kg
+  </span>
+                    <span>
+    CODATA 2018, σ = 0.00
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+
+85: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -20939,6 +21022,9 @@ J ⋮ kg{" "}
 
 
 
+
+
+
 86: (
             <div
                 style={{
@@ -20950,7 +21036,7 @@ J ⋮ kg{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    atomic mass constant energy equivalent in MeV
+                    joule-atomic mass unit relationship
                 </div>
 
                 {/* 2. Empty Line */}
@@ -20959,11 +21045,11 @@ J ⋮ kg{" "}
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/atomic_mass_constant_energy_equivalent_in_mev.svg"
-                        alt="atomic mass constant energy equivalent in MeV equation"
+                        src="/equations/joule-atomic_mass_unit_relationship.svg"
+                        alt="joule-atomic mass unit relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
+                            width: "390px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -20996,7 +21082,16 @@ J ⋮ kg{" "}
                     />{" "}
                     = the atomic mass constant,{" "}
 
-                    MeV = the megaelectron-volt,{" "}
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -21008,17 +21103,6 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
 
                     <img
                         src="/equations/i.svg"
@@ -21079,16 +21163,16 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/e_a_mass_dot.svg"
-      alt="E_A_mass dot"
+  J ⋮ <img
+      src="/equations/atomic_mass_constant_symbol.svg"
+      alt="A_mass"
       style={{
-          height: "1.2em",
+          height: "0.9em",
           verticalAlign: "-0.2em",
           display: "inline",
       }}
   />{" "}
-      = 9.31494102230152... &times; 10<sup>2</sup> MeV
+      = 6.70053525691318... &times; 10<sup>9</sup> u
 </span>
 
                     <span>prediction</span>
@@ -21104,20 +21188,20 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/e_a_mass_dot.svg"
-      alt="E_A_mass dot"
+  J ⋮ <img
+      src="/equations/atomic_mass_constant_symbol.svg"
+      alt="A_mass"
       style={{
-          height: "1.2em",
+          height: "0.9em",
           verticalAlign: "-0.2em",
           display: "inline",
       }}
   />{" "}
-      = 9.3149410372(29) &times; 10<sup>2</sup> MeV
+      = 6.7005352471(21) &times; 10<sup>9</sup> u
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?muc2mev|search_for=mass"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?ju|search_for=joule"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -21128,7 +21212,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = 5.14"}
+                        {", σ = 4.66"}
   </span>
                 </div>
 
@@ -21142,24 +21226,26 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/e_a_mass_dot.svg"
-      alt="E_A_mass dot"
+ J ⋮ <img
+      src="/equations/atomic_mass_constant_symbol.svg"
+      alt="A_mass"
       style={{
-          height: "1.2em",
+          height: "0.9em",
           verticalAlign: "-0.2em",
           display: "inline",
       }}
   />{" "}
-      = 9.3149410242(28) &times; 10<sup>2</sup> MeV
+      = 6.7005352565(20) &times; 10<sup>9</sup> u
   </span>
                     <span>
-    CODATA 2018, σ = 0.67
+    CODATA 2018, σ = 0.20
   </span>
                 </div>
 
             </div>
         ),
+
+
 
 
 
@@ -21355,6 +21441,7 @@ J ⋮ kg{" "}
 
 
 
+
 88: (
             <div
                 style={{
@@ -21366,7 +21453,7 @@ J ⋮ kg{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    neutron-proton mass difference energy equivalent in MeV
+                    electron volt-kilogram relationship
                 </div>
 
                 {/* 2. Empty Line */}
@@ -21375,11 +21462,11 @@ J ⋮ kg{" "}
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/neutron-proton_mass_energy_equivalent_in_mev.svg"
-                        alt="neutron-proton mass difference energy equivalent in MeV equation"
+                        src="/equations/electron_volt-kilogram_relationship.svg"
+                        alt="electron volt-kilogram relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "420px",   // ✅ Set the width to exactly what you want
+                            width: "360px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -21401,40 +21488,7 @@ J ⋮ kg{" "}
                 >
                     Where{" "}
 
-                    MeV = the megaelectron-volt,{" "}
-
-                    <img
-                        src="/equations/neutron_mass_symbol.svg"
-                        alt="m_n"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the neutron mass,{" "}
-
-                    <img
-                        src="/equations/proton_mass_symbol.svg"
-                        alt="m_+"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the proton mass,{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
+                    eV = the electron-volt,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -21446,6 +21500,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck time,{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
 
                     <img
                         src="/equations/i.svg"
@@ -21506,16 +21571,8 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/e_del_dot.svg"
-      alt="E_del dot"
-      style={{
-          height: "1.2em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.29333212739110... MeV
+  eV ⋮ kg{" "}
+      = 1.78266192320666... &times; 10<sup>-36</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -21531,20 +21588,12 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-   <img
-       src="/equations/e_del_dot.svg"
-       alt="E_del dot"
-       style={{
-           height: "1.2em",
-           verticalAlign: "-0.2em",
-           display: "inline",
-       }}
-   />{" "}
-      = 1.29333251(38) MeV
+  eV ⋮ kg{" "}
+      = 1.78266192321 &times; 10<sup>-36</sup> kg
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mnmmpc2mev|search_for=neutron"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?evkg|search_for=kilogram"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -21555,7 +21604,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = 1.03"}
+                        {", σ = 0.20"}
   </span>
                 </div>
 
@@ -21569,19 +21618,11 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
- <img
-     src="/equations/e_del_dot.svg"
-     alt="E_del dot"
-     style={{
-         height: "1.2em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />{" "}
-      = 1.29333236(46) MeV
+ eV ⋮ kg{" "}
+      = 1.78266192321 &times; 10<sup>-36</sup> kg
   </span>
                     <span>
-    CODATA 2018, σ = 0.52
+    CODATA 2018, σ = 0.20
   </span>
                 </div>
 
@@ -21589,8 +21630,7 @@ J ⋮ kg{" "}
         ),
 
 
-
-
+        
 
 
 89: (
@@ -21829,6 +21869,9 @@ J ⋮ kg{" "}
 
 
 
+
+
+
 90: (
             <div
                 style={{
@@ -21840,7 +21883,7 @@ J ⋮ kg{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    electron mass energy equivalent
+                    neutron-proton mass difference energy equivalent in MeV
                 </div>
 
                 {/* 2. Empty Line */}
@@ -21849,2053 +21892,11 @@ J ⋮ kg{" "}
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/electron_mass_energy_equivalent.svg"
-                        alt="electron mass energy equivalent equation"
+                        src="/equations/neutron-proton_mass_energy_equivalent_in_mev.svg"
+                        alt="neutron-proton mass difference energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "16px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/electron_mass_symbol.svg"
-                        alt="m_e"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the electron mass,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/i.svg"
-                        alt="i"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the imaginary unit,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_e.svg"
-      alt="E_del"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 8.18710578130419... &times; 10<sup>-14</sup> J
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_e.svg"
-      alt="E_del"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 8.1871057880(26) &times; 10<sup>-14</sup> J
-
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mec2|search_for=energy"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = 2.57"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- <img
-     src="/equations/e_e.svg"
-     alt="E_del"
-     style={{
-         height: "0.9em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />{" "}
-      = 8.1871057769(25) &times; 10<sup>-14</sup> J
-  </span>
-                    <span>
-    CODATA 2018, σ = 1.76
-  </span>
-                </div>
-
-                {/* 10. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 11. Also called... */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "left",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  Also listed as the <i>natural unit of energy</i>.
-</span>
-
-                </div>
-
-            </div>
-        ),
-
-
-
-
-
-91: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "10px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    muon mass energy equivalent
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/muon_mass_energy_equivalent.svg"
-                        alt="muon mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "325px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "16px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/muon_mass_symbol.svg"
-                        alt="m_mu"
-                        style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.35em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the muon mass,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/i.svg"
-                        alt="i"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the imaginary unit,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_mu.svg"
-      alt="E_mu"
-      style={{
-          height: "1em",
-          verticalAlign: "-0.3em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.69283375913778... &times; 10<sup>-11</sup> J
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_mu.svg"
-      alt="E_mu"
-      style={{
-          height: "1em",
-          verticalAlign: "-0.3em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.692833804(38) &times; 10<sup>-11</sup> J
-
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mmuc2|search_for=energy"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = 1.18"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- <img
-     src="/equations/e_mu.svg"
-     alt="E_mu"
-     style={{
-         height: "1em",
-         verticalAlign: "-0.3em",
-         display: "inline",
-     }}
- />{" "}
-      = 1.692833804(38) &times; 10<sup>-11</sup> J
-  </span>
-                    <span>
-    CODATA 2018, σ = 1.18
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-
-
-
-
-92: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "10px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    proton mass energy equivalent
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/proton_mass_energy_equivalent.svg"
-                        alt="proton mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "325px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "16px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/proton_mass_symbol.svg"
-                        alt="m_+"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the proton mass,{" "}
-
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/i.svg"
-                        alt="i"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the imaginary unit,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_plus.svg"
-      alt="E_mu"
-      style={{
-          height: "0.95em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.50327761676299... &times; 10<sup>-10</sup> J
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_plus.svg"
-      alt="E_mu"
-      style={{
-          height: "0.95em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.50327761802(47) &times; 10<sup>-10</sup> J
-
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mpc2|search_for=energy"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = 2.68"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- <img
-     src="/equations/e_plus.svg"
-     alt="E_mu"
-     style={{
-         height: "0.95em",
-         verticalAlign: "-0.25em",
-         display: "inline",
-     }}
- />{" "}
-      = 1.50327761598(46) &times; 10<sup>-10</sup> J
-  </span>
-                    <span>
-    CODATA 2018, σ = 1.69
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-
-
-
-
-93: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "10px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    neutron mass energy equivalent
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/neutron_mass_energy_equivalent.svg"
-                        alt="neutron mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "325px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "16px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/neutron_mass_symbol.svg"
-                        alt="m_n"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the neutron mass,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/i.svg"
-                        alt="i"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the imaginary unit,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_n.svg"
-      alt="E_n"
-      style={{
-          height: "0.92em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.50534976319091... &times; 10<sup>-10</sup> J
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_n.svg"
-      alt="E_n"
-      style={{
-          height: "0.92em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.50534976514(76) &times; 10<sup>-10</sup> J
-
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mnc2|search_for=energy"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = 2.57"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- <img
-     src="/equations/e_n.svg"
-     alt="E_n"
-     style={{
-         height: "0.92em",
-         verticalAlign: "-0.25em",
-         display: "inline",
-     }}
- />{" "}
-      = 1.50534976287(86) &times; 10<sup>-10</sup> J
-  </span>
-                    <span>
-    CODATA 2018, σ = 0.37
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-        94: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "10px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    tau mass energy equivalent
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/tau_mass_energy_equivalent.svg"
-                        alt="tau mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "16px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/tau_mass_symbol.svg"
-                        alt="m_tau"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the tau mass,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/i.svg"
-                        alt="i"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the imaginary unit,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_tau.svg"
-      alt="E_tau"
-      style={{
-          height: "0.92em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
-  />{" "}
-      = 2.84685177482094... &times; 10<sup>-10</sup> J
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- <img
-     src="/equations/e_tau.svg"
-     alt="E_tau"
-     style={{
-         height: "0.92em",
-         verticalAlign: "-0.25em",
-         display: "inline",
-     }}
- />{" "}
-      = 2.84684(19) &times; 10<sup>-10</sup> J
-
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mtauc2mev|search_for=energy"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = 0.05"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- <img
-     src="/equations/e_tau.svg"
-     alt="E_tau"
-     style={{
-         height: "0.92em",
-         verticalAlign: "-0.25em",
-         display: "inline",
-     }}
- />{" "}
-      = 2.84684(19) &times; 10<sup>-10</sup> J
-  </span>
-                    <span>
-    CODATA 2018, σ = 0.05
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-
-
-
-95: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "10px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    deuteron mass energy equivalent
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/deuteron_mass_energy_equivalent.svg"
-                        alt="deuteron mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "325px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "16px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/deuteron_mass_symbol.svg"
-                        alt="m_de"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the deuteron mass,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/i.svg"
-                        alt="i"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the imaginary unit,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_de.svg"
-      alt="E_de"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 3.00506323245118... &times; 10<sup>-10</sup> J
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_de.svg"
-      alt="E_de"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 3.00506323491(94) &times; 10<sup>-10</sup> J
-
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mdc2|search_for=energy"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = 2.62"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- <img
-     src="/equations/e_de.svg"
-     alt="E_de"
-     style={{
-         height: "0.9em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />{" "}
-      = 3.00506323102(91) &times; 10<sup>-10</sup> J
-  </span>
-                    <span>
-    CODATA 2018, σ = 1.57
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-
-
-
-
-96: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "10px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    helion mass energy equivalent
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/helion_mass_energy_equivalent.svg"
-                        alt="helion mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "16px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/helion_mass_symbol.svg"
-                        alt="m_he"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the helion mass,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/i.svg"
-                        alt="i"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the imaginary unit,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_he.svg"
-      alt="E_he"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 4.49953941506707... &times; 10<sup>-10</sup> J
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_he.svg"
-      alt="E_he"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 4.4995394185(14) &times; 10<sup>-10</sup> J
-
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mhc2|search_for=energy"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = 2.71"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- <img
-     src="/equations/e_he.svg"
-     alt="E_he"
-     style={{
-         height: "0.9em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />{" "}
-      = 4.4995394125(14) &times; 10<sup>-10</sup> J
-  </span>
-                    <span>
-    CODATA 2018, σ = 1.85
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-
-
-
-
-97: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "10px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    triton mass energy equivalent
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/triton_mass_energy_equivalent.svg"
-                        alt="triton mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "335px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "16px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/triton_mass_symbol.svg"
-                        alt="m_tri"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the triton mass,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/i.svg"
-                        alt="i"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the imaginary unit,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_tri.svg"
-      alt="E_tri"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 4.50038780883755... &times; 10<sup>-10</sup> J
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_tri.svg"
-      alt="E_tri"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 4.5003878119(14) &times; 10<sup>-10</sup> J
-
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mtc2|search_for=energy"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = 2.21"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- <img
-     src="/equations/e_tri.svg"
-     alt="E_tri"
-     style={{
-         height: "0.9em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />{" "}
-      = 4.5003878060(14) &times; 10<sup>-10</sup> J
-  </span>
-                    <span>
-    CODATA 2018, σ = 2.00
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-
-
-
-98: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "10px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    alpha particle mass energy equivalent
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/alpha_particle_mass_energy_equivalent.svg"
-                        alt="alpha particle mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "16px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/alpha_particle_mass_symbol.svg"
-                        alt="m_alpha"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the alpha particle mass,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/i.svg"
-                        alt="i"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the imaginary unit,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_alpha.svg"
-      alt="E_alpha"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 5.97192019532459... &times; 10<sup>-10</sup> J
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_alpha.svg"
-      alt="E_alpha"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 5.9719201997(19) &times; 10<sup>-10</sup> J
-
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?malc2|search_for=energy"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = 2.32"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/e_alpha.svg"
-      alt="E_alpha"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 5.9719201914(18) &times; 10<sup>-10</sup> J
-  </span>
-                    <span>
-    CODATA 2018, σ = 2.17
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-        99: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "10px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    natural unit of momentum in MeV/c
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/natural_unit_of_momentum_in_mev_per_c.svg"
-                        alt="natural unit of momentum in MeV/c equation"
-                        style={{
-                            display: "inline-block",
-                            width: "440px",   // ✅ Set the width to exactly what you want
+                            width: "420px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -23920,6 +21921,28 @@ J ⋮ kg{" "}
                     MeV = the megaelectron-volt,{" "}
 
                     <img
+                        src="/equations/neutron_mass_symbol.svg"
+                        alt="m_n"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the neutron mass,{" "}
+
+                    <img
+                        src="/equations/proton_mass_symbol.svg"
+                        alt="m_+"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the proton mass,{" "}
+
+                    <img
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
@@ -23929,17 +21952,6 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
-
-                    <img
-                        src="/equations/electron_mass_symbol.svg"
-                        alt="m_e"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the electron mass,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -24012,15 +22024,15 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/n_mom_dot.svg"
-      alt="N_mom dot"
+      src="/equations/e_del_dot.svg"
+      alt="E_del dot"
       style={{
-          height: "1em",
+          height: "1.2em",
           verticalAlign: "-0.2em",
           display: "inline",
       }}
   />{" "}
-      = 5.10998950205585... &times; 10<sup>-1</sup> MeV/c
+      = 1.29333212739110... MeV
 </span>
 
                     <span>prediction</span>
@@ -24037,20 +22049,19 @@ J ⋮ kg{" "}
                 >
   <span>
    <img
-       src="/equations/n_mom_dot.svg"
-       alt="N_mom dot"
+       src="/equations/e_del_dot.svg"
+       alt="E_del dot"
        style={{
-           height: "1em",
+           height: "1.2em",
            verticalAlign: "-0.2em",
            display: "inline",
        }}
    />{" "}
-      = 5.1099895069(16) &times; 10<sup>-1</sup> MeV/c
-
+      = 1.29333251(38) MeV
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?malc2|search_for=energy"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mnmmpc2mev|search_for=neutron"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -24061,7 +22072,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = 3.06"}
+                        {", σ = 1.03"}
   </span>
                 </div>
 
@@ -24075,19 +22086,19 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/n_mom_dot.svg"
-      alt="N_mom dot"
-      style={{
-          height: "1em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 5.1099895000(15) &times; 10<sup>-1</sup> MeV/c
+ <img
+     src="/equations/e_del_dot.svg"
+     alt="E_del dot"
+     style={{
+         height: "1.2em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />{" "}
+      = 1.29333236(46) MeV
   </span>
                     <span>
-    CODATA 2018, σ = 1.33
+    CODATA 2018, σ = 0.52
   </span>
                 </div>
 
@@ -24099,7 +22110,9 @@ J ⋮ kg{" "}
 
 
 
-100: (
+
+
+91: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -24345,7 +22358,7 @@ J ⋮ kg{" "}
 
 
 
-101: (
+92: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -24573,7 +22586,7 @@ J ⋮ kg{" "}
 
 
 
-102: (
+93: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -24801,7 +22814,7 @@ J ⋮ kg{" "}
 
 
 
-103: (
+94: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -25029,7 +23042,7 @@ J ⋮ kg{" "}
 
 
 
-104: (
+95: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -25256,7 +23269,7 @@ J ⋮ kg{" "}
 
 
 
-105: (
+96: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -25484,7 +23497,7 @@ J ⋮ kg{" "}
 
 
 
-106: (
+97: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -25712,7 +23725,7 @@ J ⋮ kg{" "}
 
 
 
-107: (
+98: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -25940,7 +23953,7 @@ J ⋮ kg{" "}
 
 
 
-108: (
+99: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -26168,8 +24181,2062 @@ J ⋮ kg{" "}
 
 
 
+100: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "10px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    electron mass energy equivalent
+                </div>
 
-        109: (
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div style={{textAlign: "right"}}>
+                    <img
+                        src="/equations/electron_mass_energy_equivalent.svg"
+                        alt="electron mass energy equivalent equation"
+                        style={{
+                            display: "inline-block",
+                            width: "320px",   // ✅ Set the width to exactly what you want
+                            height: "auto"
+                        }}
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/electron_mass_symbol.svg"
+                        alt="m_e"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the electron mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/i.svg"
+                        alt="i"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the imaginary unit,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_e.svg"
+      alt="E_del"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 8.18710578130419... &times; 10<sup>-14</sup> J
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_e.svg"
+      alt="E_del"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 8.1871057880(26) &times; 10<sup>-14</sup> J
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mec2|search_for=energy"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = 2.57"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ <img
+     src="/equations/e_e.svg"
+     alt="E_del"
+     style={{
+         height: "0.9em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />{" "}
+      = 8.1871057769(25) &times; 10<sup>-14</sup> J
+  </span>
+                    <span>
+    CODATA 2018, σ = 1.76
+  </span>
+                </div>
+
+                {/* 10. Empty Line */}
+                <div style={{height: "18px"}}/>
+
+                {/* 11. Also called... */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "left",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  Also listed as the <i>natural unit of energy</i>.
+</span>
+
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+101: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "10px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    muon mass energy equivalent
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div style={{textAlign: "right"}}>
+                    <img
+                        src="/equations/muon_mass_energy_equivalent.svg"
+                        alt="muon mass energy equivalent equation"
+                        style={{
+                            display: "inline-block",
+                            width: "325px",   // ✅ Set the width to exactly what you want
+                            height: "auto"
+                        }}
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/muon_mass_symbol.svg"
+                        alt="m_mu"
+                        style={{
+                            height: "0.85em",
+                            verticalAlign: "-0.35em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the muon mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/i.svg"
+                        alt="i"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the imaginary unit,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_mu.svg"
+      alt="E_mu"
+      style={{
+          height: "1em",
+          verticalAlign: "-0.3em",
+          display: "inline",
+      }}
+  />{" "}
+      = 1.69283375913778... &times; 10<sup>-11</sup> J
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_mu.svg"
+      alt="E_mu"
+      style={{
+          height: "1em",
+          verticalAlign: "-0.3em",
+          display: "inline",
+      }}
+  />{" "}
+      = 1.692833804(38) &times; 10<sup>-11</sup> J
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mmuc2|search_for=energy"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = 1.18"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ <img
+     src="/equations/e_mu.svg"
+     alt="E_mu"
+     style={{
+         height: "1em",
+         verticalAlign: "-0.3em",
+         display: "inline",
+     }}
+ />{" "}
+      = 1.692833804(38) &times; 10<sup>-11</sup> J
+  </span>
+                    <span>
+    CODATA 2018, σ = 1.18
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+
+102: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "10px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    proton mass energy equivalent
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div style={{textAlign: "right"}}>
+                    <img
+                        src="/equations/proton_mass_energy_equivalent.svg"
+                        alt="proton mass energy equivalent equation"
+                        style={{
+                            display: "inline-block",
+                            width: "325px",   // ✅ Set the width to exactly what you want
+                            height: "auto"
+                        }}
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/proton_mass_symbol.svg"
+                        alt="m_+"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the proton mass,{" "}
+
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/i.svg"
+                        alt="i"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the imaginary unit,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_plus.svg"
+      alt="E_mu"
+      style={{
+          height: "0.95em",
+          verticalAlign: "-0.25em",
+          display: "inline",
+      }}
+  />{" "}
+      = 1.50327761676299... &times; 10<sup>-10</sup> J
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_plus.svg"
+      alt="E_mu"
+      style={{
+          height: "0.95em",
+          verticalAlign: "-0.25em",
+          display: "inline",
+      }}
+  />{" "}
+      = 1.50327761802(47) &times; 10<sup>-10</sup> J
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mpc2|search_for=energy"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = 2.68"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ <img
+     src="/equations/e_plus.svg"
+     alt="E_mu"
+     style={{
+         height: "0.95em",
+         verticalAlign: "-0.25em",
+         display: "inline",
+     }}
+ />{" "}
+      = 1.50327761598(46) &times; 10<sup>-10</sup> J
+  </span>
+                    <span>
+    CODATA 2018, σ = 1.69
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+
+103: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "10px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    neutron mass energy equivalent
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div style={{textAlign: "right"}}>
+                    <img
+                        src="/equations/neutron_mass_energy_equivalent.svg"
+                        alt="neutron mass energy equivalent equation"
+                        style={{
+                            display: "inline-block",
+                            width: "325px",   // ✅ Set the width to exactly what you want
+                            height: "auto"
+                        }}
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/neutron_mass_symbol.svg"
+                        alt="m_n"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the neutron mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/i.svg"
+                        alt="i"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the imaginary unit,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_n.svg"
+      alt="E_n"
+      style={{
+          height: "0.92em",
+          verticalAlign: "-0.25em",
+          display: "inline",
+      }}
+  />{" "}
+      = 1.50534976319091... &times; 10<sup>-10</sup> J
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_n.svg"
+      alt="E_n"
+      style={{
+          height: "0.92em",
+          verticalAlign: "-0.25em",
+          display: "inline",
+      }}
+  />{" "}
+      = 1.50534976514(76) &times; 10<sup>-10</sup> J
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mnc2|search_for=energy"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = 2.57"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ <img
+     src="/equations/e_n.svg"
+     alt="E_n"
+     style={{
+         height: "0.92em",
+         verticalAlign: "-0.25em",
+         display: "inline",
+     }}
+ />{" "}
+      = 1.50534976287(86) &times; 10<sup>-10</sup> J
+  </span>
+                    <span>
+    CODATA 2018, σ = 0.37
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+104: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "10px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    tau mass energy equivalent
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div style={{textAlign: "right"}}>
+                    <img
+                        src="/equations/tau_mass_energy_equivalent.svg"
+                        alt="tau mass energy equivalent equation"
+                        style={{
+                            display: "inline-block",
+                            width: "320px",   // ✅ Set the width to exactly what you want
+                            height: "auto"
+                        }}
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/tau_mass_symbol.svg"
+                        alt="m_tau"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the tau mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/i.svg"
+                        alt="i"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the imaginary unit,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_tau.svg"
+      alt="E_tau"
+      style={{
+          height: "0.92em",
+          verticalAlign: "-0.25em",
+          display: "inline",
+      }}
+  />{" "}
+      = 2.84685177482094... &times; 10<sup>-10</sup> J
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ <img
+     src="/equations/e_tau.svg"
+     alt="E_tau"
+     style={{
+         height: "0.92em",
+         verticalAlign: "-0.25em",
+         display: "inline",
+     }}
+ />{" "}
+      = 2.84684(19) &times; 10<sup>-10</sup> J
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mtauc2mev|search_for=energy"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = 0.05"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ <img
+     src="/equations/e_tau.svg"
+     alt="E_tau"
+     style={{
+         height: "0.92em",
+         verticalAlign: "-0.25em",
+         display: "inline",
+     }}
+ />{" "}
+      = 2.84684(19) &times; 10<sup>-10</sup> J
+  </span>
+                    <span>
+    CODATA 2018, σ = 0.05
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+105: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "10px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    deuteron mass energy equivalent
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div style={{textAlign: "right"}}>
+                    <img
+                        src="/equations/deuteron_mass_energy_equivalent.svg"
+                        alt="deuteron mass energy equivalent equation"
+                        style={{
+                            display: "inline-block",
+                            width: "325px",   // ✅ Set the width to exactly what you want
+                            height: "auto"
+                        }}
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/deuteron_mass_symbol.svg"
+                        alt="m_de"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the deuteron mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/i.svg"
+                        alt="i"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the imaginary unit,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_de.svg"
+      alt="E_de"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 3.00506323245118... &times; 10<sup>-10</sup> J
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_de.svg"
+      alt="E_de"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 3.00506323491(94) &times; 10<sup>-10</sup> J
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mdc2|search_for=energy"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = 2.62"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ <img
+     src="/equations/e_de.svg"
+     alt="E_de"
+     style={{
+         height: "0.9em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />{" "}
+      = 3.00506323102(91) &times; 10<sup>-10</sup> J
+  </span>
+                    <span>
+    CODATA 2018, σ = 1.57
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+
+106: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "10px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    helion mass energy equivalent
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div style={{textAlign: "right"}}>
+                    <img
+                        src="/equations/helion_mass_energy_equivalent.svg"
+                        alt="helion mass energy equivalent equation"
+                        style={{
+                            display: "inline-block",
+                            width: "330px",   // ✅ Set the width to exactly what you want
+                            height: "auto"
+                        }}
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/helion_mass_symbol.svg"
+                        alt="m_he"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the helion mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/i.svg"
+                        alt="i"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the imaginary unit,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_he.svg"
+      alt="E_he"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 4.49953941506707... &times; 10<sup>-10</sup> J
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_he.svg"
+      alt="E_he"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 4.4995394185(14) &times; 10<sup>-10</sup> J
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mhc2|search_for=energy"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = 2.71"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ <img
+     src="/equations/e_he.svg"
+     alt="E_he"
+     style={{
+         height: "0.9em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />{" "}
+      = 4.4995394125(14) &times; 10<sup>-10</sup> J
+  </span>
+                    <span>
+    CODATA 2018, σ = 1.85
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+
+107: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "10px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    triton mass energy equivalent
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div style={{textAlign: "right"}}>
+                    <img
+                        src="/equations/triton_mass_energy_equivalent.svg"
+                        alt="triton mass energy equivalent equation"
+                        style={{
+                            display: "inline-block",
+                            width: "335px",   // ✅ Set the width to exactly what you want
+                            height: "auto"
+                        }}
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/triton_mass_symbol.svg"
+                        alt="m_tri"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the triton mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/i.svg"
+                        alt="i"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the imaginary unit,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_tri.svg"
+      alt="E_tri"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 4.50038780883755... &times; 10<sup>-10</sup> J
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_tri.svg"
+      alt="E_tri"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 4.5003878119(14) &times; 10<sup>-10</sup> J
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mtc2|search_for=energy"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = 2.21"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ <img
+     src="/equations/e_tri.svg"
+     alt="E_tri"
+     style={{
+         height: "0.9em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />{" "}
+      = 4.5003878060(14) &times; 10<sup>-10</sup> J
+  </span>
+                    <span>
+    CODATA 2018, σ = 2.00
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+108: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "10px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    alpha particle mass energy equivalent
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div style={{textAlign: "right"}}>
+                    <img
+                        src="/equations/alpha_particle_mass_energy_equivalent.svg"
+                        alt="alpha particle mass energy equivalent equation"
+                        style={{
+                            display: "inline-block",
+                            width: "330px",   // ✅ Set the width to exactly what you want
+                            height: "auto"
+                        }}
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/alpha_particle_mass_symbol.svg"
+                        alt="m_alpha"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the alpha particle mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/i.svg"
+                        alt="i"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the imaginary unit,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_alpha.svg"
+      alt="E_alpha"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 5.97192019532459... &times; 10<sup>-10</sup> J
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_alpha.svg"
+      alt="E_alpha"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 5.9719201997(19) &times; 10<sup>-10</sup> J
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?malc2|search_for=energy"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = 2.32"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/e_alpha.svg"
+      alt="E_alpha"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 5.9719201914(18) &times; 10<sup>-10</sup> J
+  </span>
+                    <span>
+    CODATA 2018, σ = 2.17
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+
+
+
+
+
+
+
+109: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -69797,34 +69864,34 @@ J ⋮ kg{" "}
                                                                                                                                                                                                                                                                                                                                             eqNumber === 78 ? "/equations/atomic_unit_of_velocity.svg" :
                                                                                                                                                                                                                                                                                                                                                 eqNumber === 79 ? "/equations/atomic_unit_of_momentum.svg" :
                                                                                                                                                                                                                                                                                                                                                     eqNumber === 80 ? "/equations/natural_unit_of_momentum.svg" :
-                                                                                                                                                                                                                                                                                                                                                        eqNumber === 81 ? "/equations/joule-kilogram_relationship.svg" :
-                                                                                                                                                                                                                                                                                                                                                            eqNumber === 82 ? "/equations/joule-atomic_mass_unit_relationship.svg" :
-                                                                                                                                                                                                                                                                                                                                                                eqNumber === 83 ? "/equations/electron_volt-kilogram_relationship.svg" :
-                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 84 ? "/equations/kilogram-joule_relationship.svg" :
+                                                                                                                                                                                                                                                                                                                                                        eqNumber === 81 ? "/equations/natural_unit_of_momentum_in_mev_per_c.svg" :
+                                                                                                                                                                                                                                                                                                                                                            eqNumber === 82 ? "/equations/atomic_mass_constant_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                eqNumber === 83 ? "/equations/kilogram-joule_relationship.svg" :
+                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 84 ? "/equations/joule-kilogram_relationship.svg" :
                                                                                                                                                                                                                                                                                                                                                                         eqNumber === 85 ? "/equations/atomic_mass_unit-joule_relationship.svg" :
-                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 86 ? "/equations/atomic_mass_constant_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 86 ? "/equations/joule-atomic_mass_unit_relationship.svg" :
                                                                                                                                                                                                                                                                                                                                                                                 eqNumber === 87 ? "/equations/kilogram-electron_volt_relationship.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 88 ? "/equations/neutron-proton_mass_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 88 ? "/equations/electron_volt-kilogram_relationship.svg" :
                                                                                                                                                                                                                                                                                                                                                                                         eqNumber === 89 ? "/equations/neutron-proton_mass_difference_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 90 ? "/equations/electron_mass_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 91 ? "/equations/muon_mass_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 92 ? "/equations/proton_mass_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 93 ? "/equations/neutron_mass_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 94 ? "/equations/tau_mass_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 95 ? "/equations/deuteron_mass_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 96 ? "/equations/helion_mass_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 97 ? "/equations/triton_mass_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 98 ? "/equations/alpha_particle_mass_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 99 ? "/equations/natural_unit_of_momentum_in_mev_per_c.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 100 ? "/equations/natural_unit_of_energy_in_mev.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 101 ? "/equations/muon_mass_energy_equivalent_in_mev.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 102 ? "/equations/proton_mass_energy_equivalent_in_mev.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 103 ? "/equations/neutron_mass_energy_equivalent_in_mev.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 104 ? "/equations/tau_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 105 ? "/equations/deuteron_mass_energy_equivalent_in_mev.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 106 ? "/equations/helion_mass_energy_equivalent_in_mev.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 107 ? "/equations/triton_mass_energy_equivalent_in_mev.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 108 ? "/equations/alpha_particle_mass_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 90 ? "/equations/neutron-proton_mass_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 91 ? "/equations/natural_unit_of_energy_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 92 ? "/equations/muon_mass_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 93 ? "/equations/proton_mass_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 94 ? "/equations/neutron_mass_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 95 ? "/equations/tau_energy_equivalent.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 96 ? "/equations/deuteron_mass_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 97 ? "/equations/helion_mass_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 98 ? "/equations/triton_mass_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 99 ? "/equations/alpha_particle_mass_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 100 ? "/equations/electron_mass_energy_equivalent.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 101 ? "/equations/muon_mass_energy_equivalent.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 102 ? "/equations/proton_mass_energy_equivalent.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 103 ? "/equations/neutron_mass_energy_equivalent.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 104 ? "/equations/tau_mass_energy_equivalent.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 105 ? "/equations/deuteron_mass_energy_equivalent.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 106 ? "/equations/helion_mass_energy_equivalent.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 107 ? "/equations/triton_mass_energy_equivalent.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 108 ? "/equations/alpha_particle_mass_energy_equivalent.svg" :
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                         eqNumber === 109 ? "/equations/bohr_magneton_in_inverse_meter_per_tesla.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                             eqNumber === 110 ? "/equations/nuclear_magneton_in_inverse_meter_per_tesla.svg" :
