@@ -95,11 +95,16 @@ export default function SimplestManifold() {
 
         <div style={{ height: '2.5rem' }} />
 
-        <p className="equation-description">The constructive equation for the hyperbolic figure eight knot volume is:</p>
+        <p className="equation-description">The constructive equations for the hyperbolic figure eight knot volume and its real conjugate (defining the product of a unit sphere divided by 36, and a unit sphere divided by 8) are:</p>
         <div style={{ height: '2rem' }} />
 
         <div className="equation-line">
-          <img src="/equations/v_fe_equation.svg" alt="Equation 1" style={{ height: '48px', width: 'auto' }} />
+          <img src="/equations/v_fe_equation.svg" alt="Equation 1" style={{ height: '48px', width: 'auto', transform: 'translateX(32px)' }} />
+        </div>
+        <div style={{ height: '2rem' }} />
+
+        <div className="equation-line">
+          <img src="/equations/real_conjugate_equation.svg" alt="Equation 2" style={{ height: '66px', width: 'auto', transform: 'translateX(-118px)'  }} />
         </div>
         <div style={{ height: '2rem' }} />
 
@@ -146,7 +151,7 @@ export default function SimplestManifold() {
             src="/equations/v_fe_2_g_gi.svg"
             alt="V_fe=2G_Gi"
             style={{ height: '16px', width: 'auto', display: 'inline-block', position: 'relative', top: '0px' }}
-          />, and <img
+          />, <img
             src="/equations/g_gi.svg"
             alt="G_Gi"
             style={{ height: '16px', width: 'auto', display: 'inline-block', position: 'relative', top: '-1px' }}
@@ -159,24 +164,7 @@ export default function SimplestManifold() {
             onMouseOut={e => (e.target.style.color = 'inherit')}
           >
             Gieseking&apos;s constant for the minimum 3-manifold
-          </a>.</p>
-        <div style={{ height: '2rem' }} />
-
-        <div className="equation-line" style={{ display: 'flex', justifyContent: 'center', gap: '4rem' }}>
-          <img src="/equations/imaginary_golden_ratio_equation.svg" alt="Equation 5a" style={{ height: '26px', width: 'auto' }} />
-          <img src="/equations/i_equation.svg" alt="Equation 5b" style={{ height: '26px', width: 'auto' }} />
-        </div>
-        <div style={{ height: '2.5rem' }} />
-
-        <p className="equation-description">The real conjugate of the hyperblic figure eight knot defines a double covered sphere, divided into 288 pieces—each associated to a unique constant of Nature.</p>
-        <div style={{ height: '2rem' }} />
-
-        <div className="equation-line">
-          <img src="/equations/real_conjugate_equation.svg" alt="Equation 2" style={{ height: '48px', width: 'auto' }} />
-        </div>
-        <div style={{ height: '2rem' }} />
-
-        <p className="equation-description">Where <img
+          </a> and <img
             src="/equations/pi.svg"
             alt="pi"
             style={{ height: '9px', width: 'auto', display: 'inline-block', position: 'relative', top: '0px' }}
@@ -191,6 +179,12 @@ export default function SimplestManifold() {
             Archimedes&apos; constant
           </a>.</p>
         <div style={{ height: '2rem' }} />
+
+        <div className="equation-line" style={{ display: 'flex', justifyContent: 'center', gap: '4rem' }}>
+          <img src="/equations/imaginary_golden_ratio_equation.svg" alt="Equation 5a" style={{ height: '26px', width: 'auto' }} />
+          <img src="/equations/i_equation.svg" alt="Equation 5b" style={{ height: '26px', width: 'auto' }} />
+        </div>
+        <div style={{ height: '2.5rem' }} />
 
         <p className="equation-description">These constructions pull apart into two dilogarithms, made of identical real and inverse imagainry parts.</p>
         <div style={{ height: '2rem' }} />

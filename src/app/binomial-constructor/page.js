@@ -13,18 +13,23 @@ export default function BinomialConstructor() {
       <div className="partition-content">
         <div className="legend-title">the binomial constructor</div>
 
-        <div className="equation-line">
-          <img
-            src="/equations/binomial_constructor_equation.svg"
-            alt="binomial constructor equation"
-            style={{ height: '30px', width: 'auto' }}
-          />
-        </div>
+        <div className="equation-line" style={{ display: 'flex', justifyContent: 'center', gap: '3rem' }}>
+  <img
+    src="/equations/binomial_constructor_equation.svg"
+    alt="binomial constructor equation"
+    style={{ height: '30px', width: 'auto' }}
+  />
+  <img
+    src="/equations/box_symbol_equation.svg"
+    alt="box symbol equation"
+    style={{ height: '48px', width: 'auto' }}
+  />
+</div>
 
         <div style={{ height: '2.0rem' }} />
 
         <p className="equation-description">
-          The binomial constructor encodes the general two-part structure maintained by the complement of the {' '}
+          The binomial constructor encodes the general two-part structure of the complement of the {' '}
   <a
     href="/simplest-manifold"
     target="_blank"
@@ -84,81 +89,62 @@ export default function BinomialConstructor() {
             src="/equations/box_symbol.svg"
             alt="box symbol"
             style={{ height: '15px', width: 'auto', verticalAlign: '-0.1em', display: 'inline' }}
-          /> = the hyperbolic inversion boundary.
+          /> = the hyperbolic inversion boundary—constructed from the normalized{" "}
+  <a
+    href="/planck-constants"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      color: 'inherit',
+      textDecoration: 'none',
+    }}
+    onMouseOver={e => (e.target.style.color = 'yellow')}
+    onMouseOut={e => (e.target.style.color = 'inherit')}
+  >
+    Planck length = <img
+            src="/equations/normalized_planck_length.svg"
+            alt="l_p"
+            style={{ height: '17px', width: 'auto', verticalAlign: '-0.40em', display: 'inline' }}
+          />
+  </a>, the normalized {" "}
+  <a
+    href="/planck-constants"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      color: 'inherit',
+      textDecoration: 'none',
+    }}
+    onMouseOver={e => (e.target.style.color = 'yellow')}
+    onMouseOut={e => (e.target.style.color = 'inherit')}
+  >
+    Planck mass = <img
+            src="/equations/normalized_planck_mass.svg"
+            alt="m_p"
+            style={{ height: '17px', width: 'auto', verticalAlign: '-0.40em', display: 'inline' }}
+          />
+  </a>, and the square of the normalized{" "}
+  <a
+    href="/planck-constants"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      color: 'inherit',
+      textDecoration: 'none',
+    }}
+    onMouseOver={e => (e.target.style.color = 'yellow')}
+    onMouseOut={e => (e.target.style.color = 'inherit')}
+  >
+    Planck charge = <img
+            src="/equations/normalized_planck_charge.svg"
+            alt="q_p"
+            style={{ height: '17px', width: 'auto', verticalAlign: '-0.40em', display: 'inline' }}
+          />
+  </a>.
 
         </p>
-
-        <div style={{ height: '1.2rem' }} />
-
-        <div className="equation-line">
-          <img
-            src="/equations/box_symbol_equation.svg"
-            alt="box symbol equation"
-            style={{ height: '48px', width: 'auto' }}
-          />
-        </div>
 
         <div style={{ height: '1.5rem' }} />
-
-        <p className="equation-description">
-          Where{" "}
-          <img
-            src="/equations/planck_length.svg"
-            alt="l_p"
-            style={{ height: '18px', width: 'auto', verticalAlign: '-0.40em', display: 'inline' }}
-          /> = {' '}
-  <a
-    href="/planck-constants"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{
-      color: 'inherit',
-      textDecoration: 'none',
-    }}
-    onMouseOver={e => (e.target.style.color = 'yellow')}
-    onMouseOut={e => (e.target.style.color = 'inherit')}
-  >
-    the Planck length
-  </a>,{" "}
-          <img
-            src="/equations/planck_mass.svg"
-            alt="m_p"
-            style={{ height: '15px', width: 'auto', verticalAlign: '-0.40em', display: 'inline' }}
-          /> = {' '}
-  <a
-    href="/planck-constants"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{
-      color: 'inherit',
-      textDecoration: 'none',
-    }}
-    onMouseOver={e => (e.target.style.color = 'yellow')}
-    onMouseOut={e => (e.target.style.color = 'inherit')}
-  >
-    the Planck mass
-  </a>, and{" "}
-          <img
-            src="/equations/planck_charge.svg"
-            alt="q_p"
-            style={{ height: '15px', width: 'auto', verticalAlign: '-0.40em', display: 'inline' }}
-          /> = {' '}
-  <a
-    href="/planck-constants"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{
-      color: 'inherit',
-      textDecoration: 'none',
-    }}
-    onMouseOver={e => (e.target.style.color = 'yellow')}
-    onMouseOut={e => (e.target.style.color = 'inherit')}
-  >
-    the Planck charge
-  </a>.
-        </p>
-
-        <div style={{ height: '2.5rem' }} />
 
         <p className="equation-description">
           Every constant of Nature uses one of the {' '}

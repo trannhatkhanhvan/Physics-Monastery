@@ -16,22 +16,14 @@ export default function HyperbolicPartitionEq() {
           <img
             src="/equations/hyperbolic_partition_equation.svg"
             alt="Hyperbolic Partition Equation"
-            style={{ height: '42px', width: 'auto' }}
+            style={{ height: '46px', width: 'auto' }}
           />
         </div>
 
         <div style={{ height: '2.0rem' }} />
 
         <p className="equation-description">
-          The hyperbolic partition equation encodes the symmetry transformations available to the{' '}
-          <a
-            href="/simplest-manifold"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="legend-link"
-          >
-            figure-eight knot complement
-          </a>. Each transition is bounded by the{' '}
+          The hyperbolic partition equation encodes how the two-layer system coherently partitions within its mass gap—the normalized{' '}
           <a
             href="/planck-constants"
             target="_blank"
@@ -40,31 +32,31 @@ export default function HyperbolicPartitionEq() {
             onMouseOver={(e) => (e.target.style.color = 'yellow')}
             onMouseOut={(e) => (e.target.style.color = 'inherit')}
           >
-            Planck mass
-          </a>{' '}gap. It&apos;s 4 solutions{' '}
+            Planck mass.{' '}
+          </a>It&apos;s 4 solutions{' '}
           <img src="/equations/zhe_1.svg" alt="zhe_1" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
           <img src="/equations/zhe_2.svg" alt="zhe_2" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
           <img src="/equations/zhe_3.svg" alt="zhe_3" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} /> and{' '}
           <img src="/equations/zhe_4.svg" alt="zhe_4" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />
-          {' '}define the hyperbolic partition constants—possessing the following product, sum and quadrance relationships.
+          {' '}define the hyperbolic partition constants—which possess the following product, sum and quadrance (sum of squares).
         </p>
 
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line" style={{ marginLeft: '-7.5rem' }}>
-          <img src="/equations/hyperbolic_partition_product.svg" alt="Hyperbolic Partition Product" style={{ height: '17px', width: 'auto' }} />
+          <img src="/equations/hyperbolic_partition_product.svg" alt="Hyperbolic Partition Product" style={{ height: '18px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '0.8rem' }} />
 
         <div className="equation-line" style={{ marginLeft: '-3.8rem' }}>
-          <img src="/equations/hyperbolic_partition_sum.svg" alt="Hyperbolic Partition Sum" style={{ height: '17px', width: 'auto' }} />
+          <img src="/equations/hyperbolic_partition_sum.svg" alt="Hyperbolic Partition Sum" style={{ height: '18px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '0.8rem' }} />
 
         <div className="equation-line" style={{ marginLeft: '0.7rem' }}>
-          <img src="/equations/hyperbolic_partition_quadrance.svg" alt="Hyperbolic Partition Quadrance" style={{ height: '20px', width: 'auto' }} />
+          <img src="/equations/hyperbolic_partition_quadrance.svg" alt="Hyperbolic Partition Quadrance" style={{ height: '21px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '2rem' }} />
@@ -88,7 +80,7 @@ export default function HyperbolicPartitionEq() {
 
 
         <p className="equation-description" style={{ marginTop: '2rem' }}>
-          The first of those quadrances is{' '}
+          The first of those quadrance parts is{' '}
           <a
             href="https://physics.nist.gov/cgi-bin/cuu/Value?alph"
             target="_blank"
@@ -103,7 +95,7 @@ export default function HyperbolicPartitionEq() {
         <div style={{ height: '3.5rem' }} />
 
         <div className="zhe-image-column" style={{ display: 'flex', justifyContent: 'center', marginBottom: '-5rem' }}>
-          <svg viewBox="-5 -5 10 10" width="400" height="400">
+          <svg viewBox="-5 -5 10 10" width="360" height="360">
             <line x1="-5" y1="0" x2="5" y2="0" stroke="white" strokeWidth="0.02" />
             <line x1="0" y1="-5" x2="0" y2="5" stroke="white" strokeWidth="0.02" />
             {[...Array(11).keys()].map((i) => {
@@ -151,43 +143,149 @@ export default function HyperbolicPartitionEq() {
           </div>
         </div>
 
-        <div style={{ height: '2.0rem' }} />
+        <div style={{ height: '3.0rem' }} />
 
 
 
-        <p className="equation-description">
-          In addition to their product, sum, and quadrance, these hyperbolic partition constants possess the following algebraic-geometric symmetries.
-        </p>
+        <p
+  className="equation-description"
+  style={{ textAlign: 'left', textIndent: 0, marginLeft: '10rem' }}
+>
+  <span style={{ whiteSpace: 'nowrap' }}>
+    Vieta relations:{' '}
+    <img src="/equations/zhe_1.svg" alt="zhe_1"
+         style={{ height: '14px', width: 'auto', display: 'inline-block', verticalAlign: '-0.25em' }} />,{' '}
+    <img src="/equations/zhe_2.svg" alt="zhe_2"
+         style={{ height: '14px', width: 'auto', display: 'inline-block', verticalAlign: '-0.25em' }} />,{' '}
+    <img src="/equations/zhe_3.svg" alt="zhe_3"
+         style={{ height: '14px', width: 'auto', display: 'inline-block', verticalAlign: '-0.25em' }} /> and{' '}
+    <img src="/equations/zhe_4.svg" alt="zhe_4"
+         style={{ height: '14px', width: 'auto', display: 'inline-block', verticalAlign: '-0.25em' }} />.
+  </span>
+</p>
+
+
+
+
 
         <div style={{ height: '1.8rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-          <img src="/equations/zhe_big_product.svg" alt="zhe big product" style={{ height: '60px', width: 'auto', marginRight: '4.3rem' }} />
-          <img src="/equations/zhe_big_sum.svg" alt="zhe big sum" style={{ height: '60px', width: 'auto', marginRight: '4.3rem' }} />
-          <img src="/equations/zhe_big_quadrance.svg" alt="zhe big quadrance" style={{ height: '60px', width: 'auto' }} />
+          <img src="/equations/zhe_big_product.svg" alt="zhe big product" style={{ height: '66px', width: 'auto', marginRight: '4.0rem' }} />
+          <img src="/equations/root_sum_big.svg" alt="root sum" style={{ height: '66px', width: 'auto', marginRight: '8.4rem' }} />
+          <img src="/equations/zhe_big_quadrance.svg" alt="zhe big quadrance" style={{ height: '66px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-          <img src="/equations/zhe_negative_one.svg" alt="zhe -1" style={{ height: '45px', width: 'auto', marginRight: '2.6rem' }} />
-          <img src="/equations/zhe_inversion.svg" alt="zhe inversion" style={{ height: '45px', width: 'auto' }} />
+          <img src="/equations/zhe_inverse_product.svg" alt="zhe inverse product" style={{ height: '66px', width: 'auto', marginRight: '4.0rem' }} />
+          <img src="/equations/zhe_biproduct_sum.svg" alt="bi-product root sum" style={{ height: '66px', width: 'auto', marginRight: '6.4rem' }} />
+          <img src="/equations/sum_of_cubes_big.svg" alt="sum of cubes" style={{ height: '66px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/inverse_sum_big.svg" alt="inverse sum" style={{ height: '66px', width: 'auto', marginRight: '4.2rem' }} />
+          <img src="/equations/triple_product_sum_big.svg" alt="triple product sum of roots" style={{ height: '66px', width: 'auto', marginRight: '3.5rem' }} />
+          <img src="/equations/sum_of_fourth_powers_big.svg" alt="sum of fourth powers" style={{ height: '66px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-          <img src="/equations/zhe_1_zhe_2_product.svg" alt="zhe_1 zhe_2 product" style={{ height: '46px', width: 'auto', marginRight: '4.2rem' }} />
-          <img src="/equations/zhe_3_zhe_4_product.svg" alt="zhe_3 zhe_4 product" style={{ height: '21px', width: 'auto' }} />
+          <img src="/equations/inverse_biproduct_sum_big.svg" alt="inverse biproduct sum" style={{ height: '66px', width: 'auto', marginRight: '3.2rem' }} />
+          <img src="/equations/inverse_triproduct_sum_big.svg" alt="inverse triple product sum of roots" style={{ height: '66px', width: 'auto', marginRight: '4.7rem' }} />
+          <img src="/equations/modulus_squared_big.svg" alt="modulus squared" style={{ height: '66px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '4.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+  <img src="/equations/hyperbolic_partition_product.svg" alt="hyperbolic partition product" style={{ height: '18px', width: 'auto' }} />
+</div>
+
+<div style={{ height: '2.0rem' }} />
+
+<div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+  <img src="/equations/hyperbolic_partition_sum.svg" alt="hyperbolic partition sum" style={{ height: '18px', width: 'auto' }} />
+</div>
+
+        <div style={{ height: '2rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/zhe_bi_product_sum.svg" alt="zhe bi product sum" style={{ height: '18px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-          <img src="/equations/zhe_bi_product_sum.svg" alt="zhe bi product sum" style={{ height: '17px', width: 'auto' }} />
+          <img src="/equations/triple_product_sum.svg" alt="zhe triple product sum" style={{ height: '18px', width: 'auto' }} />
         </div>
 
-        <div style={{ height: '3.5rem' }} />
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/square_modulus.svg" alt="square modulus" style={{ height: '20px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+<div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+  <img src="/equations/hyperbolic_partition_quadrance.svg" alt="hyperbolic partition quadrance" style={{ height: '20px', width: 'auto' }} />
+</div>
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/sum_of_cubes.svg" alt="sum of cubes" style={{ height: '20px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/sum_of_fourth_powers.svg" alt="sum of fourth powers" style={{ height: '20px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/inverse_product.svg" alt="inverse product" style={{ height: '42px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/inverse_triple_product_sum.svg" alt="inverse triple product sum" style={{ height: '42px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/inverse_biproduct_sum.svg" alt="inverse biproduct sum" style={{ height: '42px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/inverse_sum.svg" alt="inverse sum" style={{ height: '42px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/zhe_negative_one.svg" alt="zhe -1" style={{ height: '42px', width: 'auto', marginRight: '6.2rem' }} />
+          <img src="/equations/zhe_inversion.svg" alt="zhe inversion" style={{ height: '47px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/zhe_1_zhe_2_product.svg" alt="zhe_1 zhe_2 product" style={{ height: '44px', width: 'auto', marginRight: '7.6rem' }} />
+          <img src="/equations/zhe_3_zhe_4_product.svg" alt="zhe_3 zhe_4 product" style={{ height: '20px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
 
         <div style={{ height: '10.0rem' }} />
 

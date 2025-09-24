@@ -177,13 +177,13 @@ export default function PlanckConstants() {
 
         <div style={{ height: '2rem' }} />
 
-        <p className="equation-description">
-          Quantized plane-wave definitions of the <img
-            src="/equations/red-5.svg"
-            alt="5"
-            style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
-          /> Planck constants.
-        </p>
+        <p
+  className="equation-description"
+  style={{ fontSize: '20px', marginLeft: '14.9rem', textIndent: 0 }}
+>
+  Exponential ansatz Planck constants
+</p>
+
 
         <div style={{ height: '2rem' }} />
 
@@ -197,7 +197,7 @@ export default function PlanckConstants() {
 
         <div style={{ height: '1.5rem' }} />
 
-        <div className="equation-line" style={{ marginLeft: '-0.7rem' }}>
+        <div className="equation-line" style={{ marginLeft: '-0.2rem' }}>
           <img
             src="/equations/planck_length_equation.svg"
             alt="Planck length equation"
@@ -207,7 +207,7 @@ export default function PlanckConstants() {
 
         <div style={{ height: '1.5rem' }} />
 
-        <div className="equation-line" style={{ marginLeft: '2.9rem' }}>
+        <div className="equation-line" style={{ marginLeft: '2.3rem' }}>
           <img
             src="/equations/planck_charge_equation.svg"
             alt="Planck charge equation"
@@ -217,7 +217,7 @@ export default function PlanckConstants() {
 
         <div style={{ height: '1.5rem' }} />
 
-        <div className="equation-line" style={{ marginLeft: '-5.2rem' }}>
+        <div className="equation-line" style={{ marginLeft: '-5.8rem' }}>
           <img
             src="/equations/planck_temperature_equation.svg"
             alt="Planck temperature equation"
@@ -227,7 +227,7 @@ export default function PlanckConstants() {
 
         <div style={{ height: '1.5rem' }} />
 
-        <div className="equation-line" style={{ marginLeft: '-0.5rem' }}>
+        <div className="equation-line" style={{ marginLeft: '-1.1rem' }}>
           <img
             src="/equations/planck_mass_equation.svg"
             alt="Planck mass equation"
