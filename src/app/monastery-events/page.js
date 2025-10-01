@@ -32,36 +32,36 @@ export default function MonasteryEvents() {
 <div style={{ height: '1rem' }} />
 
 <div className="equation-description" style={{ whiteSpace: 'pre-wrap', textIndent: 0 }}>
-{`         Join us as we dive into the following topics:
+{`         Join us, as we explore the combinatorial logic of atomic structures. We will focus on:
 
                  primes
-                 the Riemann zeta function
-                 the gamma function
+                 Riemann zeta function
+                 gamma function
                  modular arithmetic
                  unimodular lattices
                  
-                 the Euclidean algorithm
+                 Euclidean algorithm
                  continued fractions
                  fractals
-                 the Mandelbrot set
+                 Mandelbrot set
                  recursion
                  
                  the language of Calculus
-                 the geometries available to Calculus: manifolds
-                 the simplest manifold: Gieseking's manifold
+                 geometries available to Calculus: manifolds
+                 simplest manifold: Gieseking's manifold
                  and its double cover: the hyperbolic figure eight knot
                  
-                 the laws of physics
+                 laws of physics
                      forces
                      built-in rules of interaction
                      built-in limits
                      
                  288 constants of Nature
-                 288 internal symmetries available to the hyperbolic figure eight knot
-                 1 external transform space: the 24-dimensional unit hypersphere
-                 117 23-dimensional reduced versions of that transform space
-                 118 self-persistent forms: atoms
-
+                 288 metric transforms available to tetrahedral structured volumes
+                 transform space: the 24D unit hypersphere (Leech lattice)
+                 link types: 118 unimodular lattices available in 23D (consuming 1D to connect)
+                 118 atoms
+                                  
          Outdoor retreat activities available:
                  gem stone mining
                  trilobite hunting
@@ -82,7 +82,7 @@ export default function MonasteryEvents() {
   >
     Contact us
   </a>{' '}
-  to participate in this collaborative problem-solving session.
+  to participate in this in-person collaborative problem-solving session.
 </p>
 
 
