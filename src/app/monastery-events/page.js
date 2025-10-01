@@ -61,6 +61,8 @@ export default function MonasteryEvents() {
                  transform space: the 24D unit hypersphere (Leech lattice)
                  link types: 118 unimodular lattices available in 23D (consuming 1D to connect)
                  118 atoms
+                 
+                 Coding all of this                 
                                   
          Outdoor retreat activities available:
                  gem stone mining
