@@ -700,7 +700,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-    K ⋮ E<sub>h</sub> = 3.16681156345864... &times; 10<sup>-6</sup> E<sub>h</sub>
+    K ⋮ E<sub>h</sub> = 3.16681156345864... &times; 10<sup>&minus;6</sup> E<sub>h</sub>
   </span>
                     <span>prediction</span>
                 </div>
@@ -715,7 +715,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-    K ⋮ E<sub>h</sub> = 3.1668115634564(34) &times; 10<sup>-6</sup> E<sub>h</sub>
+    K ⋮ E<sub>h</sub> = 3.1668115634564(34) &times; 10<sup>&minus;6</sup> E<sub>h</sub>
   </span>
                     <span>
     <a
@@ -744,7 +744,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-    K ⋮ E<sub>h</sub> = 3.1668115634556(61) &times; 10<sup>-6</sup> E<sub>h</sub>
+    K ⋮ E<sub>h</sub> = 3.1668115634556(61) &times; 10<sup>&minus;6</sup> E<sub>h</sub>
   </span>
                     <span>
     CODATA 2018, σ = 0.49
@@ -1000,7 +1000,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
-                    />{" "} = 6.09110229711386... &times; 10<sup>-24</sup> joules
+                    />{" "} = 6.09110229711386... &times; 10<sup>&minus;24</sup> joules
                 </div>
 
 
@@ -1541,7 +1541,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   Hz ⋮ J{" "}
-      = 6.62607014968851... &times; 10<sup>-34</sup> J
+      = 6.62607014968851... &times; 10<sup>&minus;34</sup> J
 </span>
 
                     <span>prediction</span>
@@ -1558,7 +1558,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   Hz ⋮ J{" "}
-      = 6.62607015 &times; 10<sup>-34</sup> J
+      = 6.62607015 &times; 10<sup>&minus;34</sup> J
 </span>
                     <span>
     <a
@@ -1588,7 +1588,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   Hz ⋮ J{" "}
-      = 6.62607015 &times; 10<sup>-34</sup> J
+      = 6.62607015 &times; 10<sup>&minus;34</sup> J
 </span>
                     <span>
     CODATA 2018, σ = 0.01
@@ -1738,7 +1738,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   Hz ⋮ eV{" "}
-      = 4.13566769616115... &times; 10<sup>-15</sup> eV
+      = 4.13566769616115... &times; 10<sup>&minus;15</sup> eV
 </span>
 
                     <span>prediction</span>
@@ -1755,7 +1755,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   Hz ⋮ eV{" "}
-      = 4.135667696 &times; 10<sup>-15</sup> eV
+      = 4.135667696 &times; 10<sup>&minus;15</sup> eV
 </span>
                     <span>
     <a
@@ -1785,7 +1785,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   Hz ⋮ eV{" "}
-      = 4.135667696 &times; 10<sup>-15</sup> eV
+      = 4.135667696 &times; 10<sup>&minus;15</sup> eV
 </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -1933,7 +1933,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 6.58211956829518... &times; 10<sup>-16</sup> eV s
+      = 6.58211956829518... &times; 10<sup>&minus;16</sup> eV s
 </span>
 
                     <span>prediction</span>
@@ -1958,7 +1958,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 6.582119569 &times; 10<sup>-16</sup> eV s
+      = 6.582119569 &times; 10<sup>&minus;16</sup> eV s
 </span>
                     <span>
     <a
@@ -1996,7 +1996,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 6.582119569 &times; 10<sup>-16</sup> eV s
+      = 6.582119569 &times; 10<sup>&minus;16</sup> eV s
 </span>
                     <span>
     CODATA 2018, σ = 0.10
@@ -2143,7 +2143,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.05457181759658... &times; 10<sup>-34</sup> J s
+      = 1.05457181759658... &times; 10<sup>&minus;34</sup> J s
 </span>
 
                     <span>prediction</span>
@@ -2168,7 +2168,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.054571817 &times; 10<sup>-34</sup> J s
+      = 1.054571817 &times; 10<sup>&minus;34</sup> J s
 </span>
                     <span>
     <a
@@ -2206,7 +2206,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.054571817 &times; 10<sup>-34</sup> J s
+      = 1.054571817 &times; 10<sup>&minus;34</sup> J s
 </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -2363,7 +2363,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 6.62607014968851... &times; 10<sup>-34</sup> J s
+      = 6.62607014968851... &times; 10<sup>&minus;34</sup> J s
 </span>
 
                     <span>prediction</span>
@@ -2388,7 +2388,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 6.62607015 &times; 10<sup>-34</sup> J s
+      = 6.62607015 &times; 10<sup>&minus;34</sup> J s
 </span>
                     <span>
     <a
@@ -2426,7 +2426,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 6.62607015 &times; 10<sup>-34</sup> J s
+      = 6.62607015 &times; 10<sup>&minus;34</sup> J s
 </span>
                     <span>
     CODATA 2018, σ = 0.01
@@ -2593,7 +2593,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           verticalAlign: "-0.1em",
           display: "inline",
       }}
-  />{" "} = 3.63694754674440... &times; 10<sup>-4</sup> m<sup>2</sup>/s
+  />{" "} = 3.63694754674440... &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
 </span>
 
                     <span>prediction</span>
@@ -2618,7 +2618,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 3.6369475467(11) &times; 10<sup>-4</sup> m<sup>2</sup>/s
+      = 3.6369475467(11) &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
 </span>
                     <span>
     <a
@@ -2656,7 +2656,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 3.6369475467(11) &times; 10<sup>-4</sup> m<sup>2</sup>/s
+      = 3.6369475467(11) &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
 </span>
                     <span>
     CODATA 2018, σ = 4.45
@@ -2824,7 +2824,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           verticalAlign: "-0.2em",
           display: "inline",
       }}
-  />{" "} = 7.27389509348880... &times; 10<sup>-4</sup> m<sup>2</sup>/s
+  />{" "} = 7.27389509348880... &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
 </span>
 
                     <span>prediction</span>
@@ -2849,7 +2849,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 7.2738950934(22) &times; 10<sup>-4</sup> m<sup>2</sup>/s
+      = 7.2738950934(22) &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
 </span>
                     <span>
     <a
@@ -2887,7 +2887,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 7.2738951032(22) &times; 10<sup>-4</sup> m<sup>2</sup>/s
+      = 7.2738951032(22) &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
 </span>
                     <span>
     CODATA 2018, σ = 4.45
@@ -3053,7 +3053,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           verticalAlign: "-0.0em",
           display: "inline",
       }}
-  />{" "} = 5.78838179830313... &times; 10<sup>-5</sup> eV/T
+  />{" "} = 5.78838179830313... &times; 10<sup>&minus;5</sup> eV/T
 </span>
 
                     <span>prediction</span>
@@ -3086,7 +3086,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 5.7883817982(18) &times; 10<sup>-5</sup> eV/T
+      = 5.7883817982(18) &times; 10<sup>&minus;5</sup> eV/T
 </span>
                     <span>
     <a
@@ -3132,7 +3132,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 5.7883818060(17) &times; 10<sup>-5</sup> eV/T
+      = 5.7883818060(17) &times; 10<sup>&minus;5</sup> eV/T
 </span>
                     <span>
     CODATA 2018, σ = 4.53
@@ -3299,7 +3299,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 3.15245125430182... &times; 10<sup>-8</sup> eV/T
+      = 3.15245125430182... &times; 10<sup>&minus;8</sup> eV/T
 </span>
 
                     <span>prediction</span>
@@ -3332,7 +3332,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 3.15245125417(98) &times; 10<sup>-8</sup> eV/T
+      = 3.15245125417(98) &times; 10<sup>&minus;8</sup> eV/T
 </span>
                     <span>
     <a
@@ -3378,7 +3378,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 3.15245125844(96) &times; 10<sup>-8</sup> eV/T
+      = 3.15245125844(96) &times; 10<sup>&minus;8</sup> eV/T
 </span>
                     <span>
     CODATA 2018, σ = 4.31
@@ -3800,7 +3800,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           verticalAlign: "-0.2em",
           display: "inline",
       }}
-  />{" "} = 7.74809172928871... &times; 10<sup>-5</sup> S
+  />{" "} = 7.74809172928871... &times; 10<sup>&minus;5</sup> S
 </span>
 
                     <span>prediction</span>
@@ -3825,7 +3825,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 7.748091729 &times; 10<sup>-5</sup> S
+      = 7.748091729 &times; 10<sup>&minus;5</sup> S
 </span>
                     <span>
     <a
@@ -3863,7 +3863,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 7.748091728 &times; 10<sup>-5</sup> S
+      = 7.748091728 &times; 10<sup>&minus;5</sup> S
 </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -4002,7 +4002,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  eV = 1.60217663422016... &times; 10<sup>-19</sup> J
+  eV = 1.60217663422016... &times; 10<sup>&minus;19</sup> J
 </span>
 
                     <span>prediction</span>
@@ -4018,7 +4018,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  eV = 1.602176634 &times; 10<sup>-19</sup> J
+  eV = 1.602176634 &times; 10<sup>&minus;19</sup> J
 </span>
                     <span>
     <a
@@ -4047,7 +4047,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  eV = 1.602176634 &times; 10<sup>-19</sup> J
+  eV = 1.602176634 &times; 10<sup>&minus;19</sup> J
 </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -6159,7 +6159,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 8.85418781204267... &times; 10<sup>-12</sup> F/m
+      = 8.85418781204267... &times; 10<sup>&minus;12</sup> F/m
 </span>
 
                     <span>prediction</span>
@@ -6184,7 +6184,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 8.8541878188(14) &times; 10<sup>-12</sup> F/m
+      = 8.8541878188(14) &times; 10<sup>&minus;12</sup> F/m
 </span>
                     <span>
     <a
@@ -6222,7 +6222,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = 8.8541878128(13) &times; 10<sup>-12</sup> F/m
+      = 8.8541878128(13) &times; 10<sup>&minus;12</sup> F/m
   </span>
                     <span>
     CODATA 2018, σ = 0.62
@@ -6379,7 +6379,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  A<sub>perm</sub>{" "} = 1.11265005535270... &times; 10<sup>-10</sup> F/m
+  A<sub>perm</sub>{" "} = 1.11265005535270... &times; 10<sup>&minus;10</sup> F/m
 </span>
 
                     <span>prediction</span>
@@ -6395,7 +6395,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  A<sub>perm</sub>{" "} = 1.11265005620(17)... &times; 10<sup>-10</sup> F/m
+  A<sub>perm</sub>{" "} = 1.11265005620(17)... &times; 10<sup>&minus;10</sup> F/m
 </span>
                     <span>
     <a
@@ -6424,7 +6424,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-    A<sub>perm</sub>{" "} = 1.11265005454(17)... &times; 10<sup>-10</sup> F/m
+    A<sub>perm</sub>{" "} = 1.11265005454(17)... &times; 10<sup>&minus;10</sup> F/m
   </span>
                     <span>
     CODATA 2018, σ = 0.59
@@ -6802,7 +6802,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.25663706096113... &times; 10<sup>-6</sup> N/A<sup>2</sup>
+      = 1.25663706096113... &times; 10<sup>&minus;6</sup> N/A<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -6827,7 +6827,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.25663706127(20) &times; 10<sup>-6</sup> N/A<sup>2</sup>
+      = 1.25663706127(20) &times; 10<sup>&minus;6</sup> N/A<sup>2</sup>
 </span>
                     <span>
     <a
@@ -6865,7 +6865,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.25663706212(19) &times; 10<sup>-6</sup> N/A<sup>2</sup>
+      = 1.25663706212(19) &times; 10<sup>&minus;6</sup> N/A<sup>2</sup>
   </span>
                     <span>
     CODATA 2018, σ = 6.11
@@ -7519,7 +7519,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 4.55633525290610... &times; 10<sup>-8</sup> E<sub>h</sub>
+      = 4.55633525290610... &times; 10<sup>&minus;8</sup> E<sub>h</sub>
 </span>
 
                     <span>prediction</span>
@@ -7544,7 +7544,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 4.5563352529132(50) &times; 10<sup>-8</sup> E<sub>h</sub>
+      = 4.5563352529132(50) &times; 10<sup>&minus;8</sup> E<sub>h</sub>
 </span>
                     <span>
     <a
@@ -7582,7 +7582,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 4.5563352529120(88) &times; 10<sup>-8</sup> E<sub>h</sub>
+      = 4.5563352529120(88) &times; 10<sup>&minus;8</sup> E<sub>h</sub>
   </span>
                     <span>
     CODATA 2018, σ = 0.67
@@ -7733,7 +7733,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   A<sub>time</sub>{" "}
-      = 2.41888432658053... &times; 10<sup>-17</sup> s
+      = 2.41888432658053... &times; 10<sup>&minus;17</sup> s
 </span>
 
                     <span>prediction</span>
@@ -7750,7 +7750,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   A<sub>time</sub>{" "}
-      = 2.4188843265864(26) &times; 10<sup>-17</sup> s
+      = 2.4188843265864(26) &times; 10<sup>&minus;17</sup> s
 </span>
                     <span>
     <a
@@ -7780,7 +7780,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
     A<sub>time</sub>{" "}
-      = 2.4188843265857(47) &times; 10<sup>-17</sup> s
+      = 2.4188843265857(47) &times; 10<sup>&minus;17</sup> s
   </span>
                     <span>
     CODATA 2018, σ = 1.11
@@ -7941,7 +7941,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   Hz ⋮ E<sub>h</sub>{" "}
-      = 1.51982984605377... &times; 10<sup>-16</sup> E<sub>h</sub>
+      = 1.51982984605377... &times; 10<sup>&minus;16</sup> E<sub>h</sub>
 </span>
 
                     <span>prediction</span>
@@ -7958,7 +7958,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   Hz ⋮ E<sub>h</sub>{" "}
-      = 1.5198298460574(17) &times; 10<sup>-16</sup> E<sub>h</sub>
+      = 1.5198298460574(17) &times; 10<sup>&minus;16</sup> E<sub>h</sub>
 </span>
                     <span>
     <a
@@ -7988,7 +7988,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
     Hz ⋮ E<sub>h</sub>{" "}
-      = 1.5198298460570(29) &times; 10<sup>-16</sup> E<sub>h</sub>
+      = 1.5198298460570(29) &times; 10<sup>&minus;16</sup> E<sub>h</sub>
   </span>
                     <span>
     CODATA 2018, σ = 1.13
@@ -8654,7 +8654,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 3.34358377653318... &times; 10<sup>-27</sup> kg
+      = 3.34358377653318... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -8679,7 +8679,7 @@ const GROUP_SPACER_HEIGHT = '35px';
         display: "inline",
     }}
 />{" "}
-      = 3.3435837768(10) &times; 10<sup>-27</sup> kg
+      = 3.3435837768(10) &times; 10<sup>&minus;27</sup> kg
 </span>
                     <span>
     <a
@@ -8717,7 +8717,7 @@ const GROUP_SPACER_HEIGHT = '35px';
          display: "inline",
      }}
  />{" "}
-      = 3.3435837724(10) &times; 10<sup>-27</sup> kg
+      = 3.3435837724(10) &times; 10<sup>&minus;27</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 4.10
@@ -8881,7 +8881,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.88353157840339... &times; 10<sup>-28</sup> kg
+      = 1.88353157840339... &times; 10<sup>&minus;28</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -8906,7 +8906,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.883531627(42) &times; 10<sup>-28</sup> kg
+      = 1.883531627(42) &times; 10<sup>&minus;28</sup> kg
 </span>
                     <span>
     <a
@@ -8944,7 +8944,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.883531627(42) &times; 10<sup>-28</sup> kg
+      = 1.883531627(42) &times; 10<sup>&minus;28</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 1.17
@@ -9095,7 +9095,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.67262192580697... &times; 10<sup>-27</sup> kg
+      = 1.67262192580697... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -9120,7 +9120,7 @@ const GROUP_SPACER_HEIGHT = '35px';
          display: "inline",
      }}
  />{" "}
-      = 1.67262192595(52) &times; 10<sup>-27</sup> kg
+      = 1.67262192595(52) &times; 10<sup>&minus;27</sup> kg
 </span>
                     <span>
     <a
@@ -9158,7 +9158,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.67262192369(51) &times; 10<sup>-27</sup> kg
+      = 1.67262192369(51) &times; 10<sup>&minus;27</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 4.14
@@ -9373,7 +9373,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 5.00641278613570... &times; 10<sup>-27</sup> kg
+      = 5.00641278613570... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -9398,7 +9398,7 @@ const GROUP_SPACER_HEIGHT = '35px';
          display: "inline",
      }}
  />{" "}
-      = 5.0064127862(16) &times; 10<sup>-27</sup> kg
+      = 5.0064127862(16) &times; 10<sup>&minus;27</sup> kg
 </span>
                     <span>
     <a
@@ -9436,7 +9436,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 5.0064127796(15) &times; 10<sup>-27</sup> kg
+      = 5.0064127796(15) &times; 10<sup>&minus;27</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 4.33
@@ -9830,7 +9830,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 6.67430315504532... &times; 10<sup>-11</sup> m<sup>3</sup>/s<sup>2</sup> kg
+      = 6.67430315504532... &times; 10<sup>&minus;11</sup> m<sup>3</sup>/s<sup>2</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -9855,7 +9855,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 6.67430(15) &times; 10<sup>-11</sup> m<sup>3</sup>/s<sup>2</sup> kg
+      = 6.67430(15) &times; 10<sup>&minus;11</sup> m<sup>3</sup>/s<sup>2</sup> kg
 </span>
                     <span>
     <a
@@ -9893,7 +9893,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 6.67430(15) &times; 10<sup>-11</sup> m<sup>3</sup>/s<sup>2</sup> kg
+      = 6.67430(15) &times; 10<sup>&minus;11</sup> m<sup>3</sup>/s<sup>2</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -10269,7 +10269,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 9.10938371330076... &times; 10<sup>-31</sup> kg
+      = 9.10938371330076... &times; 10<sup>&minus;31</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -10294,7 +10294,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 9.1093837139(28) &times; 10<sup>-31</sup> kg
+      = 9.1093837139(28) &times; 10<sup>&minus;31</sup> kg
 </span>
                     <span>
     <a
@@ -10332,7 +10332,7 @@ const GROUP_SPACER_HEIGHT = '35px';
          display: "inline",
      }}
  />{" "}
-      = 9.1093837015(28) &times; 10<sup>-31</sup> kg
+      = 9.1093837015(28) &times; 10<sup>&minus;31</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 4.21
@@ -10520,7 +10520,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 5.00735675019372... &times; 10<sup>-27</sup> kg
+      = 5.00735675019372... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -10545,7 +10545,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 5.0073567512(16) &times; 10<sup>-27</sup> kg
+      = 5.0073567512(16) &times; 10<sup>&minus;27</sup> kg
 </span>
                     <span>
     <a
@@ -10583,7 +10583,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 5.0073567446(15) &times; 10<sup>-27</sup> kg
+      = 5.0073567446(15) &times; 10<sup>&minus;27</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 4.13
@@ -11198,7 +11198,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –4.48206214971535... &times; 10<sup>-1</sup>
+      = –4.48206214971535... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -11232,7 +11232,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –4.4820652(11) &times; 10<sup>-1</sup>
+      = –4.4820652(11) &times; 10<sup>&minus;1</sup>
 </span>
                     <span>
     <a
@@ -11279,7 +11279,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –4.4820653(11) &times; 10<sup>-1</sup>
+      = –4.4820653(11) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
     CODATA 2018, σ = 2.91
@@ -11789,7 +11789,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –4.66434554721567... &times; 10<sup>-4</sup>
+      = –4.66434554721567... &times; 10<sup>&minus;4</sup>
 </span>
 
                     <span>prediction</span>
@@ -11823,7 +11823,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –4.664345550(12)... &times; 10<sup>-4</sup>
+      = –4.664345550(12)... &times; 10<sup>&minus;4</sup>
 </span>
                     <span>
     <a
@@ -11870,7 +11870,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –4.664345551(12)... &times; 10<sup>-4</sup>
+      = –4.664345551(12)... &times; 10<sup>&minus;4</sup>
   </span>
                     <span>
     CODATA 2018, σ = 0.33
@@ -12050,7 +12050,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = 3.07012208060569... &times; 10<sup>-1</sup>
+      = 3.07012208060569... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -12084,7 +12084,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = 3.0701220930(79) &times; 10<sup>-1</sup>
+      = 3.0701220930(79) &times; 10<sup>&minus;1</sup>
 </span>
                     <span>
     <a
@@ -12131,7 +12131,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = 3.0701220939(79) &times; 10<sup>-1</sup>
+      = 3.0701220939(79) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
     CODATA 2018, σ = 1.68
@@ -12349,7 +12349,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 4.33073508813504... &times; 10<sup>-27</sup> J/T
+      = 4.33073508813504... &times; 10<sup>&minus;27</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -12374,7 +12374,7 @@ const GROUP_SPACER_HEIGHT = '35px';
          display: "inline",
      }}
  />{" "}
-      = 4.330735807(11) &times; 10<sup>-27</sup> J/T
+      = 4.330735807(11) &times; 10<sup>&minus;27</sup> J/T
 </span>
                     <span>
     <a
@@ -12412,7 +12412,7 @@ const GROUP_SPACER_HEIGHT = '35px';
          display: "inline",
      }}
  />{" "}
-      = 4.330735094(11) &times; 10<sup>-27</sup> J/T
+      = 4.330735094(11) &times; 10<sup>&minus;27</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 0.55
@@ -12599,7 +12599,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   A<sub>mdm</sub>{" "}
-      = 1.85480201397335... &times; 10<sup>-23</sup> J/T
+      = 1.85480201397335... &times; 10<sup>&minus;23</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -12616,7 +12616,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
 A<sub>mdm</sub>{" "}
-      = 1.85480201315(58) &times; 10<sup>-23</sup> J/T
+      = 1.85480201315(58) &times; 10<sup>&minus;23</sup> J/T
 </span>
                     <span>
     <a
@@ -12646,7 +12646,7 @@ A<sub>mdm</sub>{" "}
                 >
   <span>
  A<sub>mdm</sub>{" "}
-      = 1.85480201556(56) &times; 10<sup>-23</sup> J/T
+      = 1.85480201556(56) &times; 10<sup>&minus;23</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 3.02
@@ -12839,7 +12839,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 9.27401006986677... &times; 10<sup>-2</sup> J/T
+      = 9.27401006986677... &times; 10<sup>&minus;2</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -12864,7 +12864,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 9.2740100657(29) &times; 10<sup>-2</sup> J/T
+      = 9.2740100657(29) &times; 10<sup>&minus;2</sup> J/T
 </span>
                     <span>
     <a
@@ -12902,7 +12902,7 @@ A<sub>mdm</sub>{" "}
          display: "inline",
      }}
  />{" "}
-      = 9.2740100783(28) &times; 10<sup>-2</sup> J/T
+      = 9.2740100783(28) &times; 10<sup>&minus;2</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 0.54
@@ -13097,7 +13097,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.05078374162010... &times; 10<sup>-27</sup> J/T
+      = 5.05078374162010... &times; 10<sup>&minus;27</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -13122,7 +13122,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.0507837393(16) &times; 10<sup>-27</sup> J/T
+      = 5.0507837393(16) &times; 10<sup>&minus;27</sup> J/T
 </span>
                     <span>
     <a
@@ -13160,7 +13160,7 @@ A<sub>mdm</sub>{" "}
          display: "inline",
      }}
  />{" "}
-      = 5.0507837461(15) &times; 10<sup>-27</sup> J/T
+      = 5.0507837461(15) &times; 10<sup>&minus;27</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 3.00
@@ -13367,7 +13367,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.41060679541131... &times; 10<sup>-26</sup> J/T
+      = 1.41060679541131... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -13392,7 +13392,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.41060679545(60) &times; 10<sup>-26</sup> J/T
+      = 1.41060679545(60) &times; 10<sup>&minus;26</sup> J/T
 </span>
                     <span>
     <a
@@ -13430,7 +13430,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.41060679736(60) &times; 10<sup>-26</sup> J/T
+      = 1.41060679736(60) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 3.25
@@ -13638,7 +13638,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.41057058217992... &times; 10<sup>-26</sup> J/T
+      = 1.41057058217992... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -13663,7 +13663,7 @@ A<sub>mdm</sub>{" "}
         display: "inline",
     }}
 />{" "}
-      = 1.4105705830(58) &times; 10<sup>-26</sup> J/T
+      = 1.4105705830(58) &times; 10<sup>&minus;26</sup> J/T
 </span>
                     <span>
     <a
@@ -13701,7 +13701,7 @@ A<sub>mdm</sub>{" "}
          display: "inline",
      }}
  />{" "}
-      = 1.410570560(15) &times; 10<sup>-26</sup> J/T
+      = 1.410570560(15) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 1.47
@@ -13928,7 +13928,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = –9.28476468731854... &times; 10<sup>-24</sup> J/T
+      = –9.28476468731854... &times; 10<sup>&minus;24</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -13953,7 +13953,7 @@ A<sub>mdm</sub>{" "}
          display: "inline",
      }}
  />{" "}
-      = –9.2847646917(29) &times; 10<sup>-24</sup> J/T
+      = –9.2847646917(29) &times; 10<sup>&minus;24</sup> J/T
 </span>
                     <span>
     <a
@@ -13991,7 +13991,7 @@ A<sub>mdm</sub>{" "}
          display: "inline",
      }}
  />{" "}
-      = –9.2847647043(28) &times; 10<sup>-24</sup> J/T
+      = –9.2847647043(28) &times; 10<sup>&minus;24</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 6.07
@@ -14207,7 +14207,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = –4.49044812296464... &times; 10<sup>-26</sup> J/T
+      = –4.49044812296464... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -14232,7 +14232,7 @@ A<sub>mdm</sub>{" "}
          display: "inline",
      }}
  />{" "}
-      = –4.49044830(10) &times; 10<sup>-26</sup> J/T
+      = –4.49044830(10) &times; 10<sup>&minus;26</sup> J/T
 </span>
                     <span>
     <a
@@ -14270,7 +14270,7 @@ A<sub>mdm</sub>{" "}
          display: "inline",
      }}
  />{" "}
-      = –4.49044830(10) &times; 10<sup>-26</sup> J/T
+      = –4.49044830(10) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 1.80
@@ -14510,7 +14510,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.50460951565975... &times; 10<sup>-26</sup> J/T
+      = 1.50460951565975... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -14535,7 +14535,7 @@ A<sub>mdm</sub>{" "}
          display: "inline",
      }}
  />{" "}
-      = 1.5046095178(30) &times; 10<sup>-26</sup> J/T
+      = 1.5046095178(30) &times; 10<sup>&minus;26</sup> J/T
 </span>
                     <span>
     <a
@@ -14573,7 +14573,7 @@ A<sub>mdm</sub>{" "}
          display: "inline",
      }}
  />{" "}
-      = 1.5046095202(30) &times; 10<sup>-26</sup> J/T
+      = 1.5046095202(30) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 1.53
@@ -15340,7 +15340,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 1.62239366350527... &times; 10<sup>-3</sup>
+      = 1.62239366350527... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -15374,7 +15374,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 1.6223936648(32) &times; 10<sup>-3</sup>
+      = 1.6223936648(32) &times; 10<sup>&minus;3</sup>
 </span>
                     <span>
     <a
@@ -15421,7 +15421,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 1.6223936651(32) &times; 10<sup>-3</sup>
+      = 1.6223936651(32) &times; 10<sup>&minus;3</sup>
   </span>
                     <span>
     CODATA 2018, σ = 0.50
@@ -15874,7 +15874,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.15867149473746... &times; 10<sup>-3</sup>
+      = –1.15867149473746... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -15908,7 +15908,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.15867149457(94) &times; 10<sup>-3</sup>
+      = –1.15867149457(94) &times; 10<sup>&minus;3</sup>
 </span>
                     <span>
     <a
@@ -15955,7 +15955,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.158671474(14) &times; 10<sup>-3</sup>
+      = –1.158671474(14) &times; 10<sup>&minus;3</sup>
   </span>
                     <span>
     CODATA 2018, σ = 1.64
@@ -17016,7 +17016,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.15874098123643... &times; 10<sup>-3</sup>
+      = –1.15874098123643... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -17050,7 +17050,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.15874098083(94) &times; 10<sup>-3</sup>
+      = –1.15874098083(94) &times; 10<sup>&minus;3</sup>
 </span>
                     <span>
     <a
@@ -17097,7 +17097,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.158740958(14) &times; 10<sup>-3</sup>
+      = –1.158740958(14) &times; 10<sup>&minus;3</sup>
   </span>
                     <span>
     CODATA 2018, σ = 1.64
@@ -17547,7 +17547,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –6.84979055239456... &times; 10<sup>-1</sup>
+      = –6.84979055239456... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -17581,7 +17581,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –6.8497935(16) &times; 10<sup>-1</sup>
+      = –6.8497935(16) &times; 10<sup>&minus;1</sup>
 </span>
                     <span>
     <a
@@ -17628,7 +17628,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –6.8497934(16) &times; 10<sup>-1</sup>
+      = –6.8497934(16) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
     CODATA 2018, σ = 1.81
@@ -18099,7 +18099,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 1.04066883674017... &times; 10<sup>-3</sup>
+      = 1.04066883674017... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -18133,7 +18133,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 1.04066884(24) &times; 10<sup>-3</sup>
+      = 1.04066884(24) &times; 10<sup>&minus;3</sup>
 </span>
                     <span>
     <a
@@ -18180,7 +18180,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 1.04066882(25) &times; 10<sup>-3</sup>
+      = 1.04066882(25) &times; 10<sup>&minus;3</sup>
 
   </span>
                     <span>
@@ -19239,7 +19239,7 @@ A<sub>mdm</sub>{" "}
                 >
   <span>
   Hz ⋮ 1/m{" "}
-      = 3.33564095322874... &times; 10<sup>-9</sup> cycles/m
+      = 3.33564095322874... &times; 10<sup>&minus;9</sup> cycles/m
 </span>
 
                     <span>prediction</span>
@@ -19256,7 +19256,7 @@ A<sub>mdm</sub>{" "}
                 >
   <span>
 Hz ⋮ 1/m{" "}
-      = 3.335640951 &times; 10<sup>-9</sup> cycles/m
+      = 3.335640951 &times; 10<sup>&minus;9</sup> cycles/m
 </span>
                     <span>
     <a
@@ -19286,7 +19286,7 @@ Hz ⋮ 1/m{" "}
                 >
   <span>
  Hz ⋮ 1/m{" "}
-      = 3.335640951 &times; 10<sup>-9</sup> cycles/m
+      = 3.335640951 &times; 10<sup>&minus;9</sup> cycles/m
   </span>
                     <span>
     CODATA 2018, σ = 0.20
@@ -19654,7 +19654,7 @@ A<sub>vel</sub>{" "}
                 >
   <span>
   A<sub>mom</sub>{" "}
-      = 1.99285191692885... &times; 10<sup>-24</sup> m kg/s
+      = 1.99285191692885... &times; 10<sup>&minus;24</sup> m kg/s
 </span>
 
                     <span>prediction</span>
@@ -19671,7 +19671,7 @@ A<sub>vel</sub>{" "}
                 >
   <span>
 A<sub>mom</sub>{" "}
-      = 1.99285191545(31) &times; 10<sup>-24</sup> m kg/s
+      = 1.99285191545(31) &times; 10<sup>&minus;24</sup> m kg/s
 </span>
                     <span>
     <a
@@ -19701,7 +19701,7 @@ A<sub>mom</sub>{" "}
                 >
   <span>
  A<sub>mom</sub>{" "}
-      = 1.99285191410(30) &times; 10<sup>-24</sup> m kg/s
+      = 1.99285191410(30) &times; 10<sup>&minus;24</sup> m kg/s
   </span>
                     <span>
     CODATA 2018, σ = 4.90
@@ -19862,7 +19862,7 @@ A<sub>mom</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.73092453325412... &times; 10<sup>-22</sup> m kg/s
+      = 2.73092453325412... &times; 10<sup>&minus;22</sup> m kg/s
 </span>
 
                     <span>prediction</span>
@@ -19887,7 +19887,7 @@ A<sub>mom</sub>{" "}
         display: "inline",
     }}
 />{" "}
-      = 2.73092453446(85) &times; 10<sup>-22</sup> m kg/s
+      = 2.73092453446(85) &times; 10<sup>&minus;22</sup> m kg/s
 </span>
                     <span>
     <a
@@ -19925,7 +19925,7 @@ A<sub>mom</sub>{" "}
          display: "inline",
      }}
  />{" "}
-      = 2.73092453075(82) &times; 10<sup>-22</sup> m kg/s
+      = 2.73092453075(82) &times; 10<sup>&minus;22</sup> m kg/s
   </span>
                     <span>
     CODATA 2018, σ = 3.05
@@ -20089,7 +20089,7 @@ A<sub>mom</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.10998950205585... &times; 10<sup>-1</sup> MeV/c
+      = 5.10998950205585... &times; 10<sup>&minus;1</sup> MeV/c
 </span>
 
                     <span>prediction</span>
@@ -20114,7 +20114,7 @@ A<sub>mom</sub>{" "}
            display: "inline",
        }}
    />{" "}
-      = 5.1099895069(16) &times; 10<sup>-1</sup> MeV/c
+      = 5.1099895069(16) &times; 10<sup>&minus;1</sup> MeV/c
 
 </span>
                     <span>
@@ -20153,7 +20153,7 @@ A<sub>mom</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.1099895000(15) &times; 10<sup>-1</sup> MeV/c
+      = 5.1099895000(15) &times; 10<sup>&minus;1</sup> MeV/c
   </span>
                     <span>
     CODATA 2018, σ = 1.33
@@ -20718,7 +20718,7 @@ A<sub>mom</sub>{" "}
                 >
   <span>
   J ⋮ kg{" "}
-      = 1.11265005688611... &times; 10<sup>-17</sup> kg
+      = 1.11265005688611... &times; 10<sup>&minus;17</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -20735,7 +20735,7 @@ A<sub>mom</sub>{" "}
                 >
   <span>
 J ⋮ kg{" "}
-      = 1.112650056 &times; 10<sup>-17</sup> kg
+      = 1.112650056 &times; 10<sup>&minus;17</sup> kg
 </span>
                     <span>
     <a
@@ -20765,7 +20765,7 @@ J ⋮ kg{" "}
                 >
   <span>
  J ⋮ kg{" "}
-      = 1.112650056 &times; 10<sup>-17</sup> kg
+      = 1.112650056 &times; 10<sup>&minus;17</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -20927,7 +20927,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "} ⋮ J{" "}
-      = 1.49241808855519... &times; 10<sup>-10</sup> J
+      = 1.49241808855519... &times; 10<sup>&minus;10</sup> J
 </span>
 
                     <span>prediction</span>
@@ -20952,7 +20952,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "} ⋮ J{" "}
-      = 1.49241808768(46) &times; 10<sup>-10</sup> J
+      = 1.49241808768(46) &times; 10<sup>&minus;10</sup> J
 </span>
                     <span>
     <a
@@ -20990,7 +20990,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "} ⋮ J{" "}
-      = 1.49241808560(45) &times; 10<sup>-10</sup> J
+      = 1.49241808560(45) &times; 10<sup>&minus;10</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 2.47
@@ -21572,7 +21572,7 @@ J ⋮ kg{" "}
                 >
   <span>
   eV ⋮ kg{" "}
-      = 1.78266192320666... &times; 10<sup>-36</sup> kg
+      = 1.78266192320666... &times; 10<sup>&minus;36</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -21589,7 +21589,7 @@ J ⋮ kg{" "}
                 >
   <span>
   eV ⋮ kg{" "}
-      = 1.78266192321 &times; 10<sup>-36</sup> kg
+      = 1.78266192321 &times; 10<sup>&minus;36</sup> kg
 </span>
                     <span>
     <a
@@ -21619,7 +21619,7 @@ J ⋮ kg{" "}
                 >
   <span>
  eV ⋮ kg{" "}
-      = 1.78266192321 &times; 10<sup>-36</sup> kg
+      = 1.78266192321 &times; 10<sup>&minus;36</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 0.20
@@ -21791,7 +21791,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.07214651479228... &times; 10<sup>-13</sup> J
+      = 2.07214651479228... &times; 10<sup>&minus;13</sup> J
 </span>
 
                     <span>prediction</span>
@@ -21816,7 +21816,7 @@ J ⋮ kg{" "}
            display: "inline",
        }}
    />{" "}
-      = 2.07214712(60) &times; 10<sup>-13</sup> J
+      = 2.07214712(60) &times; 10<sup>&minus;13</sup> J
 
 </span>
                     <span>
@@ -21855,7 +21855,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 2.07214689(74) &times; 10<sup>-13</sup> J
+      = 2.07214689(74) &times; 10<sup>&minus;13</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 0.51
@@ -22261,7 +22261,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.10998950205585... &times; 10<sup>-1</sup> MeV
+      = 5.10998950205585... &times; 10<sup>&minus;1</sup> MeV
 </span>
 
                     <span>prediction</span>
@@ -22286,7 +22286,7 @@ J ⋮ kg{" "}
            display: "inline",
        }}
    />{" "}
-      = 5.1099895069(16) &times; 10<sup>-1</sup> MeV
+      = 5.1099895069(16) &times; 10<sup>&minus;1</sup> MeV
 
 </span>
                     <span>
@@ -22325,7 +22325,7 @@ J ⋮ kg{" "}
            display: "inline",
        }}
    />{" "}
-      = 5.1099895000(15) &times; 10<sup>-1</sup> MeV
+      = 5.1099895000(15) &times; 10<sup>&minus;1</sup> MeV
   </span>
                     <span>
     CODATA 2018, σ = 1.33
@@ -24328,7 +24328,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 8.18710578130419... &times; 10<sup>-14</sup> J
+      = 8.18710578130419... &times; 10<sup>&minus;14</sup> J
 </span>
 
                     <span>prediction</span>
@@ -24353,7 +24353,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 8.1871057880(26) &times; 10<sup>-14</sup> J
+      = 8.1871057880(26) &times; 10<sup>&minus;14</sup> J
 
 </span>
                     <span>
@@ -24392,7 +24392,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 8.1871057769(25) &times; 10<sup>-14</sup> J
+      = 8.1871057769(25) &times; 10<sup>&minus;14</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 1.76
@@ -24571,7 +24571,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.69283375913778... &times; 10<sup>-11</sup> J
+      = 1.69283375913778... &times; 10<sup>&minus;11</sup> J
 </span>
 
                     <span>prediction</span>
@@ -24596,7 +24596,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.692833804(38) &times; 10<sup>-11</sup> J
+      = 1.692833804(38) &times; 10<sup>&minus;11</sup> J
 
 </span>
                     <span>
@@ -24635,7 +24635,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 1.692833804(38) &times; 10<sup>-11</sup> J
+      = 1.692833804(38) &times; 10<sup>&minus;11</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 1.18
@@ -24798,7 +24798,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.50327761676299... &times; 10<sup>-10</sup> J
+      = 1.50327761676299... &times; 10<sup>&minus;10</sup> J
 </span>
 
                     <span>prediction</span>
@@ -24823,7 +24823,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.50327761802(47) &times; 10<sup>-10</sup> J
+      = 1.50327761802(47) &times; 10<sup>&minus;10</sup> J
 
 </span>
                     <span>
@@ -24862,7 +24862,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 1.50327761598(46) &times; 10<sup>-10</sup> J
+      = 1.50327761598(46) &times; 10<sup>&minus;10</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 1.69
@@ -25024,7 +25024,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.50534976319091... &times; 10<sup>-10</sup> J
+      = 1.50534976319091... &times; 10<sup>&minus;10</sup> J
 </span>
 
                     <span>prediction</span>
@@ -25049,7 +25049,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.50534976514(76) &times; 10<sup>-10</sup> J
+      = 1.50534976514(76) &times; 10<sup>&minus;10</sup> J
 
 </span>
                     <span>
@@ -25088,7 +25088,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 1.50534976287(86) &times; 10<sup>-10</sup> J
+      = 1.50534976287(86) &times; 10<sup>&minus;10</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 0.37
@@ -25249,7 +25249,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.84685177482094... &times; 10<sup>-10</sup> J
+      = 2.84685177482094... &times; 10<sup>&minus;10</sup> J
 </span>
 
                     <span>prediction</span>
@@ -25274,7 +25274,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 2.84684(19) &times; 10<sup>-10</sup> J
+      = 2.84684(19) &times; 10<sup>&minus;10</sup> J
 
 </span>
                     <span>
@@ -25313,7 +25313,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 2.84684(19) &times; 10<sup>-10</sup> J
+      = 2.84684(19) &times; 10<sup>&minus;10</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 0.05
@@ -25474,7 +25474,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.00506323245118... &times; 10<sup>-10</sup> J
+      = 3.00506323245118... &times; 10<sup>&minus;10</sup> J
 </span>
 
                     <span>prediction</span>
@@ -25499,7 +25499,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.00506323491(94) &times; 10<sup>-10</sup> J
+      = 3.00506323491(94) &times; 10<sup>&minus;10</sup> J
 
 </span>
                     <span>
@@ -25538,7 +25538,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 3.00506323102(91) &times; 10<sup>-10</sup> J
+      = 3.00506323102(91) &times; 10<sup>&minus;10</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 1.57
@@ -25700,7 +25700,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.49953941506707... &times; 10<sup>-10</sup> J
+      = 4.49953941506707... &times; 10<sup>&minus;10</sup> J
 </span>
 
                     <span>prediction</span>
@@ -25725,7 +25725,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.4995394185(14) &times; 10<sup>-10</sup> J
+      = 4.4995394185(14) &times; 10<sup>&minus;10</sup> J
 
 </span>
                     <span>
@@ -25764,7 +25764,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 4.4995394125(14) &times; 10<sup>-10</sup> J
+      = 4.4995394125(14) &times; 10<sup>&minus;10</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 1.85
@@ -25926,7 +25926,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.50038780883755... &times; 10<sup>-10</sup> J
+      = 4.50038780883755... &times; 10<sup>&minus;10</sup> J
 </span>
 
                     <span>prediction</span>
@@ -25951,7 +25951,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.5003878119(14) &times; 10<sup>-10</sup> J
+      = 4.5003878119(14) &times; 10<sup>&minus;10</sup> J
 
 </span>
                     <span>
@@ -25990,7 +25990,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 4.5003878060(14) &times; 10<sup>-10</sup> J
+      = 4.5003878060(14) &times; 10<sup>&minus;10</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 2.00
@@ -26151,7 +26151,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.97192019532459... &times; 10<sup>-10</sup> J
+      = 5.97192019532459... &times; 10<sup>&minus;10</sup> J
 </span>
 
                     <span>prediction</span>
@@ -26176,7 +26176,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.9719201997(19) &times; 10<sup>-10</sup> J
+      = 5.9719201997(19) &times; 10<sup>&minus;10</sup> J
 
 </span>
                     <span>
@@ -26215,7 +26215,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.9719201914(18) &times; 10<sup>-10</sup> J
+      = 5.9719201914(18) &times; 10<sup>&minus;10</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 2.17
@@ -26742,7 +26742,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.54262341014027... &times; 10<sup>-2</sup> 1/m T
+      = 2.54262341014027... &times; 10<sup>&minus;2</sup> 1/m T
 </span>
 
                     <span>prediction</span>
@@ -26783,7 +26783,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.54262341009(79) &times; 10<sup>-2</sup> 1/m T
+      = 2.54262341009(79) &times; 10<sup>&minus;2</sup> 1/m T
 
 </span>
                     <span>
@@ -26838,7 +26838,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.54262341353(78) &times; 10<sup>-2</sup> 1/m T
+      = 2.54262341353(78) &times; 10<sup>&minus;2</sup> 1/m T
   </span>
                     <span>
     CODATA 2018, σ = 4.35
@@ -26998,7 +26998,7 @@ J ⋮ kg{" "}
           verticalAlign: "-0.2em",
           display: "inline",
       }}
-  />{" "} = 2.30557485644934... &times; 10<sup>-30</sup> kg
+  />{" "} = 2.30557485644934... &times; 10<sup>&minus;30</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -27022,7 +27022,7 @@ J ⋮ kg{" "}
           verticalAlign: "-0.2em",
           display: "inline",
       }}
-  />{" "} = 2.30557461(67) &times; 10<sup>-30</sup> kg
+  />{" "} = 2.30557461(67) &times; 10<sup>&minus;30</sup> kg
 </span>
                     <span>
     <a
@@ -27059,7 +27059,7 @@ J ⋮ kg{" "}
           verticalAlign: "-0.2em",
           display: "inline",
       }}
-  />{" "} = 2.30557435(82) &times; 10<sup>-30</sup> kg
+  />{" "} = 2.30557435(82) &times; 10<sup>&minus;30</sup> kg
 </span>
                     <span>
     CODATA 2018, σ = 0.61
@@ -27842,7 +27842,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.52099314121934... &times; 10<sup>-3</sup>
+      = 1.52099314121934... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -27875,7 +27875,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.5209931551(62)... &times; 10<sup>-3</sup>
+      = 1.5209931551(62)... &times; 10<sup>&minus;3</sup>
 
 </span>
                     <span>
@@ -27922,7 +27922,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.5209931551(62)... &times; 10<sup>-3</sup>
+      = 1.5209931551(62)... &times; 10<sup>&minus;3</sup>
   </span>
                     <span>
     CODATA 2018, σ = 0.76
@@ -28531,7 +28531,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 9.25108730294202... &times; 10<sup>-14</sup> u
+      = 9.25108730294202... &times; 10<sup>&minus;14</sup> u
 </span>
 
                     <span>prediction</span>
@@ -28556,7 +28556,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 9.2510872884(29) &times; 10<sup>-14</sup> u
+      = 9.2510872884(29) &times; 10<sup>&minus;14</sup> u
 
 </span>
                     <span>
@@ -28595,7 +28595,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 9.2510873014(28) &times; 10<sup>-14</sup> u
+      = 9.2510873014(28) &times; 10<sup>&minus;14</sup> u
   </span>
                     <span>
     CODATA 2018, σ = 0.54
@@ -28748,7 +28748,7 @@ J ⋮ kg{" "}
                 >
   <span>
    K ⋮ kg{" "}
-      = 1.53617918751221... &times; 10<sup>-40</sup> kg
+      = 1.53617918751221... &times; 10<sup>&minus;40</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -28765,7 +28765,7 @@ J ⋮ kg{" "}
                 >
   <span>
   K ⋮ kg{" "}
-      = 1.536179187 &times; 10<sup>-40</sup> kg
+      = 1.536179187 &times; 10<sup>&minus;40</sup> kg
 
 </span>
                     <span>
@@ -28796,7 +28796,7 @@ J ⋮ kg{" "}
                 >
   <span>
   K ⋮ kg{" "}
-      = 1.536179187 &times; 10<sup>-40</sup> kg
+      = 1.536179187 &times; 10<sup>&minus;40</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -29262,7 +29262,7 @@ J ⋮ kg{" "}
            display: "inline",
        }}
    />{" "}
-      = 2.27109546459335... &times; 10<sup>-2</sup> m<sup>3</sup>/mol
+      = 2.27109546459335... &times; 10<sup>&minus;2</sup> m<sup>3</sup>/mol
 </span>
 
                     <span>prediction</span>
@@ -29287,7 +29287,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.271095464 &times; 10<sup>-2</sup> m<sup>3</sup>/mol
+      = 2.271095464 &times; 10<sup>&minus;2</sup> m<sup>3</sup>/mol
 
 </span>
                     <span>
@@ -29326,7 +29326,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.271095464 &times; 10<sup>-2</sup> m<sup>3</sup>/mol
+      = 2.271095464 &times; 10<sup>&minus;2</sup> m<sup>3</sup>/mol
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -29553,7 +29553,7 @@ J ⋮ kg{" "}
            display: "inline",
        }}
    />{" "}
-      = 2.24139695494039... &times; 10<sup>-2</sup> m<sup>3</sup>/mol
+      = 2.24139695494039... &times; 10<sup>&minus;2</sup> m<sup>3</sup>/mol
 </span>
 
                     <span>prediction</span>
@@ -29578,7 +29578,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.241396954 &times; 10<sup>-2</sup> m<sup>3</sup>/mol
+      = 2.241396954 &times; 10<sup>&minus;2</sup> m<sup>3</sup>/mol
 
 </span>
                     <span>
@@ -29617,7 +29617,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.241396954 &times; 10<sup>-2</sup> m<sup>3</sup>/mol
+      = 2.241396954 &times; 10<sup>&minus;2</sup> m<sup>3</sup>/mol
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -29800,7 +29800,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –6.84997120632257... &times; 10<sup>-1</sup>
+      = –6.84997120632257... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -29833,7 +29833,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –6.8499694(16) &times; 10<sup>-1</sup>
+      = –6.8499694(16) &times; 10<sup>&minus;1</sup>
 
 </span>
                     <span>
@@ -29880,7 +29880,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –6.8499694(16) &times; 10<sup>-1</sup>
+      = –6.8499694(16) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
     CODATA 2018, σ = 1.13
@@ -31917,7 +31917,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.52103220257581... &times; 10<sup>-3</sup>
+      = 1.52103220257581... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -31950,7 +31950,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.52103220230(45) &times; 10<sup>-3</sup>
+      = 1.52103220230(45) &times; 10<sup>&minus;3</sup>
 
 </span>
                     <span>
@@ -31997,7 +31997,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.52103220230(46) &times; 10<sup>-3</sup>
+      = 1.52103220230(46) &times; 10<sup>&minus;3</sup>
 
   </span>
                     <span>
@@ -32685,7 +32685,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.92015572554121... &times; 10<sup>-10</sup> m
+      = 1.92015572554121... &times; 10<sup>&minus;10</sup> m
 </span>
 
                     <span>prediction</span>
@@ -32710,7 +32710,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.920155716(32) &times; 10<sup>-10</sup> m
+      = 1.920155716(32) &times; 10<sup>&minus;10</sup> m
 
 </span>
                     <span>
@@ -32749,7 +32749,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.920155716(32) &times; 10<sup>-10</sup> m
+      = 1.920155716(32) &times; 10<sup>&minus;10</sup> m
 
   </span>
                     <span>
@@ -32956,7 +32956,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.43102053785746... &times; 10<sup>-10</sup> m
+      = 5.43102053785746... &times; 10<sup>&minus;10</sup> m
 </span>
 
                     <span>prediction</span>
@@ -32981,7 +32981,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.431020511(89) &times; 10<sup>-10</sup> m
+      = 5.431020511(89) &times; 10<sup>&minus;10</sup> m
 
 </span>
                     <span>
@@ -33020,7 +33020,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.431020511(89) &times; 10<sup>-10</sup> m
+      = 5.431020511(89) &times; 10<sup>&minus;10</sup> m
 
   </span>
                     <span>
@@ -33439,7 +33439,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –4.8419706016832... &times; 10<sup>-3</sup>
+      = –4.8419706016832... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -33472,7 +33472,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –4.84197048(11) &times; 10<sup>-3</sup>
+      = –4.84197048(11) &times; 10<sup>&minus;3</sup>
 
 </span>
                     <span>
@@ -33519,7 +33519,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –4.84197047(11) &times; 10<sup>-3</sup>
+      = –4.84197047(11) &times; 10<sup>&minus;3</sup>
 
   </span>
                     <span>
@@ -34473,7 +34473,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.67492749974453... &times; 10<sup>-27</sup> kg
+      = 1.67492749974453... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -34498,7 +34498,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.67492750056(85) &times; 10<sup>-27</sup> kg
+      = 1.67492750056(85) &times; 10<sup>&minus;27</sup> kg
 
 </span>
                     <span>
@@ -34537,7 +34537,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.67492749804(95) &times; 10<sup>-27</sup> kg
+      = 1.67492749804(95) &times; 10<sup>&minus;27</sup> kg
 
   </span>
                     <span>
@@ -34734,7 +34734,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.16754978503555... &times; 10<sup>-27</sup> kg
+      = 3.16754978503555... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -34759,7 +34759,7 @@ J ⋮ kg{" "}
            display: "inline",
        }}
    />{" "}
-      = 3.16754(21) &times; 10<sup>-27</sup> kg
+      = 3.16754(21) &times; 10<sup>&minus;27</sup> kg
 
 </span>
                     <span>
@@ -34798,7 +34798,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.16754(21) &times; 10<sup>-27</sup> kg
+      = 3.16754(21) &times; 10<sup>&minus;27</sup> kg
 
   </span>
                     <span>
@@ -34983,7 +34983,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 1.16592062093144... &times; 10<sup>-3</sup>
+      = 1.16592062093144... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -35008,7 +35008,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.16592062(41) &times; 10<sup>-3</sup>
+      = 1.16592062(41) &times; 10<sup>&minus;3</sup>
 
 </span>
                     <span>
@@ -35047,7 +35047,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.16592089(63) &times; 10<sup>-3</sup>
+      = 1.16592089(63) &times; 10<sup>&minus;3</sup>
 
   </span>
                     <span>
@@ -35231,7 +35231,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.15965218039337... &times; 10<sup>-3</sup>
+      = 1.15965218039337... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -35256,7 +35256,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.15965218046(18) &times; 10<sup>-3</sup>
+      = 1.15965218046(18) &times; 10<sup>&minus;3</sup>
 
 </span>
                     <span>
@@ -35295,7 +35295,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.15965218128(18) &times; 10<sup>-3</sup>
+      = 1.15965218128(18) &times; 10<sup>&minus;3</sup>
 
   </span>
                     <span>
@@ -35882,7 +35882,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.81794032601589... &times; 10<sup>-15</sup> m
+      = 2.81794032601589... &times; 10<sup>&minus;15</sup> m
 </span>
 
                     <span>prediction</span>
@@ -35907,7 +35907,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.8179403205(13) &times; 10<sup>-15</sup> m
+      = 2.8179403205(13) &times; 10<sup>&minus;15</sup> m
 
 </span>
                     <span>
@@ -35946,7 +35946,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.8179403262(13) &times; 10<sup>-15</sup> m
+      = 2.8179403262(13) &times; 10<sup>&minus;15</sup> m
 
   </span>
                     <span>
@@ -36109,7 +36109,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.29177210337277... &times; 10<sup>-11</sup> m
+      = 5.29177210337277... &times; 10<sup>&minus;11</sup> m
 </span>
 
                     <span>prediction</span>
@@ -36134,7 +36134,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.29177210544(82) &times; 10<sup>-11</sup> m
+      = 5.29177210544(82) &times; 10<sup>&minus;11</sup> m
 
 </span>
                     <span>
@@ -36173,7 +36173,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.29177210903(80) &times; 10<sup>-11</sup> m
+      = 5.29177210903(80) &times; 10<sup>&minus;11</sup> m
 
   </span>
                     <span>
@@ -36365,7 +36365,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.65245873127589... &times; 10<sup>-29</sup> m<sup>2</sup>
+      = 6.65245873127589... &times; 10<sup>&minus;29</sup> m<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -36390,7 +36390,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.6524587051(62) &times; 10<sup>-29</sup> m<sup>2</sup>
+      = 6.6524587051(62) &times; 10<sup>&minus;29</sup> m<sup>2</sup>
 
 </span>
                     <span>
@@ -36429,7 +36429,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.6524587321(60) &times; 10<sup>-29</sup> m<sup>2</sup>
+      = 6.6524587321(60) &times; 10<sup>&minus;29</sup> m<sup>2</sup>
 
   </span>
                     <span>
@@ -36604,7 +36604,7 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
 
-      = 1.16637852183353... &times; 10<sup>-5</sup> GeV<sup>-2</sup>
+      = 1.16637852183353... &times; 10<sup>&minus;5</sup> GeV<sup>-2</sup>
 </span>
 
                     <span>prediction</span>
@@ -36629,7 +36629,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-      = 1.1663787(06) &times; 10<sup>-5</sup> GeV<sup>-2</sup>
+      = 1.1663787(06) &times; 10<sup>&minus;5</sup> GeV<sup>-2</sup>
 </span>
                     <span>
     <a
@@ -36667,7 +36667,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-      = 1.1663787(06) &times; 10<sup>-5</sup> GeV<sup>-2</sup>
+      = 1.1663787(06) &times; 10<sup>&minus;5</sup> GeV<sup>-2</sup>
   </span>
                     <span>
     CODATA 2018, σ = 0.33
@@ -36850,7 +36850,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.07354410105460... &times; 10<sup>-9</sup> u
+      = 1.07354410105460... &times; 10<sup>&minus;9</sup> u
 </span>
 
                     <span>prediction</span>
@@ -36875,7 +36875,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.07354410083(33) &times; 10<sup>-9</sup> u
+      = 1.07354410083(33) &times; 10<sup>&minus;9</sup> u
 
 </span>
                     <span>
@@ -36914,7 +36914,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.07354410233(32) &times; 10<sup>-9</sup> u
+      = 1.07354410233(32) &times; 10<sup>&minus;9</sup> u
 
   </span>
                     <span>
@@ -37758,7 +37758,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ eV{" "}
-      = 1.23984198410221... &times; 10<sup>-6</sup> eV
+      = 1.23984198410221... &times; 10<sup>&minus;6</sup> eV
 </span>
 
                     <span>prediction</span>
@@ -37775,7 +37775,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ eV{" "}
-      = 1.239841984 &times; 10<sup>-6</sup> eV
+      = 1.239841984 &times; 10<sup>&minus;6</sup> eV
 
 </span>
                     <span>
@@ -37806,7 +37806,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ eV{" "}
-      = 1.239841984 &times; 10<sup>-6</sup> eV
+      = 1.239841984 &times; 10<sup>&minus;6</sup> eV
 
   </span>
                     <span>
@@ -37972,7 +37972,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ J{" "}
-      = 1.98644585705373... &times; 10<sup>-25</sup> J
+      = 1.98644585705373... &times; 10<sup>&minus;25</sup> J
 </span>
 
                     <span>prediction</span>
@@ -37989,7 +37989,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ J{" "}
-      = 1.986445857 &times; 10<sup>-25</sup> J
+      = 1.986445857 &times; 10<sup>&minus;25</sup> J
 
 </span>
                     <span>
@@ -38020,7 +38020,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ J{" "}
-      = 1.986445857 &times; 10<sup>-25</sup> J
+      = 1.986445857 &times; 10<sup>&minus;25</sup> J
 
   </span>
                     <span>
@@ -38403,7 +38403,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.66053906879005... &times; 10<sup>-27</sup> kg
+      = 1.66053906879005... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -38428,7 +38428,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.66053906892(52) &times; 10<sup>-27</sup> kg
+      = 1.66053906892(52) &times; 10<sup>&minus;27</sup> kg
 
 </span>
                     <span>
@@ -38467,7 +38467,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.66053906660(50) &times; 10<sup>-27</sup> kg
+      = 1.66053906660(50) &times; 10<sup>&minus;27</sup> kg
 
   </span>
                     <span>
@@ -38834,7 +38834,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.48579909049540... &times; 10<sup>-4</sup>
+      = 5.48579909049540... &times; 10<sup>&minus;4</sup>
 </span>
 
                     <span>prediction</span>
@@ -38859,7 +38859,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.485799090441(97) &times; 10<sup>-4</sup>
+      = 5.485799090441(97) &times; 10<sup>&minus;4</sup>
 </span>
                     <span>
     <a
@@ -38897,7 +38897,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.48579909065(16) &times; 10<sup>-4</sup>
+      = 5.48579909065(16) &times; 10<sup>&minus;4</sup>
   </span>
                     <span>
     CODATA 2018, σ = 1.00
@@ -40390,7 +40390,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.48579909049540... &times; 10<sup>-4</sup> u
+      = 5.48579909049540... &times; 10<sup>&minus;4</sup> u
 </span>
 
                     <span>prediction</span>
@@ -40423,7 +40423,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.485799090441(97) &times; 10<sup>-4</sup> u
+      = 5.485799090441(97) &times; 10<sup>&minus;4</sup> u
 </span>
                     <span>
     <a
@@ -40469,7 +40469,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.48579909065(16) &times; 10<sup>-4</sup> u
+      = 5.48579909065(16) &times; 10<sup>&minus;4</sup> u
   </span>
                     <span>
     CODATA 2018, σ = 1.00
@@ -40650,7 +40650,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.38844907710596... &times; 10<sup>-3</sup> u
+      = 1.38844907710596... &times; 10<sup>&minus;3</sup> u
 </span>
 
                     <span>prediction</span>
@@ -40683,7 +40683,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.38844948(40) &times; 10<sup>-3</sup> u
+      = 1.38844948(40) &times; 10<sup>&minus;3</sup> u
 </span>
                     <span>
     <a
@@ -40729,7 +40729,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.38844933(49) &times; 10<sup>-3</sup> u
+      = 1.38844933(49) &times; 10<sup>&minus;3</sup> u
   </span>
                     <span>
     CODATA 2018, σ = 0.53
@@ -40897,7 +40897,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.13428922800098... &times; 10<sup>-1</sup> u
+      = 1.13428922800098... &times; 10<sup>&minus;1</sup> u
 </span>
 
                     <span>prediction</span>
@@ -40930,7 +40930,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.134289257(25) &times; 10<sup>-1</sup> u
+      = 1.134289257(25) &times; 10<sup>&minus;1</sup> u
 </span>
                     <span>
     <a
@@ -40976,7 +40976,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.134289259(25) &times; 10<sup>-1</sup> u
+      = 1.134289259(25) &times; 10<sup>&minus;1</sup> u
   </span>
                     <span>
     CODATA 2018, σ = 1.24
@@ -43705,7 +43705,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.67493221757145... &times; 10<sup>-2</sup> <img
+      = 3.67493221757145... &times; 10<sup>&minus;2</sup> <img
       src="/equations/hartree_symbol.svg"
       alt="E_h"
       style={{
@@ -43738,7 +43738,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.6749322175665(40) &times; 10<sup>-2</sup> <img
+      = 3.6749322175665(40) &times; 10<sup>&minus;2</sup> <img
       src="/equations/hartree_symbol.svg"
       alt="E_h"
       style={{
@@ -43784,7 +43784,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.6749322175655(71) &times; 10<sup>-2</sup> <img
+      = 3.6749322175655(71) &times; 10<sup>&minus;2</sup> <img
       src="/equations/hartree_symbol.svg"
       alt="E_h"
       style={{
@@ -45137,7 +45137,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.67037441698125... &times; 10<sup>-8</sup> W/m<sup>3</sup> K<sup>4</sup>
+      = 5.67037441698125... &times; 10<sup>&minus;8</sup> W/m<sup>3</sup> K<sup>4</sup>
 </span>
 
                     <span>prediction</span>
@@ -45162,7 +45162,7 @@ J ⋮ kg{" "}
            display: "inline",
        }}
    />{" "}
-      = 5.670374419 &times; 10<sup>-8</sup> W/m<sup>3</sup> K<sup>4</sup>
+      = 5.670374419 &times; 10<sup>&minus;8</sup> W/m<sup>3</sup> K<sup>4</sup>
 
 </span>
                     <span>
@@ -45201,7 +45201,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.670374419 &times; 10<sup>-8</sup> W/m<sup>3</sup> K<sup>4</sup>
+      = 5.670374419 &times; 10<sup>&minus;8</sup> W/m<sup>3</sup> K<sup>4</sup>
 
   </span>
                     <span>
@@ -45634,7 +45634,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>current</sub>{" "}
-      = 6.62361823753282... &times; 10<sup>-3</sup> A
+      = 6.62361823753282... &times; 10<sup>&minus;3</sup> A
 </span>
 
                     <span>prediction</span>
@@ -45651,7 +45651,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>current</sub>{" "}
-      = 6.6236182375082(72) &times; 10<sup>-3</sup> A
+      = 6.6236182375082(72) &times; 10<sup>&minus;3</sup> A
 </span>
                     <span>
     <a
@@ -45681,7 +45681,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>current</sub>{" "}
-      = 6.623618237510(13) &times; 10<sup>-3</sup> A
+      = 6.623618237510(13) &times; 10<sup>&minus;3</sup> A
   </span>
                     <span>
     CODATA 2018, σ = 1.69
@@ -45869,7 +45869,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>force</sub>{" "}
-      = 8.23872350376159... &times; 10<sup>-8</sup> N
+      = 8.23872350376159... &times; 10<sup>&minus;8</sup> N
 </span>
 
                     <span>prediction</span>
@@ -45886,7 +45886,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>force</sub>{" "}
-      = 8.2387235038(13) &times; 10<sup>-8</sup> N
+      = 8.2387235038(13) &times; 10<sup>&minus;8</sup> N
 </span>
                     <span>
     <a
@@ -45916,7 +45916,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>force</sub>{" "}
-      = 8.2387234983(12) &times; 10<sup>-8</sup> N
+      = 8.2387234983(12) &times; 10<sup>&minus;8</sup> N
   </span>
                     <span>
     CODATA 2018, σ = 4.50
@@ -46291,7 +46291,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.56689256419576... &times; 10<sup>-5</sup>
+      = 2.56689256419576... &times; 10<sup>&minus;5</sup>
 </span>
 
                     <span>prediction</span>
@@ -46316,7 +46316,7 @@ J ⋮ kg{" "}
         display: "inline",
     }}
 />{" "}
-      = 2.56715(41) &times; 10<sup>-5</sup>
+      = 2.56715(41) &times; 10<sup>&minus;5</sup>
 </span>
                     <span>
     <a
@@ -46354,7 +46354,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = 2.5689(11) &times; 10<sup>-5</sup>
+      = 2.5689(11) &times; 10<sup>&minus;5</sup>
   </span>
                     <span>
     CODATA 2018, σ = 1.91
@@ -46506,7 +46506,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.99670132016975... &times; 10<sup>-5</sup>
+      = 5.99670132016975... &times; 10<sup>&minus;5</sup>
 </span>
 
                     <span>prediction</span>
@@ -46531,7 +46531,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.9967029(23) &times; 10<sup>-5</sup>
+      = 5.9967029(23) &times; 10<sup>&minus;5</sup>
 </span>
                     <span>
     <a
@@ -46569,7 +46569,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.996743(10) &times; 10<sup>-5</sup>
+      = 5.996743(10) &times; 10<sup>&minus;5</sup>
   </span>
                     <span>
     CODATA 2018, σ = 4.20
@@ -46786,7 +46786,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –9.66235818354496... &times; 10<sup>-27</sup> J/T
+      = –9.66235818354496... &times; 10<sup>&minus;27</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -46811,7 +46811,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –9.6623653(23) &times; 10<sup>-27</sup> J/T
+      = –9.6623653(23) &times; 10<sup>&minus;27</sup> J/T
 </span>
                     <span>
     <a
@@ -46849,7 +46849,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –9.6623651(23) &times; 10<sup>-27</sup> J/T
+      = –9.6623651(23) &times; 10<sup>&minus;27</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 3.04
@@ -47536,7 +47536,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.04187546096607... &times; 10<sup>-3</sup>
+      = –1.04187546096607... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -47569,7 +47569,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.04187565(25) &times; 10<sup>-3</sup>
+      = –1.04187565(25) &times; 10<sup>&minus;3</sup>
 </span>
                     <span>
     <a
@@ -47615,7 +47615,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.04187563(25) &times; 10<sup>-3</sup>
+      = –1.04187563(25) &times; 10<sup>&minus;3</sup>
   </span>
                     <span>
     CODATA 2018, σ = 0.68
@@ -48297,7 +48297,7 @@ J ⋮ kg{" "}
                 >
   <span>
   Hz ⋮ kg{" "}
-      = 7.37249732369515... &times; 10<sup>-51</sup> kg
+      = 7.37249732369515... &times; 10<sup>&minus;51</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -48314,7 +48314,7 @@ J ⋮ kg{" "}
                 >
   <span>
   Hz ⋮ kg{" "}
-      = 7.372497323 &times; 10<sup>-51</sup> kg
+      = 7.372497323 &times; 10<sup>&minus;51</sup> kg
 </span>
                     <span>
     <a
@@ -48344,7 +48344,7 @@ J ⋮ kg{" "}
                 >
   <span>
   Hz ⋮ kg{" "}
-      = 7.372497323 &times; 10<sup>-51</sup> kg
+      = 7.372497323 &times; 10<sup>&minus;51</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -48527,7 +48527,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.43982165928027... &times; 10<sup>-24</sup> u
+      = 4.43982165928027... &times; 10<sup>&minus;24</sup> u
 </span>
 
                     <span>prediction</span>
@@ -48552,7 +48552,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.4398216590(14) &times; 10<sup>-24</sup> u
+      = 4.4398216590(14) &times; 10<sup>&minus;24</sup> u
 </span>
                     <span>
     <a
@@ -48590,7 +48590,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.4398216652(13) &times; 10<sup>-24</sup> u
+      = 4.4398216652(13) &times; 10<sup>&minus;24</sup> u
   </span>
                     <span>
     CODATA 2018, σ = 4.62
@@ -48763,7 +48763,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.28808866650835... &times; 10<sup>-21</sup> s
+      = 1.28808866650835... &times; 10<sup>&minus;21</sup> s
 </span>
 
                     <span>prediction</span>
@@ -48788,7 +48788,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.28808866644(40) &times; 10<sup>-21</sup> s
+      = 1.28808866644(40) &times; 10<sup>&minus;21</sup> s
 </span>
                     <span>
     <a
@@ -48826,7 +48826,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.28808866819(39) &times; 10<sup>-21</sup> s
+      = 1.28808866819(39) &times; 10<sup>&minus;21</sup> s
   </span>
                     <span>
     CODATA 2018, σ = 4.33
@@ -49476,7 +49476,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.17987236110453... &times; 10<sup>-18</sup> J
+      = 2.17987236110453... &times; 10<sup>&minus;18</sup> J
 </span>
 
                     <span>prediction</span>
@@ -49501,7 +49501,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.1798723611030(24) &times; 10<sup>-18</sup> J
+      = 2.1798723611030(24) &times; 10<sup>&minus;18</sup> J
 </span>
                     <span>
     <a
@@ -49539,7 +49539,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.1798723611035(42) &times; 10<sup>-18</sup> J
+      = 2.1798723611035(42) &times; 10<sup>&minus;18</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 0.24
@@ -49734,7 +49734,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.35974472220906... &times; 10<sup>-18</sup> J
+      = 4.35974472220906... &times; 10<sup>&minus;18</sup> J
 </span>
 
                     <span>prediction</span>
@@ -49759,7 +49759,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.3597447222060(48) &times; 10<sup>-18</sup> J
+      = 4.3597447222060(48) &times; 10<sup>&minus;18</sup> J
 </span>
                     <span>
     <a
@@ -49797,7 +49797,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.3597447222071(85) &times; 10<sup>-18</sup> J
+      = 4.3597447222071(85) &times; 10<sup>&minus;18</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 0.22
@@ -50278,7 +50278,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.38064899919223... &times; 10<sup>-23</sup> J/K
+      = 1.38064899919223... &times; 10<sup>&minus;23</sup> J/K
 </span>
 
                     <span>prediction</span>
@@ -50303,7 +50303,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.380649 &times; 10<sup>-23</sup> J/K
+      = 1.380649 &times; 10<sup>&minus;23</sup> J/K
 </span>
                     <span>
     <a
@@ -50341,7 +50341,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.380649 &times; 10<sup>-23</sup> J/K
+      = 1.380649 &times; 10<sup>&minus;23</sup> J/K
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -50526,7 +50526,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 8.61733325611121... &times; 10<sup>-5</sup> eV/K
+      = 8.61733325611121... &times; 10<sup>&minus;5</sup> eV/K
 </span>
 
                     <span>prediction</span>
@@ -50551,7 +50551,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 8.617333262 &times; 10<sup>-5</sup> eV/K
+      = 8.617333262 &times; 10<sup>&minus;5</sup> eV/K
 </span>
                     <span>
     <a
@@ -50589,7 +50589,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 8.617333262 &times; 10<sup>-5</sup> eV/K
+      = 8.617333262 &times; 10<sup>&minus;5</sup> eV/K
   </span>
                     <span>
     CODATA 2018, σ = 0.60
@@ -50763,7 +50763,7 @@ J ⋮ kg{" "}
                 >
   <span>
   K ⋮ J{" "}
-      = 1.38064899919223... &times; 10<sup>-23</sup> J
+      = 1.38064899919223... &times; 10<sup>&minus;23</sup> J
 </span>
 
                     <span>prediction</span>
@@ -50780,7 +50780,7 @@ J ⋮ kg{" "}
                 >
   <span>
   K ⋮ J{" "}
-      = 1.380649 &times; 10<sup>-23</sup> J
+      = 1.380649 &times; 10<sup>&minus;23</sup> J
 </span>
                     <span>
     <a
@@ -50810,7 +50810,7 @@ J ⋮ kg{" "}
                 >
   <span>
   K ⋮ J{" "}
-      = 1.380649 &times; 10<sup>-23</sup> J
+      = 1.380649 &times; 10<sup>&minus;23</sup> J
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -50987,7 +50987,7 @@ J ⋮ kg{" "}
                 >
   <span>
   K ⋮ eV{" "}
-      = 8.61733325611121... &times; 10<sup>-5</sup> eV
+      = 8.61733325611121... &times; 10<sup>&minus;5</sup> eV
 </span>
 
                     <span>prediction</span>
@@ -51004,7 +51004,7 @@ J ⋮ kg{" "}
                 >
   <span>
   K ⋮ eV{" "}
-      = 8.617333262 &times; 10<sup>-5</sup> eV
+      = 8.617333262 &times; 10<sup>&minus;5</sup> eV
 </span>
                     <span>
     <a
@@ -51034,7 +51034,7 @@ J ⋮ kg{" "}
                 >
   <span>
   K ⋮ eV{" "}
-      = 8.617333262 &times; 10<sup>-5</sup> eV
+      = 8.617333262 &times; 10<sup>&minus;5</sup> eV
   </span>
                     <span>
     CODATA 2018, σ = 0.60
@@ -52221,7 +52221,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.71713814728468... &times; 10<sup>-1</sup> K/T
+      = 6.71713814728468... &times; 10<sup>&minus;1</sup> K/T
 </span>
 
                     <span>prediction</span>
@@ -52254,7 +52254,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.7171381472(21) &times; 10<sup>-1</sup> K/T
+      = 6.7171381472(21) &times; 10<sup>&minus;1</sup> K/T
 </span>
                     <span>
     <a
@@ -52300,7 +52300,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.7171381563(20) &times; 10<sup>-1</sup> K/T
+      = 6.7171381563(20) &times; 10<sup>&minus;1</sup> K/T
   </span>
                     <span>
     CODATA 2018, σ = 4.55
@@ -52502,7 +52502,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.65826777078419... &times; 10<sup>-4</sup> K/T
+      = 3.65826777078419... &times; 10<sup>&minus;4</sup> K/T
 </span>
 
                     <span>prediction</span>
@@ -52535,7 +52535,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.6582677706(11) &times; 10<sup>-4</sup> K/T
+      = 3.6582677706(11) &times; 10<sup>&minus;4</sup> K/T
 </span>
                     <span>
     <a
@@ -52581,7 +52581,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.6582677756(11) &times; 10<sup>-4</sup> K/T
+      = 3.6582677756(11) &times; 10<sup>&minus;4</sup> K/T
   </span>
                     <span>
     CODATA 2018, σ = 4.46
@@ -53239,7 +53239,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.06783384843114... &times; 10<sup>-15</sup> Wb
+      = 2.06783384843114... &times; 10<sup>&minus;15</sup> Wb
 </span>
 
                     <span>prediction</span>
@@ -53264,7 +53264,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.067833848 &times; 10<sup>-15</sup> Wb
+      = 2.067833848 &times; 10<sup>&minus;15</sup> Wb
 </span>
                     <span>
     <a
@@ -53302,7 +53302,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.067833848 &times; 10<sup>-15</sup> Wb
+      = 2.067833848 &times; 10<sup>&minus;15</sup> Wb
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -53483,7 +53483,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.58211956941108... &times; 10<sup>-16</sup> eV s
+      = 6.58211956941108... &times; 10<sup>&minus;16</sup> eV s
 </span>
 
                     <span>prediction</span>
@@ -53516,7 +53516,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.582119569 &times; 10<sup>-16</sup> eV s
+      = 6.582119569 &times; 10<sup>&minus;16</sup> eV s
 </span>
                     <span>
     <a
@@ -53562,7 +53562,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.582119569 &times; 10<sup>-16</sup> eV s
+      = 6.582119569 &times; 10<sup>&minus;16</sup> eV s
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -53742,7 +53742,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.13566769686229... &times; 10<sup>-15</sup> eV/Hz
+      = 4.13566769686229... &times; 10<sup>&minus;15</sup> eV/Hz
 </span>
 
                     <span>prediction</span>
@@ -53775,7 +53775,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.135667696 &times; 10<sup>-15</sup> eV/Hz
+      = 4.135667696 &times; 10<sup>&minus;15</sup> eV/Hz
 </span>
                     <span>
     <a
@@ -53821,7 +53821,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.135667696 &times; 10<sup>-15</sup> eV/Hz
+      = 4.135667696 &times; 10<sup>&minus;15</sup> eV/Hz
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -53975,7 +53975,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>c</i><sub>1</sub>{" "}
-      = 3.74177185285687... &times; 10<sup>-16</sup> W m<sup>2</sup>
+      = 3.74177185285687... &times; 10<sup>&minus;16</sup> W m<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -53992,7 +53992,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>c</i><sub>1</sub>{" "}
-      = 3.741771852 &times; 10<sup>-16</sup> W m<sup>2</sup>
+      = 3.741771852 &times; 10<sup>&minus;16</sup> W m<sup>2</sup>
 </span>
                     <span>
     <a
@@ -54022,7 +54022,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>c</i><sub>1</sub>{" "}
-      = 3.741771852 &times; 10<sup>-16</sup> W m<sup>2</sup>
+      = 3.741771852 &times; 10<sup>&minus;16</sup> W m<sup>2</sup>
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -54176,7 +54176,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>c</i><sub>1L</sub>{" "}
-      = 1.19104297260858... &times; 10<sup>-16</sup> W m<sup>2</sup>/sr
+      = 1.19104297260858... &times; 10<sup>&minus;16</sup> W m<sup>2</sup>/sr
 </span>
 
                     <span>prediction</span>
@@ -54193,7 +54193,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>c</i><sub>1L</sub>{" "}
-      = 1.191042972 &times; 10<sup>-16</sup> W m<sup>2</sup>/sr
+      = 1.191042972 &times; 10<sup>&minus;16</sup> W m<sup>2</sup>/sr
 </span>
                     <span>
     <a
@@ -54223,7 +54223,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>c</i><sub>1L</sub>{" "}
-      = 1.191042972 &times; 10<sup>-16</sup> W m<sup>2</sup>/sr
+      = 1.191042972 &times; 10<sup>&minus;16</sup> W m<sup>2</sup>/sr
   </span>
                     <span>
     CODATA 2018, σ = 0.10
@@ -54877,7 +54877,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.07461755375382... &times; 10<sup>-26</sup> J/T
+      = –1.07461755375382... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -54902,7 +54902,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.0746175198(93) &times; 10<sup>-26</sup> J/T
+      = –1.0746175198(93) &times; 10<sup>&minus;26</sup> J/T
 </span>
                     <span>
     <a
@@ -54940,7 +54940,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.074617532(13) &times; 10<sup>-26</sup> J/T
+      = –1.074617532(13) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 1.62
@@ -55135,7 +55135,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.07455311053557... &times; 10<sup>-26</sup> J/T
+      = –1.07455311053557... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -55160,7 +55160,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.07455311035(93) &times; 10<sup>-26</sup> J/T
+      = –1.07455311035(93) &times; 10<sup>&minus;26</sup> J/T
 </span>
                     <span>
     <a
@@ -55198,7 +55198,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.07455090(13) &times; 10<sup>-26</sup> J/T
+      = –1.07455090(13) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = 1.54
@@ -55371,7 +55371,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –7.61766577241502... &times; 10<sup>-1</sup>
+      = –7.61766577241502... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -55404,7 +55404,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –7.6176657721(66) &times; 10<sup>-1</sup>
+      = –7.6176657721(66) &times; 10<sup>&minus;1</sup>
 </span>
                     <span>
     <a
@@ -55450,7 +55450,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –7.617665618(89) &times; 10<sup>-1</sup>
+      = –7.617665618(89) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
     CODATA 2018, σ = 1.73
@@ -55636,7 +55636,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –7.61786134551802... &times; 10<sup>-1</sup>
+      = –7.61786134551802... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -55669,7 +55669,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –7.617861334(31) &times; 10<sup>-1</sup>
+      = –7.617861334(31) &times; 10<sup>&minus;1</sup>
 </span>
                     <span>
     <a
@@ -55715,7 +55715,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –7.617861313(33) &times; 10<sup>-1</sup>
+      = –7.617861313(33) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
     CODATA 2018, σ = 0.97
@@ -56375,7 +56375,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.92126231819239... &times; 10<sup>-8</sup> u
+      = 2.92126231819239... &times; 10<sup>&minus;8</sup> u
 </span>
 
                     <span>prediction</span>
@@ -56400,7 +56400,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.92126231797(91) &times; 10<sup>-8</sup> u
+      = 2.92126231797(91) &times; 10<sup>&minus;8</sup> u
 </span>
                     <span>
     <a
@@ -56438,7 +56438,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.92126232205(88) &times; 10<sup>-8</sup> u
+      = 2.92126232205(88) &times; 10<sup>&minus;8</sup> u
   </span>
                     <span>
     CODATA 2018, σ = 4.38
@@ -56814,7 +56814,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>E<sub>h</sub></i> ⋮ kg{" "}
-      = 4.85087020954265... &times; 10<sup>-35</sup> kg
+      = 4.85087020954265... &times; 10<sup>&minus;35</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -56831,7 +56831,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>E<sub>h</sub></i> ⋮ kg{" "}
-      = 4.8508702095419(53) &times; 10<sup>-35</sup> kg
+      = 4.8508702095419(53) &times; 10<sup>&minus;35</sup> kg
 </span>
                     <span>
     <a
@@ -56861,7 +56861,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>E<sub>h</sub></i> ⋮ kg{" "}
-      = 4.8508702095432(94) &times; 10<sup>-35</sup> kg
+      = 4.8508702095432(94) &times; 10<sup>&minus;35</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 0.06
@@ -57089,7 +57089,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.20588318577867... &times; 10<sup>-5</sup> m<sup>3</sup>/mol
+      = 1.20588318577867... &times; 10<sup>&minus;5</sup> m<sup>3</sup>/mol
 </span>
 
                     <span>prediction</span>
@@ -57114,7 +57114,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.205883199(60) &times; 10<sup>-5</sup> m<sup>3</sup>/mol
+      = 1.205883199(60) &times; 10<sup>&minus;5</sup> m<sup>3</sup>/mol
 </span>
                     <span>
     <a
@@ -57152,7 +57152,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.205883199(60) &times; 10<sup>-5</sup> m<sup>3</sup>/mol
+      = 1.205883199(60) &times; 10<sup>&minus;5</sup> m<sup>3</sup>/mol
   </span>
                     <span>
     CODATA 2018, σ = 0.23
@@ -57337,7 +57337,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.64465734504725... &times; 10<sup>-27</sup> kg
+      = 6.64465734504725... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -57362,7 +57362,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.6446573450(21) &times; 10<sup>-27</sup> kg
+      = 6.6446573450(21) &times; 10<sup>&minus;27</sup> kg
 </span>
                     <span>
     <a
@@ -57400,7 +57400,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.6446573357(20) &times; 10<sup>-27</sup> kg
+      = 6.6446573357(20) &times; 10<sup>&minus;27</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 4.65
@@ -57834,7 +57834,7 @@ J ⋮ kg{" "}
                 >
   <span>
   M<sub><i>p</i></sub>{" "}
-      = 3.99031271629211... &times; 10<sup>-10</sup> J/s mol
+      = 3.99031271629211... &times; 10<sup>&minus;10</sup> J/s mol
 </span>
 
                     <span>prediction</span>
@@ -57851,7 +57851,7 @@ J ⋮ kg{" "}
                 >
   <span>
   M<sub><i>p</i></sub>{" "}
-      = 3.990312712 &times; 10<sup>-10</sup> J/s mol
+      = 3.990312712 &times; 10<sup>&minus;10</sup> J/s mol
 </span>
                     <span>
     <a
@@ -57881,7 +57881,7 @@ J ⋮ kg{" "}
                 >
   <span>
   M<sub><i>p</i></sub>{" "}
-      = 3.990312712 &times; 10<sup>-10</sup> J/s mol
+      = 3.990312712 &times; 10<sup>&minus;10</sup> J/s mol
   </span>
                     <span>
     CODATA 2018, σ = 0.40
@@ -58468,7 +58468,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ kg{" "}
-      = 2.21021909404020... &times; 10<sup>-42</sup> kg
+      = 2.21021909404020... &times; 10<sup>&minus;42</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -58485,7 +58485,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ kg{" "}
-      = 2.210219094 &times; 10<sup>-42</sup> kg
+      = 2.210219094 &times; 10<sup>&minus;42</sup> kg
 </span>
                     <span>
     <a
@@ -58515,7 +58515,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ kg{" "}
-      = 2.210219094 &times; 10<sup>-42</sup> kg
+      = 2.210219094 &times; 10<sup>&minus;42</sup> kg
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -58684,7 +58684,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.33102504992978... &times; 10<sup>-15</sup> u
+      = 1.33102504992978... &times; 10<sup>&minus;15</sup> u
 </span>
 
                     <span>prediction</span>
@@ -58709,7 +58709,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.33102504824(41) &times; 10<sup>-15</sup> u
+      = 1.33102504824(41) &times; 10<sup>&minus;15</sup> u
 </span>
                     <span>
     <a
@@ -58747,7 +58747,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.33102505010(40) &times; 10<sup>-15</sup> u
+      = 1.33102505010(40) &times; 10<sup>&minus;15</sup> u
   </span>
                     <span>
     CODATA 2018, σ = 0.45
@@ -58916,7 +58916,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.42631023525008... &times; 10<sup>-12</sup> m/cycle
+      = 2.42631023525008... &times; 10<sup>&minus;12</sup> m/cycle
 </span>
 
                     <span>prediction</span>
@@ -58941,7 +58941,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.42631023538(76) &times; 10<sup>-12</sup> m/cycle
+      = 2.42631023538(76) &times; 10<sup>&minus;12</sup> m/cycle
 </span>
                     <span>
     <a
@@ -58979,7 +58979,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.42631023867(73) &times; 10<sup>-12</sup> m/cycle
+      = 2.42631023867(73) &times; 10<sup>&minus;12</sup> m/cycle
   </span>
                     <span>
     CODATA 2018, σ = 4.68
@@ -59148,7 +59148,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.17344414045542... &times; 10<sup>-14</sup> m/cycle
+      = 1.17344414045542... &times; 10<sup>&minus;14</sup> m/cycle
 </span>
 
                     <span>prediction</span>
@@ -59173,7 +59173,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.173444110(26) &times; 10<sup>-14</sup> m/cycle
+      = 1.173444110(26) &times; 10<sup>&minus;14</sup> m/cycle
 </span>
                     <span>
     <a
@@ -59211,7 +59211,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.173444110(26) &times; 10<sup>-14</sup> m/cycle
+      = 1.173444110(26) &times; 10<sup>&minus;14</sup> m/cycle
   </span>
                     <span>
     CODATA 2018, σ = 1.15
@@ -59382,7 +59382,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.32140985355902... &times; 10<sup>-15</sup> m/cycle
+      = 1.32140985355902... &times; 10<sup>&minus;15</sup> m/cycle
 </span>
 
                     <span>prediction</span>
@@ -59407,7 +59407,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.32140985360(41) &times; 10<sup>-15</sup> m/cycle
+      = 1.32140985360(41) &times; 10<sup>&minus;15</sup> m/cycle
 </span>
                     <span>
     <a
@@ -59445,7 +59445,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.32140985539(40) &times; 10<sup>-15</sup> m/cycle
+      = 1.32140985539(40) &times; 10<sup>&minus;15</sup> m/cycle
   </span>
                     <span>
     CODATA 2018, σ = 4.60
@@ -59617,7 +59617,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.31959090366321... &times; 10<sup>-15</sup> m/cycle
+      = 1.31959090366321... &times; 10<sup>&minus;15</sup> m/cycle
 </span>
 
                     <span>prediction</span>
@@ -59642,7 +59642,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.31959090382(67) &times; 10<sup>-15</sup> m/cycle
+      = 1.31959090382(67) &times; 10<sup>&minus;15</sup> m/cycle
 </span>
                     <span>
     <a
@@ -59680,7 +59680,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.31959090581(75) &times; 10<sup>-15</sup> m/cycle
+      = 1.31959090581(75) &times; 10<sup>&minus;15</sup> m/cycle
   </span>
                     <span>
     CODATA 2018, σ = 2.87
@@ -59852,7 +59852,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.97769330513369... &times; 10<sup>-16</sup> m/cycle
+      = 6.97769330513369... &times; 10<sup>&minus;16</sup> m/cycle
 </span>
 
                     <span>prediction</span>
@@ -59877,7 +59877,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.97771(47) &times; 10<sup>-16</sup> m/cycle
+      = 6.97771(47) &times; 10<sup>&minus;16</sup> m/cycle
 </span>
                     <span>
     <a
@@ -59915,7 +59915,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.97771(47) &times; 10<sup>-16</sup> m/cycle
+      = 6.97771(47) &times; 10<sup>&minus;16</sup> m/cycle
   </span>
                     <span>
     CODATA 2018, σ = 0.04
@@ -60076,7 +60076,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.86159267414510... &times; 10<sup>-13</sup> m/cycle
+      = 3.86159267414510... &times; 10<sup>&minus;13</sup> m/cycle
 </span>
 
                     <span>prediction</span>
@@ -60101,7 +60101,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.8615926744(12) &times; 10<sup>-13</sup> m/cycle
+      = 3.8615926744(12) &times; 10<sup>&minus;13</sup> m/cycle
 </span>
                     <span>
     <a
@@ -60139,7 +60139,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.8615926796(12) &times; 10<sup>-13</sup> m/cycle
+      = 3.8615926796(12) &times; 10<sup>&minus;13</sup> m/cycle
   </span>
                     <span>
     CODATA 2018, σ = 4.58
@@ -60315,7 +60315,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.86759435395700... &times; 10<sup>-15</sup> m/cycle
+      = 1.86759435395700... &times; 10<sup>&minus;15</sup> m/cycle
 </span>
 
                     <span>prediction</span>
@@ -60340,7 +60340,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.867594306(42) &times; 10<sup>-15</sup> m/cycle
+      = 1.867594306(42) &times; 10<sup>&minus;15</sup> m/cycle
 </span>
                     <span>
     <a
@@ -60378,7 +60378,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.867594306(42) &times; 10<sup>-15</sup> m/cycle
+      = 1.867594306(42) &times; 10<sup>&minus;15</sup> m/cycle
   </span>
                     <span>
     CODATA 2018, σ = 1.12
@@ -60539,7 +60539,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.10308910044256... &times; 10<sup>-16</sup> m/cycle
+      = 2.10308910044256... &times; 10<sup>&minus;16</sup> m/cycle
 </span>
 
                     <span>prediction</span>
@@ -60564,7 +60564,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.10308910051(66) &times; 10<sup>-16</sup> m/cycle
+      = 2.10308910051(66) &times; 10<sup>&minus;16</sup> m/cycle
 </span>
                     <span>
     <a
@@ -60602,7 +60602,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.10308910336(64) &times; 10<sup>-16</sup> m/cycle
+      = 2.10308910336(64) &times; 10<sup>&minus;16</sup> m/cycle
   </span>
                     <span>
     CODATA 2018, σ = 6.98
@@ -60763,7 +60763,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.10019415177101... &times; 10<sup>-16</sup> m/cycle
+      = 2.10019415177101... &times; 10<sup>&minus;16</sup> m/cycle
 </span>
 
                     <span>prediction</span>
@@ -60788,7 +60788,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.1001941520(11) &times; 10<sup>-16</sup> m/cycle
+      = 2.1001941520(11) &times; 10<sup>&minus;16</sup> m/cycle
 </span>
                     <span>
     <a
@@ -60826,7 +60826,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.1001941552(12) &times; 10<sup>-16</sup> m/cycle
+      = 2.1001941552(12) &times; 10<sup>&minus;16</sup> m/cycle
   </span>
                     <span>
     CODATA 2018, σ = 2.92
@@ -60987,7 +60987,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.11053438089125... &times; 10<sup>-16</sup> m/cycle
+      = 1.11053438089125... &times; 10<sup>&minus;16</sup> m/cycle
 </span>
 
                     <span>prediction</span>
@@ -61012,7 +61012,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.110538(75) &times; 10<sup>-16</sup> m/cycle
+      = 1.110538(75) &times; 10<sup>&minus;16</sup> m/cycle
 </span>
                     <span>
     <a
@@ -61050,7 +61050,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.110538(75) &times; 10<sup>-16</sup> m/cycle
+      = 1.110538(75) &times; 10<sup>&minus;16</sup> m/cycle
   </span>
                     <span>
     CODATA 2018, σ = 0.05
@@ -61211,7 +61211,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 8.57438233591386... &times; 10<sup>-1</sup>
+      = 8.57438233591386... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -61236,7 +61236,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 8.574382335(22) &times; 10<sup>-1</sup>
+      = 8.574382335(22) &times; 10<sup>&minus;1</sup>
 </span>
                     <span>
     <a
@@ -61274,7 +61274,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 8.574382338(22) &times; 10<sup>-1</sup>
+      = 8.574382338(22) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
     CODATA 2018, σ = 0.14
@@ -61443,7 +61443,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 8.57438233591386... &times; 10<sup>-1</sup>
+      = 8.57438233591386... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -61476,7 +61476,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 8.574382335(22) &times; 10<sup>-1</sup>
+      = 8.574382335(22) &times; 10<sup>&minus;1</sup>
 </span>
                     <span>
     <a
@@ -61522,7 +61522,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 8.574382338(22) &times; 10<sup>-1</sup>
+      = 8.574382338(22) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
     CODATA 2018, σ = 0.14
@@ -61713,7 +61713,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.66975456899525... &times; 10<sup>-4</sup>
+      = 4.66975456899525... &times; 10<sup>&minus;4</sup>
 </span>
 
                     <span>prediction</span>
@@ -61746,7 +61746,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.669754568(12) &times; 10<sup>-4</sup>
+      = 4.669754568(12) &times; 10<sup>&minus;4</sup>
 </span>
                     <span>
     <a
@@ -61792,7 +61792,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.669754570(12) &times; 10<sup>-4</sup>
+      = 4.669754570(12) &times; 10<sup>&minus;4</sup>
   </span>
                     <span>
     CODATA 2018, σ = 0.17
@@ -62679,7 +62679,7 @@ J ⋮ kg{" "}
                 >
   <span>
   Hz ⋮ K{" "}
-      = 4.79924307310802... &times; 10<sup>-11</sup> K
+      = 4.79924307310802... &times; 10<sup>&minus;11</sup> K
 </span>
 
                     <span>prediction</span>
@@ -62696,7 +62696,7 @@ J ⋮ kg{" "}
                 >
   <span>
   Hz ⋮ K{" "}
-      = 4.799243073 &times; 10<sup>-11</sup> K
+      = 4.799243073 &times; 10<sup>&minus;11</sup> K
 </span>
                     <span>
     <a
@@ -62726,7 +62726,7 @@ J ⋮ kg{" "}
                 >
   <span>
   Hz ⋮ K{" "}
-      = 4.799243073 &times; 10<sup>-11</sup> K
+      = 4.799243073 &times; 10<sup>&minus;11</sup> K
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -62901,7 +62901,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>b</i>{" "}
-      = 2.89777195379426... &times; 10<sup>-3</sup> m K/cycle
+      = 2.89777195379426... &times; 10<sup>&minus;3</sup> m K/cycle
 </span>
 
                     <span>prediction</span>
@@ -62918,7 +62918,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>b</i>{" "}
-      = 2.89777195379426... &times; 10<sup>-3</sup> m K/cycle
+      = 2.89777195379426... &times; 10<sup>&minus;3</sup> m K/cycle
 </span>
                     <span>
     <a
@@ -62948,7 +62948,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>b</i>{" "}
-      = 2.89777195379426... &times; 10<sup>-3</sup> m K/cycle
+      = 2.89777195379426... &times; 10<sup>&minus;3</sup> m K/cycle
   </span>
                     <span>
     CODATA 2018, σ = 0.13
@@ -63144,7 +63144,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>c</i><sub>2</sub>{" "}
-      = 1.43877687681333... &times; 10<sup>-2</sup> m K
+      = 1.43877687681333... &times; 10<sup>&minus;2</sup> m K
 </span>
 
                     <span>prediction</span>
@@ -63161,7 +63161,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>c</i><sub>2</sub>{" "}
-      = 1.438776877 &times; 10<sup>-2</sup> m K
+      = 1.438776877 &times; 10<sup>&minus;2</sup> m K
 </span>
                     <span>
     <a
@@ -63191,7 +63191,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>c</i><sub>2</sub>{" "}
-      = 1.438776877 &times; 10<sup>-2</sup> m K
+      = 1.438776877 &times; 10<sup>&minus;2</sup> m K
   </span>
                     <span>
     CODATA 2018, σ = 0.02
@@ -63356,7 +63356,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ K{" "}
-      = 1.43877687681333... &times; 10<sup>-2</sup> K
+      = 1.43877687681333... &times; 10<sup>&minus;2</sup> K
 </span>
 
                     <span>prediction</span>
@@ -63373,7 +63373,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ K{" "}
-      = 1.438776877 &times; 10<sup>-2</sup> K
+      = 1.438776877 &times; 10<sup>&minus;2</sup> K
 </span>
                     <span>
     <a
@@ -63403,7 +63403,7 @@ J ⋮ kg{" "}
                 >
   <span>
   1/m ⋮ K{" "}
-      = 1.438776877 &times; 10<sup>-2</sup> K
+      = 1.438776877 &times; 10<sup>&minus;2</sup> K
   </span>
                     <span>
     CODATA 2018, σ = 0.02
@@ -64040,7 +64040,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.48579909987150... &times; 10<sup>-7</sup> kg/mol
+      = 5.48579909987150... &times; 10<sup>&minus;7</sup> kg/mol
 </span>
 
                     <span>prediction</span>
@@ -64065,7 +64065,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.4857990962(17) &times; 10<sup>-7</sup> kg/mol
+      = 5.4857990962(17) &times; 10<sup>&minus;7</sup> kg/mol
 </span>
                     <span>
     <a
@@ -64103,7 +64103,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.4857990888(17) &times; 10<sup>-7</sup> kg/mol
+      = 5.4857990888(17) &times; 10<sup>&minus;7</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = 6.47
@@ -64296,7 +64296,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.13428922993966... &times; 10<sup>-4</sup> kg/mol
+      = 1.13428922993966... &times; 10<sup>&minus;4</sup> kg/mol
 </span>
 
                     <span>prediction</span>
@@ -64321,7 +64321,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.134289258(25) &times; 10<sup>-4</sup> kg/mol
+      = 1.134289258(25) &times; 10<sup>&minus;4</sup> kg/mol
 </span>
                     <span>
     <a
@@ -64359,7 +64359,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.134289259(25) &times; 10<sup>-4</sup> kg/mol
+      = 1.134289259(25) &times; 10<sup>&minus;4</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = 1.20
@@ -64554,7 +64554,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.00000000170913... &times; 10<sup>-3</sup> kg/mol
+      = 1.00000000170913... &times; 10<sup>&minus;3</sup> kg/mol
 </span>
 
                     <span>prediction</span>
@@ -64579,7 +64579,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.00000000105(31) &times; 10<sup>-3</sup> kg/mol
+      = 1.00000000105(31) &times; 10<sup>&minus;3</sup> kg/mol
 </span>
                     <span>
     <a
@@ -64617,7 +64617,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 0.999999999965(30) &times; 10<sup>-3</sup> kg/mol
+      = 0.999999999965(30) &times; 10<sup>&minus;3</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = 3.50
@@ -64810,7 +64810,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.00727646828837... &times; 10<sup>-3</sup> kg/mol
+      = 1.00727646828837... &times; 10<sup>&minus;3</sup> kg/mol
 </span>
 
                     <span>prediction</span>
@@ -64835,7 +64835,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.00727646764(31) &times; 10<sup>-3</sup> kg/mol
+      = 1.00727646764(31) &times; 10<sup>&minus;3</sup> kg/mol
 </span>
                     <span>
     <a
@@ -64873,7 +64873,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.00727646627(31) &times; 10<sup>-3</sup> kg/mol
+      = 1.00727646627(31) &times; 10<sup>&minus;3</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = 6.48
@@ -65064,7 +65064,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.00866491736785... &times; 10<sup>-3</sup> kg/mol
+      = 1.00866491736785... &times; 10<sup>&minus;3</sup> kg/mol
 </span>
 
                     <span>prediction</span>
@@ -65089,7 +65089,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.00866491712(51) &times; 10<sup>-3</sup> kg/mol
+      = 1.00866491712(51) &times; 10<sup>&minus;3</sup> kg/mol
 </span>
                     <span>
     <a
@@ -65127,7 +65127,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.00866491560(57) &times; 10<sup>-3</sup> kg/mol
+      = 1.00866491560(57) &times; 10<sup>&minus;3</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = 3.08
@@ -65321,7 +65321,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.90754306838281... &times; 10<sup>-3</sup> kg/mol
+      = 1.90754306838281... &times; 10<sup>&minus;3</sup> kg/mol
 </span>
 
                     <span>prediction</span>
@@ -65346,7 +65346,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.90754(13) &times; 10<sup>-3</sup> kg/mol
+      = 1.90754(13) &times; 10<sup>&minus;3</sup> kg/mol
 </span>
                     <span>
     <a
@@ -65384,7 +65384,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.90754(13) &times; 10<sup>-3</sup> kg/mol
+      = 1.90754(13) &times; 10<sup>&minus;3</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = 0.00
@@ -65578,7 +65578,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.01355321599516... &times; 10<sup>-3</sup> kg/mol
+      = 2.01355321599516... &times; 10<sup>&minus;3</sup> kg/mol
 </span>
 
                     <span>prediction</span>
@@ -65603,7 +65603,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.01355321466(63) &times; 10<sup>-3</sup> kg/mol
+      = 2.01355321466(63) &times; 10<sup>&minus;3</sup> kg/mol
 </span>
                     <span>
     <a
@@ -65641,7 +65641,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.01355321466(63) &times; 10<sup>-3</sup> kg/mol
+      = 2.01355321466(63) &times; 10<sup>&minus;3</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = 6.45
@@ -65835,7 +65835,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.01493225229578... &times; 10<sup>-3</sup> kg/mol
+      = 3.01493225229578... &times; 10<sup>&minus;3</sup> kg/mol
 </span>
 
                     <span>prediction</span>
@@ -65860,7 +65860,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.01493225010(94) &times; 10<sup>-3</sup> kg/mol
+      = 3.01493225010(94) &times; 10<sup>&minus;3</sup> kg/mol
 </span>
                     <span>
     <a
@@ -65898,7 +65898,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.01493224613(91) &times; 10<sup>-3</sup> kg/mol
+      = 3.01493224613(91) &times; 10<sup>&minus;3</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = 6.77
@@ -66093,7 +66093,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.01550072073918... &times; 10<sup>-3</sup> kg/mol
+      = 3.01550072073918... &times; 10<sup>&minus;3</sup> kg/mol
 </span>
 
                     <span>prediction</span>
@@ -66118,7 +66118,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.01550071913(94) &times; 10<sup>-3</sup> kg/mol
+      = 3.01550071913(94) &times; 10<sup>&minus;3</sup> kg/mol
 </span>
                     <span>
     <a
@@ -66156,7 +66156,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.01550071517(92) &times; 10<sup>-3</sup> kg/mol
+      = 3.01550071517(92) &times; 10<sup>&minus;3</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = 6.04
@@ -66351,7 +66351,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.00150618632869... &times; 10<sup>-3</sup> kg/mol
+      = 4.00150618632869... &times; 10<sup>&minus;3</sup> kg/mol
 </span>
 
                     <span>prediction</span>
@@ -66376,7 +66376,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.0015061833(12) &times; 10<sup>-3</sup> kg/mol
+      = 4.0015061833(12) &times; 10<sup>&minus;3</sup> kg/mol
 </span>
                     <span>
     <a
@@ -66414,7 +66414,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.0015061777(12) &times; 10<sup>-3</sup> kg/mol
+      = 4.0015061777(12) &times; 10<sup>&minus;3</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = 7.17
@@ -66609,7 +66609,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.20000000205096... &times; 10<sup>-2</sup> kg/mol
+      = 1.20000000205096... &times; 10<sup>&minus;2</sup> kg/mol
 </span>
 
                     <span>prediction</span>
@@ -66634,7 +66634,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.20000000126(36) &times; 10<sup>-2</sup> kg/mol
+      = 1.20000000126(36) &times; 10<sup>&minus;2</sup> kg/mol
 </span>
                     <span>
     <a
@@ -66672,7 +66672,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.19999999958(36) &times; 10<sup>-2</sup> kg/mol
+      = 1.19999999958(36) &times; 10<sup>&minus;2</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = 2.44
@@ -67414,7 +67414,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.98770197293307... &times; 10<sup>-8</sup>
+      = 1.98770197293307... &times; 10<sup>&minus;8</sup>
 </span>
 
                     <span>prediction</span>
@@ -67439,7 +67439,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.98770(10) &times; 10<sup>-8</sup>
+      = 1.98770(10) &times; 10<sup>&minus;8</sup>
 </span>
                     <span>
     <a
@@ -67477,7 +67477,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.0200(20) &times; 10<sup>-8</sup>
+      = 2.0200(20) &times; 10<sup>&minus;8</sup>
   </span>
                     <span>
     CODATA 2018, σ = 16.15
@@ -67628,7 +67628,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.39457651563001... &times; 10<sup>-8</sup>
+      = 2.39457651563001... &times; 10<sup>&minus;8</sup>
 </span>
 
                     <span>prediction</span>
@@ -67653,7 +67653,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.39450(20) &times; 10<sup>-8</sup>
+      = 2.39450(20) &times; 10<sup>&minus;8</sup>
 </span>
                     <span>
     <a
@@ -67691,7 +67691,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.4140(20) &times; 10<sup>-8</sup>
+      = 2.4140(20) &times; 10<sup>&minus;8</sup>
   </span>
                     <span>
     CODATA 2018, σ = 9.75
@@ -67876,7 +67876,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>edm</sub>{" "}
-      = 8.47835361807485... &times; 10<sup>-30</sup> m C
+      = 8.47835362309587... &times; 10<sup>&minus;30</sup> m C
 </span>
 
                     <span>prediction</span>
@@ -67893,7 +67893,7 @@ J ⋮ kg{" "}
                 >
   <span>
  A<sub>edm</sub>{" "}
-      = 8.4783536198(13) &times; 10<sup>-30</sup> m C
+      = 8.4783536198(13) &times; 10<sup>&minus;30</sup> m C
 </span>
                     <span>
     <a
@@ -67908,7 +67908,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = 1.38"}
+                        {", σ = 2.46"}
   </span>
                 </div>
 
@@ -67923,10 +67923,10 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>edm</sub>{" "}
-      = 8.4783536255(13) &times; 10<sup>-30</sup> m C
+      = 8.4783536255(13) &times; 10<sup>&minus;30</sup> m C
   </span>
                     <span>
-    CODATA 2018, σ = 5.76
+    CODATA 2018, σ = &minus;1.92
   </span>
                 </div>
 
@@ -68108,7 +68108,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>mag</sub>{" "}
-      = 7.89103657672319... &times; 10<sup>-29</sup> J/T<sup>2</sup>
+      = 7.89103658606960... &times; 10<sup>&minus;29</sup> J/T<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -68125,7 +68125,7 @@ J ⋮ kg{" "}
                 >
   <span>
  A<sub>mag</sub>{" "}
-      = 7.8910365794(49) &times; 10<sup>-29</sup> J/T<sup>2</sup>
+      = 7.8910365794(49) &times; 10<sup>&minus;29</sup> J/T<sup>2</sup>
 </span>
                     <span>
     <a
@@ -68140,7 +68140,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = 0.55"}
+                        {", σ = 1.34"}
   </span>
                 </div>
 
@@ -68155,10 +68155,10 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>mag</sub>{" "}
-      = 7.8910366008(48) &times; 10<sup>-29</sup> J/T<sup>2</sup>
+      = 7.8910366008(48) &times; 10<sup>&minus;29</sup> J/T<sup>2</sup>
   </span>
                     <span>
-    CODATA 2018, σ = 5.02
+    CODATA 2018, σ = &minus;3.08
   </span>
                 </div>
 
@@ -68342,7 +68342,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>eqm</sub>{" "}
-      = 4.48655151738416... &times; 10<sup>-40</sup> m C
+      = 4.48655151738416... &times; 10<sup>&minus;40</sup> m C
 </span>
 
                     <span>prediction</span>
@@ -68359,7 +68359,7 @@ J ⋮ kg{" "}
                 >
   <span>
  A<sub>eqm</sub>{" "}
-      = 4.4865515185(14) &times; 10<sup>-40</sup> m C
+      = 4.4865515185(14) &times; 10<sup>&minus;40</sup> m C
 </span>
                     <span>
     <a
@@ -68389,7 +68389,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>eqm</sub>{" "}
-      = 4.4865515185(14) &times; 10<sup>-40</sup> m C
+      = 4.4865515185(14) &times; 10<sup>&minus;40</sup> m C
   </span>
                     <span>
     CODATA 2018, σ = 5.21
@@ -68820,7 +68820,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>ep</sub>{" "}
-      = 1.64877727300968... &times; 10<sup>-41</sup> m<sup>2</sup> C<sup>2</sup>/J
+      = 1.64877727300968... &times; 10<sup>&minus;41</sup> m<sup>2</sup> C<sup>2</sup>/J
 </span>
 
                     <span>prediction</span>
@@ -68837,7 +68837,7 @@ J ⋮ kg{" "}
                 >
   <span>
  A<sub>ep</sub>{" "}
-      = 1.64877727212(51) &times; 10<sup>-41</sup> m<sup>2</sup> C<sup>2</sup>/J
+      = 1.64877727212(51) &times; 10<sup>&minus;41</sup> m<sup>2</sup> C<sup>2</sup>/J
 </span>
                     <span>
     <a
@@ -68867,7 +68867,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>ep</sub>{" "}
-      = 1.64877727436(50) &times; 10<sup>-41</sup> m<sup>2</sup> C<sup>2</sup>/J
+      = 1.64877727436(50) &times; 10<sup>&minus;41</sup> m<sup>2</sup> C<sup>2</sup>/J
   </span>
                     <span>
     CODATA 2018, σ = 2.72
@@ -69308,7 +69308,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>1<sup>st</sup> hp</sub>{" "}
-      = 3.20636130118910... &times; 10<sup>-53</sup> m<sup>3</sup> C<sup>3</sup>/J<sup>2</sup>
+      = 3.20636130118910... &times; 10<sup>&minus;53</sup> m<sup>3</sup> C<sup>3</sup>/J<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -69325,7 +69325,7 @@ J ⋮ kg{" "}
                 >
   <span>
  A<sub>1<sup>st</sup> hp</sub>{" "}
-      = 3.2063612996(15) &times; 10<sup>-53</sup> m<sup>3</sup> C<sup>3</sup>/J<sup>2</sup>
+      = 3.2063612996(15) &times; 10<sup>&minus;53</sup> m<sup>3</sup> C<sup>3</sup>/J<sup>2</sup>
 </span>
                     <span>
     <a
@@ -69355,7 +69355,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>1<sup>st</sup> hp</sub>{" "}
-      = 3.2063613061(15) &times; 10<sup>-53</sup> m<sup>3</sup> C<sup>3</sup>/J<sup>2</sup>
+      = 3.2063613061(15) &times; 10<sup>&minus;53</sup> m<sup>3</sup> C<sup>3</sup>/J<sup>2</sup>
   </span>
                     <span>
     CODATA 2018, σ = 3.33
@@ -69564,7 +69564,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>2<sup>nd</sup> hp</sub>{" "}
-      = 6.23537996254764... &times; 10<sup>-65</sup> m<sup>4</sup> C<sup>4</sup>/J<sup>3</sup>
+      = 6.23537996254764... &times; 10<sup>&minus;65</sup> m<sup>4</sup> C<sup>4</sup>/J<sup>3</sup>
 </span>
 
                     <span>prediction</span>
@@ -69581,7 +69581,7 @@ J ⋮ kg{" "}
                 >
   <span>
  A<sub>2<sup>nd</sup> hp</sub>{" "}
-      = 6.2353799735(39) &times; 10<sup>-65</sup> m<sup>4</sup> C<sup>4</sup>/J<sup>3</sup>
+      = 6.2353799735(39) &times; 10<sup>&minus;65</sup> m<sup>4</sup> C<sup>4</sup>/J<sup>3</sup>
 </span>
                     <span>
     <a
@@ -69611,7 +69611,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>2<sup>nd</sup> hp</sub>{" "}
-      = 6.2353799905(38) &times; 10<sup>-65</sup> m<sup>4</sup> C<sup>4</sup>/J<sup>3</sup>
+      = 6.2353799905(38) &times; 10<sup>&minus;65</sup> m<sup>4</sup> C<sup>4</sup>/J<sup>3</sup>
   </span>
                     <span>
     CODATA 2018, σ = 7.37
