@@ -97,24 +97,24 @@ export default function Supporters() {
       <li>Tim Dodge</li>
       <li>Attie Retief</li>
       <li>Seth Lamancusa</li>
-      <li>L</li>
+      <li>InvaderH</li>
       <li>Mike Godzina</li>
+      <li>L</li>
       <li>Cully O&apos;Meara</li>
       <li>Joakim Pettersson</li>
       <li>Duarte Cunha Leáo</li>
-      <li>Yishai Mendelsohn</li>
       <li>Rongomai Bailey</li>
+      <li>Yishai Mendelsohn</li>
       <li>Harvey Summers</li>
-      <li>Joseph Mavor</li>
       <li>Tyler Weldon</li>
     </ul>
     <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
       <li>Natural Philosopher</li>
       <li>Natural Philosopher</li>
       <li>Natural Philosopher</li>
+      <li>Friar</li>
       <li>Advocate</li>
       <li>Advocate</li>
-      <li>Volunteer</li>
       <li>Volunteer</li>
       <li>Volunteer</li>
       <li>Volunteer</li>
@@ -133,8 +133,8 @@ export default function Supporters() {
 
       <li>Alex Shevchenko</li>
       <li>Christoph Schiller</li>
+      <li>Joseph Mavor</li>
       <li>James Rohan</li>
-      <li>InvaderH</li>
       <li>Nikhil</li>
       <li>Colleen</li>
       <li>Chuck</li>
