@@ -69611,7 +69611,7 @@ J ⋮ kg{" "}
   style={{
     position: "fixed",          // ← fixed so transforms/parents can't affect it
     top: "50%",
-    left: "185px",              // 165px sidebar + 20px offset
+    left: "175px",              // 165px sidebar + 20px offset
     transform: "translateY(-50%)",
     zIndex: 2000,               // ← above everything
     pointerEvents: "auto",
@@ -69640,7 +69640,7 @@ J ⋮ kg{" "}
   style={{
     position: "fixed",
     top: "50%",
-    right: "20px",
+    right: "10px",
     transform: "translateY(-50%)",
     zIndex: 2000,
     pointerEvents: "auto",
@@ -70177,33 +70177,33 @@ J ⋮ kg{" "}
       </div> {/* end inner relative wrapper */}
     </div> {/* end main content area */}
   </div> {/* end page container */}
-      {/* Modal renderer */}
+
+      {/* Modal renderer — centered box, responsive width, background still scroll/clickable */}
 {popupEq != null && (
   <div
-    onClick={() => setPopupEq(null)}
+    role="dialog"
+    aria-modal="false"
     style={{
       position: "fixed",
-      top: 0,
-      bottom: 0,
-      left: "165px",
+      left: "165px",                   // span the area to the right of the sidebar
       right: 0,
-      background: "rgba(0,0,0,0.1)",
+      top: "50%",
+      transform: "translateY(-50%)",  // vertical center only
       zIndex: 1000,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "24px 20px",
-      pointerEvents: "auto",
+      pointerEvents: "none",           // let background receive clicks except on the box
+      // no backdrop, no overlay sizing here
     }}
-    role="dialog"
-    aria-modal="true"
   >
     <div
       onClick={(e) => e.stopPropagation()}
       style={{
-        width: "min(800px, 100%)",
+        // Center the box horizontally within the wrapper
+        margin: "0 auto",
+        // Old feel: max ~800px, but responsive with small side gutters
+        width: "min(720px, calc(100vw - 165px - 90px))", // 20px gutter on each side
         maxHeight: "calc(100vh - 140px)",
         overflowY: "auto",
+
         background: "rgba(15,15,15,0.98)",
         border: "1px solid transparent",
         borderRadius: "12px",
@@ -70214,9 +70214,10 @@ J ⋮ kg{" "}
           "0 0 40px 7px rgba(255,0,0,0.35)",
           "0 0 0 0.25px rgba(255,0,0,0.55)"
         ].join(", "),
-        pointerEvents: "auto",
+        pointerEvents: "auto", // this element remains interactive
       }}
     >
+      {/* Top-right Close button */}
       <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "8px" }}>
         <button
           onClick={() => setPopupEq(null)}
@@ -70233,6 +70234,7 @@ J ⋮ kg{" "}
         </button>
       </div>
 
+      {/* Popup content */}
       {popupContents[popupEq] ?? (
         <div style={{ color: "white" }}>
           (No popup content found for equation #{popupEq})
@@ -70241,6 +70243,7 @@ J ⋮ kg{" "}
     </div>
   </div>
 )}
+
 
 </LayoutWrapper>
 );
