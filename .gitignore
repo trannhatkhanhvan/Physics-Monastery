@@ -45,7 +45,17 @@ next-env.d.ts
 !/public/videos/*.jpg
 
 
-public/videos/
-videos/
-*.mp4
-*.mov
+# Ignore typical big binaries anywhere (sane defaults)
+**/*.mxf
+**/*.avi
+
+# Keep a sandbox outside the app if you use it
+/videos/
+
+# ✅ SHIP everything under public/videos (thumbs + mp4/webm/mov, etc.)
+!public/videos/
+!public/videos/**
+
+# (Optional) if you also keep images elsewhere in /public, you can still ignore non-video roots above
+# but we explicitly unignore the videos folder entirely as above
+
