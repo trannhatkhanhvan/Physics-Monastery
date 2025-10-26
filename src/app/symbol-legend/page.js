@@ -1309,35 +1309,6 @@ export default function SymbolLegend() {
       left: (
           <>
             <img
-                src="/equations/g_k_constant.svg"
-                alt="A"
-                style={{
-                  height: '13px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.0em',
-                  display: 'inline',
-                }}
-            />
-            {' = 1.28242712910062 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://mathworld.wolfram.com/Glaisher-KinkelinConstant.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            Glasher-Kinkelin constant
-          </a>
-      ),
-    },
-
-// 42
-    {
-      left: (
-          <>
-            <img
                 src="/equations/sierpinski_constant.svg"
                 alt="S"
                 style={{
@@ -1363,7 +1334,7 @@ export default function SymbolLegend() {
     },
 
 
-// 43
+// 42
     {
       left: (
           <>
@@ -1393,7 +1364,7 @@ export default function SymbolLegend() {
     },
 
 
-// 44
+// 43
     {
       left: (
           <>
@@ -1423,7 +1394,7 @@ export default function SymbolLegend() {
     },
 
 
-// 45
+// 44
     {
       left: (
           <>
@@ -1452,7 +1423,7 @@ export default function SymbolLegend() {
       ),
     },
 
-// 46
+// 45
     {
       left: (
           <>
@@ -1488,7 +1459,7 @@ export default function SymbolLegend() {
       right: '',
     },
 
-// 48
+// 46
     {
       left: (
           <>
@@ -1518,7 +1489,7 @@ export default function SymbolLegend() {
     },
 
 
-// 49
+// 47
     {
       left: (
           <>
@@ -1547,7 +1518,7 @@ export default function SymbolLegend() {
       ),
     },
 
-// 50
+// 48
     {
       left: (
           <>
@@ -1576,7 +1547,7 @@ export default function SymbolLegend() {
       ),
     },
 
-// 51
+// 49
     {
       left: (
           <>
@@ -1606,7 +1577,7 @@ export default function SymbolLegend() {
     },
 
 
-// 52
+// 50
     {
       left: (
           <>
@@ -1636,7 +1607,7 @@ export default function SymbolLegend() {
     },
 
 
-// 53
+// 51
     {
       left: (
           <>
@@ -1665,7 +1636,7 @@ export default function SymbolLegend() {
       ),
     },
 
-// 54
+// 52
     {
       left: (
           <>
@@ -1702,7 +1673,7 @@ export default function SymbolLegend() {
     },
 
 
-// 55
+// 53
     {
       left: (
           <>
@@ -1734,7 +1705,7 @@ export default function SymbolLegend() {
     },
 
 
-// 56
+// 54
     {
       left: (
           <>
@@ -1766,7 +1737,7 @@ export default function SymbolLegend() {
     },
 
 
-// 57
+// 55
     {
       left: (
           <>
@@ -1798,7 +1769,7 @@ export default function SymbolLegend() {
     },
 
 
-// 58
+// 56
     {
       left: (
           <>
@@ -1839,7 +1810,7 @@ export default function SymbolLegend() {
     },
 
 
-// 59
+// 57
     {
       left: (
           <>
@@ -1871,7 +1842,7 @@ export default function SymbolLegend() {
     },
 
 
-// 60
+// 58
     {
       left: (
           <>
@@ -1910,7 +1881,7 @@ export default function SymbolLegend() {
     },
 
 
-// 61
+// 59
     {
       left: (
           <>
@@ -1947,7 +1918,7 @@ export default function SymbolLegend() {
     },
 
 
-// 62
+// 60
     {
       left: (
           <>
@@ -1976,7 +1947,7 @@ export default function SymbolLegend() {
     },
 
 
-// 63
+// 62
     {
       left: (
           <>
@@ -2005,7 +1976,7 @@ export default function SymbolLegend() {
     },
 
 
-// 64
+// 63
     {
       left: (
           <>
@@ -2034,7 +2005,7 @@ export default function SymbolLegend() {
     },
 
 
-// 65
+// 64
     {
       left: (
           <>

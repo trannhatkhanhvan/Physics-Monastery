@@ -160,9 +160,9 @@ export default function BinomialConstructor() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     hyperbolic partition equation
-  </a>&apos;s simple ( one–dimensional ) transforms—defining a symmetric transform coherently maintained by this bi–part structure.
+  </a>&apos;s simple (one–dimensional) transforms—defining a symmetric transform coherently maintained by this bi–part structure.
 
-          Those transforms include: two polar expressions ( expressed in powers of <img
+          Those transforms include: two polar expressions (expressed in powers of <img
             src="/equations/zhe_theta.svg"
             alt="zhe_theta"
             style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
@@ -170,7 +170,7 @@ export default function BinomialConstructor() {
             src="/equations/zhe_r.svg"
             alt="zhe_r"
             style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
-          /> ),
+          />),
           and 6 Cartesian expressions: the 2–part products, the 3–part products,
           the 2–part sums, the 3–part sums, the 2–part quadrances, and the 3–part quadrances.
         </p>

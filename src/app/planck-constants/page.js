@@ -326,7 +326,7 @@ export default function PlanckConstants() {
             src="/equations/red-5.svg"
             alt="5"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '-2px' }}
-          /> scalars ( <img
+          /> scalars (<img
             src="/equations/scalar_0.svg"
             alt="phi_0"
             style={{ height: '15px', width: 'auto', display: 'inline-block', position: 'relative', top: '-1px' }}
@@ -346,7 +346,7 @@ export default function PlanckConstants() {
             src="/equations/scalar_4.svg"
             alt="phi_4"
             style={{ height: '15px', width: 'auto', display: 'inline-block', position: 'relative', top: '-1px' }}
-          /> ).
+          />).
             Combining those scalars with their quantized powers we arrive at exact geometric definitions for the Planck constants.
         </p>
 

@@ -1,7 +1,6 @@
 'use client';
 export const dynamic = 'force-dynamic';
 
-
 import LayoutWrapper from '@/components/LayoutWrapper';
 import '../globals.css';
 
@@ -29,11 +28,11 @@ export default function HyperbolicPartitionEq() {
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: 'inherit', textDecoration: 'none' }}
-            onMouseOver={(e) => (e.target.style.color = 'yellow')}
-            onMouseOut={(e) => (e.target.style.color = 'inherit')}
+            onMouseOver={(e) => (e.currentTarget.style.color = 'yellow')}
+            onMouseOut={(e) => (e.currentTarget.style.color = 'inherit')}
           >
             Planck mass.{' '}
-          </a>It&apos;s 4 solutions{' '}
+          </a>Its 4 solutions{' '}
           <img src="/equations/zhe_1.svg" alt="zhe_1" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
           <img src="/equations/zhe_2.svg" alt="zhe_2" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
           <img src="/equations/zhe_3.svg" alt="zhe_3" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} /> and{' '}
@@ -68,7 +67,7 @@ export default function HyperbolicPartitionEq() {
               { src: 'zhe_3.svg', value: '–1.87649603900417 ... + 4.06615262615972 ...', imag: true },
               { src: 'zhe_4.svg', value: '–1.87649603900417 ... – 4.06615262615972 ...', imag: true }].map(({ src, value, imag }, i) => (
               <div key={i} className="equation-line-left" style={{ marginBottom: '0.4rem', paddingLeft: '2.0rem' }}>
-                <img src={"/equations/" + src} alt={src} style={{ height: '14px', width: 'auto', position: 'relative', top: '3px' }} />
+                <img src={'/equations/' + src} alt={src} style={{ height: '14px', width: 'auto', position: 'relative', top: '3px' }} />
                 <span style={{ marginLeft: '0.4em' }}>= {value}</span>
                 {imag && (
                   <img src="/equations/i.svg" alt="i" style={{ height: '13px', width: 'auto', position: 'relative', top: '-2px', marginLeft: '0.3em' }} />
@@ -78,9 +77,8 @@ export default function HyperbolicPartitionEq() {
           </div>
         </div>
 
-
         <p className="equation-description" style={{ marginTop: '2rem' }}>
-          The first of those quadrance parts is{' '}
+          The square of the first solution is{' '}
           <a
             href="https://physics.nist.gov/cgi-bin/cuu/Value?alph"
             target="_blank"
@@ -143,32 +141,148 @@ export default function HyperbolicPartitionEq() {
           </div>
         </div>
 
-        <div style={{ height: '3.0rem' }} />
+        <div style={{ height: '1.5rem' }} />
 
+        <p className="equation-description">
+  In 1591, François Viète showed that the invariants (
+  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
+    <img
+      src="/equations/a.svg"
+      alt="a"
+      style={{ height: '8px', width: 'auto'}}
+    />
+  </span>,{' '}
+  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
+    <img
+      src="/equations/b.svg"
+      alt="b"
+      style={{
+        height: '12px',
+        width: 'auto',
+        position: 'relative',
+        top: '-2px'
+      }}
+    />
+  </span>,{' '}
+  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
+    <img
+      src="/equations/c.svg"
+      alt="c"
+      style={{ height: '8px', width: 'auto'}}
+    />
+  </span>,{' '}
+  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
+    <img
+      src="/equations/d.svg"
+      alt="d"
+      style={{
+        height: '12px',
+        width: 'auto',
+        position: 'relative',
+        top: '-2px'
+      }}
+    />
+  </span>
+  ) of the general monic quartic
+</p>
 
+{/* Spacer above equation */}
+<div style={{ height: '2.0rem' }} />
+
+{/* Centered equation line */}
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <img
+    src="/equations/general_monic_quartic.svg"
+    alt="x^4 + a x^3 + b x^2 + c x + d"
+    style={{ height: '15.5px', width: 'auto' }}
+  />
+</div>
+
+{/* Spacer below equation */}
+<div style={{ height: '2.0rem' }} />
+
+<p
+  className="equation-description"
+  style={{ textIndent: 0 }}
+>
+  with roots{' '}
+  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle'}}>
+    <img src="/equations/x_1.svg" alt="x₁" style={{ height: '12px', width: 'auto', position: 'relative', top: '1px' }} />
+  </span>,{' '}
+  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
+    <img src="/equations/x_2.svg" alt="x₂" style={{ height: '12px', width: 'auto', position: 'relative', top: '1px' }} />
+  </span>,{' '}
+  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
+    <img src="/equations/x_3.svg" alt="x₃" style={{ height: '12px', width: 'auto', position: 'relative', top: '1px' }} />
+  </span>, and{' '}
+  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
+    <img src="/equations/x_4.svg" alt="x₄" style={{ height: '12px', width: 'auto', position: 'relative', top: '1px' }} />
+  </span>
+  , are prescribed by its sum of roots, pairwise product sum of roots, triple product sum of roots, and its product of roots.
+</p>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line" style={{ display: 'flex', justifyContent: 'center' }}>
+  <img src="/equations/vieta_sum_roots.svg" alt="∑ x_i = −a" style={{ height: '65px', width: 'auto', marginRight: '3.6rem' }} />
+  <img src="/equations/vieta_pairwise_product_sum.svg" alt="∑ x_i x_j = b" style={{ height: '65px', width: 'auto', marginRight: '3.6rem' }} />
+  <img src="/equations/vieta_triple_product_sum.svg" alt="∑ x_i x_j x_k = −c" style={{ height: '65px', width: 'auto', marginRight: '3.6rem' }} />
+  <img src="/equations/vieta_product_roots.svg" alt="∏ x_i = d" style={{ height: '65px', width: 'auto' }} />
+</div>
+          <div style={{ height: '2.0rem' }} />
+
+        <p className="equation-description">
+          Let’s apply these insights to the hyperbolic partition equation, which converts into a monic depressed quartic
+        </p>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line" style={{ display: 'flex', justifyContent: 'center' }}>
+  <img src="/equations/monic_depressed_quartic.svg" alt="∑ x_i = −a" style={{ height: '20px', width: 'auto', marginRight: '3.6rem' }} />
+  </div>
+          <div style={{ height: '2.0rem' }} />
 
         <p
   className="equation-description"
-  style={{ textAlign: 'left', textIndent: 0, marginLeft: '10rem' }}
+  style={{ textIndent: '0' }}
 >
-  <span style={{ whiteSpace: 'nowrap' }}>
-    Vieta relations:{' '}
-    <img src="/equations/zhe_1.svg" alt="zhe_1"
-         style={{ height: '14px', width: 'auto', display: 'inline-block', verticalAlign: '-0.25em' }} />,{' '}
-    <img src="/equations/zhe_2.svg" alt="zhe_2"
-         style={{ height: '14px', width: 'auto', display: 'inline-block', verticalAlign: '-0.25em' }} />,{' '}
-    <img src="/equations/zhe_3.svg" alt="zhe_3"
-         style={{ height: '14px', width: 'auto', display: 'inline-block', verticalAlign: '-0.25em' }} /> and{' '}
-    <img src="/equations/zhe_4.svg" alt="zhe_4"
-         style={{ height: '14px', width: 'auto', display: 'inline-block', verticalAlign: '-0.25em' }} />.
+  with{' '}
+  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
+    <img
+      src="/equations/component_1.svg"
+      alt="component 1"
+      style={{ height: '17px', width: 'auto'}}
+    />
   </span>
+  ,{' '}
+  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
+    <img
+      src="/equations/component_2.svg"
+      alt="component 2"
+      style={{ height: '17px', width: 'auto'}}
+    />
+  </span>
+  ,{' '}
+  <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+    <img
+      src="/equations/component_3.svg"
+      alt="component 3"
+      style={{ height: '13px', width: 'auto'}}
+    />
+  </span>
+  , and{' '}
+  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
+    <img
+      src="/equations/a_scale.svg"
+      alt="a_scale"
+      style={{ height: '42px', width: 'auto'}}
+    />
+  </span>
+  {' '}.
 </p>
 
 
-
-
-
-        <div style={{ height: '1.8rem' }} />
+<div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
           <img src="/equations/zhe_big_product.svg" alt="zhe big product" style={{ height: '66px', width: 'auto', marginRight: '4.0rem' }} />
@@ -186,7 +300,7 @@ export default function HyperbolicPartitionEq() {
 
         <div style={{ height: '2.0rem' }} />
 
-         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
           <img src="/equations/inverse_sum_big.svg" alt="inverse sum" style={{ height: '66px', width: 'auto', marginRight: '4.2rem' }} />
           <img src="/equations/triple_product_sum_big.svg" alt="triple product sum of roots" style={{ height: '66px', width: 'auto', marginRight: '3.5rem' }} />
           <img src="/equations/sum_of_fourth_powers_big.svg" alt="sum of fourth powers" style={{ height: '66px', width: 'auto' }} />
@@ -203,14 +317,14 @@ export default function HyperbolicPartitionEq() {
         <div style={{ height: '4.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-  <img src="/equations/hyperbolic_partition_product.svg" alt="hyperbolic partition product" style={{ height: '18px', width: 'auto' }} />
-</div>
+          <img src="/equations/hyperbolic_partition_product.svg" alt="hyperbolic partition product" style={{ height: '18px', width: 'auto' }} />
+        </div>
 
-<div style={{ height: '2.0rem' }} />
+        <div style={{ height: '2.0rem' }} />
 
-<div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-  <img src="/equations/hyperbolic_partition_sum.svg" alt="hyperbolic partition sum" style={{ height: '18px', width: 'auto' }} />
-</div>
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/hyperbolic_partition_sum.svg" alt="hyperbolic partition sum" style={{ height: '18px', width: 'auto' }} />
+        </div>
 
         <div style={{ height: '2rem' }} />
 
@@ -232,9 +346,10 @@ export default function HyperbolicPartitionEq() {
 
         <div style={{ height: '2.0rem' }} />
 
-<div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-  <img src="/equations/hyperbolic_partition_quadrance.svg" alt="hyperbolic partition quadrance" style={{ height: '20px', width: 'auto' }} />
-</div>
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/hyperbolic_partition_quadrance.svg" alt="hyperbolic partition quadrance" style={{ height: '20px', width: 'auto' }} />
+        </div>
+
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
@@ -286,7 +401,6 @@ export default function HyperbolicPartitionEq() {
         </div>
 
         <div style={{ height: '2.0rem' }} />
-
         <div style={{ height: '10.0rem' }} />
 
         <div style={{ display: 'block', width: '100%' }} />

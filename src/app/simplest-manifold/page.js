@@ -19,7 +19,7 @@ export default function SimplestManifold() {
 
         <p className="equation-description">
           The simplest self-persistent stage in topology is the hyperbolic figure eight knot.
-          This topology is defined as a double-cover of the simplest possible 3–manifold ( the{' '}
+          This topology is defined as a double-cover of the simplest possible 3–manifold (the{' '}
           <a
             href="https://en.wikipedia.org/wiki/Gieseking_manifold"
             target="_blank"
@@ -29,7 +29,7 @@ export default function SimplestManifold() {
             onMouseOut={e => (e.target.style.color = 'inherit')}
           >
             Gieseking Manifold
-          </a> ) defining the complement with the smallest possible volume.
+          </a>) defining the complement with the smallest possible volume.
         </p>
 
         <div style={{ height: '2rem' }} />
@@ -120,7 +120,7 @@ export default function SimplestManifold() {
             onMouseOver={e => (e.target.style.color = 'yellow')}
             onMouseOut={e => (e.target.style.color = 'inherit')}
           >
-            the polylogarithm of order 2 ( the dilogarithm )
+            the polylogarithm of order 2 (the dilogarithm)
           </a>, <img
             src="/equations/i.svg"
             alt="i"
