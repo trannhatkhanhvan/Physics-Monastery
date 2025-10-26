@@ -187,7 +187,7 @@ export default function PlanckConstants() {
 
         <div style={{ height: '2rem' }} />
 
-        <div className="equation-line">
+        <div className="equation-line" style={{ marginLeft: '-0.55rem' }}>
           <img
             src="/equations/planck_time_equation.svg"
             alt="Planck time equation"
@@ -197,7 +197,7 @@ export default function PlanckConstants() {
 
         <div style={{ height: '1.5rem' }} />
 
-        <div className="equation-line" style={{ marginLeft: '-0.2rem' }}>
+        <div className="equation-line" style={{ marginLeft: '-1.25rem' }}>
           <img
             src="/equations/planck_length_equation.svg"
             alt="Planck length equation"
