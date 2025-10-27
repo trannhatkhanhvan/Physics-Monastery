@@ -34,7 +34,6 @@ export default function AnimatedMath() {
           height: '0.85em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(0.05em)',
         }}
       /> and{' '}
@@ -45,7 +44,6 @@ export default function AnimatedMath() {
           height: '0.85em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(0.05em)',
         }}
       /> lattice
@@ -58,7 +56,6 @@ export default function AnimatedMath() {
           height: '1em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(0.05em)',
         }}
       /> phase plot
@@ -71,7 +68,6 @@ export default function AnimatedMath() {
           height: '2.25em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(-0.05em)',
         }}
       /> phase plot
@@ -81,10 +77,9 @@ export default function AnimatedMath() {
         src="/equations/log_of_gamma_of_z.svg"
         alt="log(gamma(z))"
         style={{
-          height: '1.3em',
+          height: '1em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(0.05em)',
         }}
       /> phase plot
@@ -97,7 +92,6 @@ export default function AnimatedMath() {
           height: '2.8em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(0.05em)',
         }}
       /> phase plot
@@ -110,7 +104,6 @@ export default function AnimatedMath() {
           height: '2.25em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(-0.05em)',
         }}
       /> phase plot
@@ -123,7 +116,6 @@ export default function AnimatedMath() {
           height: '2.25em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(-0.05em)',
         }}
       /> phase plot
@@ -136,7 +128,6 @@ export default function AnimatedMath() {
           height: '2.25em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(-0.05em)',
         }}
       /> phase plot
@@ -149,7 +140,6 @@ export default function AnimatedMath() {
           height: '2.25em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(-0.05em)',
         }}
       /> phase plot
@@ -162,7 +152,6 @@ export default function AnimatedMath() {
           height: '2.25em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(-0.05em)',
         }}
       /> phase plot
@@ -175,7 +164,6 @@ export default function AnimatedMath() {
           height: '2.25em',
           width: 'auto',
           display: 'inline-block',
-          marginLeft: '0.1em',
           transform: 'translateY(-0.05em)',
         }}
       /> phase plot
