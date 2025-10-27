@@ -20,7 +20,7 @@ export default function AnimatedMath() {
         }}
       />
     </>,
-    <>Mobius strip</>,
+    <>Möbius strip</>,
     <>double cone slice</>,
     <>cosine spindle</>,
     <>unit wave</>,

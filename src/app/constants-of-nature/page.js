@@ -36,14 +36,14 @@ const COLUMN_X_SHIFT = [
 
 export default function ConstantsOfNature() {
   const columnTitles = [
-    "Column 1 of 8 : polar transforms : angle",
-    "Column 2 of 8 : polar transforms : radius",
-    "Column 3 of 8 : Cartesian transforms : 2–part products",
-    "Column 4 of 8 : Cartesian transforms : 3–part products",
-    "Column 5 of 8 : Cartesian transforms : 2–part sums",
-    "Column 6 of 8 : Cartesian transforms : 3–part sums",
-    "Column 7 of 8 : Cartesian transforms : 2–part quadrances",
-    "Column 8 of 8 : Cartesian transforms : 3–part quadrances"
+    "Column 1 of 8 | polar transforms | angle",
+    "Column 2 of 8 | polar transforms | radius",
+    "Column 3 of 8 | Cartesian transforms | 2–part products",
+    "Column 4 of 8 | Cartesian transforms | 3–part products",
+    "Column 5 of 8 | Cartesian transforms | 2–part sums",
+    "Column 6 of 8 | Cartesian transforms | 3–part sums",
+    "Column 7 of 8 | Cartesian transforms | 2–part quadrances",
+    "Column 8 of 8 | Cartesian transforms | 3–part quadrances"
   ];
 
 const totalColumns = 8;
