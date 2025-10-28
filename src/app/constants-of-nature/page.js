@@ -61526,7 +61526,7 @@ J ⋮ kg{" "}
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/deuteron_magnetic_moment_to_Bohr_magneton_ratio.svg"
+                        src="/equations/deuteron_magnetic_moment_to_bohr_magneton_ratio.svg"
                         alt="deuteron magnetic moment to Bohr magneton ratio equation"
                         style={{
                             display: "inline-block",
