@@ -2659,7 +2659,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 3.6369475516(11) &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
 </span>
                     <span>
-    CODATA 2018, σ = − 4.14
+    CODATA 2018, σ = − 4.41
   </span>
                 </div>
 
@@ -9389,7 +9389,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = - 0.09"}
+                        {", σ = − 0.09"}
   </span>
                 </div>
 
@@ -14192,7 +14192,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = –4.49044812296464... &times; 10<sup>&minus;26</sup> J/T
+      = –4.49044828987864... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -14232,7 +14232,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 1.77"}
+                        {", σ = − 0.10"}
   </span>
                 </div>
 
@@ -14258,7 +14258,7 @@ A<sub>mdm</sub>{" "}
       = –4.49044830(10) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 1.77
+    CODATA 2018, σ = − 0.10
   </span>
                 </div>
 
@@ -19689,7 +19689,7 @@ A<sub>mom</sub>{" "}
       = 1.99285191410(30) &times; 10<sup>&minus;24</sup> m kg/s
   </span>
                     <span>
-    CODATA 2018, σ = + 9.42
+    CODATA 2018, σ = + 9.43
   </span>
                 </div>
 
@@ -26826,7 +26826,7 @@ J ⋮ kg{" "}
       = 2.54262341353(78) &times; 10<sup>&minus;2</sup> 1/m T
   </span>
                     <span>
-    CODATA 2018, σ = - 4.35
+    CODATA 2018, σ = − 4.35
   </span>
                 </div>
 
@@ -27685,10 +27685,10 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.5209931551(62)... &times; 10<sup>&minus;3</sup>
+      = 1.520993128(17)... &times; 10<sup>&minus;3</sup>
   </span>
                     <span>
-    CODATA 2018, σ = - 2.24
+    CODATA 2018, σ = + 0.78
   </span>
                 </div>
 
@@ -30433,7 +30433,7 @@ J ⋮ kg{" "}
       = 1.76085963023(53) &times; 10<sup>11</sup> 1/s T
   </span>
                     <span>
-    CODATA 2018, σ = - 3.33
+    CODATA 2018, σ = − 3.33
   </span>
                 </div>
 
@@ -38716,7 +38716,7 @@ J ⋮ kg{" "}
       = 6.0221407621(18) &times; 10<sup>26</sup> u
   </span>
                     <span>
-    CODATA 2018, σ = - 4.42
+    CODATA 2018, σ = − 4.42
   </span>
                 </div>
 
@@ -38917,7 +38917,7 @@ J ⋮ kg{" "}
       = 5.48579909065(16) &times; 10<sup>&minus;4</sup>
   </span>
                     <span>
-    CODATA 2018, σ = - 0.97
+    CODATA 2018, σ = − 0.97
   </span>
                 </div>
 
