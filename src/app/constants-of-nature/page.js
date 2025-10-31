@@ -140,7 +140,7 @@ const GROUP_SPACER_HEIGHT = '35px';
         54: "nuclear magneton",
         55: "proton magnetic moment",
         56: "shielded proton magnetic moment",
-        57: "electon magnetic moment",
+        57: "electron magnetic moment",
         58: "muon magnetic moment",
         59: "triton magnetic moment",
         60: "triton to proton magnetic moment ratio",
@@ -15965,7 +15965,7 @@ A<sub>mdm</sub>{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    shielded helion magnetic moment to nulcear magneton ratio
+                    shielded helion magnetic moment to nuclear magneton ratio
                 </div>
 
                 {/* 2. Empty Line */}
