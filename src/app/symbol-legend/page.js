@@ -1442,7 +1442,7 @@ export default function SymbolLegend() {
       ),
       right: (
           <a
-              href="https://en.wikipedia.org/wiki/Dottie_number"
+              href="https://mathworld.wolfram.com/LaplaceLimit.html"
               target="_blank"
               rel="noopener noreferrer"
               className="legend-link"

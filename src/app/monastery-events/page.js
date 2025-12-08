@@ -7,7 +7,7 @@ import '../globals.css';
 export default function MonasteryEvents() {
   const [activeImage, setActiveImage] = useState(null);
 
-  const photoList = Array.from({ length: 18 }, (_, i) => {
+  const photoList = Array.from({ length: 21 }, (_, i) => {
     const index = i + 1;
     return {
       thumb: `/photos/thumbnails/photo_${index}_thumb.jpg`,
@@ -25,72 +25,18 @@ export default function MonasteryEvents() {
       <div className="partition-content">
         <div className="legend-title">Physics Monastery events</div>
 
+        {/* 1️⃣ First two lines */}
         <p className="equation-description">
-  The next Physics Monastery Science Retreat will be November 1–8, 2025, in Logan, Utah.
-</p>
+          The next Physics Monastery Science Retreat will be April 4-11, 2026, in Logan, Utah.
+        </p>
+        <div style={{ height: '1rem' }} />
+        <p className="equation-description">
+          Scroll down for details.
+        </p>
 
-<div style={{ height: '1rem' }} />
+        <div style={{ height: '1rem' }} />
 
-<div className="equation-description" style={{ whiteSpace: 'pre-wrap', textIndent: 0 }}>
-{`         Join us, as we explore the combinatorial logic of atomic structures. We will focus on:
-
-                 primes
-                 Riemann zeta function
-                 gamma function
-                 modular arithmetic
-                 unimodular lattices
-                 
-                 Euclidean algorithm
-                 continued fractions
-                 fractals
-                 Mandelbrot set
-                 recursion
-                 
-                 the language of Calculus
-                 geometries available to Calculus: manifolds
-                 simplest manifold: Gieseking's manifold
-                 and its double cover: the hyperbolic figure eight knot
-                 
-                 laws of physics
-                     forces
-                     built-in rules of interaction
-                     built-in limits
-                     
-                 288 constants of Nature
-                 288 metric transforms available to tetrahedral structured volumes
-                 transform space: the 24D unit hypersphere (Leech lattice)
-                 link types: 118 unimodular lattices available in 23D (consuming 1D to connect)
-                 118 atoms
-                 
-                 Coding all of this                 
-                                  
-         Outdoor retreat activities available:
-                 gem stone mining
-                 trilobite hunting
-                 warm spring caves
-                 west desert canals`}
-</div>
-
-<div style={{ height: '2rem' }} />
-
-<p className="equation-description">
-  <a
-    href="/contact-us"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{ color: 'inherit', textDecoration: 'none' }}
-    onMouseOver={(e) => (e.currentTarget.style.color = 'yellow')}
-    onMouseOut={(e) => (e.currentTarget.style.color = 'inherit')}
-  >
-    Contact us
-  </a>{' '}
-  to participate in this in-person collaborative problem-solving session.
-</p>
-
-
-        <div style={{ height: '2rem' }} />
-
-        {/* ✅ Thumbnail gallery section */}
+        {/* 2️⃣ Thumbnail gallery section (moved up) */}
         <div
           style={{
             display: 'flex',
@@ -118,6 +64,104 @@ export default function MonasteryEvents() {
             />
           ))}
         </div>
+
+        <div style={{ height: '1.5rem' }} />
+
+        {/* 3️⃣ Rest of the text */}
+        {/* Main descriptive block (without the two-column items) */}
+<div
+  className="equation-description"
+  style={{ whiteSpace: 'pre-wrap', textIndent: 0 }}
+>
+{`         Join us, as we explore the combinatorial logic of atomic structures. We will focus on:
+                 
+                 the language of Calculus
+                 geometries available to Calculus: manifolds
+                 simplest manifold: Gieseking's 3-manifold
+                 and its double cover: the hyperbolic figure eight knot
+                 
+                 laws of physics
+                     forces
+                     built-in rules
+                     built-in limits
+                     
+                 288 constants of Nature
+                 288 metric transforms available to tetrahedral structured volumes
+                 transform space: the 24D unit hypersphere (Leech lattice)
+                 link types: 118 unimodular lattices available in 23D (consuming 1D to connect)
+                 118 atoms
+                 
+`}
+</div>
+
+{/* Two-column list */}
+<div
+  className="equation-description"
+  style={{
+    textIndent: 0,
+    marginTop: '0.5rem',
+    marginBottom: '0.5rem',
+    marginLeft: '4.5rem'   // ← THIS IS THE INDENT
+  }}
+>
+  <div
+    style={{
+      display: 'flex',
+      gap: '4rem',
+      justifyContent: 'flex-start',
+      flexWrap: 'nowrap',
+    }}
+  >
+    <div>
+      <div>primes</div>
+      <div>Riemann zeta function</div>
+      <div>gamma function</div>
+      <div>modular arithmetic</div>
+      <div>unimodular lattices</div>
+    </div>
+
+    <div>
+      <div>Euclidean algorithm</div>
+      <div>continued fractions</div>
+      <div>fractals</div>
+      <div>Mandelbrot set</div>
+      <div>recursion</div>
+    </div>
+  </div>
+</div>
+
+
+{/* Resume original text */}
+<div
+  className="equation-description"
+  style={{ whiteSpace: 'pre-wrap', textIndent: 0 }}
+>
+{`                 
+                 Coding all of this                 
+                                  
+         Outdoor retreat activities available:
+                 gem stone mining
+                 trilobite hunting
+                 warm spring caves
+                 west desert canals`}
+</div>
+
+
+        <div style={{ height: '2rem' }} />
+
+        <p className="equation-description">
+          <a
+            href="/contact-us"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'inherit', textDecoration: 'none' }}
+            onMouseOver={(e) => (e.currentTarget.style.color = 'yellow')}
+            onMouseOut={(e) => (e.currentTarget.style.color = 'inherit')}
+          >
+            Contact us
+          </a>{' '}
+          to participate in this in-person collaborative problem-solving session.
+        </p>
 
         <div style={{ height: '2rem' }} />
 

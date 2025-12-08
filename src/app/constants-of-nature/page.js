@@ -33456,7 +33456,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –4.8419706016832... &times; 10<sup>&minus;3</sup>
+      = –4.84197060168323... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -49256,7 +49256,7 @@ J ⋮ kg{" "}
                 >
   <span>
   kg ⋮ Hz{" "}
-      = 1.356392489673759... &times; 10<sup>50</sup> Hz
+      = 1.35639248967375... &times; 10<sup>50</sup> Hz
 </span>
 
                     <span>prediction</span>
@@ -58006,7 +58006,7 @@ J ⋮ kg{" "}
                 >
   <span>
   kg ⋮ 1/m{" "}
-      = 4.524438335984300... &times; 10<sup>41</sup> cycles/m
+      = 4.52443833598430... &times; 10<sup>41</sup> cycles/m
 </span>
 
                     <span>prediction</span>
