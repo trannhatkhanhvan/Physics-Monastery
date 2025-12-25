@@ -5,12 +5,20 @@ import LayoutWrapper from '@/components/LayoutWrapper';
 import '../globals.css';
 
 export default function PlanckConstants() {
-  const constants = [
+    const constants = [
     'Planck time',
     'Planck length',
     'Planck charge',
     'Planck temperature',
     'Planck mass'
+  ];
+
+  const constantLinks = [
+    'https://www.wolframalpha.com/input?i=plot+pi*%28sinh%281%2F4*1%2F%28x%2Biy%29%29%29%5E2*%28e%5E5.39125836832313%2F44%29%2C+%7Bx%2C-1%2C1%7D',
+    'https://www.wolframalpha.com/input?i=plot+%28sinh%28sinh%281%2F7*%28x%2Biy%29%29%29%29%5E%28-1%29*%28e%5E1.61625918175645%2F35%29%2C+%7Bx%2C-1%2C1%7D',
+    'https://www.wolframalpha.com/input?i=plot+5%2F7%5E%281%2F2%29*%283%5E%28-1%2F3%29%2F%282%5E%285%2F4%29*pi%5E%281%2F2%29*e%5E%284pi%2F32%29%2F%28gamma%281%2F4*%28x%2Biy%29%29%29%5E2%29%29*e%5E1.87554596713962%2F18%2C+%7Bx%2C-1%2C1%7D',
+    'https://www.wolframalpha.com/input?i=plot+2*%285%2F7%5E%281%2F2%29%29%5E2*%28cos%285i%2F2*1%2F%28x%2Biy%29%29%29%5E2*%28cos%287%2F5*1%2F%28x%2Biy%29%29%29%5E2*%28e%5E1.4167869859079%2F32%29%2C+%7Bx%2C-7%2C7%7D',
+    'https://www.wolframalpha.com/input?i=plot+5*4pi%2F2*%28cos%287%2F5*1%2F%28x%2Biy%29%29%29%5E2*%28e%5E2.17642683817579%2F8%29%2C+%7Bx%2C-4%2C4%7D'
   ];
 
   // Base keys used to build filenames
@@ -49,7 +57,7 @@ export default function PlanckConstants() {
 
         <p className="equation-description">
           The Planck constants define the boundaries of the coherent bases of atomic logic.
-          Here we showcase their phase plots, 3D and 2D surface plots, and their quantized plane-wave definitions.
+          Here we showcase their phase plots, 3D and 2D surface plots, and their closed-form definitions.
         </p>
 
         <div style={{ height: '2rem' }} />
@@ -167,7 +175,23 @@ export default function PlanckConstants() {
                         : 'none',
                   }}
                 />
-                <div style={{ marginTop: '0.5rem' }}>{constants[index]}</div>
+                <a
+  href={constantLinks[index]}
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    marginTop: '0.5rem',
+    display: 'inline-block',
+    color: 'inherit',
+    textDecoration: 'none',
+    cursor: 'pointer',
+  }}
+  onMouseOver={(e) => (e.target.style.color = 'yellow')}
+  onMouseOut={(e) => (e.target.style.color = 'inherit')}
+>
+  {constants[index]}
+</a>
+
               </div>
             );
           })}
@@ -278,7 +302,7 @@ export default function PlanckConstants() {
     </span>
   </div>
 </div>
-          
+
         <div style={{ height: '2rem' }} />
 
         <p className="equation-description" style={{ fontSize: '20px', marginLeft: '14.9rem', textIndent: 0 }}>
