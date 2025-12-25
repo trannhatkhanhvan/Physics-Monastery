@@ -306,7 +306,7 @@ export default function PlanckConstants() {
         <div style={{ height: '2rem' }} />
 
         <p className="equation-description" style={{ fontSize: '20px', marginLeft: '14.9rem', textIndent: 0 }}>
-          Exponential Planck boundaries
+          Closed-form Planck boundaries
         </p>
 
         <div style={{ height: '2rem' }} />
