@@ -127,7 +127,7 @@ export default function PlanckConstants() {
         <div style={{ height: '2rem' }} />
 
         <p className="equation-description">
-          {is3D ? '3D' : '2D'} {isReal ? 'real' : 'imaginary'} surface plots of the{' '}
+          Surface plots of the{' '}
           <img
             src="/equations/red-5.svg"
             alt="5"
