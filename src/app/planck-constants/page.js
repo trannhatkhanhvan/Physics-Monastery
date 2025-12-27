@@ -309,7 +309,7 @@ export default function PlanckConstants() {
         <p
   className="equation-description"
   style={{
-    fontSize: '20px',
+    fontSize: '18px',
     textAlign: 'center',
     marginLeft: 0,
     textIndent: 0,
