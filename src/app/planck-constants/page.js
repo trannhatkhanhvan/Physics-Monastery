@@ -57,7 +57,7 @@ export default function PlanckConstants() {
 
         <p className="equation-description">
           The Planck constants define the boundaries of the coherent bases of atomic logic.
-          Here we showcase their phase plots, 3D and 2D surface plots, and their closed-form definitions.
+          Here we showcase their phase plots, 2D and 3D surface plots, and their closed-form definitions.
         </p>
 
         <div style={{ height: '2.5rem' }} />
@@ -65,6 +65,7 @@ export default function PlanckConstants() {
         <p
   className="equation-description"
   style={{
+    fontSize: '18px',
     textAlign: 'center',
     marginLeft: 0,
     marginRight: 0,
@@ -82,12 +83,12 @@ export default function PlanckConstants() {
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
   {videoFiles.map((file, index) => (
     <div key={file} style={{ textAlign: 'center' }}>
-      <div style={{ position: 'relative', width: '128px', height: '72px' }}>
+      <div style={{ position: 'relative', width: '133.056px', height: '74.844px' }}>
         <img
           src={`/videos/${file.replace('.mp4', '_thumbnail.jpg')}`}
           alt={constants[index]}
-          width="128"
-          height="72"
+          width="133.056"
+          height="74.844"
           onClick={() => setModalVideo(file)}
           style={{
             borderRadius: '0.4rem',
@@ -129,6 +130,7 @@ export default function PlanckConstants() {
         <p
   className="equation-description"
   style={{
+    fontSize: '18px',
     textAlign: 'center',
     marginLeft: 0,
     marginRight: 0,
@@ -215,9 +217,9 @@ export default function PlanckConstants() {
   style={{
     display: 'flex',
     alignItems: 'center',
-    gap: '0.5rem',
+    gap: '0.4rem',
     color: 'white',
-    padding: '0.45rem 0.9rem',
+    padding: '0.2rem 0.6rem',
     border: '1.5px solid white',
     borderRadius: '999px',
     backgroundColor: 'rgba(0,0,0,0.35)',
@@ -261,9 +263,9 @@ export default function PlanckConstants() {
   style={{
     display: 'flex',
     alignItems: 'center',
-    gap: '0.5rem',
+    gap: '0.4rem',
     color: 'white',
-    padding: '0.45rem 0.9rem',
+    padding: '0.2rem 0.6rem',
     border: '1.5px solid white',
     borderRadius: '999px',
     backgroundColor: 'rgba(0,0,0,0.35)',
@@ -313,25 +315,25 @@ export default function PlanckConstants() {
     textIndent: 0,
   }}
 >
-  Closed-form Planck boundary definitions
+  Closed-form definitions
 </p>
 
-        <div style={{ height: '2rem' }} />
+        <div style={{ height: '1.5rem' }} />
 
         <div className="equation-line" style={{ marginLeft: '-0.55rem' }}>
-          <img src="/equations/planck_time_equation.svg" alt="Planck time equation" style={{ height: '44px', width: 'auto' }} />
+          <img src="/equations/planck_time_equation.svg" alt="Planck time equation" style={{ height: '42px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '1.5rem' }} />
 
         <div className="equation-line" style={{ marginLeft: '-1.25rem' }}>
-          <img src="/equations/planck_length_equation.svg" alt="Planck length equation" style={{ height: '44px', width: 'auto' }} />
+          <img src="/equations/planck_length_equation.svg" alt="Planck length equation" style={{ height: '42px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '1.5rem' }} />
 
         <div className="equation-line" style={{ marginLeft: '2.3rem' }}>
-          <img src="/equations/planck_charge_equation.svg" alt="Planck charge equation" style={{ height: '56px', width: 'auto' }} />
+          <img src="/equations/planck_charge_equation.svg" alt="Planck charge equation" style={{ height: '53px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '1.5rem' }} />
@@ -340,20 +342,26 @@ export default function PlanckConstants() {
           <img
             src="/equations/planck_temperature_equation.svg"
             alt="Planck temperature equation"
-            style={{ height: '49px', width: 'auto' }}
+            style={{ height: '46.5px', width: 'auto' }}
           />
         </div>
 
         <div style={{ height: '1.5rem' }} />
 
         <div className="equation-line" style={{ marginLeft: '-1.1rem' }}>
-          <img src="/equations/planck_mass_equation.svg" alt="Planck mass equation" style={{ height: '45px', width: 'auto' }} />
+          <img src="/equations/planck_mass_equation.svg" alt="Planck mass equation" style={{ height: '42.75px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '2.0rem' }} />
 
         {/* ...everything below here is unchanged from your current file... */}
-        <p className="equation-description">
+        <p className="equation-description"
+          style={{
+    textIndent: 0,
+    marginLeft: 0,
+    paddingLeft: 0,
+  }}
+        >
           Where{' '}
           <img
             src="/equations/pi.svg"
