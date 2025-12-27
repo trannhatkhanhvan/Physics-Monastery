@@ -7,9 +7,20 @@ import '../globals.css';
 export default function SimplestManifold() {
   const [modalVideoId, setModalVideoId] = useState(null);
   const videos = [
-    { id: 'kHKY8Jzadug'},
-    { id: 'QN8J-nRjzNY'}
-  ];
+  {
+    id: 'hyperbolic_figure_eight_knot_1',
+    file: 'hyperbolic_figure_eight_knot_1.mp4',
+    thumbnail: 'hfek_1_thumbnail.jpg',
+    title: '',
+  },
+  {
+    id: 'hyperbolic_figure_eight_knot_2',
+    file: 'hyperbolic_figure_eight_knot_2.mp4',
+    thumbnail: 'hfek_2_thumbnail.jpg',
+    title: '',
+  },
+];
+
 
   return (
     <LayoutWrapper>
@@ -35,48 +46,49 @@ export default function SimplestManifold() {
         <div style={{ height: '2rem' }} />
 
         {/* 🎥 Video grid */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-          {videos.map(({ id, title }, index) => (
-            <div key={index} style={{ textAlign: 'center' }}>
-              <div style={{ position: 'relative', width: '320px', height: '180px' }}>
-                <img
-                  src={`/videos/${id}_thumbnail.jpg`}
-                  alt="Video thumbnail"
-                  width="320"
-                  height="180"
-                  onClick={() => setModalVideoId(id)}
-                  style={{
-                    borderRadius: '0.4rem',
-                    boxShadow: '0 0 8px rgba(0,0,0,0.3)',
-                    cursor: 'pointer',
-                    objectFit: 'cover',
-                  }}
-                />
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    pointerEvents: 'none',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 0,
-                      height: 0,
-                      borderTop: '12px solid transparent',
-                      borderBottom: '12px solid transparent',
-                      borderLeft: '18px solid white',
-                      filter: 'drop-shadow(0 0 3px black)',
-                    }}
-                  />
-                </div>
-              </div>
-              <div style={{ marginTop: '0.5rem' }}>{title}</div>
-            </div>
-          ))}
+<div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+  {videos.map(({ id, thumbnail, title }, index) => (
+    <div key={id} style={{ textAlign: 'center' }}>
+      <div style={{ position: 'relative', width: '320px', height: '180px' }}>
+        <img
+          src={`/videos/${thumbnail}`}
+          alt="Video thumbnail"
+          width="320"
+          height="180"
+          onClick={() => setModalVideoId(id)}
+          style={{
+            borderRadius: '0.4rem',
+            boxShadow: '0 0 8px rgba(0,0,0,0.3)',
+            cursor: 'pointer',
+            objectFit: 'cover',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            pointerEvents: 'none',
+          }}
+        >
+          <div
+            style={{
+              width: 0,
+              height: 0,
+              borderTop: '12px solid transparent',
+              borderBottom: '12px solid transparent',
+              borderLeft: '18px solid white',
+              filter: 'drop-shadow(0 0 3px black)',
+            }}
+          />
         </div>
+      </div>
+      {title ? <div style={{ marginTop: '0.5rem' }}>{title}</div> : null}
+    </div>
+  ))}
+</div>
+
 
         <div style={{ height: '1rem' }} />
 
@@ -95,7 +107,7 @@ export default function SimplestManifold() {
 
         <div style={{ height: '2.5rem' }} />
 
-        <p className="equation-description">The constructive equations for the hyperbolic figure eight knot volume and its real conjugate (defining the product of a unit sphere divided by 36, and a unit sphere divided by 8) are:</p>
+        <p className="equation-description">The constructive equations for the hyperbolic figure eight knot volume and its real conjugate are:</p>
         <div style={{ height: '2rem' }} />
 
         <div className="equation-line">
@@ -108,7 +120,11 @@ export default function SimplestManifold() {
         </div>
         <div style={{ height: '2rem' }} />
 
-        <p className="equation-description">Where <img
+        <p className="equation-description" style={{
+    textIndent: 0,
+    marginLeft: 0,
+    paddingLeft: 0,
+  }}>Where <img
             src="/equations/li_2_symbol.svg"
             alt="Li_2(x)"
             style={{ height: '16px', width: 'auto', display: 'inline-block', position: 'relative', top: '-1px' }}
@@ -186,7 +202,7 @@ export default function SimplestManifold() {
         </div>
         <div style={{ height: '2.5rem' }} />
 
-        <p className="equation-description">These constructions pull apart into two dilogarithms, made of identical real and inverse imagainry parts.</p>
+        <p className="equation-description">These constructions pull apart into two dilogarithms, made of identical real and inverse imaginary parts.</p>
         <div style={{ height: '2rem' }} />
 
         <div className="equation-line" style={{ display: 'flex', justifyContent: 'center', gap: '4rem' }}>
@@ -195,7 +211,11 @@ export default function SimplestManifold() {
         </div>
         <div style={{ height: '2rem' }} />
 
-        <p className="equation-description">Where <img
+        <p className="equation-description" style={{
+    textIndent: 0,
+    marginLeft: 0,
+    paddingLeft: 0,
+  }}>Where <img
             src="/equations/gamma_function.svg"
             alt="gamma(x)"
             style={{ height: '16px', width: 'auto', display: 'inline-block', position: 'relative', top: '-1px' }}
@@ -241,7 +261,11 @@ export default function SimplestManifold() {
         </div>
         <div style={{ height: '2rem' }} />
 
-        <p className="equation-description">Where <img
+        <p className="equation-description" style={{
+    textIndent: 0,
+    marginLeft: 0,
+    paddingLeft: 0,
+  }}>Where <img
             src="/equations/r_neutron.svg"
             alt="r_n"
             style={{ height: '13px', width: 'auto', display: 'inline-block', position: 'relative', top: '1px' }}
@@ -286,46 +310,46 @@ export default function SimplestManifold() {
       </div>
 
            {modalVideoId && (
-          <div
-            onClick={() => setModalVideoId(null)}
-            style={{
-              position: 'fixed',
-              top: 0,
-              bottom: 0,
-              left: '180px',
-              right: 0,
-              backgroundColor: 'rgba(0,0,0,0.85)',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              zIndex: 9999,
-            }}
-          >
-            <div
-              style={{
-                position: 'relative',
-                width: '800px',
-                height: '450px',
-              }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <iframe
-                width="800"
-                height="450"
-                src={`https://www.youtube.com/embed/${modalVideoId}?autoplay=1`}
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                style={{
-                  borderRadius: '0.4rem',
-                  boxShadow: '0 0 24px black',
-                  width: '100%',
-                  height: '100%',
-                }}
-              />
-            </div>
-          </div>
-        )}
+  <div
+    onClick={() => setModalVideoId(null)}
+    style={{
+      position: 'fixed',
+      top: 0,
+      bottom: 0,
+      left: '180px',
+      right: 0,
+      backgroundColor: 'rgba(0,0,0,0.85)',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 9999,
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        position: 'relative',
+        width: 'calc(100vw - 240px)',
+        maxWidth: '960px',
+        aspectRatio: '16 / 9',
+        borderRadius: '0.5rem',
+        overflow: 'hidden',
+        boxShadow: '0 0 24px black',
+        backgroundColor: '#000',
+      }}
+    >
+      <video
+        src={`/videos/${modalVideoId}.mp4`}
+        controls
+        autoPlay
+        playsInline
+        preload="metadata"
+        style={{ width: '100%', height: '100%' }}
+      />
+    </div>
+  </div>
+)}
+
 
 
     </LayoutWrapper>

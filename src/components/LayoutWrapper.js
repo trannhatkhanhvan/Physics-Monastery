@@ -54,10 +54,10 @@ export default function LayoutWrapper({ children }) {
 
           <div className="separator"></div>
 
-          <a href="/simplest-manifold" className="menu-text-link">Simplest Manifold</a>
-          <a href="/external-transform-space" className="menu-text-link">External Transform Space</a>
           <a href="/hyperbolic-partition-eq" className="menu-text-link">Hyperbolic Partition Eq</a>
           <a href="/binomial-constructor" className="menu-text-link">Binomial Constructor</a>
+          <a href="/simplest-manifold" className="menu-text-link">Simplest Manifold</a>
+          <a href="/external-transform-space" className="menu-text-link">External Transform Space</a>
 
 
           <div className="separator"></div>
