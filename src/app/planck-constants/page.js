@@ -108,15 +108,16 @@ export default function PlanckConstants() {
           }}
         >
           <div
-            style={{
-              width: 0,
-              height: 0,
-              borderTop: '12px solid transparent',
-              borderBottom: '12px solid transparent',
-              borderLeft: '18px solid white',
-              filter: 'drop-shadow(0 0 3px black)',
-            }}
-          />
+  style={{
+    width: 0,
+    height: 0,
+    borderTop: '6.4px solid transparent',
+    borderBottom: '6.4px solid transparent',
+    borderLeft: '9.6px solid white',
+    filter: 'drop-shadow(0 0 1.5px black)',
+  }}
+/>
+
         </div>
       </div>
       <div style={{ marginTop: '0.5rem' }}>{constants[index]}</div>
