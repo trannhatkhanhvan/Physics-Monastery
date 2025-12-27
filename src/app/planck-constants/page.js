@@ -77,9 +77,7 @@ export default function PlanckConstants() {
   Phase plots
 </p>
 
-
-
-        <div style={{ height: '2rem' }} />
+        <div style={{ height: '1.0rem' }} />
 
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
   {videoFiles.map((file, index) => (
@@ -143,9 +141,7 @@ export default function PlanckConstants() {
   Surface plots
 </p>
 
-
-
-        <div style={{ height: '2rem' }} />
+        <div style={{ height: '1.0rem' }} />
 
         {/* Image grid */}
         <div
