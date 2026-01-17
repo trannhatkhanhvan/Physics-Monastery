@@ -467,8 +467,111 @@ export default function PlanckConstants() {
           .
         </p>
 
+          <div style={{ height: '2.5rem' }} />
+
+          <p className="equation-description"
+          style={{
+    textIndent: 0,
+    marginLeft: 0,
+    paddingLeft: 0,
+  }}
+        >
+          The decimal values of these closed forms yield numeric values for the Planck boundaries to any precision:
+        </p>
+
+                 {/* --- Bottom list of values (NEW) --- */}
+        <div style={{ height: '2.5rem' }} />
+
+        <div
+          style={{
+            maxWidth: '860px',
+            margin: '0 auto',
+            color: 'white',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '16px',
+            lineHeight: '1.6em',
+          }}
+        >
+          {/* Row 1 */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '5.5rem', marginBottom: '6px' }}>
+            <div>
+              <img
+                src="/equations/planck_time.svg"
+                alt="t_p"
+                style={{ height: '16.5px', width: 'auto', verticalAlign: '-0.35em', display: 'inline' }}
+              />
+              {' = 5.39125836832313 ... × 10'}
+              <sup>−44</sup>
+              {' s'}
+            </div>
+            <div style={{ whiteSpace: 'nowrap' }}>Planck time</div>
+          </div>
+
+          {/* Row 2 */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', marginBottom: '6px' }}>
+            <div>
+              <img
+                src="/equations/planck_length.svg"
+                alt="l_p"
+                style={{ height: '16.5px', width: 'auto', verticalAlign: '-0.35em', display: 'inline' }}
+              />
+              {' = 1.61625918175645 ... × 10'}
+              <sup>−35</sup>
+              {' m'}
+            </div>
+            <div style={{ whiteSpace: 'nowrap' }}>Planck length</div>
+          </div>
+
+          {/* Row 3 */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', marginBottom: '6px' }}>
+            <div>
+              <img
+                src="/equations/planck_charge.svg"
+                alt="q_p"
+                style={{ height: '13.5px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
+              />
+              {' = 1.87554596713962 ... × 10'}
+              <sup>−18</sup>
+              {' C'}
+            </div>
+            <div style={{ whiteSpace: 'nowrap' }}>Planck charge</div>
+          </div>
+
+          {/* Row 4 */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', marginBottom: '6px' }}>
+            <div>
+              <img
+                src="/equations/planck_temperature.svg"
+                alt="T_p"
+                style={{ height: '16px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
+              />
+              {' = 1.41678698590795 ... × 10'}
+              <sup>32</sup>
+              {' K'}
+            </div>
+            <div style={{ whiteSpace: 'nowrap' }}>Planck temperature</div>
+          </div>
+
+          {/* Row 5 */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', marginBottom: '6px' }}>
+            <div>
+              <img
+                src="/equations/planck_mass.svg"
+                alt="m_p"
+                style={{ height: '14.5px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
+              />
+              {' = 2.17642683817579 ... × 10'}
+              <sup>−8</sup>
+              {' kg'}
+            </div>
+            <div style={{ whiteSpace: 'nowrap' }}>Planck mass</div>
+          </div>
+        </div>
+
+        {/* --- Keep your spacer (existing) --- */}
         <div style={{ height: '16rem' }} />
       </div>
+
 
       {/* Image Modal */}
       {modalImage && (
@@ -539,6 +642,9 @@ export default function PlanckConstants() {
     </div>
   </div>
 )}
+
+
+
 
     </LayoutWrapper>
   );
