@@ -590,6 +590,28 @@ body {
   margin-left: 15px;
 }
 
+.books-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.book-slot {
+  width: 200px;                /* controls how many fit per row */
+  display: flex;
+  justify-content: center;     /* centers the image inside the slot */
+  align-items: flex-start;
+  position: relative;          /* needed for the Einstein toggle positioning */
+}
+
+/* Make the Books page gallery area wider so more books can fit per row */
+.books-page .partition-content {
+  max-width: 2300px;  /* try 1400–1800 */
+}
+
+
 
 
 
