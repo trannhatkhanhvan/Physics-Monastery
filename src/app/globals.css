@@ -22,7 +22,7 @@ body {
 
 /* Sidebar Styles */
 .sidebar {
-  width: 165px;
+  width: 142px;
   background-color: #000;
   color: #fff;
   display: flex;
@@ -41,8 +41,8 @@ body {
 }
 
 .logo {
-  width: 125px;
-  margin-left: -14px;
+  width: 115px;
+  margin-left: -2px;
   margin-bottom: 0.3rem;
   cursor: pointer;
 }
@@ -80,14 +80,14 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.52rem;
   margin: 0.5rem 0;
-  padding-left: 0.8rem;
+  padding-left: 0.6rem;
 }
 
 .menu-icon {
-  width: 34px;
-  height: 34px;
+  width: 31px;
+  height: 31px;
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
@@ -132,8 +132,8 @@ body {
 .constants-overlay {
   position: fixed;
   top: 0;
-  left: 165px;
-  width: calc(100vw - 165px);
+  left: 142px;
+  width: calc(100vw - 142px);
   height: 100vh;
   background: rgba(0, 0, 0, 0.75);
   z-index: 0;
@@ -157,7 +157,7 @@ body {
 
 /* Main Content Area */
 .main-content {
-  padding-left: 165px;                 /* ✅ Push content away from sidebar */
+  padding-left: 142px;                 /* ✅ Push content away from sidebar */
   width: 100vw;                        /* ✅ Let content take full width */
   max-width: 100vw;
   min-height: 100vh;
@@ -250,9 +250,9 @@ body {
 }
 
 .constants-main-content {
-  margin-left: 165px;                       /* space for the left sidebar */
-  width: calc(100vw - 165px);
-  max-width: calc(100vw - 165px);
+  margin-left: 142px;                       /* space for the left sidebar */
+  width: calc(100vw - 142px);
+  max-width: calc(100vw - 142px);
   min-height: 100vh;
   position: relative;
   background: transparent;

@@ -13,7 +13,7 @@ export default function LayoutWrapper({ children }) {
     pathname === '/288' ? 'combinatorics-page' :
     pathname === '/hyperbolic-partition-eq' ? 'hyperbolic-partition-page' :
     pathname === '/binomial-constructor' ? 'binomial-constructor-page' :
-    pathname === '/external-transform-space' ? 'external-transform-page' :
+    pathname === '/transform-space' ? 'external-transform-page' :
     pathname === '/planck-constants' ? 'planck-constants-page' :
     pathname === '/coherent-units' ? 'coherent-units-page' :
     pathname === '/simplest-manifold' ? 'simplest-manifold-page' :
@@ -54,10 +54,10 @@ export default function LayoutWrapper({ children }) {
 
           <div className="separator"></div>
 
-          <a href="/hyperbolic-partition-eq" className="menu-text-link">Hyperbolic Partition Eq</a>
+          <a href="/hyperbolic-partition-eq" className="menu-text-link">Hyperbolic Partitions</a>
           <a href="/binomial-constructor" className="menu-text-link">Binomial Constructor</a>
           <a href="/simplest-manifold" className="menu-text-link">Simplest Manifold</a>
-          <a href="/external-transform-space" className="menu-text-link">External Transform Space</a>
+          <a href="/transform-space" className="menu-text-link">Transform Space</a>
 
 
           <div className="separator"></div>

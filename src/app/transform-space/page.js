@@ -3,7 +3,7 @@
 import LayoutWrapper from '@/components/LayoutWrapper';
 import '../globals.css';
 
-export default function ExternalTransformSpace() {
+export default function TransformSpace() {
   return (
     <LayoutWrapper>
       {/* ✅ Page-specific overlay */}
@@ -11,7 +11,7 @@ export default function ExternalTransformSpace() {
 
       {/* ✅ Shared layout and font styling */}
       <div className="partition-content">
-        <div className="legend-title">the external transform space</div>
+        <div className="legend-title">the transform space</div>
 
         <div className="equation-line">
           <img
@@ -34,7 +34,7 @@ export default function ExternalTransformSpace() {
         <div style={{ height: '2.0rem' }} />
 
         <p className="equation-description">
-          The external transform space defines the set of coherent transformations available to the minimal arena—the{' '}
+          The transform space defines the set of coherent transformations available to the minimal arena—the{' '}
   <a
     href="/simplest-manifold"
     target="_blank"
