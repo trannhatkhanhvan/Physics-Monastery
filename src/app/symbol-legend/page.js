@@ -46,7 +46,7 @@ export default function SymbolLegend() {
                 src="/equations/planck_length.svg"
                 alt="l_p"
                 style={{
-                  height: '16.5px',           // Set preferred height
+                  height: '18.5px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
                   verticalAlign: '-0.35em',
                   display: 'inline',
@@ -78,7 +78,7 @@ export default function SymbolLegend() {
                 src="/equations/planck_charge.svg"
                 alt="q_p"
                 style={{
-                  height: '13.5px',           // Set preferred height
+                  height: '14.5px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
                   verticalAlign: '-0.25em',
                   display: 'inline',
@@ -110,7 +110,7 @@ export default function SymbolLegend() {
                 src="/equations/planck_temperature.svg"
                 alt="T_p"
                 style={{
-                  height: '16px',           // Set preferred height
+                  height: '18px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
                   verticalAlign: '-0.25em',
                   display: 'inline',
