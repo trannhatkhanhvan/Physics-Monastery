@@ -1,0 +1,18 @@
+# constants.yaml
+# Each constant is a recipe that will be evaluated by:
+#   (EG * EB) * (1 + (IG * R * IB))
+
+constants:
+  - {constant_id: demo, display_name: "Demo constant", column: demo, island: demo, dimension: "-",
+     external_geometry: {numerator: {a: 1}, denominator: {}},
+     external_boundary: {numerator: {b: 1}, denominator: {}},
+     inversion_geometry: {numerator: {}, denominator: {}},
+     root_transform: {id: R_demo, variant: null},
+     expected_kind: measured, expected_value: 24.0}
+
+  - {constant_id: c, display_name: "Speed of light", column: "5", island: "1", dimension: "m/s",
+     external_geometry: {numerator: {}, denominator: {}},
+     external_boundary: {numerator: {l_p: 1}, denominator: {t_p: 1}},
+     inversion_geometry: {numerator: {G_Gi: 0.5}, denominator: {}},
+     root_transform: {id: zhe_1_minus_zhe_2, variant: null},
+     expected_kind: exact, expected_value: 299792458.0, expected_digits: "299792458", expected_digits_label: "SI exact (defined)"}
