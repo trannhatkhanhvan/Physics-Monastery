@@ -3899,7 +3899,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="electron volt equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "300px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -3919,8 +3919,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         lineHeight: "1.5em"
                     }}
                 >
-                    Where eV = the electron volt,{" "}
-
+                    Where {" "}
                     <img
                         src="/equations/zhe_1.svg"
                         alt="zhe_1"
