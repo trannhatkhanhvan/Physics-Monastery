@@ -51,6 +51,8 @@ def computed_digits_string(x: float, ref_digits: str) -> str:
     """
     ref_len = sum(ch.isdigit() for ch in ref_digits)
     # For now assume integer exact constants (like c). Round to nearest int.
+    if isinstance(x, complex):
+        x = abs(x)
     return str(int(round(x))).zfill(ref_len)
 
 def collect_tokens(recipe: Dict[str, Any], symbols: Dict[str, float]) -> list[str]:
@@ -116,7 +118,7 @@ def load_symbols(path: Path) -> Dict[str, float]:
                 continue
             if not value_str:
                 continue
-            symbols[token] = float(value_str)
+            symbols[token] = complex(value_str)
     return symbols
 
 
