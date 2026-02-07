@@ -44944,7 +44944,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = 101.325003754773... kPa,{" "}
+                    = 101.325000000000... kPa,{" "}
 
                     <img
                         src="/equations/s_symbol.svg"
@@ -44956,6 +44956,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the arc length of the unit lemniscate,{" "}
+
+                    <img
+                        src="/equations/c_r1.svg"
+                        alt="C_R1"
+                        style={{
+                            height: "0.92em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Ramanujan&apos;s 1<sup>st</sup> continued fraction constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -45028,7 +45039,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>ST</i><sub>1</sub>{" "}
-      = –1.16487052149432...
+      = –1.16487051907658...
 </span>
 
                     <span>prediction</span>
@@ -45060,7 +45071,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.01"}
+                        {", σ = + 5.13"}
   </span>
                 </div>
 
@@ -45078,7 +45089,7 @@ J ⋮ kg{" "}
       = –1.16487052358(45)
   </span>
                     <span>
-    CODATA 2018, σ = − 4.63
+    CODATA 2018, σ = − 10.01
   </span>
                 </div>
 
