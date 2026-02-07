@@ -1751,7 +1751,7 @@ export default function SymbolLegend() {
                   display: 'inline',
                 }}
             />
-            {' = 1.01325003754773 ... × 10'}
+            {' = 1.01325000000000 ... × 10'}
             <sup>5</sup>
             {' pascal'}
           </>

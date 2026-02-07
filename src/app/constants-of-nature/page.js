@@ -323,10 +323,10 @@ const GROUP_SPACER_HEIGHT = '35px';
         232: "hartree-atomic mass unit relationship",
         233: "kilogram-hartree relationship",
         234: "hartree-kilogram relationship",
-        235: "molar volume of silicon",
-        236: "Faraday constant",
-        237: "molar Planck constant",
-        238: "neutron-proton mass difference",
+        235: "neutron-proton mass difference",
+        236: "molar Planck constant",
+        237: "Faraday constant",
+        238: "molar volume of silicon",
         239: "kilogram-inverse meter relationship",
         240: "atomic mass unit-inverse meter relationship",
         241: "inverse meter-kilogram relationship",
@@ -25414,7 +25414,7 @@ J ⋮ kg{" "}
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mtauc2mev|search_for=energy"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mtauc2|search_for=tau"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -57047,7 +57047,6 @@ J ⋮ kg{" "}
 
 
 
-
 235: (
             <div
                 style={{
@@ -57059,7 +57058,252 @@ J ⋮ kg{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    molar volume of silicon
+                    neutron-proton mass difference
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "18px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div style={{textAlign: "right"}}>
+                    <img
+                        src="/equations/neutron-proton_mass_difference.svg"
+                        alt="neutron-proton mass difference equation"
+                        style={{
+                            display: "inline-block",
+                            width: "405px",   // ✅ Set the width to exactly what you want
+                            height: "auto"
+                        }}
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/neutron_mass_symbol.svg"
+                        alt="m_n"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the neutron mass,{" "}
+
+                    <img
+                        src="/equations/proton_mass_symbol.svg"
+                        alt="m_+"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the proton mass,{" "}
+
+                    <img
+                        src="/equations/zhe_1.svg"
+                        alt="zhe_1"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_2.svg"
+                        alt="zhe_2"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/silver_constant.svg"
+                        alt="S"
+                        style={{
+                            height: "0.85em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the silver constant,{" "}
+
+                    <img
+                        src="/equations/s_symbol.svg"
+                        alt="s"
+                        style={{
+                            height: "0.5em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the arc length of the unit lemniscate,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/mass_difference_symbol.svg"
+      alt="m_delta"
+      style={{
+          height: "0.7em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "} = 2.30557462526871... &times; 10<sup>&minus;30</sup> kg
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/mass_difference_symbol.svg"
+      alt="m_delta"
+      style={{
+          height: "0.7em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "} = 2.30557461(67) &times; 10<sup>&minus;30</sup> kg
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mnmmp|search_for=neutron"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = + 0.02"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/mass_difference_symbol.svg"
+      alt="m_delta"
+      style={{
+          height: "0.7em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "} = 2.30557435(82) &times; 10<sup>&minus;30</sup> kg
+</span>
+                    <span>
+    CODATA 2018, σ = + 0.34
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+
+
+236: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "-25px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    molar Planck constant
                 </div>
 
                 {/* 2. Empty Line */}
@@ -57068,11 +57312,11 @@ J ⋮ kg{" "}
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/molar_volume_of_silicon.svg"
-                        alt="molar volume of silicon equation"
+                        src="/equations/molar_planck_constant.svg"
+                        alt="molar Planck constant equation"
                         style={{
                             display: "inline-block",
-                            width: "530px",   // ✅ Set the width to exactly what you want
+                            width: "470px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -57128,17 +57372,6 @@ J ⋮ kg{" "}
                     = Archimedes&apos; constant,{" "}
 
                     <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
-                        style={{
-                            height: "0.5em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the arc length of the unit lemniscate,{" "}
-
-                    <img
                         src="/equations/zhe_1.svg"
                         alt="zhe_1"
                         style={{
@@ -57161,15 +57394,15 @@ J ⋮ kg{" "}
                     = the Planck length,{" "}
 
                     <img
-                        src="/equations/planck_mass.svg"
-                        alt="m_p"
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
+                            height: "1em",
+                            verticalAlign: "-0.4em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the Planck mass,{" "}
+                    = the Planck time,{" "}
 
                     <img
                         src="/equations/planck_charge.svg"
@@ -57183,17 +57416,6 @@ J ⋮ kg{" "}
                     = the Planck charge,{" "}
 
                     <img
-                        src="/equations/electron_mass_symbol.svg"
-                        alt="m_e"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the electron mass,{" "}
-                    
-                    <img
                         src="/equations/zhe_2.svg"
                         alt="zhe_2"
                         style={{
@@ -57203,7 +57425,18 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-                    
+
+                    <img
+                        src="/equations/silver_constant.svg"
+                        alt="S"
+                        style={{
+                            height: "0.85em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the silver constant,{" "}
+
                     <img
                         src="/equations/zhe_3.svg"
                         alt="zhe_3"
@@ -57214,7 +57447,7 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-                    
+
                     <img
                         src="/equations/zhe_4.svg"
                         alt="zhe_4"
@@ -57252,16 +57485,8 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/v_m(si).svg"
-      alt="V_m(Si)"
-      style={{
-          height: "0.92em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.20588318577867... &times; 10<sup>&minus;5</sup> m<sup>3</sup>/mol
+  M<sub><i>p</i></sub>{" "}
+      = 3.99031270778425... &times; 10<sup>&minus;10</sup> J/s mol
 </span>
 
                     <span>prediction</span>
@@ -57277,20 +57502,12 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/v_m(si).svg"
-      alt="V_m(Si)"
-      style={{
-          height: "0.92em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.205883199(60) &times; 10<sup>&minus;5</sup> m<sup>3</sup>/mol
+  M<sub><i>p</i></sub>{" "}
+      = 3.990312712 &times; 10<sup>&minus;10</sup> J/s mol
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mvolsil|search_for=molar"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?nah|search_for=molar"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -57301,7 +57518,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.22"}
+                        {", 9-digit match"}
   </span>
                 </div>
 
@@ -57315,19 +57532,11 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/v_m(si).svg"
-      alt="V_m(Si)"
-      style={{
-          height: "0.92em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.205883199(60) &times; 10<sup>&minus;5</sup> m<sup>3</sup>/mol
+  M<sub><i>p</i></sub>{" "}
+      = 3.990312712 &times; 10<sup>&minus;10</sup> J/s mol
   </span>
                     <span>
-    CODATA 2018, σ = − 0.22
+    CODATA 2018, 9-digit match
   </span>
                 </div>
 
@@ -57337,7 +57546,9 @@ J ⋮ kg{" "}
 
 
 
-236: (
+
+
+237: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -57570,10 +57781,7 @@ J ⋮ kg{" "}
 
 
 
-
-
-
-237: (
+238: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -57584,7 +57792,7 @@ J ⋮ kg{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    molar Planck constant
+                    molar volume of silicon
                 </div>
 
                 {/* 2. Empty Line */}
@@ -57593,11 +57801,11 @@ J ⋮ kg{" "}
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/molar_planck_constant.svg"
-                        alt="molar Planck constant equation"
+                        src="/equations/molar_volume_of_silicon.svg"
+                        alt="molar volume of silicon equation"
                         style={{
                             display: "inline-block",
-                            width: "470px",   // ✅ Set the width to exactly what you want
+                            width: "530px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -57653,6 +57861,17 @@ J ⋮ kg{" "}
                     = Archimedes&apos; constant,{" "}
 
                     <img
+                        src="/equations/s_symbol.svg"
+                        alt="s"
+                        style={{
+                            height: "0.5em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the arc length of the unit lemniscate,{" "}
+
+                    <img
                         src="/equations/zhe_1.svg"
                         alt="zhe_1"
                         style={{
@@ -57675,15 +57894,15 @@ J ⋮ kg{" "}
                     = the Planck length,{" "}
 
                     <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
+                        src="/equations/planck_mass.svg"
+                        alt="m_p"
                         style={{
-                            height: "1em",
-                            verticalAlign: "-0.4em",
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the Planck time,{" "}
+                    = the Planck mass,{" "}
 
                     <img
                         src="/equations/planck_charge.svg"
@@ -57695,6 +57914,28 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck charge,{" "}
+
+                    <img
+                        src="/equations/electron_mass_symbol.svg"
+                        alt="m_e"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the electron mass,{" "}
+
+                    <img
+                        src="/equations/zhe_2.svg"
+                        alt="zhe_2"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -57744,203 +57985,16 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  M<sub><i>p</i></sub>{" "}
-      = 3.99031271629211... &times; 10<sup>&minus;10</sup> J/s mol
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  M<sub><i>p</i></sub>{" "}
-      = 3.990312712 &times; 10<sup>&minus;10</sup> J/s mol
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?nah|search_for=molar"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", 9-digit match"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  M<sub><i>p</i></sub>{" "}
-      = 3.990312712 &times; 10<sup>&minus;10</sup> J/s mol
-  </span>
-                    <span>
-    CODATA 2018, 9-digit match
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-
-
-238: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "-25px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    neutron-proton mass difference
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/neutron-proton_mass_difference.svg"
-                        alt="neutron-proton mass difference equation"
-                        style={{
-                            display: "inline-block",
-                            width: "440px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "16px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/neutron_mass_symbol.svg"
-                        alt="m_n"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the neutron mass,{" "}
-
-                    <img
-                        src="/equations/proton_mass_symbol.svg"
-                        alt="m_+"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the proton mass,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/pi.svg"
-                        alt="pi"
-                        style={{
-                            height: "0.53em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
   <img
-      src="/equations/mass_difference_symbol.svg"
-      alt="m_delta"
+      src="/equations/v_m(si).svg"
+      alt="V_m(Si)"
       style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
+          height: "0.92em",
+          verticalAlign: "-0.25em",
           display: "inline",
       }}
-  />{" "} = 2.30557485644934... &times; 10<sup>&minus;30</sup> kg
+  />{" "}
+      = 1.20588318577867... &times; 10<sup>&minus;5</sup> m<sup>3</sup>/mol
 </span>
 
                     <span>prediction</span>
@@ -57957,18 +58011,19 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/mass_difference_symbol.svg"
-      alt="m_delta"
+      src="/equations/v_m(si).svg"
+      alt="V_m(Si)"
       style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
+          height: "0.92em",
+          verticalAlign: "-0.25em",
           display: "inline",
       }}
-  />{" "} = 2.30557461(67) &times; 10<sup>&minus;30</sup> kg
+  />{" "}
+      = 1.205883199(60) &times; 10<sup>&minus;5</sup> m<sup>3</sup>/mol
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mnmmp|search_for=neutron"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mvolsil|search_for=molar"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -57979,7 +58034,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.37"}
+                        {", σ = − 0.22"}
   </span>
                 </div>
 
@@ -57994,17 +58049,18 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/mass_difference_symbol.svg"
-      alt="m_delta"
+      src="/equations/v_m(si).svg"
+      alt="V_m(Si)"
       style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
+          height: "0.92em",
+          verticalAlign: "-0.25em",
           display: "inline",
       }}
-  />{" "} = 2.30557435(82) &times; 10<sup>&minus;30</sup> kg
-</span>
+  />{" "}
+      = 1.205883199(60) &times; 10<sup>&minus;5</sup> m<sup>3</sup>/mol
+  </span>
                     <span>
-    CODATA 2018, σ = + 0.62
+    CODATA 2018, σ = − 0.22
   </span>
                 </div>
 
@@ -68547,7 +68603,7 @@ J ⋮ kg{" "}
                         alt="atomic unit of magnetic flux density equation"
                         style={{
                             display: "inline-block",
-                            width: "4865x",   // ✅ Set the width to exactly what you want
+                            width: "475px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -68695,7 +68751,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>mfd</sub>{" "}
-      = 2.35051757294515... &times; 10<sup>5</sup> T
+      = 2.35051756933907... &times; 10<sup>5</sup> T
 </span>
 
                     <span>prediction</span>
@@ -68727,7 +68783,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 2.98"}
+                        {", σ = - 1.96"}
   </span>
                 </div>
 
@@ -68745,7 +68801,7 @@ J ⋮ kg{" "}
       = 2.35051756758(71) &times; 10<sup>5</sup> T
   </span>
                     <span>
-    CODATA 2018, σ = + 7.56
+    CODATA 2018, σ = + 2.48
   </span>
                 </div>
 
@@ -68859,17 +68915,6 @@ J ⋮ kg{" "}
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
-                        style={{
-                            height: "0.5em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the arc length of the unit lemniscate,{" "}
-
-                    <img
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
@@ -68940,7 +68985,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>ep</sub>{" "}
-      = 1.64877727300968... &times; 10<sup>&minus;41</sup> m<sup>2</sup> C<sup>2</sup>/J
+      = 1.64877727401255... &times; 10<sup>&minus;41</sup> m<sup>2</sup> C<sup>2</sup>/J
 </span>
 
                     <span>prediction</span>
@@ -68972,7 +69017,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 1.74"}
+                        {", σ = + 3.71"}
   </span>
                 </div>
 
@@ -68990,7 +69035,7 @@ J ⋮ kg{" "}
       = 1.64877727436(50) &times; 10<sup>&minus;41</sup> m<sup>2</sup> C<sup>2</sup>/J
   </span>
                     <span>
-    CODATA 2018, σ = − 2.70
+    CODATA 2018, σ = − 0.69
   </span>
                 </div>
 
@@ -70142,10 +70187,10 @@ J ⋮ kg{" "}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     eqNumber === 232 ? "/equations/hartree-atomic_mass_unit_relationship.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         eqNumber === 233 ? "/equations/kilogram-hartree_relationship.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             eqNumber === 234 ? "/equations/hartree-kilogram_relationship.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 235 ? "/equations/molar_volume_of_silicon.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 236 ? "/equations/faraday_constant.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 237 ? "/equations/molar_planck_constant.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 238 ? "/equations/neutron-proton_mass_difference.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 235 ? "/equations/neutron-proton_mass_difference.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 236 ? "/equations/molar_planck_constant.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 237 ? "/equations/faraday_constant.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 238 ? "/equations/molar_volume_of_silicon.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 eqNumber === 239 ? "/equations/kilogram-inverse_meter_relationship.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     eqNumber === 240 ? "/equations/atomic_mass_unit-inverse_meter_relationship.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         eqNumber === 241 ? "/equations/inverse_meter-kilogram_relationship.svg" :
