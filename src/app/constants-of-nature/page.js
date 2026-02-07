@@ -57071,7 +57071,7 @@ J ⋮ kg{" "}
                         alt="neutron-proton mass difference equation"
                         style={{
                             display: "inline-block",
-                            width: "405px",   // ✅ Set the width to exactly what you want
+                            width: "390px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -57316,7 +57316,7 @@ J ⋮ kg{" "}
                         alt="molar Planck constant equation"
                         style={{
                             display: "inline-block",
-                            width: "470px",   // ✅ Set the width to exactly what you want
+                            width: "450px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
