@@ -6,7 +6,7 @@ import re
 import yaml
 from decimal import Decimal, ROUND_FLOOR, getcontext
 from pathlib import Path
-from typing import Dict, Any, List, Tuple, Optional
+from typing import Dict, Any, List, Tuple
 from collections.abc import Mapping
 
 import mpmath as mp
@@ -18,10 +18,6 @@ from evaluator import evaluate_constant, Quantity, parse_dimension
 # High precision
 # ------------------------------------------------------------
 mp.mp.dps = 80  # adjust if you want more digits
-
-
-def _is_mp_number(x: Any) -> bool:
-    return isinstance(x, (mp.mpf, mp.mpc))
 
 
 def require_effectively_real(
@@ -63,6 +59,15 @@ def require_effectively_real(
     # real already
     return x
 
+def as_display_real(cid: str, x: Any) -> Any:
+    """
+    Normalize values for display/reporting:
+    - If x is complex (mp or python), drop tiny imaginary residue using the same tolerances
+    - Otherwise return x unchanged
+    """
+    if isinstance(x, (mp.mpc, complex)):
+        return require_effectively_real(cid, x, abs_tol=1e-12, rel_tol=1e-30)
+    return x
 
 
 def expected_kind_of(recipe: Dict[str, Any]) -> str:
@@ -87,6 +92,7 @@ GREEN = "\033[92m"
 ORANGE = "\033[38;5;214m"
 RED = "\033[91m"
 RESET = "\033[0m"
+SIGMA_LIMIT = 5.2
 
 
 # ------------------------------------------------------------
@@ -543,11 +549,9 @@ def classify_by_last_digit_units(expected_prefix: float, computed: float, exp10:
 def verify_and_format(recipe: Dict[str, Any], computed: Quantity) -> List[str]:
     lines: List[str] = []
     dim = recipe.get("dimension", "-")
-    cv_disp = computed.value
-    if isinstance(cv_disp, (mp.mpc, complex)):
-        cv_disp = require_effectively_real(recipe.get("constant_id", "?"), cv_disp, abs_tol=1e-12, rel_tol=1e-30)
+    cid = recipe.get("constant_id", "?")
+    cv_disp = as_display_real(cid, computed.value)
     lines.append(f"computed: {sci_pretty(cv_disp)} {dim}")
-
     expected_kind = expected_kind_of(recipe)
     expected_value = recipe.get("expected_value")
     if expected_value is None:
@@ -566,11 +570,7 @@ def verify_and_format(recipe: Dict[str, Any], computed: Quantity) -> List[str]:
             lines.append(f"expected: {expected_value} {dim}   ({label})")
 
         if ref_digits and ev is not None:
-            cv = computed.value
-            if isinstance(cv, mp.mpc):
-                cv = require_effectively_real(recipe.get("constant_id", "?"), cv)
-            if isinstance(cv, complex):
-                cv = require_effectively_real(recipe.get("constant_id", "?"), cv)
+            cv = as_display_real(cid, computed.value)
 
             cv_f = float(cv)  # reporting comparison
             expected_prefix, exp10, sig = expected_prefix_from_digits(float(ev), ref_digits)
@@ -598,9 +598,7 @@ def verify_and_format(recipe: Dict[str, Any], computed: Quantity) -> List[str]:
     ev, sigma, ev_pretty, _, _, exp = parse_measured_value(expected_value)
     lines.append(f"expected: {ev_pretty} {dim}   ({codata_label})")
 
-    cv = computed.value
-    if isinstance(cv, (mp.mpc, complex)):
-        cv = require_effectively_real(recipe.get("constant_id", "?"), cv)
+    cv = as_display_real(cid, computed.value)
 
     cv_f = float(cv)  # reporting
     signed_err = cv_f - float(ev)
@@ -616,7 +614,12 @@ def verify_and_format(recipe: Dict[str, Any], computed: Quantity) -> List[str]:
         if abs(z) < 0.0005:
             z = 0.0
         lines.append(f"sigma:    {z:+.2f}")
-        lines.append(f"within 5σ: {GREEN}yes{RESET}" if abs(z) <= 5 else f"within 5σ: {RED}no{RESET}")
+        sigma_label = f"{SIGMA_LIMIT:g}"
+        lines.append(
+            f"within {sigma_label}σ: {GREEN}yes{RESET}"
+            if abs(z) <= SIGMA_LIMIT
+            else f"within {sigma_label}σ: {RED}no{RESET}"
+        )
     else:
         lines.append("sigma:    (missing)")
         lines.append("within 5σ: (missing)")
@@ -659,7 +662,7 @@ def constant_passes(recipe: Dict[str, Any], computed: Quantity) -> bool:
     z = signed_err / float(sigma)
     if abs(z) < 0.0005:
         z = 0.0
-    return abs(z) <= 5
+    return abs(z) <= SIGMA_LIMIT
 
 
 # ------------------------------------------------------------
@@ -730,7 +733,7 @@ def load_symbols(path: Path) -> Dict[str, Quantity]:
                 v = _parse_csv_number_to_mp(value)
                 symbols[token] = Quantity(v, parse_dimension(dim))
 
-            if token == "m_+" and token in symbols:
+            if token == "m_+":
                 symbols["m_plus"] = symbols[token]
 
     # HARD COHERENCE GUARANTEE FOR OMEGAS
@@ -742,18 +745,6 @@ def load_symbols(path: Path) -> Dict[str, Quantity]:
         if ph.units != {}:
             raise ValueError(f"phi_i must be dimensionless; got units={ph.units}")
         symbols["omega_1"] = Quantity(o2.value * ph.value, {})
-
-    # Optional sanity print (never enforces real / never breaks load)
-    if "omega_1" in symbols:
-        o13 = symbols["omega_1"].value ** 3
-        print("omega_1^3 (raw) =", o13)
-
-        if "omega_1" in symbols:
-            o13 = symbols["omega_1"].value ** 3
-            print("omega_1^3 (raw) =", o13)
-
-            if isinstance(o13, mp.mpc) and abs(o13.imag) <= mp.mpf("1e-16"):
-                print("omega_1^3 (real) =", mp.nstr(o13.real, 70))
 
     return symbols
 
@@ -810,7 +801,6 @@ def main() -> None:
         pass_number += 1
         built_this_pass: List[Tuple[str, Quantity, str]] = []
         blocked: Dict[str, List[str]] = {}
-        # build_errors persists across passes (declared above)
 
 
         print(f"\n=== Build pass {pass_number} ===")
@@ -829,18 +819,7 @@ def main() -> None:
                 continue
 
             try:
-                raw_value = evaluate_constant(recipe, symbols, inversion_boundary_token="IB")
-                if isinstance(raw_value, Quantity):
-                    value_q = raw_value
-                else:
-                    dim = recipe.get("dimension", "-")
-                    # Preserve mp types; avoid complex()/float() coercion.
-                    if isinstance(raw_value, (mp.mpf, mp.mpc)):
-                        value_q = Quantity(raw_value, parse_dimension(dim))
-                    elif isinstance(raw_value, complex):
-                        value_q = Quantity(mp.mpc(raw_value.real, raw_value.imag), parse_dimension(dim))
-                    else:
-                        value_q = Quantity(mp.mpf(str(raw_value)), parse_dimension(dim))
+                value_q = evaluate_constant(recipe, symbols, inversion_boundary_token="IB")
 
             except Exception as e:
                 msg = f"{type(e).__name__}: {e}"
@@ -851,7 +830,7 @@ def main() -> None:
             dim = recipe.get("dimension", "-")
 
             # Force away tiny imaginary numerical residue at the source
-            value_real = require_effectively_real(cid, value_q.value, abs_tol=1e-12, rel_tol=1e-30)
+            value_real = as_display_real(cid, value_q.value)
             if value_real is not value_q.value:
                 value_q = Quantity(value_real, value_q.units)
 

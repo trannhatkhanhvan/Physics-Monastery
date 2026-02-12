@@ -20,6 +20,8 @@ mp.mp.dps = 80  # match build_all.py; raise if you want more digits
 # Types
 # ============================================================
 Units = Dict[str, mp.mpf]
+DIMENSIONLESS: Units = {}
+
 FactorToken = Union[str, int, float]  # we ACCEPT float inputs but immediately convert to mp
 FactorItem = Union[str, int, float, Dict[str, Any]]
 
@@ -73,10 +75,6 @@ def units_mul(a: Units, b: Units, sign: Any = mp.mpf("1")) -> Units:
     return _clean_units(out)
 
 
-def _as_mpf(x: Any) -> mp.mpf:
-    return _mp(x)
-
-
 def _as_mpc(x: Any) -> mp.mpc:
     if isinstance(x, mp.mpc):
         return x
@@ -96,7 +94,7 @@ def _is_effectively_integer(p: mp.mpf, tol: mp.mpf = mp.mpf("1e-30")) -> Tuple[b
 
 
 def units_pow(u: Units, p: Any) -> Units:
-    pr = _as_mpf(p)
+    pr = _mp(p)
     ok_int, n = _is_effectively_integer(pr)
     if ok_int:
         nn = mp.mpf(n)
@@ -114,13 +112,13 @@ def q_pow(a: Quantity, p: Any) -> Quantity:
     Integer exponent: repeated multiplication (no branch issues).
     Non-integer real exponent: mpmath power on the value.
     """
-    pr = _as_mpf(p)
+    pr = _mp(p)
     new_units = units_pow(a.units, pr)
 
     ok_int, n = _is_effectively_integer(pr)
     if ok_int:
         if n == 0:
-            return Quantity(mp.mpf("1"), {})  # dimensionless 1
+            return Quantity(mp.mpf("1"), DIMENSIONLESS)  # dimensionless 1
 
         base = _as_mpc(a.value)
 
@@ -345,12 +343,6 @@ def parse_dimension(dim: str) -> Units:
 
         return sign * a
 
-    def units_add(u: Units, base: str, power: mp.mpf) -> Units:
-        out = dict(u)
-        if base == "1":
-            return out
-        out[base] = out.get(base, mp.mpf("0")) + power
-        return _clean_units(out)
 
     def units_merge(a: Units, b: Units, scale: mp.mpf) -> Units:
         out = dict(a)
@@ -439,7 +431,7 @@ def _exponent_from_symbol_string(power_str: str, symbols: Dict[str, Quantity]) -
         raise KeyError(f"Exponent symbol '{sym}' not found in symbols table.")
 
     q = symbols[sym]
-    if q.units != {}:
+    if q.units != DIMENSIONLESS:
         raise ValueError(f"Exponent symbol '{sym}' must be dimensionless; got units={q.units}")
 
     v = q.value
@@ -452,7 +444,7 @@ def _exponent_from_symbol_string(power_str: str, symbols: Dict[str, Quantity]) -
             raise ValueError(f"Exponent symbol '{sym}' must be real; got value={v!r}")
         v = v.real
 
-    return sign * _as_mpf(v)
+    return sign * _mp(v)
 
 def _try_eval_numeric_exponent_expr(s: str) -> mp.mpf | None:
     """
@@ -510,7 +502,7 @@ def exponent_to_mpf(power: Any, symbols: Dict[str, Quantity] | None = None) -> m
         return mp.mpf("1")
 
     if isinstance(power, (list, tuple)) and len(power) == 2:
-        return _as_mpf(power[0]) * _as_mpf(power[1])
+        return _mp(power[0]) * _mp(power[1])
 
     if isinstance(power, str):
         s = power.strip()
@@ -538,7 +530,7 @@ def exponent_to_mpf(power: Any, symbols: Dict[str, Quantity] | None = None) -> m
             raise ValueError(f"String exponent {power!r} requires symbols lookup.")
         return _exponent_from_symbol_string(s, symbols)
 
-    return _as_mpf(power)
+    return _mp(power)
 
 
 def exponent_to_complex(power: Any, symbols: Dict[str, Quantity] | None = None) -> mp.mpf:
@@ -677,7 +669,7 @@ def eval_quantity_expr(expr: str, symbols: Dict[str, Quantity]) -> Quantity:
                 return Quantity(v, dict(q.units))
 
             # log/ln: require dimensionless
-            if q.units != {}:
+            if q.units != DIMENSIONLESS:
                 raise ValueError(f"log argument must be dimensionless; got units={q.units}")
             v = mp.log(z)
             if isinstance(v, mp.mpc) and v.imag == 0:
@@ -713,7 +705,7 @@ def eval_quantity_expr(expr: str, symbols: Dict[str, Quantity]) -> Quantity:
                     raise ValueError(f"Exponent must be real; got {p!r}")
                 if isinstance(p, complex) and p.imag != 0:
                     raise ValueError(f"Exponent must be real; got {p!r}")
-                return q_pow(left, _as_mpf(p))
+                return q_pow(left, _mp(p))
 
         raise TypeError(f"Unsupported expression syntax: {ast.dump(n)}")
 
@@ -866,7 +858,7 @@ def _resolve_token_to_quantity(token: FactorToken, symbols: Dict[str, Quantity])
         # This lets you do gamma(5), gamma(zhe_2), gamma(1/2), gamma((1+zhe_1)/2), etc.
         qarg = eval_quantity_expr(f"({arg_s})", symbols)
 
-        if qarg.units != {}:
+        if qarg.units != DIMENSIONLESS:
             raise ValueError(f"gamma argument must be dimensionless; got units={qarg.units}")
 
         z = _as_mpc(qarg.value)  # mp.gamma supports complex too
@@ -947,7 +939,7 @@ def _to_dimensionless_real(q: Quantity) -> mp.mpf:
         if v.imag != 0:
             raise ValueError(f"Exponent must be real, got {v!r}")
         return mp.mpf(str(v.real))
-    return _as_mpf(v)
+    return _mp(v)
 
 
 def eval_quantity_expression(expr: str, symbols: Dict[str, Quantity]) -> Quantity:
@@ -1044,7 +1036,7 @@ def evaluate_constant(recipe: dict, symbols: Dict[str, Quantity], inversion_boun
 
     term = q_mul(q_mul(IG, R), IB)
 
-    one = Quantity(mp.mpf("1"), {})
+    one = Quantity(mp.mpf("1"), DIMENSIONLESS)
     if term.units != one.units:
         raise ValueError(f"{recipe.get('constant_id')} has non-dimensionless IG*R*IB: units={term.units}")
 
@@ -1060,20 +1052,27 @@ def evaluate_constant(recipe: dict, symbols: Dict[str, Quantity], inversion_boun
         left = q_mul(EG, EB)
         return q_mul(left, inner)
 
+    if combine in {"inv", "invert", "inversion", "reciprocal"}:
+        # EG * EB * (1 + term)^(-1)
+        left = q_mul(EG, EB)
+        inv_inner = q_div(one, inner)  # dimensionless inverse
+        return q_mul(left, inv_inner)
+
     if combine in {"+", "add", "plus"}:
         return q_add(EG, q_mul(EB, inner))
 
     if combine in {"-", "sub", "subtract"}:
         left = q_mul(EG, EB)
         # inner is dimensionless, so left must be dimensionless too
-        if left.units != {}:
+        if left.units != DIMENSIONLESS:
             raise ValueError(
                 f"{recipe.get('constant_id')} combine='-' requires EG*EB dimensionless; got units={left.units}"
             )
         return q_sub(left, inner)
 
     raise ValueError(
-        f"{recipe.get('constant_id')} has invalid combine={recipe.get('combine')!r}; use '*', '+', or '-'"
+        f"{recipe.get('constant_id')} has invalid combine={recipe.get('combine')!r}; use '*', 'inv', '+', or '-'"
     )
+
 
 

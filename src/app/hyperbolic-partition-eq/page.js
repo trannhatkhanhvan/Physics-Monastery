@@ -400,11 +400,331 @@ export default function HyperbolicPartitionEq() {
           <img src="/equations/zhe_3_zhe_4_product.svg" alt="zhe_3 zhe_4 product" style={{ height: '20px', width: 'auto' }} />
         </div>
 
-        <div style={{ height: '2.0rem' }} />
-        <div style={{ height: '10.0rem' }} />
+        <div style={{ height: '1.0rem' }} />
+
+        {/* =========================
+    New section (bottom)
+========================= */}
+<div style={{ height: '2.0rem' }} />
+
+<div
+  className="legend-title"
+  style={{ fontSize: '1.50rem', color: 'yellow' }}
+>
+  the Companion Matrix
+</div>
+
+
+<p className="equation-description">
+  {/* Paragraph 1 */}
+  The associated Frobenius companion matrix of this quartic system is
+</p>
+
+<div style={{ height: '2.0rem' }} />
+
+<div className="equation-line" style={{ display: 'flex', justifyContent: 'center' }}>
+  <img
+    src="/equations/companion_matrix.svg"
+    alt="companion matrix"
+    style={{ height: '80px', width: 'auto' }}
+  />
+</div>
+
+<div style={{ height: '2.0rem' }} />
+
+<p className="equation-description">
+  This matrix acts as the step-forward operator of the corresponding linear recurrence: it advances the system by one discrete tick, encoding the quartic relation as a first-order evolution in a four-dimensional state space.
+  The fundamental invariants of{' '}
+  <img
+    src="/equations/m_matrix.svg"
+    alt="M"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.00em', display: 'inline' }}
+  />{' '}
+  are its eigenvalues and the symmetric relationships they encode through traces and determinants. The eigenvalues of{' '}
+  <img
+    src="/equations/m_matrix.svg"
+    alt="M"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.00em', display: 'inline' }}
+  />{' '}
+  are the four roots {'{'}
+<img
+  src="/equations/zhe_1.svg"
+  alt="x1"
+  style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline', marginLeft: '0.2em' }}
+/>,{' '}
+<img
+  src="/equations/zhe_2.svg"
+  alt="x2"
+  style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
+/>,{' '}
+<img
+  src="/equations/zhe_3.svg"
+  alt="x3"
+  style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
+/>,{' '}
+<img
+  src="/equations/zhe_4.svg"
+  alt="x4"
+  style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }}
+/>
+{'}'} of{' '}
+
+<img
+  src="/equations/t_of_x.svg"
+  alt="T(x)"
+  style={{
+    height: '16px',
+    width: 'auto',
+    verticalAlign: '-0.20em',
+    display: 'inline',
+    marginLeft: '0.25em'
+  }}
+/>.
+
+</p>
+
+<p className="equation-description">
+  The trace of{' '}
+  <img
+    src="/equations/m_matrix.svg"
+    alt="M"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.00em', display: 'inline' }}
+  />{' '}
+  is the sum of its eigenvalues,{' '}
+  <img
+    src="/equations/trace_m.svg"
+    alt="tr(M)=0"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.20em', display: 'inline', marginLeft: '0.2em' }}
+  />
+  , while the trace of higher powers encodes higher power sums; for example,{' '}
+  <img
+    src="/equations/trace_m_squared.svg"
+    alt="tr(M^2)=-4π"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.20em', display: 'inline', marginLeft: '0.2em' }}
+  />
+  . These traces provide coordinate-free access to the quartic’s internal invariants.
+</p>
+
+<p className="equation-description">
+  The determinant of{' '}
+  <img
+    src="/equations/m_matrix.svg"
+    alt="M"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.00em', display: 'inline' }}
+  />{' '}
+  is the product of its eigenvalues,{' '}
+  <img
+    src="/equations/2pi.svg"
+    alt="2π"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.10em', display: 'inline', marginLeft: '0.0em' }}
+  />
+  , and more generally,{' '}
+  <img
+    src="/equations/det_m_to_k.svg"
+    alt="det(M^k) = (2π)^k"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.20em', display: 'inline', marginLeft: '0.2em' }}
+  />
+  {' '}for all integers {' '}
+  <img
+    src="/equations/integer_k.svg"
+    alt="k"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.0em' }}
+  />. By contrast,{' '}
+  <img
+    src="/equations/det_e_to_m.svg"
+    alt="det(e^M) = e^{tr(M)} = 1"
+    style={{ height: '18px', width: 'auto', verticalAlign: '-0.20em', display: 'inline', marginLeft: '0.2em' }}
+  />
+  , so the exponential{' '}
+  <img
+    src="/equations/e_to_m.svg"
+    alt="e^M"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.2em' }}
+  />
+  {' '}is a volume-preserving transformation in 4-dimensions. This reflects only the vanishing trace of{' '}
+  <img
+    src="/equations/m_matrix.svg"
+    alt="M"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.00em', display: 'inline' }}
+  />
+  {' '}in the exponential map, not the volume rescaling induced by the discrete step itself: the discrete evolution rescales volume by a factor of{' '}
+  <img
+    src="/equations/2pi.svg"
+    alt="2π"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.1em' }}
+  />
+  {' '}at each tick.
+</p>
+<p className="equation-description">
+  The spectral radius of{' '}
+  <img
+    src="/equations/m_matrix.svg"
+    alt="M"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.00em', display: 'inline' }}
+  />{' '}
+  is determined by the modulus of the complex pair,{' '}
+  <img
+    src="/equations/modulus.svg"
+    alt="zhe_r"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.20em', display: 'inline', marginLeft: '0.2em' }}
+  />.
+</p>
+
+<div style={{ height: '2.0rem' }} />
+
+<div className="equation-line" style={{ display: 'flex', justifyContent: 'center' }}>
+  <img
+    src="/equations/matrix_properties.svg"
+    alt="matrix properties"
+    style={{ height: '140px', width: 'auto' }}
+  />
+</div>
+
+<div style={{ height: '2.0rem' }} />
+
+<p className="equation-description">
+  Since{' '}
+  <img
+    src="/equations/m_matrix.svg"
+    alt="M"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.05em', display: 'inline' }}
+  />{' '}
+  is invertible, it admits a complex matrix logarithm on a chosen spectral branch. Choose one such logarithm{' '}
+  <img
+    src="/equations/a_log_m.svg"
+    alt="A = log(M)"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.25em', display: 'inline', marginLeft: '0.0em' }}
+  />{' '}
+  on a chosen branch. By construction,{' '}
+  <img
+    src="/equations/e_to_m.svg"
+    alt="e^A = M"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.10em', display: 'inline', marginLeft: '0.0em' }}
+  />{' '}
+  and therefore{' '}
+  <img
+    src="/equations/m_to_t.svg"
+    alt="e^{At} = M^t"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.2em' }}
+  />
+  . This furnishes a continuous interpolation of the discrete dynamics. Unlike{' '}
+  <img
+    src="/equations/e_to_m.svg"
+    alt="e^M"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.0em' }}
+  />
+  , the interpolating flow{' '}
+  <img
+    src="/equations/e_to_at.svg"
+    alt="e^{At}"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.0em' }}
+  />{' '}
+  does not preserve volume. Its determinant is
+  <span
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      width: '100%',
+      marginTop: '1.8rem',
+      marginBottom: '1.8rem'
+    }}
+  >
+    <img
+      src="/equations/det_e_to_at.svg"
+      alt="det(e^{At}) = e^{tr(A)t} = (2π)^t"
+      style={{ height: '20px', width: 'auto', display: 'block' }}
+    />
+  </span>
+  so volume scales continuously by a factor of{' '}
+  <img
+    src="/equations/2pi_to_t.svg"
+    alt="(2π)^t"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.20em', display: 'inline', marginLeft: '0.2em' }}
+  />
+  , matching the discrete jumps{' '}
+  <img
+    src="/equations/2pi_to_k.svg"
+    alt="(2π)^k"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.20em', display: 'inline', marginLeft: '0.2em' }}
+  />{' '}
+  at integer times. Thus, the algebraic structure is clear: the discrete step{' '}
+  <img
+    src="/equations/m_matrix.svg"
+    alt="M"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.05em', display: 'inline' }}
+  />{' '}
+  rescales volume in quantized steps, while its logarithmic generator induces a smooth dilation whose integer-time restriction reproduces those jumps. This is the signature of a system whose geometry is continuous, but whose action is discrete.
+</p>
+
+<div style={{ height: '2.0rem' }} />
+
+<p className="equation-description">
+  The coefficient{' '}
+  <img
+    src="/equations/2pia_not_0.svg"
+    alt="2πa"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.05em', display: 'inline' }}
+  /> introduces an odd-degree asymmetry into the recurrence. Relative to the simplest bilinear structures, this breaks time-reversal symmetry and acts as the discrete analogue of a non-symmetric (and later, non-self-adjoint) contribution. Because the coefficients of{' '}
+  <img
+    src="/equations/t_of_x.svg"
+    alt="T(x)"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.20em', display: 'inline', marginLeft: '0.2em' }}
+  />{' '}
+  are real, any nonreal eigenvalues occur in complex-conjugate pairs. In the parameter regime relevant to our hyperbolic partitions, two eigenvalues form a complex conjugate pair; together they span a real two-dimensional oscillatory plane, characterized by simultaneous rotation and radial dilation. The other two eigenvalues are real and generate a hyperbolic invariant subspace.
+</p>
+
+<p className="equation-description">
+  In real Jordan form, therefore,{' '}
+  <img
+    src="/equations/m_matrix.svg"
+    alt="M"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.05em', display: 'inline' }}
+  />{' '}
+  decomposes into a two-dimensional oscillatory block and a two-dimensional hyperbolic block, yielding the invariant splitting
+
+  <span
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      width: '100%',
+      marginTop: '1.8rem',
+      marginBottom: '1.8rem'
+    }}
+  >
+    <img
+      src="/equations/real_4_split.svg"
+      alt="ℝ^4 ≅ ℝ_osc^2 ⨁ ℝ_hyp^2"
+      style={{ height: '24px', width: 'auto', display: 'block' }}
+    />
+  </span>
+</p>
+
+<p className="equation-description">
+  Viewed this way,{' '}
+  <img
+    src="/equations/m_matrix.svg"
+    alt="M"
+    style={{ height: '12px', width: 'auto', verticalAlign: '-0.05em', display: 'inline' }}
+  />{' '}
+  acts as the discrete-time propagator of the system, while{' '}
+  <img
+    src="/equations/a_log_m.svg"
+    alt="A = log(M)"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.20em', display: 'inline', marginLeft: '0.2em' }}
+  />{' '}
+  functions as its continuous generator. Together, the quartic{' '}
+  <img
+    src="/equations/t_of_x.svg"
+    alt="T(x)"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.20em', display: 'inline', marginLeft: '0.2em' }}
+  />{' '}
+  and its companion matrix define a clockable computational architecture: a system whose geometry is continuous, but whose action advances in discrete, quantized steps.
+</p>
+
 
         <div style={{ display: 'block', width: '100%' }} />
         <div style={{ height: '2.0rem' }} />
+        <div style={{ height: '10.0rem' }} />
       </div>
     </LayoutWrapper>
   );
