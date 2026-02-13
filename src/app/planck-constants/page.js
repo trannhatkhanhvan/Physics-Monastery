@@ -315,7 +315,7 @@ export default function PlanckConstants() {
     textIndent: 0,
   }}
 >
-  Closed-form definitions
+  Coherent closed-form definitions
 </p>
 
         <div style={{ height: '1.5rem' }} />

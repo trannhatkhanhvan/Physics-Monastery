@@ -20,12 +20,12 @@ export default function HomePage() {
   }, []);
 
   const videoData = [
+    { id: 'sDHcTJzbzos' },
     { id: 'vRPYe9ZotcM', list: 'PLEvMwDb3CwhQBHKmFcYzM2QkkFOlO-4Gr' },
     { id: 'HyKyOdsDZKs' },
     { id: 'uhlj0wOybBA' },
     { id: 'peM1oCfX7X4' },
     { id: 'kwoNjQNiczU' },
-    { id: 'DTVfhTaWSOU' }
   ];
 
   return (
@@ -64,8 +64,37 @@ export default function HomePage() {
     }}
   >
     Explore the menu to the left, or scroll down for related videos.
+
   </div>
 </div>
+
+                {/* Center thesis text */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '28%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '100%',
+            maxWidth: '52rem',
+            padding: '0 1.5rem',
+            boxSizing: 'border-box',
+            textAlign: 'center',
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: 'rgba(0, 0, 0, 0.65)',
+              padding: '1.1rem 1.3rem',
+              borderRadius: '1rem',
+              color: 'white',
+              lineHeight: '1.6',
+              fontSize: '1.00rem',
+            }}
+          >
+            Central Thesis: A Universe that persists must instantiate a geometry capable of persistence. The simplest such geometry is the hyperbolic figure-eight knot complement. Its 288 transformational degrees of freedom appear in physics as the 288 constants of Nature.
+          </div>
+        </div>
 
 
         {/* Paragraph and overlay container */}
