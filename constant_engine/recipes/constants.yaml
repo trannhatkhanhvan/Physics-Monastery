@@ -351,9 +351,9 @@ constants:
       inversion_geometry: { numerator: [ "zhe_3","zhe_4", "G_Ga" ], denominator: [ "6", "s" ] }, root_transform: { id: "zhe_r^4" },
       expected_kind: measured, expected_value: 9.6092048(23)e2, expected_digits: "96092048", expected_digits_label: "SI measured" }
 
-  - { recipe_number: 70, constant_id: μ_n/μ_e, display_name: "neutron-electron magnetic moment ratio", column: "2", island: "2", dimension: "-",
+  - { recipe_number: 70, constant_id: μ_n/μ_e, display_name: "neutron-electron magnetic moment ratio", column: "2", island: "2", combine: inversion, dimension: "-",
       external_geometry: { numerator: [ "P_up" ], denominator: [ "C_CFP" ] }, external_boundary: { numerator: [ "m_e" ], denominator: [ "m_n" ] },
-      inversion_geometry: { numerator: [ "-1", "zhe_3","zhe_4", "G_Ga" ], denominator: [ "6", "s" ] }, root_transform: { id: "zhe_r^4" },
+      inversion_geometry: { numerator: [ "zhe_3","zhe_4", "G_Ga" ], denominator: [ "6", "s" ] }, root_transform: { id: "zhe_r^4" },
       expected_kind: measured, expected_value: 1.04066884(24)e-3, expected_digits: "104066884", expected_digits_label: "SI measured" }
 
   - { recipe_number: 71, constant_id: μ_n/μ_+, display_name: "neutron-proton magnetic moment ratio", column: "2", island: "2", dimension: "-",
@@ -361,9 +361,9 @@ constants:
       inversion_geometry: { numerator: [ "6", "s" ], denominator: [ "zhe_3","zhe_4", "G_Ga" ] }, root_transform: { id: "zhe_r^4" },
       expected_kind: measured, expected_value: -6.8497935(16)e-1, expected_digits: "68497935", expected_digits_label: "SI measured" }
 
-  - { recipe_number: 72, constant_id: μ_+/μ_n, display_name: "proton-neutron magnetic moment ratio", column: "2", island: "2", dimension: "-",
+  - { recipe_number: 72, constant_id: μ_+/μ_n, display_name: "proton-neutron magnetic moment ratio", column: "2", island: "2", combine: inversion, dimension: "-",
       external_geometry: { numerator: [ "-1", "C_CFP" ], denominator: [ "S" ] }, external_boundary: { numerator: [ "m_n" ], denominator: [ "m_+" ] },
-      inversion_geometry: { numerator: [ "-6", "s" ], denominator: [ "zhe_3","zhe_4", "G_Ga" ] }, root_transform: { id: "zhe_r^4" },
+      inversion_geometry: { numerator: [ "6", "s" ], denominator: [ "zhe_3","zhe_4", "G_Ga" ] }, root_transform: { id: "zhe_r^4" },
       expected_kind: measured, expected_value: -1.45989802(34), expected_digits: "145989802", expected_digits_label: "SI measured" }
 
 
