@@ -109,34 +109,53 @@ def q_pow(a: Quantity, p: Any) -> Quantity:
     """
     Raise a Quantity to a power.
 
-    Integer exponent: repeated multiplication (no branch issues).
-    Non-integer real exponent: mpmath power on the value.
+    Rules:
+      - Real exponent: units are exponentiated normally.
+      - Complex exponent: base must be dimensionless (units must be {}).
+        (Complex powers of dimensionful quantities are not supported.)
     """
-    pr = _mp(p)
-    new_units = units_pow(a.units, pr)
+    # Convert exponent to mp.mpc
+    if isinstance(p, (int, float, mp.mpf, complex, mp.mpc)):
+        pr = _as_mpc(p)
+    elif isinstance(p, str):
+        pr = _as_mpc(eval_quantity_expr(p, {}).value)
+    else:
+        raise TypeError(f"Unsupported exponent type: {type(p)}")
 
-    ok_int, n = _is_effectively_integer(pr)
-    if ok_int:
-        if n == 0:
-            return Quantity(mp.mpf("1"), DIMENSIONLESS)  # dimensionless 1
+    # Units handling
+    if pr.imag != 0:
+        if a.units:
+            raise ValueError(
+                f"Complex exponent requires dimensionless base; got units={a.units}"
+            )
+        new_units = DIMENSIONLESS
+    else:
+        new_units = units_pow(a.units, pr.real)
 
-        base = _as_mpc(a.value)
+    # Integer exponent optimization (real-only)
+    if pr.imag == 0:
+        ok_int, n = _is_effectively_integer(pr.real)
+        if ok_int:
+            if n == 0:
+                return Quantity(mp.mpf("1"), DIMENSIONLESS)
 
-        if n > 0:
-            out = mp.mpc(1)
-            for _ in range(n):
-                out *= base
-        else:
-            out = mp.mpc(1)
-            for _ in range(-n):
-                out *= base
-            out = mp.mpc(1) / out
+            base = _as_mpc(a.value)
 
-        if out.imag == 0:
-            return Quantity(out.real, new_units)
-        return Quantity(out, new_units)
+            if n > 0:
+                out = mp.mpc(1)
+                for _ in range(n):
+                    out *= base
+            else:
+                out = mp.mpc(1)
+                for _ in range(-n):
+                    out *= base
+                out = mp.mpc(1) / out
 
-    # Non-integer real exponent (still must be real)
+            if out.imag == 0:
+                return Quantity(out.real, new_units)
+            return Quantity(out, new_units)
+
+    # General exponent (real non-integer OR complex)
     vv = _as_mpc(a.value)
     res = mp.power(vv, pr)
     if res.imag == 0:
@@ -459,8 +478,49 @@ def _try_eval_numeric_exponent_expr(s: str) -> mp.mpf | None:
     ss = ss.replace("^", "**")
 
     # If there are any letters/underscores, it's not a pure numeric exponent.
-    if re.search(r"[A-Za-z_]", ss):
-        return None
+    # parse any string expression, allowing unary minus on i
+    def exponent_to_complex(power: Any, symbols: Dict[str, Quantity] | None = None) -> mp.mpc:
+        """
+        Exponent parser for factor powers. This MUST support expressions like:
+          -i, (-i), (-1*i), 1+2*i, (1/2), etc.
+
+        Rule:
+          - If it's a string and not plainly numeric, evaluate it with eval_quantity_expr.
+          - Exponent must be dimensionless.
+        """
+        if power is None:
+            return mp.mpc(1, 0)
+
+        if isinstance(power, (list, tuple)) and len(power) == 2:
+            return _as_mpc(_mp(power[0]) * _mp(power[1]))
+
+        if isinstance(power, (int, float, mp.mpf, complex, mp.mpc)):
+            return _as_mpc(power)
+
+        if isinstance(power, str):
+            s = power.strip()
+
+            # numeric-only exponent expressions
+            v_num = _try_eval_numeric_exponent_expr(s)
+            if v_num is not None:
+                return mp.mpc(v_num, 0)
+
+            # plain numeric string
+            try:
+                return mp.mpc(mp.mpf(s), 0)
+            except Exception:
+                pass
+
+            # FORCE: expression evaluation (this is the path you want)
+            if symbols is None:
+                raise ValueError(f"String exponent {power!r} requires symbols lookup.")
+            q = eval_quantity_expr(s, symbols)
+            if q.units != DIMENSIONLESS:
+                raise ValueError(f"Exponent must be dimensionless; got units={q.units}")
+            return _as_mpc(q.value)
+
+        # last resort
+        return mp.mpc(_mp(power), 0)
 
     # Safe AST eval for numeric-only expressions (+-*/** and parentheses)
     node = ast.parse(ss, mode="eval")
@@ -533,14 +593,53 @@ def exponent_to_mpf(power: Any, symbols: Dict[str, Quantity] | None = None) -> m
     return _mp(power)
 
 
-def exponent_to_complex(power: Any, symbols: Dict[str, Quantity] | None = None) -> mp.mpf:
+def exponent_to_complex(power: Any, symbols: Dict[str, Quantity] | None = None) -> mp.mpc:
     """
-    Compatibility wrapper.
+    Parse an exponent into mp.mpc.
 
-    This engine allows complex VALUES, but exponents used in q_pow/units_pow
-    must be REAL. So we parse exactly like exponent_to_mpf and return mp.mpf.
+    Accepts:
+      - None -> 1
+      - numbers -> mp.mpc(number, 0)
+      - [a, b] -> a*b (both numeric)
+      - string numeric -> real
+      - string expression -> eval_quantity_expr (supports i, -i, (-1*i), 1+2*i, etc.)
+      - string symbol exponent like 'γ' or '-γ' -> dimensionless real symbol lookup
     """
-    return exponent_to_mpf(power, symbols)
+    if power is None:
+        return mp.mpc(1, 0)
+
+    # legacy [a,b] numeric pair
+    if isinstance(power, (list, tuple)) and len(power) == 2:
+        return _as_mpc(_mp(power[0]) * _mp(power[1]))
+
+    # numeric types
+    if isinstance(power, (int, float, mp.mpf, complex, mp.mpc)):
+        return _as_mpc(power)
+
+    if isinstance(power, str):
+        s = power.strip()
+
+        # Try numeric exponent expressions first (purely numeric)
+        v_num = _try_eval_numeric_exponent_expr(s)
+        if v_num is not None:
+            return mp.mpc(v_num, 0)
+
+        # Try plain numeric string
+        try:
+            return mp.mpc(mp.mpf(s), 0)
+        except Exception:
+            pass
+
+        # Try full expression (this is what enables (-1*i))
+        if symbols is None:
+            raise ValueError(f"String exponent {power!r} requires symbols lookup.")
+        q = eval_quantity_expr(s, symbols)
+        if q.units != DIMENSIONLESS:
+            raise ValueError(f"Exponent must be dimensionless; got units={q.units}")
+        return _as_mpc(q.value)
+
+    # fallback: treat as real numeric
+    return _as_mpc(_mp(power))
 
 
 # ============================================================
@@ -580,21 +679,11 @@ def _normalize_expr(s: str) -> str:
     s = s.strip()
     s = s.replace("^", "**")
 
-    # Insert explicit multiplication in common implicit cases,
-    # but do NOT break function calls like Im(x), Re(x), log(x), ln(x).
-    s = re.sub(r"(\d)\s*([A-Za-z_])", r"\1*\2", s)         # 2pi -> 2*pi
-    s = re.sub(r"\)\s*([A-Za-z_])", r")*\1", s)           # )(x) -> )*x
+    # Insert explicit multiplication in safe implicit cases only.
+    s = re.sub(r"(\d)\s*([A-Za-z_])", r"\1*\2", s)   # 2pi -> 2*pi
+    s = re.sub(r"\)\s*([A-Za-z_])", r")*\1", s)     # )(x) -> )*x
+    s = re.sub(r"\)\s*(\d)", r")*\1", s)            # )2 -> )*2
 
-    # Only insert "*" between a name and "(" if that name is NOT a supported function.
-    # e.g. "a(b)" -> "a*(b)" but "log(x)" stays "log(x)"
-    def _name_paren_repl(m: re.Match) -> str:
-        name = m.group(1)
-        if name in {"Im", "Re", "log", "ln"}:
-            return f"{name}("
-        return f"{name}*("
-
-    s = re.sub(r"([A-Za-z_][A-Za-z0-9_]*)\s*\(", _name_paren_repl, s)
-    s = re.sub(r"\)\s*(\d)", r")*\1", s)                  # )2 -> )*2
     return s
 
 
@@ -610,6 +699,37 @@ _ALLOWED_UNARYOPS = {
     ast.USub: _op.neg,
 }
 
+def _names_in_expr(expr: str, symbols: Dict[str, Quantity]) -> set[str]:
+    """
+    Extract symbol names referenced inside an exponent/expression string.
+    Example: "(-1*i)" -> {"i"}
+             "1+2*i"  -> {"i"}
+             "zhe_r^2" -> {"zhe_r"}  (the '^' will be normalized elsewhere)
+    """
+    expr_n = _normalize_expr(expr)
+
+    placeholder_to_key: Dict[str, str] = {}
+    safe_expr = expr_n
+
+    bad_keys = [k for k in symbols.keys() if isinstance(k, str) and not k.isidentifier()]
+    bad_keys.sort(key=len, reverse=True)
+
+    for i, key in enumerate(bad_keys):
+        ph = f"SYM{i}"
+        placeholder_to_key[ph] = key
+        safe_expr = safe_expr.replace(key, ph)
+
+    node = ast.parse(safe_expr, mode="eval")
+
+    names: set[str] = set()
+
+    class V(ast.NodeVisitor):
+        def visit_Name(self, n: ast.Name):
+            real = placeholder_to_key.get(n.id, n.id)
+            names.add(real)
+
+    V().visit(node)
+    return names
 
 def _resolve_name_as_quantity(name: str, symbols: Dict[str, Quantity]) -> Quantity:
     if name not in symbols:
@@ -697,15 +817,10 @@ def eval_quantity_expr(expr: str, symbols: Dict[str, Quantity]) -> Quantity:
             if type(n.op) is ast.Div:
                 return q_div(left, right)
             if type(n.op) is ast.Pow:
-                # exponent must be dimensionless and real
+                # exponent must be dimensionless (real OR complex allowed)
                 if right.units:
                     raise ValueError(f"Exponent must be dimensionless; got units={right.units}")
-                p = right.value
-                if isinstance(p, mp.mpc) and p.imag != 0:
-                    raise ValueError(f"Exponent must be real; got {p!r}")
-                if isinstance(p, complex) and p.imag != 0:
-                    raise ValueError(f"Exponent must be real; got {p!r}")
-                return q_pow(left, _mp(p))
+                return q_pow(left, right.value)
 
         raise TypeError(f"Unsupported expression syntax: {ast.dump(n)}")
 
@@ -878,40 +993,52 @@ def _resolve_token_to_quantity(token: FactorToken, symbols: Dict[str, Quantity])
 
 
 def factor_product(factors: Any, symbols: Dict[str, Quantity]) -> Quantity:
-    """Multiply factors into a Quantity."""
+    """Multiply factors into a Quantity (handles complex exponents like i, -i)."""
     prod = Quantity(mp.mpc(1, 0), {})
+
+    # Ensure imaginary unit 'i' exists
+    if "i" not in symbols:
+        symbols["i"] = Quantity(mp.mpc(0, 1), {})
 
     for token, power in iter_factors(factors):
 
-        # numbers
+        # --- numeric literal tokens ---
         if isinstance(token, numbers.Real) and not isinstance(token, bool):
             base = _resolve_token_to_quantity(token, symbols)
             p = exponent_to_complex(mp.mpf("1") if power is None else power, symbols)
             prod = q_mul(prod, q_pow(base, p))
             continue
 
-        # strings: literal-vs-power decision when power is None
+        # --- string tokens ---
         if isinstance(token, str):
-            if power is None:
-                tok_s, pow_raw = _parse_factor_string_literal_first(token, symbols)
-                base = _resolve_token_to_quantity(tok_s, symbols)
-                p = exponent_to_complex(pow_raw, symbols)
-                prod = q_mul(prod, q_pow(base, p))
-                continue
-
-            # explicit power provided
-            tok_s = token.strip()
+            tok_s, pow_raw = _parse_factor_string_literal_first(token, symbols)
             base = _resolve_token_to_quantity(tok_s, symbols)
-            p = exponent_to_complex(power, symbols)
-            prod = q_mul(prod, q_pow(base, p))
+
+            # Determine exponent
+            if power is not None:
+                # explicit power overrides anything from TOKEN^POWER
+                p_val = exponent_to_complex(power, symbols)
+
+            elif isinstance(pow_raw, str):
+                # inline exponent: always parse as an expression (can be complex: -i, (-1*i), 1+2*i, etc.)
+                p_expr = eval_quantity_expr(pow_raw, symbols)
+                if p_expr.units != DIMENSIONLESS:
+                    raise ValueError(f"Exponent must be dimensionless; got units={p_expr.units}")
+                p_val = _as_mpc(p_expr.value)
+
+            else:
+                p_val = mp.mpc(1, 0)
+
+            prod = q_mul(prod, q_pow(base, p_val))
             continue
 
-        # dict-key / other token types
+        # --- other token types (dict keys, etc.) ---
         base = _resolve_token_to_quantity(token, symbols)
-        p = exponent_to_complex(power, symbols)
-        prod = q_mul(prod, q_pow(base, p))
+        p_val = exponent_to_complex(power, symbols)
+        prod = q_mul(prod, q_pow(base, p_val))
 
     return prod
+
 
 
 def fraction(numerator: Any, denominator: Any, symbols: Dict[str, Quantity]) -> Quantity:

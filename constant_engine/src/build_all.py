@@ -325,27 +325,43 @@ def _split_token_and_power_from_string(s: str) -> Tuple[str, Optional[str]]:
     return tok, pow_s or None
 
 
-def _extract_exponent_symbol_if_any(power_str: str) -> Optional[str]:
+def _extract_exponent_dependencies(power_str: str) -> List[str]:
+    """
+    Returns the symbol dependencies used by an exponent.
+
+    Examples:
+      "-γ"      -> ["γ"]
+      "γ"       -> ["γ"]
+      "(-i)"    -> ["i"]
+      "(1+γ)/2" -> ["γ"]
+      "1/3"     -> []
+      "(2^0.5)" -> []
+    """
     s = (power_str or "").strip()
     if not s:
-        return None
+        return []
 
-    # If exponent is purely numeric operators/parentheses/dots/digits, it's NOT a symbol dependency.
-    # Examples: "(2^0.5)", "1/3", "((7+1)/4)"
+    # numeric-only exponent expressions -> no symbol deps
     if re.fullmatch(r"[\s0-9+\-*/^().]+", s) and any(ch.isdigit() for ch in s):
-        return None
-
-    # plain numeric literal -> not a symbol
+        return []
     try:
         float(s)
-        return None
+        return []
     except ValueError:
         pass
 
+    # Simple symbol exponent: optional leading sign, then one name token (no operators/parens)
     m = _EXP_SYMBOL_RE.match(s)
-    if not m:
-        return None
-    return m.group(2)
+    if m:
+        sym = m.group(2)
+        if not any(ch in sym for ch in "()+*/^"):
+            return [sym]
+
+    # General exponent expression: extract all names inside
+    expr = s
+    if not (expr.startswith("(") and expr.endswith(")")):
+        expr = f"({expr})"
+    return _names_in_expression_token(expr)
 
 
 def _iter_factor_items(factors):
@@ -377,7 +393,8 @@ def _iter_factor_items(factors):
     raise TypeError(f"Factors must be a dict or list. Got {type(factors).__name__}: {factors!r}")
 
 
-_NAME_IN_EXPR_RE = re.compile(r"\b[A-Za-z_][A-Za-z0-9_]*\b")
+# Unicode-safe: matches names like i, zhe_1, γ, etc.
+_NAME_IN_EXPR_RE = re.compile(r"\b[^\W\d]\w*\b", re.UNICODE)
 
 
 def _names_in_expression_token(expr: str) -> list[str]:
@@ -413,10 +430,10 @@ def collect_dependencies(recipe: Dict[str, Any]) -> Tuple[List[str], List[str]]:
                     display_set.add(nm)
                     required_set.add(nm)
                 if pow_val is not None:
-                    sym = _extract_exponent_symbol_if_any(str(pow_val).strip())
-                    if sym:
+                    for sym in _extract_exponent_dependencies(str(pow_val).strip()):
                         display_set.add(sym)
                         required_set.add(sym)
+
                 continue
 
             try:
@@ -452,14 +469,12 @@ def collect_dependencies(recipe: Dict[str, Any]) -> Tuple[List[str], List[str]]:
                     required_set.add(base_tok)
 
             if tok_pow:
-                sym = _extract_exponent_symbol_if_any(tok_pow)
-                if sym:
+                for sym in _extract_exponent_dependencies(tok_pow):
                     display_set.add(sym)
                     required_set.add(sym)
 
             if pow_val is not None:
-                sym = _extract_exponent_symbol_if_any(str(pow_val).strip())
-                if sym:
+                for sym in _extract_exponent_dependencies(str(pow_val).strip()):
                     display_set.add(sym)
                     required_set.add(sym)
 
