@@ -120,28 +120,28 @@ const GROUP_SPACER_HEIGHT = '35px';
         35: "hartree-hertz relationship",
         36: "Rydberg constant times c in Hz",
 
-        37: "Newtonian constant of gravitation",
-        38: "Newtonian constant of gravitation over h-bar c",
-        39: "electron mass",
-        40: "proton mass",
-        41: "triton mass",
-        42: "luminous efficacy",
-        43: "alpha particle mass",
-        44: "deuteron mass",
-        45: "muon mass",
-        46: "helion mass",
-        47: "deuteron-neutron magnetic moment ratio",
-        48: "electron-deuteron magnetic moment ratio",
-        49: "deuteron-electron magnetic moment ratio",
-        50: "deuteron proton magnetic moment ratio",
-        51: "deuteron magnetic moment",
-        52: "atomic unit of magnetic dipole moment",
-        53: "Bohr magneton",
-        54: "nuclear magneton",
-        55: "shielded proton magnetic moment",
-        56: "proton magnetic moment",
-        57: "electron magnetic moment",
-        58: "muon magnetic moment",
+        37: "electron-muon magnetic moment ratio",
+        38: "Newtonian constant of gravitation",
+        39: "Newtonian constant of gravitation over h-bar c",
+        40: "electron mass",
+        41: "proton mass",
+        42: "helion mass",
+        43: "triton mass",
+        44: "luminous efficacy",
+        45: "neutron mass",
+        46: "alpha particle mass",
+        47: "deuteron mass",
+        48: "tau mass",
+        49: "muon mass",
+        50: "deuteron-neutron magnetic moment ratio",
+        51: "deuteron-proton magnetic moment ratio",
+        52: "deuteron-electron magnetic moment ratio",
+        53: "electron-deuteron magnetic moment ratio",
+        54: "deuteron magnetic moment",
+        55: "atomic unit of magnetic dipole moment",
+        56: "Bohr magneton",
+        57: "nuclear magneton",
+        58: "proton magnetic moment",
         59: "triton magnetic moment",
         60: "triton to proton magnetic moment ratio",
         61: "triton magnetic moment to nuclear magneton ratio",
@@ -200,7 +200,7 @@ const GROUP_SPACER_HEIGHT = '35px';
         112: "conventional value of coulomb-90",
         113: "shielded proton magnetic moment to nuclear magneton ratio",
         114: "shielded proton magnetic moment to Bohr magneton ratio",
-        115: "electron-muon magnetic moment ratio",
+        115: "shielded proton magnetic moment",
         116: "kilogram-kelvin relationship",
         117: "atomic mass unit-kelvin relationship",
         118: "kelvin-atomic mass unit relationship",
@@ -226,8 +226,8 @@ const GROUP_SPACER_HEIGHT = '35px';
         138: "muon magnetic moment to nuclear magneton ratio",
         139: "proton gyromagnetic ratio",
         140: "proton gyromagnetic ratio in MHz/T",
-        141: "neutron mass",
-        142: "tau mass",
+        141: "muon magnetic moment",
+        142: "electron magnetic moment",
         143: "muon magnetic moment anomaly",
         144: "electron magnetic moment anomaly",
 
@@ -13815,8 +13815,6 @@ A<sub>mdm</sub>{" "}
 
 
 
-
-
 57: (
             <div
                 style={{
@@ -13828,27 +13826,27 @@ A<sub>mdm</sub>{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    electron magnetic moment
+                    tau mass
                 </div>
 
                 {/* 2. Empty Line */}
-                <div style={{height: "18px"}}/>
+                <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/electron_magnetic_moment.svg"
-                        alt="electron magnetic moment equation"
+                        src="/equations/tau_mass.svg"
+                        alt="tau mass equation"
                         style={{
                             display: "inline-block",
-                            width: "410px",   // ✅ Set the width to exactly what you want
+                            width: "460px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
                 </div>
 
                 {/* 4. Empty Line */}
-                <div style={{height: "18px"}}/>
+                <div style={{height: "22px"}}/>
 
                 {/* 5. Single continuous, fully justified paragraph */}
                 <div
@@ -13862,6 +13860,50 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
                     Where{" "}
+
+                    <img
+                        src="/equations/gamma_function.svg"
+                        alt="gamma function"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the gamma function,{" "}
+
+                    <img
+                        src="/equations/pi.svg"
+                        alt="pi"
+                        style={{
+                            height: "0.53em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/atomic_mass_constant_symbol.svg"
+                        alt="A_mass"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the atomic mass constant,{" "}
+
+                    <img
+                        src="/equations/derangement_symbol.svg"
+                        alt="!n"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the derangement function,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -13886,94 +13928,6 @@ A<sub>mdm</sub>{" "}
                     = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
 
                     <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the universal parabolic constant,{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/planck_charge.svg"
-                        alt="q_p"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck charge,{" "}
-
-                    <img
-                        src="/equations/planck_mass.svg"
-                        alt="m_p"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck mass,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1.05em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/electron_mass_symbol.svg"
-                        alt="m_e"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the electron mass,{" "}
-
-                    <img
-                        src="/equations/fibonacci_factorial.svg"
-                        alt="F_FF"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Fibonacci factorial constant,{" "}
-
-                    <img
-                        src="/equations/pi.svg"
-                        alt="pi"
-                        style={{
-                            height: "0.55em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
                         src="/equations/s_symbol.svg"
                         alt="s"
                         style={{
@@ -13985,15 +13939,26 @@ A<sub>mdm</sub>{" "}
                     = the arc length of the unit lemniscate,{" "}
 
                     <img
-                        src="/equations/zhe_r.svg"
-                        alt="zhe_r"
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
                         style={{
                             height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic radius constant, and{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -14022,15 +13987,15 @@ A<sub>mdm</sub>{" "}
                 >
   <span>
   <img
-      src="/equations/mu_e_symbol.svg"
-      alt="mu_e"
+      src="/equations/m_tau.svg"
+      alt="m_tau"
       style={{
           height: "0.75em",
           verticalAlign: "-0.2em",
           display: "inline",
       }}
   />{" "}
-      = –9.28476468731854... &times; 10<sup>&minus;24</sup> J/T
+      = 3.16754978503555... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -14046,20 +14011,21 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
   <span>
- <img
-     src="/equations/mu_e_symbol.svg"
-     alt="mu_e"
-     style={{
-         height: "0.75em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />{" "}
-      = –9.2847646917(29) &times; 10<sup>&minus;24</sup> J/T
+   <img
+       src="/equations/m_tau.svg"
+       alt="m_tau"
+       style={{
+           height: "0.75em",
+           verticalAlign: "-0.2em",
+           display: "inline",
+       }}
+   />{" "}
+      = 3.16754(21) &times; 10<sup>&minus;27</sup> kg
+
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?muem|search_for=electron"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mtau|search_for=tau"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -14070,7 +14036,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 1.51"}
+                        {", σ = + 0.05"}
   </span>
                 </div>
 
@@ -14084,24 +14050,28 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
   <span>
- <img
-     src="/equations/mu_e_symbol.svg"
-     alt="mu_e"
-     style={{
-         height: "0.75em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />{" "}
-      = –9.2847647043(28) &times; 10<sup>&minus;24</sup> J/T
+  <img
+      src="/equations/m_tau.svg"
+      alt="m_tau"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 3.16754(21) &times; 10<sup>&minus;27</sup> kg
+
   </span>
                     <span>
-    CODATA 2018, σ = − 6.07
+    CODATA 2018, σ = + 0.05
   </span>
                 </div>
 
             </div>
         ),
+
+
+
 
 
 
@@ -14118,27 +14088,27 @@ A<sub>mdm</sub>{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    muon magnetic moment
+                    neutron mass
                 </div>
 
                 {/* 2. Empty Line */}
-                <div style={{height: "18px"}}/>
+                <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/muon_magnetic_moment.svg"
-                        alt="muon magnetic moment equation"
+                        src="/equations/neutron_mass.svg"
+                        alt="neutron mass equation"
                         style={{
                             display: "inline-block",
-                            width: "405px",   // ✅ Set the width to exactly what you want
+                            width: "462px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
                 </div>
 
                 {/* 4. Empty Line */}
-                <div style={{height: "18px"}}/>
+                <div style={{height: "22px"}}/>
 
                 {/* 5. Single continuous, fully justified paragraph */}
                 <div
@@ -14152,6 +14122,39 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
                     Where{" "}
+
+                    <img
+                        src="/equations/g_gi.svg"
+                        alt="G_Gi"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Gieseking&apos;s constant,{" "}
+
+                    <img
+                        src="/equations/atomic_mass_constant_symbol.svg"
+                        alt="A_mass"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the atomic mass constant,{" "}
+
+                    <img
+                        src="/equations/derangement_symbol.svg"
+                        alt="!n"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the derangement function,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -14176,72 +14179,6 @@ A<sub>mdm</sub>{" "}
                     = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
 
                     <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the universal parabolic constant,{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/planck_charge.svg"
-                        alt="q_p"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck charge,{" "}
-
-                    <img
-                        src="/equations/planck_mass.svg"
-                        alt="m_p"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck mass,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1.05em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
-
-                    <img
-                        src="/equations/muon_mass_symbol.svg"
-                        alt="m_mu"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the muon mass,{" "}
-
-                    <img
                         src="/equations/s_symbol.svg"
                         alt="s"
                         style={{
@@ -14253,26 +14190,26 @@ A<sub>mdm</sub>{" "}
                     = the arc length of the unit lemniscate,{" "}
 
                     <img
-                        src="/equations/pi.svg"
-                        alt="pi"
-                        style={{
-                            height: "0.55em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/zhe_r.svg"
-                        alt="zhe_r"
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
                         style={{
                             height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic radius constant, and{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -14301,15 +14238,15 @@ A<sub>mdm</sub>{" "}
                 >
   <span>
   <img
-      src="/equations/mu_mu_symbol.svg"
-      alt="mu_mu"
+      src="/equations/m_neutron.svg"
+      alt="m_n"
       style={{
-          height: "0.9em",
+          height: "0.75em",
           verticalAlign: "-0.2em",
           display: "inline",
       }}
   />{" "}
-      = –4.49044828987864... &times; 10<sup>&minus;26</sup> J/T
+      = 1.67492749974453... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -14325,20 +14262,21 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
   <span>
- <img
-     src="/equations/mu_mu_symbol.svg"
-     alt="mu_mu"
-     style={{
-         height: "0.9em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />{" "}
-      = –4.49044830(10) &times; 10<sup>&minus;26</sup> J/T
+  <img
+      src="/equations/m_neutron.svg"
+      alt="m_n"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 1.67492750056(85) &times; 10<sup>&minus;27</sup> kg
+
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mumum|search_for=muon"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mn|search_for=neutron"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -14349,7 +14287,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.10"}
+                        {", σ = − 0.96"}
   </span>
                 </div>
 
@@ -14363,26 +14301,25 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
   <span>
- <img
-     src="/equations/mu_mu_symbol.svg"
-     alt="mu_mu"
-     style={{
-         height: "0.9em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />{" "}
-      = –4.49044830(10) &times; 10<sup>&minus;26</sup> J/T
+  <img
+      src="/equations/m_neutron.svg"
+      alt="m_n"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 1.67492749804(95) &times; 10<sup>&minus;27</sup> kg
+
   </span>
                     <span>
-    CODATA 2018, σ = − 0.10
+    CODATA 2018, σ = + 1.79
   </span>
                 </div>
 
             </div>
         ),
-
-
 
 
 
@@ -34467,10 +34404,6 @@ J ⋮ kg{" "}
 
 
 
-
-        
-
-
 141: (
             <div
                 style={{
@@ -34482,27 +34415,27 @@ J ⋮ kg{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    neutron mass
+                    muon magnetic moment
                 </div>
 
                 {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
+                <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/neutron_mass.svg"
-                        alt="neutron mass equation"
+                        src="/equations/muon_magnetic_moment.svg"
+                        alt="muon magnetic moment equation"
                         style={{
                             display: "inline-block",
-                            width: "462px",   // ✅ Set the width to exactly what you want
+                            width: "405px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
                 </div>
 
                 {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
+                <div style={{height: "18px"}}/>
 
                 {/* 5. Single continuous, fully justified paragraph */}
                 <div
@@ -34516,39 +34449,6 @@ J ⋮ kg{" "}
                     }}
                 >
                     Where{" "}
-
-                    <img
-                        src="/equations/g_gi.svg"
-                        alt="G_Gi"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Gieseking&apos;s constant,{" "}
-
-                    <img
-                        src="/equations/atomic_mass_constant_symbol.svg"
-                        alt="A_mass"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the atomic mass constant,{" "}
-
-                    <img
-                        src="/equations/derangement_symbol.svg"
-                        alt="!n"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the derangement function,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -34573,6 +34473,72 @@ J ⋮ kg{" "}
                     = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
 
                     <img
+                        src="/equations/universal_parabolic_constant.svg"
+                        alt="P_up"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the universal parabolic constant,{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/planck_charge.svg"
+                        alt="q_p"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck charge,{" "}
+
+                    <img
+                        src="/equations/planck_mass.svg"
+                        alt="m_p"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1.05em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/muon_mass_symbol.svg"
+                        alt="m_mu"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the muon mass,{" "}
+
+                    <img
                         src="/equations/s_symbol.svg"
                         alt="s"
                         style={{
@@ -34584,26 +34550,26 @@ J ⋮ kg{" "}
                     = the arc length of the unit lemniscate,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
+                        src="/equations/zhe_r.svg"
+                        alt="zhe_r"
                         style={{
                             height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+                    = the hyperbolic radius constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -34632,15 +34598,15 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/m_neutron.svg"
-      alt="m_n"
+      src="/equations/mu_mu_symbol.svg"
+      alt="mu_mu"
       style={{
-          height: "0.75em",
+          height: "0.9em",
           verticalAlign: "-0.2em",
           display: "inline",
       }}
   />{" "}
-      = 1.67492749974453... &times; 10<sup>&minus;27</sup> kg
+      = –4.49044828987864... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -34656,21 +34622,20 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/m_neutron.svg"
-      alt="m_n"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.67492750056(85) &times; 10<sup>&minus;27</sup> kg
-
+ <img
+     src="/equations/mu_mu_symbol.svg"
+     alt="mu_mu"
+     style={{
+         height: "0.9em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />{" "}
+      = –4.49044830(10) &times; 10<sup>&minus;26</sup> J/T
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mn|search_for=neutron"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mumum|search_for=muon"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -34681,7 +34646,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.96"}
+                        {", σ = − 0.10"}
   </span>
                 </div>
 
@@ -34695,25 +34660,25 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/m_neutron.svg"
-      alt="m_n"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 1.67492749804(95) &times; 10<sup>&minus;27</sup> kg
-
+ <img
+     src="/equations/mu_mu_symbol.svg"
+     alt="mu_mu"
+     style={{
+         height: "0.9em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />{" "}
+      = –4.49044830(10) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = + 1.79
+    CODATA 2018, σ = − 0.10
   </span>
                 </div>
 
             </div>
         ),
+
 
 
 
@@ -34732,27 +34697,27 @@ J ⋮ kg{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    tau mass
+                    electron magnetic moment
                 </div>
 
                 {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
+                <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/tau_mass.svg"
-                        alt="tau mass equation"
+                        src="/equations/electron_magnetic_moment.svg"
+                        alt="electron magnetic moment equation"
                         style={{
                             display: "inline-block",
-                            width: "460px",   // ✅ Set the width to exactly what you want
+                            width: "410px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
                 </div>
 
                 {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
+                <div style={{height: "18px"}}/>
 
                 {/* 5. Single continuous, fully justified paragraph */}
                 <div
@@ -34766,50 +34731,6 @@ J ⋮ kg{" "}
                     }}
                 >
                     Where{" "}
-
-                    <img
-                        src="/equations/gamma_function.svg"
-                        alt="gamma function"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the gamma function,{" "}
-
-                    <img
-                        src="/equations/pi.svg"
-                        alt="pi"
-                        style={{
-                            height: "0.53em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/atomic_mass_constant_symbol.svg"
-                        alt="A_mass"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the atomic mass constant,{" "}
-
-                    <img
-                        src="/equations/derangement_symbol.svg"
-                        alt="!n"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the derangement function,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -34834,6 +34755,94 @@ J ⋮ kg{" "}
                     = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
 
                     <img
+                        src="/equations/universal_parabolic_constant.svg"
+                        alt="P_up"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the universal parabolic constant,{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/planck_charge.svg"
+                        alt="q_p"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck charge,{" "}
+
+                    <img
+                        src="/equations/planck_mass.svg"
+                        alt="m_p"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1.05em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/electron_mass_symbol.svg"
+                        alt="m_e"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the electron mass,{" "}
+
+                    <img
+                        src="/equations/fibonacci_factorial.svg"
+                        alt="F_FF"
+                        style={{
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Fibonacci factorial constant,{" "}
+
+                    <img
+                        src="/equations/pi.svg"
+                        alt="pi"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Archimedes&apos; constant,{" "}
+
+                    <img
                         src="/equations/s_symbol.svg"
                         alt="s"
                         style={{
@@ -34845,26 +34854,15 @@ J ⋮ kg{" "}
                     = the arc length of the unit lemniscate,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/zhe_r.svg"
+                        alt="zhe_r"
                         style={{
                             height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+                    = the hyperbolic radius constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -34893,15 +34891,15 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/m_tau.svg"
-      alt="m_tau"
+      src="/equations/mu_e_symbol.svg"
+      alt="mu_e"
       style={{
           height: "0.75em",
           verticalAlign: "-0.2em",
           display: "inline",
       }}
   />{" "}
-      = 3.16754978503555... &times; 10<sup>&minus;27</sup> kg
+      = –9.28476468731854... &times; 10<sup>&minus;24</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -34917,21 +34915,20 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-   <img
-       src="/equations/m_tau.svg"
-       alt="m_tau"
-       style={{
-           height: "0.75em",
-           verticalAlign: "-0.2em",
-           display: "inline",
-       }}
-   />{" "}
-      = 3.16754(21) &times; 10<sup>&minus;27</sup> kg
-
+ <img
+     src="/equations/mu_e_symbol.svg"
+     alt="mu_e"
+     style={{
+         height: "0.75em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />{" "}
+      = –9.2847646917(29) &times; 10<sup>&minus;24</sup> J/T
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mtau|search_for=tau"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?muem|search_for=electron"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -34942,7 +34939,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.05"}
+                        {", σ = − 1.51"}
   </span>
                 </div>
 
@@ -34956,25 +34953,25 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/m_tau.svg"
-      alt="m_tau"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 3.16754(21) &times; 10<sup>&minus;27</sup> kg
-
+ <img
+     src="/equations/mu_e_symbol.svg"
+     alt="mu_e"
+     style={{
+         height: "0.75em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />{" "}
+      = –9.2847647043(28) &times; 10<sup>&minus;24</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = + 0.05
+    CODATA 2018, σ = − 6.07
   </span>
                 </div>
 
             </div>
         ),
+
 
 
 
@@ -69995,28 +69992,28 @@ J ⋮ kg{" "}
                                                                                                                                                                 eqNumber === 35 ? "/equations/hartree-hertz_relationship.svg" :
                                                                                                                                                                     eqNumber === 36 ? "/equations/rydberg_constant_times_c_in_hz.svg" :
 
-                                                                                                                                                                        eqNumber === 37 ? "/equations/newtonian_constant_of_gravitation.svg" :
-                                                                                                                                                                            eqNumber === 38 ? "/equations/newtonian_constant_of_gravitation_over_h-bar_c.svg" :
-                                                                                                                                                                                eqNumber === 39 ? "/equations/electron_mass.svg" :
-                                                                                                                                                                                    eqNumber === 40 ? "/equations/proton_mass.svg" :
-                                                                                                                                                                                        eqNumber === 41 ? "/equations/triton_mass.svg" :
-                                                                                                                                                                                            eqNumber === 42 ? "/equations/luminous_efficacy.svg" :
-                                                                                                                                                                                                eqNumber === 43 ? "/equations/alpha_particle_mass.svg" :
-                                                                                                                                                                                                    eqNumber === 44 ? "/equations/deuteron_mass.svg" :
-                                                                                                                                                                                                        eqNumber === 45 ? "/equations/muon_mass.svg" :
-                                                                                                                                                                                                            eqNumber === 46 ? "/equations/helion_mass.svg" :
-                                                                                                                                                                                                                eqNumber === 47 ? "/equations/deuteron-neutron_magnetic_moment_ratio.svg" :
-                                                                                                                                                                                                                    eqNumber === 48 ? "/equations/electron-deuteron_magnetic_moment_ratio.svg" :
-                                                                                                                                                                                                                        eqNumber === 49 ? "/equations/deuteron-electron_magnetic_moment_ratio.svg" :
-                                                                                                                                                                                                                            eqNumber === 50 ? "/equations/deuteron-proton_magnetic_moment_ratio.svg" :
-                                                                                                                                                                                                                                eqNumber === 51 ? "/equations/deuteron_magnetic_moment.svg" :
-                                                                                                                                                                                                                                    eqNumber === 52 ? "/equations/atomic_unit_of_magnetic_dipole_moment.svg" :
-                                                                                                                                                                                                                                        eqNumber === 53 ? "/equations/bohr_magneton.svg" :
-                                                                                                                                                                                                                                            eqNumber === 54 ? "/equations/nuclear_magneton.svg" :
-                                                                                                                                                                                                                                                eqNumber === 55 ? "/equations/shielded_proton_magnetic_moment.svg" :
-                                                                                                                                                                                                                                                    eqNumber === 56 ? "/equations/proton_magnetic_moment.svg" :
-                                                                                                                                                                                                                                                        eqNumber === 57 ? "/equations/electron_magnetic_moment.svg" :
-                                                                                                                                                                                                                                                            eqNumber === 58 ? "/equations/muon_magnetic_moment.svg" :
+                                                                                                                                                                        eqNumber === 37 ? "/equations/electron-muon_magnetic_moment_ratio.svg" :
+                                                                                                                                                                            eqNumber === 38 ? "/equations/newtonian_constant_of_gravitation.svg" :
+                                                                                                                                                                                eqNumber === 39 ? "/equations/newtonian_constant_of_gravitation_over_h-bar_c.svg" :
+                                                                                                                                                                                    eqNumber === 40 ? "/equations/electron_mass.svg" :
+                                                                                                                                                                                        eqNumber === 41 ? "/equations/proton_mass.svg" :
+                                                                                                                                                                                            eqNumber === 42 ? "/equations/helion_mass.svg" :
+                                                                                                                                                                                                eqNumber === 43 ? "/equations/triton_mass.svg" :
+                                                                                                                                                                                                    eqNumber === 44 ? "/equations/luminous_efficacy.svg" :
+                                                                                                                                                                                                        eqNumber === 45 ? "/equations/neutron_mass.svg" :
+                                                                                                                                                                                                            eqNumber === 46 ? "/equations/alpha_particle_mass.svg" :
+                                                                                                                                                                                                                eqNumber === 47 ? "/equations/deuteron_mass.svg" :
+                                                                                                                                                                                                                    eqNumber === 48 ? "/equations/tau_mass.svg" :
+                                                                                                                                                                                                                        eqNumber === 49 ? "/equations/muon_mass.svg" :
+                                                                                                                                                                                                                            eqNumber === 50 ? "/equations/deuteron-neutron_magnetic_moment_ratio.svg" :
+                                                                                                                                                                                                                                eqNumber === 51 ? "/equations/deuteron-proton_magnetic_moment_ratio.svg" :
+                                                                                                                                                                                                                                    eqNumber === 52 ? "/equations/deuteron-electron_magnetic_moment_ratio.svg" :
+                                                                                                                                                                                                                                        eqNumber === 53 ? "/equations/electron-deuteron_magnetic_moment_ratio.svg" :
+                                                                                                                                                                                                                                            eqNumber === 54 ? "/equations/deuteron_magnetic_moment.svg" :
+                                                                                                                                                                                                                                                eqNumber === 55 ? "/equations/atomic_unit_of_magnetic_dipole_moment.svg" :
+                                                                                                                                                                                                                                                    eqNumber === 56 ? "/equations/bohr_magneton.svg" :
+                                                                                                                                                                                                                                                        eqNumber === 57 ? "/equations/nuclear_magneton.svg" :
+                                                                                                                                                                                                                                                            eqNumber === 58 ? "/equations/proton_magnetic_moment.svg" :
                                                                                                                                                                                                                                                                 eqNumber === 59 ? "/equations/triton_magnetic_moment.svg" :
                                                                                                                                                                                                                                                                     eqNumber === 60 ? "/equations/triton_to_proton_magnetic_moment_ratio.svg" :
                                                                                                                                                                                                                                                                         eqNumber === 61 ? "/equations/triton_magnetic_moment_to_nuclear_magneton_ratio.svg" :
@@ -70075,7 +70072,7 @@ J ⋮ kg{" "}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     eqNumber === 112 ? "/equations/conventional_value_of_coulomb-90.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         eqNumber === 113 ? "/equations/shielded_proton_magnetic_moment_to_nuclear_magneton_ratio.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             eqNumber === 114 ? "/equations/shielded_proton_magnetic_moment_to_bohr_magneton_ratio.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 115 ? "/equations/electron-muon_magnetic_moment_ratio.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 115 ? "/equations/shielded_proton_magnetic_moment.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     eqNumber === 116 ? "/equations/kilogram-kelvin_relationship.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         eqNumber === 117 ? "/equations/atomic_mass_unit-kelvin_relationship.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             eqNumber === 118 ? "/equations/kelvin-atomic_mass_unit_relationship.svg" :
@@ -70101,8 +70098,8 @@ J ⋮ kg{" "}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             eqNumber === 138 ? "/equations/muon_magnetic_moment_to_nuclear_magneton_ratio.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 eqNumber === 139 ? "/equations/proton_gyromagnetic_ratio.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     eqNumber === 140 ? "/equations/proton_gyromagnetic_ratio_in_mhz_per_t.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 141 ? "/equations/neutron_mass.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 142 ? "/equations/tau_mass.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 141 ? "/equations/muon_magnetic_moment.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 142 ? "/equations/electron_magnetic_moment.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 eqNumber === 143 ? "/equations/muon_magnetic_moment_anomaly.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     eqNumber === 144 ? "/equations/electron_magnetic_moment_anomaly.svg" :
 
@@ -70306,7 +70303,16 @@ J ⋮ kg{" "}
       <img
         src={srcPath}
         alt={`Equation ${eqNumber}`}
-        style={{ maxWidth: "100%", height: "auto", display: "block" }}
+        style={{
+  maxWidth: "100%",
+  height: "auto",
+  display: "block",
+  transform:
+  ([2, 53, 70, 72].includes(Number(eqNumber)))
+    ? "translateX(15.5px)"
+    : "none",
+}}
+
       />
     </div>
   </button>

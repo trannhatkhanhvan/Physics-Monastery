@@ -72,14 +72,14 @@ export default function HomePage() {
         <div
           style={{
             position: 'absolute',
-            top: '28%',
+            top: '30%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
             width: '100%',
             maxWidth: '52rem',
             padding: '0 1.5rem',
             boxSizing: 'border-box',
-            textAlign: 'center',
+            textAlign: 'justify',
           }}
         >
           <div
@@ -92,7 +92,7 @@ export default function HomePage() {
               fontSize: '1.00rem',
             }}
           >
-            Central Thesis: A Universe that persists must instantiate a geometry capable of persistence. The simplest such geometry is the hyperbolic figure-eight knot complement. Its 288 transformational degrees of freedom appear in physics as the 288 constants of Nature.
+            Central Thesis: A Universe that persists must instantiate a geometry capable of persistence. The simplest such geometry is the hyperbolic figure-eight knot complement. Its 288 transformational degrees of freedom appear in physics as the constants of Nature.
           </div>
         </div>
 
@@ -120,11 +120,10 @@ export default function HomePage() {
                 fontSize: '1.0rem',
                 color: 'white',
                 textAlign: 'justify',
-                textIndent: '2em',
                 margin: 0,
               }}
             >
-              Unveiling the hidden structure of reality—by systematically decoding the precise relationships embedded in the physical constants of Nature. Our goal is to understand why the Universe is the way it is—to reveal the rules underlying atomic logic and the coherent geometric foundation from which all 288 physical constants arise.
+              Unveiling the hidden structure of reality by systematically decoding the precise relationships embedded in the physical constants of Nature. Our goal is to understand why the Universe is the way it is by specifying the rules underlying atomic logic and the coherent geometric foundation from which all 288 physical constants arise.
             </p>
           </div>
         )}
