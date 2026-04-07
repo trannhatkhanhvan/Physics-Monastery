@@ -27,7 +27,7 @@ export default function MonasteryEvents() {
 
         {/* 1️⃣ First two lines */}
         <p className="equation-description">
-          The next Physics Monastery Science Retreat will be April 4-11, 2026, in Logan, Utah.
+          The next Physics Monastery Science Retreat will be May 13-20, 2026, in Logan, Utah.
         </p>
         <div style={{ height: '1rem' }} />
         <p className="equation-description">
@@ -87,7 +87,7 @@ export default function MonasteryEvents() {
                      
                  288 constants of Nature
                  288 metric transforms available to tetrahedral structured volumes
-                 transform space: the 24D unit hypersphere (Leech lattice)
+                 the transform space avilable to that manifold: the 24D unit hypersphere (Leech lattice)
                  link types: 118 unimodular lattices available in 23D (consuming 1D to connect)
                  118 atoms
                  
@@ -137,13 +137,12 @@ export default function MonasteryEvents() {
   style={{ whiteSpace: 'pre-wrap', textIndent: 0 }}
 >
 {`                 
-                 Coding all of this                 
+                 Coding all of these rules as a closed set                 
                                   
-         Outdoor retreat activities available:
-                 gem stone mining
-                 trilobite hunting
-                 warm spring caves
-                 west desert canals`}
+         Weekend camping activities:
+                 slot canyons
+                 hiking
+                 observational astronomy`}
 </div>
 
 
