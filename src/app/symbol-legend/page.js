@@ -515,7 +515,7 @@ export default function SymbolLegend() {
                 src="/equations/v_fe.svg"
                 alt="V_fe"
                 style={{
-                  height: '17px',           // Set preferred height
+                  height: '16px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
                   verticalAlign: '-0.25em',
                   display: 'inline',
@@ -545,7 +545,7 @@ export default function SymbolLegend() {
                 src="/equations/catalan_s_constant.svg"
                 alt="K"
                 style={{
-                  height: '12.5px',           // Set preferred height
+                  height: '12px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
                   verticalAlign: '-0.0em',
                   display: 'inline',
@@ -818,26 +818,26 @@ export default function SymbolLegend() {
       left: (
           <>
             <img
-                src="/equations/g_g.svg"
-                alt="G_g"
+                src="/equations/golden_ratio.svg"
+                alt="golden ratio"
                 style={{
-                  height: '17px',           // Set preferred height
+                  height: '12px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
                   verticalAlign: '-0.2em',
                   display: 'inline',
                 }}
             />
-            {' = 1.15872847301812 ...'}
+            {' = 1.61803398874989 ...'}
           </>
       ),
       right: (
           <a
-              href="https://mathworld.wolfram.com/GoatProblem.html"
+              href="https://mathworld.wolfram.com/GoldenRatio.html"
               target="_blank"
               rel="noopener noreferrer"
               className="legend-link"
           >
-            tether length for grazing half the unit circle
+            golden ratio
           </a>
       ),
     },
@@ -1082,6 +1082,7 @@ export default function SymbolLegend() {
       ),
     },
 
+
 // 34
     {
       left: (
@@ -1178,35 +1179,35 @@ export default function SymbolLegend() {
     },
 
 
-
 // 37
     {
       left: (
           <>
             <img
-                src="/equations/fibonacci_factorial.svg"
-                alt="F_FF"
+                src="/equations/liouville_s_constant.svg"
+                alt="L_Li"
                 style={{
-                  height: '16px',           // Set preferred height
+                  height: '17px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
                   verticalAlign: '-0.2em',
                   display: 'inline',
                 }}
             />
-            {' = 1.22674201072035 ...'}
+            {' = 0.110001000000000 ...'}
           </>
       ),
       right: (
           <a
-              href="https://mathworld.wolfram.com/FibonacciFactorialConstant.html"
+              href="https://mathworld.wolfram.com/LiouvillesConstant.html"
               target="_blank"
               rel="noopener noreferrer"
               className="legend-link"
           >
-            Fibonacci factorial constant
+            Liouville's constant
           </a>
       ),
     },
+
 
 // 38
     {
@@ -1237,6 +1238,37 @@ export default function SymbolLegend() {
       ),
     },
 
+
+// 39
+    {
+      left: (
+          <>
+            <img
+                src="/equations/prime_constant.svg"
+                alt="P*"
+                style={{
+                  height: '13.5px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.0em',
+                  display: 'inline',
+                }}
+            />
+            {' = 1.22674201072035 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/PrimeConstant.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            prime constant
+          </a>
+      ),
+    },
+
+
 // Spacer row
     {
       left: <div style={{height: '0.75rem'}}></div>,
@@ -1244,7 +1276,7 @@ export default function SymbolLegend() {
     },
 
 
-// 39
+// 40
     {
       left: (
           <>
@@ -1274,7 +1306,7 @@ export default function SymbolLegend() {
     },
 
 
-// 40
+// 41
     {
       left: (
           <>
@@ -1304,7 +1336,7 @@ export default function SymbolLegend() {
     },
 
 
-// 41
+// 42
     {
       left: (
           <>
@@ -1334,67 +1366,7 @@ export default function SymbolLegend() {
     },
 
 
-// 42
-    {
-      left: (
-          <>
-            <img
-                src="/equations/j_0-1.svg"
-                alt="j_0,1"
-                style={{
-                  height: '17px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.2em',
-                  display: 'inline',
-                }}
-            />
-            {' = 2.404825557695772 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://mathworld.wolfram.com/BesselFunctionZeros.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            1<sup>st</sup> root of the Bessel function
-          </a>
-      ),
-    },
-
-
 // 43
-    {
-      left: (
-          <>
-            <img
-                src="/equations/c_cfp.svg"
-                alt="C_CFP"
-                style={{
-                  height: '16px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.2em',
-                  display: 'inline',
-                }}
-            />
-            {' = 1.19967864025773 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://mathworld.wolfram.com/HyperbolicCotangent.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            Real fixed point of the hyperbolic cotangent
-          </a>
-      ),
-    },
-
-
-// 44
     {
       left: (
           <>
@@ -1423,7 +1395,10 @@ export default function SymbolLegend() {
       ),
     },
 
-// 45
+
+
+
+// 44
     {
       left: (
           <>
@@ -1453,13 +1428,78 @@ export default function SymbolLegend() {
     },
 
 
+
+
+// 45
+    {
+      left: (
+          <>
+            <img
+                src="/equations/c_cfp.svg"
+                alt="C_CFP"
+                style={{
+                  height: '16px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.2em',
+                  display: 'inline',
+                }}
+            />
+            {' = 1.19967864025773 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/HyperbolicCotangent.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            Real fixed point of the hyperbolic cotangent
+          </a>
+      ),
+    },
+
+
+
+// 46
+    {
+      left: (
+          <>
+            <img
+                src="/equations/j_0-1.svg"
+                alt="j_0,1"
+                style={{
+                  height: '17px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.2em',
+                  display: 'inline',
+                }}
+            />
+            {' = 2.404825557695772 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/BesselFunctionZeros.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            1<sup>st</sup> root of the Bessel function
+          </a>
+      ),
+    },
+
+
+
+
 // Spacer row
     {
       left: <div style={{height: '0.75rem'}}></div>,
       right: '',
     },
 
-// 46
+// 47
     {
       left: (
           <>
@@ -1489,7 +1529,7 @@ export default function SymbolLegend() {
     },
 
 
-// 47
+// 48
     {
       left: (
           <>
@@ -1518,7 +1558,7 @@ export default function SymbolLegend() {
       ),
     },
 
-// 48
+// 49
     {
       left: (
           <>
@@ -1547,7 +1587,8 @@ export default function SymbolLegend() {
       ),
     },
 
-// 49
+
+// 50
     {
       left: (
           <>
@@ -1577,7 +1618,7 @@ export default function SymbolLegend() {
     },
 
 
-// 50
+// 51
     {
       left: (
           <>
@@ -1607,60 +1648,61 @@ export default function SymbolLegend() {
     },
 
 
-// 51
-    {
-      left: (
-          <>
-            <img
-                src="/equations/c_qa.svg"
-                alt="C_QA"
-                style={{
-                  height: '18px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.2em',
-                  display: 'inline',
-                }}
-            />
-            {' = 2.03816937970215 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://mathworld.wolfram.com/QRSConstant.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            associated QRS constant
-          </a>
-      ),
-    },
-
 // 52
     {
       left: (
           <>
             <img
-                src="/equations/c_hsm.svg"
-                alt="C_HSM"
+                src="/equations/1st_foias_constant.svg"
+                alt="x_infinity"
                 style={{
-                  height: '16px',           // Set preferred height
+                  height: '12px',           // Set preferred height
                   width: 'auto',            // Maintain aspect ratio
                   verticalAlign: '-0.2em',
                   display: 'inline',
                 }}
             />
-            {' = 0.353236371854995 ...'}
+            {' = 2.29316628741186 ...'}
           </>
       ),
       right: (
           <a
-              href="https://mathworld.wolfram.com/Hafner-Sarnak-McCurleyConstant.html"
+              href="https://mathworld.wolfram.com/FoiasConstant.html"
               target="_blank"
               rel="noopener noreferrer"
               className="legend-link"
           >
-            Hafner-Sarnak-McCurley constant
+            1<sup>st</sup> Foias constant
+          </a>
+      ),
+    },
+
+
+// 53
+    {
+      left: (
+          <>
+            <img
+                src="/equations/khinchin_mean_of_order_-6.svg"
+                alt="K_-6"
+                style={{
+                  height: '16px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.25em',
+                  display: 'inline',
+                }}
+            />
+            {' = 1.15655237442151 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/KhinchinsConstant.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            Khinchin mean of order -6
           </a>
       ),
     },
@@ -1673,7 +1715,7 @@ export default function SymbolLegend() {
     },
 
 
-// 53
+// 54
     {
       left: (
           <>
@@ -1705,7 +1747,7 @@ export default function SymbolLegend() {
     },
 
 
-// 54
+// 55
     {
       left: (
           <>
@@ -1737,7 +1779,7 @@ export default function SymbolLegend() {
     },
 
 
-// 55
+// 56
     {
       left: (
           <>
@@ -1769,7 +1811,7 @@ export default function SymbolLegend() {
     },
 
 
-// 56
+// 57
     {
       left: (
           <>
@@ -1810,7 +1852,7 @@ export default function SymbolLegend() {
     },
 
 
-// 57
+// 58
     {
       left: (
           <>
@@ -1842,7 +1884,7 @@ export default function SymbolLegend() {
     },
 
 
-// 58
+// 59
     {
       left: (
           <>
@@ -1881,7 +1923,7 @@ export default function SymbolLegend() {
     },
 
 
-// 59
+// 60
     {
       left: (
           <>
@@ -1918,7 +1960,66 @@ export default function SymbolLegend() {
     },
 
 
-// 60
+// 61
+    {
+      left: (
+          <>
+            <img
+                src="/equations/factorial_function.svg"
+                alt="n!"
+                style={{
+                  height: '13px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.0em',
+                  display: 'inline',
+                }}
+            />
+          </>
+      ),
+      right: (
+          <a
+              href="https://en.wikipedia.org/wiki/Factorial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            factorial function
+          </a>
+      ),
+    },
+
+
+
+// 62
+    {
+      left: (
+          <>
+            <img
+                src="/equations/derangement_symbol.svg"
+                alt="!n"
+                style={{
+                  height: '13px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.0em',
+                  display: 'inline',
+                }}
+            />
+          </>
+      ),
+      right: (
+          <a
+              href="https://en.wikipedia.org/wiki/Derangement"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            derangement function
+          </a>
+      ),
+    },
+
+
+// 63
     {
       left: (
           <>
@@ -1947,7 +2048,7 @@ export default function SymbolLegend() {
     },
 
 
-// 62
+// 64
     {
       left: (
           <>
@@ -1976,7 +2077,7 @@ export default function SymbolLegend() {
     },
 
 
-// 63
+// 65
     {
       left: (
           <>
@@ -2005,33 +2106,7 @@ export default function SymbolLegend() {
     },
 
 
-// 64
-    {
-      left: (
-          <>
-            <img
-                src="/equations/derangement_symbol.svg"
-                alt="!n"
-                style={{
-                  height: '13px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.0em',
-                  display: 'inline',
-                }}
-            />
-          </>
-      ),
-      right: (
-          <a
-              href="https://en.wikipedia.org/wiki/Derangement"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            derangement function
-          </a>
-      ),
-    },
+
 
  // Spacer row
     {
