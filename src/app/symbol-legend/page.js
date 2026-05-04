@@ -1454,7 +1454,7 @@ export default function SymbolLegend() {
               rel="noopener noreferrer"
               className="legend-link"
           >
-            Real fixed point of the hyperbolic cotangent
+            real fixed point of the hyperbolic cotangent
           </a>
       ),
     },
