@@ -1558,7 +1558,38 @@ export default function SymbolLegend() {
       ),
     },
 
+
 // 49
+    {
+      left: (
+          <>
+            <img
+                src="/equations/silver_constant.svg"
+                alt="S"
+                style={{
+                  height: '13px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.0em',
+                  display: 'inline',
+                }}
+            />
+            {' = 3.24697960371714 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/SilverConstant.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            silver constant
+          </a>
+      ),
+    },
+
+
+// 50
     {
       left: (
           <>
@@ -1588,34 +1619,6 @@ export default function SymbolLegend() {
     },
 
 
-// 50
-    {
-      left: (
-          <>
-            <img
-                src="/equations/silver_constant.svg"
-                alt="S"
-                style={{
-                  height: '13px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.0em',
-                  display: 'inline',
-                }}
-            />
-            {' = 3.24697960371714 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://mathworld.wolfram.com/SilverConstant.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            silver constant
-          </a>
-      ),
-    },
 
 
 // 51
