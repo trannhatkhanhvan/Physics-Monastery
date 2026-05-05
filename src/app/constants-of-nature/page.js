@@ -407,7 +407,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="hyperfine transition frequency of Cs-133 equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "315px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -509,8 +509,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -636,6 +636,7 @@ const GROUP_SPACER_HEIGHT = '35px';
         ),
 
 
+        
 2: (
             <div
                 style={{
@@ -660,7 +661,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="electron volt-hertz relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "340px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -752,8 +753,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -858,7 +859,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="joule-hertz relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "345px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -950,8 +951,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -1055,7 +1056,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="hertz-joule relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
+                            width: "358px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -1146,8 +1147,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -1251,7 +1252,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="hertz-electron volt relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
+                            width: "397px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -1343,8 +1344,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -1448,7 +1449,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="natural unit of action in eV s equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "316px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -1530,8 +1531,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -1659,7 +1660,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="reduced Planck constant equation"
                         style={{
                             display: "inline-block",
-                            width: "300px",   // ✅ Set the width to exactly what you want
+                            width: "273px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -1740,8 +1741,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -1869,7 +1870,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Planck constant equation"
                         style={{
                             display: "inline-block",
-                            width: "310px",   // ✅ Set the width to exactly what you want
+                            width: "296px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -1960,8 +1961,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -2089,7 +2090,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="quantum of circulation equation"
                         style={{
                             display: "inline-block",
-                            width: "310px",   // ✅ Set the width to exactly what you want
+                            width: "294px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -2191,8 +2192,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -2320,7 +2321,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="quantum of circulation times 2 equation"
                         style={{
                             display: "inline-block",
-                            width: "315px",   // ✅ Set the width to exactly what you want
+                            width: "312px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -2422,8 +2423,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -2551,7 +2552,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Bohr magneton in eV/T equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "351px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -2643,8 +2644,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -2796,7 +2797,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="nuclear magneton in eV/T equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "352px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -2888,8 +2889,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -3042,7 +3043,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="inverse of conductance quantum equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "323px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -3155,8 +3156,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -3284,7 +3285,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="conductance quantum equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "308px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -3398,8 +3399,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -3527,7 +3528,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="electron volt equation"
                         style={{
                             display: "inline-block",
-                            width: "300px",   // ✅ Set the width to exactly what you want
+                            width: "290px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -3607,8 +3608,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -3727,7 +3728,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="joule-electron volt relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "360px",   // ✅ Set the width to exactly what you want
+                            width: "328px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -3808,8 +3809,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -3911,7 +3912,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="electron charge to mass quotient equation"
                         style={{
                             display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
+                            width: "282px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -4003,8 +4004,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -4157,7 +4158,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="proton charge to mass quotient equation"
                         style={{
                             display: "inline-block",
-                            width: "280px",   // ✅ Set the width to exactly what you want
+                            width: "256px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -4249,8 +4250,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -4403,7 +4404,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Bohr magneton in Hz/T equation"
                         style={{
                             display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
+                            width: "299px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -4506,8 +4507,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -4661,7 +4662,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="nuclear magneton in MHz/T equation"
                         style={{
                             display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
+                            width: "352px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -4764,8 +4765,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -4921,7 +4922,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="lattice parameter of silicon equation"
                         style={{
                             display: "inline-block",
-                            width: "375px",   // ✅ Set the width to exactly what you want
+                            width: "345px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -5024,8 +5025,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -5157,7 +5158,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="lattice spacing of ideal Si (220) equation"
                         style={{
                             display: "inline-block",
-                            width: "410px",   // ✅ Set the width to exactly what you want
+                            width: "394px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -5260,8 +5261,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -5392,7 +5393,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Rydberg constant equation"
                         style={{
                             display: "inline-block",
-                            width: "335px",   // ✅ Set the width to exactly what you want
+                            width: "324px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -5495,8 +5496,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -5625,7 +5626,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="hartree-inverse meter relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "348px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -5728,8 +5729,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -5859,7 +5860,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="inverse meter-hartree relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
+                            width: "394px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -5962,8 +5963,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -6092,7 +6093,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="conventional value of ampere-90 equation"
                         style={{
                             display: "inline-block",
-                            width: "285px",   // ✅ Set the width to exactly what you want
+                            width: "280px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -6151,8 +6152,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -6261,7 +6262,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="conventional value of coulomb-90 equation"
                         style={{
                             display: "inline-block",
-                            width: "288px",   // ✅ Set the width to exactly what you want
+                            width: "285px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -6320,8 +6321,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -6429,7 +6430,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Bohr magneton in inverse meter per tesla equation"
                         style={{
                             display: "inline-block",
-                            width: "310px",   // ✅ Set the width to exactly what you want
+                            width: "290px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -6554,8 +6555,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -6710,9 +6711,6 @@ const GROUP_SPACER_HEIGHT = '35px';
             </div>
         ),
 
-
-        
-        
         
         
 29: (
@@ -6739,7 +6737,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="nuclear magneton in inverse meter per tesla equation"
                         style={{
                             display: "inline-block",
-                            width: "310px",   // ✅ Set the width to exactly what you want
+                            width: "293px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -6864,8 +6862,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7045,7 +7043,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Coulomb&apos;s constant equation"
                         style={{
                             display: "inline-block",
-                            width: "260px",   // ✅ Set the width to exactly what you want
+                            width: "242px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -7137,8 +7135,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7237,14 +7235,7 @@ const GROUP_SPACER_HEIGHT = '35px';
 
             </div>
         ),
-
-
-
-
-
-
-
-
+        
 
 
 31: (
@@ -7271,7 +7262,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="atomic unit of permittivity equation"
                         style={{
                             display: "inline-block",
-                            width: "285px",   // ✅ Set the width to exactly what you want
+                            width: "275px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -7363,8 +7354,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7439,10 +7430,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             </div>
         ),
 
-
-
-
-
+        
 
 
 32: (
@@ -7469,7 +7457,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="vacuum electric permittivity equation"
                         style={{
                             display: "inline-block",
-                            width: "290px",   // ✅ Set the width to exactly what you want
+                            width: "271px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -7572,8 +7560,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7711,7 +7699,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="atomic unit of time equation"
                         style={{
                             display: "inline-block",
-                            width: "360px",   // ✅ Set the width to exactly what you want
+                            width: "345px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -7814,8 +7802,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7919,7 +7907,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="hertz-hartree relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "415px",   // ✅ Set the width to exactly what you want
+                            width: "396px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -8033,8 +8021,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -8140,7 +8128,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="hartree-hertz relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "373px",   // ✅ Set the width to exactly what you want
+                            width: "362px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -8254,8 +8242,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
@@ -8362,7 +8350,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Rydberg constant times c in Hz equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "338px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -8476,8 +8464,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
+                            height: "0.85em",
+                            verticalAlign: "-0.05em",
                             display: "inline",
                         }}
                     />{" "}
