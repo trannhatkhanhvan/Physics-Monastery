@@ -5010,48 +5010,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/g_gi.svg"
-                        alt="G_Gi"
+                        src="/equations/zhe_theta.svg"
+                        alt="x_theta"
                         style={{
-                            height: "0.95em",
+                            height: "0.8em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking&apos;s constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+                    = the hyperbolic radian constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -5279,48 +5246,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/g_gi.svg"
-                        alt="G_Gi"
+                        src="/equations/zhe_theta.svg"
+                        alt="x_theta"
                         style={{
-                            height: "0.95em",
+                            height: "0.8em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking&apos;s constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+                    = the hyperbolic radian constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -5458,7 +5392,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Rydberg constant equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "335px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -5536,15 +5470,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the Planck mass,{" "}
 
                     <img
-                        src="/equations/madelung_constant.svg"
-                        alt="M"
+                        src="/equations/v_fe.svg"
+                        alt="V_fe"
                         style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
+                            height: "0.9em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the Madelung constant,{" "}
+                    = the figure eight knot hyperbolic volume,{" "}
 
                     <img
                         src="/equations/zhe_theta.svg"
@@ -5561,7 +5495,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.8em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -5666,6 +5600,7 @@ const GROUP_SPACER_HEIGHT = '35px';
         ),
 
 
+
 24: (
             <div
                 style={{
@@ -5768,15 +5703,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the Planck mass,{" "}
 
                     <img
-                        src="/equations/madelung_constant.svg"
-                        alt="M"
+                        src="/equations/v_fe.svg"
+                        alt="V_fe"
                         style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
+                            height: "0.9em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the Madelung constant,{" "}
+                    = the figure eight knot hyperbolic volume,{" "}
 
                     <img
                         src="/equations/zhe_theta.svg"
@@ -5793,7 +5728,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.8em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -6002,15 +5937,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/madelung_constant.svg"
-                        alt="M"
+                        src="/equations/v_fe.svg"
+                        alt="V_fe"
                         style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
+                            height: "0.9em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the Madelung constant,{" "}
+                    = the figure eight knot hyperbolic volume,{" "}
 
                     <img
                         src="/equations/zhe_theta.svg"
@@ -6027,7 +5962,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.8em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -6157,7 +6092,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="conventional value of ampere-90 equation"
                         style={{
                             display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
+                            width: "285px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -6180,48 +6115,37 @@ const GROUP_SPACER_HEIGHT = '35px';
                     Where{" "}
 
                     <img
-                        src="/equations/j_0-1.svg"
-                        alt="j_o,1"
+                        src="/equations/silver_symbol.svg"
+                        alt="S*"
                         style={{
-                            height: "1em",
-                            verticalAlign: "-0.2em",
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> root of the Bessel function,{" "}
+                    = the silver constant,{" "}
 
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
-
+                    = Archimedes&apos; constant,{" "}
+                    
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/zhe_theta.svg"
+                        alt="x_theta"
                         style={{
-                            height: "0.75em",
+                            height: "0.8em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+                    = the hyperbolic radian constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -6337,7 +6261,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="conventional value of coulomb-90 equation"
                         style={{
                             display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
+                            width: "288px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -6360,48 +6284,37 @@ const GROUP_SPACER_HEIGHT = '35px';
                     Where{" "}
 
                     <img
-                        src="/equations/j_0-1.svg"
-                        alt="j_o,1"
+                        src="/equations/silver_symbol.svg"
+                        alt="S*"
                         style={{
-                            height: "1em",
-                            verticalAlign: "-0.2em",
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> root of the Bessel function,{" "}
+                    = the silver constant,{" "}
 
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/zhe_theta.svg"
+                        alt="x_theta"
                         style={{
-                            height: "0.75em",
+                            height: "0.8em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+                    = the hyperbolic radian constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -6491,11 +6404,6 @@ const GROUP_SPACER_HEIGHT = '35px';
 
 
 
-
-
-
-
-
         
 28: (
             <div
@@ -6521,7 +6429,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Bohr magneton in inverse meter per tesla equation"
                         style={{
                             display: "inline-block",
-                            width: "340px",   // ✅ Set the width to exactly what you want
+                            width: "310px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -6610,37 +6518,37 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/d_do.svg"
-                        alt="D_Do"
+                        src="/equations/silver_symbol.svg"
+                        alt="S*"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the Dottie number,{" "}
+                    = the silver constant,{" "}
+                    
+                    <img
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/zhe_theta.svg"
+                        alt="x_theta"
                         style={{
-                            height: "0.75em",
+                            height: "0.8em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+                    = the hyperbolic radian constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -6831,7 +6739,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="nuclear magneton in inverse meter per tesla equation"
                         style={{
                             display: "inline-block",
-                            width: "340px",   // ✅ Set the width to exactly what you want
+                            width: "310px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -6920,37 +6828,37 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the proton mass,{" "}
 
                     <img
-                        src="/equations/d_do.svg"
-                        alt="D_Do"
+                        src="/equations/silver_symbol.svg"
+                        alt="S*"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the Dottie number,{" "}
+                    = the silver constant,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
+                    = Catalan&apos;s constant,{" "}
+                    
                     <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
+                        src="/equations/zhe_theta.svg"
+                        alt="x_theta"
                         style={{
-                            height: "0.75em",
+                            height: "0.8em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+                    = the hyperbolic radian constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -7137,7 +7045,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Coulomb&apos;s constant equation"
                         style={{
                             display: "inline-block",
-                            width: "270px",   // ✅ Set the width to exactly what you want
+                            width: "260px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -7363,7 +7271,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="atomic unit of permittivity equation"
                         style={{
                             display: "inline-block",
-                            width: "280px",   // ✅ Set the width to exactly what you want
+                            width: "285px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -7803,7 +7711,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="atomic unit of time equation"
                         style={{
                             display: "inline-block",
-                            width: "310px",   // ✅ Set the width to exactly what you want
+                            width: "360px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -7870,15 +7778,26 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/plastic_constant.svg"
-                        alt="P"
+                        src="/equations/domino_tiling_constant.svg"
+                        alt="C_d"
                         style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.1em",
+                            height: "0.92em",
+                            verticalAlign: "-0.25em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the plastic constant,{" "}
+                    = the domino tiling constant,{" "}
+
+                    <img
+                        src="/equations/c_u.svg"
+                        alt="C_Q"
+                        style={{
+                            height: "0.95em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the ubiquitous constant,{" "}
 
                     <img
                         src="/equations/zhe_theta.svg"
@@ -8000,7 +7919,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="hertz-hartree relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
+                            width: "415px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -8078,15 +7997,26 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/plastic_constant.svg"
-                        alt="P"
+                        src="/equations/domino_tiling_constant.svg"
+                        alt="C_d"
                         style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.1em",
+                            height: "0.92em",
+                            verticalAlign: "-0.25em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the plastic constant,{" "}
+                    = the domino tiling constant,{" "}
+
+                    <img
+                        src="/equations/c_u.svg"
+                        alt="C_Q"
+                        style={{
+                            height: "0.95em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the ubiquitous constant,{" "}
 
                     <img
                         src="/equations/zhe_theta.svg"
@@ -8210,7 +8140,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="hartree-hertz relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "340px",   // ✅ Set the width to exactly what you want
+                            width: "373px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -8288,15 +8218,26 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the Planck mass,{" "}
 
                     <img
-                        src="/equations/plastic_constant.svg"
-                        alt="P"
+                        src="/equations/domino_tiling_constant.svg"
+                        alt="C_d"
                         style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.1em",
+                            height: "0.92em",
+                            verticalAlign: "-0.25em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the plastic constant,{" "}
+                    = the domino tiling constant,{" "}
+
+                    <img
+                        src="/equations/c_u.svg"
+                        alt="C_Q"
+                        style={{
+                            height: "0.95em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the ubiquitous constant,{" "}
 
                     <img
                         src="/equations/zhe_theta.svg"
@@ -8421,7 +8362,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Rydberg constant times c in Hz equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "350px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -8499,15 +8440,26 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the Planck mass,{" "}
 
                     <img
-                        src="/equations/plastic_constant.svg"
-                        alt="P"
+                        src="/equations/domino_tiling_constant.svg"
+                        alt="C_d"
                         style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.1em",
+                            height: "0.92em",
+                            verticalAlign: "-0.25em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the plastic constant,{" "}
+                    = the domino tiling constant,{" "}
+
+                    <img
+                        src="/equations/c_u.svg"
+                        alt="C_Q"
+                        style={{
+                            height: "0.95em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the ubiquitous constant,{" "}
 
                     <img
                         src="/equations/zhe_theta.svg"
@@ -28261,7 +28213,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = the domino tiling consant,{" "}
+                    = the domino tiling constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -28525,7 +28477,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = the domino tiling consant,{" "}
+                    = the domino tiling constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -28816,7 +28768,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = the domino tiling consant,{" "}
+                    = the domino tiling constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
