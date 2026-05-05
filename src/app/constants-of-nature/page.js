@@ -859,7 +859,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="joule-hertz relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "345px",   // ✅ Set the width to exactly what you want
+                            width: "344px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -1252,7 +1252,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="hertz-electron volt relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "397px",   // ✅ Set the width to exactly what you want
+                            width: "396px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -1660,7 +1660,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="reduced Planck constant equation"
                         style={{
                             display: "inline-block",
-                            width: "273px",   // ✅ Set the width to exactly what you want
+                            width: "274px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -2090,7 +2090,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="quantum of circulation equation"
                         style={{
                             display: "inline-block",
-                            width: "294px",   // ✅ Set the width to exactly what you want
+                            width: "293px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -2552,7 +2552,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="Bohr magneton in eV/T equation"
                         style={{
                             display: "inline-block",
-                            width: "351px",   // ✅ Set the width to exactly what you want
+                            width: "350px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -3043,7 +3043,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="inverse of conductance quantum equation"
                         style={{
                             display: "inline-block",
-                            width: "323px",   // ✅ Set the width to exactly what you want
+                            width: "325px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
