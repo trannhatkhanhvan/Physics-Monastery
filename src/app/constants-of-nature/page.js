@@ -4922,7 +4922,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="lattice parameter of silicon equation"
                         style={{
                             display: "inline-block",
-                            width: "345px",   // ✅ Set the width to exactly what you want
+                            width: "346px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -5626,7 +5626,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="hartree-inverse meter relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "348px",   // ✅ Set the width to exactly what you want
+                            width: "349px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -5860,7 +5860,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="inverse meter-hartree relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "394px",   // ✅ Set the width to exactly what you want
+                            width: "396px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -7907,7 +7907,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="hertz-hartree relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "396px",   // ✅ Set the width to exactly what you want
+                            width: "398px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
