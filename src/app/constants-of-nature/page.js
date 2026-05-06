@@ -134,16 +134,16 @@ const GROUP_SPACER_HEIGHT = '35px';
         48: "triton g factor",
         49: "electron-muon magnetic moment ratio",
         50: "Newtonian constant of gravitation",
-        51: "Newtonian constant of graviation over h-bar c",
+        51: "Newtonian constant of gravitation over h-bar c",
         52: "neutron mass",
         53: "proton mass",
         54: "deuteron mass",
         55: "muon mass",
         56: "deuteron-electron magnetic moment ratio",
         57: "electron-deuteron magnetic moment ratio",
-        58: "deuteron magnetic moment",
+        58: "deuteron-proton magnetic moment ratio",
         59: "deuteron-neutron magnetic moment ratio",
-        60: "deuteron-proton magnetic moment ratio",
+        60: "deuteron magnetic moment",
         61: "shielded helion magnetic moment to Bohr magneton ratio",
         62: "shielded helion magnetic moment to nuclear magneton ratio",
         63: "helion g factor",
@@ -10930,7 +10930,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton magnetic moment to nuclear magneton ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "431px",   // ✅ Set the width to exactly what you want
+                            width: "427px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -11196,7 +11196,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton magnetic moment to Bohr magneton ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "432px",   // ✅ Set the width to exactly what you want
+                            width: "428px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -11462,7 +11462,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton g factor equation"
                         style={{
                             display: "inline-block",
-                            width: "432px",   // ✅ Set the width to exactly what you want
+                            width: "428px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -13958,7 +13958,7 @@ A<sub>mdm</sub>{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    deuteron magnetic moment
+                    deuteron-proton magnetic moment ratio
                 </div>
 
                 {/* 2. Empty Line */}
@@ -13967,11 +13967,11 @@ A<sub>mdm</sub>{" "}
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/deuteron_magnetic_moment.svg"
-                        alt="deuteron magnetic moment equation"
+                        src="/equations/deuteron-proton_magnetic_moment_ratio.svg"
+                        alt="deuteron-proton magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "440px",   // ✅ Set the width to exactly what you want
+                            width: "370px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -13991,29 +13991,7 @@ A<sub>mdm</sub>{" "}
                         lineHeight: "1.5em"
                     }}
                 >
-                    Where{" "}
-
-                    <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
+                    Where <i>S</i> = the Sierpi&#324;ski constant,{" "}
 
                     <img
                         src="/equations/s_symbol.svg"
@@ -14038,54 +14016,21 @@ A<sub>mdm</sub>{" "}
                     = Archimedes&apos; constant,{" "}
 
                     <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
+                        src="/equations/proton_mass_symbol.svg"
+                        alt="m_+"
                         style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/planck_charge.svg"
-                        alt="q_p"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck charge,{" "}
-
-                    <img
-                        src="/equations/planck_mass.svg"
-                        alt="m_p"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck mass,{" "}
-
-                    <img
-                        src="/equations/planck_time.svg"
-                        alt="t_p"
-                        style={{
-                            height: "1.05em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck time,{" "}
+                    = the proton mass,{" "}
 
                     <img
                         src="/equations/deuteron_mass_symbol.svg"
                         alt="m_de"
                         style={{
-                            height: "0.7em",
+                            height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -14093,22 +14038,33 @@ A<sub>mdm</sub>{" "}
                     = the deuteron mass,{" "}
 
                     <img
-                        src="/equations/derangement_symbol.svg"
-                        alt="!n"
+                        src="/equations/zhe_1.svg"
+                        alt="zhe_1"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.0em",
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the derangement function,{" "}
+                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_2.svg"
+                        alt="zhe_2"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
                         alt="zhe_r"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -14140,16 +14096,25 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_de_symbol.svg"
-      alt="mu_de"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "}
-      = 4.33073508815801... &times; 10<sup>&minus;27</sup> J/T
+    <img
+        src="/equations/mu_de_symbol.svg"
+        alt="mu_de"
+        style={{
+            height: "0.75em",
+            verticalAlign: "-0.2em",
+            display: "inline",
+        }}
+    />/
+    <img
+        src="/equations/mu_plus_symbol.svg"
+        alt="mu_+"
+        style={{
+            height: "0.75em",
+            verticalAlign: "-0.2em",
+            display: "inline",
+        }}
+    />{" "}
+      = 3.07012208062197... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -14165,20 +14130,29 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
   <span>
- <img
-     src="/equations/mu_de_symbol.svg"
-     alt="mu_de"
-     style={{
-         height: "0.75em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />{" "}
-      = 4.330735087(11) &times; 10<sup>&minus;27</sup> J/T
+  <img
+      src="/equations/mu_de_symbol.svg"
+      alt="mu_de"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />/
+    <img
+        src="/equations/mu_plus_symbol.svg"
+        alt="mu_+"
+        style={{
+            height: "0.75em",
+            verticalAlign: "-0.2em",
+            display: "inline",
+        }}
+    />{" "}
+      = 3.0701220930(79) &times; 10<sup>&minus;1</sup>
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mud|search_for=deuteron"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mudsmup|search_for=deuteron"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -14189,7 +14163,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.09"}
+                        {", σ = − 1.57"}
   </span>
                 </div>
 
@@ -14203,19 +14177,28 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
   <span>
- <img
-     src="/equations/mu_de_symbol.svg"
-     alt="mu_de"
-     style={{
-         height: "0.75em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />{" "}
-      = 4.330735094(11) &times; 10<sup>&minus;27</sup> J/T
+  <img
+      src="/equations/mu_de_symbol.svg"
+      alt="mu_de"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />/
+    <img
+        src="/equations/mu_plus_symbol.svg"
+        alt="mu_+"
+        style={{
+            height: "0.75em",
+            verticalAlign: "-0.2em",
+            display: "inline",
+        }}
+    />{" "}
+      = 3.0701220939(79) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
-    CODATA 2018, σ = − 0.53
+    CODATA 2018, σ = − 1.68
   </span>
                 </div>
 
@@ -14224,10 +14207,8 @@ A<sub>mdm</sub>{" "}
 
 
 
-        
 
-
-        59: (
+59: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -14510,9 +14491,7 @@ A<sub>mdm</sub>{" "}
 
 
 
-
-
-
+        
 
 60: (
             <div
@@ -14525,7 +14504,7 @@ A<sub>mdm</sub>{" "}
             >
                 {/* 1. Bold Title, left-aligned */}
                 <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    deuteron-proton magnetic moment ratio
+                    deuteron magnetic moment
                 </div>
 
                 {/* 2. Empty Line */}
@@ -14534,11 +14513,11 @@ A<sub>mdm</sub>{" "}
                 {/* 3. Equation Image, right-aligned */}
                 <div style={{textAlign: "right"}}>
                     <img
-                        src="/equations/deuteron-proton_magnetic_moment_ratio.svg"
-                        alt="deuteron-proton magnetic moment ratio equation"
+                        src="/equations/deuteron_magnetic_moment.svg"
+                        alt="deuteron magnetic moment equation"
                         style={{
                             display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
+                            width: "440px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -14558,7 +14537,29 @@ A<sub>mdm</sub>{" "}
                         lineHeight: "1.5em"
                     }}
                 >
-                    Where <i>S</i> = the Sierpi&#324;ski constant,{" "}
+                    Where{" "}
+
+                    <img
+                        src="/equations/zhe_1.svg"
+                        alt="zhe_1"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_2.svg"
+                        alt="zhe_2"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
 
                     <img
                         src="/equations/s_symbol.svg"
@@ -14583,21 +14584,54 @@ A<sub>mdm</sub>{" "}
                     = Archimedes&apos; constant,{" "}
 
                     <img
-                        src="/equations/proton_mass_symbol.svg"
-                        alt="m_+"
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "1em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the proton mass,{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/planck_charge.svg"
+                        alt="q_p"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck charge,{" "}
+
+                    <img
+                        src="/equations/planck_mass.svg"
+                        alt="m_p"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
+                        style={{
+                            height: "1.05em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
 
                     <img
                         src="/equations/deuteron_mass_symbol.svg"
                         alt="m_de"
                         style={{
-                            height: "0.75em",
+                            height: "0.7em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -14605,33 +14639,22 @@ A<sub>mdm</sub>{" "}
                     = the deuteron mass,{" "}
 
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
+                        src="/equations/derangement_symbol.svg"
+                        alt="!n"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
+                            height: "0.75em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
+                    = the derangement function,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
                         alt="zhe_r"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
@@ -14663,25 +14686,16 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
   <span>
-    <img
-        src="/equations/mu_de_symbol.svg"
-        alt="mu_de"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />/
-    <img
-        src="/equations/mu_plus_symbol.svg"
-        alt="mu_+"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />{" "}
-      = 3.07012208062197... &times; 10<sup>&minus;1</sup>
+  <img
+      src="/equations/mu_de_symbol.svg"
+      alt="mu_de"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 4.33073508815801... &times; 10<sup>&minus;27</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -14697,29 +14711,20 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_de_symbol.svg"
-      alt="mu_de"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/
-    <img
-        src="/equations/mu_plus_symbol.svg"
-        alt="mu_+"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />{" "}
-      = 3.0701220930(79) &times; 10<sup>&minus;1</sup>
+ <img
+     src="/equations/mu_de_symbol.svg"
+     alt="mu_de"
+     style={{
+         height: "0.75em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />{" "}
+      = 4.330735087(11) &times; 10<sup>&minus;27</sup> J/T
 </span>
                     <span>
     <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mudsmup|search_for=deuteron"
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mud|search_for=deuteron"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -14730,7 +14735,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 1.57"}
+                        {", σ = + 0.09"}
   </span>
                 </div>
 
@@ -14744,28 +14749,19 @@ A<sub>mdm</sub>{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_de_symbol.svg"
-      alt="mu_de"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/
-    <img
-        src="/equations/mu_plus_symbol.svg"
-        alt="mu_+"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />{" "}
-      = 3.0701220939(79) &times; 10<sup>&minus;1</sup>
+ <img
+     src="/equations/mu_de_symbol.svg"
+     alt="mu_de"
+     style={{
+         height: "0.75em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />{" "}
+      = 4.330735094(11) &times; 10<sup>&minus;27</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 1.68
+    CODATA 2018, σ = − 0.53
   </span>
                 </div>
 
@@ -14775,10 +14771,7 @@ A<sub>mdm</sub>{" "}
 
 
 
-
-
-
-        61: (
+61: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
