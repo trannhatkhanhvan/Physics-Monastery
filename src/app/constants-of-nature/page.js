@@ -9650,7 +9650,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="atomic unit of magnetic dipole moment equation"
                         style={{
                             display: "inline-block",
-                            width: "355px",   // ✅ Set the width to exactly what you want
+                            width: "359px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
