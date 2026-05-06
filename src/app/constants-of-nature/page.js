@@ -8741,7 +8741,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –6.84979055239458... &times; 10<sup>&minus;1</sup>
+      = –6.84979089984965... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -8790,7 +8790,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = − 1.84"}
+                        {", σ = + 1.63"}
   </span>
                 </div>
 
@@ -8825,7 +8825,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = –6.8497934(16) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
-    CODATA 2018, σ = − 1.78
+    CODATA 2018, σ = − 1.56
   </span>
                 </div>
 
@@ -9005,7 +9005,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –1.45989865288715...
+      = –1.45989857883392...
 </span>
 
                     <span>prediction</span>
@@ -9054,7 +9054,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 1.86"}
+                        {", σ = − 1.64"}
   </span>
                 </div>
 
@@ -9089,7 +9089,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = –1.45989805(34)
   </span>
                     <span>
-    CODATA 2018, σ = + 1.77
+    CODATA 2018, σ = + 1.56
   </span>
                 </div>
 
@@ -9266,7 +9266,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = 9.60920481860633... &times; 10<sup>2</sup>
+      = 9.60920151018571... &times; 10<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -9315,7 +9315,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.01"}
+                        {", σ = − 1.43"}
   </span>
                 </div>
 
@@ -9351,7 +9351,7 @@ const GROUP_SPACER_HEIGHT = '35px';
 
   </span>
                     <span>
-    CODATA 2018, σ = − 0.09
+    CODATA 2018, σ = − 1.51
   </span>
                 </div>
 
@@ -9530,7 +9530,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = 1.04066883668011... &times; 10<sup>&minus;3</sup>
+      = 1.04066919497942... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -9579,7 +9579,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = − 0.01"}
+                        {", σ = + 1.48"}
   </span>
                 </div>
 
@@ -9615,7 +9615,7 @@ const GROUP_SPACER_HEIGHT = '35px';
 
   </span>
                     <span>
-    CODATA 2018, σ = + 0.07
+    CODATA 2018, σ = + 1.50
   </span>
                 </div>
 
@@ -9798,7 +9798,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   A<sub>mdm</sub>{" "}
-      = 1.85480201397335... &times; 10<sup>&minus;23</sup> J/T
+      = 1.85480201088696... &times; 10<sup>&minus;23</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -9830,7 +9830,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 1.42"}
+                        {", σ = − 3.90"}
   </span>
                 </div>
 
@@ -9848,7 +9848,7 @@ A<sub>mdm</sub>{" "}
       = 1.85480201556(56) &times; 10<sup>&minus;23</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 2.83
+    CODATA 2018, σ = − 8.53
   </span>
                 </div>
 
@@ -10038,7 +10038,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 9.27401006986677... &times; 10<sup>&minus;2</sup> J/T
+      = 9.27401005443480... &times; 10<sup>&minus;2</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -10078,7 +10078,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 1.44"}
+                        {", σ = − 3.88"}
   </span>
                 </div>
 
@@ -10104,7 +10104,7 @@ A<sub>mdm</sub>{" "}
       = 9.2740100783(28) &times; 10<sup>&minus;2</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 3.01
+    CODATA 2018, σ = − 8.52
   </span>
                 </div>
 
@@ -10296,7 +10296,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.05078374162010... &times; 10<sup>&minus;27</sup> J/T
+      = 5.05078373314114... &times; 10<sup>&minus;27</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -10336,7 +10336,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 1.45"}
+                        {", σ = − 3.85"}
   </span>
                 </div>
 
@@ -10362,7 +10362,7 @@ A<sub>mdm</sub>{" "}
       = 5.0507837461(15) &times; 10<sup>&minus;27</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 2.99
+    CODATA 2018, σ = − 8.63
   </span>
                 </div>
 
@@ -10809,7 +10809,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 1.06663992389902...
+      = 1.06663991754137...
 </span>
 
                     <span>prediction</span>
@@ -10858,7 +10858,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 2.38"}
+                        {", σ = − 0.65"}
   </span>
                 </div>
 
@@ -10893,7 +10893,7 @@ A<sub>mdm</sub>{" "}
       = 1.0666399191(21)
   </span>
                     <span>
-    CODATA 2018, σ = + 2.29
+    CODATA 2018, σ = − 0.74
   </span>
                 </div>
 
@@ -11073,7 +11073,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 2.97896246252858...
+      = 2.97896247563036...
 </span>
 
                     <span>prediction</span>
@@ -11122,7 +11122,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.42"}
+                        {", σ = + 1.80"}
   </span>
                 </div>
 
@@ -11157,7 +11157,7 @@ A<sub>mdm</sub>{" "}
       = 2.9789624656(59)
   </span>
                     <span>
-    CODATA 2018, σ = − 0.52
+    CODATA 2018, σ = + 1.70
   </span>
                 </div>
 
@@ -11339,7 +11339,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 1.62239366350527... &times; 10<sup>&minus;3</sup>
+      = 1.62239367061578... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -11388,7 +11388,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.41"}
+                        {", σ = + 1.82"}
   </span>
                 </div>
 
@@ -11423,7 +11423,7 @@ A<sub>mdm</sub>{" "}
       = 1.6223936651(32) &times; 10<sup>&minus;3</sup>
   </span>
                     <span>
-    CODATA 2018, σ = − 0.50
+    CODATA 2018, σ = + 1.72
   </span>
                 </div>
 
@@ -11596,7 +11596,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.95792492505717...
+      = 5.95792495126071...
 </span>
 
                     <span>prediction</span>
@@ -11636,7 +11636,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.42"}
+                        {", σ = + 1.77"}
   </span>
                 </div>
 
@@ -11662,7 +11662,7 @@ A<sub>mdm</sub>{" "}
       = 5.957924931(12)
   </span>
                     <span>
-    CODATA 2018, σ = − 0.50
+    CODATA 2018, σ = − 1.69
   </span>
                 </div>
 
@@ -11743,48 +11743,26 @@ A<sub>mdm</sub>{" "}
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/v_fe.svg"
-                        alt="V_fe"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
-                            height: "0.90em",
-                            verticalAlign: "-0.25em",
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic figure eight knot volume,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
+                        src="/equations/zhe_r.svg"
+                        alt="zhe_r"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic radius constant,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic radius constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic radius constant, and{" "}
+                    = the hyperbolic radius constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -11830,7 +11808,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.06766983099311... &times; 10<sup>2</sup>
+      = 2.06767001388473... &times; 10<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -11879,7 +11857,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 1.09"}
+                        {", σ = + 2.89"}
   </span>
                 </div>
 
@@ -11914,7 +11892,7 @@ A<sub>mdm</sub>{" "}
       = 2.067669883(46) &times; 10<sup>2</sup>
   </span>
                     <span>
-    CODATA 2018, σ = − 1.13
+    CODATA 2018, σ = + 2.85
   </span>
                 </div>
 
@@ -12307,7 +12285,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />c{" "}
-      = 6.70882525604657... &times; 10<sup>15</sup> c<sup>4</sup>/GeV<sup>2</sup>
+      = 6.70882525599676... &times; 10<sup>15</sup> c<sup>4</sup>/GeV<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -12425,7 +12403,7 @@ A<sub>mdm</sub>{" "}
                         alt="neutron mass equation"
                         style={{
                             display: "inline-block",
-                            width: "351px",   // ✅ Set the width to exactly what you want
+                            width: "328px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -12448,59 +12426,15 @@ A<sub>mdm</sub>{" "}
                     Where{" "}
 
                     <img
-                        src="/equations/g_gi.svg"
-                        alt="G_Gi"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Gieseking&apos;s constant,{" "}
-
-                    <img
-                        src="/equations/atomic_mass_constant_symbol.svg"
-                        alt="A_mass"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the atomic mass constant,{" "}
-
-                    <img
-                        src="/equations/derangement_symbol.svg"
-                        alt="!n"
-                        style={{
-                            height: "0.75em",
+                            height: "0.55em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the derangement function,{" "}
-
-                    <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/s_symbol.svg"
@@ -12514,26 +12448,51 @@ A<sub>mdm</sub>{" "}
                     = the arc length of the unit lemniscate,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/golden_ratio.svg"
+                        alt="φ"
                         style={{
                             height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+                    = the golden ratio,{" "}
+
+                    GeV{" "}
+                    = the giga electron-volt,{" "}
 
                     <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "1.05em",
+                            verticalAlign: "-0.4em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/zhe_r.svg"
+                        alt="zhe_r"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic radius constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -12570,7 +12529,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.67492749974453... &times; 10<sup>&minus;27</sup> kg
+      = 1.67492749887876... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -12611,7 +12570,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.96"}
+                        {", σ = − 1.98"}
   </span>
                 </div>
 
@@ -12638,7 +12597,7 @@ A<sub>mdm</sub>{" "}
 
   </span>
                     <span>
-    CODATA 2018, σ = + 1.79
+    CODATA 2018, σ = + 0.88
   </span>
                 </div>
 
@@ -12694,6 +12653,31 @@ A<sub>mdm</sub>{" "}
                     Where{" "}
 
                     <img
+                        src="/equations/pi.svg"
+                        alt="pi"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/s_symbol.svg"
+                        alt="s"
+                        style={{
+                            height: "0.5em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the arc length of the unit lemniscate,{" "}
+
+                    GeV{" "}
+                    = the giga electron-volt,{" "}
+
+                    <img
                         src="/equations/omega_2_constant.svg"
                         alt="omega_2"
                         style={{
@@ -12705,66 +12689,55 @@ A<sub>mdm</sub>{" "}
                     = the omega_2 constant,{" "}
 
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
+                        src="/equations/planck_time.svg"
+                        alt="t_p"
                         style={{
-                            height: "0.8em",
+                            height: "1.05em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck time,{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+                    = the Planck length,{" "}
 
                     <img
-                        src="/equations/v_fe.svg"
-                        alt="V_fe"
+                        src="/equations/e_symbol.svg"
+                        alt="e"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the figure eight knot hyperbolic volume,{" "}
-
-                    <img
-                        src="/equations/planck_mass.svg"
-                        alt="m_p"
-                        style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck mass,{" "}
-
-                    <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
-                        style={{
-                            height: "0.55em",
+                            height: "0.5em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the arc length of the unit lemniscate,{" "}
+                    = the Euler&apos;s number,{" "}
 
                     <img
-                        src="/equations/derangement_symbol.svg"
-                        alt="!n"
+                        src="/equations/euler-mascheroni_constant.svg"
+                        alt="y"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.0em",
+                            height: "0.7em",
+                            verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the derangement function,{" "}
+                    = the Euler-Mascheroni constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
                         alt="zhe_r"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -12908,7 +12881,7 @@ A<sub>mdm</sub>{" "}
                         alt="deuteron mass equation"
                         style={{
                             display: "inline-block",
-                            width: "440px",   // ✅ Set the width to exactly what you want
+                            width: "424px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -12931,26 +12904,15 @@ A<sub>mdm</sub>{" "}
                     Where{" "}
 
                     <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
+                        src="/equations/c_r1.svg"
+                        alt="C_R1"
                         style={{
-                            height: "1.00em",
-                            verticalAlign: "-0.35em",
+                            height: "0.88em",
+                            verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the universal parabolic constant,{" "}
-
-                    <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
-                        style={{
-                            height: "0.5em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the arc length of the unit lemniscate,{" "}
+                    = Ramanujan&apos;s 1<sup>st</sup> continued fraction constant,{" "}
 
                     <img
                         src="/equations/pi.svg"
@@ -12975,26 +12937,26 @@ A<sub>mdm</sub>{" "}
                     = the atomic mass constant,{" "}
 
                     <img
-                        src="/equations/omega_2_constant.svg"
-                        alt="omega_2"
+                        src="/equations/1st_foias_constant.svg"
+                        alt="x_infinity"
                         style={{
                             height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the omega_2 constant,{" "}
+                    = the 1<sup>st</sup> Foias constant,{" "}
 
-                        <img
-                        src="/equations/v_fe.svg"
-                        alt="V_fe"
+                    <img
+                        src="/equations/s_symbol.svg"
+                        alt="s"
                         style={{
-                            height: "0.90em",
-                            verticalAlign: "-0.25em",
+                            height: "0.5em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic figure eight knot volume,{" "}
+                    = the arc length of the unit lemniscate,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -13042,7 +13004,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.34358377652242... &times; 10<sup>&minus;27</sup> kg
+      = 3.34358377536356... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -13082,7 +13044,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.28"}
+                        {", σ = − 1.44"}
   </span>
                 </div>
 
@@ -13108,7 +13070,7 @@ A<sub>mdm</sub>{" "}
       = 3.3435837724(10) &times; 10<sup>&minus;27</sup> kg
   </span>
                     <span>
-    CODATA 2018, σ = + 4.12
+    CODATA 2018, σ = + 2.96
   </span>
                 </div>
 
@@ -13202,37 +13164,15 @@ A<sub>mdm</sub>{" "}
                     = the atomic mass constant,{" "}
 
                     <img
-                        src="/equations/omega_2_constant.svg"
-                        alt="omega_2"
+                        src="/equations/khinchin_mean_of_order_-6.svg"
+                        alt="K_-6"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the omega_2 constant,{" "}
-
-                    <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
-                        style={{
-                            height: "0.8em",
+                            height: "0.94em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
+                    = the Khinchin mean of order −6, and{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -13280,7 +13220,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.88353176458857... &times; 10<sup>&minus;28</sup> kg
+      = 1.88353161502363... &times; 10<sup>&minus;28</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -13320,7 +13260,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 3.28"}
+                        {", σ = − 0.29"}
   </span>
                 </div>
 
@@ -13346,7 +13286,7 @@ A<sub>mdm</sub>{" "}
       = 1.883531627(42) &times; 10<sup>&minus;28</sup> kg
   </span>
                     <span>
-    CODATA 2018, σ = + 3.28
+    CODATA 2018, σ = − 0.29
   </span>
                 </div>
 
@@ -13457,43 +13397,10 @@ A<sub>mdm</sub>{" "}
                         }}
                     />{" "}
                     = the deuteron mass,{" "}
-
-                    <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-
+                    
                     <img
                         src="/equations/1st_lemniscate_constant.svg"
                         alt="L_1"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> lemniscate constant,{" "}
-
-                    <img
-                        src="/equations/g_gi.svg"
-                        alt="G_Gi"
                         style={{
                             height: "0.95em",
                             verticalAlign: "-0.3em",
@@ -13511,7 +13418,7 @@ A<sub>mdm</sub>{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic radius constant, and{" "}
+                    = the hyperbolic radius constant, and {" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -13557,7 +13464,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –4.66434554724040... &times; 10<sup>&minus;4</sup>
+      = – 4.66434558972526... &times; 10<sup>&minus;4</sup>
 </span>
 
                     <span>prediction</span>
@@ -13591,7 +13498,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –4.664345550(12)... &times; 10<sup>&minus;4</sup>
+      = – 4.664345550(12)... &times; 10<sup>&minus;4</sup>
 </span>
                     <span>
     <a
@@ -13606,7 +13513,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.23"}
+                        {", σ = − 3.31"}
   </span>
                 </div>
 
@@ -13638,10 +13545,10 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –4.664345551(12)... &times; 10<sup>&minus;4</sup>
+      = – 4.664345551(12)... &times; 10<sup>&minus;4</sup>
   </span>
                     <span>
-    CODATA 2018, σ = − 0.32
+    CODATA 2018, σ = − 3.23
   </span>
                 </div>
 
@@ -13754,28 +13661,6 @@ A<sub>mdm</sub>{" "}
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-
-                    <img
                         src="/equations/1st_lemniscate_constant.svg"
                         alt="L_1"
                         style={{
@@ -13785,18 +13670,7 @@ A<sub>mdm</sub>{" "}
                         }}
                     />{" "}
                     = the 1<sup>st</sup> lemniscate constant,{" "}
-
-                    <img
-                        src="/equations/g_gi.svg"
-                        alt="G_Gi"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> lemniscate constant,{" "}
-
+                    
                     <img
                         src="/equations/zhe_r.svg"
                         alt="zhe_r"
@@ -13852,7 +13726,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –2.14392349338619... &times; 10<sup>3</sup>
+      = – 2.14392349338619... &times; 10<sup>3</sup>
 </span>
 
                     <span>prediction</span>
@@ -13886,7 +13760,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –2.1439234921(56) &times; 10<sup>3</sup>
+      = – 2.1439234921(56) &times; 10<sup>3</sup>
 </span>
                     <span>
     <a
@@ -13933,7 +13807,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –2.1439234915(56) &times; 10<sup>3</sup>
+      = – 2.1439234915(56) &times; 10<sup>3</sup>
   </span>
                     <span>
     CODATA 2018, σ = + 0.34
@@ -14038,27 +13912,27 @@ A<sub>mdm</sub>{" "}
                     = the deuteron mass,{" "}
 
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
+                        src="/equations/derangement_symbol.svg"
+                        alt="!n"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
+                            height: "0.75em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+                    = the derangement function,{" "}
 
                     <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
+                        src="/equations/golden_ratio.svg"
+                        alt="φ"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
+                            height: "0.75em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-
+                    = the golden ratio,{" "}
+                    
                     <img
                         src="/equations/zhe_r.svg"
                         alt="zhe_r"
@@ -14114,7 +13988,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 3.07012208062197... &times; 10<sup>&minus;1</sup>
+      = 3.07012209391064... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -14163,7 +14037,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 1.57"}
+                        {", σ = + 0.12"}
   </span>
                 </div>
 
@@ -14198,7 +14072,7 @@ A<sub>mdm</sub>{" "}
       = 3.0701220939(79) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
-    CODATA 2018, σ = − 1.68
+    CODATA 2018, σ = + 0.00
   </span>
                 </div>
 
@@ -14310,37 +14184,15 @@ A<sub>mdm</sub>{" "}
                     = the deuteron mass,{" "}
 
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
+                        src="/equations/omega_1_constant.svg"
+                        alt="omega_1"
                         style={{
-                            height: "0.8em",
+                            height: "0.75em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/l_2.svg"
-                        alt="L_2"
-                        style={{
-                            height: "1.0em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> lemniscate constant,{" "}
+                    = the omega_1 constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -14397,7 +14249,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –4.48206214973912... &times; 10<sup>&minus;1</sup>
+      = – 4.48206589748066... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -14431,7 +14283,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –4.4820652(11) &times; 10<sup>&minus;1</sup>
+      = – 4.4820652(11) &times; 10<sup>&minus;1</sup>
 </span>
                     <span>
     <a
@@ -14446,7 +14298,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 2.77"}
+                        {", σ = − 0.63"}
   </span>
                 </div>
 
@@ -14478,10 +14330,10 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –4.4820653(11) &times; 10<sup>&minus;1</sup>
+      = – 4.4820653(11) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
-    CODATA 2018, σ = − 2.91
+    CODATA 2018, σ = − 0.54
   </span>
                 </div>
 
@@ -14639,15 +14491,15 @@ A<sub>mdm</sub>{" "}
                     = the deuteron mass,{" "}
 
                     <img
-                        src="/equations/derangement_symbol.svg"
-                        alt="!n"
+                        src="/equations/omega_2_constant.svg"
+                        alt="omega_2"
                         style={{
                             height: "0.75em",
-                            verticalAlign: "-0.0em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the derangement function,{" "}
+                    = the omega_2 constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -14695,7 +14547,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.33073508815801... &times; 10<sup>&minus;27</sup> J/T
+      = 4.33073506076084... &times; 10<sup>&minus;27</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -14735,7 +14587,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.09"}
+                        {", σ = − 2.39"}
   </span>
                 </div>
 
@@ -14761,7 +14613,7 @@ A<sub>mdm</sub>{" "}
       = 4.330735094(11) &times; 10<sup>&minus;27</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 0.53
+    CODATA 2018, σ = − 3.02
   </span>
                 </div>
 
@@ -14862,37 +14714,15 @@ A<sub>mdm</sub>{" "}
                     = the helion mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/l_ll.svg"
-                        alt="L_LL"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Laplace limit,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -14949,7 +14779,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.15867149473746... &times; 10<sup>&minus;3</sup>
+      = – 1.15867149675922... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -14983,7 +14813,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.15867149457(94) &times; 10<sup>&minus;3</sup>
+      = – 1.15867149457(94) &times; 10<sup>&minus;3</sup>
 </span>
                     <span>
     <a
@@ -14998,7 +14828,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.18"}
+                        {", σ = – 2.33"}
   </span>
                 </div>
 
@@ -15030,10 +14860,10 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.158671474(14) &times; 10<sup>&minus;3</sup>
+      = – 1.158671474(14) &times; 10<sup>&minus;3</sup>
   </span>
                     <span>
-    CODATA 2018, σ = + 1.48
+    CODATA 2018, σ = – 1.84
   </span>
                 </div>
 
@@ -15157,37 +14987,16 @@ A<sub>mdm</sub>{" "}
                     = the helion mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/l_ll.svg"
-                        alt="L_LL"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Laplace limit,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -15244,7 +15053,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –2.12749776263753...
+      = – 2.12749776630982...
 </span>
 
                     <span>prediction</span>
@@ -15278,7 +15087,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –2.1274977624(17)
+      = – 2.1274977624(17)
 </span>
                     <span>
     <a
@@ -15293,7 +15102,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.14"}
+                        {", σ = – 2.30"}
   </span>
                 </div>
 
@@ -15325,10 +15134,10 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –2.127497719(25)
+      = – 2.127497719(25)
   </span>
                     <span>
-    CODATA 2018, σ = + 1.75
+    CODATA 2018, σ = – 1.89
   </span>
                 </div>
 
@@ -15457,37 +15266,15 @@ A<sub>mdm</sub>{" "}
                     = the helion mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/j_0-1.svg"
-                        alt="j_0,1"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> root of the Bessel function,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -15535,7 +15322,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = –4.25525070091675...
+      = – 4.25525070338145...
 </span>
 
                     <span>prediction</span>
@@ -15560,7 +15347,7 @@ A<sub>mdm</sub>{" "}
         display: "inline",
     }}
 />{" "}
-      = –4.2552506995(34)
+      = – 4.2552506995(34)
 </span>
                     <span>
     <a
@@ -15575,7 +15362,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.42"}
+                        {", σ = – 1.14"}
   </span>
                 </div>
 
@@ -15598,10 +15385,10 @@ A<sub>mdm</sub>{" "}
          display: "inline",
      }}
  />{" "}
-      = –4.255250615(50)
+      = – 4.255250615(50)
   </span>
                     <span>
-    CODATA 2018, σ = + 1.72
+    CODATA 2018, σ = – 1.77
   </span>
                 </div>
 
@@ -15727,37 +15514,15 @@ A<sub>mdm</sub>{" "}
                     = the helion mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/j_0-1.svg"
-                        alt="j_0,1"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> root of the Bessel function,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -15814,7 +15579,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –2.12762535045837...
+      = – 2.12762535169073...
 </span>
 
                     <span>prediction</span>
@@ -15848,7 +15613,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –2.1276253498(17)
+      = – 2.1276253498(17)
 </span>
                     <span>
     <a
@@ -15863,7 +15628,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.39"}
+                        {", σ = – 1.11"}
   </span>
                 </div>
 
@@ -15895,10 +15660,10 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –2.127625307(25)
+      = – 2.127625307(25)
   </span>
                     <span>
-    CODATA 2018, σ = + 1.74
+    CODATA 2018, σ = – 1.79
   </span>
                 </div>
 
@@ -16004,37 +15769,15 @@ A<sub>mdm</sub>{" "}
                     = the helion mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/j_0-1.svg"
-                        alt="j_0,1"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> root of the Bessel function,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -16091,7 +15834,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.15874098123643... &times; 10<sup>&minus;3</sup>
+      = – 1.15874098192936... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -16125,7 +15868,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.15874098083(94) &times; 10<sup>&minus;3</sup>
+      = – 1.15874098083(94) &times; 10<sup>&minus;3</sup>
 </span>
                     <span>
     <a
@@ -16140,7 +15883,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.43"}
+                        {", σ = – 1.17"}
   </span>
                 </div>
 
@@ -16172,10 +15915,10 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = –1.158740958(14) &times; 10<sup>&minus;3</sup>
+      = – 1.158740958(14) &times; 10<sup>&minus;3</sup>
   </span>
                     <span>
-    CODATA 2018, σ = + 1.66
+    CODATA 2018, σ = – 1.71
   </span>
                 </div>
 
@@ -16275,28 +16018,39 @@ A<sub>mdm</sub>{" "}
                         }}
                     />{" "}
                     = the Planck charge,{" "}
-
-                   <img
-                        src="/equations/catalan_s_constant.svg"
-                        alt="K"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Catalan&apos;s constant,{" "}
-
+                    
                     <img
-                        src="/equations/zhe_theta.svg"
-                        alt="x_theta"
+                        src="/equations/g_ga.svg"
+                        alt="G_Ga"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic radian constant, and{" "}
+                    = the Gauss&apos;s constant,{" "}
+
+                    <img
+                        src="/equations/s_symbol.svg"
+                        alt="s"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the arc length of the unit lemniscate,{" "}
+
+                    <img
+                        src="/equations/zhe_r.svg"
+                        alt="zhe_r"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic radius constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -16333,7 +16087,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.25663706096113... &times; 10<sup>&minus;6</sup> N/A<sup>2</sup>
+      = 1.25663706158249... &times; 10<sup>&minus;6</sup> N/A<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -16373,7 +16127,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 1.54"}
+                        {", σ = + 1.56"}
   </span>
                 </div>
 
@@ -16399,7 +16153,7 @@ A<sub>mdm</sub>{" "}
       = 1.25663706212(19) &times; 10<sup>&minus;6</sup> N/A<sup>2</sup>
   </span>
                     <span>
-    CODATA 2018, σ = − 6.10
+    CODATA 2018, σ = − 2.83
   </span>
                 </div>
 
@@ -16499,6 +16253,17 @@ A<sub>mdm</sub>{" "}
                         }}
                     />{" "}
                     = the Planck mass,{" "}
+                    
+                    <img
+                        src="/equations/s_symbol.svg"
+                        alt="s"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the arc length of the unit lemniscate,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -16546,7 +16311,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 9.10938371330076... &times; 10<sup>&minus;31</sup> kg
+      = 9.10938371013637... &times; 10<sup>&minus;31</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -16586,7 +16351,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.21"}
+                        {", σ = − 1.34"}
   </span>
                 </div>
 
@@ -16612,7 +16377,7 @@ A<sub>mdm</sub>{" "}
       = 9.1093837015(28) &times; 10<sup>&minus;31</sup> kg
   </span>
                     <span>
-    CODATA 2018, σ = + 4.21
+    CODATA 2018, σ = + 3.08
   </span>
                 </div>
 
@@ -16690,48 +16455,15 @@ A<sub>mdm</sub>{" "}
                     Where{" "}
 
                     <img
-                        src="/equations/gamma_function.svg"
-                        alt="gamma function"
+                        src="/equations/l_ll.svg"
+                        alt="L_LL"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the gamma function,{" "}
-
-                    <img
-                        src="/equations/pi.svg"
-                        alt="pi"
-                        style={{
-                            height: "0.53em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/atomic_mass_constant_symbol.svg"
-                        alt="A_mass"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the atomic mass constant,{" "}
-
-                    <img
-                        src="/equations/derangement_symbol.svg"
-                        alt="!n"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the derangement function,{" "}
+                    = the Laplace limit,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -16745,17 +16477,6 @@ A<sub>mdm</sub>{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
 
                     <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-
-                    <img
                         src="/equations/s_symbol.svg"
                         alt="s"
                         style={{
@@ -16767,26 +16488,37 @@ A<sub>mdm</sub>{" "}
                     = the arc length of the unit lemniscate,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.53em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
+                        src="/equations/planck_mass.svg"
+                        alt="m_p"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+                    = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/zhe_r.svg"
+                        alt="zhe_r"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic radius constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -16823,7 +16555,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.16754978503555... &times; 10<sup>&minus;27</sup> kg
+      = 3.16754546668955... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -16864,7 +16596,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.05"}
+                        {", σ = + 0.03"}
   </span>
                 </div>
 
@@ -16891,7 +16623,7 @@ A<sub>mdm</sub>{" "}
 
   </span>
                     <span>
-    CODATA 2018, σ = + 0.05
+    CODATA 2018, σ = + 0.03
   </span>
                 </div>
 
@@ -16994,26 +16726,26 @@ A<sub>mdm</sub>{" "}
                     = the Planck mass,{" "}
 
                     <img
-                        src="/equations/omega_1_constant.svg"
-                        alt="omega_1"
+                        src="/equations/g_ga.svg"
+                        alt="G_Ga"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.3em",
+                            height: "0.95em",
+                            verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the omega_1 constant,{" "}
-
+                    = the Gauss&apos;s constant,{" "}
+                    
                     <img
-                        src="/equations/omega_2_constant.svg"
-                        alt="omega_2"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.3em",
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the omega_2 constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -17061,7 +16793,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.00735675019372... &times; 10<sup>&minus;27</sup> kg
+      = 5.00735674910... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -17101,7 +16833,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.63"}
+                        {", σ = − 1.57"}
   </span>
                 </div>
 
@@ -17127,7 +16859,7 @@ A<sub>mdm</sub>{" "}
       = 5.0073567446(15) &times; 10<sup>&minus;27</sup> kg
   </span>
                     <span>
-    CODATA 2018, σ = + 3.73
+    CODATA 2018, σ = + 2.72
   </span>
                 </div>
 
@@ -17262,26 +16994,26 @@ A<sub>mdm</sub>{" "}
                     = the atomic mass constant,{" "}
 
                     <img
-                        src="/equations/omega_1_constant.svg"
-                        alt="omega_1"
+                        src="/equations/g_ga.svg"
+                        alt="G_Ga"
                         style={{
-                            height: "0.75em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the omega_1 constant,{" "}
+                    = the Gauss&apos;s constant,{" "}
 
                     <img
-                        src="/equations/omega_2_constant.svg"
-                        alt="omega_2"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.3em",
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the omega_2 constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -17329,7 +17061,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.83053688758410... &times; 10<sup>2</sup> lm/W
+      = 6.83002503039578... &times; 10<sup>2</sup> lm/W
 </span>
 
                     <span>prediction</span>
@@ -17512,7 +17244,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/atomic_mass_constant_symbol.svg"
                         alt="A_mass"
                         style={{
-                            height: "0.9em",
+                            height: "0.98em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -17520,37 +17252,15 @@ A<sub>mdm</sub>{" "}
                     = the atomic mass constant,{" "}
 
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
+                        src="/equations/1st_foias_constant.svg"
+                        alt="x_infinity"
                         style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
-                        style={{
-                            height: "1.00em",
-                            verticalAlign: "-0.35em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the universal parabolic constant,{" "}
+                    = the 1<sup>st</sup> Foias constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -17598,7 +17308,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.00641278555121... &times; 10<sup>&minus;27</sup> kg
+      = 5.00641278404447... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -17638,7 +17348,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.41"}
+                        {", σ = − 1.35"}
   </span>
                 </div>
 
@@ -17664,7 +17374,7 @@ A<sub>mdm</sub>{" "}
       = 5.0064127796(15) &times; 10<sup>&minus;27</sup> kg
   </span>
                     <span>
-    CODATA 2018, σ = + 3.97
+    CODATA 2018, σ = + 2.92
   </span>
                 </div>
 
@@ -17760,7 +17470,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/atomic_mass_constant_symbol.svg"
                         alt="A_mass"
                         style={{
-                            height: "0.9em",
+                            height: "0.98em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -17768,26 +17478,26 @@ A<sub>mdm</sub>{" "}
                     = the atomic mass constant,{" "}
 
                     <img
-                        src="/equations/g_gi.svg"
-                        alt="G_Gi"
+                        src="/equations/v_fe.svg"
+                        alt="V_fe"
                         style={{
-                            height: "0.95em",
+                            height: "0.9em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the figure eight knot hyperbolic volume,{" "}
+
+                    <img
+                        src="/equations/1st_foias_constant.svg"
+                        alt="x_infinity"
+                        style={{
+                            height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking&apos;s constant,{" "}
-
-                    <img
-                        src="/equations/madelung_constant.svg"
-                        alt="M"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Madelung constant,{" "}
+                    = the 1<sup>st</sup> Foias constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -17835,7 +17545,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.64465734454630... &times; 10<sup>&minus;27</sup> kg
+      = 6.64465734214075... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -17875,7 +17585,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.22"}
+                        {", σ = − 1.36"}
   </span>
                 </div>
 
@@ -17901,7 +17611,7 @@ A<sub>mdm</sub>{" "}
       = 6.6446573357(20) &times; 10<sup>&minus;27</sup> kg
   </span>
                     <span>
-    CODATA 2018, σ = + 4.42
+    CODATA 2018, σ = + 3.22
   </span>
                 </div>
 
