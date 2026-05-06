@@ -10397,7 +10397,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton magnetic moment equation"
                         style={{
                             display: "inline-block",
-                            width: "456px",   // ✅ Set the width to exactly what you want
+                            width: "465px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -10675,7 +10675,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton to proton magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "366px",   // ✅ Set the width to exactly what you want
+                            width: "372px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -10930,7 +10930,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton magnetic moment to nuclear magneton ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "435px",   // ✅ Set the width to exactly what you want
+                            width: "431px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -11462,7 +11462,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton g factor equation"
                         style={{
                             display: "inline-block",
-                            width: "435px",   // ✅ Set the width to exactly what you want
+                            width: "432px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -11698,7 +11698,7 @@ A<sub>mdm</sub>{" "}
                         alt="electron-muon magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "246px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -11953,7 +11953,7 @@ A<sub>mdm</sub>{" "}
                         alt="Newtonian constant of gravitation equation"
                         style={{
                             display: "inline-block",
-                            width: "310px",   // ✅ Set the width to exactly what you want
+                            width: "268px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -12184,7 +12184,7 @@ A<sub>mdm</sub>{" "}
                         alt="Newtonian constant of gravitation over h-bar c"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "324px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -12425,7 +12425,7 @@ A<sub>mdm</sub>{" "}
                         alt="neutron mass equation"
                         style={{
                             display: "inline-block",
-                            width: "462px",   // ✅ Set the width to exactly what you want
+                            width: "351px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -12908,7 +12908,7 @@ A<sub>mdm</sub>{" "}
                         alt="deuteron mass equation"
                         style={{
                             display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
+                            width: "440px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -13146,7 +13146,7 @@ A<sub>mdm</sub>{" "}
                         alt="muon mass equation"
                         style={{
                             display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
+                            width: "326px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -13381,7 +13381,7 @@ A<sub>mdm</sub>{" "}
                         alt="deuteron-electron magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
+                            width: "329px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -13676,7 +13676,7 @@ A<sub>mdm</sub>{" "}
                         alt="electron-deuteron magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
+                            width: "348px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
