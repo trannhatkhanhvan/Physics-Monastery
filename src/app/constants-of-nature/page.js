@@ -509,8 +509,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -753,8 +753,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -951,8 +951,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -1147,8 +1147,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -1344,8 +1344,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -1531,8 +1531,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -1741,8 +1741,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -1961,8 +1961,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -2192,8 +2192,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -2423,8 +2423,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -2644,8 +2644,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -2889,8 +2889,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -3156,8 +3156,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -3399,8 +3399,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -3608,8 +3608,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -3809,8 +3809,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -4004,8 +4004,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -4250,8 +4250,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -4507,8 +4507,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -4765,8 +4765,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -5025,8 +5025,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -5261,8 +5261,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -5496,8 +5496,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -5729,8 +5729,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -5963,8 +5963,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -6152,8 +6152,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -6321,8 +6321,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -6555,8 +6555,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -6862,8 +6862,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7135,8 +7135,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7354,8 +7354,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7560,8 +7560,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7802,8 +7802,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -8021,8 +8021,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -8242,8 +8242,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -8464,8 +8464,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.05em",
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
@@ -8572,7 +8572,7 @@ const GROUP_SPACER_HEIGHT = '35px';
 
 
 
-        37: (
+37: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -8596,7 +8596,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="neutron-proton magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "300px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -8654,48 +8654,37 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the neutron mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/derangement_symbol.svg"
+                        alt="!n"
                         style={{
                             height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+                    = the derangement function,{" "}
 
                     <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
                             height: "0.5em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the arc length of the unit lemniscate,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
-                        src="/equations/g_ga.svg"
-                        alt="G_Ga"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
+                            height: "0.75em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the Gauss&apos;s constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -8712,7 +8701,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -8871,7 +8860,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="proton-neutron magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "320px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -8929,48 +8918,37 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the proton mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/derangement_symbol.svg"
+                        alt="!n"
                         style={{
                             height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+                    = the derangement function,{" "}
 
                     <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
                             height: "0.5em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the arc length of the unit lemniscate,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
-                        src="/equations/g_ga.svg"
-                        alt="G_Ga"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
+                            height: "0.75em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the Gauss&apos;s constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -8987,7 +8965,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -9121,7 +9099,7 @@ const GROUP_SPACER_HEIGHT = '35px';
 
 
 
-        39: (
+39: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -9145,7 +9123,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="electron-neutron magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
+                            width: "290px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -9210,50 +9188,28 @@ const GROUP_SPACER_HEIGHT = '35px';
                         }}
                     />{" "}
                     = the electron mass,{" "}
-
+                    
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
                             height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
+                    = Catalan&apos;s constant,{" "}
+                    
                     <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/g_ga.svg"
-                        alt="G_Ga"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Gauss&apos;s constant,{" "}
-
-                    <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
                             height: "0.5em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the arc length of the unit lemniscate,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -9270,7 +9226,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -9431,7 +9387,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="neutron-electron magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
+                            width: "305px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -9498,48 +9454,26 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the neutron mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
                             height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/g_ga.svg"
-                        alt="G_Ga"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Gauss&apos;s constant,{" "}
-
-                    <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
                             height: "0.5em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the arc length of the unit lemniscate,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -9556,7 +9490,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -9692,7 +9626,7 @@ const GROUP_SPACER_HEIGHT = '35px';
 
 
 
-        41: (
+41: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -9716,7 +9650,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="atomic unit of magnetic dipole moment equation"
                         style={{
                             display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
+                            width: "350px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -9805,15 +9739,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
+                        src="/equations/omega_2_constant.svg"
+                        alt="omega_2"
                         style={{
                             height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
+                    = the omega_2 constant,{" "}
 
                     <img
                         src="/equations/pi.svg"
@@ -9841,7 +9775,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -9948,7 +9882,7 @@ A<sub>mdm</sub>{" "}
                         alt="Bohr magneton equation"
                         style={{
                             display: "inline-block",
-                            width: "360px",   // ✅ Set the width to exactly what you want
+                            width: "330px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -10037,15 +9971,15 @@ A<sub>mdm</sub>{" "}
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
+                        src="/equations/omega_2_constant.svg"
+                        alt="omega_2"
                         style={{
                             height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
+                    = the omega_2 constant,{" "}
 
                     <img
                         src="/equations/pi.svg"
@@ -10073,7 +10007,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -10206,7 +10140,7 @@ A<sub>mdm</sub>{" "}
                         alt="nuclear magneton equation"
                         style={{
                             display: "inline-block",
-                            width: "360px",   // ✅ Set the width to exactly what you want
+                            width: "331px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -10295,15 +10229,15 @@ A<sub>mdm</sub>{" "}
                     = the proton mass,{" "}
 
                     <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
+                        src="/equations/omega_2_constant.svg"
+                        alt="omega_2"
                         style={{
                             height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
+                    = the omega_2 constant,{" "}
 
                     <img
                         src="/equations/pi.svg"
@@ -10331,7 +10265,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -10439,7 +10373,7 @@ A<sub>mdm</sub>{" "}
 
 
 
-        44: (
+44: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -10463,7 +10397,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton magnetic moment equation"
                         style={{
                             display: "inline-block",
-                            width: "460px",   // ✅ Set the width to exactly what you want
+                            width: "454px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -10585,37 +10519,15 @@ A<sub>mdm</sub>{" "}
                     = the trition mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/omega_2_constant.svg"
+                        alt="omega_2"
                         style={{
                             height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
-                        style={{
-                            height: "0.5em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the arc length of the unit lemniscate,{" "}
+                    = the omega_2 constant,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -10632,7 +10544,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -10763,7 +10675,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton to proton magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "410px",   // ✅ Set the width to exactly what you want
+                            width: "374px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -10832,37 +10744,15 @@ A<sub>mdm</sub>{" "}
                     = the trition mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
+                        src="/equations/l_ll.svg"
+                        alt="L_LL"
                         style={{
-                            height: "0.75em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
-                        style={{
-                            height: "0.5em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the arc length of the unit lemniscate,{" "}
+                    = the Laplace limit,{" "}
 
                     <img
                         src="/equations/zhe_r.svg"
@@ -10879,7 +10769,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -11040,7 +10930,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton magnetic moment to nuclear magneton ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "460px",   // ✅ Set the width to exactly what you want
+                            width: "435px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -11129,28 +11019,6 @@ A<sub>mdm</sub>{" "}
                     = the trition mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
                         src="/equations/zhe_r.svg"
                         alt="zhe_r"
                         style={{
@@ -11165,7 +11033,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -11328,7 +11196,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton magnetic moment to Bohr magneton ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "460px",   // ✅ Set the width to exactly what you want
+                            width: "432px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -11417,28 +11285,6 @@ A<sub>mdm</sub>{" "}
                     = the trition mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
                         src="/equations/zhe_r.svg"
                         alt="zhe_r"
                         style={{
@@ -11453,7 +11299,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -11616,7 +11462,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton g factor equation"
                         style={{
                             display: "inline-block",
-                            width: "460px",   // ✅ Set the width to exactly what you want
+                            width: "435px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -11705,28 +11551,6 @@ A<sub>mdm</sub>{" "}
                     = the trition mass,{" "}
 
                     <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
                         src="/equations/zhe_r.svg"
                         alt="zhe_r"
                         style={{
@@ -11741,7 +11565,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -11966,7 +11790,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -12210,7 +12034,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -12443,7 +12267,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -12715,7 +12539,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -12950,7 +12774,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -13060,7 +12884,7 @@ A<sub>mdm</sub>{" "}
 
 
 
-        54: (
+ 54: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -13187,7 +13011,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -13425,7 +13249,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -13693,7 +13517,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -13988,7 +13812,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -14294,7 +14118,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -14552,7 +14376,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -14817,7 +14641,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -15092,7 +14916,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -15387,7 +15211,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -15687,7 +15511,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -15957,7 +15781,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -16234,7 +16058,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -16485,7 +16309,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -16698,7 +16522,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -16975,7 +16799,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -17213,7 +17037,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -17606,7 +17430,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.9em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -18000,7 +17824,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -18237,7 +18061,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -18465,7 +18289,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -18722,7 +18546,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -18962,7 +18786,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -19172,7 +18996,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -19362,7 +19186,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -19564,7 +19388,7 @@ Hz ⋮ 1/m{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -19777,7 +19601,7 @@ A<sub>vel</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
@@ -19977,7 +19801,7 @@ A<sub>mom</sub>{" "}
                         src="/equations/hyperbolic_inversion_boundary.svg"
                         alt="☐"
                         style={{
-                            height: "0.8em",
+                            height: "0.82em",
                             verticalAlign: "-0.1em",
                             display: "inline",
                         }}
