@@ -13971,7 +13971,7 @@ A<sub>mdm</sub>{" "}
                         alt="deuteron-proton magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
+                            width: "310px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -14232,7 +14232,7 @@ A<sub>mdm</sub>{" "}
                         alt="deuteron-neutron magnetic moment ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "400px",   // ✅ Set the width to exactly what you want
+                            width: "402px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -14517,7 +14517,7 @@ A<sub>mdm</sub>{" "}
                         alt="deuteron magnetic moment equation"
                         style={{
                             display: "inline-block",
-                            width: "440px",   // ✅ Set the width to exactly what you want
+                            width: "396px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -14795,7 +14795,7 @@ A<sub>mdm</sub>{" "}
                         alt="shielded helion magnetic moment to Bohr magneton ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "400px",   // ✅ Set the width to exactly what you want
+                            width: "366px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -15068,7 +15068,7 @@ A<sub>mdm</sub>{" "}
                         alt="shielded helion magnetic moment to nuclear magneton ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "420px",   // ✅ Set the width to exactly what you want
+                            width: "387px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -15368,7 +15368,7 @@ A<sub>mdm</sub>{" "}
                         alt="helion g factor equation"
                         style={{
                             display: "inline-block",
-                            width: "405px",   // ✅ Set the width to exactly what you want
+                            width: "376px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -15638,7 +15638,7 @@ A<sub>mdm</sub>{" "}
                         alt="helion magnetic moment to nuclear magneton ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "410px",   // ✅ Set the width to exactly what you want
+                            width: "388px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -15937,7 +15937,7 @@ A<sub>mdm</sub>{" "}
                         alt="helion magnetic moment to Bohr magneton ratio equation"
                         style={{
                             display: "inline-block",
-                            width: "410px",   // ✅ Set the width to exactly what you want
+                            width: "364px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -16210,7 +16210,7 @@ A<sub>mdm</sub>{" "}
                         alt="vacuum magnetic permeability equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "298px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -16456,7 +16456,7 @@ A<sub>mdm</sub>{" "}
                         alt="electron mass equation"
                         style={{
                             display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
+                            width: "316px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -16667,7 +16667,7 @@ A<sub>mdm</sub>{" "}
                         alt="tau mass equation"
                         style={{
                             display: "inline-block",
-                            width: "460px",   // ✅ Set the width to exactly what you want
+                            width: "395px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -16927,7 +16927,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton mass equation"
                         style={{
                             display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
+                            width: "416px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -17131,131 +17131,6 @@ A<sub>mdm</sub>{" "}
   </span>
                 </div>
 
-                {/* 10. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 11. Also called... */}
-                <div
-                    style={{
-                        textAlign: "left", // 🟢 Use text-align for left alignment
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-
-    <img
-        src="/equations/omega_1_constant.svg"
-        alt="omega_1"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />{" "}
-      and{" "}
-
-      <img
-          src="/equations/omega_2_constant.svg"
-          alt="omega_2"
-          style={{
-              height: "0.75em",
-              verticalAlign: "-0.2em",
-              display: "inline",
-          }}
-      />{" "}
-      = the equianharmonic half-periods of the gamma function, and{" "}
-      <img
-          src="/equations/the_imaginary_golden_ratio.svg"
-          alt="imaginary golden ratio symbol"
-          style={{
-              height: "0.75em",
-              verticalAlign: "-0.2em",
-              display: "inline",
-          }}
-      /> the imaginary golden ratio.
-
-</span>
-
-                </div>
-
-                {/* 12. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 13. Also called... */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-start",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img
-          src="/equations/omega_1_equation.svg"
-          alt="omega_1"
-          style={{
-              height: "3em",
-              verticalAlign: "-0.0em",
-              display: "inline",
-          }}
-      />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-      <img
-          src="/equations/omega_2_equation.svg"
-          alt="omega_2"
-          style={{
-              height: "3em",
-              verticalAlign: "-0.0em",
-              display: "inline",
-          }}
-      />{" "}
-
-</span>
-
-                </div>
-
-                {/* 12. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 13. Also called... */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-start",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img
-          src="/equations/omega_1_and_omega_2_equation.svg"
-          alt="omega_1 and omega_2 equation"
-          style={{
-              height: "1em",
-              verticalAlign: "-0.0em",
-              display: "inline",
-          }}
-      />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-      <img
-          src="/equations/imaginary_golden_ratio_equation.svg"
-          alt="imaginary golden ratio equation"
-          style={{
-              height: "1.3em",
-              verticalAlign: "-0.0em",
-              display: "inline",
-          }}
-      />{" "}
-
-</span>
-
-                </div>
-
             </div>
         ),
 
@@ -17286,7 +17161,7 @@ A<sub>mdm</sub>{" "}
                         alt="luminous efficacy equation"
                         style={{
                             display: "inline-block",
-                            width: "400px",   // ✅ Set the width to exactly what you want
+                            width: "409px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -17547,131 +17422,6 @@ A<sub>mdm</sub>{" "}
       = 540 10<sup>12</sup> hertz, corresponding to a wavelength of 555 nm.{" "}
 </span>
 </div>
-
-                    {/* 10. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 11. Also called... */}
-                <div
-                    style={{
-                        textAlign: "left", // 🟢 Use text-align for left alignment
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-
-    <img
-        src="/equations/omega_1_constant.svg"
-        alt="omega_1"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />{" "}
-      and{" "}
-
-      <img
-          src="/equations/omega_2_constant.svg"
-          alt="omega_2"
-          style={{
-              height: "0.75em",
-              verticalAlign: "-0.2em",
-              display: "inline",
-          }}
-      />{" "}
-      = the equianharmonic half-periods of the gamma function, and{" "}
-      <img
-          src="/equations/the_imaginary_golden_ratio.svg"
-          alt="imaginary golden ratio symbol"
-          style={{
-              height: "0.75em",
-              verticalAlign: "-0.2em",
-              display: "inline",
-          }}
-      /> the imaginary golden ratio.
-
-</span>
-
-                </div>
-
-                {/* 12. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 13. Also called... */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-start",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img
-          src="/equations/omega_1_equation.svg"
-          alt="omega_1"
-          style={{
-              height: "3em",
-              verticalAlign: "-0.0em",
-              display: "inline",
-          }}
-      />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-      <img
-          src="/equations/omega_2_equation.svg"
-          alt="omega_2"
-          style={{
-              height: "3em",
-              verticalAlign: "-0.0em",
-              display: "inline",
-          }}
-      />{" "}
-
-</span>
-
-                </div>
-
-                {/* 12. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 13. Also called... */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-start",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img
-          src="/equations/omega_1_and_omega_2_equation.svg"
-          alt="omega_1 and omega_2 equation"
-          style={{
-              height: "1em",
-              verticalAlign: "-0.0em",
-              display: "inline",
-          }}
-      />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-      <img
-          src="/equations/imaginary_golden_ratio_equation.svg"
-          alt="imaginary golden ratio equation"
-          style={{
-              height: "1.3em",
-              verticalAlign: "-0.0em",
-              display: "inline",
-          }}
-      />{" "}
-
-</span>
-
-                </div>
 
             </div>
         ),
@@ -17951,7 +17701,7 @@ A<sub>mdm</sub>{" "}
                         alt="alpha particle mass equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "394px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
