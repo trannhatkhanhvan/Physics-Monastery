@@ -9650,7 +9650,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         alt="atomic unit of magnetic dipole moment equation"
                         style={{
                             display: "inline-block",
-                            width: "341px",   // ✅ Set the width to exactly what you want
+                            width: "351px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -9882,7 +9882,7 @@ A<sub>mdm</sub>{" "}
                         alt="Bohr magneton equation"
                         style={{
                             display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
+                            width: "330px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -10140,7 +10140,7 @@ A<sub>mdm</sub>{" "}
                         alt="nuclear magneton equation"
                         style={{
                             display: "inline-block",
-                            width: "321px",   // ✅ Set the width to exactly what you want
+                            width: "331px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -10397,7 +10397,7 @@ A<sub>mdm</sub>{" "}
                         alt="triton magnetic moment equation"
                         style={{
                             display: "inline-block",
-                            width: "440px",   // ✅ Set the width to exactly what you want
+                            width: "450px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
