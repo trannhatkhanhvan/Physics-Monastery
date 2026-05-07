@@ -17874,7 +17874,7 @@ A<sub>mdm</sub>{" "}
                         alt="von Klitzing constant equation"
                         style={{
                             display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
+                            width: "371px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -18125,7 +18125,7 @@ A<sub>mdm</sub>{" "}
                         alt="characteristic impedance of vacuum equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "351px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -18346,7 +18346,7 @@ A<sub>mdm</sub>{" "}
                         alt="Planck electric impedance equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "329px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -18558,7 +18558,7 @@ A<sub>mdm</sub>{" "}
                         alt="hertz-inverse meter relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
+                            width: "382px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -18749,7 +18749,7 @@ Hz ⋮ 1/m{" "}
                         alt="atomic unit of velocity equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "340px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -18951,7 +18951,7 @@ A<sub>vel</sub>{" "}
                         alt="atomic unit of velocity equation"
                         style={{
                             display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
+                            width: "379px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -19162,7 +19162,7 @@ A<sub>mom</sub>{" "}
                         alt="natural unit of momentum equation"
                         style={{
                             display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
+                            width: "349px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -19387,7 +19387,7 @@ A<sub>mom</sub>{" "}
                         alt="natural unit of momentum in MeV/c equation"
                         style={{
                             display: "inline-block",
-                            width: "440px",   // ✅ Set the width to exactly what you want
+                            width: "410px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -19619,7 +19619,7 @@ A<sub>mom</sub>{" "}
                         alt="atomic mass constant energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
+                            width: "339px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -19846,7 +19846,7 @@ A<sub>mom</sub>{" "}
                         alt="kilogram-joule relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
+                            width: "351px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -20037,7 +20037,7 @@ A<sub>mom</sub>{" "}
                         alt="joule-kilogram relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "328px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -20227,7 +20227,7 @@ J ⋮ kg{" "}
                         alt="atomic mass unit-joule relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
+                            width: "357px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -20472,7 +20472,7 @@ J ⋮ kg{" "}
                         alt="joule-atomic mass unit relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
+                            width: "355px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -20697,7 +20697,7 @@ J ⋮ kg{" "}
                         alt="kilogram-electron volt relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "420px",   // ✅ Set the width to exactly what you want
+                            width: "404px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -20889,7 +20889,7 @@ J ⋮ kg{" "}
                         alt="electron volt-kilogram relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "360px",   // ✅ Set the width to exactly what you want
+                            width: "323px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -21080,7 +21080,7 @@ J ⋮ kg{" "}
                         alt="neutron-proton mass difference energy equivalent equation"
                         style={{
                             display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
+                            width: "357px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -21319,7 +21319,7 @@ J ⋮ kg{" "}
                         alt="neutron-proton mass difference energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "420px",   // ✅ Set the width to exactly what you want
+                            width: "396px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -21559,7 +21559,7 @@ J ⋮ kg{" "}
                         alt="natural unit of energy in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "332px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -21805,7 +21805,7 @@ J ⋮ kg{" "}
                         alt="muon mass energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "332px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -22033,7 +22033,7 @@ J ⋮ kg{" "}
                         alt="proton mass energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "334px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -22261,7 +22261,7 @@ J ⋮ kg{" "}
                         alt="neutron mass energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "332px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -22489,7 +22489,7 @@ J ⋮ kg{" "}
                         alt="tau energy equivalent equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "331px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -22716,7 +22716,7 @@ J ⋮ kg{" "}
                         alt="deuteron mass energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "360px",   // ✅ Set the width to exactly what you want
+                            width: "347px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -22944,7 +22944,7 @@ J ⋮ kg{" "}
                         alt="helion mass energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "360px",   // ✅ Set the width to exactly what you want
+                            width: "342px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -23172,7 +23172,7 @@ J ⋮ kg{" "}
                         alt="triton mass energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "360px",   // ✅ Set the width to exactly what you want
+                            width: "346px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -23400,7 +23400,7 @@ J ⋮ kg{" "}
                         alt="alpha particle mass energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
+                            width: "334px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -23628,7 +23628,7 @@ J ⋮ kg{" "}
                         alt="electron mass energy equivalent equation"
                         style={{
                             display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
+                            width: "296px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -23871,7 +23871,7 @@ J ⋮ kg{" "}
                         alt="muon mass energy equivalent equation"
                         style={{
                             display: "inline-block",
-                            width: "325px",   // ✅ Set the width to exactly what you want
+                            width: "295px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -24097,7 +24097,7 @@ J ⋮ kg{" "}
                         alt="proton mass energy equivalent equation"
                         style={{
                             display: "inline-block",
-                            width: "325px",   // ✅ Set the width to exactly what you want
+                            width: "296px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -24324,7 +24324,7 @@ J ⋮ kg{" "}
                         alt="neutron mass energy equivalent equation"
                         style={{
                             display: "inline-block",
-                            width: "325px",   // ✅ Set the width to exactly what you want
+                            width: "296px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -24549,7 +24549,8 @@ J ⋮ kg{" "}
                         alt="tau mass energy equivalent equation"
                         style={{
                             display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
+                            width: "294" +
+                                "px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -24774,7 +24775,7 @@ J ⋮ kg{" "}
                         alt="deuteron mass energy equivalent equation"
                         style={{
                             display: "inline-block",
-                            width: "325px",   // ✅ Set the width to exactly what you want
+                            width: "309px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -25000,7 +25001,7 @@ J ⋮ kg{" "}
                         alt="helion mass energy equivalent equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "308px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -25226,7 +25227,7 @@ J ⋮ kg{" "}
                         alt="triton mass energy equivalent equation"
                         style={{
                             display: "inline-block",
-                            width: "335px",   // ✅ Set the width to exactly what you want
+                            width: "308px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -25451,7 +25452,7 @@ J ⋮ kg{" "}
                         alt="alpha particle mass energy equivalent equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "298px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
