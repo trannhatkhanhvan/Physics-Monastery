@@ -611,6 +611,10 @@ body {
   max-width: 2300px;  /* try 1400–1800 */
 }
 
+.popup-equation {
+    display: inline-block;
+}
+
 
 
 

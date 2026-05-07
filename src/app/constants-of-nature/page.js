@@ -401,15 +401,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/hyperfine_transition_frequency_of_cs-133.svg"
                         alt="hyperfine transition frequency of Cs-133 equation"
-                        style={{
-                            display: "inline-block",
-                            width: "315px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -655,15 +655,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_volt-hertz_relationship.svg"
                         alt="electron volt-hertz relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "340px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -851,17 +851,17 @@ const GROUP_SPACER_HEIGHT = '35px';
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/joule-hertz_relationship.svg"
                         alt="joule-hertz relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "344px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -1050,15 +1050,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/hertz-joule_relationship.svg"
                         alt="hertz-joule relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "358px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -1246,18 +1246,18 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/hertz-electron_volt_relationship.svg"
                         alt="hertz-electron volt relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "396px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
-
+                
                 {/* 4. Empty Line */}
                 <div style={{height: "24px"}}/>
 
@@ -1443,15 +1443,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/natural_unit_of_action_in_evs.svg"
                         alt="natural unit of action in eV s equation"
-                        style={{
-                            display: "inline-block",
-                            width: "316px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -1652,17 +1652,17 @@ const GROUP_SPACER_HEIGHT = '35px';
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/reduced_planck_constant.svg"
                         alt="reduced Planck constant equation"
-                        style={{
-                            display: "inline-block",
-                            width: "274px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -1864,15 +1864,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/planck_constant.svg"
                         alt="Planck constant equation"
-                        style={{
-                            display: "inline-block",
-                            width: "296px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -2084,15 +2084,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/quantum_of_circulation.svg"
                         alt="quantum of circulation equation"
-                        style={{
-                            display: "inline-block",
-                            width: "293px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -2313,17 +2313,17 @@ const GROUP_SPACER_HEIGHT = '35px';
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/quantum_of_circulation_times_2.svg"
                         alt="quantum of circulation times 2 equation"
-                        style={{
-                            display: "inline-block",
-                            width: "312px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -2546,15 +2546,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/bohr_magneton_in_ev_per_t.svg"
                         alt="Bohr magneton in eV/T equation"
-                        style={{
-                            display: "inline-block",
-                            width: "350px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -2789,17 +2789,17 @@ const GROUP_SPACER_HEIGHT = '35px';
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/nuclear_magneton_in_ev_per_t.svg"
                         alt="nuclear magneton in eV/T equation"
-                        style={{
-                            display: "inline-block",
-                            width: "352px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -3037,15 +3037,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/inverse_of_conductance_quantum.svg"
                         alt="inverse of conductance quantum equation"
-                        style={{
-                            display: "inline-block",
-                            width: "325px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -3279,15 +3279,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/conductance_quantum.svg"
                         alt="conductance quantum equation"
-                        style={{
-                            display: "inline-block",
-                            width: "308px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -3522,15 +3522,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_volt.svg"
                         alt="electron volt equation"
-                        style={{
-                            display: "inline-block",
-                            width: "290px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -3722,15 +3722,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/joule-electron_volt_relationship.svg"
                         alt="joule-electron volt relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "328px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -3906,15 +3906,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_charge_to_mass_quotient.svg"
                         alt="electron charge to mass quotient equation"
-                        style={{
-                            display: "inline-block",
-                            width: "282px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -4152,15 +4152,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton_charge_to_mass_quotient.svg"
                         alt="proton charge to mass quotient equation"
-                        style={{
-                            display: "inline-block",
-                            width: "256px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -4398,15 +4398,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/bohr_magneton_in_hz_per_t.svg"
                         alt="Bohr magneton in Hz/T equation"
-                        style={{
-                            display: "inline-block",
-                            width: "299px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -4656,15 +4656,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/nuclear_magneton_in_mhz_per_t.svg"
                         alt="nuclear magneton in MHz/T equation"
-                        style={{
-                            display: "inline-block",
-                            width: "352px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -4916,15 +4916,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/lattice_parameter_of_silicon.svg"
                         alt="lattice parameter of silicon equation"
-                        style={{
-                            display: "inline-block",
-                            width: "346px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -5152,15 +5152,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/lattice_spacing_of_ideal_si_(220).svg"
                         alt="lattice spacing of ideal Si (220) equation"
-                        style={{
-                            display: "inline-block",
-                            width: "394px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -5385,17 +5385,17 @@ const GROUP_SPACER_HEIGHT = '35px';
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/rydberg_constant.svg"
                         alt="Rydberg constant equation"
-                        style={{
-                            display: "inline-block",
-                            width: "324px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -5620,15 +5620,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/hartree-inverse_meter_relationship.svg"
                         alt="hartree-inverse meter relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "349px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -5852,17 +5852,17 @@ const GROUP_SPACER_HEIGHT = '35px';
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/inverse_meter-hartree_relationship.svg"
                         alt="inverse meter-hartree relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "396px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -6085,17 +6085,17 @@ const GROUP_SPACER_HEIGHT = '35px';
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/conventional_value_of_ampere-90.svg"
                         alt="conventional value of ampere-90 equation"
-                        style={{
-                            display: "inline-block",
-                            width: "280px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -6254,17 +6254,17 @@ const GROUP_SPACER_HEIGHT = '35px';
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/conventional_value_of_coulomb-90.svg"
                         alt="conventional value of coulomb-90 equation"
-                        style={{
-                            display: "inline-block",
-                            width: "285px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -6422,17 +6422,17 @@ const GROUP_SPACER_HEIGHT = '35px';
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/bohr_magneton_in_inverse_meter_per_tesla.svg"
                         alt="Bohr magneton in inverse meter per tesla equation"
-                        style={{
-                            display: "inline-block",
-                            width: "290px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -6731,15 +6731,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/nuclear_magneton_in_inverse_meter_per_tesla.svg"
                         alt="nuclear magneton in inverse meter per tesla equation"
-                        style={{
-                            display: "inline-block",
-                            width: "293px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -7037,15 +7037,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/coulomb_s_constant.svg"
                         alt="Coulomb&apos;s constant equation"
-                        style={{
-                            display: "inline-block",
-                            width: "242px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -7256,15 +7256,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/atomic_unit_of_permittivity.svg"
                         alt="atomic unit of permittivity equation"
-                        style={{
-                            display: "inline-block",
-                            width: "275px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -7451,15 +7451,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/vacuum_electric_permittivity.svg"
                         alt="vacuum electric permittivity equation"
-                        style={{
-                            display: "inline-block",
-                            width: "271px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -7693,15 +7693,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/atomic_unit_of_time.svg"
                         alt="atomic unit of time equation"
-                        style={{
-                            display: "inline-block",
-                            width: "345px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -7901,15 +7901,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/hertz-hartree_relationship.svg"
                         alt="hertz-hartree relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "398px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -8122,15 +8122,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/hartree-hertz_relationship.svg"
                         alt="hartree-hertz relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "362px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -8344,15 +8344,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/rydberg_constant_times_c_in_hz.svg"
                         alt="Rydberg constant times c in Hz equation"
-                        style={{
-                            display: "inline-block",
-                            width: "339px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -19619,7 +19619,7 @@ A<sub>mom</sub>{" "}
                         alt="atomic mass constant energy equivalent in MeV equation"
                         style={{
                             display: "inline-block",
-                            width: "341px",   // ✅ Set the width to exactly what you want
+                            width: "339px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -20037,7 +20037,7 @@ A<sub>mom</sub>{" "}
                         alt="joule-kilogram relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
+                            width: "328px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -20227,7 +20227,7 @@ J ⋮ kg{" "}
                         alt="atomic mass unit-joule relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "359px",   // ✅ Set the width to exactly what you want
+                            width: "356px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
