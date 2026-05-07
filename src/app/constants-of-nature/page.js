@@ -40839,26 +40839,15 @@ J ⋮ kg{" "}
                     = the Planck charge,{" "}
 
                     <img
-                        src="/equations/pi.svg"
-                        alt="pi"
+                        src="/equations/del_f.svg"
+                        alt="del_F"
                         style={{
-                            height: "0.53em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/omega_1_constant.svg"
-                        alt="omega_1"
-                        style={{
-                            height: "0.75em",
+                            height: "0.9em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the omega_1 constant,{" "}
+                    = the delta Feigenbaum constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -41097,26 +41086,15 @@ J ⋮ kg{" "}
                     = the Planck charge,{" "}
 
                     <img
-                        src="/equations/pi.svg"
-                        alt="pi"
+                        src="/equations/del_f.svg"
+                        alt="del_F"
                         style={{
-                            height: "0.53em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/omega_1_constant.svg"
-                        alt="omega_1"
-                        style={{
-                            height: "0.75em",
+                            height: "0.9em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the omega_1 constant,{" "}
+                    = the delta Feigenbaum constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -41372,26 +41350,15 @@ J ⋮ kg{" "}
                     = the atomic mass constant,{" "}
 
                     <img
-                        src="/equations/pi.svg"
-                        alt="pi"
+                        src="/equations/del_f.svg"
+                        alt="del_F"
                         style={{
-                            height: "0.53em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/omega_1_constant.svg"
-                        alt="omega_1"
-                        style={{
-                            height: "0.75em",
+                            height: "0.9em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the omega_1 constant,{" "}
+                    = the delta Feigenbaum constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
