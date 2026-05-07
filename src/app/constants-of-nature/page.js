@@ -18346,7 +18346,7 @@ A<sub>mdm</sub>{" "}
                         alt="Planck electric impedance equation"
                         style={{
                             display: "inline-block",
-                            width: "302px",   // ✅ Set the width to exactly what you want
+                            width: "303px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -18749,7 +18749,7 @@ Hz ⋮ 1/m{" "}
                         alt="atomic unit of velocity equation"
                         style={{
                             display: "inline-block",
-                            width: "312px",   // ✅ Set the width to exactly what you want
+                            width: "313px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
