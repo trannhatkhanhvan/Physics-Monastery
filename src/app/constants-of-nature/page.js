@@ -17648,7 +17648,7 @@ A<sub>mdm</sub>{" "}
                         alt="Planck mass energy equivalent in GeV equation"
                         style={{
                             display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
+                            width: "340px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -17874,7 +17874,7 @@ A<sub>mdm</sub>{" "}
                         alt="von Klitzing constant equation"
                         style={{
                             display: "inline-block",
-                            width: "371px",   // ✅ Set the width to exactly what you want
+                            width: "341px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -18125,7 +18125,7 @@ A<sub>mdm</sub>{" "}
                         alt="characteristic impedance of vacuum equation"
                         style={{
                             display: "inline-block",
-                            width: "351px",   // ✅ Set the width to exactly what you want
+                            width: "321px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -18346,7 +18346,7 @@ A<sub>mdm</sub>{" "}
                         alt="Planck electric impedance equation"
                         style={{
                             display: "inline-block",
-                            width: "329px",   // ✅ Set the width to exactly what you want
+                            width: "299px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -18558,7 +18558,7 @@ A<sub>mdm</sub>{" "}
                         alt="hertz-inverse meter relationship equation"
                         style={{
                             display: "inline-block",
-                            width: "382px",   // ✅ Set the width to exactly what you want
+                            width: "352px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -18749,7 +18749,7 @@ Hz ⋮ 1/m{" "}
                         alt="atomic unit of velocity equation"
                         style={{
                             display: "inline-block",
-                            width: "340px",   // ✅ Set the width to exactly what you want
+                            width: "310px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -18951,7 +18951,7 @@ A<sub>vel</sub>{" "}
                         alt="atomic unit of velocity equation"
                         style={{
                             display: "inline-block",
-                            width: "379px",   // ✅ Set the width to exactly what you want
+                            width: "348px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
@@ -19162,7 +19162,7 @@ A<sub>mom</sub>{" "}
                         alt="natural unit of momentum equation"
                         style={{
                             display: "inline-block",
-                            width: "349px",   // ✅ Set the width to exactly what you want
+                            width: "319px",   // ✅ Set the width to exactly what you want
                             height: "auto"
                         }}
                     />
