@@ -8590,15 +8590,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/neutron-proton_magnetic_moment_ratio.svg"
                         alt="neutron-proton magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "305px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -8854,15 +8854,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton-neutron_magnetic_moment_ratio.svg"
                         alt="proton-neutron magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -9117,15 +9117,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron-neutron_magnetic_moment_ratio.svg"
                         alt="electron-neutron magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "295px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -9381,15 +9381,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/neutron-electron_magnetic_moment_ratio.svg"
                         alt="neutron-electron magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "310px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -9644,15 +9644,15 @@ const GROUP_SPACER_HEIGHT = '35px';
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/atomic_unit_of_magnetic_dipole_moment.svg"
                         alt="atomic unit of magnetic dipole moment equation"
-                        style={{
-                            display: "inline-block",
-                            width: "359px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -9876,15 +9876,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/bohr_magneton.svg"
                         alt="Bohr magneton equation"
-                        style={{
-                            display: "inline-block",
-                            width: "336px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -10132,17 +10132,17 @@ A<sub>mdm</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/nuclear_magneton.svg"
                         alt="nuclear magneton equation"
-                        style={{
-                            display: "inline-block",
-                            width: "337px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -10391,15 +10391,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/triton_magnetic_moment.svg"
                         alt="triton magnetic moment equation"
-                        style={{
-                            display: "inline-block",
-                            width: "465px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -10669,15 +10669,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/triton_to_proton_magnetic_moment_ratio.svg"
                         alt="triton to proton magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "372px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -10924,15 +10924,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/triton_magnetic_moment_to_nuclear_magneton_ratio.svg"
                         alt="triton magnetic moment to nuclear magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "427px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -11190,15 +11190,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/triton_magnetic_moment_to_bohr_magneton_ratio.svg"
                         alt="triton magnetic moment to Bohr magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "428px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -11456,15 +11456,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/triton_g_factor.svg"
                         alt="triton g factor equation"
-                        style={{
-                            display: "inline-block",
-                            width: "428px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -11690,20 +11690,20 @@ A<sub>mdm</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron-muon_magnetic_moment_ratio.svg"
                         alt="electron-muon magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "246px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
-
+                
                 {/* 4. Empty Line */}
                 <div style={{height: "18px"}}/>
 
@@ -11923,17 +11923,17 @@ A<sub>mdm</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/newtonian_constant_of_gravitation.svg"
                         alt="Newtonian constant of gravitation equation"
-                        style={{
-                            display: "inline-block",
-                            width: "268px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -12156,15 +12156,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/newtonian_constant_of_gravitation_over_h-bar_c.svg"
                         alt="Newtonian constant of gravitation over h-bar c"
-                        style={{
-                            display: "inline-block",
-                            width: "324px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -12397,15 +12397,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/neutron_mass.svg"
                         alt="neutron mass equation"
-                        style={{
-                            display: "inline-block",
-                            width: "328px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -12624,15 +12624,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton_mass.svg"
                         alt="proton mass equation"
-                        style={{
-                            display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -12875,15 +12875,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/deuteron_mass.svg"
                         alt="deuteron mass equation"
-                        style={{
-                            display: "inline-block",
-                            width: "424px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -13102,15 +13102,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/muon_mass.svg"
                         alt="muon mass equation"
-                        style={{
-                            display: "inline-block",
-                            width: "326px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -13313,17 +13313,17 @@ A<sub>mdm</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/deuteron-electron_magnetic_moment_ratio.svg"
                         alt="deuteron-electron magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "329px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -13577,15 +13577,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron-deuteron_magnetic_moment_ratio.svg"
                         alt="electron-deuteron magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "348px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -13839,15 +13839,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/deuteron-proton_magnetic_moment_ratio.svg"
                         alt="deuteron-proton magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "310px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -14100,15 +14100,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/deuteron-neutron_magnetic_moment_ratio.svg"
                         alt="deuteron-neutron magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "402px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -14361,17 +14361,17 @@ A<sub>mdm</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/deuteron_magnetic_moment.svg"
                         alt="deuteron magnetic moment equation"
-                        style={{
-                            display: "inline-block",
-                            width: "396px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -14641,15 +14641,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_helion_magnetic_moment_to_bohr_magneton_ratio.svg"
                         alt="shielded helion magnetic moment to Bohr magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "366px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -14892,15 +14892,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_helion_magnetic_moment_to_nuclear_magneton_ratio.svg"
                         alt="shielded helion magnetic moment to nuclear magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "387px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -15171,15 +15171,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/helion_g_factor.svg"
                         alt="helion g factor equation"
-                        style={{
-                            display: "inline-block",
-                            width: "376px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -15419,15 +15419,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/helion_magnetic_moment_to_nuclear_magneton_ratio.svg"
                         alt="helion magnetic moment to nuclear magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "388px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -15694,17 +15694,17 @@ A<sub>mdm</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/helion_magnetic_moment_to_bohr_magneton_ratio.svg"
                         alt="helion magnetic moment to Bohr magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "364px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -15947,15 +15947,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/vacuum_magnetic_permeability.svg"
                         alt="vacuum magnetic permeability equation"
-                        style={{
-                            display: "inline-block",
-                            width: "298px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -16202,17 +16202,17 @@ A<sub>mdm</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_mass.svg"
                         alt="electron mass equation"
-                        style={{
-                            display: "inline-block",
-                            width: "316px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -16426,18 +16426,18 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/tau_mass.svg"
                         alt="tau mass equation"
-                        style={{
-                            display: "inline-block",
-                            width: "395px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
-
+                
                 {/* 4. Empty Line */}
                 <div style={{height: "22px"}}/>
 
@@ -16651,20 +16651,20 @@ A<sub>mdm</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/triton_mass.svg"
                         alt="triton mass equation"
-                        style={{
-                            display: "inline-block",
-                            width: "416px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
-
+                
                 {/* 4. Empty Line */}
                 <div style={{height: "18px"}}/>
 
@@ -16885,17 +16885,17 @@ A<sub>mdm</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "18px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/luminous_efficacy.svg"
                         alt="luminous efficacy equation"
-                        style={{
-                            display: "inline-block",
-                            width: "409px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -17179,15 +17179,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/helion_mass.svg"
                         alt="helion mass equation"
-                        style={{
-                            display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -17405,15 +17405,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/alpha_particle_mass.svg"
                         alt="alpha particle mass equation"
-                        style={{
-                            display: "inline-block",
-                            width: "394px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
