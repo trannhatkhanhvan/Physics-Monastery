@@ -423,7 +423,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -677,7 +677,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -875,7 +875,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -1072,7 +1072,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -1268,7 +1268,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -1465,7 +1465,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -1676,7 +1676,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -1886,7 +1886,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -2106,7 +2106,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -2337,7 +2337,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -2568,7 +2568,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -2813,7 +2813,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -3059,7 +3059,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -3301,7 +3301,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -3544,7 +3544,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -3744,7 +3744,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -3928,7 +3928,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -4174,7 +4174,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -4420,7 +4420,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -4678,7 +4678,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -4938,7 +4938,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -5174,7 +5174,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -5409,7 +5409,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -5642,7 +5642,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -5876,7 +5876,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -6109,7 +6109,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -6278,7 +6278,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -6446,7 +6446,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -6753,7 +6753,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -7059,7 +7059,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -7278,7 +7278,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -7473,7 +7473,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -7715,7 +7715,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -7923,7 +7923,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -8144,7 +8144,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -8366,7 +8366,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -8612,7 +8612,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -8876,7 +8876,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -9139,7 +9139,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -9403,7 +9403,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -9666,7 +9666,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -9898,7 +9898,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -10156,7 +10156,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -10413,7 +10413,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -10691,7 +10691,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -10946,7 +10946,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -11212,7 +11212,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -11478,7 +11478,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -11714,7 +11714,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -11947,7 +11947,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -12178,7 +12178,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -12419,7 +12419,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -12646,7 +12646,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -12897,7 +12897,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -13124,7 +13124,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -13337,7 +13337,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -13599,7 +13599,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -13861,7 +13861,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -14122,7 +14122,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -14385,7 +14385,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -14663,7 +14663,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -14914,7 +14914,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -15193,7 +15193,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -15441,7 +15441,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -15718,7 +15718,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -15969,7 +15969,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -16226,7 +16226,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -16448,7 +16448,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -16675,7 +16675,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -16909,7 +16909,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -17201,7 +17201,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -17427,7 +17427,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -17664,7 +17664,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -17890,7 +17890,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -18141,7 +18141,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -18362,7 +18362,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -18574,7 +18574,7 @@ A<sub>mdm</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -18765,7 +18765,7 @@ Hz ⋮ 1/m{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -18967,7 +18967,7 @@ A<sub>vel</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -19178,7 +19178,7 @@ A<sub>mom</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -19403,7 +19403,7 @@ A<sub>mom</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -19635,7 +19635,7 @@ A<sub>mom</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -19862,7 +19862,7 @@ A<sub>mom</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -20053,7 +20053,7 @@ A<sub>mom</sub>{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -20243,7 +20243,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -20488,7 +20488,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -20713,7 +20713,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -20905,7 +20905,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -21096,7 +21096,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -21335,7 +21335,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -21575,7 +21575,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -21821,7 +21821,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -22049,7 +22049,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -22277,7 +22277,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -22505,7 +22505,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -22732,7 +22732,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -22960,7 +22960,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -23188,7 +23188,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -23416,7 +23416,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -23644,7 +23644,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -23887,7 +23887,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -24113,7 +24113,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -24340,7 +24340,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -24565,7 +24565,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -24790,7 +24790,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -25016,7 +25016,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -25242,7 +25242,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -25467,7 +25467,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -25694,7 +25694,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -25935,7 +25935,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -26198,7 +26198,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -26399,7 +26399,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -26635,7 +26635,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -26871,7 +26871,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -27069,7 +27069,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -27311,7 +27311,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -27602,7 +27602,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -27894,7 +27894,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -28157,7 +28157,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -28431,7 +28431,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -28689,7 +28689,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -28951,7 +28951,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -29209,7 +29209,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -29459,7 +29459,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -29723,7 +29723,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -30000,7 +30000,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -30274,7 +30274,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -30526,7 +30526,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -30759,7 +30759,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -30986,7 +30986,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -31260,7 +31260,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -31533,7 +31533,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -31773,7 +31773,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -32024,7 +32024,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -32306,7 +32306,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -32598,7 +32598,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -32846,7 +32846,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -33095,7 +33095,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -33328,7 +33328,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -33519,7 +33519,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -33746,7 +33746,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -33991,7 +33991,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -34227,7 +34227,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -34466,7 +34466,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -34696,7 +34696,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -34908,7 +34908,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -35110,7 +35110,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -35336,7 +35336,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -35560,7 +35560,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -35784,7 +35784,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -36008,7 +36008,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -36232,7 +36232,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -36456,7 +36456,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -36683,7 +36683,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -36942,7 +36942,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -37190,7 +37190,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -37440,7 +37440,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -37689,7 +37689,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -37937,7 +37937,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -38187,7 +38187,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -38436,7 +38436,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -38683,7 +38683,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -38932,7 +38932,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -39181,7 +39181,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -39431,7 +39431,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -39645,7 +39645,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -39857,7 +39857,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -40073,7 +40073,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -40286,7 +40286,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -40518,7 +40518,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -40591,26 +40591,15 @@ J ⋮ kg{" "}
                     = the Planck charge,{" "}
 
                     <img
-                        src="/equations/pi.svg"
-                        alt="pi"
+                        src="/equations/del_f.svg"
+                        alt="del_F"
                         style={{
-                            height: "0.53em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/omega_1_constant.svg"
-                        alt="omega_1"
-                        style={{
-                            height: "0.75em",
+                            height: "0.9em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the omega_1 constant,{" "}
+                    = the delta Feigenbaum constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -40777,7 +40766,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -41035,7 +41024,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -41310,7 +41299,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -41592,7 +41581,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -41771,7 +41760,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -41946,7 +41935,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -42125,7 +42114,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -42428,7 +42417,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -42742,7 +42731,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -43009,7 +42998,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -43224,7 +43213,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -43430,7 +43419,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -43674,7 +43663,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -43909,7 +43898,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -44144,7 +44133,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -44380,7 +44369,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -44660,7 +44649,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -44908,7 +44897,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -45155,7 +45144,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -45426,7 +45415,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -45697,7 +45686,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -45943,7 +45932,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -46154,7 +46143,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -46401,7 +46390,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -46638,7 +46627,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -46885,7 +46874,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -47097,7 +47086,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -47355,7 +47344,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -47628,7 +47617,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -47910,7 +47899,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -48156,7 +48145,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -48403,7 +48392,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -48625,7 +48614,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -48849,7 +48838,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -49073,7 +49062,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -49297,7 +49286,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -49566,7 +49555,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -49834,7 +49823,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -50115,7 +50104,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -50396,7 +50385,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -50622,7 +50611,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -50882,7 +50871,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -51118,7 +51107,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -51377,7 +51366,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -51637,7 +51626,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -51838,7 +51827,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -52038,7 +52027,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -52262,7 +52251,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -52498,7 +52487,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -52756,7 +52745,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -53015,7 +53004,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -53269,7 +53258,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -53532,7 +53521,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -53805,7 +53794,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -54029,7 +54018,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -54253,7 +54242,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -54465,7 +54454,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -54676,7 +54665,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -54921,7 +54910,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -55177,7 +55166,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -55410,7 +55399,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -55702,7 +55691,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -55902,7 +55891,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -56134,7 +56123,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -56331,7 +56320,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -56563,7 +56552,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -56795,7 +56784,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -57029,7 +57018,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -57264,7 +57253,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -57499,7 +57488,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -57734,7 +57723,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -57973,7 +57962,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -58197,7 +58186,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -58421,7 +58410,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -58645,7 +58634,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -58869,7 +58858,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -59093,7 +59082,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -59341,7 +59330,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -59611,7 +59600,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -59888,7 +59877,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -60123,7 +60112,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -60334,7 +60323,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -60545,7 +60534,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -60799,7 +60788,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -61011,7 +61000,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -61223,7 +61212,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -61431,7 +61420,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -61665,7 +61654,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -61921,7 +61910,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -62179,7 +62168,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -62435,7 +62424,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -62689,7 +62678,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -62946,7 +62935,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -63203,7 +63192,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -63460,7 +63449,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -63718,7 +63707,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -63976,7 +63965,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -64234,7 +64223,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -64491,7 +64480,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -64737,7 +64726,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -64915,7 +64904,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -65094,7 +65083,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -65297,7 +65286,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -65509,7 +65498,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -65741,7 +65730,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -65975,7 +65964,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -66208,7 +66197,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -66442,7 +66431,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -66675,7 +66664,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -66919,7 +66908,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -67164,7 +67153,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -67907,7 +67896,7 @@ J ⋮ kg{" "}
         top: "50%",
         transform: "translate(12px, -50%)",
         color: "white",
-        fontSize: "16px",
+        fontSize: "14px",
         fontFamily: "'Times New Roman', Times, serif",
         whiteSpace: "nowrap",
         zIndex: 100,
