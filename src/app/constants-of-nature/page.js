@@ -17642,15 +17642,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/planck_mass_energy_equivalent_in_gev.svg"
                         alt="Planck mass energy equivalent in GeV equation"
-                        style={{
-                            display: "inline-block",
-                            width: "342px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -17868,15 +17868,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/von_klitzing_constant.svg"
                         alt="von Klitzing constant equation"
-                        style={{
-                            display: "inline-block",
-                            width: "343px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -18119,15 +18119,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/characteristic_impedance_of_vacuum.svg"
                         alt="characteristic impedance of vacuum equation"
-                        style={{
-                            display: "inline-block",
-                            width: "323px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -18340,15 +18340,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/planck_electric_impedance.svg"
                         alt="Planck electric impedance equation"
-                        style={{
-                            display: "inline-block",
-                            width: "303px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -18552,15 +18552,15 @@ A<sub>mdm</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/hertz-inverse_meter_relationship.svg"
                         alt="hertz-inverse meter relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "354px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -18741,17 +18741,17 @@ Hz ⋮ 1/m{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/atomic_unit_of_velocity.svg"
                         alt="atomic unit of velocity equation"
-                        style={{
-                            display: "inline-block",
-                            width: "313px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -18945,15 +18945,15 @@ A<sub>vel</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/atomic_unit_of_momentum.svg"
                         alt="atomic unit of velocity equation"
-                        style={{
-                            display: "inline-block",
-                            width: "348px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -19156,15 +19156,15 @@ A<sub>mom</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/natural_unit_of_momentum.svg"
                         alt="natural unit of momentum equation"
-                        style={{
-                            display: "inline-block",
-                            width: "321px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -19379,20 +19379,20 @@ A<sub>mom</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/natural_unit_of_momentum_in_mev_per_c.svg"
                         alt="natural unit of momentum in MeV/c equation"
-                        style={{
-                            display: "inline-block",
-                            width: "408px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
-
+                
                 {/* 4. Empty Line */}
                 <div style={{height: "22px"}}/>
 
@@ -19611,20 +19611,20 @@ A<sub>mom</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/atomic_mass_constant_energy_equivalent_in_mev.svg"
                         alt="atomic mass constant energy equivalent in MeV equation"
-                        style={{
-                            display: "inline-block",
-                            width: "339px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
-
+                
                 {/* 4. Empty Line */}
                 <div style={{height: "22px"}}/>
 
@@ -19838,17 +19838,17 @@ A<sub>mom</sub>{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/kilogram-joule_relationship.svg"
                         alt="kilogram-joule relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "353px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -20031,15 +20031,15 @@ A<sub>mom</sub>{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/joule-kilogram_relationship.svg"
                         alt="joule-kilogram relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "328px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -20221,15 +20221,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/atomic_mass_unit-joule_relationship.svg"
                         alt="atomic mass unit-joule relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "356px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -20466,15 +20466,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/joule-atomic_mass_unit_relationship.svg"
                         alt="joule-atomic mass unit relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "357px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -20691,15 +20691,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/kilogram-electron_volt_relationship.svg"
                         alt="kilogram-electron volt relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "406px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -20883,15 +20883,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_volt-kilogram_relationship.svg"
                         alt="electron volt-kilogram relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "325px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -21074,15 +21074,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/neutron-proton_mass_difference_energy_equivalent.svg"
                         alt="neutron-proton mass difference energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "359px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -21313,15 +21313,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/neutron-proton_mass_energy_equivalent_in_mev.svg"
                         alt="neutron-proton mass difference energy equivalent in MeV equation"
-                        style={{
-                            display: "inline-block",
-                            width: "398px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -21553,15 +21553,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/natural_unit_of_energy_in_mev.svg"
                         alt="natural unit of energy in MeV equation"
-                        style={{
-                            display: "inline-block",
-                            width: "334px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -21799,15 +21799,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/muon_mass_energy_equivalent_in_mev.svg"
                         alt="muon mass energy equivalent in MeV equation"
-                        style={{
-                            display: "inline-block",
-                            width: "334px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -22025,17 +22025,17 @@ J ⋮ kg{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton_mass_energy_equivalent_in_mev.svg"
                         alt="proton mass energy equivalent in MeV equation"
-                        style={{
-                            display: "inline-block",
-                            width: "336px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -22255,15 +22255,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/neutron_mass_energy_equivalent_in_mev.svg"
                         alt="neutron mass energy equivalent in MeV equation"
-                        style={{
-                            display: "inline-block",
-                            width: "334px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -22483,15 +22483,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/tau_energy_equivalent.svg"
                         alt="tau energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "333px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -22710,15 +22710,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/deuteron_mass_energy_equivalent_in_mev.svg"
                         alt="deuteron mass energy equivalent in MeV equation"
-                        style={{
-                            display: "inline-block",
-                            width: "349px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -22938,15 +22938,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/helion_mass_energy_equivalent_in_mev.svg"
                         alt="helion mass energy equivalent in MeV equation"
-                        style={{
-                            display: "inline-block",
-                            width: "344px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -23166,15 +23166,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/triton_mass_energy_equivalent_in_mev.svg"
                         alt="triton mass energy equivalent in MeV equation"
-                        style={{
-                            display: "inline-block",
-                            width: "348px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -23394,15 +23394,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/alpha_particle_mass_energy_equivalent_in_mev.svg"
                         alt="alpha particle mass energy equivalent in MeV equation"
-                        style={{
-                            display: "inline-block",
-                            width: "336px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -23622,15 +23622,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_mass_energy_equivalent.svg"
                         alt="electron mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "298px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -23865,15 +23865,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/muon_mass_energy_equivalent.svg"
                         alt="muon mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "297px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -24091,15 +24091,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton_mass_energy_equivalent.svg"
                         alt="proton mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "298px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -24318,15 +24318,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/neutron_mass_energy_equivalent.svg"
                         alt="neutron mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "298px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -24543,16 +24543,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/tau_mass_energy_equivalent.svg"
                         alt="tau mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "294" +
-                                "px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -24769,15 +24768,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/deuteron_mass_energy_equivalent.svg"
                         alt="deuteron mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "309px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -24995,15 +24994,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/helion_mass_energy_equivalent.svg"
                         alt="helion mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "308px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -25221,15 +25220,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/triton_mass_energy_equivalent.svg"
                         alt="triton mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "308px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -25446,15 +25445,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/alpha_particle_mass_energy_equivalent.svg"
                         alt="alpha particle mass energy equivalent equation"
-                        style={{
-                            display: "inline-block",
-                            width: "298px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -25652,18 +25651,6 @@ J ⋮ kg{" "}
 
 
 
-
-
-
-
-
-
-
-
-
-        
-
-
         
         
         
@@ -25685,15 +25672,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_proton_magnetic_moment_to_nuclear_magneton_ratio.svg"
                         alt="shielded proton magnetic moment to nuclear magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "340px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -25926,15 +25913,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_proton_magnetic_moment_to_bohr_magneton_ratio.svg"
                         alt="shielded proton magnetic moment to Bohr magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -26189,15 +26176,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/kilogram-kelvin_relationship.svg"
                         alt="kilogram-kelvin relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -26390,15 +26377,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/atomic_mass_unit-kelvin_relationship.svg"
                         alt="atomic mass unit-kelvin relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "400px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -26626,15 +26613,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/kelvin-atomic_mass_unit_relationship.svg"
                         alt="kelvin-atomic mass unit relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "400px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -26862,15 +26849,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/kelvin-kilogram_relationship.svg"
                         alt="kelvin-kilogram relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -27060,15 +27047,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/molar_gas_constant.svg"
                         alt="molar gas constant equation"
-                        style={{
-                            display: "inline-block",
-                            width: "470px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -27302,15 +27289,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/molar_volume_of_ideal_gas_0.svg"
                         alt="molar volume of ideal gas_0 equation"
-                        style={{
-                            display: "inline-block",
-                            width: "500px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -27593,15 +27580,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/molar_volume_of_ideal_gas_1.svg"
                         alt="molar volume of ideal gas_1 equation"
-                        style={{
-                            display: "inline-block",
-                            width: "500px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -27885,15 +27872,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/neutron_to_shielded_proton_magnetic_moment_ratio.svg"
                         alt="neutron to shielded proton magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -28148,15 +28135,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/muon-proton_magnetic_moment_ratio.svg"
                         alt="muon-proton magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -28422,15 +28409,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_gyromagnetic_ratio.svg"
                         alt="electron gyromagnetic ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "400px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -28680,15 +28667,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_gyromagnetic_ratio_in_mhz_per_t.svg"
                         alt="electron gyromagnetic ratio in MHz/T equation"
-                        style={{
-                            display: "inline-block",
-                            width: "480px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -28942,15 +28929,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_proton_gyromagnetic_ratio_in_mhz_per_t.svg"
                         alt="shielded proton gyromagnetic ratio in MHz/T equation"
-                        style={{
-                            display: "inline-block",
-                            width: "490px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -29200,15 +29187,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_proton_gyromagnetic_ratio.svg"
                         alt="shielded proton gyromagnetic ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "410px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -29450,15 +29437,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron-proton_magnetic_moment_ratio.svg"
                         alt="electron-proton magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "370px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -29714,15 +29701,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_to_shielded_proton_magnetic_moment_ratio.svg"
                         alt="electron to shielded proton magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "330px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -29991,15 +29978,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton_magnetic_moment_to_bohr_magneton_ratio.svg"
                         alt="proton magnetic moment to Bohr magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "395px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -30265,15 +30252,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton_magnetic_moment_to_nuclear_magneton_ratio.svg"
                         alt="proton magnetic moment to nuclear magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "355px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -30517,15 +30504,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton_magnetic_moment_to_nuclear_magneton_ratio.svg"
                         alt="proton magnetic moment to nuclear magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "340px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -30750,15 +30737,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/muon_g_factor.svg"
                         alt="muon g factor equation"
-                        style={{
-                            display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -30977,15 +30964,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/muon_magnetic_moment_to_bohr_magneton_ratio.svg"
                         alt="muon magnetic moment to Bohr magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "365px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -31251,15 +31238,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/muon_magnetic_moment_to_nuclear_magneton_ratio.svg"
                         alt="muon magnetic moment to nuclear magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "365px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -31524,15 +31511,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton_gyromagnetic_ratio.svg"
                         alt="proton gyromagnetic ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -31764,15 +31751,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton_gyromagnetic_ratio_in_mhz_per_t.svg"
                         alt="proton gyromagnetic ratio in MHz/T equation"
-                        style={{
-                            display: "inline-block",
-                            width: "440px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -32015,15 +32002,15 @@ J ⋮ kg{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/muon_magnetic_moment.svg"
                         alt="muon magnetic moment equation"
-                        style={{
-                            display: "inline-block",
-                            width: "405px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -32297,15 +32284,15 @@ J ⋮ kg{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_magnetic_moment.svg"
                         alt="electron magnetic moment equation"
-                        style={{
-                            display: "inline-block",
-                            width: "410px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -32589,15 +32576,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/muon_magnetic_moment_anomaly.svg"
                         alt="muon magnetic moment anomaly equation"
-                        style={{
-                            display: "inline-block",
-                            width: "440px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -32837,15 +32824,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_magnetic_moment_anomaly.svg"
                         alt="electron magnetic moment anomaly equation"
-                        style={{
-                            display: "inline-block",
-                            width: "460px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
