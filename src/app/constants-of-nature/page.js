@@ -342,18 +342,18 @@ const GROUP_SPACER_HEIGHT = '35px';
         251: "reduced neutron Compton wavelength",
         252: "reduced tau Compton wavelength",
 
-        253: "deuteron g factor",
-        254: "deuteron magnetic moment to nuclear magneton ratio",
+        253: "Wien frequency displacement law constant",
+        254: "Boltzmann constant in Hz/K",
         255: "deuteron magnetic moment to Bohr magneton ratio",
-        256: "Wien frequency displacement law constant",
-        257: "Boltzmann constant in Hz/K",
-        258: "kelvin-hertz relationship",
-        259: "hertz-kelvin relationship",
-        260: "Wien wavelength displacement law constant",
-        261: "second radiation constant",
-        262: "inverse meter-kelvin relationship",
-        263: "kelvin-inverse meter relationship",
-        264: "Boltzmann constant in inverse meter per kelvin",
+        256: "kelvin-hertz relationship",
+        257: "hertz-kelvin relationship",
+        258: "Wien wavelength displacement law constant",
+        259: "second radiation constant",
+        260: "inverse meter-kelvin relationship",
+        261: "kelvin-inverse meter relationship",
+        262: "Boltzmann constant in inverse meter per kelvin",
+        263: "hartree-kelvin_relationship",
+        264: "kelvin-hartree_relationship",
         265: "electron molar mass",
         266: "muon molar mass",
         267: "molar mass constant",
@@ -52074,15 +52074,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/josephson_constant.svg"
                         alt="Josephson constant equation"
-                        style={{
-                            display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -52300,15 +52300,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/elementary_charge_over_h-bar.svg"
                         alt="elementary charge over h-bar equation"
-                        style={{
-                            display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -52560,15 +52560,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/magnetic_flux_quantum.svg"
                         alt="magnetic flux quantum equation"
-                        style={{
-                            display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -52794,17 +52794,17 @@ J ⋮ kg{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/reduced_planck_constant_in_ev_s.svg"
                         alt="reduced Planck constant in eV s equation"
-                        style={{
-                            display: "inline-block",
-                            width: "410px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -53055,15 +53055,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/planck_constant_in_ev_per_hz.svg"
                         alt="Planck constant in eV/Hz equation"
-                        style={{
-                            display: "inline-block",
-                            width: "425px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -53315,15 +53315,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/first_radiation_constant.svg"
                         alt="first radiation constant equation"
-                        style={{
-                            display: "inline-block",
-                            width: "380px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -53516,15 +53516,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/first_radiation_constant_for_spectral_radiance.svg"
                         alt="first radiation constant for spectral radiance equation"
-                        style={{
-                            display: "inline-block",
-                            width: "360px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -53716,15 +53716,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_helion_gyromagnetic_ratio.svg"
                         alt="shielded helion gyromagnetic ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "340px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -53940,15 +53940,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_helion_gyromagnetic_ratio_in_mhz_per_t.svg"
                         alt="shielded helion gyromagnetic ratio in MHz/T equation"
-                        style={{
-                            display: "inline-block",
-                            width: "420px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -54176,15 +54176,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/helion_magnetic_moment.svg"
                         alt="helion magnetic moment equation"
-                        style={{
-                            display: "inline-block",
-                            width: "430px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -54434,15 +54434,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_helion_magnetic_moment.svg"
                         alt="shielded helion magnetic moment equation"
-                        style={{
-                            display: "inline-block",
-                            width: "430px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -54693,15 +54693,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_helion_to_proton_magnetic_moment_ratio.svg"
                         alt="shielded helion to proton magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "450px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -54947,15 +54947,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_helion_to_shielded_proton_magnetic_moment_ratio.svg"
                         alt="shielded helion to shielded proton magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "430px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -55208,17 +55208,17 @@ J ⋮ kg{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_to_shielded_helion_magnetic_moment_ratio.svg"
                         alt="electron to shielded helion magnetic moment ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "420px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -55483,15 +55483,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/atomic_mass_unit-hartree_relationship.svg"
                         alt="atomic mass unit-hartree relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "440px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -55705,17 +55705,17 @@ J ⋮ kg{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/hartree-atomic_mass_unit_relationship.svg"
                         alt="hartree-atomic mass unit relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "445px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -55931,15 +55931,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/kilogram-hartree_relationship.svg"
                         alt="kilogram-hartree relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "500px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -56141,17 +56141,17 @@ J ⋮ kg{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/hartree-kilogram_relationship.svg"
                         alt="hartree-kilogram relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "495px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -56337,11 +56337,1086 @@ J ⋮ kg{" "}
 
 
 
+235: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "-25px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    kelvin-kilogram relationship
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
+                    <img
+                        src="/equations/kelvin-kilogram_relationship.svg"
+                        alt="kelvin-kilogram relationship equation"
+                        className="popup-equation"
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "14px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_mass.svg"
+                        alt="m_p"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/planck_temperature.svg"
+                        alt="T_p"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck temperature,{" "}
+
+                    <img
+                        src="/equations/g_g.svg"
+                        alt="G_g"
+                        style={{
+                            height: "1.05em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the tether length for grazing half the unit circle,{" "}
+
+                    <img
+                        src="/equations/zhe_1.svg"
+                        alt="zhe_1"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+   K ⋮ kg{" "}
+      = 1.53617918751221... &times; 10<sup>&minus;40</sup> kg
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  K ⋮ kg{" "}
+      = 1.536179187 &times; 10<sup>&minus;40</sup> kg
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?kkg|search_for=kelvin"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", 10-digit match"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  K ⋮ kg{" "}
+      = 1.536179187 &times; 10<sup>&minus;40</sup> kg
+  </span>
+                    <span>
+    CODATA 2018, 10-digit match
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+236: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "-25px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    kelvin-atomic mass unit relationship
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
+                    <img
+                        src="/equations/kelvin-atomic_mass_unit_relationship.svg"
+                        alt="kelvin-atomic mass unit relationship equation"
+                        className="popup-equation"
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "14px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/atomic_mass_constant_symbol.svg"
+                        alt="A_mass"
+                        style={{
+                            height: "0.92em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the atomic mass constant,{" "}
+
+                    <img
+                        src="/equations/planck_mass.svg"
+                        alt="m_p"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/planck_temperature.svg"
+                        alt="T_p"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck temperature,{" "}
+
+                    <img
+                        src="/equations/g_g.svg"
+                        alt="G_g"
+                        style={{
+                            height: "1.05em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the tether length for grazing half the unit circle,{" "}
+
+                    <img
+                        src="/equations/zhe_1.svg"
+                        alt="zhe_1"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+   K ⋮ <img
+      src="/equations/atomic_mass_constant_symbol.svg"
+      alt="A_mass"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 9.25108730294202... &times; 10<sup>&minus;14</sup> u
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  K ⋮ <img
+      src="/equations/atomic_mass_constant_symbol.svg"
+      alt="A_mass"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 9.2510872884(29) &times; 10<sup>&minus;14</sup> u
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?ku|search_for=kelvin"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = + 5.01"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  K ⋮ <img
+      src="/equations/atomic_mass_constant_symbol.svg"
+      alt="A_mass"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}
+      = 9.2510873014(28) &times; 10<sup>&minus;14</sup> u
+  </span>
+                    <span>
+    CODATA 2018, σ = + 0.55
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+
+237: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "-25px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    atomic mass unit-kelvin relationship
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
+                    <img
+                        src="/equations/atomic_mass_unit-kelvin_relationship.svg"
+                        alt="atomic mass unit-kelvin relationship equation"
+                        className="popup-equation"
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "14px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/atomic_mass_constant_symbol.svg"
+                        alt="A_mass"
+                        style={{
+                            height: "0.92em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the atomic mass constant,{" "}
+
+                    <img
+                        src="/equations/planck_temperature.svg"
+                        alt="T_p"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck temperature,{" "}
+
+                    <img
+                        src="/equations/planck_mass.svg"
+                        alt="m_p"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/g_g.svg"
+                        alt="G_g"
+                        style={{
+                            height: "1.05em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the tether length for grazing half the unit circle,{" "}
+
+                    <img
+                        src="/equations/zhe_1.svg"
+                        alt="zhe_1"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+   <img
+       src="/equations/atomic_mass_constant_symbol.svg"
+       alt="A_mass"
+       style={{
+           height: "0.9em",
+           verticalAlign: "-0.2em",
+           display: "inline",
+       }}
+   />{" "}⋮ K{" "}
+      = 1.08095401897459... &times; 10<sup>13</sup> K
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/atomic_mass_constant_symbol.svg"
+      alt="A_mass"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}⋮ K{" "}
+      = 1.08095402067(34) &times; 10<sup>13</sup> K
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?uk|search_for=kelvin"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = − 4.99"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/atomic_mass_constant_symbol.svg"
+      alt="A_mass"
+      style={{
+          height: "0.9em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "}⋮ K{" "}
+      = 1.08095401916(33) &times; 10<sup>13</sup> K
+  </span>
+                    <span>
+    CODATA 2018, σ = − 0.56
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+
+
+238: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "-25px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    kilogram-kelvin relationship
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
+                    <img
+                        src="/equations/kilogram-kelvin_relationship.svg"
+                        alt="kilogram-kelvin relationship equation"
+                        className="popup-equation"
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "14px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/planck_temperature.svg"
+                        alt="T_p"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck temperature,{" "}
+
+                    <img
+                        src="/equations/planck_mass.svg"
+                        alt="m_p"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/g_g.svg"
+                        alt="G_g"
+                        style={{
+                            height: "1.05em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the tether length for grazing half the unit circle,{" "}
+
+                    <img
+                        src="/equations/zhe_1.svg"
+                        alt="zhe_1"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  kg ⋮ K{" "}
+      = 6.50965725957701... &times; 10<sup>39</sup> K
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  kg ⋮ K{" "}
+      = 6.509657260 &times; 10<sup>39</sup> K
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?kgk|search_for=kelvin"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", 10-digit match"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  kg ⋮ K{" "}
+      = 6.509657260 &times; 10<sup>39</sup> K
+  </span>
+                    <span>
+    CODATA 2018, 10-digit match
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
 
 
 
 
 239: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "-25px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    inverse meter-kilogram relationship
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
+                    <img
+                        src="/equations/inverse_meter-kilogram_relationship.svg"
+                        alt="inverse meter-kilogram relationship equation"
+                        className="popup-equation"
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "14px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/pi.svg"
+                        alt="pi"
+                        style={{
+                            height: "0.53em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/planck_length.svg"
+                        alt="l_p"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck length,{" "}
+
+                    <img
+                        src="/equations/planck_mass.svg"
+                        alt="m_p"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/universal_parabolic_constant.svg"
+                        alt="P_up"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the universal parabolic constant,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  1/m ⋮ kg{" "}
+      = 2.21021909404020... &times; 10<sup>&minus;42</sup> kg
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  1/m ⋮ kg{" "}
+      = 2.210219094 &times; 10<sup>&minus;42</sup> kg
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?minvkg|search_for=kilogram"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", 10-digit match"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  1/m ⋮ kg{" "}
+      = 2.210219094 &times; 10<sup>&minus;42</sup> kg
+  </span>
+                    <span>
+    CODATA 2018, 10-digit match
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+
+240: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -56359,15 +57434,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/kilogram-inverse_meter_relationship.svg"
                         alt="kilogram-inverse meter relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "410px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -56541,7 +57616,12 @@ J ⋮ kg{" "}
 
 
 
-240: (
+
+
+
+
+
+241: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -56559,15 +57639,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/atomic_mass_unit-inverse_meter_relationship.svg"
                         alt="atomic mass unit-inverse meter relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -56773,203 +57853,6 @@ J ⋮ kg{" "}
         ),
 
 
-241: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "-25px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    inverse meter-kilogram relationship
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
-                    <img
-                        src="/equations/inverse_meter-kilogram_relationship.svg"
-                        alt="inverse meter-kilogram relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "390px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "14px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/pi.svg"
-                        alt="pi"
-                        style={{
-                            height: "0.53em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/planck_length.svg"
-                        alt="l_p"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck length,{" "}
-
-                    <img
-                        src="/equations/planck_mass.svg"
-                        alt="m_p"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Planck mass,{" "}
-
-                    <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the universal parabolic constant,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  1/m ⋮ kg{" "}
-      = 2.21021909404020... &times; 10<sup>&minus;42</sup> kg
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  1/m ⋮ kg{" "}
-      = 2.210219094 &times; 10<sup>&minus;42</sup> kg
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?minvkg|search_for=kilogram"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", 10-digit match"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  1/m ⋮ kg{" "}
-      = 2.210219094 &times; 10<sup>&minus;42</sup> kg
-  </span>
-                    <span>
-    CODATA 2018, 10-digit match
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
 242: (
             <div
                 style={{
@@ -56988,15 +57871,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/inverse_meter-atomic_mass_unit_relationship.svg"
                         alt="inverse meter-atomic mass unit relationship equation"
-                        style={{
-                            display: "inline-block",
-                            width: "410px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -57220,15 +58103,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/compton_wavelength.svg"
                         alt="Compton wavelength equation"
-                        style={{
-                            display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -57452,15 +58335,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/muon_compton_wavelength.svg"
                         alt="muon Compton wavelength equation"
-                        style={{
-                            display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -57686,15 +58569,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton_compton_wavelength.svg"
                         alt="proton Compton wavelength equation"
-                        style={{
-                            display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -57921,15 +58804,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/neutron_compton_wavelength.svg"
                         alt="neutron Compton wavelength equation"
-                        style={{
-                            display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -58156,15 +59039,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/tau_compton_wavelength.svg"
                         alt="tau Compton wavelength equation"
-                        style={{
-                            display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -58391,15 +59274,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/reduced_compton_wavelength.svg"
                         alt="reduced Compton wavelength equation"
-                        style={{
-                            display: "inline-block",
-                            width: "320px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -58628,17 +59511,17 @@ J ⋮ kg{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/reduced_muon_compton_wavelength.svg"
                         alt="reduced muon Compton wavelength equation"
-                        style={{
-                            display: "inline-block",
-                            width: "310px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -58854,15 +59737,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/reduced_proton_compton_wavelength.svg"
                         alt="reduced proton Compton wavelength equation"
-                        style={{
-                            display: "inline-block",
-                            width: "315px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -59078,15 +59961,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/reduced_neutron_compton_wavelength.svg"
                         alt="reduced neutron Compton wavelength equation"
-                        style={{
-                            display: "inline-block",
-                            width: "315px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -59300,17 +60183,17 @@ J ⋮ kg{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/reduced_tau_compton_wavelength.svg"
                         alt="reduced tau Compton wavelength equation"
-                        style={{
-                            display: "inline-block",
-                            width: "315px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
