@@ -229,7 +229,7 @@ const GROUP_SPACER_HEIGHT = '35px';
         141: "proton magnetic moment",
         142: "Faraday constant",
         143: "molar Planck constant",
-        144: "molar volum of silicon",
+        144: "molar volume of silicon",
 
         145: "speed of light in vacuum",
         146: "inverse meter-hertz relationship",
@@ -271,13 +271,13 @@ const GROUP_SPACER_HEIGHT = '35px';
         181: "conventional value of farad-90",
         182: "conventional value of henry-90",
         183: "conventional value of ohm-90",
-        184: "Sackur-Tetrode constant_0",
-        185: "Sackur-Tetrode constant_1",
-        186: "Stefan-Boltzmann constant",
-        187: "proton magnetic shielding correction",
-        188: "helion shielding shift",
-        189: "atomic unit of electric field",
-        190: "atomic unit of current",
+        184: "neutron-proton mass difference",
+        185: "helion shielding shift",
+        186: "shielding difference of t and p in HT",
+        187: "shielding difference of d and p in HD",
+        188: "proton magnetic shielding correction",
+        189: "atomic unit of electric polarizability",
+        190: "atomic unit of electric field",
         191: "atomic unit of force",
         192: "atomic unit of charge density",
         193: "neutron magnetic moment",
@@ -291,19 +291,19 @@ const GROUP_SPACER_HEIGHT = '35px';
         201: "natural unit of time",
         202: "atomic mass unit-hertz relationship",
         203: "kilogram-hertz relationship",
-        204: "Rydberg constant times hc in J",
-        205: "Hartree energy",
-        206: "joule-hartree relationship",
-        207: "Boltzmann constant",
-        208: "Boltzmann constant in eV/K",
-        209: "kelvin-joule relationship",
-        210: "kelvin-electron volt relationship",
-        211: "electron volt-kelvin relationship",
-        212: "joule-kelvin relationship",
-        213: "Loschmidt constant (273.15 K, 100 kPa)",
-        214: "Loschmidt constant (273.15 K, 101.325 kPa)",
-        215: "Bohr magneton in K/T",
-        216: "nuclear magneton in K/T",
+        204: "Boltzmann constant",
+        205: "Boltzmann constant in eV/K",
+        206: "kelvin-joule relationship",
+        207: "kelvin-electron volt relationship",
+        208: "electron volt-kelvin relationship",
+        209: "joule-kelvin relationship",
+        210: "Loschmidt constant (273.15 K, 100 kPa)",
+        211: "Loschmidt constant (273.15 K, 101.325 kPa)",
+        212: "Bohr magneton in K/T",
+        213: "nuclear magneton in K/T",
+        214: "Rydberg constant times hc in J",
+        215: "Hartree energy",
+        216: "joule-hartree relationship",
 
         217: "Josephson constant",
         218: "elementary charge over h-bar",
@@ -25669,15 +25669,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/deuteron_g_factor.svg"
                         alt="deuteron g factor equation"
-                        style={{
-                            display: "inline-block",
-                            width: "315px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -25893,15 +25893,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/deuteron_magnetic_moment_to_nuclear_magneton_ratio.svg"
                         alt="deuteron magnetic moment to nuclear magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "315px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -26141,15 +26141,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/deuteron_magnetic_moment_to_bohr_magneton_ratio.svg"
                         alt="deuteron magnetic moment to Bohr magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "365px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -28793,15 +28793,15 @@ J ⋮ kg{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_g_factor.svg"
                         alt="electron g factor equation"
-                        style={{
-                            display: "inline-block",
-                            width: "400px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -29017,15 +29017,15 @@ J ⋮ kg{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_magnetic_moment_to_bohr_magneton_ratio.svg"
                         alt="electron magnetic moment to Bohr magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "400px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -29265,15 +29265,15 @@ J ⋮ kg{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/electron_magnetic_moment_to_nuclear_magneton_ratio.svg"
                         alt="electron magnetic moment to nuclear magneton ratio equation"
-                        style={{
-                            display: "inline-block",
-                            width: "460px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -30856,15 +30856,15 @@ J ⋮ kg{" "}
                 <div style={{height: "18px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/shielded_proton_magnetic_moment.svg"
                         alt="shielded proton magnetic moment equation"
-                        style={{
-                            display: "inline-block",
-                            width: "410px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -33962,15 +33962,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/proton_magnetic_moment.svg"
                         alt="proton magnetic moment equation"
-                        style={{
-                            display: "inline-block",
-                            width: "400px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -34234,15 +34234,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/faraday_constant.svg"
                         alt="Faraday constant equation"
-                        style={{
-                            display: "inline-block",
-                            width: "400px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -34466,17 +34466,17 @@ J ⋮ kg{" "}
 
                 {/* 2. Empty Line */}
                 <div style={{height: "22px"}}/>
-
+                
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex", 
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/molar_planck_constant.svg"
                         alt="molar Planck constant equation"
-                        style={{
-                            display: "inline-block",
-                            width: "450px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
@@ -34730,15 +34730,15 @@ J ⋮ kg{" "}
                 <div style={{height: "22px"}}/>
 
                 {/* 3. Equation Image, right-aligned */}
-                <div style={{textAlign: "right"}}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
                     <img
                         src="/equations/molar_volume_of_silicon.svg"
                         alt="molar volume of silicon equation"
-                        style={{
-                            display: "inline-block",
-                            width: "530px",   // ✅ Set the width to exactly what you want
-                            height: "auto"
-                        }}
+                        className="popup-equation"
                     />
                 </div>
 
