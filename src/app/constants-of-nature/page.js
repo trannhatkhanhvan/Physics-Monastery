@@ -65934,7 +65934,7 @@ J ⋮ kg{" "}
                         justifyContent: "flex-end"}}
 >
                     <img
-                        src="/equations/sackur-tetrode_constant_(1_k,_100_kpa).svg"
+                        src="/equations/sackur-tetrode_constant_0.svg"
                         alt="Sackur-Tetrode constant (1 K, 100 kPa) equation"
                         className="popup-equation"
                     />
@@ -66237,7 +66237,7 @@ J ⋮ kg{" "}
                         justifyContent: "flex-end"}}
 >
                     <img
-                        src="/equations/sackur-tetrode_constant_(1_k,_101.325_kpa).svg"
+                        src="/equations/sackur-tetrode_constant_1.svg"
                         alt="Sackur-Tetrode constant (1 K, 101.325 kPa) equation"
                         className="popup-equation"
                     />
