@@ -12447,6 +12447,9 @@ A<sub>mdm</sub>{" "}
                     />{" "}
                     = the arc length of the unit lemniscate,{" "}
 
+                    GeV{" "}
+                    = the giga electron-volt,{" "}
+                    
                     <img
                         src="/equations/golden_ratio.svg"
                         alt="φ"
@@ -12457,9 +12460,6 @@ A<sub>mdm</sub>{" "}
                         }}
                     />{" "}
                     = the golden ratio,{" "}
-
-                    GeV{" "}
-                    = the giga electron-volt,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -25720,15 +25720,15 @@ J ⋮ kg{" "}
                     = Catalan&apos;s constant,{" "}
 
                     <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
+                        src="/equations/w_we.svg"
+                        alt="W_We"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the universal parabolic constant,{" "}
+                    = the Weierstrass constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -25944,15 +25944,15 @@ J ⋮ kg{" "}
                     = Catalan&apos;s constant,{" "}
 
                     <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
+                        src="/equations/w_we.svg"
+                        alt="W_We"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the universal parabolic constant,{" "}
+                    = the Weierstrass constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -26214,15 +26214,15 @@ J ⋮ kg{" "}
                     = the proton mass,{" "}
 
                     <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
+                        src="/equations/w_we.svg"
+                        alt="W_We"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the universal parabolic constant,{" "}
+                    = the Weierstrass constant,{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -26519,8 +26519,8 @@ J ⋮ kg{" "}
                         src="/equations/muon_mass_symbol.svg"
                         alt="m_mu"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.9em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -26594,7 +26594,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –4.49044828987864... &times; 10<sup>&minus;26</sup> J/T
+      = – 4.49044828987864... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -26619,7 +26619,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = –4.49044830(10) &times; 10<sup>&minus;26</sup> J/T
+      = – 4.49044830(10) &times; 10<sup>&minus;26</sup> J/T
 </span>
                     <span>
     <a
@@ -26657,7 +26657,7 @@ J ⋮ kg{" "}
          display: "inline",
      }}
  />{" "}
-      = –4.49044830(10) &times; 10<sup>&minus;26</sup> J/T
+      = – 4.49044830(10) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = − 0.10
@@ -26754,37 +26754,26 @@ J ⋮ kg{" "}
                     = the universal parabolic constant,{" "}
 
                     <img
-                        src="/equations/derangement_symbol.svg"
-                        alt="!n"
+                        src="/equations/liouville_s_constant.svg"
+                        alt="L_Li"
                         style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
+                            height: "1.00em",
+                            verticalAlign: "-0.27em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the derangement function,{" "}
+                    = Liouville&apos;s constant,{" "}
 
                     <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
+                        src="/equations/v_fe.svg"
+                        alt="V_fe"
                         style={{
-                            height: "0.5em",
-                            verticalAlign: "-0.0em",
+                            height: "0.95em",
+                            verticalAlign: "-0.25em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the arc length of the unit lemniscate,{" "}
-
-                    <img
-                        src="/equations/pi.svg"
-                        alt="pi"
-                        style={{
-                            height: "0.53em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
+                    = the figure eight knot hyperbolic volume,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -27005,21 +26994,10 @@ J ⋮ kg{" "}
                     = the universal parabolic constant,{" "}
 
                     <img
-                        src="/equations/l_2.svg"
-                        alt="L_2"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> lemniscate constant,{" "}
-
-                    <img
                         src="/equations/derangement_symbol.svg"
                         alt="!n"
                         style={{
-                            height: "0.7em",
+                            height: "0.81em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -27027,15 +27005,26 @@ J ⋮ kg{" "}
                     = the derangement function,{" "}
 
                     <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
+                        src="/equations/liouville_s_constant.svg"
+                        alt="L_Li"
                         style={{
-                            height: "0.5em",
+                            height: "1.00em",
+                            verticalAlign: "-0.27em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Liouville&apos;s constant,{" "}
+
+                    <img
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
+                        style={{
+                            height: "0.7em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the arc length of the unit lemniscate,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -27253,15 +27242,26 @@ J ⋮ kg{" "}
                     = the universal parabolic constant,{" "}
 
                     <img
-                        src="/equations/c_q.svg"
-                        alt="C_Q"
+                        src="/equations/zeta_function.svg"
+                        alt="zeta(x)"
                         style={{
                             height: "1em",
-                            verticalAlign: "-0.4em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the QRS constant,{" "}
+                    = the Riemann zeta function,{" "}
+
+                    <img
+                        src="/equations/domino_tiling_constant.svg"
+                        alt="C_d"
+                        style={{
+                            height: "0.92em",
+                            verticalAlign: "-0.25em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the domino tiling constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -27507,15 +27507,26 @@ J ⋮ kg{" "}
                     = the muon mass,{" "}
 
                     <img
-                        src="/equations/c_q.svg"
-                        alt="C_Q"
+                        src="/equations/zeta_function.svg"
+                        alt="zeta(x)"
                         style={{
                             height: "1em",
-                            verticalAlign: "-0.4em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the QRS constant,{" "}
+                    = the Riemann zeta function,{" "}
+
+                    <img
+                        src="/equations/domino_tiling_constant.svg"
+                        alt="C_d"
+                        style={{
+                            height: "0.92em",
+                            verticalAlign: "-0.25em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the domino tiling constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -27781,15 +27792,26 @@ J ⋮ kg{" "}
                     = the muon mass,{" "}
 
                     <img
-                        src="/equations/c_q.svg"
-                        alt="C_Q"
+                        src="/equations/zeta_function.svg"
+                        alt="zeta(x)"
                         style={{
                             height: "1em",
-                            verticalAlign: "-0.4em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the QRS constant,{" "}
+                    = the Riemann zeta function,{" "}
+
+                    <img
+                        src="/equations/domino_tiling_constant.svg"
+                        alt="C_d"
+                        style={{
+                            height: "0.92em",
+                            verticalAlign: "-0.25em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the domino tiling constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -28775,6 +28797,8 @@ J ⋮ kg{" "}
 
 
 
+
+
 121: (
             <div
                 style={{
@@ -28815,7 +28839,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -28855,37 +28879,48 @@ J ⋮ kg{" "}
                     = the universal parabolic constant,{" "}
 
                     <img
-                        src="/equations/continued_fraction_constant.svg"
-                        alt="C_CF"
+                        src="/equations/c_cfp.svg"
+                        alt="C_CFP"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the fixed point of the hyperbolic cotangent,{" "}
+
+                    <img
+                        src="/equations/d_d.svg"
+                        alt="D_d"
                         style={{
                             height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the continued fraction constant,{" "}
+                    = the dimer constant,{" "}
 
                     <img
-                        src="/equations/pi.svg"
-                        alt="pi"
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
                         style={{
-                            height: "0.55em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/zhe_theta.svg"
-                        alt="x_theta"
-                        style={{
-                            height: "0.8em",
+                            height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic radian constant, and{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -29039,7 +29074,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -29079,37 +29114,48 @@ J ⋮ kg{" "}
                     = the universal parabolic constant,{" "}
 
                     <img
-                        src="/equations/continued_fraction_constant.svg"
-                        alt="C_CF"
+                        src="/equations/c_cfp.svg"
+                        alt="C_CFP"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the fixed point of the hyperbolic cotangent,{" "}
+
+                    <img
+                        src="/equations/d_d.svg"
+                        alt="D_d"
                         style={{
                             height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the continued fraction constant,{" "}
+                    = the dimer constant,{" "}
 
                     <img
-                        src="/equations/pi.svg"
-                        alt="pi"
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
                         style={{
-                            height: "0.55em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/zhe_theta.svg"
-                        alt="x_theta"
-                        style={{
-                            height: "0.8em",
+                            height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic radian constant, and{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -29287,7 +29333,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -29349,37 +29395,48 @@ J ⋮ kg{" "}
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/continued_fraction_constant.svg"
-                        alt="C_CF"
+                        src="/equations/c_cfp.svg"
+                        alt="C_CFP"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the fixed point of the hyperbolic cotangent,{" "}
+
+                    <img
+                        src="/equations/d_d.svg"
+                        alt="D_d"
                         style={{
                             height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the continued fraction constant,{" "}
+                    = the dimer constant,{" "}
 
                     <img
-                        src="/equations/pi.svg"
-                        alt="pi"
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
                         style={{
-                            height: "0.55em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/zhe_theta.svg"
-                        alt="x_theta"
-                        style={{
-                            height: "0.8em",
+                            height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic radian constant, and{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -29645,34 +29702,12 @@ J ⋮ kg{" "}
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
                         style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.2em",
+                            height: "0.78em",
+                            verticalAlign: "-0.25em",
                             display: "inline",
                         }}
                     />{" "}
                     = the electron mass,{" "}
-
-                    <img
-                        src="/equations/fibonacci_factorial.svg"
-                        alt="F_FF"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Fibonacci factorial constant,{" "}
-
-                    <img
-                        src="/equations/pi.svg"
-                        alt="pi"
-                        style={{
-                            height: "0.55em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/s_symbol.svg"
@@ -29686,15 +29721,37 @@ J ⋮ kg{" "}
                     = the arc length of the unit lemniscate,{" "}
 
                     <img
-                        src="/equations/zhe_r.svg"
-                        alt="zhe_r"
+                        src="/equations/pi.svg"
+                        alt="pi"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
                         style={{
                             height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic radius constant, and{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -29903,8 +29960,8 @@ J ⋮ kg{" "}
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
                         style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.2em",
+                            height: "0.78em",
+                            verticalAlign: "-0.25em",
                             display: "inline",
                         }}
                     />{" "}
@@ -30193,15 +30250,15 @@ J ⋮ kg{" "}
                     = the arc length of the unit lemniscate,{" "}
 
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
                         style={{
                             height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
 
                     <img
                         src="/equations/zhe_4.svg"
@@ -30435,15 +30492,15 @@ J ⋮ kg{" "}
                     = the proton mass,{" "}
 
                     <img
-                        src="/equations/domino_tiling_constant.svg"
-                        alt="C_d"
+                        src="/equations/s_symbol.svg"
+                        alt="s"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "0.5em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the domino tiling constant,{" "}
+                    = the arc length of the unit lemniscate,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -30680,26 +30737,15 @@ J ⋮ kg{" "}
                     = the proton mass,{" "}
 
                     <img
-                        src="/equations/domino_tiling_constant.svg"
-                        alt="C_d"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the domino tiling constant,{" "}
-
-                    <img
-                        src="/equations/pi.svg"
-                        alt="pi"
+                        src="/equations/s_symbol.svg"
+                        alt="s"
                         style={{
                             height: "0.5em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes&apos; constant,{" "}
+                    = the arc length of the unit lemniscate,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -30878,7 +30924,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -30962,39 +31008,50 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the proton mass,{" "}
-
+                    
                     <img
-                        src="/equations/c_qa.svg"
-                        alt="c_qa"
+                        src="/equations/madelung_constant.svg"
+                        alt="M"
                         style={{
-                            height: "1.00em",
-                            verticalAlign: "-0.3em",
+                            height: "0.75em",
+                            verticalAlign: "-0.1em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the associated QRS constant,{" "}
+                    = the Madelung constant,{" "}
 
                     <img
-                        src="/equations/g_gi.svg"
-                        alt="g_gi"
+                        src="/equations/s_symbol.svg"
+                        alt="s"
                         style={{
-                            height: "1.00em",
-                            verticalAlign: "-0.2em",
+                            height: "0.5em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = Gieseking&apos;s constant,{" "}
+                    = the arc length of the unit lemniscate,{" "}
 
                     <img
-                        src="/equations/zhe_r.svg"
-                        alt="zhe_r"
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
                         style={{
                             height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic radius constant, and{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -31958,15 +32015,15 @@ J ⋮ kg{" "}
                     = Archimedes&apos; constant,{" "}
 
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
+                        src="/equations/v_fe.svg"
+                        alt="V_fe"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
+                            height: "0.9em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+                    = the figure eight knot hyperbolic volume,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -32210,6 +32267,39 @@ J ⋮ kg{" "}
                     = the electron mass,{" "}
 
                     <img
+                        src="/equations/1st_foias_constant.svg"
+                        alt="x_infinity"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 1<sup>st</sup> Foias constant,{" "}
+
+                    <img
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Catalan&apos;s constant,{" "}
+
+                    <img
+                        src="/equations/zhe_2.svg"
+                        alt="zhe_2"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
+
+                    <img
                         src="/equations/zhe_3.svg"
                         alt="zhe_3"
                         style={{
@@ -32229,29 +32319,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
-                        style={{
-                            height: "0.5em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the arc length of the unit lemniscate,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant, and{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -32474,26 +32542,15 @@ J ⋮ kg{" "}
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.5em",
+                            height: "0.7em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the arc length of the unit lemniscate,{" "}
-
-                    <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -32761,26 +32818,26 @@ J ⋮ kg{" "}
                     = Archimedes&apos; constant,{" "}
 
                     <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.5em",
+                            height: "0.7em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the arc length of the unit lemniscate,{" "}
-
+                    = Catalan&apos;s constant,{" "}
+                    
                     <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
+                        src="/equations/zhe_2.svg"
+                        alt="zhe_2"
                         style={{
                             height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -33014,6 +33071,28 @@ J ⋮ kg{" "}
                     = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
 
                     <i>S</i> = the Sierpi&#324;ski constant,{" "}
+                    
+                    <img
+                        src="/equations/euler_s_number.svg"
+                        alt="e"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Euler&apos;s number,{" "}
+
+                    <img
+                        src="/equations/euler-mascheroni_constant.svg"
+                        alt="y"
+                        style={{
+                            height: "0.65em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Euler-Mascheroni constant,{" "}
 
                     <img
                         src="/equations/pi.svg"
@@ -33025,6 +33104,28 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Catalan&apos;s constant,{" "}
+
+                    <img
+                        src="/equations/zhe_2.svg"
+                        alt="zhe_2"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -33279,6 +33380,28 @@ J ⋮ kg{" "}
                     = the proton mass,{" "}
 
                     <img
+                        src="/equations/euler_s_number.svg"
+                        alt="e"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Euler&apos;s number,{" "}
+
+                    <img
+                        src="/equations/euler-mascheroni_constant.svg"
+                        alt="y"
+                        style={{
+                            height: "0.65em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Euler-Mascheroni constant,{" "}
+
+                    <img
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
@@ -33288,6 +33411,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -33544,15 +33678,26 @@ J ⋮ kg{" "}
                     = the proton mass,{" "}
 
                     <img
-                        src="/equations/c_u.svg"
-                        alt="C_Q"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the ubiquitous constant,{" "}
+                    = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/s_symbol.svg"
+                        alt="s"
+                        style={{
+                            height: "0.5em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the arc length of the unit lemniscate,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -33797,15 +33942,26 @@ J ⋮ kg{" "}
                     = the proton mass,{" "}
 
                     <img
-                        src="/equations/c_u.svg"
-                        alt="C_Q"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the ubiquitous constant,{" "}
+                    = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/s_symbol.svg"
+                        alt="s"
+                        style={{
+                            height: "0.5em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the arc length of the unit lemniscate,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -33984,7 +34140,7 @@ J ⋮ kg{" "}
                         textJustify: "inter-word",
                         color: "white",
                         margin: "0",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         lineHeight: "1.5em"
                     }}
                 >
@@ -34070,37 +34226,48 @@ J ⋮ kg{" "}
                     = the proton mass,{" "}
 
                     <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
+                        src="/equations/omega_1_constant.svg"
+                        alt="omega_1"
                         style={{
-                            height: "1.0em",
-                            verticalAlign: "-0.4em",
+                            height: "0.75em",
+                            verticalAlign: "-0.25em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the universal parabolic constant,{" "}
+                    = the omega_1 constant,{" "}
 
                     <img
-                        src="/equations/pi.svg"
-                        alt="pi"
+                        src="/equations/s_symbol.svg"
+                        alt="s"
                         style={{
                             height: "0.5em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes&apos; constant,{" "}
+                    = the arc length of the unit lemniscate,{" "}
 
                     <img
-                        src="/equations/zhe_r.svg"
-                        alt="zhe_r"
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
                         style={{
                             height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic radius constant, and{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
 
 
                     <img
@@ -34307,15 +34474,15 @@ J ⋮ kg{" "}
                     = the Planck mass,{" "}
 
                     <img
-                        src="/equations/omega_2_constant.svg"
-                        alt="omega_2"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
                             height: "0.7em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the omega_2 constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -34574,6 +34741,28 @@ J ⋮ kg{" "}
                     = the Planck charge,{" "}
 
                     <img
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Catalan&apos;s constant,{" "}
+                    
+                    <img
+                        src="/equations/s_symbol.svg"
+                        alt="s"
+                        style={{
+                            height: "0.5em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the arc length of the unit lemniscate,{" "}
+
+                    <img
                         src="/equations/zhe_2.svg"
                         alt="zhe_2"
                         style={{
@@ -34583,18 +34772,7 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/silver_constant.svg"
-                        alt="S"
-                        style={{
-                            height: "0.85em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the silver constant,{" "}
-
+                    
                     <img
                         src="/equations/zhe_3.svg"
                         alt="zhe_3"
@@ -34856,6 +35034,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the electron mass,{" "}
+                    
+                    <img
+                        src="/equations/d_d.svg"
+                        alt="D_d"
+                        style={{
+                            height: "0.95em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the dimer constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
