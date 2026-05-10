@@ -16793,7 +16793,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.00735674910... &times; 10<sup>&minus;27</sup> kg
+      = 5.00735674868075... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -68320,7 +68320,7 @@ J ⋮ kg{" "}
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes&apos; constant,{" "}
+                    = the factorial function,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
