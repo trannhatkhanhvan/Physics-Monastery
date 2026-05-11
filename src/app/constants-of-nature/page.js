@@ -540,7 +540,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline"
       }}
   />{" "}
-      = 9.19263177042969... &times; 10<sup>9</sup> Hz
+      = 9.19263177042970... &times; 10<sup>9</sup> Hz
 </span>
 
                     <span>prediction</span>
@@ -776,7 +776,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   eV ⋮ Hz{" "}
-      = 2.41798924253084... &times; 10<sup>14</sup> Hz
+      = 2.41798924253021... &times; 10<sup>14</sup> Hz
 </span>
 
                     <span>prediction</span>
@@ -974,7 +974,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   J ⋮ Hz{" "}
-      = 1.50919017971309... &times; 10<sup>33</sup> Hz
+      = 1.50919017971270... &times; 10<sup>33</sup> Hz
 </span>
 
                     <span>prediction</span>
@@ -1846,6 +1846,8 @@ const GROUP_SPACER_HEIGHT = '35px';
         ),
 
 
+
+
 8: (
             <div
                 style={{
@@ -2066,6 +2068,9 @@ const GROUP_SPACER_HEIGHT = '35px';
         ),
 
 
+
+
+
 9: (
             <div
                 style={{
@@ -2222,7 +2227,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           verticalAlign: "-0.1em",
           display: "inline",
       }}
-  />{" "} = 3.63694754674440... &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
+  />{" "} = 3.63694754800779... &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
 </span>
 
                     <span>prediction</span>
@@ -2262,7 +2267,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.04"}
+                        {", σ = + 1.19"}
   </span>
                 </div>
 
@@ -2288,7 +2293,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 3.6369475516(11) &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
 </span>
                     <span>
-    CODATA 2018, σ = − 4.41
+    CODATA 2018, σ = − 3.27
   </span>
                 </div>
 
@@ -2453,7 +2458,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           verticalAlign: "-0.2em",
           display: "inline",
       }}
-  />{" "} = 7.27389509348880... &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
+  />{" "} = 7.27389509601558... &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
 </span>
 
                     <span>prediction</span>
@@ -2493,7 +2498,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.04"}
+                        {", σ = + 1.19"}
   </span>
                 </div>
 
@@ -2519,7 +2524,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 7.2738951032(22) &times; 10<sup>&minus;4</sup> m<sup>2</sup>/s
 </span>
                     <span>
-    CODATA 2018, σ = − 4.41
+    CODATA 2018, σ = − 3.27
   </span>
                 </div>
 
@@ -2682,7 +2687,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           verticalAlign: "-0.0em",
           display: "inline",
       }}
-  />{" "} = 5.78838179830313... &times; 10<sup>&minus;5</sup> eV/T
+  />{" "} = 5.78838180031388... &times; 10<sup>&minus;5</sup> eV/T
 </span>
 
                     <span>prediction</span>
@@ -2730,7 +2735,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.06"}
+                        {", σ = + 1.17"}
   </span>
                 </div>
 
@@ -2764,7 +2769,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 5.7883818060(17) &times; 10<sup>&minus;5</sup> eV/T
 </span>
                     <span>
-    CODATA 2018, σ = − 4.53
+    CODATA 2018, σ = − 3.35
   </span>
                 </div>
 
@@ -2928,7 +2933,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 3.15245125430182... &times; 10<sup>&minus;8</sup> eV/T
+      = 3.15245125534845... &times; 10<sup>&minus;8</sup> eV/T
 </span>
 
                     <span>prediction</span>
@@ -2976,7 +2981,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.13"}
+                        {", σ = + 1.20"}
   </span>
                 </div>
 
@@ -3010,7 +3015,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 3.15245125844(96) &times; 10<sup>&minus;8</sup> eV/T
 </span>
                     <span>
-    CODATA 2018, σ = − 4.31
+    CODATA 2018, σ = − 3.22
   </span>
                 </div>
 
@@ -3429,7 +3434,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           verticalAlign: "-0.2em",
           display: "inline",
       }}
-  />{" "} = 7.74809172928871... &times; 10<sup>&minus;5</sup> S
+  />{" "} = 7.74809172928722... &times; 10<sup>&minus;5</sup> S
 </span>
 
                     <span>prediction</span>
@@ -3887,6 +3892,7 @@ const GROUP_SPACER_HEIGHT = '35px';
         ),
 
 
+        
 
 17: (
             <div
@@ -4043,7 +4049,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             verticalAlign: "-0.2em",
             display: "inline",
         }}
-    />{" "} = –1.75882000873538... &times; 10<sup>11</sup> C/kg
+    />{" "} = –1.75882000934636... &times; 10<sup>11</sup> C/kg
 </span>
 
                     <span>prediction</span>
@@ -4091,7 +4097,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.65"}
+                        {", σ = − 1.76"}
   </span>
                 </div>
 
@@ -4125,7 +4131,7 @@ const GROUP_SPACER_HEIGHT = '35px';
     />{" "} = –1.75882001076(53) &times; 10<sup>11</sup> C/kg
 </span>
                     <span>
-    CODATA 2018, σ = − 3.82
+    CODATA 2018, σ = − 2.67
   </span>
                 </div>
 
@@ -4289,7 +4295,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             verticalAlign: "-0.2em",
             display: "inline",
         }}
-    />{" "} = 9.57883314513638... &times; 10<sup>7</sup> C/kg
+    />{" "} = 9.57883314831657... &times; 10<sup>7</sup> C/kg
 </span>
 
                     <span>prediction</span>
@@ -4337,7 +4343,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.74"}
+                        {", σ = + 1.83"}
   </span>
                 </div>
 
@@ -4371,7 +4377,7 @@ const GROUP_SPACER_HEIGHT = '35px';
     />{" "} = 9.5788331560(29) &times; 10<sup>7</sup> C/kg
 </span>
                     <span>
-    CODATA 2018, σ = − 3.75
+    CODATA 2018, σ = − 2.65
   </span>
                 </div>
 
@@ -4547,7 +4553,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />
-      {" "} = 1.39962449199583... &times; 10<sup>10</sup> Hz/T
+      {" "} = 1.39962449248203... &times; 10<sup>10</sup> Hz/T
 </span>
 
                     <span>prediction</span>
@@ -4595,7 +4601,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.65"}
+                        {", σ = + 1.75"}
   </span>
                 </div>
 
@@ -4629,13 +4635,14 @@ const GROUP_SPACER_HEIGHT = '35px';
     />{" "} = 1.39962449361(42) &times; 10<sup>10</sup> Hz/T
 </span>
                     <span>
-    CODATA 2018, σ = − 3.84
+    CODATA 2018, σ = − 2.69
   </span>
                 </div>
 
             </div>
         ),
 
+        
 
 
 20: (
@@ -4805,7 +4812,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />
-      {" "} = 7.62259322050468... MHz/T
+      {" "} = 7.62259322303543... MHz/T
 </span>
 
                     <span>prediction</span>
@@ -4853,7 +4860,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.71"}
+                        {", σ = + 4.68"}
   </span>
                 </div>
 
@@ -4887,7 +4894,7 @@ const GROUP_SPACER_HEIGHT = '35px';
     />{" "} = 7.6225932291(23) MHz/T
 </span>
                     <span>
-    CODATA 2018, σ = − 3.74
+    CODATA 2018, σ = − 2.64
   </span>
                 </div>
 
@@ -5056,7 +5063,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 5.43102053785746... &times; 10<sup>&minus;10</sup> m
+      = 5.43102018763799... &times; 10<sup>&minus;10</sup> m
 </span>
 
                     <span>prediction</span>
@@ -5097,7 +5104,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.30"}
+                        {", σ = − 3.63"}
   </span>
                 </div>
 
@@ -5124,7 +5131,7 @@ const GROUP_SPACER_HEIGHT = '35px';
 
   </span>
                     <span>
-    CODATA 2018, σ = + 0.30
+    CODATA 2018, σ = − 3.63
   </span>
                 </div>
 
@@ -5292,7 +5299,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.92015572554121... &times; 10<sup>&minus;10</sup> m
+      = 1.92015560171993... &times; 10<sup>&minus;10</sup> m
 </span>
 
                     <span>prediction</span>
@@ -5333,7 +5340,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.30"}
+                        {", σ = − 3.57"}
   </span>
                 </div>
 
@@ -5360,7 +5367,7 @@ const GROUP_SPACER_HEIGHT = '35px';
 
   </span>
                     <span>
-    CODATA 2018, σ = + 0.30
+    CODATA 2018, σ = − 3.57
   </span>
                 </div>
 
@@ -5368,6 +5375,8 @@ const GROUP_SPACER_HEIGHT = '35px';
         ),
 
 
+        
+        
 
 23: (
             <div
@@ -5527,7 +5536,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 1.09737315681740... &times; 10<sup>7</sup> 1/m
+      = 1.09737315681100... &times; 10<sup>7</sup> 1/m
 </span>
 
                     <span>prediction</span>
@@ -5567,7 +5576,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 1.42"}
+                        {", σ = − 3.92"}
   </span>
                 </div>
 
@@ -5593,13 +5602,15 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 1.0973731568160(21) &times; 10<sup>7</sup> 1/m
   </span>
                     <span>
-    CODATA 2018, σ = + 0.67
+    CODATA 2018, σ = − 2.38
   </span>
                 </div>
 
             </div>
         ),
 
+        
+        
 
 
 24: (
@@ -5760,7 +5771,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   /> ⋮ 1/m{" "}
-      = 2.19474631363480... &times; 10<sup>7</sup> 1/m
+      = 2.19474631362199... &times; 10<sup>7</sup> 1/m
 </span>
 
                     <span>prediction</span>
@@ -5800,7 +5811,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 1.42"}
+                        {", σ = − 3.92"}
   </span>
                 </div>
 
@@ -5826,7 +5837,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 2.1947463136320(43) &times; 10<sup>7</sup> 1/m
   </span>
                     <span>
-    CODATA 2018, σ = + 0.65
+    CODATA 2018, σ = − 2.33
   </span>
                 </div>
 
@@ -5994,7 +6005,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 4.55633525290610... &times; 10<sup>&minus;8</sup> E<sub>h</sub>
+      = 4.55633525292920... &times; 10<sup>&minus;8</sup> E<sub>h</sub>
 </span>
 
                     <span>prediction</span>
@@ -6060,13 +6071,14 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 4.5563352529120(88) &times; 10<sup>&minus;8</sup> E<sub>h</sub>
   </span>
                     <span>
-    CODATA 2018, σ = − 0.67
+    CODATA 2018, σ = + 1.95
   </span>
                 </div>
 
             </div>
         ),
 
+        
 
 
 26: (
@@ -6175,7 +6187,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   A<sub>90</sub>{" "}
-      = 1.00000008887006... A
+      = 1.00000008888173... A
 </span>
 
                     <span>prediction</span>
@@ -6208,7 +6220,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", 12-digit match"}
+                        {", 11.93-digit match"}
   </span>
                 </div>
 
@@ -6226,7 +6238,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 1.00000008887 A
   </span>
                     <span>
-    CODATA 2018, 12-digit match
+    CODATA 2018, 11.93-digit match
   </span>
                 </div>
 
@@ -6344,7 +6356,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   C<sub>90</sub>{" "}
-      = 1.00000008887006... C
+      = 1.00000008888173... C
 </span>
 
                     <span>prediction</span>
@@ -6377,7 +6389,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", 12-digit match"}
+                        {", 11.93-digit match"}
   </span>
                 </div>
 
@@ -6395,7 +6407,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 1.00000008887 C
   </span>
                     <span>
-    CODATA 2018, 12-digit match
+    CODATA 2018, 11.93-digit match
   </span>
                 </div>
 
@@ -6603,7 +6615,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       }}
   />
       {" "}
-      = 4.66864477194111... &times; 10<sup>1</sup> 1/m T
+      = 4.66864477302116... &times; 10<sup>1</sup> 1/m T
 </span>
 
                     <span>prediction</span>
@@ -6661,7 +6673,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.03"}
+                        {", σ = + 0.75"}
   </span>
                 </div>
 
@@ -6704,13 +6716,15 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 4.6686447783(14) &times; 10<sup>1</sup> 1/m T
   </span>
                     <span>
-    CODATA 2018, σ = − 4.54
+    CODATA 2018, σ = − 3.77
   </span>
                 </div>
 
             </div>
         ),
 
+        
+        
         
         
 29: (
@@ -6909,7 +6923,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 2.54262341014027... &times; 10<sup>&minus;2</sup> 1/m T
+      = 2.54262341068940... &times; 10<sup>&minus;2</sup> 1/m T
 </span>
 
                     <span>prediction</span>
@@ -6966,7 +6980,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 0.06"}
+                        {", σ = + 0.76"}
   </span>
                 </div>
 
@@ -7008,7 +7022,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 2.54262341353(78) &times; 10<sup>&minus;2</sup> 1/m T
   </span>
                     <span>
-    CODATA 2018, σ = − 4.35
+    CODATA 2018, σ = − 3.64
   </span>
                 </div>
 
@@ -7165,7 +7179,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           verticalAlign: "-0.0em",
           display: "inline",
       }}
-  />{" "} = 8.98755179302990... &times; 10<sup>9</sup> m/F
+  />{" "} = 8.98755179302985... &times; 10<sup>9</sup> m/F
 </span>
 
                     <span>prediction</span>
@@ -7204,7 +7218,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   Wikipedia
 </a>
 
-                        {", σ = + 0.53"}
+                        {", σ = + 0.52"}
   </span>
                 </div>
 
@@ -7229,13 +7243,14 @@ const GROUP_SPACER_HEIGHT = '35px';
   />{" "} = 8.9875517923(14) &times; 10<sup>9</sup> m/F
 </span>
                     <span>
-    CODATA 2018, σ = + 0.53
+    CODATA 2018, σ = + 0.5
   </span>
                 </div>
 
             </div>
         ),
         
+
 
 
 31: (
@@ -7424,13 +7439,14 @@ const GROUP_SPACER_HEIGHT = '35px';
     A<sub>perm</sub>{" "} = 1.11265005454(17)... &times; 10<sup>&minus;10</sup> F/m
   </span>
                     <span>
-    CODATA 2018, σ = + 4.78
+    CODATA 2018, σ = − 4.78
   </span>
                 </div>
             </div>
         ),
 
-        
+
+
 
 
 32: (
@@ -7591,7 +7607,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 8.85418781204267... &times; 10<sup>&minus;12</sup> F/m
+      = 8.85418781204269... &times; 10<sup>&minus;12</sup> F/m
 </span>
 
                     <span>prediction</span>
@@ -7825,7 +7841,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   A<sub>time</sub>{" "}
-      = 2.41888432658053... &times; 10<sup>&minus;17</sup> s
+      = 2.41888432657500... &times; 10<sup>&minus;17</sup> s
 </span>
 
                     <span>prediction</span>
@@ -7857,7 +7873,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = − 2.26"}
+                        {", σ = − 4.39"}
   </span>
                 </div>
 
@@ -7875,13 +7891,16 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 2.4188843265857(47) &times; 10<sup>&minus;17</sup> s
   </span>
                     <span>
-    CODATA 2018, σ = − 1.10
+    CODATA 2018, σ = − 2.28
   </span>
                 </div>
 
             </div>
         ),
 
+        
+        
+        
 
 34: (
             <div
@@ -8044,7 +8063,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   Hz ⋮ E<sub>h</sub>{" "}
-      = 1.51982984605377... &times; 10<sup>&minus;16</sup> E<sub>h</sub>
+      = 1.51982984605030... &times; 10<sup>&minus;16</sup> E<sub>h</sub>
 </span>
 
                     <span>prediction</span>
@@ -8076,7 +8095,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = − 2.14"}
+                        {", σ = − 4.18"}
   </span>
                 </div>
 
@@ -8094,7 +8113,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 1.5198298460570(29) &times; 10<sup>&minus;16</sup> E<sub>h</sub>
   </span>
                     <span>
-    CODATA 2018, σ = − 1.11
+    CODATA 2018, σ = − 2.31
   </span>
                 </div>
 
@@ -8102,6 +8121,7 @@ const GROUP_SPACER_HEIGHT = '35px';
         ),
 
 
+        
 
 
 35: (
@@ -8265,7 +8285,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   E<sub>h</sub> ⋮ Hz{" "}
-      = 6.57968392051576... &times; 10<sup>15</sup> Hz
+      = 6.57968392052072... &times; 10<sup>15</sup> Hz
 </span>
 
                     <span>prediction</span>
@@ -8297,7 +8317,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 2.20"}
+                        {", σ = + 2.89"}
   </span>
                 </div>
 
@@ -8315,7 +8335,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 6.579683920502(13) &times; 10<sup>15</sup> Hz
   </span>
                     <span>
-    CODATA 2018, σ = + 1.06
+    CODATA 2018, σ = + 1.44
   </span>
                 </div>
 
@@ -8495,7 +8515,7 @@ const GROUP_SPACER_HEIGHT = '35px';
           display: "inline",
       }}
   />{" "}
-      = 3.28984196025788... &times; 10<sup>15</sup> Hz
+      = 3.28984196026036... &times; 10<sup>15</sup> Hz
 </span>
 
                     <span>prediction</span>
@@ -8535,7 +8555,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 2.19"}
+                        {", σ = + 2.88"}
   </span>
                 </div>
 
@@ -8561,7 +8581,7 @@ const GROUP_SPACER_HEIGHT = '35px';
       = 3.2898419602508(64) &times; 10<sup>15</sup> Hz
   </span>
                     <span>
-    CODATA 2018, σ = + 1.11
+    CODATA 2018, σ = + 1.49
   </span>
                 </div>
 
@@ -8741,7 +8761,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –6.84979089984965... &times; 10<sup>&minus;1</sup>
+      = – 6.84979091085629... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -8775,7 +8795,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –6.8497935(16) &times; 10<sup>&minus;1</sup>
+      = – 6.8497935(16) &times; 10<sup>&minus;1</sup>
 </span>
                     <span>
     <a
@@ -8822,7 +8842,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –6.8497934(16) &times; 10<sup>&minus;1</sup>
+      = – 6.8497934(16) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
     CODATA 2018, σ = − 1.56
@@ -9005,7 +9025,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –1.45989857883392...
+      = – 1.45989857648807...
 </span>
 
                     <span>prediction</span>
@@ -9039,7 +9059,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –1.45989802(34)
+      = – 1.45989802(34)
 </span>
                     <span>
     <a
@@ -9054,7 +9074,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = − 1.64"}
+                        {", σ = − 1.44"}
   </span>
                 </div>
 
@@ -9086,10 +9106,10 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = –1.45989805(34)
+      = – 1.45989805(34)
   </span>
                     <span>
-    CODATA 2018, σ = + 1.56
+    CODATA 2018, σ = − 1.53
   </span>
                 </div>
 
@@ -9097,6 +9117,8 @@ const GROUP_SPACER_HEIGHT = '35px';
         ),
 
 
+        
+        
 
 
 39: (
@@ -9266,7 +9288,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = 9.60920151018571... &times; 10<sup>2</sup>
+      = 9.60920149475115... &times; 10<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -9315,7 +9337,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = − 1.43"}
+                        {", σ = − 1.44"}
   </span>
                 </div>
 
@@ -9351,7 +9373,7 @@ const GROUP_SPACER_HEIGHT = '35px';
 
   </span>
                     <span>
-    CODATA 2018, σ = − 1.51
+    CODATA 2018, σ = − 1.53
   </span>
                 </div>
 
@@ -9530,7 +9552,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             display: "inline",
         }}
     />{" "}
-      = 1.04066919497942... &times; 10<sup>&minus;3</sup>
+      = 1.04066919665097... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -9579,7 +9601,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = + 1.48"}
+                        {", σ = + 1.49"}
   </span>
                 </div>
 
@@ -9798,7 +9820,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   A<sub>mdm</sub>{" "}
-      = 1.85480201088696... &times; 10<sup>&minus;23</sup> J/T
+      = 1.85480201153128... &times; 10<sup>&minus;23</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -9830,7 +9852,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 3.90"}
+                        {", σ = − 2.79"}
   </span>
                 </div>
 
@@ -9848,12 +9870,13 @@ A<sub>mdm</sub>{" "}
       = 1.85480201556(56) &times; 10<sup>&minus;23</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 8.53
+    CODATA 2018, σ = − 7.37
   </span>
                 </div>
 
             </div>
         ),
+
 
 
 
@@ -10038,7 +10061,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 9.27401005443480... &times; 10<sup>&minus;2</sup> J/T
+      = 9.27401005765638... &times; 10<sup>&minus;2</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -10078,7 +10101,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 3.88"}
+                        {", σ = − 2.77"}
   </span>
                 </div>
 
@@ -10104,7 +10127,7 @@ A<sub>mdm</sub>{" "}
       = 9.2740100783(28) &times; 10<sup>&minus;2</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 8.52
+    CODATA 2018, σ = − 7.37
   </span>
                 </div>
 
@@ -10296,7 +10319,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 5.05078373314114... &times; 10<sup>&minus;27</sup> J/T
+      = 5.05078373489248... &times; 10<sup>&minus;27</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -10336,7 +10359,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 3.85"}
+                        {", σ = − 2.75"}
   </span>
                 </div>
 
@@ -10362,7 +10385,7 @@ A<sub>mdm</sub>{" "}
       = 5.0507837461(15) &times; 10<sup>&minus;27</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 8.63
+    CODATA 2018, σ = − 7.47
   </span>
                 </div>
 
@@ -10575,7 +10598,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.50460951565975... &times; 10<sup>&minus;26</sup> J/T
+      = 1.50460951611437... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -10615,7 +10638,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.71"}
+                        {", σ = − 0.56"}
   </span>
                 </div>
 
@@ -10641,12 +10664,13 @@ A<sub>mdm</sub>{" "}
       = 1.5046095202(30) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 1.51
+    CODATA 2018, σ = − 1.36
   </span>
                 </div>
 
             </div>
         ),
+
 
 
 
@@ -11808,7 +11832,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 2.06767001388473... &times; 10<sup>2</sup>
+      = 2.06766985041323... &times; 10<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -11857,7 +11881,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 2.89"}
+                        {", σ = + 0.66"}
   </span>
                 </div>
 
@@ -11892,7 +11916,7 @@ A<sub>mdm</sub>{" "}
       = 2.067669883(46) &times; 10<sup>2</sup>
   </span>
                     <span>
-    CODATA 2018, σ = + 2.85
+    CODATA 2018, σ = − 0.71
   </span>
                 </div>
 
@@ -12043,7 +12067,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 6.67430315504532... &times; 10<sup>&minus;11</sup> m<sup>3</sup>/s<sup>2</sup> kg
+      = 6.67430315504533... &times; 10<sup>&minus;11</sup> m<sup>3</sup>/s<sup>2</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -12285,7 +12309,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />c{" "}
-      = 6.70882525599676... &times; 10<sup>15</sup> c<sup>4</sup>/GeV<sup>2</sup>
+      = 6.70882525604658... &times; 10<sup>15</sup> c<sup>4</sup>/GeV<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -12606,6 +12630,8 @@ A<sub>mdm</sub>{" "}
 
 
 
+
+
 53: (
             <div
                 style={{
@@ -12778,7 +12804,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.67262192583162... &times; 10<sup>&minus;27</sup> kg
+      = 1.67262192525165... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -12818,7 +12844,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.22"}
+                        {", σ = − 1.34"}
   </span>
                 </div>
 
@@ -12844,7 +12870,7 @@ A<sub>mdm</sub>{" "}
       = 1.67262192369(51) &times; 10<sup>&minus;27</sup> kg
   </span>
                     <span>
-    CODATA 2018, σ = + 4.20
+    CODATA 2018, σ = + 3.06
   </span>
                 </div>
 {/* 10. Empty Line */}
@@ -12857,7 +12883,7 @@ A<sub>mdm</sub>{" "}
 
 
 
- 54: (
+54: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -13464,7 +13490,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = – 4.66434558972526... &times; 10<sup>&minus;4</sup>
+      = – 4.66434558972163... &times; 10<sup>&minus;4</sup>
 </span>
 
                     <span>prediction</span>
@@ -13726,7 +13752,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = – 2.14392349338619... &times; 10<sup>3</sup>
+      = – 2.14392347386009... &times; 10<sup>3</sup>
 </span>
 
                     <span>prediction</span>
@@ -13775,7 +13801,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.23"}
+                        {", σ = + 3.26"}
   </span>
                 </div>
 
@@ -13810,7 +13836,7 @@ A<sub>mdm</sub>{" "}
       = – 2.1439234915(56) &times; 10<sup>3</sup>
   </span>
                     <span>
-    CODATA 2018, σ = + 0.34
+    CODATA 2018, σ = + 3.15
   </span>
                 </div>
 
@@ -13988,7 +14014,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 3.07012209391064... &times; 10<sup>&minus;1</sup>
+      = 3.07012209390825... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -14037,7 +14063,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.12"}
+                        {", σ = + 0.11"}
   </span>
                 </div>
 
@@ -14078,6 +14104,7 @@ A<sub>mdm</sub>{" "}
 
             </div>
         ),
+
 
 
 
@@ -14249,7 +14276,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = – 4.48206589748066... &times; 10<sup>&minus;1</sup>
+      = – 4.48206589662326... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -14547,7 +14574,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.33073506076084... &times; 10<sup>&minus;27</sup> J/T
+      = 4.33073505993240... &times; 10<sup>&minus;27</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -14587,7 +14614,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 2.39"}
+                        {", σ = − 2.46"}
   </span>
                 </div>
 
@@ -14613,7 +14640,7 @@ A<sub>mdm</sub>{" "}
       = 4.330735094(11) &times; 10<sup>&minus;27</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 3.02
+    CODATA 2018, σ = − 3.10
   </span>
                 </div>
 
@@ -14622,6 +14649,7 @@ A<sub>mdm</sub>{" "}
 
 
 
+        
 
 61: (
             <div
@@ -14779,7 +14807,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = – 1.15867149675922... &times; 10<sup>&minus;3</sup>
+      = – 1.15867149694878... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -14828,7 +14856,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = – 2.33"}
+                        {", σ = – 2.53"}
   </span>
                 </div>
 
@@ -14863,7 +14891,7 @@ A<sub>mdm</sub>{" "}
       = – 1.158671474(14) &times; 10<sup>&minus;3</sup>
   </span>
                     <span>
-    CODATA 2018, σ = – 1.84
+    CODATA 2018, σ = – 1.85
   </span>
                 </div>
 
@@ -15053,7 +15081,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = – 2.12749776630982...
+      = – 2.12749776673056...
 </span>
 
                     <span>prediction</span>
@@ -15102,7 +15130,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = – 2.30"}
+                        {", σ = – 2.55"}
   </span>
                 </div>
 
@@ -15137,7 +15165,7 @@ A<sub>mdm</sub>{" "}
       = – 2.127497719(25)
   </span>
                     <span>
-    CODATA 2018, σ = – 1.89
+    CODATA 2018, σ = – 2.07
   </span>
                 </div>
 
@@ -15322,7 +15350,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = – 4.25525070338145...
+      = – 4.25525070422298...
 </span>
 
                     <span>prediction</span>
@@ -15362,7 +15390,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = – 1.14"}
+                        {", σ = – 1.39"}
   </span>
                 </div>
 
@@ -15388,7 +15416,7 @@ A<sub>mdm</sub>{" "}
       = – 4.255250615(50)
   </span>
                     <span>
-    CODATA 2018, σ = – 1.77
+    CODATA 2018, σ = – 1.78
   </span>
                 </div>
 
@@ -15579,7 +15607,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = – 2.12762535169073...
+      = – 2.12762535211149...
 </span>
 
                     <span>prediction</span>
@@ -15628,7 +15656,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = – 1.11"}
+                        {", σ = – 1.36"}
   </span>
                 </div>
 
@@ -15663,14 +15691,12 @@ A<sub>mdm</sub>{" "}
       = – 2.127625307(25)
   </span>
                     <span>
-    CODATA 2018, σ = – 1.79
+    CODATA 2018, σ = – 1.80
   </span>
                 </div>
 
             </div>
         ),
-
-
 
 
 
@@ -15834,7 +15860,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = – 1.15874098192936... &times; 10<sup>&minus;3</sup>
+      = – 1.15874098211893... &times; 10<sup>&minus;3</sup>
 </span>
 
                     <span>prediction</span>
@@ -15883,7 +15909,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = – 1.17"}
+                        {", σ = – 1.37"}
   </span>
                 </div>
 
@@ -15918,7 +15944,7 @@ A<sub>mdm</sub>{" "}
       = – 1.158740958(14) &times; 10<sup>&minus;3</sup>
   </span>
                     <span>
-    CODATA 2018, σ = – 1.71
+    CODATA 2018, σ = – 1.72
   </span>
                 </div>
 
