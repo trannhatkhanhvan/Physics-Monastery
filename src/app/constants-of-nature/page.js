@@ -21035,7 +21035,7 @@ J ⋮ kg{" "}
                 >
   <span>
   eV ⋮ kg{" "}
-      = 1.78266192321 &times; 10<sup>&minus;36</sup> kg
+      = 1.782661921 &times; 10<sup>&minus;36</sup> kg
 </span>
                     <span>
     <a
@@ -21065,7 +21065,7 @@ J ⋮ kg{" "}
                 >
   <span>
  eV ⋮ kg{" "}
-      = 1.78266192321 &times; 10<sup>&minus;36</sup> kg
+      = 1.782661921 &times; 10<sup>&minus;36</sup> kg
   </span>
                     <span>
     CODATA 2018, 9.91-digit match
@@ -55022,7 +55022,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.07455311098442... &times; 10<sup>&minus;26</sup> J/T
+      = – 1.07455311098442... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -55047,7 +55047,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.07455311035(93) &times; 10<sup>&minus;26</sup> J/T
+      = – 1.07455311035(93) &times; 10<sup>&minus;26</sup> J/T
 </span>
                     <span>
     <a
@@ -55085,7 +55085,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = –1.074553090(13) &times; 10<sup>&minus;26</sup> J/T
+      = – 1.074553090(13) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
     CODATA 2018, σ = + 1.61
@@ -64026,7 +64026,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 0.999999999965(30) &times; 10<sup>&minus;3</sup> kg/mol
+      = 0.99999999965(30) &times; 10<sup>&minus;3</sup> kg/mol
   </span>
                     <span>
     CODATA 2018, σ = + 5.71
