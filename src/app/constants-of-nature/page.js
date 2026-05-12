@@ -4065,8 +4065,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  -<img
-      src="/equations/euler_s_number.svg"
+  –<img
+      src="/equations/e_symbol.svg"
       alt="e"
       style={{
           height: "0.55em",
@@ -4111,8 +4111,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  -<img
-      src="/equations/euler_s_number.svg"
+  –<img
+      src="/equations/e_symbol_number.svg"
       alt="e"
       style={{
           height: "0.55em",
@@ -6045,7 +6045,7 @@ const GROUP_SPACER_HEIGHT = '35px';
   CODATA 2022
 </a>
 
-                        {", σ = − 1.42"}
+                        {", σ = 3 3.20"}
   </span>
                 </div>
 
