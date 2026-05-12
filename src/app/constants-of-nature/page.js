@@ -32107,7 +32107,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/mu_n_symbol.svg"
+      src="/equations/mu_nn_symbol.svg"
       alt="mu_n"
       style={{
           height: "0.7em",
@@ -32140,7 +32140,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/mu_n_symbol.svg"
+      src="/equations/mu_nn_symbol.svg"
       alt="mu_n"
       style={{
           height: "0.7em",
@@ -32187,7 +32187,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/mu_n_symbol.svg"
+      src="/equations/mu_nn_symbol.svg"
       alt="mu_n"
       style={{
           height: "0.7em",
