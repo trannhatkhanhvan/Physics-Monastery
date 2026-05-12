@@ -4032,8 +4032,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  -<img
-      src="/equations/euler_s_number.svg"
+  −<img
+      src="/equations/e_symbol.svg"
       alt="e"
       style={{
           height: "0.55em",
@@ -4049,7 +4049,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             verticalAlign: "-0.2em",
             display: "inline",
         }}
-    />{" "} = –1.75882000934636... &times; 10<sup>11</sup> C/kg
+    />{" "} = – 1.75882000934636... &times; 10<sup>11</sup> C/kg
 </span>
 
                     <span>prediction</span>
@@ -4082,7 +4082,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             verticalAlign: "-0.2em",
             display: "inline",
         }}
-    />{" "} = –1.75882000838(55) &times; 10<sup>11</sup> C/kg
+    />{" "} = – 1.75882000838(55) &times; 10<sup>11</sup> C/kg
 </span>
                     <span>
     <a
@@ -4128,7 +4128,7 @@ const GROUP_SPACER_HEIGHT = '35px';
             verticalAlign: "-0.2em",
             display: "inline",
         }}
-    />{" "} = –1.75882001076(53) &times; 10<sup>11</sup> C/kg
+    />{" "} = – 1.75882001076(53) &times; 10<sup>11</sup> C/kg
 </span>
                     <span>
     CODATA 2018, σ = − 2.67
