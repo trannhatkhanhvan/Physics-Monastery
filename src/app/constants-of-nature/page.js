@@ -443,7 +443,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="π"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -687,7 +687,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="π"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -885,7 +885,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="π"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -1081,7 +1081,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="π"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -1277,7 +1277,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="π"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -1897,7 +1897,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="π"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -2120,7 +2120,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="π"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -2351,7 +2351,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="π"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -3073,7 +3073,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="π"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -3327,7 +3327,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="π"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -4447,7 +4447,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -4706,7 +4706,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -4955,7 +4955,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -5191,7 +5191,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -5439,7 +5439,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -5674,7 +5674,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -5897,7 +5897,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -6142,7 +6142,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -6311,7 +6311,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -6479,7 +6479,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -6788,7 +6788,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -7499,7 +7499,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -7952,7 +7952,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -8185,7 +8185,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -8407,7 +8407,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -8688,7 +8688,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -8952,7 +8952,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -9226,7 +9226,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -9490,7 +9490,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -9775,7 +9775,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -10008,7 +10008,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -10266,7 +10266,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -10479,7 +10479,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.5em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -10738,7 +10738,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -11013,7 +11013,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -11279,7 +11279,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -11545,7 +11545,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -11770,7 +11770,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -12014,7 +12014,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -12247,7 +12247,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -12453,7 +12453,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -12682,7 +12682,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -12944,7 +12944,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -13160,7 +13160,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -13395,7 +13395,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -13646,7 +13646,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -13908,7 +13908,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -14181,7 +14181,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -14455,7 +14455,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -14701,7 +14701,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -14952,7 +14952,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -15231,7 +15231,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -15479,7 +15479,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -15754,7 +15754,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.5em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -16005,7 +16005,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -16517,7 +16517,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -16733,7 +16733,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -16979,7 +16979,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -17248,7 +17248,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -17926,7 +17926,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -18177,7 +18177,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -25725,7 +25725,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -25949,7 +25949,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -26198,7 +26198,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -26567,7 +26567,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -29756,7 +29756,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -30014,7 +30014,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -30228,7 +30228,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -30490,7 +30490,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -31293,7 +31293,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -31546,7 +31546,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -31798,7 +31798,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -32040,7 +32040,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -32843,7 +32843,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -33131,7 +33131,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -33438,7 +33438,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -33714,7 +33714,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -33941,7 +33941,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -33978,7 +33978,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.55em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -34532,7 +34532,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -34722,7 +34722,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -34995,7 +34995,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -36171,7 +36171,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -36409,7 +36409,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -41617,7 +41617,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -41833,7 +41833,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -42046,7 +42046,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.5em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -42262,7 +42262,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -44538,7 +44538,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -44548,7 +44548,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -44767,7 +44767,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -44982,7 +44982,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -45199,7 +45199,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -45471,7 +45471,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -45718,7 +45718,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -45954,7 +45954,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -46189,7 +46189,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -46447,7 +46447,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -46661,7 +46661,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -46942,7 +46942,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -47189,7 +47189,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -47460,7 +47460,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -47731,7 +47731,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -47922,7 +47922,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.02em",
                             display: "inline",
                         }}
@@ -48133,7 +48133,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -48617,7 +48617,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -48864,7 +48864,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -49131,7 +49131,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -49401,7 +49401,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -49670,7 +49670,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -49916,7 +49916,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -50162,7 +50162,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -50408,7 +50408,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -50674,7 +50674,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -50966,7 +50966,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -52540,7 +52540,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -52810,7 +52810,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -53015,7 +53015,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -53306,7 +53306,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -53511,7 +53511,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -53771,7 +53771,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -53972,7 +53972,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -54407,7 +54407,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -54958,7 +54958,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -55462,7 +55462,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -55756,7 +55756,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -57617,7 +57617,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -57818,7 +57818,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -58023,7 +58023,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -58259,7 +58259,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -58495,7 +58495,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -58731,7 +58731,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -58967,7 +58967,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -59204,7 +59204,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -59441,7 +59441,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -60829,7 +60829,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -61095,7 +61095,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -61330,7 +61330,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -61541,7 +61541,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -61753,7 +61753,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -62008,7 +62008,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -62220,7 +62220,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -62432,7 +62432,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -62645,7 +62645,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -62932,7 +62932,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -63149,7 +63149,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -66422,7 +66422,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -66714,7 +66714,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -66995,7 +66995,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -68147,7 +68147,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -68408,7 +68408,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -68664,7 +68664,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -68898,7 +68898,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -69144,7 +69144,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -69400,7 +69400,7 @@ J ⋮ kg{" "}
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
-                            height: "0.53em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
