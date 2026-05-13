@@ -414,7 +414,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 </div>
 
                 {/* 4. Empty Line */}
-                <div style={{height: "24px"}}/>
+                <div style={{height: "0.95em"}}/>
 
                 {/* 5. Single continuous, fully justified paragraph */}
                 <div
@@ -454,7 +454,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -465,7 +465,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -698,7 +698,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -709,7 +709,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -896,7 +896,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -907,7 +907,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -1114,7 +1114,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -1125,7 +1125,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/zeta_function.svg"
                         alt="zeta(x)"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -1311,7 +1311,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -1322,7 +1322,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/zeta_function.svg"
                         alt="zeta(x)"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -1498,7 +1498,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -1509,7 +1509,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/zeta_function.svg"
                         alt="zeta(x)"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -1708,7 +1708,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -1719,7 +1719,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/zeta_function.svg"
                         alt="zeta(x)"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -1930,7 +1930,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -1941,7 +1941,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/zeta_function.svg"
                         alt="zeta(x)"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -2153,7 +2153,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -2164,7 +2164,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -2384,7 +2384,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -2395,7 +2395,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -2605,7 +2605,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -2616,7 +2616,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -2671,14 +2671,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_b_symbol.svg"
-      alt="mu_B"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/euler_s_number.svg"
       alt="e"
@@ -2703,14 +2695,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_b_symbol.svg"
-      alt="mu_B"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/euler_s_number.svg"
       alt="e"
@@ -2749,14 +2733,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_b_symbol.svg"
-      alt="mu_B"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/euler_s_number.svg"
       alt="e"
@@ -2850,7 +2826,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -2861,7 +2837,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/proton_mass_symbol.svg"
                         alt="m_+"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -2916,14 +2892,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_n_symbol.svg"
-      alt="mu_N"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/euler_s_number.svg"
       alt="e"
@@ -2949,14 +2917,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_n_symbol.svg"
-      alt="mu_N"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/euler_s_number.svg"
       alt="e"
@@ -2995,14 +2955,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_n_symbol.svg"
-      alt="mu_N"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/euler_s_number.svg"
       alt="e"
@@ -3117,7 +3069,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -3128,7 +3080,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -3338,7 +3290,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -3349,7 +3301,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -4112,7 +4064,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                 >
   <span>
   –<img
-      src="/equations/e_symbol_number.svg"
+      src="/equations/e_symbol.svg"
       alt="e"
       style={{
           height: "0.55em",
@@ -4278,7 +4230,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  -<img
+  <img
       src="/equations/euler_s_number.svg"
       alt="e"
       style={{
@@ -4311,7 +4263,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  -<img
+  <img
       src="/equations/euler_s_number.svg"
       alt="e"
       style={{
@@ -4357,7 +4309,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  -<img
+  <img
       src="/equations/euler_s_number.svg"
       alt="e"
       style={{
@@ -6490,7 +6442,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -6501,7 +6453,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -6589,22 +6541,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_b_symbol.svg"
-      alt="mu_B"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/<img
-      src="/equations/h_symbol.svg"
-      alt="h"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   /><img
       src="/equations/c_symbol.svg"
       alt="c"
@@ -6631,22 +6567,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_b_symbol.svg"
-      alt="mu_B"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/<img
-      src="/equations/h_symbol.svg"
-      alt="h"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   /><img
       src="/equations/c_symbol.svg"
       alt="c"
@@ -6687,22 +6607,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_b_symbol.svg"
-      alt="mu_B"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/<img
-      src="/equations/h_symbol.svg"
-      alt="h"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   /><img
       src="/equations/c_symbol.svg"
       alt="c"
@@ -6799,7 +6703,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -6810,7 +6714,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -6898,22 +6802,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_n_symbol.svg"
-      alt="mu_N"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/<img
-      src="/equations/h_symbol.svg"
-      alt="h"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   /><img
       src="/equations/c_symbol.svg"
       alt="c"
@@ -6939,22 +6827,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_n_symbol.svg"
-      alt="mu_N"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/<img
-      src="/equations/h_symbol.svg"
-      alt="h"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   /><img
       src="/equations/c_symbol.svg"
       alt="c"
@@ -6994,22 +6866,6 @@ const GROUP_SPACER_HEIGHT = '35px';
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_n_symbol.svg"
-      alt="mu_N"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/<img
-      src="/equations/h_symbol.svg"
-      alt="h"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   /><img
       src="/equations/c_symbol.svg"
       alt="c"
@@ -7105,7 +6961,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -7116,7 +6972,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.85em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -7303,7 +7159,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -7314,7 +7170,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.85em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -7510,7 +7366,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -7521,7 +7377,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.85em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -7752,7 +7608,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -7763,7 +7619,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.85em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -7974,7 +7830,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -7985,7 +7841,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.85em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -8207,7 +8063,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -8218,7 +8074,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.85em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -8429,7 +8285,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -8440,7 +8296,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.85em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -9742,7 +9598,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -9753,7 +9609,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -9975,7 +9831,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -9986,7 +9842,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -10233,7 +10089,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -10244,7 +10100,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/proton_mass_symbol.svg"
                         alt="m_+"
                         style={{
-                            height: "0.75em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -10523,7 +10379,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -10534,7 +10390,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/triton_mass_symbol.svg"
                         alt="m_tri"
                         style={{
-                            height: "0.75em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -11992,7 +11848,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -12003,7 +11859,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.85em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -12214,7 +12070,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -12225,7 +12081,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -12489,7 +12345,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -12500,7 +12356,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -12718,7 +12574,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -12729,7 +12585,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -14499,7 +14355,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -14510,7 +14366,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/deuteron_mass_symbol.svg"
                         alt="m_de"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -16990,7 +16846,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -17001,7 +16857,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -17724,7 +17580,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -17735,7 +17591,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -17970,7 +17826,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -17981,7 +17837,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -18210,7 +18066,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -18221,7 +18077,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -18420,7 +18276,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -18431,7 +18287,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -18610,7 +18466,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -18621,7 +18477,7 @@ A<sub>mdm</sub>{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -18823,7 +18679,7 @@ Hz ⋮ 1/m{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -18834,7 +18690,7 @@ Hz ⋮ 1/m{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -19036,7 +18892,7 @@ A<sub>vel</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -19047,7 +18903,7 @@ A<sub>vel</sub>{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -19236,7 +19092,7 @@ A<sub>mom</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -19247,7 +19103,7 @@ A<sub>mom</sub>{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -19463,7 +19319,7 @@ A<sub>mom</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -19474,7 +19330,7 @@ A<sub>mom</sub>{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -19692,7 +19548,7 @@ A<sub>mom</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -19703,7 +19559,7 @@ A<sub>mom</sub>{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -19906,7 +19762,7 @@ A<sub>mom</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -19917,7 +19773,7 @@ A<sub>mom</sub>{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -20086,7 +19942,7 @@ A<sub>mom</sub>{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -20097,7 +19953,7 @@ A<sub>mom</sub>{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -20298,7 +20154,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -20309,7 +20165,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -20532,7 +20388,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -20543,7 +20399,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -20759,7 +20615,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -20770,7 +20626,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -20940,7 +20796,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -20951,7 +20807,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -21162,7 +21018,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -21173,7 +21029,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -21403,7 +21259,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -21414,7 +21270,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -21632,7 +21488,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -21643,7 +21499,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -21878,7 +21734,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -21889,7 +21745,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -22106,7 +21962,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -22117,7 +21973,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -22334,7 +22190,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -22345,7 +22201,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -22562,7 +22418,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -22573,7 +22429,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -22789,7 +22645,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -22800,7 +22656,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -23017,7 +22873,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -23028,7 +22884,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -23245,7 +23101,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -23256,7 +23112,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -23473,7 +23329,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -23484,7 +23340,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -23699,7 +23555,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -23710,7 +23566,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -23942,7 +23798,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -23953,7 +23809,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -24169,7 +24025,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -24180,7 +24036,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -24395,7 +24251,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -24406,7 +24262,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -24620,7 +24476,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -24631,7 +24487,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -24845,7 +24701,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -24856,7 +24712,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -25071,7 +24927,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -25082,7 +24938,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -25297,7 +25153,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -25308,7 +25164,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -25522,7 +25378,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -25533,7 +25389,7 @@ J ⋮ kg{" "}
                         src="/equations/i.svg"
                         alt="i"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
@@ -26037,14 +25893,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_de_symbol.svg"
-      alt="mu_de"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -26070,14 +25918,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_de_symbol.svg"
-      alt="mu_de"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -26116,14 +25956,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_de_symbol.svg"
-      alt="mu_de"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -26308,14 +26140,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_de_symbol.svg"
-      alt="mu_de"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -26341,14 +26165,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_de_symbol.svg"
-      alt="mu_de"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -26387,14 +26203,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_de_symbol.svg"
-      alt="mu_de"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -26534,7 +26342,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -26545,7 +26353,7 @@ J ⋮ kg{" "}
                         src="/equations/muon_mass_symbol.svg"
                         alt="m_mu"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.35em",
                             display: "inline",
                         }}
@@ -27602,14 +27410,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_mu_symbol.svg"
-      alt="mu_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.3em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -27635,14 +27435,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_mu_symbol.svg"
-      alt="mu_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.3em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -27682,14 +27474,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_mu_symbol.svg"
-      alt="mu_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.3em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -27887,14 +27671,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_mu_symbol.svg"
-      alt="mu_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.3em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -27920,14 +27696,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_mu_symbol.svg"
-      alt="mu_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.3em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -27967,14 +27735,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_mu_symbol.svg"
-      alt="mu_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.3em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -28094,7 +27854,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -28105,7 +27865,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -28362,7 +28122,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -28373,7 +28133,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -28654,7 +28414,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -28665,7 +28425,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -29723,7 +29483,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -29734,7 +29494,7 @@ J ⋮ kg{" "}
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
                         style={{
-                            height: "0.78em",
+                            height: "0.95em",
                             verticalAlign: "-0.25em",
                             display: "inline",
                         }}
@@ -31023,7 +30783,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.05em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -31034,7 +30794,7 @@ J ⋮ kg{" "}
                         src="/equations/proton_mass_symbol.svg"
                         alt="m_+"
                         style={{
-                            height: "0.7em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -31359,14 +31119,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_symbol.svg"
-      alt="mu_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_+'"
@@ -31392,14 +31144,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_symbol.svg"
-      alt="mu_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_+'"
@@ -31439,14 +31183,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_symbol.svg"
-      alt="mu_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_+'"
@@ -31612,14 +31348,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_symbol.svg"
-      alt="mu_+"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_n"
@@ -31645,14 +31373,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_symbol.svg"
-      alt="mu_+"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -31692,14 +31412,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_symbol.svg"
-      alt="mu_+"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -32106,14 +31818,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_nn_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_s_symbol.svg"
       alt="mu_+'"
@@ -32139,14 +31843,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_nn_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_s_symbol.svg"
       alt="mu_+'"
@@ -32186,14 +31882,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_nn_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_s_symbol.svg"
       alt="mu_+'"
@@ -32380,14 +32068,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_e_symbol.svg"
-      alt="mu_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_symbol.svg"
       alt="mu_+"
@@ -32413,14 +32093,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_e_symbol.svg"
-      alt="mu_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_symbol.svg"
       alt="mu_+"
@@ -32460,14 +32132,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_e_symbol.svg"
-      alt="mu_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_symbol.svg"
       alt="mu_+"
@@ -32644,14 +32308,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_e_symbol.svg"
-      alt="mu_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_s_symbol.svg"
       alt="mu_+'"
@@ -32677,14 +32333,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_e_symbol.svg"
-      alt="mu_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_s_symbol.svg"
       alt="mu_+'"
@@ -32724,14 +32372,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_e_symbol.svg"
-      alt="mu_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_s_symbol.svg"
       alt="mu_+'"
@@ -32920,14 +32560,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_mu_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.3em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_symbol.svg"
       alt="mu_+"
@@ -32953,14 +32585,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_mu_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.3em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_symbol.svg"
       alt="mu_+"
@@ -33000,14 +32624,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_mu_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.9em",
-          verticalAlign: "-0.3em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_symbol.svg"
       alt="mu_+"
@@ -33208,14 +32824,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_s_symbol.svg"
-      alt="mu_+'"
-      style={{
-          height: "1.1em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -33241,14 +32849,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_s_symbol.svg"
-      alt="mu_+'"
-      style={{
-          height: "1.1em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -33288,14 +32888,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_s_symbol.svg"
-      alt="mu_+'"
-      style={{
-          height: "1.1em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -33504,14 +33096,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_s_symbol.svg"
-      alt="mu_+'"
-      style={{
-          height: "1.1em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -33537,14 +33121,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_s_symbol.svg"
-      alt="mu_+'"
-      style={{
-          height: "1.1em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -33584,14 +33160,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_plus_s_symbol.svg"
-      alt="mu_+'"
-      style={{
-          height: "1.1em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -34240,7 +33808,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -34251,7 +33819,7 @@ J ⋮ kg{" "}
                         src="/equations/proton_mass_symbol.svg"
                         alt="m_+"
                         style={{
-                            height: "0.75em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -34755,7 +34323,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -34766,7 +34334,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -35286,7 +34854,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -35297,7 +34865,7 @@ J ⋮ kg{" "}
                         src="/equations/g_gi.svg"
                         alt="G_Gi"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -35519,7 +35087,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -35530,7 +35098,7 @@ J ⋮ kg{" "}
                         src="/equations/g_gi.svg"
                         alt="G_Gi"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -36422,7 +35990,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1.0em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -36433,7 +36001,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1.0em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -38708,14 +38276,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/electron_mass_symbol.svg"
-      alt="m_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -38741,14 +38301,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/electron_mass_symbol.svg"
-      alt="m_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -38787,14 +38339,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/electron_mass_symbol.svg"
-      alt="m_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -38968,14 +38512,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mass_difference_symbol.svg"
-      alt="m_delta"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39001,14 +38537,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mass_difference_symbol.svg"
-      alt="m_delta"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39047,14 +38575,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mass_difference_symbol.svg"
-      alt="m_delta"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39215,14 +38735,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/muon_mass_symbol.svg"
-      alt="m_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.35em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39248,14 +38760,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/muon_mass_symbol.svg"
-      alt="m_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.35em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39294,14 +38798,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/muon_mass_symbol.svg"
-      alt="m_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.35em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39464,14 +38960,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/proton_mass_symbol.svg"
-      alt="m_+"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39497,14 +38985,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/proton_mass_symbol.svg"
-      alt="m_+"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39543,14 +39023,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/proton_mass_symbol.svg"
-      alt="m_+"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39714,14 +39186,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/neutron_mass_symbol.svg"
-      alt="m_n"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39747,14 +39211,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/neutron_mass_symbol.svg"
-      alt="m_n"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39793,14 +39249,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/neutron_mass_symbol.svg"
-      alt="m_n"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39963,14 +39411,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/tau_mass_symbol.svg"
-      alt="m_tau"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -39996,14 +39436,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/tau_mass_symbol.svg"
-      alt="m_tau"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40042,14 +39474,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/tau_mass_symbol.svg"
-      alt="m_tau"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40211,14 +39635,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/deuteron_mass_symbol.svg"
-      alt="m_de"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40244,14 +39660,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/deuteron_mass_symbol.svg"
-      alt="m_de"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40290,14 +39698,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/deuteron_mass_symbol.svg"
-      alt="m_de"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40461,14 +39861,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/helion_mass_symbol.svg"
-      alt="m_he"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40494,14 +39886,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/helion_mass_symbol.svg"
-      alt="m_he"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40540,14 +39924,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/helion_mass_symbol.svg"
-      alt="m_he"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40710,14 +40086,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/triton_mass_symbol.svg"
-      alt="m_tri"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40743,14 +40111,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/triton_mass_symbol.svg"
-      alt="m_tri"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40789,14 +40149,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/triton_mass_symbol.svg"
-      alt="m_tri"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40957,14 +40309,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/alpha_particle_mass_symbol.svg"
-      alt="m_alpha"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -40990,14 +40334,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/alpha_particle_mass_symbol.svg"
-      alt="m_alpha"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -41036,14 +40372,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/alpha_particle_mass_symbol.svg"
-      alt="m_alpha"
-      style={{
-          height: "0.7em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/atomic_mass_constant_symbol.svg"
       alt="A_mass"
@@ -41140,7 +40468,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -41151,7 +40479,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -41411,7 +40739,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -41422,7 +40750,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -41628,7 +40956,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -41639,7 +40967,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -41844,7 +41172,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -41855,7 +41183,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -42081,7 +41409,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -42092,7 +41420,7 @@ J ⋮ kg{" "}
                         src="/equations/del_f.svg"
                         alt="del_F"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -42295,7 +41623,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -42306,7 +41634,7 @@ J ⋮ kg{" "}
                         src="/equations/del_f.svg"
                         alt="del_F"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -42501,7 +41829,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -42512,7 +41840,7 @@ J ⋮ kg{" "}
                         src="/equations/del_f.svg"
                         alt="del_F"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -42751,7 +42079,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -42762,7 +42090,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -42999,7 +42327,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -43010,7 +42338,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -43246,7 +42574,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -43257,7 +42585,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -43488,7 +42816,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -43499,7 +42827,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -45416,7 +44744,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -45427,7 +44755,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -45674,7 +45002,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -45685,7 +45013,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -45921,7 +45249,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -45932,7 +45260,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -46425,7 +45753,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -46436,7 +45764,7 @@ J ⋮ kg{" "}
                         src="/equations/neutron_mass_symbol.svg"
                         alt="m_n"
                         style={{
-                            height: "0.75em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -47244,14 +46572,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_nn_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -47277,14 +46597,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_nn_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -47323,14 +46635,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_nn_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_b_symbol.svg"
       alt="mu_B"
@@ -47515,14 +46819,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_nn_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -47548,14 +46844,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_nn_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -47594,14 +46882,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_nn_symbol.svg"
-      alt="mu_n"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_n_symbol.svg"
       alt="mu_N"
@@ -47933,7 +47213,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -47944,7 +47224,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -48144,7 +47424,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -48155,7 +47435,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -48380,7 +47660,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -48391,7 +47671,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -48639,7 +47919,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -48650,7 +47930,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -48875,7 +48155,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -48886,7 +48166,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -49098,7 +48378,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -49109,7 +48389,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -49368,7 +48648,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -49379,7 +48659,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -49637,7 +48917,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -49648,7 +48928,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -49883,7 +49163,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -49894,7 +49174,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -50107,7 +49387,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -50118,7 +49398,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -50353,7 +49633,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -50364,7 +49644,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -50619,7 +49899,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -50630,7 +49910,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -50911,7 +50191,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -50922,7 +50202,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -51190,7 +50470,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -51201,7 +50481,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -51300,14 +50580,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_b_symbol.svg"
-      alt="mu_B"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/k_b.svg"
       alt="k_B"
@@ -51333,14 +50605,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_b_symbol.svg"
-      alt="mu_B"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/k_b.svg"
       alt="k_B"
@@ -51379,14 +50643,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_b_symbol.svg"
-      alt="mu_B"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/k_b.svg"
       alt="k_B"
@@ -51472,7 +50728,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -51483,7 +50739,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -51582,14 +50838,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_n_symbol.svg"
-      alt="mu_N"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/k_b.svg"
       alt="k_B"
@@ -51615,14 +50863,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_n_symbol.svg"
-      alt="mu_N"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/k_b.svg"
       alt="k_B"
@@ -51661,14 +50901,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_n_symbol.svg"
-      alt="mu_N"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/k_b.svg"
       alt="k_B"
@@ -51777,7 +51009,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -52025,7 +51257,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -52265,7 +51497,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -52276,7 +51508,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -52551,7 +51783,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -52562,7 +51794,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -52766,7 +51998,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -52777,7 +52009,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -52854,14 +52086,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/euler_s_number.svg"
-      alt="e"
-      style={{
-          height: "0.55em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/h-bar_symbol.svg"
       alt="h_bar"
@@ -52887,14 +52111,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/euler_s_number.svg"
-      alt="e"
-      style={{
-          height: "0.55em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/h-bar_symbol.svg"
       alt="h_bar"
@@ -52933,14 +52149,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/euler_s_number.svg"
-      alt="e"
-      style={{
-          height: "0.55em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/h-bar_symbol.svg"
       alt="h_bar"
@@ -53059,7 +52267,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -53070,7 +52278,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -53284,7 +52492,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -53295,7 +52503,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -53350,14 +52558,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/h-bar_symbol.svg"
-      alt="h-bar"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/e_symbol.svg"
       alt="e"
@@ -53383,14 +52583,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/h-bar_symbol.svg"
-      alt="h-bar"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/e_symbol.svg"
       alt="e"
@@ -53429,14 +52621,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/h-bar_symbol.svg"
-      alt="h-bar"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/e_symbol.svg"
       alt="e"
@@ -53555,7 +52739,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -53566,7 +52750,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -53610,14 +52794,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/h_symbol.svg"
-      alt="h"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/e_symbol.svg"
       alt="e"
@@ -53643,14 +52819,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/h_symbol.svg"
-      alt="h"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/e_symbol.svg"
       alt="e"
@@ -53689,14 +52857,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/h_symbol.svg"
-      alt="h"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/e_symbol.svg"
       alt="e"
@@ -53804,7 +52964,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -53815,7 +52975,7 @@ J ⋮ kg{" "}
                         src="/equations/zhe_1.svg"
                         alt="zhe_1"
                         style={{
-                            height: "0.75em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -54005,7 +53165,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -54016,7 +53176,7 @@ J ⋮ kg{" "}
                         src="/equations/zhe_1.svg"
                         alt="zhe_1"
                         style={{
-                            height: "0.75em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -54677,7 +53837,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -54688,7 +53848,7 @@ J ⋮ kg{" "}
                         src="/equations/helion_mass_symbol.svg"
                         alt="m_he"
                         style={{
-                            height: "0.75em",
+                            height: "0.95em",
                             verticalAlign: "-0.25em",
                             display: "inline",
                         }}
@@ -54936,7 +54096,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -54947,7 +54107,7 @@ J ⋮ kg{" "}
                         src="/equations/helion_mass_symbol.svg"
                         alt="m_he"
                         style={{
-                            height: "0.75em",
+                            height: "0.95em",
                             verticalAlign: "-0.25em",
                             display: "inline",
                         }}
@@ -55241,14 +54401,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_he_s_symbol.svg"
-      alt="mu_he'"
-      style={{
-          height: "1em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_symbol.svg"
       alt="mu_+"
@@ -55274,14 +54426,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_he_s_symbol.svg"
-      alt="mu_he'"
-      style={{
-          height: "1em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_symbol.svg"
       alt="mu_+"
@@ -55320,14 +54464,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_he_s_symbol.svg"
-      alt="mu_he'"
-      style={{
-          height: "1em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_symbol.svg"
       alt="mu_+"
@@ -55506,14 +54642,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_he_s_symbol.svg"
-      alt="mu_he'"
-      style={{
-          height: "1em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_s_symbol.svg"
       alt="mu_+'"
@@ -55539,14 +54667,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_he_s_symbol.svg"
-      alt="mu_he'"
-      style={{
-          height: "1em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_s_symbol.svg"
       alt="mu_+'"
@@ -55585,14 +54705,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_he_s_symbol.svg"
-      alt="mu_he'"
-      style={{
-          height: "1em",
-          verticalAlign: "-0.1em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_plus_s_symbol.svg"
       alt="mu_+'"
@@ -55789,14 +54901,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_e_symbol.svg"
-      alt="mu_e'"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_he_s_symbol.svg"
       alt="mu_he'"
@@ -55822,14 +54926,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_e_symbol.svg"
-      alt="mu_e'"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_he_s_symbol.svg"
       alt="mu_he'"
@@ -55868,14 +54964,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-  <img
-      src="/equations/mu_e_symbol.svg"
-      alt="mu_e'"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
   />/<img
       src="/equations/mu_he_s_symbol.svg"
       alt="mu_he'"
@@ -58171,7 +57259,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.99"}
+                        {", σ = − 0.99"}
   </span>
                 </div>
 
@@ -60840,7 +59928,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -60851,7 +59939,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -61018,14 +60106,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-    <img
-        src="/equations/nu_peak.svg"
-        alt="nu_peak"
-        style={{
-            height: "0.9em",
-            verticalAlign: "-0.3em",
-            display: "inline",
-        }}
     /> = 2.82143937212207... is the solution to the equation <img
       src="/equations/nu_peak_equation.svg"
       alt="nu_peak equation"
@@ -61106,7 +60186,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -61117,7 +60197,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -61341,7 +60421,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -61352,7 +60432,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -61552,7 +60632,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -61563,7 +60643,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -61930,14 +61010,6 @@ J ⋮ kg{" "}
                     }}
                 >
   <span>
-    <img
-        src="/equations/lambda_peak.svg"
-        alt="lambda_peak"
-        style={{
-            height: "1.1em",
-            verticalAlign: "-0.3em",
-            display: "inline",
-        }}
     /> = 4.96511423174427... is the solution to the equation <img
       src="/equations/lambda_peak_equation.svg"
       alt="lambda_peak equation"
@@ -67028,7 +66100,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -67039,7 +66111,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
+                            height: "0.95em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
@@ -67641,7 +66713,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -67652,7 +66724,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -67889,7 +66961,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -67900,7 +66972,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -68114,7 +67186,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -68125,7 +67197,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -69089,7 +68161,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
@@ -69100,7 +68172,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
-                            height: "0.8em",
+                            height: "0.95em",
                             verticalAlign: "-0.3em",
                             display: "inline",
                         }}
@@ -69334,7 +68406,7 @@ J ⋮ kg{" "}
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
-                            height: "1em",
+                            height: "0.95em",
                             verticalAlign: "-0.4em",
                             display: "inline",
                         }}
