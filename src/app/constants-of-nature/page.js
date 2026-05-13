@@ -66892,7 +66892,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 2.20"}
+                        {", σ = − 2.20"}
   </span>
                 </div>
 
@@ -69478,7 +69478,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>2<sup>nd</sup> hp</sub>{" "}
-      = 6.23537996254764... &times; 10<sup>&minus;65</sup> m<sup>4</sup> C<sup>4</sup>/J<sup>3</sup>
+      = 6.23537998029131... &times; 10<sup>&minus;65</sup> m<sup>4</sup> C<sup>4</sup>/J<sup>3</sup>
 </span>
 
                     <span>prediction</span>
