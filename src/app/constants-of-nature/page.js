@@ -7127,8 +7127,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7347,8 +7347,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7554,8 +7554,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -7785,8 +7785,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.92em",
-                            verticalAlign: "-0.25em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -8007,8 +8007,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.92em",
-                            verticalAlign: "-0.25em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -8229,8 +8229,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.92em",
-                            verticalAlign: "-0.25em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -8451,8 +8451,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.92em",
-                            verticalAlign: "-0.25em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -27282,8 +27282,8 @@ J ⋮ kg{" "}
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.92em",
-                            verticalAlign: "-0.25em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -27547,8 +27547,8 @@ J ⋮ kg{" "}
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.92em",
-                            verticalAlign: "-0.25em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -27832,8 +27832,8 @@ J ⋮ kg{" "}
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.92em",
-                            verticalAlign: "-0.25em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -28127,8 +28127,8 @@ J ⋮ kg{" "}
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.92em",
-                            verticalAlign: "-0.25em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -28395,8 +28395,8 @@ J ⋮ kg{" "}
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.92em",
-                            verticalAlign: "-0.25em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -28687,8 +28687,8 @@ J ⋮ kg{" "}
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.92em",
-                            verticalAlign: "-0.25em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -43737,8 +43737,8 @@ J ⋮ kg{" "}
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -43916,8 +43916,8 @@ J ⋮ kg{" "}
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -44094,8 +44094,8 @@ J ⋮ kg{" "}
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -44296,8 +44296,8 @@ J ⋮ kg{" "}
                         src="/equations/domino_tiling_constant.svg"
                         alt="C_d"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -54206,7 +54206,7 @@ J ⋮ kg{" "}
                         alt="C_d"
                         style={{
                             height: "0.95em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
@@ -54443,7 +54443,7 @@ J ⋮ kg{" "}
                         alt="C_d"
                         style={{
                             height: "0.95em",
-                            verticalAlign: "-0.2em",
+                            verticalAlign: "-0.3em",
                             display: "inline",
                         }}
                     />{" "}
