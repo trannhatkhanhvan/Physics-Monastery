@@ -63346,6 +63346,28 @@ J ⋮ kg{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+
+                    <img
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
                         style={{
@@ -63602,6 +63624,28 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+                    
+                    <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
 
                     <img
                         src="/equations/muon_mass_symbol.svg"
@@ -63861,6 +63905,28 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
@@ -64123,6 +64189,28 @@ J ⋮ kg{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+
+                    <img
                         src="/equations/proton_mass_symbol.svg"
                         alt="m_+"
                         style={{
@@ -64378,6 +64466,28 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
 
                     <img
                         src="/equations/neutron_mass_symbol.svg"
@@ -64639,6 +64749,28 @@ J ⋮ kg{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+
+                    <img
                         src="/equations/tau_mass_symbol.svg"
                         alt="m_tau"
                         style={{
@@ -64895,6 +65027,28 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
 
                     <img
                         src="/equations/deuteron_mass_symbol.svg"
@@ -65156,6 +65310,28 @@ J ⋮ kg{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+
+                    <img
                         src="/equations/helion_mass_symbol.svg"
                         alt="m_he"
                         style={{
@@ -65415,6 +65591,28 @@ J ⋮ kg{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+
+                    <img
                         src="/equations/triton_mass_symbol.svg"
                         alt="m_tri"
                         style={{
@@ -65671,6 +65869,28 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
 
                     <img
                         src="/equations/alpha_particle_mass_symbol.svg"
@@ -65932,6 +66152,28 @@ J ⋮ kg{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+
+                    <img
                         src="/equations/atomic_mass_constant_symbol.svg"
                         alt="A_mass"
                         style={{
@@ -66191,6 +66433,28 @@ J ⋮ kg{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+
+                    <img
                         src="/equations/planck_charge.svg"
                         alt="q_p"
                         style={{
@@ -66429,7 +66693,7 @@ J ⋮ kg{" "}
                     />{" "}
                     = Archimedes&apos; constant,{" "}
 
-                    K = 1 Kelvin,{" "}
+                    K = the kelvin,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
