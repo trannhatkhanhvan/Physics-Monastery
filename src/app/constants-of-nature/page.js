@@ -28116,8 +28116,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -28384,8 +28384,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -28676,8 +28676,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -49109,8 +49109,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -49379,8 +49379,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -49648,8 +49648,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -49894,8 +49894,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -50118,8 +50118,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -50364,8 +50364,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -50630,8 +50630,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -50922,8 +50922,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -51212,8 +51212,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -51494,8 +51494,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -56960,8 +56960,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -57187,9 +57187,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                         }}
                     />{" "}
                     = the Planck temperature,{" "}
@@ -57414,8 +57413,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -60851,8 +60850,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -61117,8 +61116,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -61352,8 +61351,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -61563,8 +61562,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -61776,8 +61775,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -62030,8 +62029,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -62242,8 +62241,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -62454,8 +62453,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -62667,8 +62666,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -62890,8 +62889,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -63103,6 +63102,17 @@ J ⋮ kg{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
 
                     <img
+                        src="/equations/kelvin.svg"
+                        alt="K"
+                        style={{
+                            height: "0.70em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kelvin,{" "}
+
+                    <img
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
@@ -63117,12 +63127,13 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
                     = the Planck temperature,{" "}
+                    
                     <img
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
@@ -66693,7 +66704,16 @@ J ⋮ kg{" "}
                     />{" "}
                     = Archimedes&apos; constant,{" "}
 
-                    K = the kelvin,{" "}
+                    <img
+                        src="/equations/kelvin.svg"
+                        alt="K"
+                        style={{
+                            height: "0.70em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kelvin,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
@@ -66721,8 +66741,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -66985,7 +67005,16 @@ J ⋮ kg{" "}
                     />{" "}
                     = Archimedes&apos; constant,{" "}
 
-                    K = 1 Kelvin,{" "}
+                    <img
+                        src="/equations/kelvin.svg"
+                        alt="K"
+                        style={{
+                            height: "0.70em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kelvin,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
@@ -67013,8 +67042,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
@@ -67303,8 +67332,8 @@ J ⋮ kg{" "}
                         src="/equations/planck_temperature.svg"
                         alt="T_p"
                         style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
                             display: "inline",
                         }}
                     />{" "}
