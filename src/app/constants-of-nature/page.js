@@ -56420,6 +56420,17 @@ J ⋮ kg{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
 
                     <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+
+                    <img
                         src="/equations/atomic_mass_constant_symbol.svg"
                         alt="A_mass"
                         style={{
