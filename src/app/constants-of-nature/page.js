@@ -36452,6 +36452,17 @@ J ⋮ kg{" "}
                     = the Planck mass,{" "}
 
                     <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+
+                    <img
                         src="/equations/c_r1.svg"
                         alt="C_R1"
                         style={{
@@ -36895,6 +36906,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the universal parabolic constant,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
 
                     <img
                         src="/equations/electron_mass_symbol.svg"
