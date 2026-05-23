@@ -56789,6 +56789,17 @@ J ⋮ kg{" "}
                     Where{" "}
 
                     <img
+                        src="/equations/kelvin.svg"
+                        alt="K"
+                        style={{
+                            height: "0.70em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kelvin,{" "}
+
+                    <img
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
@@ -56988,18 +56999,18 @@ J ⋮ kg{" "}
                     }}
                 >
                     Where{" "}
-
+                    
                     <img
-                        src="/equations/atomic_mass_constant_symbol.svg"
-                        alt="A_mass"
+                        src="/equations/kelvin.svg"
+                        alt="K"
                         style={{
-                            height: "0.92em",
-                            verticalAlign: "-0.2em",
+                            height: "0.70em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the atomic mass constant,{" "}
-
+                    = the kelvin,{" "}
+                    
                     <img
                         src="/equations/planck_mass.svg"
                         alt="m_p"
@@ -57021,6 +57032,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck temperature,{" "}
+                    
+                    <img
+                        src="/equations/atomic_mass_constant_symbol.svg"
+                        alt="A_mass"
+                        style={{
+                            height: "0.92em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the atomic mass constant,{" "}
 
                     <img
                         src="/equations/l_2.svg"
@@ -57228,6 +57250,16 @@ J ⋮ kg{" "}
                     Where{" "}
 
                     <img
+                        src="/equations/planck_temperature.svg"
+                        alt="T_p"
+                        style={{
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
+                        }}
+                    />{" "}
+                    = the Planck temperature,{" "}
+
+                    <img
                         src="/equations/atomic_mass_constant_symbol.svg"
                         alt="A_mass"
                         style={{
@@ -57237,16 +57269,6 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the atomic mass constant,{" "}
-
-                    <img
-                        src="/equations/planck_temperature.svg"
-                        alt="T_p"
-                        style={{
-                            height: "1.00em",
-                            verticalAlign: "-0.35em",
-                        }}
-                    />{" "}
-                    = the Planck temperature,{" "}
 
                     <img
                         src="/equations/planck_mass.svg"
@@ -57476,6 +57498,17 @@ J ⋮ kg{" "}
                     = the Planck temperature,{" "}
 
                     <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+
+                    <img
                         src="/equations/planck_mass.svg"
                         alt="m_p"
                         style={{
@@ -57701,6 +57734,17 @@ J ⋮ kg{" "}
                     = the Planck mass,{" "}
 
                     <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
+
+                    <img
                         src="/equations/universal_parabolic_constant.svg"
                         alt="P_up"
                         style={{
@@ -57878,6 +57922,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
@@ -58341,6 +58396,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
@@ -61936,7 +62002,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>b</i>{" "}
-      = 2.89777195379426... &times; 10<sup>&minus;3</sup> m K/cycle
+      = 2.8977719537955 &times; 10<sup>&minus;3</sup> m K/cycle
 </span>
                     <span>
     <a
@@ -61966,7 +62032,7 @@ J ⋮ kg{" "}
                 >
   <span>
   <i>b</i>{" "}
-      = 2.89777195379426... &times; 10<sup>&minus;3</sup> m K/cycle
+      = 2.8977719537955 &times; 10<sup>&minus;3</sup> m K/cycle
   </span>
                     <span>
     CODATA 2018, 9-digit match
