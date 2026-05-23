@@ -5964,6 +5964,17 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the Planck mass,{" "}
 
                     <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
+
+                    <img
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
                         style={{
