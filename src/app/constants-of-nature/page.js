@@ -1111,6 +1111,17 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the Planck mass,{" "}
 
                     <img
+                        src="/equations/second.svg"
+                        alt="s"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the second,{" "}
+
+                    <img
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
@@ -1228,6 +1239,10 @@ const GROUP_SPACER_HEIGHT = '35px';
         ),
 
 
+
+
+
+
 5: (
             <div
                 style={{
@@ -1306,6 +1321,17 @@ const GROUP_SPACER_HEIGHT = '35px';
                         }}
                     />{" "}
                     = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/second.svg"
+                        alt="s"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the second,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
