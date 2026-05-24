@@ -49759,6 +49759,17 @@ J ⋮ kg{" "}
                     = the Planck mass,{" "}
 
                     <img
+                        src="/equations/kelvin.svg"
+                        alt="K"
+                        style={{
+                            height: "0.70em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kelvin,{" "}
+
+                    <img
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
@@ -50003,6 +50014,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/kelvin.svg"
+                        alt="K"
+                        style={{
+                            height: "0.70em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kelvin,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
