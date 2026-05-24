@@ -62475,6 +62475,17 @@ J ⋮ kg{" "}
                     = the Planck temperature,{" "}
 
                     <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
+
+                    <img
                         src="/equations/plastic_constant.svg"
                         alt="P"
                         style={{
@@ -62663,6 +62674,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/kelvin.svg"
+                        alt="K"
+                        style={{
+                            height: "0.70em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kelvin,{" "}
 
                     <img
                         src="/equations/planck_length.svg"
