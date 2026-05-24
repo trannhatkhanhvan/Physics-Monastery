@@ -61541,6 +61541,17 @@ J ⋮ kg{" "}
                     = Archimedes&apos; constant,{" "}
 
                     <img
+                        src="/equations/kelvin.svg"
+                        alt="K"
+                        style={{
+                            height: "0.70em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kelvin,{" "}
+
+                    <img
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
@@ -61772,6 +61783,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck temperature,{" "}
+
+                    <img
+                        src="/equations/second.svg"
+                        alt="s"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the second,{" "}
 
                     <img
                         src="/equations/s_symbol.svg"
