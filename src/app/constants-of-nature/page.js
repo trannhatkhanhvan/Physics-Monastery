@@ -42212,6 +42212,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck time,{" "}
+                    
+                    <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
 
                     <img
                         src="/equations/del_f.svg"
@@ -42426,6 +42437,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck time,{" "}
+                    
+                    <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
 
                     <img
                         src="/equations/del_f.svg"
@@ -42610,6 +42632,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
+                    
+                    <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
 
                     <img
                         src="/equations/planck_mass.svg"
