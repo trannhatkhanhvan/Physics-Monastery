@@ -16318,6 +16318,17 @@ A<sub>mdm</sub>{" "}
                     = the Planck mass,{" "}
                     
                     <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+                    
+                    <img
                         src="/equations/s_symbol.svg"
                         alt="s"
                         style={{
@@ -16573,6 +16584,17 @@ A<sub>mdm</sub>{" "}
                     = the Planck mass,{" "}
 
                     <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
+
+                    <img
                         src="/equations/zhe_r.svg"
                         alt="zhe_r"
                         style={{
@@ -16787,6 +16809,17 @@ A<sub>mdm</sub>{" "}
                         }}
                     />{" "}
                     = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
 
                     <img
                         src="/equations/g_ga.svg"
