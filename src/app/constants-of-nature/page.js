@@ -46783,6 +46783,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck charge,{" "}
+                    
+                    <img
+                        src="/equations/second.svg"
+                        alt="s"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the second,{" "}
 
                     <img
                         src="/equations/neutron_mass_symbol.svg"
