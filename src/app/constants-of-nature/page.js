@@ -48055,6 +48055,17 @@ J ⋮ kg{" "}
                     = the Planck mass,{" "}
 
                     <img
+                        src="/equations/second.svg"
+                        alt="s"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the second,{" "}
+
+                    <img
                         src="/equations/c_cfp.svg"
                         alt="C_CFP"
                         style={{
@@ -48264,6 +48275,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck mass,{" "}
+
+                    <img
+                        src="/equations/second.svg"
+                        alt="s"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the second,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
