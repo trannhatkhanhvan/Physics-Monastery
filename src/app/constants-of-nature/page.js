@@ -41273,6 +41273,17 @@ J ⋮ kg{" "}
                     = the Planck length,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
                         src="/equations/electron_mass_symbol.svg"
                         alt="m_e"
                         style={{
@@ -41498,6 +41509,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
+
+                    <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
 
                     <img
                         src="/equations/electron_mass_symbol.svg"
