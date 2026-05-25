@@ -18747,6 +18747,17 @@ A<sub>mdm</sub>{" "}
                     = the Planck time,{" "}
 
                     <img
+                        src="/equations/second.svg"
+                        alt="s"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the second,{" "}
+
+                    <img
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
