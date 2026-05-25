@@ -3625,6 +3625,17 @@ const GROUP_SPACER_HEIGHT = '35px';
                     = the Planck charge,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
                         src="/equations/euler_s_number.svg"
                         alt="e"
                         style={{
@@ -3757,6 +3768,8 @@ const GROUP_SPACER_HEIGHT = '35px';
 
 
 
+
+
 16: (
             <div
                 style={{
@@ -3813,6 +3826,17 @@ const GROUP_SPACER_HEIGHT = '35px';
                         }}
                     />{" "}
                     = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
 
                     <img
                         src="/equations/planck_charge.svg"
