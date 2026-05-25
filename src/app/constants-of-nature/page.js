@@ -4761,7 +4761,7 @@ const GROUP_SPACER_HEIGHT = '35px';
                         lineHeight: "1.5em"
                     }}
                 >
-                    Where MHz = a megahertz,{" "}
+                    Where{" "}
 
                     <img
                         src="/equations/zhe_1.svg"
@@ -4785,6 +4785,8 @@ const GROUP_SPACER_HEIGHT = '35px';
                     />{" "}
                     = Archimedes&apos; constant,{" "}
 
+                    MHz = a megahertz,{" "}
+
                     <img
                         src="/equations/planck_charge.svg"
                         alt="q_p"
@@ -4795,6 +4797,17 @@ const GROUP_SPACER_HEIGHT = '35px';
                         }}
                     />{" "}
                     = the Planck charge,{" "}
+
+                    <img
+                        src="/equations/second.svg"
+                        alt="s"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the second,{" "}
 
                     <img
                         src="/equations/proton_mass_symbol.svg"
