@@ -28231,6 +28231,17 @@ J ⋮ kg{" "}
                     = the Planck length,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
@@ -28240,6 +28251,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck time,{" "}
+
+                    <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
 
                     <img
                         src="/equations/planck_charge.svg"
@@ -28499,6 +28521,17 @@ J ⋮ kg{" "}
                     = the Planck length,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
@@ -28508,6 +28541,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck time,{" "}
+
+                    <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
 
                     <img
                         src="/equations/planck_charge.svg"
@@ -28791,6 +28835,17 @@ J ⋮ kg{" "}
                     = the Planck length,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
                         src="/equations/planck_time.svg"
                         alt="t_p"
                         style={{
@@ -28800,6 +28855,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck time,{" "}
+
+                    <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
 
                     <img
                         src="/equations/planck_charge.svg"
