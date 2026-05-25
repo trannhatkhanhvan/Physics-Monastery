@@ -19578,6 +19578,17 @@ A<sub>mom</sub>{" "}
                     MeV = the megaelectron-volt,{" "}
 
                     <img
+                        src="/equations/second.svg"
+                        alt="s"
+                        style={{
+                            height: "0.55em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the second,{" "}
+
+                    <img
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
@@ -19609,6 +19620,17 @@ A<sub>mom</sub>{" "}
                         }}
                     />{" "}
                     = the Planck time,{" "}
+
+                    <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
 
                     <img
                         src="/equations/i.svg"
@@ -19804,17 +19826,6 @@ A<sub>mom</sub>{" "}
                 >
                     Where{" "}
 
-                    <img
-                        src="/equations/atomic_mass_constant_symbol.svg"
-                        alt="A_mass"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the atomic mass constant,{" "}
-
                     MeV = the megaelectron-volt,{" "}
 
                     <img
@@ -19827,6 +19838,17 @@ A<sub>mom</sub>{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
+
+                    <img
+                        src="/equations/atomic_mass_constant_symbol.svg"
+                        alt="A_mass"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the atomic mass constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -20041,6 +20063,17 @@ A<sub>mom</sub>{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -20413,17 +20446,6 @@ J ⋮ kg{" "}
                     Where{" "}
 
                     <img
-                        src="/equations/atomic_mass_constant_symbol.svg"
-                        alt="A_mass"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the atomic mass constant,{" "}
-
-                    <img
                         src="/equations/planck_length.svg"
                         alt="l_p"
                         style={{
@@ -20433,6 +20455,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
+
+                    <img
+                        src="/equations/atomic_mass_constant_symbol.svg"
+                        alt="A_mass"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the atomic mass constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -20657,16 +20690,6 @@ J ⋮ kg{" "}
                 >
                     Where{" "}
 
-                    <img
-                        src="/equations/atomic_mass_constant_symbol.svg"
-                        alt="A_mass"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the atomic mass constant,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -20689,6 +20712,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
+
+                    <img
+                        src="/equations/atomic_mass_constant_symbol.svg"
+                        alt="A_mass"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the atomic mass constant,{" "}
 
                     <img
                         src="/equations/i.svg"
@@ -20894,6 +20928,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
+
+                    <img
+                        src="/equations/kilogram.svg"
+                        alt="kg"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the kilogram,{" "}
 
                     <img
                         src="/equations/planck_time.svg"
@@ -34968,7 +35013,7 @@ J ⋮ kg{" "}
                     />{" "}
                     = the Planck length,{" "}
 
-                        <img
+                    <img
                         src="/equations/second.svg"
                         alt="s"
                         style={{
