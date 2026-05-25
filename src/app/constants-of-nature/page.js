@@ -43143,6 +43143,17 @@ J ⋮ kg{" "}
                     = the Planck length,{" "}
 
                     <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
+
+                    <img
                         src="/equations/atomic_mass_constant_symbol.svg"
                         alt="A_mass"
                         style={{
@@ -43388,6 +43399,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
+
+                    <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
@@ -43674,6 +43696,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
+
+                    <img
+                        src="/equations/coulomb.svg"
+                        alt="C"
+                        style={{
+                            height: "0.80em",
+                            verticalAlign: "-0.05em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the coulomb,{" "}
 
                     <img
                         src="/equations/atomic_mass_constant_symbol.svg"
