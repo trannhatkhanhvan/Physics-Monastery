@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prime Valuation Number Wall Gallery</title>
+
+<style>
+body {
+    margin: 0;
+    background: #101010;
+    color: #eeeeee;
+    font-family: Menlo, Monaco, Consolas, monospace;
+}
+
+.header {
+    padding: 18px 24px 12px 24px;
+    border-bottom: 1px solid #303030;
+    background: #151515;
+}
+
+h1 {
+    margin: 0 0 8px 0;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.note {
+    margin: 0 0 14px 0;
+    color: #bbbbbb;
+    font-size: 13px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+button {
+    background: #222222;
+    color: #eeeeee;
+    border: 1px solid #555555;
+    padding: 7px 10px;
+    font-family: Menlo, Monaco, Consolas, monospace;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333333;
+}
+
+.current {
+    margin-top: 12px;
+    color: #ffd166;
+    font-size: 14px;
+}
+
+.viewer {
+    width: 100vw;
+    height: calc(100vh - 145px);
+    border: 0;
+}
+</style>
+
+<script>
+function showWall(filename, prime) {
+    document.getElementById("viewer").src = filename;
+    document.getElementById("current").innerText = "Currently viewing valuation prime p = " + prime;
+}
+</script>
+
+</head>
+
+<body>
+<div class="header">
+    <h1>Prime Valuation Number Wall Gallery</h1>
+    <p class="note">
+        Each view colors the number wall by p-adic valuation:
+        brightness shows how many times the selected prime divides each wall entry.
+    </p>
+
+    <div class="buttons">
+        
+            <button onclick="showWall('number_wall_valuation_p002.html', 2)">
+                p = 2
+            </button>
+            
+            <button onclick="showWall('number_wall_valuation_p003.html', 3)">
+                p = 3
+            </button>
+            
+            <button onclick="showWall('number_wall_valuation_p005.html', 5)">
+                p = 5
+            </button>
+            
+            <button onclick="showWall('number_wall_valuation_p007.html', 7)">
+                p = 7
+            </button>
+            
+            <button onclick="showWall('number_wall_valuation_p011.html', 11)">
+                p = 11
+            </button>
+            
+            <button onclick="showWall('number_wall_valuation_p013.html', 13)">
+                p = 13
+            </button>
+            
+            <button onclick="showWall('number_wall_valuation_p017.html', 17)">
+                p = 17
+            </button>
+            
+            <button onclick="showWall('number_wall_valuation_p019.html', 19)">
+                p = 19
+            </button>
+            
+            <button onclick="showWall('number_wall_valuation_p023.html', 23)">
+                p = 23
+            </button>
+            
+            <button onclick="showWall('number_wall_valuation_p029.html', 29)">
+                p = 29
+            </button>
+            
+    </div>
+
+    <div id="current" class="current">
+        Currently viewing valuation prime p = 2
+    </div>
+</div>
+
+<iframe id="viewer" class="viewer" src="number_wall_valuation_p002.html"></iframe>
+
+</body>
+</html>
