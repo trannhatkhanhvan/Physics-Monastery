@@ -271,13 +271,17 @@ export default function HyperbolicPartitionEq() {
     />
   </span>
   , and{' '}
-  <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
+  <span style={{ display: "inline-flex", alignItems: "center", verticalAlign: "middle" }}>
     <img
-      src="/equations/a_scale.svg"
-      alt="a_scale"
-      style={{ height: '42px', width: 'auto'}}
+        src="/equations/a_scale.svg"
+        alt="a_scale"
+        style={{
+            height: "36px",
+            width: "auto",
+            transform: "translateY(-8px)",
+        }}
     />
-  </span>
+</span>
   {' '}.
 </p>
 
