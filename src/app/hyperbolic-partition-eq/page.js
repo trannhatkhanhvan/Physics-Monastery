@@ -276,7 +276,7 @@ export default function HyperbolicPartitionEq() {
         src="/equations/a_scale.svg"
         alt="a_scale"
         style={{
-            height: "36px",
+            height: "35px",
             width: "auto",
             transform: "translateY(-8px)",
         }}
