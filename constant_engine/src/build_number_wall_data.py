@@ -497,8 +497,118 @@ def make_sequence_library():
         },
 
         {
+            "id": "phi_0-digits",
+            "title": "Planck time scalar",
+            "symbol": "φ₀",
+            "symbolImage": "/equations/scalar_0.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "5.391258368323128751376726712741777763741560781183240592259291557416025825541021767785863695159442158"
+            ),
+            "description": "The first 100 digits of φ₀, used as the entry row of the number wall.",
+        },
+        {
+            "id": "phi_1-digits",
+            "title": "Planck length scalar",
+            "symbol": "φ₁",
+            "symbolImage": "/equations/scalar_1.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "1.616259181756453351361949961967038340446463839068909947224193829317698291892243197281521823753783779"
+            ),
+            "description": "The first 100 digits of φ₁, used as the entry row of the number wall.",
+        },
+        {
+            "id": "phi_2-digits",
+            "title": "Planck charge scalar",
+            "symbol": "φ₂",
+            "symbolImage": "/equations/scalar_2.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "1.875545967139625164534584749409225438804499398906558827181569548048856687653735727703492973645021495"
+            ),
+            "description": "The first 100 digits of φ₂, used as the entry row of the number wall.",
+        },
+        {
+            "id": "phi_3-digits",
+            "title": "Planck mass scalar",
+            "symbol": "φ₃",
+            "symbolImage": "/equations/scalar_3.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "1.416786985907946329602614804013265347373498179270631737624762609179972104589465090640766275120985171"
+            ),
+            "description": "The first 100 digits of φ₃, used as the entry row of the number wall.",
+        },
+        {
+            "id": "phi_4-digits",
+            "title": "Planck temperature scalar",
+            "symbol": "φ₄",
+            "symbolImage": "/equations/scalar_4.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "2.176426838175788124518498932075792423542503799529596336953687554097673900479158322985926834558645008"
+            ),
+            "description": "The first 100 digits of φ₄, used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "zhe_1-digits",
+            "title": "first hyperbolic partition constant",
+            "symbol": "ж₁",
+            "symbolImage": "/equations/zhe_1.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.0854245431533304728292565033938076802100223787556762555314702980132300640000074937893858619407304638404927604079248031834"
+            ),
+            "description": "The first 100 digits of ж₁, used as the entry row of the number wall.",
+        },
+        {
+            "id": "zhe_2-digits",
+            "title": "second hyperbolic partition constant",
+            "symbol": "ж₂",
+            "symbolImage": "/equations/zhe_2.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "3.66756753485501030944332049253754125783432508982649583799530414186417751962020196054403704136716497029283883245036967615"
+            ),
+            "description": "The first 100 digits of ж₂, used as the entry row of the number wall.",
+        },
+        {
+            "id": "zhe_r-digits",
+            "title": "hyperbolic radius constant",
+            "symbol": "жᵣ",
+            "symbolImage": "/equations/zhe_r.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "4.47826244916753116475140117442141757864584227108242521233276364757120836048893729806341023127464028092713011681590152608"
+            ),
+            "description": "The first 100 digits of жᵣ, used as the entry row of the number wall.",
+        },
+        {
+            "id": "zhe_theta-digits",
+            "title": "hyperbolic radian constant",
+            "symbol": "жθ",
+            "symbolImage": "/equations/zhe_theta.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "2.00316562310924368498640089304075630828815936132964522641785987191913097331197640297844331412575146614768547712302831647"
+            ),
+            "description": "The first 100 digits of жθ, used as the entry row of the number wall.",
+        },
+
+        {
             "id": "gieseking-constant-digits",
-            "title": "Gieseking's Constant",
+            "title": "Gieseking's constant",
             "symbol": "G_Gi",
             "symbolImage": "/equations/g_gi.svg",
             "category": "constants",
@@ -535,12 +645,24 @@ def make_sequence_library():
         {
             "id": "domino-tiling-constant-digits",
             "title": "domino tiling constant",
+            "symbol": "C_d",
+            "symbolImage": "/equations/domino_tiling_constant.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.29156090403081878013838445646839491886406615398583727026100156911174763688043886172662682430313405890897280278"
+            ),
+            "description": "The first 100 digits of C_d = K/pi, used as the entry row of the number wall.",
+        },
+        {
+            "id": "dimer-constant-digits",
+            "title": "dimer constant",
             "symbol": "D_d",
             "symbolImage": "/equations/d_d.svg",
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
-                "1.79162281206959342473054708934298243226813439313295476776758347649942507423765789601322663511617314591504553718687051105"
+                "1.7916228120695934247305470893429824322681343931329547677675834764994250742376578960132266351161731459150455372"
             ),
             "description": "The first 100 digits of the domino tiling constant e^(2K/pi), used as the entry row of the number wall.",
         },
@@ -552,7 +674,7 @@ def make_sequence_library():
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
-                "1.52995403705719287491319417230882435857282894716092949606181168590952236179937427646883852056587534465250994548267024715"
+                "1.5299540370571928749131941723088243585728289471609294960618116859095223617993742764688385205658753446525099455"
             ),
             "description": "The first 100 digits of the real half-period ω₂ in the equianharmonic case.",
         },
@@ -564,7 +686,7 @@ def make_sequence_library():
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
-                "1.61803398874989484820458683436563811772030917980576286213544862270526046281890244970720720418939113748475408807538689175"
+                "1.6180339887498948482045868343656381177203091798057628621354486227052604628189024497072072041893911374847540881"
             ),
             "description": "The first 100 digits of the golden ratio, used as the entry row of the number wall.",
         },
@@ -576,7 +698,7 @@ def make_sequence_library():
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
-                "3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230665"
+                "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679821480865"
             ),
             "description": "The first 100 digits of Archimedes' constant π, used as the entry row of the number wall.",
         },
@@ -588,7 +710,7 @@ def make_sequence_library():
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
-                "2.29558714939263807403429804918949038759783220363858348392997534664410966268413312668409442623789761559175366242301878921"
+                "2.2955871493926380740342980491894903875978322036385834839299753466441096626841331266840944262378976155917536624"
             ),
             "description": "The first 100 digits of the universal parabolic constant, used as the entry row of the number wall.",
         },
@@ -600,10 +722,147 @@ def make_sequence_library():
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
-                "5.24411510858423962092967917978223882736550990286324632563364340760158117414082850046059106592285818689227150534356643611"
+                "5.2441151085842396209296791797822388273655099028632463256336434076015811741408285004605910659228581868922715053"
             ),
             "description": "The first 100 digits of the arc length of the unit lemniscate, used as the entry row of the number wall.",
         },
+        {
+            "id": "lemniscate-constant-digits",
+            "title": "lemniscate constant",
+            "symbol": "L",
+            "symbolImage": "/equations/l_constant.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "2.6220575542921198104648395898911194136827549514316231628168217038007905870704142502302955329614290934461357527"
+            ),
+            "description": "The first 100 digits of the lemniscate constant, used as the entry row of the number wall.",
+        },
+        {
+            "id": "first-lemniscate-constant-digits",
+            "title": "first lemniscate constant",
+            "symbol": "L_1",
+            "symbolImage": "/equations/l_1_constant.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "1.3110287771460599052324197949455597068413774757158115814084108519003952935352071251151477664807145467230678763"
+            ),
+            "description": "The first 100 digits of the first lemniscate constant, used as the entry row of the number wall.",
+        },
+        {
+            "id": "second-lemniscate-constant-digits",
+            "title": "second lemniscate constant",
+            "symbol": "L_2",
+            "symbolImage": "/equations/l_2.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.59907011736779610371996124614016193911360633160782577913183747647320260707195783541794277824489669468795361255"
+            ),
+            "description": "The first 100 digits of the second lemniscate constant, used as the entry row of the number wall.",
+        },
+        {
+            "id": "ubiquitous-constant-digits",
+            "title": "ubiquitous constant",
+            "symbol": "C_U",
+            "symbolImage": "/equations/c_u.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.84721308479397908660649912348219163648144591032694218506057937265973400483413475972320029399461122994212228563"
+            ),
+            "description": "The first 100 digits of the ubiquitous constant, used as the entry row of the number wall.",
+        },
+        {
+            "id": "gauss-constant-digits",
+            "title": "Gauss's constant",
+            "symbol": "G_Ga",
+            "symbolImage": "/equations/g_ga.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.83462684167407318628142973279904680899399301349034700244982737010368199270952641186969116035127532412906785035"
+            ),
+            "description": "The first 100 digits of Gauss's constant, used as the entry row of the number wall.",
+        },
+        {
+            "id": "weierstrass-constant-digits",
+            "title": "Weierstrass constant",
+            "symbol": "W_We",
+            "symbolImage": "/equations/w_we.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.47494937998792065033250463632798296855954937321720298228333102486455792917488386027427564125050214441890378494"
+            ),
+            "description": "The first 100 digits of the Weierstrass constant, used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "continued-fraction-constant-digits",
+            "title": "continued fraction constant",
+            "symbol": "C_CF",
+            "symbolImage": "/equations/c_cf.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.697774657964007982006790592551752599486658262998021232368630082816530852764641112996965654182676568724"
+            ),
+            "description": "The first 100 digits of C_CF = I_1(2)/I_0(2), used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "ramanujan-first-continued-fraction-constant-digits",
+            "title": "Ramanujan's first continued fraction constant",
+            "symbol": "C_R1",
+            "symbolImage": "/equations/c_r1.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.998136044598509332150024459047074735311382994763043982185583874070350324689464413357717727086750582618"
+            ),
+            "description": "The first 100 digits of C_R1, Ramanujan's first continued fraction constant, used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "liouville-constant-digits",
+            "title": "Liouville's constant",
+            "symbol": "L_Li",
+            "symbolImage": "/equations/liouville_s_constant.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.11000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            ),
+            "description": "The first 100 digits of Liouville's constant, used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "madelung-constant-digits",
+            "title": "Madelung constant",
+            "symbol": "M",
+            "symbolImage": "/equations/madelung_constant.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "-1.747564594633182190636212035544397403485161436624741758152825350761546587815932963156942126387440772"
+            ),
+            "description": "The first 100 digits of the Madelung constant for the NaCl lattice, used as the entry row of the number wall.",
+        },
+        {
+            "id": "prime-constant-digits",
+            "title": "prime constant",
+            "symbol": "P*",
+            "symbolImage": "/equations/prime_constant.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "1.226742010720353244417630230455361655871409690440250419643297301214022138315312168452621562494797741259"
+            ),
+            "description": "The first 100 digits of the P* value shown in the Symbol Legend, used as the entry row of the number wall.",
+        },
+
         {
             "id": "e-digits",
             "title": "Euler's number",
@@ -612,34 +871,178 @@ def make_sequence_library():
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
-                "2.718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427"
+                "2.7182818284590452353602874713526624977572470936999595749669676277240766303535475945713821785251664274274663919"
             ),
             "description": "The first 100 digits of Euler's number e, used as the entry row of the number wall.",
         },
+
         {
-            "id": "phi_0-digits",
-            "title": "Phi Zero",
-            "symbol": "φ₀",
-            "symbolImage": "/equations/phi_0.svg",
+            "id": "euler-mascheroni-constant-digits",
+            "title": "Euler-Mascheroni constant",
+            "symbol": "γ",
+            "symbolImage": "/equations/euler-mascheroni_constant.svg",
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
-                "5.391258368323128751376726712741777763741560781183240592259291557416025825541021767785863695159442158"
+                "0.57721566490153286060651209008240243104215933593992359880576723488486772677766467093694706329174674951463144725"
             ),
-            "description": "The first 100 digits of φ₀, used as the entry row of the number wall.",
+            "description": "The first 100 digits of the Euler-Mascheroni constant, used as the entry row of the number wall.",
         },
+
         {
-            "id": "phi_1-digits",
-            "title": "Phi One",
-            "symbol": "φ₁",
-            "symbolImage": "/equations/phi_1.svg",
+            "id": "sierpinski-constant-digits",
+            "title": "Sierpiński's constant",
+            "symbol": "S",
+            "symbolImage": "/equations/sierpinski_constant.svg",
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
-                "1.616259181756453351361949961967038340446463839068909947224193829317698291892243197281521823753783779"
+                "0.822825249678847032995328716261464949475693118894850218393815613037090956446401667572195325732344532472"
             ),
-            "description": "The first 100 digits of φ₁, used as the entry row of the number wall.",
+            "description": "The first 100 digits of Sierpiński's constant, used as the entry row of the number wall.",
         },
+
+        {
+            "id": "dottie-number-digits",
+            "title": "Dottie number",
+            "symbol": "D_Do",
+            "symbolImage": "/equations/d_do.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.73908513321516064165531208767387340401341175890075746496568063577328465488354759459937610693176653184980124664"
+            ),
+            "description": "The first 100 digits of the Dottie number, used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "laplace-limit-digits",
+            "title": "Laplace limit",
+            "symbol": "L_LL",
+            "symbolImage": "/equations/l_ll.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.662743419349181580974742097109252907056233549115022417520392534990971853086511277249654802598958181689"
+            ),
+            "description": "The first 100 digits of the Laplace limit, used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "hyperbolic-cotangent-fixed-point-digits",
+            "title": "real fixed point of the hyperbolic cotangent",
+            "symbol": "C_CFP",
+            "symbolImage": "/equations/c_cfp.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "1.1996786402577338339163698486411419442614587884186072089154777839181247252238474799990869921465093798859055084"
+            ),
+            "description": "The first 100 digits of the real fixed point of the hyperbolic cotangent, used as the entry row of the number wall.",
+        },
+        {
+            "id": "bessel-root-j01-digits",
+            "title": "first root of the Bessel function",
+            "symbol": "j_0,1",
+            "symbolImage": "/equations/j_0-1.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "2.4048255576957727686216318793264546431242449091459671357069990905967658386771940292044363437601452547868924504"
+            ),
+            "description": "The first 100 digits of the first root of the Bessel function J_0, used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "feigenbaum-alpha-digits",
+            "title": "Feigenbaum alpha constant",
+            "symbol": "α_F",
+            "symbolImage": "/equations/alpha_f.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "2.502907875095892822283902873218215786381271376727149977336192056779235463179590206703299649746433834130"
+            ),
+            "description": "The first 100 digits of the Feigenbaum alpha constant, used as the entry row of the number wall.",
+        },
+        {
+            "id": "feigenbaum-delta-digits",
+            "title": "Feigenbaum delta constant",
+            "symbol": "δ_F",
+            "symbolImage": "/equations/delta_f.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "4.669201609102990671853203820466201617258185577475768632745651343004134330211314737138689744023948013817"
+            ),
+            "description": "The first 100 digits of the Feigenbaum delta constant, used as the entry row of the number wall.",
+        },
+        {
+            "id": "silver-constant-digits",
+            "title": "silver constant",
+            "symbol": "S",
+            "symbolImage": "/equations/silver_constant.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "3.246979603717467061050009768008479621264549461792804210731098878193707304912974569151885014653170743334"
+            ),
+            "description": "The first 100 digits of the silver constant, used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "plastic-constant-digits",
+            "title": "plastic constant",
+            "symbol": "P",
+            "symbolImage": "/equations/plastic_constant.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "1.324717957244746025960908854478097340734404056901733364534015050302827851245547594054699347981787280329910921"
+            ),
+            "description": "The first 100 digits of the plastic constant, used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "qrs-constant-digits",
+            "title": "QRS constant",
+            "symbol": "C_Q",
+            "symbolImage": "/equations/c_q.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.6054436571967327494789228424472074752208994969563226178775528774518289983516763567570472921383427042"
+            ),
+            "description": "The first 100 digits of the QRS constant, used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "foias-constant-digits",
+            "title": "first Foias constant",
+            "symbol": "x∞",
+            "symbolImage": "/equations/x_infinity.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "2.293166287411861031508028291250805864372257290327121248537710396168506488009157743629042013804828256612"
+            ),
+            "description": "The first 100 digits of the first Foias constant, used as the entry row of the number wall.",
+        },
+
+        {
+            "id": "khinchin-mean-minus-six-digits",
+            "title": "Khinchin mean of order -6",
+            "symbol": "K_-6",
+            "symbolImage": "/equations/k_minus_6.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "1.156552374421514413230622980433092762712341270717871696255697553629484016762519000000000000000000000000"
+            ),
+            "description": "The first available digits of the Khinchin mean of order -6, padded to 100 digits for the number-wall builder.",
+        },
+
+
     ]
 
 

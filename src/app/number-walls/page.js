@@ -509,36 +509,38 @@ export default function NumberWallsPage() {
                 }
 
                 .control-panel {
-                    background: #171717;
-                    border: 1px solid #303030;
-                    padding: 14px;
-                    margin-bottom: 16px;
-                    box-sizing: border-box;
-                }
+    background: #171717;
+    border: 1px solid #303030;
+    padding: 14px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
 
-                .control-row {
-                    margin-bottom: 12px;
-                }
+.control-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
+}
 
-                .control-row:last-child {
-                    margin-bottom: 0;
-                }
+.control-label {
+    display: inline-block;
+    color: #aaaaaa;
+    font-size: var(--control-font-size);
+    white-space: nowrap;
+}
 
-                .control-label {
-                    display: inline-block;
-                    width: 130px;
-                    color: #aaaaaa;
-                    font-size: 13px;
-                }
-
-                .control-select {
-                    background: #222222;
-                    color: #eeeeee;
-                    border: 1px solid #555555;
-                    padding: 6px 8px;
-                    font-family: Menlo, Monaco, Consolas, monospace;
-                    font-size: 13px;
-                }
+.control-select {
+    background: #222222;
+    color: #eeeeee;
+    border: 1px solid #555555;
+    padding: 6px 8px;
+    font-size: var(--control-font-size);
+}
 
                 .wall-title {
                     margin: 0 0 6px 0;
@@ -672,17 +674,47 @@ export default function NumberWallsPage() {
     font-size: var(--empty-note-font-size);
 }
 
+.constants-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 100%;
+}
+
+.constant-grid-button {
+    height: 42px;
+    padding: 0;
+    margin: 0;
+    background: #222222;
+    color: #eeeeee;
+    border: 1px solid #444444;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.constant-grid-button:hover {
+    background: #303030;
+}
+
+.constant-grid-button.active {
+    background: #334b5f;
+    border-color: #75c7ff;
+}
+
 .constant-symbol {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
     width: 100%;
-    height: 46px;
+    height: 34px;
+    overflow: visible;
 }
 
 .constant-symbol-menu {
-    height: 46px;
+    height: 34px;
 }
 
 .constant-symbol-img {
@@ -691,7 +723,7 @@ export default function NumberWallsPage() {
     max-width: none;
     max-height: none;
     display: block;
-    transform: scale(1.5);
+    transform: translateX(0px) translateY(0px) scale(1.25);
     transform-origin: center;
 }
             `}</style>
@@ -717,23 +749,25 @@ export default function NumberWallsPage() {
                         </button>
                     ))}
 
-                    <div className="sidebar-heading">Constants</div>
+                    <div className="sidebar-heading">Geometric Constants</div>
 
                     {constants.length === 0 ? (
-                        <p className="empty-note">
-                            Constants will appear here after we add their JSON files.
-                        </p>
-                    ) : (
-                        constants.map((item) => (
-                            <button
-                                key={item.id}
-                                className={selectedId === item.id ? "sequence-button active" : "sequence-button"}
-                                onClick={() => setSelectedId(item.id)}
-                            >
-                                <ConstantSymbol item={item} />
-                            </button>
-                        ))
-                    )}
+    <p className="empty-note">
+        Constants will appear here after we add their JSON files.
+    </p>
+) : (
+    <div className="constants-grid">
+        {constants.map((item) => (
+            <button
+                key={item.id}
+                className={selectedId === item.id ? "constant-grid-button active" : "constant-grid-button"}
+                onClick={() => setSelectedId(item.id)}
+            >
+                <ConstantSymbol item={item} />
+            </button>
+        ))}
+    </div>
+)}
                 </aside>
 
                 <section className="number-walls-main">

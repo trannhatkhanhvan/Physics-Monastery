@@ -130,8 +130,98 @@
     "filename": "kolakoski.json"
   },
   {
+    "id": "phi_0-digits",
+    "title": "Planck time scalar",
+    "symbol": "\u03c6\u2080",
+    "symbolImage": "/equations/scalar_0.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of \u03c6\u2080, used as the entry row of the number wall.",
+    "filename": "phi_0-digits.json"
+  },
+  {
+    "id": "phi_1-digits",
+    "title": "Planck length scalar",
+    "symbol": "\u03c6\u2081",
+    "symbolImage": "/equations/scalar_1.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of \u03c6\u2081, used as the entry row of the number wall.",
+    "filename": "phi_1-digits.json"
+  },
+  {
+    "id": "phi_2-digits",
+    "title": "Planck charge scalar",
+    "symbol": "\u03c6\u2082",
+    "symbolImage": "/equations/scalar_2.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of \u03c6\u2082, used as the entry row of the number wall.",
+    "filename": "phi_2-digits.json"
+  },
+  {
+    "id": "phi_3-digits",
+    "title": "Planck mass scalar",
+    "symbol": "\u03c6\u2083",
+    "symbolImage": "/equations/scalar_3.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of \u03c6\u2083, used as the entry row of the number wall.",
+    "filename": "phi_3-digits.json"
+  },
+  {
+    "id": "phi_4-digits",
+    "title": "Planck temperature scalar",
+    "symbol": "\u03c6\u2084",
+    "symbolImage": "/equations/scalar_4.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of \u03c6\u2084, used as the entry row of the number wall.",
+    "filename": "phi_4-digits.json"
+  },
+  {
+    "id": "zhe_1-digits",
+    "title": "first hyperbolic partition constant",
+    "symbol": "\u0436\u2081",
+    "symbolImage": "/equations/zhe_1.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of \u0436\u2081, used as the entry row of the number wall.",
+    "filename": "zhe_1-digits.json"
+  },
+  {
+    "id": "zhe_2-digits",
+    "title": "second hyperbolic partition constant",
+    "symbol": "\u0436\u2082",
+    "symbolImage": "/equations/zhe_2.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of \u0436\u2082, used as the entry row of the number wall.",
+    "filename": "zhe_2-digits.json"
+  },
+  {
+    "id": "zhe_r-digits",
+    "title": "hyperbolic radius constant",
+    "symbol": "\u0436\u1d63",
+    "symbolImage": "/equations/zhe_r.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of \u0436\u1d63, used as the entry row of the number wall.",
+    "filename": "zhe_r-digits.json"
+  },
+  {
+    "id": "zhe_theta-digits",
+    "title": "hyperbolic radian constant",
+    "symbol": "\u0436\u03b8",
+    "symbolImage": "/equations/zhe_theta.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of \u0436\u03b8, used as the entry row of the number wall.",
+    "filename": "zhe_theta-digits.json"
+  },
+  {
     "id": "gieseking-constant-digits",
-    "title": "Gieseking's Constant",
+    "title": "Gieseking's constant",
     "symbol": "G_Gi",
     "symbolImage": "/equations/g_gi.svg",
     "category": "constants",
@@ -162,12 +252,22 @@
   {
     "id": "domino-tiling-constant-digits",
     "title": "domino tiling constant",
+    "symbol": "C_d",
+    "symbolImage": "/equations/domino_tiling_constant.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of C_d = K/pi, used as the entry row of the number wall.",
+    "filename": "domino-tiling-constant-digits.json"
+  },
+  {
+    "id": "dimer-constant-digits",
+    "title": "dimer constant",
     "symbol": "D_d",
     "symbolImage": "/equations/d_d.svg",
     "category": "constants",
     "kind": "digits",
     "description": "The first 100 digits of the domino tiling constant e^(2K/pi), used as the entry row of the number wall.",
-    "filename": "domino-tiling-constant-digits.json"
+    "filename": "dimer-constant-digits.json"
   },
   {
     "id": "omega-2-constant-digits",
@@ -220,6 +320,116 @@
     "filename": "arc-length-of-unit-lemniscate-digits.json"
   },
   {
+    "id": "lemniscate-constant-digits",
+    "title": "lemniscate constant",
+    "symbol": "L",
+    "symbolImage": "/equations/l_constant.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the lemniscate constant, used as the entry row of the number wall.",
+    "filename": "lemniscate-constant-digits.json"
+  },
+  {
+    "id": "first-lemniscate-constant-digits",
+    "title": "first lemniscate constant",
+    "symbol": "L_1",
+    "symbolImage": "/equations/l_1_constant.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the first lemniscate constant, used as the entry row of the number wall.",
+    "filename": "first-lemniscate-constant-digits.json"
+  },
+  {
+    "id": "second-lemniscate-constant-digits",
+    "title": "second lemniscate constant",
+    "symbol": "L_2",
+    "symbolImage": "/equations/l_2.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the second lemniscate constant, used as the entry row of the number wall.",
+    "filename": "second-lemniscate-constant-digits.json"
+  },
+  {
+    "id": "ubiquitous-constant-digits",
+    "title": "ubiquitous constant",
+    "symbol": "C_U",
+    "symbolImage": "/equations/c_u.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the ubiquitous constant, used as the entry row of the number wall.",
+    "filename": "ubiquitous-constant-digits.json"
+  },
+  {
+    "id": "gauss-constant-digits",
+    "title": "Gauss's constant",
+    "symbol": "G_Ga",
+    "symbolImage": "/equations/g_ga.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of Gauss's constant, used as the entry row of the number wall.",
+    "filename": "gauss-constant-digits.json"
+  },
+  {
+    "id": "weierstrass-constant-digits",
+    "title": "Weierstrass constant",
+    "symbol": "W_We",
+    "symbolImage": "/equations/w_we.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the Weierstrass constant, used as the entry row of the number wall.",
+    "filename": "weierstrass-constant-digits.json"
+  },
+  {
+    "id": "continued-fraction-constant-digits",
+    "title": "continued fraction constant",
+    "symbol": "C_CF",
+    "symbolImage": "/equations/c_cf.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of C_CF = I_1(2)/I_0(2), used as the entry row of the number wall.",
+    "filename": "continued-fraction-constant-digits.json"
+  },
+  {
+    "id": "ramanujan-first-continued-fraction-constant-digits",
+    "title": "Ramanujan's first continued fraction constant",
+    "symbol": "C_R1",
+    "symbolImage": "/equations/c_r1.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of C_R1, Ramanujan's first continued fraction constant, used as the entry row of the number wall.",
+    "filename": "ramanujan-first-continued-fraction-constant-digits.json"
+  },
+  {
+    "id": "liouville-constant-digits",
+    "title": "Liouville's constant",
+    "symbol": "L_Li",
+    "symbolImage": "/equations/liouville_s_constant.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of Liouville's constant, used as the entry row of the number wall.",
+    "filename": "liouville-constant-digits.json"
+  },
+  {
+    "id": "madelung-constant-digits",
+    "title": "Madelung constant",
+    "symbol": "M",
+    "symbolImage": "/equations/madelung_constant.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the Madelung constant for the NaCl lattice, used as the entry row of the number wall.",
+    "filename": "madelung-constant-digits.json"
+  },
+  {
+    "id": "p-star-digits",
+    "title": "prime constant",
+    "symbol": "P*",
+    "symbolImage": "/equations/prime_constant.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the P* value shown in the Symbol Legend, used as the entry row of the number wall.",
+    "filename": "p-star-digits.json"
+  },
+  {
     "id": "e-digits",
     "title": "Euler's number",
     "symbol": "e",
@@ -230,23 +440,133 @@
     "filename": "e-digits.json"
   },
   {
-    "id": "phi_0-digits",
-    "title": "Phi Zero",
-    "symbol": "\u03c6\u2080",
-    "symbolImage": "/equations/phi_0.svg",
+    "id": "euler-mascheroni-constant-digits",
+    "title": "Euler-Mascheroni constant",
+    "symbol": "\u03b3",
+    "symbolImage": "/equations/euler-mascheroni_constant.svg",
     "category": "constants",
     "kind": "digits",
-    "description": "The first 100 digits of \u03c6\u2080, used as the entry row of the number wall.",
-    "filename": "phi_0-digits.json"
+    "description": "The first 100 digits of the Euler-Mascheroni constant, used as the entry row of the number wall.",
+    "filename": "euler-mascheroni-constant-digits.json"
   },
   {
-    "id": "phi_1-digits",
-    "title": "Phi One",
-    "symbol": "\u03c6\u2081",
-    "symbolImage": "/equations/phi_1.svg",
+    "id": "sierpinski-constant-digits",
+    "title": "Sierpi\u0144ski's constant",
+    "symbol": "S",
+    "symbolImage": "/equations/sierpinski_constant.svg",
     "category": "constants",
     "kind": "digits",
-    "description": "The first 100 digits of \u03c6\u2081, used as the entry row of the number wall.",
-    "filename": "phi_1-digits.json"
+    "description": "The first 100 digits of Sierpi\u0144ski's constant, used as the entry row of the number wall.",
+    "filename": "sierpinski-constant-digits.json"
+  },
+  {
+    "id": "dottie-number-digits",
+    "title": "Dottie number",
+    "symbol": "D_Do",
+    "symbolImage": "/equations/d_do.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the Dottie number, used as the entry row of the number wall.",
+    "filename": "dottie-number-digits.json"
+  },
+  {
+    "id": "laplace-limit-digits",
+    "title": "Laplace limit",
+    "symbol": "L_LL",
+    "symbolImage": "/equations/l_ll.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the Laplace limit, used as the entry row of the number wall.",
+    "filename": "laplace-limit-digits.json"
+  },
+  {
+    "id": "hyperbolic-cotangent-fixed-point-digits",
+    "title": "real fixed point of the hyperbolic cotangent",
+    "symbol": "C_CFP",
+    "symbolImage": "/equations/c_cfp.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the real fixed point of the hyperbolic cotangent, used as the entry row of the number wall.",
+    "filename": "hyperbolic-cotangent-fixed-point-digits.json"
+  },
+  {
+    "id": "bessel-root-j01-digits",
+    "title": "first root of the Bessel function",
+    "symbol": "j_0,1",
+    "symbolImage": "/equations/j_0-1.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the first root of the Bessel function J_0, used as the entry row of the number wall.",
+    "filename": "bessel-root-j01-digits.json"
+  },
+  {
+    "id": "feigenbaum-alpha-digits",
+    "title": "Feigenbaum alpha constant",
+    "symbol": "\u03b1_F",
+    "symbolImage": "/equations/alpha_f.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the Feigenbaum alpha constant, used as the entry row of the number wall.",
+    "filename": "feigenbaum-alpha-digits.json"
+  },
+  {
+    "id": "feigenbaum-delta-digits",
+    "title": "Feigenbaum delta constant",
+    "symbol": "\u03b4_F",
+    "symbolImage": "/equations/delta_f.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the Feigenbaum delta constant, used as the entry row of the number wall.",
+    "filename": "feigenbaum-delta-digits.json"
+  },
+  {
+    "id": "silver-constant-digits",
+    "title": "silver constant",
+    "symbol": "S",
+    "symbolImage": "/equations/silver_constant.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the silver constant, used as the entry row of the number wall.",
+    "filename": "silver-constant-digits.json"
+  },
+  {
+    "id": "plastic-constant-digits",
+    "title": "plastic constant",
+    "symbol": "P",
+    "symbolImage": "/equations/plastic_constant.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the plastic constant, used as the entry row of the number wall.",
+    "filename": "plastic-constant-digits.json"
+  },
+  {
+    "id": "qrs-constant-digits",
+    "title": "QRS constant",
+    "symbol": "C_Q",
+    "symbolImage": "/equations/c_q.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the QRS constant, used as the entry row of the number wall.",
+    "filename": "qrs-constant-digits.json"
+  },
+  {
+    "id": "foias-constant-digits",
+    "title": "first Foias constant",
+    "symbol": "x\u221e",
+    "symbolImage": "/equations/x_infinity.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the first Foias constant, used as the entry row of the number wall.",
+    "filename": "foias-constant-digits.json"
+  },
+  {
+    "id": "khinchin-mean-minus-six-digits",
+    "title": "Khinchin mean of order -6",
+    "symbol": "K_-6",
+    "symbolImage": "/equations/k_minus_6.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first available digits of the Khinchin mean of order -6, padded to 100 digits for the number-wall builder.",
+    "filename": "khinchin-mean-minus-six-digits.json"
   }
 ]

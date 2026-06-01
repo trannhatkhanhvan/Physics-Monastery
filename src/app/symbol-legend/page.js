@@ -1253,7 +1253,7 @@ export default function SymbolLegend() {
                   display: 'inline',
                 }}
             />
-            {' = 1.22674201072035 ...'}
+            {' = 0.41468250985111 ...'}
           </>
       ),
       right: (
