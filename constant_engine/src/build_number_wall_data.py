@@ -558,6 +558,19 @@ def make_sequence_library():
         },
 
         {
+            "id": "hyperbolic-inversion-boundary-digits",
+            "title": "hyperbolic inversion boundary",
+            "symbol": "□",
+            "symbolImage": "/equations/box_symbol.svg",
+            "category": "constants",
+            "kind": "digits",
+            "sequence": digit_string_terms(
+                "0.0000000999999199973622386390183027677308422095020948090396230807698401058266014875257392697875471163266462369339506087"
+            ),
+            "description": "The first 100 digits of the hyperbolic inversion boundary, used as the entry row of the number wall.",
+        },
+
+        {
             "id": "zhe_1-digits",
             "title": "first hyperbolic partition constant",
             "symbol": "ж₁",
@@ -803,7 +816,7 @@ def make_sequence_library():
             "id": "continued-fraction-constant-digits",
             "title": "continued fraction constant",
             "symbol": "C_CF",
-            "symbolImage": "/equations/c_cf.svg",
+            "symbolImage": "/equations/continued_fraction_constant.svg",
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
@@ -858,9 +871,9 @@ def make_sequence_library():
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
-                "1.226742010720353244417630230455361655871409690440250419643297301214022138315312168452621562494797741259"
+                "0.4146825098511116602481096221543077083657742381379169778682454144886409606193573341962900484284757779"
             ),
-            "description": "The first 100 digits of the P* value shown in the Symbol Legend, used as the entry row of the number wall.",
+            "description": "The first 100 digits of the prime constant, used as the entry row of the number wall.",
         },
 
         {
@@ -969,7 +982,7 @@ def make_sequence_library():
             "id": "feigenbaum-delta-digits",
             "title": "Feigenbaum delta constant",
             "symbol": "δ_F",
-            "symbolImage": "/equations/delta_f.svg",
+            "symbolImage": "/equations/del_f.svg",
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
@@ -1020,7 +1033,7 @@ def make_sequence_library():
             "id": "foias-constant-digits",
             "title": "first Foias constant",
             "symbol": "x∞",
-            "symbolImage": "/equations/x_infinity.svg",
+            "symbolImage": "/equations/1st_foias_constant.svg",
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(
@@ -1033,7 +1046,7 @@ def make_sequence_library():
             "id": "khinchin-mean-minus-six-digits",
             "title": "Khinchin mean of order -6",
             "symbol": "K_-6",
-            "symbolImage": "/equations/k_minus_6.svg",
+            "symbolImage": "/equations/khinchin_mean_of_order_-6.svg",
             "category": "constants",
             "kind": "digits",
             "sequence": digit_string_terms(

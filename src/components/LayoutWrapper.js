@@ -67,6 +67,7 @@ export default function LayoutWrapper({ children }) {
 
           <a href="/animated-math" className="menu-text-link">Animated Math</a>
           <a href="/combinatorics" className="menu-text-link">Combinatorics</a>
+          <a href="/number-walls" className="menu-text-link">Number Walls</a>
 
           <div className="separator"></div>
 

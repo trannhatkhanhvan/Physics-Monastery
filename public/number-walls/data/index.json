@@ -180,6 +180,16 @@
     "filename": "phi_4-digits.json"
   },
   {
+    "id": "hyperbolic-inversion-boundary-digits",
+    "title": "hyperbolic inversion boundary",
+    "symbol": "\u25a1",
+    "symbolImage": "/equations/box_symbol.svg",
+    "category": "constants",
+    "kind": "digits",
+    "description": "The first 100 digits of the hyperbolic inversion boundary, used as the entry row of the number wall.",
+    "filename": "hyperbolic-inversion-boundary-digits.json"
+  },
+  {
     "id": "zhe_1-digits",
     "title": "first hyperbolic partition constant",
     "symbol": "\u0436\u2081",
@@ -383,7 +393,7 @@
     "id": "continued-fraction-constant-digits",
     "title": "continued fraction constant",
     "symbol": "C_CF",
-    "symbolImage": "/equations/c_cf.svg",
+    "symbolImage": "/equations/continued_fraction_constant.svg",
     "category": "constants",
     "kind": "digits",
     "description": "The first 100 digits of C_CF = I_1(2)/I_0(2), used as the entry row of the number wall.",
@@ -420,14 +430,14 @@
     "filename": "madelung-constant-digits.json"
   },
   {
-    "id": "p-star-digits",
+    "id": "prime-constant-digits",
     "title": "prime constant",
     "symbol": "P*",
     "symbolImage": "/equations/prime_constant.svg",
     "category": "constants",
     "kind": "digits",
-    "description": "The first 100 digits of the P* value shown in the Symbol Legend, used as the entry row of the number wall.",
-    "filename": "p-star-digits.json"
+    "description": "The first 100 digits of the prime constant, used as the entry row of the number wall.",
+    "filename": "prime-constant-digits.json"
   },
   {
     "id": "e-digits",
@@ -513,7 +523,7 @@
     "id": "feigenbaum-delta-digits",
     "title": "Feigenbaum delta constant",
     "symbol": "\u03b4_F",
-    "symbolImage": "/equations/delta_f.svg",
+    "symbolImage": "/equations/del_f.svg",
     "category": "constants",
     "kind": "digits",
     "description": "The first 100 digits of the Feigenbaum delta constant, used as the entry row of the number wall.",
@@ -553,7 +563,7 @@
     "id": "foias-constant-digits",
     "title": "first Foias constant",
     "symbol": "x\u221e",
-    "symbolImage": "/equations/x_infinity.svg",
+    "symbolImage": "/equations/1st_foias_constant.svg",
     "category": "constants",
     "kind": "digits",
     "description": "The first 100 digits of the first Foias constant, used as the entry row of the number wall.",
@@ -563,7 +573,7 @@
     "id": "khinchin-mean-minus-six-digits",
     "title": "Khinchin mean of order -6",
     "symbol": "K_-6",
-    "symbolImage": "/equations/k_minus_6.svg",
+    "symbolImage": "/equations/khinchin_mean_of_order_-6.svg",
     "category": "constants",
     "kind": "digits",
     "description": "The first available digits of the Khinchin mean of order -6, padded to 100 digits for the number-wall builder.",

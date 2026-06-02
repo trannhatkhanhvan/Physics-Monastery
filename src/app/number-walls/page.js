@@ -15,6 +15,8 @@ const FIRST_TEN_PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
 
 const DEFAULT_MODULUS = 10;
 
+const CUSTOM_SEQUENCE_ID = "custom-sequence";
+
 function ConstantSymbol({ item, place = "menu" }) {
     if (item?.symbolImage) {
         return (
@@ -30,6 +32,188 @@ function ConstantSymbol({ item, place = "menu" }) {
 
     return item?.symbol || item?.title || "";
 }
+
+function customBareissDet(matrix) {
+    const n = matrix.length;
+
+    if (n === 0) {
+        return 1n;
+    }
+
+    if (n === 1) {
+        return matrix[0][0];
+    }
+
+    const a = matrix.map((row) => row.slice());
+    let sign = 1n;
+    let previousPivot = 1n;
+
+    for (let k = 0; k < n - 1; k += 1) {
+        if (a[k][k] === 0n) {
+            let swapRow = null;
+
+            for (let r = k + 1; r < n; r += 1) {
+                if (a[r][k] !== 0n) {
+                    swapRow = r;
+                    break;
+                }
+            }
+
+            if (swapRow === null) {
+                return 0n;
+            }
+
+            const temp = a[k];
+            a[k] = a[swapRow];
+            a[swapRow] = temp;
+            sign *= -1n;
+        }
+
+        const pivot = a[k][k];
+
+        for (let i = k + 1; i < n; i += 1) {
+            for (let j = k + 1; j < n; j += 1) {
+                a[i][j] = (a[i][j] * pivot - a[i][k] * a[k][j]) / previousPivot;
+            }
+        }
+
+        previousPivot = pivot;
+
+        for (let i = k + 1; i < n; i += 1) {
+            a[i][k] = 0n;
+        }
+
+        for (let j = k + 1; j < n; j += 1) {
+            a[k][j] = 0n;
+        }
+    }
+
+    return sign * a[n - 1][n - 1];
+}
+
+function customWallEntry(sequence, row, col) {
+    if (row === -1) {
+        return "1";
+    }
+
+    if (row === 0) {
+        if (0 <= col && col < sequence.length) {
+            return String(sequence[col]);
+        }
+
+        return null;
+    }
+
+    const leftNeeded = col - row;
+    const rightNeeded = col + row;
+
+    if (leftNeeded < 0 || rightNeeded >= sequence.length) {
+        return null;
+    }
+
+    const matrix = [];
+
+    for (let i = 0; i < row + 1; i += 1) {
+        const matrixRow = [];
+
+        for (let j = 0; j < row + 1; j += 1) {
+            matrixRow.push(BigInt(sequence[col + i - j]));
+        }
+
+        matrix.push(matrixRow);
+    }
+
+    return String(customBareissDet(matrix));
+}
+
+function buildCustomWallData(customSequenceValues) {
+    const trimmedValues = customSequenceValues.map((value) => String(value).trim());
+
+    let usedLength = 0;
+
+    for (let i = 0; i < trimmedValues.length; i += 1) {
+        if (trimmedValues[i] === "" || trimmedValues[i] === "-") {
+            break;
+        }
+
+        usedLength += 1;
+    }
+
+    const sequence = trimmedValues
+        .slice(0, usedLength)
+        .map((value) => value);
+
+    const visibleWidth = 100;
+    const visibleDepth = sequence.length > 0
+    ? Math.max(1, Math.min(50, Math.floor((sequence.length - 1) / 2)))
+    : 1;
+
+    const rows = [];
+
+    for (let rowNumber = -1; rowNumber <= visibleDepth; rowNumber += 1) {
+        const values = [];
+
+        for (let col = 0; col < visibleWidth; col += 1) {
+            values.push(customWallEntry(sequence, rowNumber, col));
+        }
+
+        rows.push({
+            row: rowNumber,
+            values,
+        });
+    }
+
+    return {
+        id: CUSTOM_SEQUENCE_ID,
+        title: "Custom Sequence",
+        category: "custom",
+        kind: "terms",
+        description: sequence.length === 0
+            ? "Enter up to 100 sequence entries. Each square can contain a whole number."
+            : `Custom number wall built from ${sequence.length} entered term${sequence.length === 1 ? "" : "s"}.`,
+        visibleWidth,
+        visibleDepth,
+        sequence: sequence.map((value) => String(value)),
+        rows,
+    };
+}
+
+function sanitizeSequenceCellValue(value) {
+    const text = String(value);
+
+    if (text === "") {
+        return "";
+    }
+
+    if (text === "-") {
+        return "-";
+    }
+
+    const cleaned = text.replace(/[^0-9-]/g, "");
+
+    if (cleaned.startsWith("-")) {
+        return `-${cleaned.slice(1).replace(/-/g, "")}`;
+    }
+
+    return cleaned.replace(/-/g, "");
+}
+
+function getContiguousCustomLength(customSequenceValues) {
+    let usedLength = 0;
+
+    for (let i = 0; i < customSequenceValues.length; i += 1) {
+        const text = String(customSequenceValues[i] || "").trim();
+
+        if (text === "" || text === "-") {
+            break;
+        }
+
+        usedLength += 1;
+    }
+
+    return usedLength;
+}
+
 
 function isMissing(value) {
     return value === null || value === undefined;
@@ -373,6 +557,9 @@ export default function NumberWallsPage() {
     const [prime, setPrime] = useState(2);
     const [modulus, setModulus] = useState(DEFAULT_MODULUS);
     const [loading, setLoading] = useState(true);
+    const [customSequenceValues, setCustomSequenceValues] = useState(
+    Array.from({ length: 100 }, () => "")
+);
 
     useEffect(() => {
         async function loadIndex() {
@@ -397,6 +584,12 @@ export default function NumberWallsPage() {
                 return;
             }
 
+            if (selectedId === CUSTOM_SEQUENCE_ID) {
+    setWallData(buildCustomWallData(customSequenceValues));
+    setLoading(false);
+    return;
+}
+
             setLoading(true);
 
             const item = indexItems.find((entry) => entry.id === selectedId);
@@ -414,7 +607,7 @@ export default function NumberWallsPage() {
         }
 
         loadWall();
-    }, [selectedId, indexItems]);
+    }, [selectedId, indexItems, customSequenceValues]);
 
     const scales = useMemo(() => {
         return {
@@ -658,6 +851,32 @@ export default function NumberWallsPage() {
     font-size: var(--wall-title-font-size);
 }
 
+.wall-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 6px 0;
+}
+
+.wall-title-row .wall-title {
+    margin: 0;
+}
+
+.clear-custom-sequence-button {
+    background: #222222;
+    color: #eeeeee;
+    border: 1px solid #555555;
+    padding: 3px 10px;
+    font-size: var(--control-font-size);
+    font-family: "Times New Roman", Times, serif;
+    cursor: pointer;
+}
+
+.clear-custom-sequence-button:hover {
+    background: #303030;
+    border-color: #75c7ff;
+}
+
 .wall-description {
     font-size: var(--description-font-size);
 }
@@ -726,12 +945,39 @@ export default function NumberWallsPage() {
     transform: translateX(0px) translateY(0px) scale(1.25);
     transform-origin: center;
 }
+
+.custom-sequence-button {
+    margin-top: 28px;
+}
+
+.wall-cell-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    color: inherit;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: var(--cell-font-size);
+    font-weight: 700;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+.wall-cell-input:focus {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 0 1px #75c7ff;
+}
+
             `}</style>
 
             <h1 className="number-walls-title">Number Walls</h1>
 
             <p className="number-walls-intro">
-                Select a sequence, then choose a coloring mode. The entry row contains 100 terms.
+                Select a sequence, geometric constant, or enter an custom sequence, then choose a coloring mode. The entry row contains up to 100 terms.
                 Prime valuation colors each square by how many times the selected prime divides the wall entry.
             </p>
 
@@ -768,7 +1014,14 @@ export default function NumberWallsPage() {
         ))}
     </div>
 )}
-                </aside>
+
+<button
+    className={selectedId === CUSTOM_SEQUENCE_ID ? "sequence-button custom-sequence-button active" : "sequence-button custom-sequence-button"}
+    onClick={() => setSelectedId(CUSTOM_SEQUENCE_ID)}
+>
+    Custom Sequence
+</button>
+</aside>
 
                 <section className="number-walls-main">
                     <div className="control-panel">
@@ -826,7 +1079,30 @@ export default function NumberWallsPage() {
                         <p className="empty-note">Loading number wall...</p>
                     ) : (
                         <>
-                            <h2 className="wall-title">{wallData.title}</h2>
+                            <div className="wall-title-row">
+    <h2 className="wall-title">{wallData.title}</h2>
+
+    {selectedId === CUSTOM_SEQUENCE_ID && (
+        <button
+            type="button"
+            className="clear-custom-sequence-button"
+            onClick={() => {
+                setCustomSequenceValues(Array.from({ length: 100 }, () => ""));
+
+                setTimeout(() => {
+                    const firstCell = document.getElementById("custom-sequence-cell-0");
+
+                    if (firstCell) {
+                        firstCell.focus();
+                    }
+                }, 0);
+            }}
+        >
+            Clear
+        </button>
+    )}
+</div>
+
                             <p className="wall-description">{wallData.description}</p>
 
                             <div className="wall-frame">
@@ -837,34 +1113,88 @@ export default function NumberWallsPage() {
                                                 <td className="row-label">{row.row}</td>
 
                                                 {row.values.map((value, index) => {
-                                                    const colors = cellColor(
-                                                        value,
-                                                        row.row,
-                                                        colorMode,
-                                                        scales,
-                                                        prime,
-                                                        modulus
-                                                    );
+    const isCustomEntryCell = selectedId === CUSTOM_SEQUENCE_ID && row.row === 0;
+const customUsedLength = getContiguousCustomLength(customSequenceValues);
 
-                                                    return (
-                                                        <td
-                                                            key={`${row.row}-${index}`}
-                                                            className="wall-cell"
-                                                            style={{
-                                                                background: colors.background,
-                                                                color: isCyanLikeBackground(colors.background) ? "#ffffff" : colors.color,
-textShadow: isCyanLikeBackground(colors.background) ? "0 0 2px #000000" : "none",
-                                                            }}
-                                                            title={isMissing(value) ? "" : String(value)}
-                                                        >
-                                                            <div className="cell-inner">
-                                                                <span className="cell-text">
-                                                                    {shortenValue(value)}
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                    );
-                                                })}
+const displayValue = isCustomEntryCell
+    ? (index <= customUsedLength ? customSequenceValues[index] : "")
+    : value;
+
+let colors = cellColor(
+    displayValue,
+    row.row,
+    colorMode,
+    scales,
+    prime,
+    modulus
+);
+
+if (
+    selectedId === CUSTOM_SEQUENCE_ID &&
+    row.row === 0 &&
+    String(displayValue || "").trim() === ""
+) {
+    colors = {
+        background: "#3a0909",
+        color: "#ffffff",
+    };
+}
+
+    return (
+        <td
+            key={`${row.row}-${index}`}
+            className="wall-cell"
+            style={{
+                background: colors.background,
+                color: isCyanLikeBackground(colors.background) ? "#ffffff" : colors.color,
+                textShadow: isCyanLikeBackground(colors.background) ? "0 0 2px #000000" : "none",
+            }}
+            title={isMissing(displayValue) ? "" : String(displayValue)}
+        >
+            <div className="cell-inner">
+                {isCustomEntryCell ? (
+                    <input
+                        id={`custom-sequence-cell-${index}`}
+                        className="wall-cell-input"
+                        value={displayValue || ""}
+                        onChange={(event) => {
+                            const nextValue = sanitizeSequenceCellValue(event.target.value);
+
+                            setCustomSequenceValues((previous) => {
+                                const updated = [...previous];
+                                updated[index] = nextValue;
+                                return updated;
+                            });
+                        }}
+                        onKeyDown={(event) => {
+                            if (event.key === "ArrowRight" || event.key === "Enter") {
+                                event.preventDefault();
+                                const next = document.getElementById(`custom-sequence-cell-${index + 1}`);
+
+                                if (next) {
+                                    next.focus();
+                                }
+                            }
+
+                            if (event.key === "ArrowLeft") {
+                                event.preventDefault();
+                                const previous = document.getElementById(`custom-sequence-cell-${index - 1}`);
+
+                                if (previous) {
+                                    previous.focus();
+                                }
+                            }
+                        }}
+                    />
+                ) : (
+                    <span className="cell-text">
+                        {shortenValue(value)}
+                    </span>
+                )}
+            </div>
+        </td>
+    );
+})}
                                             </tr>
                                         ))}
                                     </tbody>
