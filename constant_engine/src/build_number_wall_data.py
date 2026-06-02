@@ -392,6 +392,15 @@ def digit_string_terms(text, count=VISIBLE_WIDTH):
 def make_sequence_library():
     return [
         {
+            "id": "catalan",
+            "title": "Catalan Numbers",
+            "category": "famous-sequences",
+            "kind": "terms",
+            "sequence": catalan_terms(VISIBLE_WIDTH),
+            "description": "The Catalan numbers 1, 1, 2, 5, 14, 42, ... .",
+        },
+
+        {
             "id": "fibonacci",
             "title": "Fibonacci Numbers",
             "category": "famous-sequences",
@@ -407,6 +416,16 @@ def make_sequence_library():
             "sequence": lucas_terms(VISIBLE_WIDTH),
             "description": "The Lucas sequence 2, 1, 3, 4, 7, 11, ... obeys the same recurrence as Fibonacci.",
         },
+
+        {
+            "id": "thue-morse",
+            "title": "Thue–Morse Sequence",
+            "category": "famous-sequences",
+            "kind": "terms",
+            "sequence": thue_morse_terms(VISIBLE_WIDTH),
+            "description": "The parity of the number of 1s in the binary expansion of n.",
+        },
+        
         {
             "id": "triangular",
             "title": "Triangular Numbers",
@@ -455,14 +474,7 @@ def make_sequence_library():
             "sequence": powers_of_three_terms(VISIBLE_WIDTH),
             "description": "The sequence 1, 3, 9, 27, 81, ... .",
         },
-        {
-            "id": "catalan",
-            "title": "Catalan Numbers",
-            "category": "famous-sequences",
-            "kind": "terms",
-            "sequence": catalan_terms(VISIBLE_WIDTH),
-            "description": "The Catalan numbers 1, 1, 2, 5, 14, 42, ... .",
-        },
+
         {
             "id": "partition",
             "title": "Partition Numbers",
@@ -479,14 +491,7 @@ def make_sequence_library():
             "sequence": pell_terms(VISIBLE_WIDTH),
             "description": "The Pell sequence 0, 1, 2, 5, 12, 29, ... obeys P(n)=2P(n−1)+P(n−2).",
         },
-        {
-            "id": "thue-morse",
-            "title": "Thue–Morse Sequence",
-            "category": "famous-sequences",
-            "kind": "terms",
-            "sequence": thue_morse_terms(VISIBLE_WIDTH),
-            "description": "The parity of the number of 1s in the binary expansion of n.",
-        },
+
         {
             "id": "kolakoski",
             "title": "Kolakoski Sequence",
