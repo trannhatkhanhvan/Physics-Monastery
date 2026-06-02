@@ -4,12 +4,13 @@ import { useEffect, useMemo, useState } from "react";
 import LayoutWrapper from "../../components/LayoutWrapper";
 
 const COLOR_MODES = [
+    { id: "mod", label: "Mod" },
+    { id: "valuation", label: "Prime Valuation" },
     { id: "signed_log", label: "Signed Log" },
     { id: "row_signed_log", label: "Row Signed Log" },
     { id: "small_values", label: "Small Values" },
     { id: "zero_windows", label: "Zero Windows" },
-    { id: "valuation", label: "Prime Valuation" },
-    { id: "mod", label: "Mod" },
+
 ];
 
 const FIRST_TEN_PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
@@ -554,7 +555,7 @@ export default function NumberWallsPage() {
     const [indexItems, setIndexItems] = useState([]);
     const [selectedId, setSelectedId] = useState("");
     const [wallData, setWallData] = useState(null);
-    const [colorMode, setColorMode] = useState("signed_log");
+    const [colorMode, setColorMode] = useState("mod");
     const [prime, setPrime] = useState(2);
     const [modulus, setModulus] = useState(DEFAULT_MODULUS);
     const [loading, setLoading] = useState(true);
