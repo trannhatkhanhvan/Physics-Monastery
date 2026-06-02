@@ -18,6 +18,7 @@ export default function LayoutWrapper({ children }) {
     pathname === '/coherent-units' ? 'coherent-units-page' :
     pathname === '/simplest-manifold' ? 'simplest-manifold-page' :
     pathname === '/combinatorics' ? 'combinatorics-page' :
+    pathname === '/number-walls' ? 'number-walls-wrapper-page' :
     pathname === '/animated-math' ? 'animated-math-page' :
     pathname === '/books' ? 'books-page' :
     pathname === '/monastery-events' ? 'monastery-events-page' :

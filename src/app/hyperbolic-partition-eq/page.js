@@ -430,7 +430,7 @@ export default function HyperbolicPartitionEq() {
   <img
     src="/equations/companion_matrix.svg"
     alt="companion matrix"
-    style={{ height: '80px', width: 'auto' }}
+    style={{ height: '82px', width: 'auto' }}
   />
 </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import LayoutWrapper from "../../components/LayoutWrapper";
 
 const COLOR_MODES = [
     { id: "signed_log", label: "Signed Log" },
@@ -621,6 +622,7 @@ export default function NumberWallsPage() {
     const constants = indexItems.filter((item) => item.category === "constants");
 
     return (
+        <LayoutWrapper>
         <main className="number-walls-page">
             <style>{`
                 .number-walls-page {
@@ -1065,7 +1067,7 @@ export default function NumberWallsPage() {
                                     value={modulus}
                                     onChange={(event) => setModulus(Number(event.target.value))}
                                 >
-                                    {[2, 3, 4, 5, 7, 8, 10, 11, 12].map((m) => (
+                                    {[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 15, 16, 17, 18, 19, 20].map((m) => (
                                         <option key={m} value={m}>
                                             {m}
                                         </option>
@@ -1204,6 +1206,7 @@ if (
                     )}
                 </section>
             </div>
-        </main>
+                </main>
+    </LayoutWrapper>
     );
 }
