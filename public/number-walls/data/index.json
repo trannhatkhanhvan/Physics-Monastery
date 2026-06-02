@@ -1,5 +1,15 @@
 [
   {
+    "id": "catalan",
+    "title": "Catalan Numbers",
+    "symbol": "",
+    "symbolImage": "",
+    "category": "famous-sequences",
+    "kind": "terms",
+    "description": "The Catalan numbers 1, 1, 2, 5, 14, 42, ... .",
+    "filename": "catalan.json"
+  },
+  {
     "id": "fibonacci",
     "title": "Fibonacci Numbers",
     "symbol": "",
@@ -18,6 +28,16 @@
     "kind": "terms",
     "description": "The Lucas sequence 2, 1, 3, 4, 7, 11, ... obeys the same recurrence as Fibonacci.",
     "filename": "lucas.json"
+  },
+  {
+    "id": "thue-morse",
+    "title": "Thue\u2013Morse Sequence",
+    "symbol": "",
+    "symbolImage": "",
+    "category": "famous-sequences",
+    "kind": "terms",
+    "description": "The parity of the number of 1s in the binary expansion of n.",
+    "filename": "thue-morse.json"
   },
   {
     "id": "triangular",
@@ -80,16 +100,6 @@
     "filename": "powers-of-three.json"
   },
   {
-    "id": "catalan",
-    "title": "Catalan Numbers",
-    "symbol": "",
-    "symbolImage": "",
-    "category": "famous-sequences",
-    "kind": "terms",
-    "description": "The Catalan numbers 1, 1, 2, 5, 14, 42, ... .",
-    "filename": "catalan.json"
-  },
-  {
     "id": "partition",
     "title": "Partition Numbers",
     "symbol": "",
@@ -108,16 +118,6 @@
     "kind": "terms",
     "description": "The Pell sequence 0, 1, 2, 5, 12, 29, ... obeys P(n)=2P(n\u22121)+P(n\u22122).",
     "filename": "pell.json"
-  },
-  {
-    "id": "thue-morse",
-    "title": "Thue\u2013Morse Sequence",
-    "symbol": "",
-    "symbolImage": "",
-    "category": "famous-sequences",
-    "kind": "terms",
-    "description": "The parity of the number of 1s in the binary expansion of n.",
-    "filename": "thue-morse.json"
   },
   {
     "id": "kolakoski",
