@@ -19,6 +19,20 @@ const DEFAULT_MODULUS = 2;
 
 const CUSTOM_SEQUENCE_ID = "custom-sequence";
 
+function isPrimeNumber(value) {
+    if (value < 2) {
+        return false;
+    }
+
+    for (let divisor = 2; divisor * divisor <= value; divisor += 1) {
+        if (value % divisor === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 function ConstantSymbol({ item, place = "menu" }) {
     if (item?.symbolImage) {
         return (
@@ -558,6 +572,7 @@ export default function NumberWallsPage() {
     const [colorMode, setColorMode] = useState("mod");
     const [prime, setPrime] = useState(2);
     const [modulus, setModulus] = useState(DEFAULT_MODULUS);
+    const [isModMenuOpen, setIsModMenuOpen] = useState(false);
     const [loading, setLoading] = useState(true);
     const [customSequenceValues, setCustomSequenceValues] = useState(
     Array.from({ length: 100 }, () => "")
@@ -736,6 +751,75 @@ export default function NumberWallsPage() {
     border: 1px solid #555555;
     padding: 6px 8px;
     font-size: var(--control-font-size);
+}
+
+.mod-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.mod-dropdown-button {
+    background: #222222;
+    color: #eeeeee;
+    border: 1px solid #555555;
+    padding: 0;
+    font-size: var(--control-font-size);
+    font-family: "Times New Roman", Times, serif;
+    cursor: pointer;
+    width: 45px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.mod-dropdown-button:hover {
+    background: #303030;
+}
+
+.mod-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 50;
+    width: 45px;
+    max-height: 260px;
+    overflow-y: auto;
+    background: #171717;
+    border: 1px solid #555555;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+.mod-dropdown-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px 0;
+    background: #222222;
+    color: #eeeeee;
+    border: none;
+    text-align: center;
+    font-size: var(--control-font-size);
+    font-family: "Times New Roman", Times, serif;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.mod-dropdown-option:hover {
+    background: #303030;
+}
+
+.prime-modulus-option {
+    background: #ffd166;
+    color: #111111;
+    font-weight: 700;
+}
+
+.prime-modulus-option:hover {
+    background: #ffdf7a;
 }
 
                 .wall-title {
@@ -1061,21 +1145,42 @@ export default function NumberWallsPage() {
                         )}
 
                         {colorMode === "mod" && (
-                            <div className="control-row">
-                                <span className="control-label">Modulus</span>
-                                <select
-                                    className="control-select"
-                                    value={modulus}
-                                    onChange={(event) => setModulus(Number(event.target.value))}
-                                >
-                                    {[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72 ,73 ,74 ,75 ,76 ,77 ,78 ,79 ,80 ,81 ,82 ,83 ,84 ,85 ,86 ,87 ,88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99].map((m) => (
-                                        <option key={m} value={m}>
-                                            {m}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
-                        )}
+    <div className="control-row">
+        <span className="control-label">Modulus</span>
+
+        <div className="mod-dropdown">
+            <button
+                type="button"
+                className="mod-dropdown-button"
+                onClick={() => setIsModMenuOpen(!isModMenuOpen)}
+            >
+                {modulus}
+            </button>
+
+            {isModMenuOpen && (
+                <div className="mod-dropdown-menu">
+                    {Array.from({ length: 98 }, (_, index) => index + 2).map((m) => (
+                        <button
+                            key={m}
+                            type="button"
+                            className={
+                                isPrimeNumber(m)
+                                    ? "mod-dropdown-option prime-modulus-option"
+                                    : "mod-dropdown-option"
+                            }
+                            onClick={() => {
+                                setModulus(m);
+                                setIsModMenuOpen(false);
+                            }}
+                        >
+                            {m}
+                        </button>
+                    ))}
+                </div>
+            )}
+        </div>
+    </div>
+)}
                     </div>
 
                     {loading || !wallData ? (
