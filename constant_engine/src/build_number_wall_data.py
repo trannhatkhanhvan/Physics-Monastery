@@ -425,7 +425,7 @@ def make_sequence_library():
             "sequence": thue_morse_terms(VISIBLE_WIDTH),
             "description": "The parity of the number of 1s in the binary expansion of n.",
         },
-        
+
         {
             "id": "triangular",
             "title": "Triangular Numbers",
