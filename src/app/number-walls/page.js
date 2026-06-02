@@ -14,7 +14,7 @@ const COLOR_MODES = [
 
 const FIRST_TEN_PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
 
-const DEFAULT_MODULUS = 10;
+const DEFAULT_MODULUS = 2;
 
 const CUSTOM_SEQUENCE_ID = "custom-sequence";
 
