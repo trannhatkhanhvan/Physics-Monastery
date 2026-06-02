@@ -816,13 +816,13 @@ export default function NumberWallsPage() {
 }
 
 .number-walls-page {
-    --title-font-size: 30px;
-    --intro-font-size: 16px;
-    --sidebar-heading-font-size: 18px;
-    --button-font-size: 16px;
-    --control-font-size: 13px;
-    --wall-title-font-size: 22px;
-    --description-font-size: 13px;
+    --title-font-size: 18px;
+    --intro-font-size: 14px;
+    --sidebar-heading-font-size: 14px;
+    --button-font-size: 14px;
+    --control-font-size: 14px;
+    --wall-title-font-size: 18px;
+    --description-font-size: 14px;
     --row-label-font-size: 13px;
     --cell-font-size: 10px;
     --empty-note-font-size: 13px;
@@ -903,7 +903,7 @@ export default function NumberWallsPage() {
 }
 
 .constant-grid-button {
-    height: 42px;
+    height: 34px;
     padding: 0;
     margin: 0;
     background: #222222;
@@ -944,7 +944,7 @@ export default function NumberWallsPage() {
     max-width: none;
     max-height: none;
     display: block;
-    transform: translateX(0px) translateY(0px) scale(1.25);
+    transform: translateX(0px) translateY(0px) scale(1.00);
     transform-origin: center;
 }
 
@@ -1067,7 +1067,7 @@ export default function NumberWallsPage() {
                                     value={modulus}
                                     onChange={(event) => setModulus(Number(event.target.value))}
                                 >
-                                    {[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 99].map((m) => (
+                                    {[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 99].map((m) => (
                                         <option key={m} value={m}>
                                             {m}
                                         </option>
