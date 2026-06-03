@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-
+import math
 
 # ============================================================
 # SETTINGS
@@ -384,6 +384,49 @@ def digit_string_terms(text, count=VISIBLE_WIDTH):
 
     return digits[:count]
 
+def central_binomial_terms(count):
+    terms = []
+    value = 1
+
+    for n in range(count):
+        if n == 0:
+            value = 1
+        else:
+            value = value * (4 * n - 2) // n
+
+        terms.append(value)
+
+    return terms
+
+
+def somos4_terms(count):
+    terms = [1, 1, 1, 1]
+
+    while len(terms) < count:
+        n = len(terms)
+        next_value = (
+            terms[n - 1] * terms[n - 3] +
+            terms[n - 2] * terms[n - 2]
+        ) // terms[n - 4]
+
+        terms.append(next_value)
+
+    return terms[:count]
+
+
+def apery_terms(count):
+    terms = []
+
+    for n in range(count):
+        total = 0
+
+        for k in range(n + 1):
+            total += math.comb(n, k) ** 2 * math.comb(n + k, k) ** 2
+
+        terms.append(total)
+
+    return terms
+
 
 # ============================================================
 # SEQUENCE LIBRARY
@@ -458,6 +501,25 @@ def make_sequence_library():
             "sequence": cube_terms(VISIBLE_WIDTH),
             "description": "The sequence n³ for n = 0 through 99.",
         },
+
+        {
+            "id": "partition",
+            "title": "Partition Numbers",
+            "category": "famous-sequences",
+            "kind": "terms",
+            "sequence": partition_terms(VISIBLE_WIDTH),
+            "description": "The partition numbers p(n), counting integer partitions of n.",
+        },
+
+        {
+            "id": "kolakoski",
+            "title": "Kolakoski Sequence",
+            "category": "famous-sequences",
+            "kind": "terms",
+            "sequence": kolakoski_terms(VISIBLE_WIDTH),
+            "description": "The self-describing sequence over 1s and 2s whose run lengths are the sequence itself.",
+        },
+
         {
             "id": "powers-of-two",
             "title": "Powers of 2",
@@ -476,29 +538,56 @@ def make_sequence_library():
         },
 
         {
-            "id": "partition",
-            "title": "Partition Numbers",
+            "id": "motzkin",
+            "title": "Motzkin Numbers",
             "category": "famous-sequences",
             "kind": "terms",
-            "sequence": partition_terms(VISIBLE_WIDTH),
-            "description": "The partition numbers p(n), counting integer partitions of n.",
-        },
-        {
-            "id": "pell",
-            "title": "Pell Numbers",
-            "category": "famous-sequences",
-            "kind": "terms",
-            "sequence": pell_terms(VISIBLE_WIDTH),
-            "description": "The Pell sequence 0, 1, 2, 5, 12, 29, ... obeys P(n)=2P(n−1)+P(n−2).",
+            "sequence": motzkin_terms(VISIBLE_WIDTH),
+            "description": "The Motzkin numbers 1, 1, 2, 4, 9, 21, ... count certain lattice paths that never dip below the axis.",
         },
 
         {
-            "id": "kolakoski",
-            "title": "Kolakoski Sequence",
+            "id": "central-binomial",
+            "title": "Central Binomial Coefficients",
             "category": "famous-sequences",
             "kind": "terms",
-            "sequence": kolakoski_terms(VISIBLE_WIDTH),
-            "description": "The self-describing sequence over 1s and 2s whose run lengths are the sequence itself.",
+            "sequence": central_binomial_terms(VISIBLE_WIDTH),
+            "description": "The central binomial coefficients 1, 2, 6, 20, 70, 252, ... are the middle entries of even rows of Pascal’s triangle.",
+        },
+
+        {
+            "id": "apery",
+            "title": "Apéry Numbers",
+            "category": "famous-sequences",
+            "kind": "terms",
+            "sequence": apery_terms(VISIBLE_WIDTH),
+            "description": "The Apéry numbers 1, 5, 73, 1445, 33001, ... appear in Apéry’s proof that zeta(3) is irrational.",
+        },
+
+        {
+            "id": "bell",
+            "title": "Bell Numbers",
+            "category": "famous-sequences",
+            "kind": "terms",
+            "sequence": bell_terms(VISIBLE_WIDTH),
+            "description": "The Bell numbers 1, 1, 2, 5, 15, 52, ... count the ways a set can be partitioned into nonempty subsets.",
+        },
+
+        {
+            "id": "padovan",
+            "title": "Padovan Numbers",
+            "category": "famous-sequences",
+            "kind": "terms",
+            "sequence": padovan_terms(VISIBLE_WIDTH),
+            "description": "The Padovan sequence 1, 1, 1, 2, 2, 3, 4, 5, ... obeys P(n) = P(n - 2) + P(n - 3).",
+        },
+        {
+            "id": "recaman",
+            "title": "Recamán’s Sequence",
+            "category": "famous-sequences",
+            "kind": "terms",
+            "sequence": recaman_terms(VISIBLE_WIDTH),
+            "description": "Recamán’s sequence 0, 1, 3, 6, 2, 7, 13, ... jumps backward when possible and forward otherwise.",
         },
 
         {

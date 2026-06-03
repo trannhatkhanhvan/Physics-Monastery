@@ -80,6 +80,26 @@
     "filename": "cubes.json"
   },
   {
+    "id": "partition",
+    "title": "Partition Numbers",
+    "symbol": "",
+    "symbolImage": "",
+    "category": "famous-sequences",
+    "kind": "terms",
+    "description": "The partition numbers p(n), counting integer partitions of n.",
+    "filename": "partition.json"
+  },
+  {
+    "id": "kolakoski",
+    "title": "Kolakoski Sequence",
+    "symbol": "",
+    "symbolImage": "",
+    "category": "famous-sequences",
+    "kind": "terms",
+    "description": "The self-describing sequence over 1s and 2s whose run lengths are the sequence itself.",
+    "filename": "kolakoski.json"
+  },
+  {
     "id": "powers-of-two",
     "title": "Powers of 2",
     "symbol": "",
@@ -100,34 +120,64 @@
     "filename": "powers-of-three.json"
   },
   {
-    "id": "partition",
-    "title": "Partition Numbers",
+    "id": "motzkin",
+    "title": "Motzkin Numbers",
     "symbol": "",
     "symbolImage": "",
     "category": "famous-sequences",
     "kind": "terms",
-    "description": "The partition numbers p(n), counting integer partitions of n.",
-    "filename": "partition.json"
+    "description": "The Motzkin numbers 1, 1, 2, 4, 9, 21, ... count certain lattice paths that never dip below the axis.",
+    "filename": "motzkin.json"
   },
   {
-    "id": "pell",
-    "title": "Pell Numbers",
+    "id": "central-binomial",
+    "title": "Central Binomial Coefficients",
     "symbol": "",
     "symbolImage": "",
     "category": "famous-sequences",
     "kind": "terms",
-    "description": "The Pell sequence 0, 1, 2, 5, 12, 29, ... obeys P(n)=2P(n\u22121)+P(n\u22122).",
-    "filename": "pell.json"
+    "description": "The central binomial coefficients 1, 2, 6, 20, 70, 252, ... are the middle entries of even rows of Pascal\u2019s triangle.",
+    "filename": "central-binomial.json"
   },
   {
-    "id": "kolakoski",
-    "title": "Kolakoski Sequence",
+    "id": "apery",
+    "title": "Ap\u00e9ry Numbers",
     "symbol": "",
     "symbolImage": "",
     "category": "famous-sequences",
     "kind": "terms",
-    "description": "The self-describing sequence over 1s and 2s whose run lengths are the sequence itself.",
-    "filename": "kolakoski.json"
+    "description": "The Ap\u00e9ry numbers 1, 5, 73, 1445, 33001, ... appear in Ap\u00e9ry\u2019s proof that zeta(3) is irrational.",
+    "filename": "apery.json"
+  },
+  {
+    "id": "bell",
+    "title": "Bell Numbers",
+    "symbol": "",
+    "symbolImage": "",
+    "category": "famous-sequences",
+    "kind": "terms",
+    "description": "The Bell numbers 1, 1, 2, 5, 15, 52, ... count the ways a set can be partitioned into nonempty subsets.",
+    "filename": "bell.json"
+  },
+  {
+    "id": "padovan",
+    "title": "Padovan Numbers",
+    "symbol": "",
+    "symbolImage": "",
+    "category": "famous-sequences",
+    "kind": "terms",
+    "description": "The Padovan sequence 1, 1, 1, 2, 2, 3, 4, 5, ... obeys P(n) = P(n - 2) + P(n - 3).",
+    "filename": "padovan.json"
+  },
+  {
+    "id": "recaman",
+    "title": "Recam\u00e1n\u2019s Sequence",
+    "symbol": "",
+    "symbolImage": "",
+    "category": "famous-sequences",
+    "kind": "terms",
+    "description": "Recam\u00e1n\u2019s sequence 0, 1, 3, 6, 2, 7, 13, ... jumps backward when possible and forward otherwise.",
+    "filename": "recaman.json"
   },
   {
     "id": "phi_0-digits",
