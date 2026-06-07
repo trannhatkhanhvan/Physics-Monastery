@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function Supporters() {
   const categoryGap = { marginTop: '1.00rem' };
-  const rightPatreonColumnSpacer = '1.35rem';
+  const rightPatreonColumnSpacer = '2.85rem';
 
   return (
     <LayoutWrapper>
