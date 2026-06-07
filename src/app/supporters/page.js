@@ -108,6 +108,7 @@ export default function Supporters() {
       <li>Yishai Mendelsohn</li>
       <li>Harvey Summers</li>
       <li>Tyler Weldon</li>
+      <li>Michael Jacobson</li>
     </ul>
     <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
       <li>Natural Philosopher</li>
@@ -117,6 +118,7 @@ export default function Supporters() {
       <li>Friar</li>
       <li>Advocate</li>
       <li>Advocate</li>
+      <li>Volunteer</li>
       <li>Volunteer</li>
       <li>Volunteer</li>
       <li>Volunteer</li>
@@ -130,7 +132,6 @@ export default function Supporters() {
   {/* Right pair: names + titles */}
   <div style={{ display: 'grid', gridTemplateColumns: 'auto auto', columnGap: '1rem' }}>
     <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
-      <li>Michael Jacobson</li>
       <li>Gregg Stadhams</li>
       <li>Titanium Heart</li>
       <li>Alex Shevchenko</li>
@@ -148,7 +149,6 @@ export default function Supporters() {
       <li>Sarah-Stisnt</li>
     </ul>
     <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
-      <li>Volunteer</li>
       <li>Volunteer</li>
       <li>Volunteer</li>
       <li>Volunteer</li>
