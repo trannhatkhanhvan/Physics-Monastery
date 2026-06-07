@@ -6,8 +6,8 @@ import '../globals.css';
 import Image from 'next/image';
 
 export default function Supporters() {
-  const categoryGap = { marginTop: '0.65rem' };
-  const rightPatreonColumnSpacer = '1.8rem';
+  const categoryGap = { marginTop: '1.00rem' };
+  const rightPatreonColumnSpacer = '1.35rem';
 
   return (
     <LayoutWrapper>
@@ -198,10 +198,12 @@ export default function Supporters() {
                 <li>Jim</li>
                 <li>Dan Girshovich</li>
                 <li>lmcc</li>
+                <li>Titanium Heart</li>
                 <li>Sarah-Stisnt</li>
               </ul>
 
               <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
+                <li>Volunteer</li>
                 <li>Volunteer</li>
                 <li>Volunteer</li>
                 <li>Volunteer</li>
