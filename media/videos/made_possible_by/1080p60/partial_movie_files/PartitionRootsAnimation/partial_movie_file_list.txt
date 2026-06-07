@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/thadroberts/physics-monastery-site/media/videos/made_possible_by/1080p60/partial_movie_files/PartitionRootsAnimation/784864960_3479523888_2578922191.mp4'
+file 'file:/Users/thadroberts/physics-monastery-site/media/videos/made_possible_by/1080p60/partial_movie_files/PartitionRootsAnimation/3996985907_3055086646_589746169.mp4'
+file 'file:/Users/thadroberts/physics-monastery-site/media/videos/made_possible_by/1080p60/partial_movie_files/PartitionRootsAnimation/3996985907_3584210655_2035383735.mp4'
+file 'file:/Users/thadroberts/physics-monastery-site/media/videos/made_possible_by/1080p60/partial_movie_files/PartitionRootsAnimation/3996985907_2990969059_2929995513.mp4'

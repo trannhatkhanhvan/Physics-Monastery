@@ -198,12 +198,10 @@ export default function Supporters() {
                 <li>Jim</li>
                 <li>Dan Girshovich</li>
                 <li>lmcc</li>
-                <li>Titanium Heart</li>
                 <li>Sarah-Stisnt</li>
               </ul>
 
               <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
-                <li>Volunteer</li>
                 <li>Volunteer</li>
                 <li>Volunteer</li>
                 <li>Volunteer</li>

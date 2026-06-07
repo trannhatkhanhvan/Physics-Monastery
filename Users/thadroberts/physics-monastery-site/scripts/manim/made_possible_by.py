@@ -134,7 +134,6 @@ class PartitionRootsAnimation(Scene):
         # ------------------------------------------------------------
 
         right_names = [
-            "Dan Whitaker",
             "Kevin Sirios",
             "Mike Ritter",
             "Jerry Gardner",
@@ -188,7 +187,7 @@ class PartitionRootsAnimation(Scene):
             left_column[1], right_column[1],
             left_column[2], right_column[2],
             left_column[3], right_column[3],
-            left_column[4], right_column[4],
+            left_column[4],
             left_column[5],
             left_column[6],
             right_bottom[0],
