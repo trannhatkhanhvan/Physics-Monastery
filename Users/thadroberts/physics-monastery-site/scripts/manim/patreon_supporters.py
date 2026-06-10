@@ -53,18 +53,19 @@ class PartitionRootsAnimation(Scene):
         HEADER_X = 0.0
         HEADER_Y = 3.45
 
-        LOGO_HEIGHT = 0.70
-        LOGO_GAP = 0.35
+        LOGO_HEIGHT = 0.35
+        LOGO_GAP = 0.15
+        LOGO_Y_OFFSET = 0.05
 
         # ------------------------------------------------------------
         # PAGE POSITION CONTROLS
         # ------------------------------------------------------------
 
         LEFT_X = -6.35
-        LEFT_TOP_Y = 2.35
+        LEFT_TOP_Y = 2.55
 
         RIGHT_X = 1.00
-        RIGHT_TOP_Y = 2.35
+        RIGHT_TOP_Y = 2.55
 
         # ------------------------------------------------------------
         # TABLE SPACING CONTROLS
@@ -75,9 +76,9 @@ class PartitionRootsAnimation(Scene):
 
         ROW_HEIGHT = 1.08
 
-        GAP_AFTER_NATURAL = 0.40
-        GAP_AFTER_FRIAR = 0.35
-        GAP_AFTER_ADVOCATE = 0.35
+        GAP_AFTER_NATURAL = 0.50
+        GAP_AFTER_FRIAR = 0.50
+        GAP_AFTER_ADVOCATE = 0.50
 
         # ------------------------------------------------------------
         # AUTO-FIT CONTROLS
@@ -87,7 +88,7 @@ class PartitionRootsAnimation(Scene):
         MAX_CONTENT_HEIGHT = 8.0
 
         CONTENT_X = 0
-        CONTENT_Y = 0
+        CONTENT_Y = 0.20
 
         # ------------------------------------------------------------
         # ANIMATION CONTROLS
@@ -177,6 +178,9 @@ class PartitionRootsAnimation(Scene):
         header = Group(header_text, patreon_logo)
         header.arrange(RIGHT, buff=LOGO_GAP, aligned_edge=DOWN)
         header.move_to([HEADER_X, HEADER_Y, 0])
+
+        # Move only the Patreon logo, not the words.
+        patreon_logo.shift(UP * LOGO_Y_OFFSET)
 
         # ------------------------------------------------------------
         # DATA TABLES
