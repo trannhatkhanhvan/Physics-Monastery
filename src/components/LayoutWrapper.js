@@ -126,7 +126,7 @@ export default function LayoutWrapper({ children }) {
           <div className="separator"></div>
 
           <a href="/supporters" className="menu-text-link">Supporters</a>
-          <a href="/monastery-events" className="menu-text-link">Monastery Events</a>
+          <a href="/monastery-events" className="menu-text-link">Events</a>
           <a href="/books" className="menu-text-link">Books</a>
           <a href="/contact-us" className="menu-text-link">Contact Us</a>
 
