@@ -7,7 +7,7 @@ import '../globals.css';
 export default function MonasteryEvents() {
   const [activeImage, setActiveImage] = useState(null);
 
-  const photoList = Array.from({ length: 21 }, (_, i) => {
+  const photoList = Array.from({ length: 41 }, (_, i) => {
     const index = i + 1;
     return {
       thumb: `/photos/thumbnails/photo_${index}_thumb.jpg`,
@@ -27,7 +27,7 @@ export default function MonasteryEvents() {
 
         {/* 1️⃣ First two lines */}
         <p className="equation-description">
-          The next Physics Monastery Science Retreat will be May 13-20, 2026, in Logan, Utah.
+          The next Physics Monastery Science Retreat will include camping from September 23-27, 2026 in Zion's National Park, followed by lectures and collaborative whiteboard sessions from September 27-30 in Logan, Utah.
         </p>
         <div style={{ height: '1rem' }} />
         <p className="equation-description">
@@ -77,7 +77,7 @@ export default function MonasteryEvents() {
                  
                  the language of Calculus
                  geometries available to Calculus: manifolds
-                 simplest manifold: Gieseking's 3-manifold
+                 the simplest manifold: Gieseking's 3-manifold
                  and its double cover: the hyperbolic figure eight knot
                  
                  laws of physics
@@ -86,10 +86,8 @@ export default function MonasteryEvents() {
                      built-in limits
                      
                  288 constants of Nature
-                 288 metric transforms available to tetrahedral structured volumes
-                 the transform space avilable to that manifold: the 24D unit hypersphere (Leech lattice)
-                 link types: 118 unimodular lattices available in 23D (consuming 1D to connect)
-                 118 atoms
+                 the 24-ball (Leech lattice): the transform space available to the base manifold
+                 118 unimodular link types: lattices available in 23D (consuming 1D to connect), & 118 atoms
                  
 `}
 </div>
@@ -139,10 +137,8 @@ export default function MonasteryEvents() {
 {`                 
                  Coding all of these rules as a closed set                 
                                   
-         Weekend camping activities:
-                 slot canyons
-                 hiking
-                 observational astronomy`}
+         Camping activities:
+                 Zion's National Park: camping, hiking, slot canyons, observational astronomy.`}
 </div>
 
 
