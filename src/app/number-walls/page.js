@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import 'katex/dist/katex.min.css';
+import { InlineMath } from "react-katex";
 import LayoutWrapper from "../../components/LayoutWrapper";
 
 const COLOR_MODES = [
@@ -44,20 +46,71 @@ function isPrimeNumber(value) {
     return true;
 }
 
+function SymbolPart({ part }) {
+    if (!part) return null;
+
+    if (part.type === "image") {
+        return (
+            <img
+                src={part.src}
+                alt={part.alt || ""}
+                className="constant-symbol-part-img"
+            />
+        );
+    }
+
+    if (part.type === "latex") {
+        return (
+            <span className="constant-symbol-part-latex">
+                <InlineMath math={part.latex || ""} />
+            </span>
+        );
+    }
+
+    return (
+        <span className="constant-symbol-part-text">
+            {part.text || ""}
+        </span>
+    );
+}
+
 function ConstantSymbol({ item, place = "menu" }) {
-    if (item?.symbolImage) {
+    const symbolText = String(item?.symbol || item?.title || "").trim();
+    const symbolImage = String(item?.symbolImage || "").trim();
+    const symbolParts = Array.isArray(item?.symbolParts) ? item.symbolParts : [];
+
+    const hasRealImagePath =
+        symbolImage.startsWith("/") ||
+        symbolImage.startsWith("http://") ||
+        symbolImage.startsWith("https://");
+
+    if (symbolParts.length > 0) {
+        return (
+            <span className={`constant-symbol constant-symbol-${place} constant-symbol-composite`}>
+                {symbolParts.map((part, index) => (
+                    <SymbolPart key={index} part={part} />
+                ))}
+            </span>
+        );
+    }
+
+    if (hasRealImagePath) {
         return (
             <span className={`constant-symbol constant-symbol-${place}`}>
                 <img
-                    src={item.symbolImage}
-                    alt={item.symbol || item.title || ""}
+                    src={symbolImage}
+                    alt={symbolText}
                     className="constant-symbol-img"
                 />
             </span>
         );
     }
 
-    return item?.symbol || item?.title || "";
+    return (
+        <span className={`constant-symbol constant-symbol-${place} constant-symbol-text`}>
+            {symbolText}
+        </span>
+    );
 }
 
 function customBareissDet(matrix) {
@@ -646,7 +699,8 @@ export default function NumberWallsPage() {
     }, [wallData, prime]);
 
     const famousSequences = indexItems.filter((item) => item.category === "famous-sequences");
-    const constants = indexItems.filter((item) => item.category === "constants");
+const geometricConstants = indexItems.filter((item) => item.category === "constants");
+const constantsOfNature = indexItems.filter((item) => item.category === "constants-of-nature");
 
     return (
         <LayoutWrapper>
@@ -991,12 +1045,65 @@ export default function NumberWallsPage() {
     font-size: var(--empty-note-font-size);
 }
 
+.menu-scroll-box {
+    background: #171717;
+    border: 1px solid #303030;
+    padding: 8px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    margin-bottom: 14px;
+}
+
+.famous-sequences-scroll-box {
+    height: 190px;
+}
+
+.geometric-constants-scroll-box {
+    height: 170px;
+}
+
+.constants-of-nature-scroll-box {
+    height: 1100px;
+    overflow: auto;
+}
+
 .constants-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     width: 100%;
 }
+
+.constants-of-nature-grid {
+--constant-cell-width: 69px;
+--constant-cell-height: 34px;
+
+\`\`\`
+display: grid;
+grid-template-rows: repeat(36, var(--constant-cell-height));
+grid-auto-flow: column;
+grid-auto-columns: var(--constant-cell-width);
+width: max-content;
+\`\`\`
+
+}
+
+.constant-grid-button {
+width: var(--constant-cell-width);
+height: var(--constant-cell-height);
+min-width: 0;
+max-width: var(--constant-cell-width);
+box-sizing: border-box;
+
+\`\`\`
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+\`\`\`
+
+}
+
 
 .constant-grid-button {
     height: 34px;
@@ -1044,8 +1151,49 @@ export default function NumberWallsPage() {
     transform-origin: center;
 }
 
+.constant-symbol-text {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+    color: #eeeeee;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1;
+    transform: translateX(0px) translateY(0px) scale(0.88);
+    transform-origin: center;
+}
+
+.constant-symbol-composite {
+    gap: 1px;
+}
+
+.constant-symbol-part-img {
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    display: inline-block;
+    transform: translateX(0px) translateY(0px) scale(1.00);
+    transform-origin: center;
+}
+
+.constant-symbol-part-text,
+.constant-symbol-part-latex {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+    color: #eeeeee;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.constant-symbol-part-latex .katex {
+    font-size: 1em;
+}
+
 .custom-sequence-button {
-    margin-top: 28px;
+    margin-top: 0;
+    margin-bottom: 14px;
 }
 
 .wall-cell-input {
@@ -1081,44 +1229,72 @@ export default function NumberWallsPage() {
 
             <div className="number-walls-layout">
                 <aside className="number-walls-sidebar">
-                    <div className="sidebar-heading">Famous Sequences</div>
+    <div className="sidebar-heading">Build Your Own</div>
 
-                    {famousSequences.map((item) => (
-                        <button
-                            key={item.id}
-                            className={selectedId === item.id ? "sequence-button active" : "sequence-button"}
-                            onClick={() => setSelectedId(item.id)}
-                        >
-                            {item.title}
-                        </button>
-                    ))}
+    <button
+        className={selectedId === CUSTOM_SEQUENCE_ID ? "sequence-button custom-sequence-button active" : "sequence-button custom-sequence-button"}
+        onClick={() => setSelectedId(CUSTOM_SEQUENCE_ID)}
+    >
+        Custom Sequence
+    </button>
 
-                    <div className="sidebar-heading">Geometric Constants</div>
+    <div className="sidebar-heading">Famous Sequences</div>
 
-                    {constants.length === 0 ? (
-    <p className="empty-note">
-        Constants will appear here after we add their JSON files.
-    </p>
-) : (
-    <div className="constants-grid">
-        {constants.map((item) => (
-            <button
-                key={item.id}
-                className={selectedId === item.id ? "constant-grid-button active" : "constant-grid-button"}
-                onClick={() => setSelectedId(item.id)}
-            >
-                <ConstantSymbol item={item} />
-            </button>
-        ))}
-    </div>
-)}
+<div className="menu-scroll-box famous-sequences-scroll-box">
+    {famousSequences.map((item) => (
+        <button
+            key={item.id}
+            className={selectedId === item.id ? "sequence-button active" : "sequence-button"}
+            onClick={() => setSelectedId(item.id)}
+        >
+            {item.title}
+        </button>
+    ))}
+</div>
 
-<button
-    className={selectedId === CUSTOM_SEQUENCE_ID ? "sequence-button custom-sequence-button active" : "sequence-button custom-sequence-button"}
-    onClick={() => setSelectedId(CUSTOM_SEQUENCE_ID)}
->
-    Custom Sequence
-</button>
+    <div className="sidebar-heading">Geometric Constants</div>
+
+<div className="menu-scroll-box geometric-constants-scroll-box">
+    {geometricConstants.length === 0 ? (
+        <p className="empty-note">
+            Geometric constants will appear here after we add their JSON files.
+        </p>
+    ) : (
+        <div className="constants-grid">
+            {geometricConstants.map((item) => (
+                <button
+                    key={item.id}
+                    className={selectedId === item.id ? "constant-grid-button active" : "constant-grid-button"}
+                    onClick={() => setSelectedId(item.id)}
+                >
+                    <ConstantSymbol item={item} />
+                </button>
+            ))}
+        </div>
+    )}
+</div>
+
+    <div className="sidebar-heading">Constants of Nature</div>
+
+<div className="menu-scroll-box constants-of-nature-scroll-box">
+    {constantsOfNature.length === 0 ? (
+        <p className="empty-note">
+            Constants of Nature will appear here after we add their JSON files.
+        </p>
+    ) : (
+        <div className="constants-grid constants-of-nature-grid">
+            {constantsOfNature.map((item) => (
+                <button
+                    key={item.id}
+                    className={selectedId === item.id ? "constant-grid-button active" : "constant-grid-button"}
+                    onClick={() => setSelectedId(item.id)}
+                >
+                    <ConstantSymbol item={item} />
+                </button>
+            ))}
+        </div>
+    )}
+</div>
 </aside>
 
                 <section className="number-walls-main">

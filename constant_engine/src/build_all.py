@@ -17,7 +17,10 @@ from evaluator import evaluate_constant, Quantity, parse_dimension
 # ------------------------------------------------------------
 # High precision
 # ------------------------------------------------------------
-mp.mp.dps = 80  # adjust if you want more digits
+mp.mp.dps = 150  # compute precision
+
+PRINT_DIGITS = 100
+CSV_DIGITS = 120
 
 
 def require_effectively_real(
@@ -149,6 +152,28 @@ def sci_pretty(x: object, sig: int = 15) -> str:
     mant_s, exp_s = s.split("e")
     exp10 = int(exp_s)
     return f"{sign}{mant_s} × 10^{str(exp10).translate(_SUPERS)}"
+
+def sci_precise(x: Any, sig: int = PRINT_DIGITS) -> str:
+    """
+    High-precision numeric formatter.
+    Unlike sci_pretty(), this does not convert through float.
+    """
+    if isinstance(x, mp.mpc):
+        if x.imag == 0:
+            return mp.nstr(x.real, n=sig, strip_zeros=False)
+
+        real = mp.nstr(x.real, n=sig, strip_zeros=False)
+        imag = mp.nstr(abs(x.imag), n=sig, strip_zeros=False)
+        sign = "+" if x.imag >= 0 else "-"
+        return f"({real}{sign}{imag}j)"
+
+    if isinstance(x, mp.mpf):
+        return mp.nstr(x, n=sig, strip_zeros=False)
+
+    if isinstance(x, complex):
+        return sci_precise(mp.mpc(x.real, x.imag), sig=sig)
+
+    return mp.nstr(mp.mpf(x), n=sig, strip_zeros=False)
 
 
 def sci_csv(x: Any, sig: int = 60) -> str:
@@ -566,7 +591,7 @@ def verify_and_format(recipe: Dict[str, Any], computed: Quantity) -> List[str]:
     dim = recipe.get("dimension", "-")
     cid = recipe.get("constant_id", "?")
     cv_disp = as_display_real(cid, computed.value)
-    lines.append(f"computed: {sci_pretty(cv_disp)} {dim}")
+    lines.append(f"computed: {sci_precise(cv_disp, PRINT_DIGITS)} {dim}")
     expected_kind = expected_kind_of(recipe)
     expected_value = recipe.get("expected_value")
     if expected_value is None:
@@ -780,7 +805,7 @@ def append_generated_symbols(rows: List[Tuple[str, Quantity, str]]) -> None:
     with GENERATED_SYMBOLS_CSV.open("a", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         for token, q, dim in rows:
-            writer.writerow([token, sci_csv(q.value), dim or "-"])
+            writer.writerow([token, sci_csv(q.value, sig=CSV_DIGITS), dim or "-"])
 
 
 # ------------------------------------------------------------

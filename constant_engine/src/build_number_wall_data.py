@@ -2,16 +2,19 @@ import json
 from pathlib import Path
 import math
 
+from nature_constants_manifest import NATURE_CONSTANTS
+
 # ============================================================
 # SETTINGS
 # ============================================================
 
 VISIBLE_WIDTH = 100
-VISIBLE_DEPTH = 50
+VISIBLE_DEPTH = 49
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 OUTPUT_DIR = PROJECT_ROOT / "public" / "number-walls" / "data"
 
+TEST_ONLY_CONSTANTS_OF_NATURE = False
 
 # ============================================================
 # EXACT DETERMINANT USING BAREISS ALGORITHM
@@ -427,12 +430,81 @@ def apery_terms(count):
 
     return terms
 
+def digits_from_decimal_string(value, width):
+    digits = "".join(ch for ch in str(value) if ch.isdigit())
+
+    if len(digits) < width:
+        raise ValueError(f"Need at least {width} digits, found {len(digits)}.")
+
+    return [int(ch) for ch in digits[:width]]
+
+
+def significant_digit_terms_from_model_value(value, width=VISIBLE_WIDTH):
+    text = str(value).strip()
+
+    if text.startswith("(") and text.endswith(")"):
+        text = text[1:-1].strip()
+
+    if "j" in text.lower():
+        raise ValueError(f"Complex value cannot be converted into a digit wall: {value}")
+
+    mantissa = text.split("e")[0].split("E")[0]
+    digits = "".join(ch for ch in mantissa if ch.isdigit()).lstrip("0")
+
+    if digits == "":
+        digits = "0"
+
+    if len(digits) < width:
+        raise ValueError(f"Need at least {width} significant digits, found {len(digits)} in {value!r}.")
+
+    return [int(ch) for ch in digits[:width]]
+
+
+def make_nature_constant_items():
+    if len(NATURE_CONSTANTS) != 288:
+        raise ValueError(f"Expected 288 Constants of Nature, found {len(NATURE_CONSTANTS)}.")
+
+    items = []
+    seen_ids = set()
+
+    for constant in NATURE_CONSTANTS:
+        item_id = constant["id"]
+
+        if item_id in seen_ids:
+            raise ValueError(f"Duplicate nature constant id: {item_id}")
+
+        seen_ids.add(item_id)
+
+        value = constant["value"]
+
+        items.append({
+            "id": item_id,
+            "title": constant["title"],
+            "symbol": constant.get("symbol", ""),
+            "symbolImage": constant.get("symbolImage", ""),
+            "symbolParts": constant.get("symbolParts", []),
+            "category": "constants-of-nature",
+            "kind": "digits",
+            "sequence": significant_digit_terms_from_model_value(value, VISIBLE_WIDTH),
+            "modelValue": value,
+            "dimension": constant.get("dimension", ""),
+            "description": constant.get(
+                "description",
+                f"The first 100 significant digits of the model value for {constant['title']}, read as a digit sequence.",
+            ),
+        })
+
+    return items
+
 
 # ============================================================
 # SEQUENCE LIBRARY
 # ============================================================
 
 def make_sequence_library():
+    if TEST_ONLY_CONSTANTS_OF_NATURE:
+        return make_nature_constant_items()
+
     return [
         {
             "id": "catalan",
@@ -548,7 +620,7 @@ def make_sequence_library():
 
         {
             "id": "central-binomial",
-            "title": "Central Binomial Coefficients",
+            "title": "Central Binomials",
             "category": "famous-sequences",
             "kind": "terms",
             "sequence": central_binomial_terms(VISIBLE_WIDTH),
@@ -589,6 +661,7 @@ def make_sequence_library():
             "sequence": recaman_terms(VISIBLE_WIDTH),
             "description": "Recamán’s sequence 0, 1, 3, 6, 2, 7, 13, ... jumps backward when possible and forward otherwise.",
         },
+
 
         {
             "id": "phi_0-digits",
@@ -1150,7 +1223,7 @@ def make_sequence_library():
         },
 
 
-    ]
+    ] + make_nature_constant_items()
 
 
 # ============================================================
@@ -1171,9 +1244,12 @@ def write_wall_data(item):
         "title": item["title"],
         "symbol": item.get("symbol", ""),
         "symbolImage": item.get("symbolImage", ""),
+        "symbolParts": item.get("symbolParts", []),
         "category": item["category"],
         "kind": item["kind"],
         "description": item["description"],
+        "modelValue": item.get("modelValue", ""),
+        "dimension": item.get("dimension", ""),
         "visibleWidth": VISIBLE_WIDTH,
         "visibleDepth": VISIBLE_DEPTH,
         "sequence": [str(x) for x in sequence],
@@ -1197,9 +1273,12 @@ def write_index(items):
             "title": item["title"],
             "symbol": item.get("symbol", ""),
             "symbolImage": item.get("symbolImage", ""),
+            "symbolParts": item.get("symbolParts", []),
             "category": item["category"],
             "kind": item["kind"],
             "description": item["description"],
+            "modelValue": item.get("modelValue", ""),
+            "dimension": item.get("dimension", ""),
             "filename": f"{item['id']}.json",
         })
 
@@ -1224,6 +1303,5 @@ def main():
     print()
     print(f"Done. Wrote {len(items)} number-wall data files.")
 
-
 if __name__ == "__main__":
-    main()
+        main()
