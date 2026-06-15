@@ -19,7 +19,13 @@ export default function MonasteryEvents() {
   return (
     <LayoutWrapper>
       {/* ✅ Shared background overlay */}
-      <div className="symbol-overlay" />
+      <div
+  className="symbol-overlay"
+  style={{
+    left: 0,
+    width: "100vw",
+  }}
+/>
 
       {/* ✅ Content structure */}
       <div className="partition-content">

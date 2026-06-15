@@ -24,7 +24,13 @@ export default function SimplestManifold() {
 
   return (
     <LayoutWrapper>
-      <div className="symbol-overlay" />
+      <div
+  className="symbol-overlay"
+  style={{
+    left: 0,
+    width: "100vw",
+  }}
+/>
       <div className="partition-content">
         <div className="legend-title">the simplest manifold</div>
 

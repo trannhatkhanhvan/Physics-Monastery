@@ -7,7 +7,13 @@ export default function TransformSpace() {
   return (
     <LayoutWrapper>
       {/* ✅ Page-specific overlay */}
-      <div className="symbol-overlay" />
+      <div
+  className="symbol-overlay"
+  style={{
+    left: 0,
+    width: "100vw",
+  }}
+/>
 
       {/* ✅ Shared layout and font styling */}
       <div className="partition-content">

@@ -51,7 +51,13 @@ export default function PlanckConstants() {
 
   return (
     <LayoutWrapper>
-      <div className="symbol-overlay" />
+      <div
+  className="symbol-overlay"
+  style={{
+    left: 0,
+    width: "100vw",
+  }}
+/>
       <div className="partition-content">
         <div className="legend-title">the Planck constants</div>
 

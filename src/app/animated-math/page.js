@@ -195,7 +195,13 @@ export default function AnimatedMath() {
 
   return (
     <LayoutWrapper>
-      <div className="symbol-overlay" />
+      <div
+  className="symbol-overlay"
+  style={{
+    left: 0,
+    width: "100vw",
+  }}
+/>
       <div className="partition-content">
         <div className="legend-title">animated math</div>
 

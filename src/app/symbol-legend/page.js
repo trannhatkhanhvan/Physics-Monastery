@@ -2125,7 +2125,13 @@ export default function SymbolLegend() {
   return (
       <LayoutWrapper>
         <div className="symbol-legend-page">
-          <div className="symbol-overlay"/>
+          <div
+  className="symbol-overlay"
+  style={{
+    left: 0,
+    width: "100vw",
+  }}
+/>
           <div className="legend-content">
             <div className="legend-title">Symbol Legend</div>
             <div className="legend-rows">

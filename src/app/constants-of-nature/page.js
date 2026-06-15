@@ -70446,14 +70446,26 @@ J ⋮ kg{" "}
     return (
   <LayoutWrapper>
     <div className="constants-of-nature-page" style={{ position: "relative", overflowX: "visible" }}>
-      <div className="constants-overlay" />
+      <div
+  className="constants-overlay"
+  style={{
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100vw",
+    height: "100vh",
+    background: "rgba(0, 0, 0, 0.75)",
+    zIndex: 1,
+    pointerEvents: "none",
+  }}
+/>
 
      {/* Left Arrow */}
 <div
   style={{
     position: "fixed",          // ← fixed so transforms/parents can't affect it
     top: "50%",
-    left: "175px",              // 165px sidebar + 20px offset
+    left: "calc(var(--sidebar-width, 142px) + 33px)",
     transform: "translateY(-50%)",
     zIndex: 2000,               // ← above everything
     pointerEvents: "auto",
@@ -70520,7 +70532,7 @@ J ⋮ kg{" "}
     padding: 0,
     overflow: "visible",
     fontFamily: "sans-serif",
-    zIndex: 1,
+    zIndex: 2,
   }}
 >
 

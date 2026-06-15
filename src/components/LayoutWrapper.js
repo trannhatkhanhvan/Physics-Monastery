@@ -1,10 +1,62 @@
 "use client";
 
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
+function CrescentIcon() {
+  const outerR = 11;       // size of the full moon
+  const cutoutR = 11;      // size of the circle cutting into it
+  const cutoutX = 11.5;      // move right/left to change crescent thickness
+  const cutoutY = 12.5;      // move up/down if needed
+
+  return (
+    <svg
+      className="sidebar-toggle-icon sidebar-toggle-crescent"
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+    >
+      <defs>
+        <mask id="crescent-mask">
+          <rect width="32" height="32" fill="white" />
+          <circle cx={cutoutX} cy={cutoutY} r={cutoutR} fill="black" />
+        </mask>
+      </defs>
+
+      <circle
+        cx="16"
+        cy="16"
+        r={outerR}
+        fill="currentColor"
+        mask="url(#crescent-mask)"
+      />
+    </svg>
+  );
+}
+
+function FullMoonIcon() {
+  const moonR = 11; // match CrescentIcon outerR
+
+  return (
+    <svg
+      className="sidebar-toggle-icon sidebar-toggle-full-moon"
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+    >
+      <circle
+        cx="16"
+        cy="16"
+        r={moonR}
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const sidebarWidth = sidebarCollapsed ? 32 : 142;
 
   const pageClass =
     pathname === '/' ? 'home-page' :
@@ -27,8 +79,34 @@ export default function LayoutWrapper({ children }) {
     '';
 
   return (
-    <div className="layout-container">
-      <div className="sidebar">
+    <div
+  className={`layout-container ${sidebarCollapsed ? "sidebar-is-collapsed" : ""}`}
+  style={{ "--sidebar-width": `${sidebarWidth}px` }}
+>
+        <div
+  className={`sidebar ${sidebarCollapsed ? "sidebar-collapsed" : ""}`}
+  style={{ width: `${sidebarWidth}px` }}
+>
+            <button
+  type="button"
+  className="sidebar-toggle"
+  onClick={() => setSidebarCollapsed((value) => !value)}
+  aria-label={sidebarCollapsed ? "Expand menu" : "Collapse menu"}
+  title={sidebarCollapsed ? "Expand menu" : "Collapse menu"}
+  style={{
+    position: "fixed",
+    top: "12px",
+    left: "11px",
+    width: "22px",
+    height: "22px",
+    zIndex: 3000,
+  }}
+>
+  {sidebarCollapsed ? <FullMoonIcon /> : <CrescentIcon />}
+</button>
+
+            {!sidebarCollapsed && (
+  <>
         <Link href="/" className="logo-link">
   <img src="/logo_image.png" alt="Physics Monastery Logo" className="logo" />
 </Link>
@@ -37,8 +115,8 @@ export default function LayoutWrapper({ children }) {
 
         <nav className="menu">
           <a href="/constants-of-nature" className="menu-text-link">Constants of Nature</a>
-          <a href="/symbol-legend" className="menu-text-link">Symbol Legend</a>
-          <a href="/288" className="menu-text-link">288</a>
+          <a href="/symbol-legend" className="menu-text-link">Legend</a>
+          <a href="/288" className="menu-text-link">288 Closed Forms</a>
           <div className="tooltip-container">
   <a
     href="https://www.wolframalpha.com/"
@@ -131,14 +209,19 @@ export default function LayoutWrapper({ children }) {
           <a href="/contact-us" className="menu-text-link">Contact Us</a>
 
 
-        </nav>
+          </nav>
+      </>
+    )}
       </div>
 
       <div className="separator-line"></div>
 
-      <div className={`main-content ${pageClass}`}>
-        {children}
-      </div>
+      <div
+  className={`main-content ${pageClass}`}
+  style={{ paddingLeft: `${sidebarWidth}px` }}
+>
+  {children}
+</div>
     </div>
   );
 }

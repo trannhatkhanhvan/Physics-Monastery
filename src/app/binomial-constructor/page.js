@@ -7,7 +7,13 @@ export default function BinomialConstructor() {
   return (
     <LayoutWrapper>
       {/* ✅ Apply page-specific background and overlay */}
-      <div className="symbol-overlay" />
+      <div
+  className="symbol-overlay"
+  style={{
+    left: 0,
+    width: "100vw",
+  }}
+/>
 
       {/* ✅ Use the shared layout style for content */}
       <div className="partition-content">

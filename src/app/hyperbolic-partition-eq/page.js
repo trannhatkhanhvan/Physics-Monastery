@@ -7,7 +7,13 @@ import '../globals.css';
 export default function HyperbolicPartitionEq() {
   return (
     <LayoutWrapper>
-      <div className="symbol-overlay" />
+      <div
+  className="symbol-overlay"
+  style={{
+    left: 0,
+    width: "100vw",
+  }}
+/>
       <div className="hyperbolic-partition-content">
         <div className="legend-title">the hyperbolic partition equation</div>
 
