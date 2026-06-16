@@ -341,7 +341,7 @@ export default function HyperbolicPartitionEq() {
           <img src="/equations/inverse_square_triple_product_sum_big.svg" alt="inverse product" style={{ height: '66px', width: 'auto', marginRight: '4.7rem' }} />
         </div>
 
-        <div style={{ height: '2.0rem' }} />
+        <div style={{ height: '4.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
           <img src="/equations/hyperbolic_partition_product.svg" alt="hyperbolic partition product" style={{ height: '18px', width: 'auto' }} />
