@@ -625,19 +625,19 @@ export default function HyperbolicPartitionEq() {
   is invertible, it admits a complex matrix logarithm on a chosen spectral branch. Choose one such logarithm{' '}
   <img
     src="/equations/a_log_m.svg"
-    alt="A = log(M)"
+    alt="Λ = log(M)"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.25em', display: 'inline', marginLeft: '0.0em' }}
   />{' '}
   on a chosen branch. By construction,{' '}
   <img
     src="/equations/e_to_m.svg"
-    alt="e^A = M"
+    alt="e^Λ=M"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.10em', display: 'inline', marginLeft: '0.0em' }}
   />{' '}
   and therefore{' '}
   <img
     src="/equations/m_to_t.svg"
-    alt="e^{At} = M^t"
+    alt="e^{Λt} = M^t"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.2em' }}
   />
   . This furnishes a continuous interpolation of the discrete dynamics. Unlike{' '}
@@ -649,7 +649,7 @@ export default function HyperbolicPartitionEq() {
   , the interpolating flow{' '}
   <img
     src="/equations/e_to_at.svg"
-    alt="e^{At}"
+    alt="e^{Λt}"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.0em' }}
   />{' '}
   does not preserve volume. Its determinant is
@@ -664,7 +664,7 @@ export default function HyperbolicPartitionEq() {
   >
     <img
       src="/equations/det_e_to_at.svg"
-      alt="det(e^{At}) = e^{tr(A)t} = (2π)^t"
+      alt="det(e^{Λt}) = e^{tr(Λ)t} = (2π)^t"
       style={{ height: '20px', width: 'auto', display: 'block' }}
     />
   </span>
