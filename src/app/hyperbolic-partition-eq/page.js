@@ -627,20 +627,36 @@ export default function HyperbolicPartitionEq() {
     src="/equations/a_log_m.svg"
     alt="Λ = log(M)"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.25em', display: 'inline', marginLeft: '0.0em' }}
-  />{' '}
-  . Then{' '}
+  />.{' '}
+  Choose the conjugate-symmetric branch for which{' '}
+    <img
+    src="/equations/trace_log_2pi.svg"
+    alt="e^Λ=M"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.25em', display: 'inline', marginLeft: '0.0em' }}
+  />.{' '}
+    Then{' '}
   <img
     src="/equations/e_to_m.svg"
     alt="e^Λ=M"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.10em', display: 'inline', marginLeft: '0.0em' }}
-  />{' '}
-  and{' '}
+  />,{' '}
+  and the continuous interpolation of the discrete dynamics is{' '}
   <img
     src="/equations/m_to_t.svg"
     alt="e^{Λt} = M^t"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.2em' }}
   />
-  . This furnishes a continuous interpolation of the discrete dynamics. Unlike{' '}
+  . At integer times{' '}
+    <img
+    src="/equations/t_equal_k.svg"
+    alt="e^M"
+    style={{ height: '14px', width: 'auto', verticalAlign: '-0.10em', display: 'inline', marginLeft: '0.0em' }}
+  />, this returns the ordinary matrix powers{' '}
+    <img
+    src="/equations/m_to_k.svg"
+    alt="M^k"
+    style={{ height: '16px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.0em' }}
+  />. Unlike{' '}
   <img
     src="/equations/e_to_m.svg"
     alt="e^M"
