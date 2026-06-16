@@ -38,7 +38,7 @@ export default function HyperbolicPartitionEq() {
             onMouseOut={(e) => (e.currentTarget.style.color = 'inherit')}
           >
             Planck mass.{' '}
-          </a>Its 4 solutions{' '}
+          </a>Its 4 roots{' '}
           <img src="/equations/zhe_1.svg" alt="zhe_1" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
           <img src="/equations/zhe_2.svg" alt="zhe_2" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} />,{' '}
           <img src="/equations/zhe_3.svg" alt="zhe_3" style={{ height: '14px', width: 'auto', verticalAlign: '-0.25em', display: 'inline' }} /> and{' '}
@@ -622,19 +622,19 @@ export default function HyperbolicPartitionEq() {
     alt="M"
     style={{ height: '12px', width: 'auto', verticalAlign: '-0.05em', display: 'inline' }}
   />{' '}
-  is invertible, it admits a complex matrix logarithm on a chosen spectral branch. Choose one such logarithm{' '}
+  is invertible, it admits a complex matrix logarithm on a chosen spectral branch. Let{' '}
   <img
     src="/equations/a_log_m.svg"
     alt="Λ = log(M)"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.25em', display: 'inline', marginLeft: '0.0em' }}
   />{' '}
-  on a chosen branch. By construction,{' '}
+  . Then{' '}
   <img
     src="/equations/e_to_m.svg"
     alt="e^Λ=M"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.10em', display: 'inline', marginLeft: '0.0em' }}
   />{' '}
-  and therefore{' '}
+  and{' '}
   <img
     src="/equations/m_to_t.svg"
     alt="e^{Λt} = M^t"
