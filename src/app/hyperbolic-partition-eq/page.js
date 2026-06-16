@@ -154,14 +154,19 @@ export default function HyperbolicPartitionEq() {
   <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
     <img
       src="/equations/a.svg"
-      alt="a"
-      style={{ height: '8px', width: 'auto'}}
+      alt="A"
+      style={{
+        height: '12px',
+        width: 'auto',
+        position: 'relative',
+        top: '-2px'
+      }}
     />
   </span>,{' '}
   <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
     <img
       src="/equations/b.svg"
-      alt="b"
+      alt="B"
       style={{
         height: '12px',
         width: 'auto',
@@ -173,14 +178,19 @@ export default function HyperbolicPartitionEq() {
   <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
     <img
       src="/equations/c.svg"
-      alt="c"
-      style={{ height: '8px', width: 'auto'}}
+      alt="C"
+      style={{
+        height: '12px',
+        width: 'auto',
+        position: 'relative',
+        top: '-2px'
+      }}
     />
   </span>,{' '}
   <span style={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }}>
     <img
       src="/equations/d.svg"
-      alt="d"
+      alt="D"
       style={{
         height: '12px',
         width: 'auto',
@@ -282,10 +292,11 @@ export default function HyperbolicPartitionEq() {
         src="/equations/a_scale.svg"
         alt="a_scale"
         style={{
-            height: "35px",
-            width: "auto",
-            transform: "translateY(-8px)",
-        }}
+        height: '44px',
+        width: 'auto',
+        position: 'relative',
+        top: '-2px'
+      }}
     />
 </span>
   {' '}.
@@ -321,10 +332,16 @@ export default function HyperbolicPartitionEq() {
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
           <img src="/equations/inverse_biproduct_sum_big.svg" alt="inverse biproduct sum" style={{ height: '66px', width: 'auto', marginRight: '3.2rem' }} />
           <img src="/equations/inverse_triproduct_sum_big.svg" alt="inverse triple product sum of roots" style={{ height: '66px', width: 'auto', marginRight: '4.7rem' }} />
-          <img src="/equations/modulus_squared_big.svg" alt="modulus squared" style={{ height: '66px', width: 'auto' }} />
+          <img src="/equations/inverse_square_biproduct_sum_big.svg" alt="inverse product" style={{ height: '66px', width: 'auto', marginRight: '3.2rem' }} />
         </div>
 
-        <div style={{ height: '4.0rem' }} />
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+          <img src="/equations/inverse_square_triple_product_sum_big.svg" alt="inverse product" style={{ height: '66px', width: 'auto', marginRight: '4.7rem' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
           <img src="/equations/hyperbolic_partition_product.svg" alt="hyperbolic partition product" style={{ height: '18px', width: 'auto' }} />
@@ -351,12 +368,6 @@ export default function HyperbolicPartitionEq() {
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-          <img src="/equations/square_modulus.svg" alt="square modulus" style={{ height: '20px', width: 'auto' }} />
-        </div>
-
-        <div style={{ height: '2.0rem' }} />
-
-        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
           <img src="/equations/hyperbolic_partition_quadrance.svg" alt="hyperbolic partition quadrance" style={{ height: '20px', width: 'auto' }} />
         </div>
 
@@ -375,25 +386,37 @@ export default function HyperbolicPartitionEq() {
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+        <img src="/equations/inverse_sum.svg" alt="inverse sum" style={{ height: '42px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+        <img src="/equations/inverse_biproduct_sum.svg" alt="inverse biproduct sum" style={{ height: '42px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
+        <img src="/equations/inverse_triple_product_sum.svg" alt="inverse triple product sum" style={{ height: '42px', width: 'auto' }} />
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
+        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
           <img src="/equations/inverse_product.svg" alt="inverse product" style={{ height: '42px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-          <img src="/equations/inverse_triple_product_sum.svg" alt="inverse triple product sum" style={{ height: '42px', width: 'auto' }} />
+          <img src="/equations/inverse_square_biproduct_sum.svg" alt="inverse product" style={{ height: '42px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '2.0rem' }} />
 
         <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-          <img src="/equations/inverse_biproduct_sum.svg" alt="inverse biproduct sum" style={{ height: '42px', width: 'auto' }} />
-        </div>
-
-        <div style={{ height: '2.0rem' }} />
-
-        <div className="equation-line-left" style={{ paddingLeft: '2.0rem' }}>
-          <img src="/equations/inverse_sum.svg" alt="inverse sum" style={{ height: '42px', width: 'auto' }} />
+          <img src="/equations/inverse_square_triple_product_sum.svg" alt="inverse product" style={{ height: '42px', width: 'auto' }} />
         </div>
 
         <div style={{ height: '2.0rem' }} />
