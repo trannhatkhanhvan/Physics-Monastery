@@ -10,8 +10,8 @@ export default function HomePage() {
 
   useEffect(() => {
     const paragraphTimer = setTimeout(() => setShowParagraph(true), 2000);
-    const showTimer = setTimeout(() => setShowMessage(true), 5000);
-    const hideTimer = setTimeout(() => setHideMessage(true), 12000);
+    const showTimer = setTimeout(() => setShowMessage(true), 3000);
+    const hideTimer = setTimeout(() => setHideMessage(true), 24000);
     return () => {
       clearTimeout(paragraphTimer);
       clearTimeout(showTimer);
@@ -20,6 +20,8 @@ export default function HomePage() {
   }, []);
 
   const videoData = [
+    { id: '23BhfLN65jI' },
+    { id: 'yvaqdHpGU-g' },
     { id: 'sDHcTJzbzos' },
     { id: 'vRPYe9ZotcM', list: 'PLEvMwDb3CwhQBHKmFcYzM2QkkFOlO-4Gr' },
     { id: 'HyKyOdsDZKs' },
