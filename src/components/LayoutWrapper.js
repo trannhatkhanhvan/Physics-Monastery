@@ -117,6 +117,7 @@ export default function LayoutWrapper({ children }) {
           <a href="/constants-of-nature" className="menu-text-link">Constants of Nature</a>
           <a href="/symbol-legend" className="menu-text-link">Legend</a>
           <a href="/288" className="menu-text-link">288 Closed Forms</a>
+          <a href="/code/constant-engine" className="menu-text-link">Code</a>
           <div className="tooltip-container">
   <a
     href="https://www.wolframalpha.com/"

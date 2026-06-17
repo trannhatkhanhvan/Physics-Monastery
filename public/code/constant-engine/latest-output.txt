@@ -1,0 +1,2182 @@
+
+=== Build pass 1 ===
+
+=== Build pass 2 ===
+
+=== Build pass 3 ===
+
+=== Build pass 4 ===
+
+288 constants built.
+   70 exact, 70 passed, 0 failed
+   218 measured, 218 passed, 0 failed
+
+No further constants can be built.
+
+=== Constants in official order ===
+
+001. Delta_nu_Cs  —  hyperfine transition frequency of Cs-133   [built on pass 1]
+deps: l_p, t_p, m_p, E_1, pi, zeta(2), zhe_theta, IB
+computed: 9192631770.429694682085234472546258755724510264835296164176798231098459348293467892447658357090667892 Hz
+expected: 9.19263177000000 × 10^⁹ Hz   (SI exact (defined))
+digits:   full match (10/10)
+
+002. eV⋮Hz  —  electron volt-hertz relationship   [built on pass 2]
+deps: l_p, t_p, m_p, eV, pi, zeta(2), zhe_theta, IB
+computed: 241798924253021.0378716753321525222937563112222781128502851653914606902368741347057028023167388647142 Hz
+expected: 2.41798924200000 × 10^¹⁴ Hz   (SI exact (defined))
+digits:   full match (10/10)
+
+003. J⋮Hz  —  joule-hertz relationship   [built on pass 1]
+deps: l_p, t_p, m_p, pi, zeta(2), zhe_theta, IB
+computed: 1509190179712698114980147519458844.373297663932583206810787350384179931239390041871354029598826535367 Hz
+expected: 1.50919017900000 × 10^³³ Hz   (SI exact (defined))
+digits:   full match (10/10)
+
+004. Hz⋮J  —  hertz-joule relationship   [built on pass 1]
+deps: l_p, t_p, m_p, pi, zeta(2), zhe_theta, IB
+computed: 6.626070149688512981998281366489811795687383972525123505917064682823851516541722774324931892489021650e-34 J
+expected: 6.62607015000000 × 10^⁻³⁴ J   (SI exact (defined))
+digits:   full match (8/9)
+
+005. Hz⋮eV  —  hertz-electron volt relationship   [built on pass 2]
+deps: l_p, t_p, m_p, eV, joule, pi, second, zeta(2), zhe_theta, IB
+computed: 0.000000000000004135667696161146721730035237976171763506100617916111302445167989188363673473280225277593152190315434 eV
+expected: 4.13566769600000 × 10^⁻¹⁵ eV   (SI exact (defined))
+digits:   full match (10/10)
+
+006. ℏ̇  —  natural unit of action in eV s   [built on pass 2]
+deps: l_p, t_p, m_p, eV, joule, zeta(2), zhe_theta, IB
+computed: 0.0000000000000006582119568295178753865440336780212339419709501693377573996415501094715753709062650398265271335667430 eV s
+expected: 6.58211956900000 × 10^⁻¹⁶ eV s   (SI exact (defined))
+digits:   full match (9/10)
+
+007. ℏ  —  reduced Planck constant   [built on pass 1]
+deps: l_p, t_p, m_p, zeta(2), zhe_theta, IB
+computed: 1.054571817596582779727697601535391396089483245542510322890679098514632327400568436071168991346026065e-34 J s
+expected: 1.05457181700000 × 10^⁻³⁴ J s   (SI exact (defined))
+digits:   full match (10/10)
+
+008. h  —  Planck constant   [built on pass 1]
+deps: l_p, t_p, m_p, pi, zeta(2), zhe_theta, IB
+computed: 6.626070149688512981998281366489811795687383972525123505917064682823851516541722774324931892489021650e-34 J s
+expected: 6.62607015000000 × 10^⁻³⁴ J s   (SI exact (defined))
+digits:   full match (8/9)
+
+009. q_c  —  quantum of circulation   [built on pass 2]
+deps: l_p, t_p, m_p, m_e, pi, zeta(2), zhe_theta, IB
+computed: 0.0003636947548007788517467256761222193607080722403912731787049185677067663955649142527764836606109262599 m^2/s
+expected: 3.6369475467(11) × 10^⁻⁴ m^2/s   (SI measured)
+abs err:  0.000000001307789 × 10^⁻⁴ m^2/s
+sigma:    +1.19
+within 5.2σ: yes
+
+010. 2q_c  —  quantum of circulation times 2   [built on pass 2]
+deps: l_p, t_p, m_p, m_e, pi, zeta(2), zhe_theta, IB
+computed: 0.0007273895096015577034934513522444387214161444807825463574098371354135327911298285055529673212218525198 m^2/s
+expected: 7.2738950934(22) × 10^⁻⁴ m^2/s   (SI measured)
+abs err:  0.000000002615577 × 10^⁻⁴ m^2/s
+sigma:    +1.19
+within 5.2σ: yes
+
+011. μ_B/e  —  Bohr magneton in eV/T   [built on pass 2]
+deps: l_p, t_p, m_p, coulomb, m_e, zeta(2), zhe_theta, IB
+computed: 0.00005788381800313884578380174172322310021110695789564154441482546253362507091232059734985134789672373972 eV/T
+expected: 5.7883817982(18) × 10^⁻⁵ eV/T   (SI measured)
+abs err:  0.000000002113885 × 10^⁻⁵ eV/T
+sigma:    +1.17
+within 5.2σ: yes
+
+012. μ_N/e  —  nuclear magneton in eV/T   [built on pass 2]
+deps: l_p, t_p, m_p, coulomb, m_+, zeta(2), zhe_theta, IB
+computed: 0.00000003152451255348451052192517920661216393456776581471277863049608832595674039509945147690010712818818524 eV/T
+expected: 3.15245125417(98) × 10^⁻⁸ eV/T   (SI measured)
+abs err:  0.000000001178451 × 10^⁻⁸ eV/T
+sigma:    +1.20
+within 5.2σ: yes
+
+013. G_0^-1  —  inverse of conductance quantum   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, pi, zeta(3), zhe_1, zhe_theta, IB
+computed: 12906.40373060994822144596313708836735037670503080527457369066753686969206817341378270172030646160418 Ohm
+expected: 1.29064037200000 × 10^⁴ Ohm   (SI exact (defined))
+digits:   almost-full match (9/10)
+
+014. G_0  —  conductance quantum   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, pi, zeta(3), zhe_1, zhe_theta, IB
+computed: 0.00007748091729287218748187908537408139771018149116084243600540507516191001819447269516218959481873733324 S
+expected: 7.74809172900000 × 10^⁻⁵ S   (SI exact (defined))
+digits:   full match (10/10)
+
+015. eV  —  electron volt   [built on pass 1]
+deps: q_p, coulomb, e, zhe_1, zhe_theta, γ, IB
+computed: 0.0000000000000000001602176634220160871880950236155269308661129765511122529303520919959331820122619771825512682840752443 J
+expected: 1.60217663400000 × 10^⁻¹⁹ J   (SI exact (defined))
+digits:   full match (10/10)
+
+016. J⋮eV  —  joule-electron volt relationship   [built on pass 1]
+deps: q_p, coulomb, e, joule, zhe_1, zhe_theta, γ, IB
+computed: 6241509073603085526.641161809009515463191256127896544414292770014425747268309334069728222346289551200 eV
+expected: 6.24150907400000 × 10^¹⁸ eV   (SI exact (defined))
+digits:   full match (9/10)
+
+017. -e/m_e  —  electron charge to mass quotient   [built on pass 2]
+deps: q_p, e, m_e, zhe_1, zhe_theta, γ, IB
+computed: -175882000934.6357540694236200399855872353097555149660667778694095592417565258179936834107803364127121 C/kg
+expected: -1.75882000838(55) × 10^¹¹ C/kg   (SI measured)
+abs err:  0.000000000966357 × 10^¹¹ C/kg
+sigma:    -1.76
+within 5.2σ: yes
+
+018. e/m_+  —  proton charge to mass quotient   [built on pass 2]
+deps: q_p, e, m_+, zhe_1, zhe_theta, γ, IB
+computed: 95788331.48316571725280652047899773268712437868406765426708838230392425740116586927707460802884560497 C/kg
+expected: 9.5788331430(29) × 10^⁷ C/kg   (SI measured)
+abs err:  0.000000005316570 × 10^⁷ C/kg
+sigma:    +1.83
+within 5.2σ: yes
+
+019. μ_B/h  —  Bohr magneton in Hz/T   [built on pass 2]
+deps: q_p, e, m_e, pi, tesla, zhe_1, zhe_theta, γ, IB
+computed: 13996244924.82033227595090165782970288861827765805618043458112127540006683814850804604968832782138937 Hz/T
+expected: 1.39962449171(44) × 10^¹⁰ Hz/T   (SI measured)
+abs err:  0.000000000772033 × 10^¹⁰ Hz/T
+sigma:    +1.75
+within 5.2σ: yes
+
+020. μ_N/h  —  nuclear magneton in MHz/T   [built on pass 2]
+deps: q_p, MHz, e, m_+, pi, second, zhe_1, zhe_theta, γ, IB
+computed: 7.622593223035430894289006771689416688964479062917057776890034021144972159750073807283523710358528074 MHz/T
+expected: 7.6225932118(24) × 10^⁰ MHz/T   (SI measured)
+abs err:  0.000000011235431 × 10^⁰ MHz/T
+sigma:    +4.68
+within 5.2σ: yes
+
+021. a  —  lattice parameter of silicon   [built on pass 2]
+deps: l_p, m_p, m_e, pi, s, zhe_1, zhe_theta, IB
+computed: 0.0000000005431020187637985407497970851706548690396440696715877158754569264734474249505901683220345576501284223 m
+expected: 5.431020511(89) × 10^⁻¹⁰ m   (SI measured)
+abs err:  0.000000323362015 × 10^⁻¹⁰ m
+sigma:    -3.63
+within 5.2σ: yes
+
+022. d_220  —  lattice spacing of ideal Si (220)   [built on pass 2]
+deps: l_p, m_p, m_e, pi, s, zhe_1, zhe_theta, IB
+computed: 0.0000000001920155601719927612897869420895614647570123473830525650345894687441157271250558283030035704171877801 m
+expected: 1.920155716(32) × 10^⁻¹⁰ m   (SI measured)
+abs err:  0.000000114280072 × 10^⁻¹⁰ m
+sigma:    -3.57
+within 5.2σ: yes
+
+023. R_∞  —  Rydberg constant   [built on pass 2]
+deps: l_p, m_p, V_fe, m_e, pi, zhe_1, zhe_theta, IB
+computed: 10973731.56810997339907329579346832123054005941768057343270912700234344277871538609561381344361209229 1/m
+expected: 1.0973731568157(12) × 10^⁷ 1/m   (SI measured)
+abs err:  0.000000000004702 × 10^⁷ 1/m
+sigma:    -3.92
+within 5.2σ: yes
+
+024. E_h⋮1/m  —  hartree-inverse meter relationship   [built on pass 2]
+deps: l_p, m_p, V_fe, m_e, pi, zhe_1, zhe_theta, IB
+computed: 21947463.13621994679814659158693664246108011883536114686541825400468688555743077219122762688722418459 1/m
+expected: 2.1947463136314(24) × 10^⁷ 1/m   (SI measured)
+abs err:  0.000000000009405 × 10^⁷ 1/m
+sigma:    -3.92
+within 5.2σ: yes
+
+025. 1/m⋮E_h  —  inverse meter-hartree relationship   [built on pass 2]
+deps: l_p, m_p, V_fe, m_e, meter, pi, zhe_1, zhe_theta, IB
+computed: 0.00000004556335252929196967960709517264102465024697460487805951806882857919377469582243914850453621745824388 E_h
+expected: 4.5563352529132(50) × 10^⁻⁸ E_h   (SI measured)
+abs err:  0.000000000015996 × 10^⁻⁸ E_h
+sigma:    +3.20
+within 5.2σ: yes
+
+026. A_90  —  conventional value of ampere-90   [built on pass 1]
+deps: S*, ampere, pi, zhe_theta, IB
+computed: 1.000000088881727573119905064486936826506917072743047547259178084891334715629995041105799266948094741 A
+expected: 1.00000008887000 × 10^⁰ A   (SI exact (defined))
+digits:   almost-full match (11/12)
+
+027. C_90  —  conventional value of coulomb-90   [built on pass 1]
+deps: S*, coulomb, pi, zhe_theta, IB
+computed: 1.000000088881727573119905064486936826506917072743047547259178084891334715629995041105799266948094741 C
+expected: 1.00000008887000 × 10^⁰ C   (SI exact (defined))
+digits:   almost-full match (11/12)
+
+028. μ_B/hc  —  Bohr magneton in inverse meter per tesla   [built on pass 2]
+deps: l_p, t_p, q_p, K, S*, m_e, pi, zhe_1, zhe_theta, IB
+computed: 46.68644773021157746858865603662789030586163044264257153418581323694520356116736810040705360822067665 1/m*T
+expected: 4.6686447719(15) × 10^¹ 1/m*T   (SI measured)
+abs err:  0.000000001121158 × 10^¹ 1/m*T
+sigma:    +0.75
+within 5.2σ: yes
+
+029. μ_N/hc  —  nuclear magneton in inverse meter per tesla   [built on pass 2]
+deps: l_p, t_p, q_p, K, S*, m_+, pi, zhe_1, zhe_theta, IB
+computed: 0.02542623410689399028043851935548649761809999591455814896325157642179791873701947415035409572880656463 1/m*T
+expected: 2.54262341009(79) × 10^⁻² 1/m*T   (SI measured)
+abs err:  0.000000000599399 × 10^⁻² 1/m*T
+sigma:    +0.76
+within 5.2σ: yes
+
+030. κ  —  Coulomb's constant   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, C_d, zhe_theta, IB
+computed: 8987551793.029847617969204368503335073845568677732078189176789269070400486639646950255480955168242429 m/F
+expected: 8.9875517923(14) × 10^⁹ m/F   (SI measured)
+abs err:  0.000000000729849 × 10^⁹ m/F
+sigma:    +0.52
+within 5.2σ: yes
+
+031. A_perm  —  atomic unit of permittivity   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, C_d, zhe_theta, IB
+computed: 0.0000000001112650055352702302546615093661230254974973347635146444234863547522815467643531901796084581738225951 F/m
+expected: 1.11265005620(17) × 10^⁻¹⁰ F/m   (SI measured)
+abs err:  0.000000000847298 × 10^⁻¹⁰ F/m
+sigma:    -4.98
+within 5.2σ: yes
+
+032. ε_0  —  vacuum electric permittivity   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, C_d, pi, zhe_theta, IB
+computed: 0.000000000008854187812042685641587767545934194974531538935595322312159361782662634940053032420816600551167072626 F/m
+expected: 8.8541878188(14) × 10^⁻¹² F/m   (SI measured)
+abs err:  0.000000006757314 × 10^⁻¹² F/m
+sigma:    -4.83
+within 5.2σ: yes
+
+033. A_time  —  atomic unit of time   [built on pass 2]
+deps: t_p, m_p, C_U, C_d, m_e, zhe_1, zhe_theta, IB
+computed: 0.00000000000000002418884326574997873035944889971225784196205135126022896893851023720692313729536327039897225196511007 s
+expected: 2.4188843265864(26) × 10^⁻¹⁷ s   (SI measured)
+abs err:  0.000000000011402 × 10^⁻¹⁷ s
+sigma:    -4.39
+within 5.2σ: yes
+
+034. Hz⋮E_h  —  hertz-hartree relationship   [built on pass 2]
+deps: t_p, m_p, C_U, C_d, m_e, pi, watt, zhe_1, zhe_theta, IB
+computed: 0.0000000000000001519829846050299951678203853356873248338218163650773117727495188271296018433301894767937918175461289 E_h
+expected: 1.5198298460574(17) × 10^⁻¹⁶ E_h   (SI measured)
+abs err:  0.000000000007100 × 10^⁻¹⁶ E_h
+sigma:    -4.18
+within 5.2σ: yes
+
+035. E_h⋮Hz  —  hartree-hertz relationship   [built on pass 2]
+deps: t_p, m_p, C_U, C_d, m_e, pi, zhe_1, zhe_theta, IB
+computed: 6579683920520725.038757612362456100559095276119097493993073085972275517457276337707147335637285790667 Hz
+expected: 6.5796839204999(72) × 10^¹⁵ Hz   (SI measured)
+abs err:  0.000000000020825 × 10^¹⁵ Hz
+sigma:    +2.89
+within 5.2σ: yes
+
+036. R_∞_c ̇  —  Rydberg constant times c in Hz   [built on pass 2]
+deps: t_p, m_p, C_U, C_d, m_e, pi, zhe_1, zhe_theta, IB
+computed: 3289841960260362.519378806181228050279547638059548746996536542986137758728638168853573667818642895334 Hz
+expected: 3.2898419602500(36) × 10^¹⁵ Hz   (SI measured)
+abs err:  0.000000000010363 × 10^¹⁵ Hz
+sigma:    +2.88
+within 5.2σ: yes
+
+037. μ_n/μ_+  —  neutron-proton magnetic moment ratio   [built on pass 2]
+deps: C_CFP, K, S, m_+, m_n, pi, zhe_r, IB
+computed: -0.6849790910856292241193533824764507339320791642552178645127823223445886979762068967789676877903652557 -
+expected: -6.8497935(16) × 10^⁻¹ -   (SI measured)
+abs err:  0.000002589143707 × 10^⁻¹ -
+sigma:    +1.62
+within 5.2σ: yes
+
+038. μ_+/μ_n  —  proton-neutron magnetic moment ratio   [built on pass 2]
+deps: C_CFP, K, S, m_+, m_n, pi, zhe_r, IB
+computed: -1.459898576488066870938077079793751099597171397105370330279035973163672172676565535692613094554462196 -
+expected: -1.45989802(34) × 10^⁰ -   (SI measured)
+abs err:  0.000000556488067 × 10^⁰ -
+sigma:    -1.64
+within 5.2σ: yes
+
+039. μ_e/μ_n  —  electron-neutron magnetic moment ratio   [built on pass 2]
+deps: C_CFP, K, P_up, m_e, m_n, pi, zhe_r, IB
+computed: 960.9201494751148776163983017168514897466039173409368148192111335996545721149774227290444925902221941 -
+expected: 9.6092048(23) × 10^² -   (SI measured)
+abs err:  0.000003305248852 × 10^² -
+sigma:    -1.44
+within 5.2σ: yes
+
+040. μ_n/μ_e  —  neutron-electron magnetic moment ratio   [built on pass 2]
+deps: C_CFP, K, P_up, m_e, m_n, pi, zhe_r, IB
+computed: 0.001040669196650972277608071853355560786890570108962764043648478321240785447633234152113105816702410342 -
+expected: 1.04066884(24) × 10^⁻³ -   (SI measured)
+abs err:  0.000000356650972 × 10^⁻³ -
+sigma:    +1.49
+within 5.2σ: yes
+
+041. A_mdm  —  atomic unit of magnetic dipole moment   [built on pass 2]
+deps: l_p, t_p, q_p, m_p, m_e, omega_2, pi, zhe_1, zhe_r, IB
+computed: 0.00000000000000000000001854802011531276369455971041102538853430447307332571445668958081624379912791104653483898073533277789 J/T
+expected: 1.85480201315(58) × 10^⁻²³ J/T   (SI measured)
+abs err:  0.000000001618724 × 10^⁻²³ J/T
+sigma:    -2.79
+within 5.2σ: yes
+
+042. μ_B  —  Bohr magneton   [built on pass 2]
+deps: l_p, t_p, q_p, m_p, m_e, omega_2, pi, zhe_1, zhe_r, IB
+computed: 0.000000000000000000000009274010057656381847279855205512694267152236536662857228344790408121899563955523267419490367666388947 J/T
+expected: 9.2740100657(29) × 10^⁻²⁴ J/T   (SI measured)
+abs err:  0.000000008043618 × 10^⁻²⁴ J/T
+sigma:    -2.77
+within 5.2σ: yes
+
+043. μ_N  —  nuclear magneton   [built on pass 2]
+deps: l_p, t_p, q_p, m_p, m_+, omega_2, pi, zhe_1, zhe_r, IB
+computed: 0.000000000000000000000000005050783734892480442933945769667621080805188398142766084208851693776316232531509531494963312474139686 J/T
+expected: 5.0507837393(16) × 10^⁻²⁷ J/T   (SI measured)
+abs err:  0.000000004407520 × 10^⁻²⁷ J/T
+sigma:    -2.75
+within 5.2σ: yes
+
+044. μ_tri  —  triton magnetic moment   [built on pass 2]
+deps: l_p, t_p, q_p, m_p, D_Do, m_tri, pi, s, zhe_1, zhe_2, zhe_3, zhe_4, zhe_r, IB
+computed: 0.00000000000000000000000001504609516114368960566004148764204610029909891847999005376260320831040807551674919433095170493718542 J/T
+expected: 1.5046095178(30) × 10^⁻²⁶ J/T   (SI measured)
+abs err:  0.000000001685631 × 10^⁻²⁶ J/T
+sigma:    -0.56
+within 5.2σ: yes
+
+045. μ_tri/μ_+  —  triton to proton magnetic moment ratio   [built on pass 2]
+deps: D_Do, L_LL, S, m_+, m_tri, pi, zhe_r, IB
+computed: 1.066639917541369176913977523267825208442220022148947183992738458907947900481641204266725848236453832 -
+expected: 1.0666399189(21) × 10^⁰ -   (SI measured)
+abs err:  0.000000001358631 × 10^⁰ -
+sigma:    -0.65
+within 5.2σ: yes
+
+046. μ_tri/μ_N  —  triton magnetic moment to nuclear magneton ratio   [built on pass 2]
+deps: m_+, m_tri, pi, zhe_1, zhe_2, zhe_r, IB
+computed: 2.978962475630355691484816642114349331625233588315364792620211496144724457198812300907293250575526000 -
+expected: 2.9789624650(59) × 10^⁰ -   (SI measured)
+abs err:  0.000000010630356 × 10^⁰ -
+sigma:    +1.80
+within 5.2σ: yes
+
+047. μ_tri/μ_B  —  triton magnetic moment to Bohr magneton ratio   [built on pass 2]
+deps: m_e, m_tri, pi, zhe_1, zhe_2, zhe_r, IB
+computed: 0.001622393670615784185404844910569703620962561808165033684296846857461095150216270031542001687536084430 -
+expected: 1.6223936648(32) × 10^⁻³ -   (SI measured)
+abs err:  0.000000005815784 × 10^⁻³ -
+sigma:    +1.82
+within 5.2σ: yes
+
+048. g_tri  —  triton g factor   [built on pass 2]
+deps: m_+, m_tri, pi, zhe_1, zhe_2, zhe_r, IB
+computed: 5.957924951260711382969633284228698663250467176630729585240422992289448914397624601814586501151052001 -
+expected: 5.957924930(12) × 10^⁰ -   (SI measured)
+abs err:  0.000000021260711 × 10^⁰ -
+sigma:    +1.77
+within 5.2σ: yes
+
+049. μ_e/μ_μ  —  electron-muon magnetic moment ratio   [built on pass 3]
+deps: m_e, m_μ, pi, zhe_r, IB
+computed: 206.7669850416230996807296631905246054702841666660927000898778840782637142421452861738729765250832444 -
+expected: 2.067669881(46) × 10^² -   (SI measured)
+abs err:  0.000000030583769 × 10^² -
+sigma:    -0.66
+within 5.2σ: yes
+
+050. G  —  Newtonian constant of gravitation   [built on pass 1]
+deps: l_p, t_p, m_p, pi, zhe_r, IB
+computed: 0.00000000006674303155045328780957914666544360252795604041632632921118650236791125109293568032541054775409197177 m^3/(s^2*kg)
+expected: 6.67430(15) × 10^⁻¹¹ m^3/(s^2*kg)   (SI measured)
+abs err:  0.000003155045330 × 10^⁻¹¹ m^3/(s^2*kg)
+sigma:    +0.02
+within 5.2σ: yes
+
+051. G/ℏc  —  Newtonian constant of gravitation over h-bar c   [built on pass 1]
+deps: l_p, t_p, m_p, GeV, pi, zhe_r, IB
+computed: 6.708825256046577053113746269321297433377215264696445225335185821462181416549989394521302850988213527e-39 c^4/GeV^2
+expected: 6.70883(15) × 10^⁻³⁹ c^4/GeV^2   (SI measured)
+abs err:  0.000004743953422 × 10^⁻³⁹ c^4/GeV^2
+sigma:    -0.03
+within 5.2σ: yes
+
+052. m_n  —  neutron mass   [built on pass 1]
+deps: l_p, t_p, GeV, pi, s, zhe_r, φ, IB
+computed: 0.000000000000000000000000001674927498878758719610223732181569067359125529107350733622856517458553853152840459475768060548749960 kg
+expected: 1.67492750056(85) × 10^⁻²⁷ kg   (SI measured)
+abs err:  0.000000001681241 × 10^⁻²⁷ kg
+sigma:    -1.98
+within 5.2σ: yes
+
+053. m_+  —  proton mass   [built on pass 1]
+deps: l_p, t_p, GeV, e, omega_2, pi, s, zhe_r, γ, IB
+computed: 0.000000000000000000000000001672621925251652155637938564796314660172028713039772192046896644997497090304037262424481290199038812 kg
+expected: 1.67262192595(52) × 10^⁻²⁷ kg   (SI measured)
+abs err:  0.000000000698348 × 10^⁻²⁷ kg
+sigma:    -1.34
+within 5.2σ: yes
+
+054. m_de  —  deuteron mass   [built on pass 2]
+deps: A_mass, C_R1, pi, s, x_infinity, zhe_r, IB
+computed: 0.000000000000000000000000003343583775363560934655107427384275114049759429707517753508129470397875123340752887411965661272720266 kg
+expected: 3.3435837768(10) × 10^⁻²⁷ kg   (SI measured)
+abs err:  0.000000001436439 × 10^⁻²⁷ kg
+sigma:    -1.44
+within 5.2σ: yes
+
+055. m_μ  —  muon mass   [built on pass 2]
+deps: A_mass, K_-6, pi, s, zhe_r, IB
+computed: 0.0000000000000000000000000001883531615023630275704811694571397513726379162343979881247497605752430892820908772178976089302482895 kg
+expected: 1.883531627(42) × 10^⁻²⁸ kg   (SI measured)
+abs err:  0.000000011976370 × 10^⁻²⁸ kg
+sigma:    -0.29
+within 5.2σ: yes
+
+056. μ_de/μ_e  —  deuteron-electron magnetic moment ratio   [built on pass 2]
+deps: L_1, P_up, m_de, m_e, pi, s, zhe_r, IB
+computed: -0.0004664345589721627084870091612060878118068886931805063407900027807149072813890574910153506175644411786 -
+expected: -4.664345550(12) × 10^⁻⁴ -   (SI measured)
+abs err:  0.000000039721627 × 10^⁻⁴ -
+sigma:    -3.31
+within 5.2σ: yes
+
+057. μ_e/μ_de  —  electron-deuteron magnetic moment ratio   [built on pass 2]
+deps: L_1, P_up, m_de, m_e, pi, s, zhe_r, IB
+computed: -2143.923473860094107485263402454920375988604782781434163763280153413630007028815935898400299885247233 -
+expected: -2.1439234921(56) × 10^³ -   (SI measured)
+abs err:  0.000000018239906 × 10^³ -
+sigma:    +3.26
+within 5.2σ: yes
+
+058. μ_de/μ_+  —  deuteron-proton magnetic moment ratio   [built on pass 2]
+deps: S, m_+, m_de, pi, s, zhe_r, φ, IB
+computed: 0.3070122093908253052344334945647896901322920114872606612160993693232697288322953161060110304695107574 -
+expected: 3.0701220930(79) × 10^⁻¹ -   (SI measured)
+abs err:  0.000000000908252 × 10^⁻¹ -
+sigma:    +0.11
+within 5.2σ: yes
+
+059. μ_de/μ_n  —  deuteron-neutron magnetic moment ratio   [built on pass 2]
+deps: C_CFP, Im(omega_1), m_de, m_n, pi, s, zhe_r, IB
+computed: -0.4482065896623259907294730732567848320734698975214408000929138478935088538878005083745758487720876129 -
+expected: -4.4820652(11) × 10^⁻¹ -   (SI measured)
+abs err:  0.000000696623260 × 10^⁻¹ -
+sigma:    -0.63
+within 5.2σ: yes
+
+060. μ_de  —  deuteron magnetic moment   [built on pass 2]
+deps: l_p, t_p, q_p, m_p, m_de, omega_2, pi, s, zhe_1, zhe_2, zhe_r, IB
+computed: 0.000000000000000000000000004330735059932395245391028229061158999804289649424730419309330183277970283356445990585607389024763953 J/T
+expected: 4.330735087(11) × 10^⁻²⁷ J/T   (SI measured)
+abs err:  0.000000027067604 × 10^⁻²⁷ J/T
+sigma:    -2.46
+within 5.2σ: yes
+
+061. μ_he'/μ_B  —  shielded helion magnetic moment to Bohr magneton ratio   [built on pass 3]
+deps: K, m_he, m_μ, pi, s, zhe_r, IB
+computed: -0.001158671496948782926960113960423852264286272412015101533892925130497765096876158139067645664669366872 -
+expected: -1.15867149457(94) × 10^⁻³ -   (SI measured)
+abs err:  0.000000002378783 × 10^⁻³ -
+sigma:    -2.53
+within 5.2σ: yes
+
+062. μ_he'/μ_N  —  shielded helion magnetic moment to nuclear magneton ratio   [built on pass 3]
+deps: K, m_+, m_e, m_he, m_μ, pi, s, zhe_r, IB
+computed: -2.127497766730559932325758138709578304628593759998913082164487561686695513643503026400685699100710951 -
+expected: -2.1274977624(17) × 10^⁰ -   (SI measured)
+abs err:  0.000000004330560 × 10^⁰ -
+sigma:    -2.55
+within 5.2σ: yes
+
+063. g_he  —  helion g factor   [built on pass 3]
+deps: K, m_+, m_e, m_he, m_μ, pi, s, zhe_r, IB
+computed: -4.255250704222979536222114017760897764027698978885909855192926554467824569568831965752615774286133877 dimensionless
+expected: -4.2552506995(34) × 10^⁰ dimensionless   (SI measured)
+abs err:  0.000000004722979 × 10^⁰ dimensionless
+sigma:    -1.39
+within 5.2σ: yes
+
+064. μ_he/μ_N  —  helion magnetic moment to nuclear magneton ratio   [built on pass 3]
+deps: K, m_+, m_e, m_he, m_μ, pi, s, zhe_r, IB
+computed: -2.127625352111489768111057008880448882013849489442954927596463277233912284784415982876307887143066938 -
+expected: -2.1276253498(17) × 10^⁰ -   (SI measured)
+abs err:  0.000000002311490 × 10^⁰ -
+sigma:    -1.36
+within 5.2σ: yes
+
+065. μ_he/μ_B  —  helion magnetic moment to Bohr magneton ratio   [built on pass 3]
+deps: K, m_he, m_μ, pi, s, zhe_r, IB
+computed: -0.001158740982118930922523434116682043927825042455007278182109287869273103440290704278764984062693988867 -
+expected: -1.15874098083(94) × 10^⁻³ -   (SI measured)
+abs err:  0.000000001288931 × 10^⁻³ -
+sigma:    -1.37
+within 5.2σ: yes
+
+066. μ_0  —  vacuum magnetic permeability   [built on pass 1]
+deps: l_p, q_p, m_p, G_Ga, pi, s, zhe_r, IB
+computed: 0.000001256637061582489760050658683910940916441619508484827847876584549485382971826395318865683938138863921 N/A^2
+expected: 1.25663706127(20) × 10^⁻⁶ N/A^2   (SI measured)
+abs err:  0.000000000312490 × 10^⁻⁶ N/A^2
+sigma:    +1.56
+within 5.2σ: yes
+
+067. m_e  —  electron mass   [built on pass 1]
+deps: m_p, V_fe, kilogram, s, zhe_r, IB
+computed: 0.0000000000000000000000000000009109383710136370742031131846138441094578530329112556293316312004915821055894177834152064547055232927 kg
+expected: 9.1093837139(28) × 10^⁻³¹ kg   (SI measured)
+abs err:  0.000000003763628 × 10^⁻³¹ kg
+sigma:    -1.34
+within 5.2σ: yes
+
+068. m_τ  —  tau mass   [built on pass 1]
+deps: m_p, L_LL, kilogram, pi, s, zhe_1, zhe_r, IB
+computed: 0.000000000000000000000000003167545466689550858717123287193891267182095449041386920425962300856996981456835513036916176522802890 kg
+expected: 3.16754(21) × 10^⁻²⁷ kg   (SI measured)
+abs err:  0.000005466689551 × 10^⁻²⁷ kg
+sigma:    +0.03
+within 5.2σ: yes
+
+069. m_tri  —  triton mass   [built on pass 1]
+deps: m_p, G_Ga, K, kilogram, pi, s, zhe_1, zhe_r, IB
+computed: 0.000000000000000000000000005007356748680750293197233730967619243795495261608382991179354733168485822965482817000649187293214357 kg
+expected: 5.0073567512(16) × 10^⁻²⁷ kg   (SI measured)
+abs err:  0.000000002519249 × 10^⁻²⁷ kg
+sigma:    -1.57
+within 5.2σ: yes
+
+070. K_cd  —  luminous efficacy   [built on pass 2]
+deps: l_p, t_p, A_mass, G_Ga, K, f_1, pi, s, zhe_1, zhe_r, IB
+computed: 683.0025030395782953093089626522833633536473497925296987124648011019746686971437842955924080114985739 lm/W
+expected: 6.83000000000000 × 10^² lm/W   (SI exact (defined))
+digits:   full match (3/3)
+
+071. m_he  —  helion mass   [built on pass 2]
+deps: A_mass, e, pi, s, x_infinity, zhe_r, IB
+computed: 0.000000000000000000000000005006412784044465673114321201407525622609295394024977668135884158572835044673283609407168891628506934 kg
+expected: 5.0064127862(16) × 10^⁻²⁷ kg   (SI measured)
+abs err:  0.000000002155535 × 10^⁻²⁷ kg
+sigma:    -1.35
+within 5.2σ: yes
+
+072. m_α  —  alpha particle mass   [built on pass 2]
+deps: A_mass, V_fe, omega_2, pi, s, x_infinity, zhe_r, IB
+computed: 0.000000000000000000000000006644657342140746109110588097054182735870758083599831563372189767718885530159460362785643368994003735 kg
+expected: 6.6446573450(21) × 10^⁻²⁷ kg   (SI measured)
+abs err:  0.000000002859254 × 10^⁻²⁷ kg
+sigma:    -1.36
+within 5.2σ: yes
+
+073. E_p ̇  —  Planck mass energy equivalent in GeV   [built on pass 1]
+deps: l_p, t_p, m_p, GeV, Re(ipt), joule, zhe_3, zhe_4, IB
+computed: 12208857275407741594.50782890503270684726026391285809662965606072978859564068822466884475726675704462 GeV
+expected: 1.220890(14) × 10^¹⁹ GeV   (SI measured)
+abs err:  0.000004272459226 × 10^¹⁹ GeV
+sigma:    -0.31
+within 5.2σ: yes
+
+074. R_K  —  von Klitzing constant   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, Re(ipt), pi, zhe_1, zhe_3, zhe_4, IB
+computed: 25812.80744939179136926437172874777612269459769504782509025078674511509076151178057217279082339265217 Ohm
+expected: 2.58128074500000 × 10^⁴ Ohm   (SI exact (defined))
+digits:   full match (9/10)
+
+075. Z_0  —  characteristic impedance of vacuum   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, Re(ipt), pi, zhe_3, zhe_4, IB
+computed: 376.7303137120330830449004060905738107322100604362446859062106287012790187117816184129036213181862305 Ohm
+expected: 3.76730313412(59) × 10^² Ohm   (SI measured)
+abs err:  0.000000003000331 × 10^² Ohm
+sigma:    +5.09
+within 5.2σ: yes
+
+076. Z_p  —  Planck electric impedance   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, Re(ipt), zhe_3, zhe_4, IB
+computed: 29.97924581991528211315092710879476562856491066825456852554041009359378464552473804029547113941531480 Ohm
+expected: 2.99792458(45) × 10^¹ Ohm   (SI measured)
+abs err:  0.000000001991528 × 10^¹ Ohm
+sigma:    +0.00
+within 5.2σ: yes
+
+077. Hz⋮1/m  —  hertz-inverse meter relationship   [built on pass 1]
+deps: l_p, t_p, Im(ipt), second, zhe_3, zhe_4, IB
+computed: 0.000000003335640953228747859987439592394207660630883280575476111671945531345469014340865460551312606815106827 cycles/m
+expected: 3.33564095100000 × 10^⁻⁹ cycles/m   (SI exact (defined))
+digits:   almost-full match (9/10)
+
+078. A_vel  —  atomic unit of velocity   [built on pass 1]
+deps: l_p, t_p, Im(ipt), zhe_1, zhe_3, zhe_4, IB
+computed: 2187691.263920581791596443974988693419427282599028551891631035076742603345544037826073080877514952275 m/s
+expected: 2.18769126216(34) × 10^⁶ m/s   (SI measured)
+abs err:  0.000000001760582 × 10^⁶ m/s
+sigma:    +5.18
+within 5.2σ: yes
+
+079. A_mom  —  atomic unit of momentum   [built on pass 1]
+deps: l_p, t_p, Im(ipt), m_e, zhe_1, zhe_3, zhe_4, IB
+computed: 0.000000000000000000000001992851916236579558708713607550813498028916160760967416861969379462566581375202723919851361904049662 m*kg/s
+expected: 1.99285191545(31) × 10^⁻²⁴ m*kg/s   (SI measured)
+abs err:  0.000000000786580 × 10^⁻²⁴ m*kg/s
+sigma:    +2.54
+within 5.2σ: yes
+
+080. N_mom  —  natural unit of momentum   [built on pass 1]
+deps: l_p, t_p, Im(ipt), m_e, zhe_3, zhe_4, IB
+computed: 0.0000000000000000000002730924532305466820521031926940362486599306217869076862541678323336251508327561014482614671745690629 m*kg/s
+expected: 2.73092453446(85) × 10^⁻²² m*kg/s   (SI measured)
+abs err:  0.000000002154534 × 10^⁻²² m*kg/s
+sigma:    -2.53
+within 5.2σ: yes
+
+081. eV⋮kg  —  electron volt-kilogram relationship   [built on pass 1]
+deps: l_p, t_p, Im(ipt), eV, zhe_3, zhe_4, IB
+computed: 1.782661923205734590230264630297639872602111138365116177137130870856878823022786551503210694982650555e-36 kg
+expected: 1.78266192100000 × 10^⁻³⁶ kg   (SI exact (defined))
+digits:   almost-full match (9/10)
+
+082. J⋮kg  —  joule-kilogram relationship   [built on pass 1]
+deps: l_p, t_p, Im(ipt), joule, zhe_3, zhe_4, IB
+computed: 0.00000000000000001112650056885533498304629936102120783460034561290621956374251804248240241419848829253737332080924154 kg
+expected: 1.11265005600000 × 10^⁻¹⁷ kg   (SI exact (defined))
+digits:   full match (10/10)
+
+083. J⋮A_mass  —  joule-atomic mass unit relationship   [built on pass 2]
+deps: l_p, t_p, A_mass, Im(ipt), joule, zhe_3, zhe_4, IB
+computed: 6700535254.992636007081128622957049989376788949901129957472499432327773575883107097894303574012781644 u
+expected: 6.7005352471(21) × 10^⁹ u   (SI measured)
+abs err:  0.000000007892635 × 10^⁹ u
+sigma:    +3.76
+within 5.2σ: yes
+
+084. A_mass⋮J  —  atomic mass unit-joule relationship   [built on pass 2]
+deps: l_p, t_p, A_mass, Im(ipt), zhe_3, zhe_4, IB
+computed: 0.0000000001492418085934802014317106263893640825130469195901517971036050718831185028020809374759107480364851051 J
+expected: 1.49241808768(46) × 10^⁻¹⁰ J   (SI measured)
+abs err:  0.000000001745198 × 10^⁻¹⁰ J
+sigma:    -3.79
+within 5.2σ: yes
+
+085. N_mom ̇  —  natural unit of momentum in MeV/c   [built on pass 1]
+deps: l_p, t_p, Im(ipt), MeV, joule, m_e, meter, second, zhe_3, zhe_4, IB
+computed: 0.5109989500280760882464244946922668486282985005948989833790568744137005516117122551256961046348561614 MeV/c
+expected: 5.1099895069(16) × 10^⁻¹ MeV/c   (SI measured)
+abs err:  0.000000006619240 × 10^⁻¹ MeV/c
+sigma:    -4.14
+within 5.2σ: yes
+
+086. E_A_mass ̇  —  atomic mass constant energy equivalent in MeV   [built on pass 2]
+deps: l_p, t_p, A_mass, Im(ipt), MeV, zhe_3, zhe_4, IB
+computed: 931.4941024971434408719102340568031701806252967452473194067421838275271394510556816281487859331730928 MeV/c
+expected: 9.3149410372(29) × 10^² MeV/c   (SI measured)
+abs err:  0.000000012228567 × 10^² MeV/c
+sigma:    -4.22
+within 5.2σ: yes
+
+087. kg⋮J  —  kilogram-joule relationship   [built on pass 1]
+deps: l_p, t_p, Im(ipt), kilogram, zhe_3, zhe_4, IB
+computed: 89875517806435918.63219786595620886938756455554801660734053533867056235553643469816349633144280815462 J
+expected: 8.98755178700000 × 10^¹⁶ J   (SI exact (defined))
+digits:   almost-full match (9/10)
+
+088. kg⋮eV  —  kilogram-electron volt relationship   [built on pass 1]
+deps: l_p, t_p, Im(ipt), eV, joule, kilogram, zhe_3, zhe_4, IB
+computed: 560958859883646258843549768353014518.8180207060799781518019203955818726367133032319850344448917504616 eV
+expected: 5.60958860300000 × 10^³⁵ eV   (SI exact (defined))
+digits:   almost-full match (7/10)
+
+089. E_∆  —  neutron-proton mass difference energy equivalent   [built on pass 1]
+deps: l_p, t_p, Im(ipt), m_+, m_n, zhe_3, zhe_4, IB
+computed: 0.0000000000002072146235770650370525534178584793626100954852129469796317911036855209530198539623962719123860117941 J
+expected: 2.07214712(60) × 10^⁻¹³ J   (SI measured)
+abs err:  0.000000884229349 × 10^⁻¹³ J
+sigma:    -1.47
+within 5.2σ: yes
+
+090. E_∆ ̇  —  neutron-proton mass difference energy equivalent in MeV   [built on pass 1]
+deps: l_p, t_p, Im(ipt), MeV, joule, m_+, m_n, zhe_3, zhe_4, IB
+computed: 1.293331953239501811196882964797805104284818873703611928398229177207595822761521641079895139302080364 MeV
+expected: 1.29333251(38) × 10^⁰ MeV   (SI measured)
+abs err:  0.000000556760498 × 10^⁰ MeV
+sigma:    -1.47
+within 5.2σ: yes
+
+091. E_e ̇  —  natural unit of energy in MeV   [built on pass 1]
+deps: l_p, t_p, Im(ipt), MeV, joule, m_e, zhe_3, zhe_4, IB
+computed: 0.5109989500280760882464244946922668486282985005948989833790568744137005516117122551256961046348561614 MeV
+expected: 5.1099895069(16) × 10^⁻¹ MeV   (SI measured)
+abs err:  0.000000006619240 × 10^⁻¹ MeV
+sigma:    -4.14
+within 5.2σ: yes
+
+092. E_μ ̇  —  muon mass energy equivalent in MeV   [built on pass 2]
+deps: l_p, t_p, Im(ipt), MeV, joule, m_μ, zhe_3, zhe_4, IB
+computed: 105.6583747318459137503735650070413757656670431558484470973945580148124568843070661249652287887948129 MeV
+expected: 1.056583755(23) × 10^² MeV   (SI measured)
+abs err:  0.000000007681541 × 10^² MeV
+sigma:    -0.33
+within 5.2σ: yes
+
+093. E_+ ̇  —  proton mass energy equivalent in MeV   [built on pass 1]
+deps: l_p, t_p, Im(ipt), MeV, joule, m_+, zhe_3, zhe_4, IB
+computed: 938.2720882055566983937312613291441562243051824580023033013952669218662575427553531219775217710261597 MeV
+expected: 9.3827208943(29) × 10^² MeV   (SI measured)
+abs err:  0.000000012244434 × 10^² MeV
+sigma:    -4.22
+within 5.2σ: yes
+
+094. E_n ̇  —  neutron mass energy equivalent in MeV   [built on pass 1]
+deps: l_p, t_p, Im(ipt), MeV, joule, m_n, zhe_3, zhe_4, IB
+computed: 939.5654201587962002049281442939419613285900013317059152297934960990738533655168747630574169103282401 MeV
+expected: 9.3956542194(48) × 10^² MeV   (SI measured)
+abs err:  0.000000017812039 × 10^² MeV
+sigma:    -3.71
+within 5.2σ: yes
+
+095. E_τ ̇  —  tau energy equivalent   [built on pass 1]
+deps: l_p, t_p, Im(ipt), MeV, joule, m_τ, zhe_3, zhe_4, IB
+computed: 1776.862693623783625228028659503590903487930814189103366820261434104981341050913933214146454165475923 MeV
+expected: 1.77686(12) × 10^³ MeV   (SI measured)
+abs err:  0.000002693623783 × 10^³ MeV
+sigma:    +0.02
+within 5.2σ: yes
+
+096. E_de ̇  —  deuteron mass energy equivalent in MeV   [built on pass 2]
+deps: l_p, t_p, Im(ipt), MeV, joule, m_de, zhe_3, zhe_4, IB
+computed: 1875.612942553401766992071093596919234371016366247985099596324771420834568511530440047899253621383399 MeV
+expected: 1.87561294500(58) × 10^³ MeV   (SI measured)
+abs err:  0.000000002446598 × 10^³ MeV
+sigma:    -4.22
+within 5.2σ: yes
+
+097. E_he ̇  —  helion mass energy equivalent in MeV   [built on pass 2]
+deps: l_p, t_p, Im(ipt), MeV, joule, m_he, zhe_3, zhe_4, IB
+computed: 2808.391607444496324387679798662401683150600557660248016649622323355490258148026387697937017596398838 MeV
+expected: 2.80839161112(88) × 10^³ MeV   (SI measured)
+abs err:  0.000000003675503 × 10^³ MeV
+sigma:    -4.18
+within 5.2σ: yes
+
+098. E_tri ̇  —  triton mass energy equivalent in MeV   [built on pass 1]
+deps: l_p, t_p, Im(ipt), MeV, joule, m_tri, zhe_3, zhe_4, IB
+computed: 2808.921132770637025976132304506784718883320832451545529537988094511561583709388575013906690593216292 MeV
+expected: 2.80892113668(88) × 10^³ MeV   (SI measured)
+abs err:  0.000000003909363 × 10^³ MeV
+sigma:    -4.44
+within 5.2σ: yes
+
+099. E_α ̇  —  alpha particle mass energy equivalent in MeV   [built on pass 2]
+deps: l_p, t_p, Im(ipt), MeV, joule, m_α, zhe_3, zhe_4, IB
+computed: 3727.379406964774184840389529488698150420985287218829438774017362413403396362865060531650333602217667 MeV
+expected: 3.7273794118(12) × 10^³ MeV   (SI measured)
+abs err:  0.000000004835226 × 10^³ MeV
+sigma:    -4.03
+within 5.2σ: yes
+
+100. E_e  —  electron mass energy equivalent   [built on pass 1]
+deps: l_p, t_p, Im(ipt), m_e, zhe_3, zhe_4, IB
+computed: 0.00000000000008187105778460186814007245910295397821165242782243884486512522493234366347361167293366716019192588981 J
+expected: 8.1871057880(26) × 10^⁻¹⁴ J   (SI measured)
+abs err:  0.000000009539814 × 10^⁻¹⁴ J
+sigma:    -3.67
+within 5.2σ: yes
+
+101. E_μ  —  muon mass energy equivalent   [built on pass 2]
+deps: l_p, t_p, Im(ipt), m_μ, zhe_3, zhe_4, IB
+computed: 0.00000000001692833792050412864801910309968439817949158252567392586058222772430523302047103331341612573059435150 J
+expected: 1.692833804(38) × 10^⁻¹¹ J   (SI measured)
+abs err:  0.000000011949587 × 10^⁻¹¹ J
+sigma:    -0.31
+within 5.2σ: yes
+
+102. E_+  —  proton mass energy equivalent   [built on pass 1]
+deps: l_p, t_p, Im(ipt), m_+, zhe_3, zhe_4, IB
+computed: 0.0000000001503277616263899914067956921695266424814451803653661005637630343355242403473546958011064355798098982 J
+expected: 1.50327761802(47) × 10^⁻¹⁰ J   (SI measured)
+abs err:  0.000000001756100 × 10^⁻¹⁰ J
+sigma:    -3.74
+within 5.2σ: yes
+
+103. E_n  —  neutron mass energy equivalent   [built on pass 1]
+deps: l_p, t_p, Im(ipt), m_n, zhe_3, zhe_4, IB
+computed: 0.0000000001505349762499670564438482455873851218440552758505790475433948254392097613003745497635027074921959100 J
+expected: 1.50534976514(76) × 10^⁻¹⁰ J   (SI measured)
+abs err:  0.000000002640329 × 10^⁻¹⁰ J
+sigma:    -3.47
+within 5.2σ: yes
+
+104. E_τ  —  tau mass energy equivalent   [built on pass 1]
+deps: l_p, t_p, Im(ipt), m_τ, zhe_3, zhe_4, IB
+computed: 0.0000000002846847889941521001640372643069198174339622424814279919782026744733480564970312000186511178654303977 J
+expected: 2.84684(19) × 10^⁻¹⁰ J   (SI measured)
+abs err:  0.000007889941521 × 10^⁻¹⁰ J
+sigma:    +0.04
+within 5.2σ: yes
+
+105. E_de  —  deuteron mass energy equivalent   [built on pass 2]
+deps: l_p, t_p, Im(ipt), m_de, zhe_3, zhe_4, IB
+computed: 0.0000000003005063231399979553721565702448785383660709847473230939346550780572978988124657169227980566619165864 J
+expected: 3.00506323491(94) × 10^⁻¹⁰ J   (SI measured)
+abs err:  0.000000003510021 × 10^⁻¹⁰ J
+sigma:    -3.73
+within 5.2σ: yes
+
+106. E_he  —  helion mass energy equivalent   [built on pass 2]
+deps: l_p, t_p, Im(ipt), m_he, zhe_3, zhe_4, IB
+computed: 0.0000000004499539413187567959127805241667916015539678071113055301695348054750539817929340726818929229112174874 J
+expected: 4.4995394185(14) × 10^⁻¹⁰ J   (SI measured)
+abs err:  0.000000005312433 × 10^⁻¹⁰ J
+sigma:    -3.79
+within 5.2σ: yes
+
+107. E_tri  —  triton mass energy equivalent   [built on pass 1]
+deps: l_p, t_p, Im(ipt), m_tri, zhe_3, zhe_4, IB
+computed: 0.0000000004500387806292338400904993667612248659223328933788647099085453604179691071158882819583296513399780438 J
+expected: 4.5003878119(14) × 10^⁻¹⁰ J   (SI measured)
+abs err:  0.000000005607662 × 10^⁻¹⁰ J
+sigma:    -4.01
+within 5.2σ: yes
+
+108. E_α  —  alpha particle mass energy equivalent   [built on pass 2]
+deps: l_p, t_p, Im(ipt), m_α, zhe_3, zhe_4, IB
+computed: 0.0000000005971920192712357910275033808139506302495751675236471492469161713609552432577757877022054153682426335 J
+expected: 5.9719201997(19) × 10^⁻¹⁰ J   (SI measured)
+abs err:  0.000000006987643 × 10^⁻¹⁰ J
+sigma:    -3.68
+within 5.2σ: yes
+
+109. g_de  —  deuteron g factor   [built on pass 1]
+deps: K, W_We, pi, zhe_1, zhe_3, zhe_4, IB
+computed: 0.8574382359607749302747063221588412239361659759959897348283485782299949029572063743384892469691776191 -
+expected: 8.574382335(22) × 10^⁻¹ -   (SI measured)
+abs err:  0.000000024607750 × 10^⁻¹ -
+sigma:    +1.12
+within 5.2σ: yes
+
+110. μ_de/μ_N  —  deuteron magnetic moment to nuclear magneton ratio   [built on pass 1]
+deps: K, W_We, pi, zhe_1, zhe_3, zhe_4, IB
+computed: 0.8574382359607749302747063221588412239361659759959897348283485782299949029572063743384892469691776191 -
+expected: 8.574382335(22) × 10^⁻¹ -   (SI measured)
+abs err:  0.000000024607750 × 10^⁻¹ -
+sigma:    +1.12
+within 5.2σ: yes
+
+111. μ_de/μ_B  —  deuteron magnetic moment to Bohr magneton ratio   [built on pass 1]
+deps: K, W_We, m_+, m_e, pi, zhe_1, zhe_3, zhe_4, IB
+computed: 0.0004669754581827566938348953901913672729887297045784210208680619680733597725113542478389935049252009304 -
+expected: 4.669754568(12) × 10^⁻⁴ -   (SI measured)
+abs err:  0.000000013827567 × 10^⁻⁴ -
+sigma:    +1.15
+within 5.2σ: yes
+
+112. μ_μ  —  muon magnetic moment   [built on pass 2]
+deps: l_p, t_p, q_p, m_p, L_Li, P_up, m_μ, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -0.00000000000000000000000004490448330351953019442447133718639576102742562854465948225422125904446364366466601981590174411331569 J/T
+expected: -4.49044830(10) × 10^⁻²⁶ J/T   (SI measured)
+abs err:  0.000000030351953 × 10^⁻²⁶ J/T
+sigma:    -0.30
+within 5.2σ: yes
+
+113. a_e  —  electron magnetic moment anomaly   [built on pass 1]
+deps: L_Li, P_up, V_fe, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.001159652180254049014214365693332462392504989644997496254329413896306322403584584597329745252489569565 -
+expected: 1.15965218046(18) × 10^⁻³ -   (SI measured)
+abs err:  0.000000000205951 × 10^⁻³ -
+sigma:    -1.14
+within 5.2σ: yes
+
+114. a_μ  —  muon magnetic moment anomaly   [built on pass 1]
+deps: K, L_Li, P_up, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.001165920601107197395938777289270520053309929579279418811339360608878834865459246099088787845933318052 -
+expected: 1.16592062(41) × 10^⁻³ -   (SI measured)
+abs err:  0.000000018892803 × 10^⁻³ -
+sigma:    -0.05
+within 5.2σ: yes
+
+115. g_μ  —  muon g factor   [built on pass 1]
+deps: C_d, P_up, zeta(2), zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -2.002331841728403121007191967178882102086057679907529437833544670834226804603947358191732697601990216 -
+expected: -2.00233184123(82) × 10^⁰ -   (SI measured)
+abs err:  0.000000000498403 × 10^⁰ -
+sigma:    -0.61
+within 5.2σ: yes
+
+116. μ_μ/μ_B  —  muon magnetic moment to Bohr magneton ratio   [built on pass 2]
+deps: C_d, P_up, m_e, m_μ, zeta(2), zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -0.004841970507911872484750432277430196865917690936385145244801923003135157317900909093883536183166817851 -
+expected: -4.84197048(11) × 10^⁻³ -   (SI measured)
+abs err:  0.000000027911872 × 10^⁻³ -
+sigma:    -0.25
+within 5.2σ: yes
+
+117. μ_μ/μ_N  —  muon magnetic moment to nuclear magneton ratio   [built on pass 2]
+deps: C_d, P_up, m_+, m_μ, zeta(2), zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -8.890597092691833122249855563318310573027342840382923828662654366826812225260875395448226776668684988 -
+expected: -8.89059704(20) × 10^⁰ -   (SI measured)
+abs err:  0.000000052691833 × 10^⁰ -
+sigma:    -0.26
+within 5.2σ: yes
+
+118. R  —  molar gas constant   [built on pass 1]
+deps: l_p, t_p, q_p, T_p, C_d, coulomb, e, meter, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 8.314462619781648232267096980718247142681441951913951443120761669696066832713381066894586161374781983 J/mol*K
+expected: 8.31446261800000 × 10^⁰ J/mol*K   (SI exact (defined))
+digits:   almost-full match (9/10)
+
+119. V_m_0  —  molar volume of ideal gas (273.15 K, 100kPa)   [built on pass 1]
+deps: l_p, t_p, q_p, T_p, C_d, T_0, coulomb, e, meter, p_0, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.02271095464593357214643757540283189207023435869165295836688436050077480655355660038422256209979521699 m^3/mol
+expected: 2.27109546400000 × 10^⁻² m^3/mol   (SI exact (defined))
+digits:   full match (10/10)
+
+120. V_m_1  —  molar volume of ideal gas (273.15 K, 100kPa)   [built on pass 1]
+deps: l_p, t_p, q_p, T_p, C_d, T_0, coulomb, e, meter, p_1, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.02241396954940396954990138209013756927731000117607003046324634641083129193541238626619547209454252848 m^3/mol
+expected: 2.24139695400000 × 10^⁻² m^3/mol   (SI exact (defined))
+digits:   full match (10/10)
+
+121. g_e  —  electron g factor   [built on pass 1]
+deps: C_CFP, D_d, P_up, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -2.002319304360653393430557765357331175429134093864047220424259327501492366418856964847358515821495599 -
+expected: -2.00231930436092(36) × 10^⁰ -   (SI measured)
+abs err:  0.000000000000266 × 10^⁰ -
+sigma:    +0.74
+within 5.2σ: yes
+
+122. μ_e/μ_B  —  electron magnetic moment to Bohr magneton ratio   [built on pass 1]
+deps: C_CFP, D_d, P_up, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -1.001159652180326696715278882678665587714567046932023610212129663750746183209428482423679257910747799 -
+expected: -1.00115965218046(18) × 10^⁰ -   (SI measured)
+abs err:  0.000000000000133 × 10^⁰ -
+sigma:    +0.74
+within 5.2σ: yes
+
+123. μ_e/μ_N  —  electron magnetic moment to nuclear magneton ratio   [built on pass 1]
+deps: C_CFP, D_d, P_up, m_+, m_e, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -1838.281971864662712227702752263168005646404856846813803212891664487985145312530613612741645999599117 -
+expected: -1.838281971877(32) × 10^³ -   (SI measured)
+abs err:  0.000000000012337 × 10^³ -
+sigma:    +0.39
+within 5.2σ: yes
+
+124. μ_e  —  electron magnetic moment   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, P_up, m_e, pi, s, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -0.000000000000000000000009284764692071088482298546681304082143989866594761201636858723647933986505648728244429609299662049783 J/T
+expected: -9.2847646917(29) × 10^⁻²⁴ J/T   (SI measured)
+abs err:  0.000000000371090 × 10^⁻²⁴ J/T
+sigma:    -0.13
+within 5.2σ: yes
+
+125. γ_e  —  electron gyromagnetic ratio   [built on pass 1]
+deps: q_p, P_up, m_e, pi, s, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 176085962907.6197283137091464693231944279378250571329882829091637226595215711540660586518427468424959 1/s*T
+expected: 1.76085962784(55) × 10^¹¹ 1/s*T   (SI measured)
+abs err:  0.000000001236197 × 10^¹¹ 1/s*T
+sigma:    +2.25
+within 5.2σ: yes
+
+126. γ_e ̇  —  electron gyromagnetic ratio in MHz/T   [built on pass 1]
+deps: q_p, MHz, P_up, m_e, pi, s, second, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 28024.95140584383970011847841494449784404267167259910408750002773245062062132820422440450614458121929 MHz/T
+expected: 2.80249513861(87) × 10^⁴ MHz/T   (SI measured)
+abs err:  0.000000001974384 × 10^⁴ MHz/T
+sigma:    +2.27
+within 5.2σ: yes
+
+127. γ_+' ̇  —  shielded proton gyromagnetic ratio in MHz/T   [built on pass 1]
+deps: q_p, MHz, S, m_+, pi, s, second, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 42.57638528101551271635541760580955086672587037499380105395013537996925886096205644144206596596318313 MHz/T
+expected: 4.257638543(17) × 10^¹ MHz/T   (SI measured)
+abs err:  0.000000014898448 × 10^¹ MHz/T
+sigma:    -0.88
+within 5.2σ: yes
+
+128. γ_+'  —  shielded proton gyromagnetic ratio   [built on pass 1]
+deps: q_p, S, m_+, s, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 267515318.4304936028072407842642747937397323830815942628002019917233520746984112284236250608648188006 1/s*T
+expected: 2.675153194(11) × 10^⁸ 1/s*T   (SI measured)
+abs err:  0.000000009695064 × 10^⁸ 1/s*T
+sigma:    -0.88
+within 5.2σ: yes
+
+129. μ_+'  —  shielded proton magnetic moment   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, M, S, m_+, s, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.00000000000000000000000001410570579397981811213963961608510063689505117100572625068672894235447171397610326046814573471394106 J/T
+expected: 1.4105705830(58) × 10^⁻²⁶ J/T   (SI measured)
+abs err:  0.000000003602018 × 10^⁻²⁶ J/T
+sigma:    -0.62
+within 5.2σ: yes
+
+130. μ_+/μ_B  —  proton magnetic moment to Bohr magneton ratio   [built on pass 1]
+deps: K, S, m_+, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.001521032202552428075019071734701270987151182394696226017170448156629724486311207094618098225156331722 -
+expected: 1.52103220230(45) × 10^⁻³ -   (SI measured)
+abs err:  0.000000000252428 × 10^⁻³ -
+sigma:    +0.56
+within 5.2σ: yes
+
+131. μ_+/μ_N  —  proton magnetic moment to nuclear magneton ratio   [built on pass 1]
+deps: K, S, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 2.792847345064704631205912032258814710003766989569280242175202120190520706571573374490910987034120351 -
+expected: 2.79284734463(82) × 10^⁰ -   (SI measured)
+abs err:  0.000000000434704 × 10^⁰ -
+sigma:    +0.53
+within 5.2σ: yes
+
+132. g_+  —  proton g factor   [built on pass 1]
+deps: K, S, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 5.585694690129409262411824064517629420007533979138560484350404240381041413143146748981821974068240701 -
+expected: 5.5856946893(16) × 10^⁰ -   (SI measured)
+abs err:  0.000000000829409 × 10^⁰ -
+sigma:    +0.52
+within 5.2σ: yes
+
+133. μ_n/μ_+'  —  neutron to shielded proton magnetic moment ratio   [built on pass 1]
+deps: C_CFP, S, V_fe, m_+, m_n, pi, zhe_2, zhe_3, zhe_4, IB
+computed: -0.6849970049032614911147433655973733352412742741608631303341496025369354518524852875711680865255662718 -
+expected: -6.8499694(16) × 10^⁻¹ -   (SI measured)
+abs err:  0.000000649032615 × 10^⁻¹ -
+sigma:    -0.41
+within 5.2σ: yes
+
+134. μ_e/μ_+  —  electron-proton magnetic moment ratio   [built on pass 1]
+deps: K, P_up, S, m_+, m_e, x_infinity, zhe_2, zhe_3, zhe_4, IB
+computed: -658.2106874904405050823249626817752724261943557367770338848876762588496431579148169577870815682524890 -
+expected: -6.5821068789(19) × 10^² -   (SI measured)
+abs err:  0.000000003995596 × 10^² -
+sigma:    +2.10
+within 5.2σ: yes
+
+135. μ_e/μ_+'  —  electron to shielded proton magnetic moment ratio   [built on pass 1]
+deps: K, P_up, S, m_+, m_e, zhe_2, zhe_3, zhe_4, IB
+computed: -658.2275870290507256835337792922380118557387422567897998895364008518915285693194562083272460895153741 -
+expected: -6.582275856(27) × 10^² -   (SI measured)
+abs err:  0.000000014290507 × 10^² -
+sigma:    -0.53
+within 5.2σ: yes
+
+136. μ_μ/μ_+  —  muon-proton magnetic moment ratio   [built on pass 2]
+deps: K, P_up, S, m_+, m_μ, pi, zhe_2, zhe_3, zhe_4, IB
+computed: -3.183345112213159841153660592490404369695637108545311329440554092651510679294302165602025984865319545 -
+expected: -3.183345146(71) × 10^⁰ -   (SI measured)
+abs err:  0.000000033786840 × 10^⁰ -
+sigma:    +0.48
+within 5.2σ: yes
+
+137. μ_+'μ_N  —  shielded proton magnetic moment to nuclear magneton ratio   [built on pass 1]
+deps: K, S, e, pi, zhe_1, zhe_2, zhe_3, zhe_4, γ, IB
+computed: 2.792775622348492058112456290851422365509609298317088612583778960870902231715863715932502606791951094 -
+expected: 2.792775648(11) × 10^⁰ -   (SI measured)
+abs err:  0.000000025651508 × 10^⁰ -
+sigma:    -2.33
+within 5.2σ: yes
+
+138. μ_+'μ_B  —  shielded proton magnetic moment to Bohr magneton ratio   [built on pass 1]
+deps: K, S, e, m_+, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, γ, IB
+computed: 0.001520993141140351030278119535709678311335535450301295284055004499219209800636407188161018501644513782 -
+expected: 1.5209931551(62) × 10^⁻³ -   (SI measured)
+abs err:  0.000000013959649 × 10^⁻³ -
+sigma:    -2.25
+within 5.2σ: yes
+
+139. γ_+  —  proton gyromagnetic ratio   [built on pass 1]
+deps: q_p, S, m_+, pi, s, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 267522187.1704109698910263998445557648342602313542060747285979677316737847012968349105099632715199236 1/s*T
+expected: 2.6752218708(11) × 10^⁸ 1/s*T   (SI measured)
+abs err:  0.000000000904109 × 10^⁸ 1/s*T
+sigma:    +0.82
+within 5.2σ: yes
+
+140. γ_+ ̇  —  proton gyromagnetic ratio in MHz/T   [built on pass 1]
+deps: q_p, MHz, S, m_+, pi, s, second, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 42.57747847492617430557331125086311410293572506974301740430485073169412407509935057675414536280943308 MHz/T
+expected: 4.2577478461(18) × 10^¹ MHz/T   (SI measured)
+abs err:  0.000000001392618 × 10^¹ MHz/T
+sigma:    +0.77
+within 5.2σ: yes
+
+141. μ_+  —  proton magnetic moment   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, Im(omega_1), S, m_+, s, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.00000000000000000000000001410606797163107302086059155945641873038013165589536903055793859035123925458880348581224896666379124 J/T
+expected: 1.41060679545(60) × 10^⁻²⁶ J/T   (SI measured)
+abs err:  0.000000001713107 × 10^⁻²⁶ J/T
+sigma:    +2.86
+within 5.2σ: yes
+
+142. F  —  Faraday constant   [built on pass 1]
+deps: m_p, K, e, zhe_1, zhe_2, zhe_3, zhe_4, γ, IB
+computed: 96485.33220428574569995244466750878915231947865925568046532257519814605302259873031260261433489655652 C/mol
+expected: 9.64853321200000 × 10^⁴ C/mol   (SI exact (defined))
+digits:   almost-full match (8/10)
+
+143. M_p  —  molar Planck constant   [built on pass 1]
+deps: l_p, t_p, q_p, K, e, pi, s, second, zhe_1, zhe_2, zhe_3, zhe_4, γ, IB
+computed: 0.0000000003990312710622953082351140361638525653746424895509134933928406613128147134336345743250459080650005941 J/(Hz*mol)
+expected: 3.99031271200000 × 10^⁻¹⁰ J/(Hz*mol)   (SI exact (defined))
+digits:   almost-full match (9/10)
+
+144. V_m(Si)  —  molar volume of silicon   [built on pass 1]
+deps: l_p, q_p, m_p, D_d, e, m_e, pi, s, zhe_1, zhe_2, zhe_3, zhe_4, γ, IB
+computed: 0.00001205883172157723070997191304196957331761416764841897322576582768104487441524880923961216588458608836 m^3/mol
+expected: 1.205883199(60) × 10^⁻⁵ m^3/mol   (SI measured)
+abs err:  0.000000026842277 × 10^⁻⁵ m^3/mol
+sigma:    -0.45
+within 5.2σ: yes
+
+145. c  —  speed of light   [built on pass 1]
+deps: l_p, t_p, G_Gi, zhe_1, zhe_2, IB
+computed: 299792458.0978980671007947735445441313618071755339128483836887639217553683591258521660158616933305505 m/s
+expected: 2.99792458000000 × 10^⁸ m/s   (SI exact (defined))
+digits:   full match (9/9)
+
+146. 1/m⋮Hz  —  inverse meter-hertz relationship   [built on pass 1]
+deps: l_p, t_p, G_Gi, meter, zhe_1, zhe_2, IB
+computed: 299792458.0978980671007947735445441313618071755339128483836887639217553683591258521660158616933305505 Hz
+expected: 2.99792458000000 × 10^⁸ Hz   (SI exact (defined))
+digits:   full match (9/9)
+
+147. r_e  —  classical electron radius   [built on pass 1]
+deps: l_p, m_p, C_R1, m_e, zhe_1, zhe_2, IB
+computed: 0.000000000000002817940326994785193411391265369616494126434626034028971555185757653362134146123966706651289268343815 m
+expected: 2.8179403205(13) × 10^⁻¹⁵ m   (SI measured)
+abs err:  0.000000006494785 × 10^⁻¹⁵ m
+sigma:    +5.00
+within 5.2σ: yes
+
+148. a_0  —  atomic unit of length   [built on pass 1]
+deps: l_p, m_p, C_R1, m_e, zhe_1, zhe_2, IB
+computed: 0.00000000005291772105211009553704432456976513981492293914176457540825139320832944460057157567565654776022140897 m
+expected: 5.29177210544(82) × 10^⁻¹¹ m   (SI measured)
+abs err:  0.000000000228990 × 10^⁻¹¹ m
+sigma:    -0.28
+within 5.2σ: yes
+
+149. σ_e  —  Thomson cross section   [built on pass 1]
+deps: l_p, m_p, C_R1, m_e, pi, zhe_1, zhe_2, IB
+computed: 0.00000000000000000000000000006652458735897711126498438437289859557832967658927672064409819508063133901361593994280815754614714828 m^2
+expected: 6.6524587051(62) × 10^⁻²⁹ m^2   (SI measured)
+abs err:  0.000000030797712 × 10^⁻²⁹ m^2
+sigma:    +4.97
+within 5.2σ: yes
+
+150. G_F/(ℏc)^3  —  Fermi coupling constant   [built on pass 1]
+deps: l_p, t_p, m_p, C_R1, GeV, joule, kilogram, pi, zhe_1, zhe_2, IB
+computed: 0.00001166378521833528420451914428363850588882905727448713633120970269960795465883610521814728779742032277 1/GeV^2
+expected: 1.1663787(06) × 10^⁻⁵ 1/GeV^2   (SI measured)
+abs err:  0.000000178166472 × 10^⁻⁵ 1/GeV^2
+sigma:    -0.30
+within 5.2σ: yes
+
+151. A_mass  —  atomic mass constant   [built on pass 1]
+deps: L, P_up, m_e, zhe_1, zhe_2, IB
+computed: 0.000000000000000000000000001660539068213224882283845370736915861724620413677450490460344971074809395779072980202853428649664695 kg
+expected: 1.66053906892(52) × 10^⁻²⁷ kg   (SI measured)
+abs err:  0.000000000706775 × 10^⁻²⁷ kg
+sigma:    -1.36
+within 5.2σ: yes
+
+152. kg⋮A_mass  —  kilogram-atomic mass unit relationship   [built on pass 1]
+deps: L, P_up, kilogram, m_e, zhe_1, zhe_2, IB
+computed: 602214075623045991946866105.2801624924821082511899787807682249411940235438423492566946209079899639940 u
+expected: 6.0221407537(19) × 10^²⁶ u   (SI measured)
+abs err:  0.000000002530460 × 10^²⁶ u
+sigma:    +1.33
+within 5.2σ: yes
+
+153. A_r(e)  —  electron relative atomic mass   [built on pass 1]
+deps: L, P_up, zhe_1, zhe_2, IB
+computed: 0.0005485799090495407639975880215156877548193279648702991145610454440292111465389946338054415476656962755 -
+expected: 5.485799090441(97) × 10^⁻⁴ -   (SI measured)
+abs err:  0.000000000054407 × 10^⁻⁴ -
+sigma:    +0.56
+within 5.2σ: yes
+
+154. A_r(+)  —  proton relative atomic mass   [built on pass 1]
+deps: L, P_up, m_+, m_e, zhe_1, zhe_2, IB
+computed: 1.007276466582263231699749757371604815767549298295159437188786452968084687900578166137666403449441255 -
+expected: 1.0072764665789(83) × 10^⁰ -   (SI measured)
+abs err:  0.000000000003363 × 10^⁰ -
+sigma:    +0.41
+within 5.2σ: yes
+
+155. A_r(n)  —  neutron relative atomic mass   [built on pass 1]
+deps: L, P_up, m_e, m_n, zhe_1, zhe_2, IB
+computed: 1.008664915472892084456254938218188325781889044404479432484138826104092212079167069700734392666885639 -
+expected: 1.00866491606(40) × 10^⁰ -   (SI measured)
+abs err:  0.000000000587108 × 10^⁰ -
+sigma:    -1.47
+within 5.2σ: yes
+
+156. A_r(de)  —  deuteron relative atomic mass   [built on pass 2]
+deps: L, P_up, m_de, m_e, zhe_1, zhe_2, IB
+computed: 2.013553212548781106948298318285365223114725457402066904919592419901148175884363818082285593229059568 -
+expected: 2.013553212544(15) × 10^⁰ -   (SI measured)
+abs err:  0.000000000004781 × 10^⁰ -
+sigma:    +0.32
+within 5.2σ: yes
+
+157. A_r(he)  —  helion relative atomic mass   [built on pass 2]
+deps: L, P_up, m_e, m_he, zhe_1, zhe_2, IB
+computed: 3.014932246930738073334248989182514492761867098045673089166571233786132654016798557198117194062935644 -
+expected: 3.014932246932(74) × 10^⁰ -   (SI measured)
+abs err:  0.000000000001262 × 10^⁰ -
+sigma:    -0.02
+within 5.2σ: yes
+
+158. A_r(tri)  —  triton relative atomic mass   [built on pass 1]
+deps: L, P_up, m_e, m_tri, zhe_1, zhe_2, IB
+computed: 3.015500715721599060637383295273754192278628808176220097160406743986826504901299203685045211435692513 -
+expected: 3.01550071597(10) × 10^⁰ -   (SI measured)
+abs err:  0.000000000248401 × 10^⁰ -
+sigma:    -2.48
+within 5.2σ: yes
+
+159. A_r(α)  —  alpha particle relative atomic mass   [built on pass 2]
+deps: L, P_up, m_e, m_α, zhe_1, zhe_2, IB
+computed: 4.001506179129175062788989923077739763476445103590442802119025052917263212234711414700107473554773521 -
+expected: 4.001506179129(62) × 10^⁰ -   (SI measured)
+abs err:  0.000000000000176 × 10^⁰ -
+sigma:    +0.00
+within 5.2σ: yes
+
+160. m_e/A_mass  —  electron mass in u   [built on pass 1]
+deps: L, P_up, zhe_1, zhe_2, IB
+computed: 0.0005485799090495407639975880215156877548193279648702991145610454440292111465389946338054415476656962755 u
+expected: 5.485799090441(97) × 10^⁻⁴ u   (SI measured)
+abs err:  0.000000000054407 × 10^⁻⁴ u
+sigma:    +0.56
+within 5.2σ: yes
+
+161. m_∆/A_mass  —  neutron-proton mass difference in u   [built on pass 1]
+deps: L, P_up, m_+, m_e, m_n, zhe_1, zhe_2, IB
+computed: 0.001388448890628852756505180846583510014339746109319995295352373136007524178588903563067989217444383765 u
+expected: 1.38844945(40) × 10^⁻³ u   (SI measured)
+abs err:  0.000000559371147 × 10^⁻³ u
+sigma:    -1.40
+within 5.2σ: yes
+
+162. m_μ/A_mass  —  muon mass in u   [built on pass 2]
+deps: L, P_up, m_e, m_μ, zhe_1, zhe_2, IB
+computed: 0.1134289250448238433071248605729083494949219123450297348670362190771056780659971688099340599527957561 u
+expected: 1.134289257(25) × 10^⁻¹ u   (SI measured)
+abs err:  0.000000006551762 × 10^⁻¹ u
+sigma:    -0.26
+within 5.2σ: yes
+
+163. m_+/A_mass  —  proton mass in u   [built on pass 1]
+deps: L, P_up, m_+, m_e, zhe_1, zhe_2, IB
+computed: 1.007276466582263231699749757371604815767549298295159437188786452968084687900578166137666403449441255 u
+expected: 1.0072764665789(83) × 10^⁰ u   (SI measured)
+abs err:  0.000000000003363 × 10^⁰ u
+sigma:    +0.41
+within 5.2σ: yes
+
+164. m_n/A_mass  —  neutron mass in u   [built on pass 1]
+deps: L, P_up, m_e, m_n, zhe_1, zhe_2, IB
+computed: 1.008664915472892084456254938218188325781889044404479432484138826104092212079167069700734392666885639 u
+expected: 1.00866491606(40) × 10^⁰ u   (SI measured)
+abs err:  0.000000000587108 × 10^⁰ u
+sigma:    -1.47
+within 5.2σ: yes
+
+165. m_τ/A_mass  —  tau mass in u   [built on pass 1]
+deps: L, P_up, m_e, m_τ, zhe_1, zhe_2, IB
+computed: 1.907540465216417689878178230514909341046574249313332834928957067513942798658232922896418147875973918 u
+expected: 1.90754(13) × 10^⁰ u   (SI measured)
+abs err:  0.000000465216418 × 10^⁰ u
+sigma:    +0.00
+within 5.2σ: yes
+
+166. m_de/A_mass  —  deuteron mass in u   [built on pass 2]
+deps: L, P_up, m_de, m_e, zhe_1, zhe_2, IB
+computed: 2.013553212548781106948298318285365223114725457402066904919592419901148175884363818082285593229059568 u
+expected: 2.013553212544(15) × 10^⁰ u   (SI measured)
+abs err:  0.000000000004781 × 10^⁰ u
+sigma:    +0.32
+within 5.2σ: yes
+
+167. m_he/A_mass  —  helion mass in u   [built on pass 2]
+deps: L, P_up, m_e, m_he, zhe_1, zhe_2, IB
+computed: 3.014932246930738073334248989182514492761867098045673089166571233786132654016798557198117194062935644 u
+expected: 3.014932246932(74) × 10^⁰ u   (SI measured)
+abs err:  0.000000000001262 × 10^⁰ u
+sigma:    -0.02
+within 5.2σ: yes
+
+168. m_tri/A_mass  —  triton mass in u   [built on pass 1]
+deps: L, P_up, m_e, m_tri, zhe_1, zhe_2, IB
+computed: 3.015500715721599060637383295273754192278628808176220097160406743986826504901299203685045211435692513 u
+expected: 3.01550071597(10) × 10^⁰ u   (SI measured)
+abs err:  0.000000000248401 × 10^⁰ u
+sigma:    -2.48
+within 5.2σ: yes
+
+169. m_α/A_mass  —  alpha particle mass in u   [built on pass 2]
+deps: L, P_up, m_e, m_α, zhe_1, zhe_2, IB
+computed: 4.001506179129175062788989923077739763476445103590442802119025052917263212234711414700107473554773521 u
+expected: 4.001506179129(62) × 10^⁰ u   (SI measured)
+abs err:  0.000000000000176 × 10^⁰ u
+sigma:    +0.00
+within 5.2σ: yes
+
+170. eV⋮A_mass  —  electron volt-atomic mass unit relationship   [built on pass 1]
+deps: l_p, t_p, q_p, P_up, coulomb, joule, m_e, zhe_1, zhe_2, α_F, IB
+computed: 0.000000001073544101426670004751568867127015840974311163213670340044015440518877687641594126355600110818021466 u
+expected: 1.07354410085(33) × 10^⁻⁹ u   (SI measured)
+abs err:  0.000000000576670 × 10^⁻⁹ u
+sigma:    +1.75
+within 5.2σ: yes
+
+171. A_mass⋮eV  —  atomic mass unit-electron volt relationship   [built on pass 1]
+deps: l_p, t_p, q_p, P_up, coulomb, m_e, zhe_1, zhe_2, α_F, IB
+computed: 931494103.1954453046105749391789430958984169933139794414772921943096687728971754876291686917893210272 eV
+expected: 9.3149410372(29) × 10^⁸ eV   (SI measured)
+abs err:  0.000000005245547 × 10^⁸ eV
+sigma:    -1.81
+within 5.2σ: yes
+
+172. J⋮1/m  —  joule-inverse meter relationship   [built on pass 1]
+deps: l_p, t_p, m_p, joule, pi, zhe_1, zhe_2, δ_F, IB
+computed: 5034116567783844453122477.231498939764522485276016151636625618969140647502895534274842147826002107258 cycles/m
+expected: 5.03411656700000 × 10^²⁴ cycles/m   (SI exact (defined))
+digits:   full match (10/10)
+
+173. eV⋮1/m  —  electron volt-inverse meter relationship   [built on pass 1]
+deps: l_p, t_p, m_p, eV, pi, zhe_1, zhe_2, δ_F, IB
+computed: 806554.3938843868238196969274254904910620737472800097161565135766053521050297001950358764968003915130 cycles/m
+expected: 8.06554393700000 × 10^⁵ cycles/m   (SI exact (defined))
+digits:   almost-full match (9/10)
+
+174. 1/m⋮eV  —  inverse meter-electron volt relationship   [built on pass 1]
+deps: l_p, t_p, m_p, eV, joule, meter, pi, zhe_1, zhe_2, δ_F, IB
+computed: 0.000001239841984102213603274975008117475829849758102835082144435522382539909326656157165179744735091290898 eV
+expected: 1.23984198400000 × 10^⁻⁶ eV   (SI exact (defined))
+digits:   full match (10/10)
+
+175. 1/m⋮J  —  inverse meter-joule relationship   [built on pass 1]
+deps: l_p, t_p, m_p, meter, pi, zhe_1, zhe_2, δ_F, IB
+computed: 0.0000000000000000000000001986445857053730795058661423554909781583511465899933847966828083728495201957694506769862072853758831 J
+expected: 1.98644585700000 × 10^⁻²⁵ J   (SI exact (defined))
+digits:   full match (10/10)
+
+176. ℏc ̇  —  reduced Planck constant times c in MeV fm   [built on pass 1]
+deps: l_p, t_p, m_p, MeV, fm, joule, meter, zhe_1, zhe_2, δ_F, IB
+computed: 197.3269804227307184264183579366311666623393670965389603657092386175506439612228536797781076617569071 MeV fm
+expected: 1.97326980400000 × 10^² MeV fm   (SI exact (defined))
+digits:   full match (10/10)
+
+177. A_e_pot  —  atomic unit of electric potential   [built on pass 1]
+deps: l_p, t_p, q_p, A_mass, P_up, zhe_1, zhe_2, δ_F, IB
+computed: 27.21138624596085600985121372013538158360454352720655835439990722805850445203290371954482499825890553 V
+expected: 2.7211386245981(30) × 10^¹ V   (SI measured)
+abs err:  0.000000000002015 × 10^¹ V
+sigma:    -0.67
+within 5.2σ: yes
+
+178. R_∞hc ̇  —  Rydberg constant times hc in eV   [built on pass 1]
+deps: l_p, t_p, q_p, A_mass, P_up, coulomb, zhe_1, zhe_2, δ_F, IB
+computed: 13.60569312298042800492560686006769079180227176360327917719995361402925222601645185977241249912945277 eV
+expected: 1.3605693122990(15) × 10^¹ eV   (SI measured)
+abs err:  0.000000000000957 × 10^¹ eV
+sigma:    -0.64
+within 5.2σ: yes
+
+179. E_h⋮eV  —  hartree-electron volt relationship   [built on pass 1]
+deps: l_p, t_p, q_p, A_mass, P_up, coulomb, zhe_1, zhe_2, δ_F, IB
+computed: 27.21138624596085600985121372013538158360454352720655835439990722805850445203290371954482499825890553 eV
+expected: 2.7211386245981(30) × 10^¹ eV   (SI measured)
+abs err:  0.000000000002015 × 10^¹ eV
+sigma:    -0.67
+within 5.2σ: yes
+
+180. eV⋮E_h  —  electron volt-hartree relationship   [built on pass 1]
+deps: l_p, t_p, q_p, A_mass, P_up, coulomb, zhe_1, zhe_2, δ_F, IB
+computed: 0.03674932217567728584731398927463497789802085352687053048424820413372058909007194224343388507498957934 E_h
+expected: 3.6749322175665(40) × 10^⁻² E_h   (SI measured)
+abs err:  0.000000000001228 × 10^⁻² E_h
+sigma:    +0.31
+within 5.2σ: yes
+
+181. F_90  —  conventional value of farad-90   [built on pass 1]
+deps: C_d, farad, zhe_1, zhe_3, zhe_4, IB
+computed: 0.9999999821780258237873644718042483345779503444046957866666666666666666666666666666666666666666666667 F
+expected: 9.99999982200000 × 10^⁻¹ F   (SI exact (defined))
+digits:   almost-full match (9/11)
+
+182. H_90  —  conventional value of henry-90   [built on pass 1]
+deps: C_d, henry, zhe_1, zhe_3, zhe_4, IB
+computed: 1.000000017821974176212635528195751665422049655595304213333333333333333333333333333333333333333333333 H
+expected: 1.00000001779000 × 10^⁰ H   (SI exact (defined))
+digits:   almost-full match (10/12)
+
+183. Ω_90  —  conventional value of ohm-90   [built on pass 1]
+deps: C_d, ohm, zhe_1, zhe_3, zhe_4, IB
+computed: 1.000000017821974176212635528195751665422049655595304213333333333333333333333333333333333333333333333 Ω
+expected: 1.00000001779000 × 10^⁰ Ω   (SI exact (defined))
+digits:   almost-full match (10/12)
+
+184. m_∆  —  neutron-proton mass difference   [built on pass 1]
+deps: C_d, m_+, m_n, zhe_1, zhe_3, zhe_4, IB
+computed: 0.000000000000000000000000000002305575065252141500038092690582529553565381977767970807662097162983585686454286063661935798002872846 kg
+expected: 2.30557461(67) × 10^⁻³⁰ kg   (SI measured)
+abs err:  0.000000455252141 × 10^⁻³⁰ kg
+sigma:    +0.68
+within 5.2σ: yes
+
+185. σ_he  —  helion shielding shift   [built on pass 1]
+deps: P, pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 0.00005996702991533363587538057061957385062450798263444642021131159731517332770912599405619043206433110635 -
+expected: 5.9967029(23) × 10^⁻⁵ -   (SI measured)
+abs err:  0.000000091533363 × 10^⁻⁵ -
+sigma:    +0.04
+within 5.2σ: yes
+
+186. σ_tp  —  shielding difference of t and p in HT   [built on pass 1]
+deps: pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 0.00000002393692514640317661483263270790572198863667412361923016293734861641929788983315710942769059719145764 -
+expected: 2.39450(20) × 10^⁻⁸ -   (SI measured)
+abs err:  0.000807485359682 × 10^⁻⁸ -
+sigma:    -4.04
+within 5.2σ: yes
+
+187. σ_dp  —  shielding difference of d and p in HD   [built on pass 1]
+deps: pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 0.00000001987697451108894685411529295621638024336461596231931309054670418912839817788396809626916702955855342 -
+expected: 1.98770(10) × 10^⁻⁸ -   (SI measured)
+abs err:  0.000002548891105 × 10^⁻⁸ -
+sigma:    -0.03
+within 5.2σ: yes
+
+188. σ_+'  —  proton magnetic shielding correction   [built on pass 1]
+deps: pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 0.00002566841247597870727692878098975333084819650974885368140326487837760643385198648653293397556383046358 -
+expected: 2.56715(41) × 10^⁻⁵ -   (SI measured)
+abs err:  0.000308752402129 × 10^⁻⁵ -
+sigma:    -0.75
+within 5.2σ: yes
+
+189. A_ep  —  atomic unit of electric polarizability   [built on pass 1]
+deps: t_p, q_p, m_p, m_e, pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 1.648777273004234982089672302163506041703886264634228891917316197804524039477389336615906914616160342e-41 m^2*C^2/J
+expected: 1.64877727212(51) × 10^⁻⁴¹ m^2*C^2/J   (SI measured)
+abs err:  0.000000000884235 × 10^⁻⁴¹ m^2*C^2/J
+sigma:    +1.73
+within 5.2σ: yes
+
+190. A_ef  —  atomic unit of electric field   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, m_e, pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 514220674774.7423392794008420826363778207646400007912397256079500742710330832931496862764333208806582 V/m
+expected: 5.14220675112(80) × 10^¹¹ V/m   (SI measured)
+abs err:  0.000000003372577 × 10^¹¹ V/m
+sigma:    -4.22
+within 5.2σ: yes
+
+191. A_force  —  atomic unit of force   [built on pass 1]
+deps: l_p, t_p, m_p, m_e, pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 0.00000008238723498037706928414578371352092274171281660708131005894758186509358610539487583060975821504975973 N
+expected: 8.2387235038(13) × 10^⁻⁸ N   (SI measured)
+abs err:  0.000000005762292 × 10^⁻⁸ N
+sigma:    -4.43
+within 5.2σ: yes
+
+192. A_cd  —  atomic unit of charge density   [built on pass 1]
+deps: l_p, q_p, m_p, m_e, pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 1081202385617.973668108654475437855887589413370615576568410118002374106784009341886118948376000658090 C/m^3
+expected: 1.08120238677(51) × 10^¹² C/m^3   (SI measured)
+abs err:  0.000000001152026 × 10^¹² C/m^3
+sigma:    -2.26
+within 5.2σ: yes
+
+193. μ_n  —  neutron magnetic moment   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, C_CFP, m_n, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -0.000000000000000000000000009662358187981828644865829652462682953898410894440868095515180706921731683072026836722070330219763879 J/T
+expected: -9.6623653(23) × 10^⁻²⁷ J/T   (SI measured)
+abs err:  0.000007112018171 × 10^⁻²⁷ J/T
+sigma:    +3.09
+within 5.2σ: yes
+
+194. γ_n ̇  —  neutron gyromagnetic ratio in MHz/T   [built on pass 1]
+deps: q_p, C_CFP, MHz, m_n, pi, second, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 29.16468718979309074123815067186103462336656874856303274811339872142775233129014932955198912372463661 MHz/T
+expected: 2.91646935(69) × 10^¹ MHz/T   (SI measured)
+abs err:  0.000000631020691 × 10^¹ MHz/T
+sigma:    -0.91
+within 5.2σ: yes
+
+195. γ_n  —  neutron gyromagnetic ratio   [built on pass 1]
+deps: q_p, C_CFP, m_n, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 183247134.0393964626410083305246009781890079082336407931421728882372136436523912583849300439714113880 1/(s*T)
+expected: 1.83247174(43) × 10^⁸ 1/(s*T)   (SI measured)
+abs err:  0.000000399606035 × 10^⁸ 1/(s*T)
+sigma:    -0.93
+within 5.2σ: yes
+
+196. μ_n/μ_B  —  neutron magnetic moment to Bohr magneton ratio   [built on pass 1]
+deps: C_CFP, m_e, m_n, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -0.001041875461652718034391924979369157264394791299132781955464331631885728685597123930049413980319069824 -
+expected: -1.04187565(25) × 10^⁻³ -   (SI measured)
+abs err:  0.000000188347282 × 10^⁻³ -
+sigma:    +0.75
+within 5.2σ: yes
+
+197. μ_n/μ_N  —  neutron magnetic moment to nuclear magneton ratio   [built on pass 1]
+deps: C_CFP, m_+, m_n, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -1.913042414277589833396984403622612756156595054628016102235078614643192590700811392116769422637570200 -
+expected: -1.91304276(45) × 10^⁰ -   (SI measured)
+abs err:  0.000000345722410 × 10^⁰ -
+sigma:    +0.77
+within 5.2σ: yes
+
+198. g_n  —  neutron g factor   [built on pass 1]
+deps: C_CFP, m_+, m_n, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: -3.826084828555179666793968807245225512313190109256032204470157229286385181401622784233538845275140400 -
+expected: -3.82608552(90) × 10^⁰ -   (SI measured)
+abs err:  0.000000691444820 × 10^⁰ -
+sigma:    +0.77
+within 5.2σ: yes
+
+199. Hz⋮kg  —  hertz-kilogram relationship   [built on pass 1]
+deps: t_p, m_p, C_CFP, pi, second, zhe_2, zhe_3, zhe_4, IB
+computed: 7.372497323695148119583146238946040956437834972965725347271029997809829718600845128512919247298064190e-51 kg
+expected: 7.37249732300000 × 10^⁻⁵¹ kg   (SI exact (defined))
+digits:   full match (10/10)
+
+200. Hz⋮A_mass  —  hertz-atomic mass unit relationship   [built on pass 1]
+deps: t_p, m_p, A_mass, C_CFP, pi, second, zhe_2, zhe_3, zhe_4, IB
+computed: 0.000000000000000000000004439821660822536979053475629111042767398451753630386330846259057625295259709438012109814331319547021 u
+expected: 4.4398216590(14) × 10^⁻²⁴ u   (SI measured)
+abs err:  0.000000001822538 × 10^⁻²⁴ u
+sigma:    +1.30
+within 5.2σ: yes
+
+201. N_time  —  natural unit of time   [built on pass 1]
+deps: t_p, m_p, C_CFP, m_e, zhe_2, zhe_3, zhe_4, IB
+computed: 0.000000000000000000001288088666955810355455282724439851048639938546736906048960739790883513000082922016560309780995871766 s
+expected: 1.28808866644(40) × 10^⁻²¹ s   (SI measured)
+abs err:  0.000000000515810 × 10^⁻²¹ s
+sigma:    +1.29
+within 5.2σ: yes
+
+202. A_mass⋮Hz  —  atomic mass unit-hertz relationship   [built on pass 1]
+deps: t_p, m_p, A_mass, C_CFP, pi, zhe_2, zhe_3, zhe_4, IB
+computed: 225234272093083596964785.1407790214140104676971563881716447036014356140512686308070359006346968841249 Hz
+expected: 2.25234272185(70) × 10^²³ Hz   (SI measured)
+abs err:  0.000000000919164 × 10^²³ Hz
+sigma:    -1.31
+within 5.2σ: yes
+
+203. kg⋮Hz  —  kilogram-hertz relationship   [built on pass 1]
+deps: t_p, m_p, C_CFP, kilogram, pi, zhe_2, zhe_3, zhe_4, IB
+computed: 135639248967168494267965903591166778072494481788549.7009016733829827946632953536305225633614501063569 Hz
+expected: 1.35639248900000 × 10^⁵⁰ Hz   (SI exact (defined))
+digits:   full match (10/10)
+
+204. k_B  —  Boltzmann constant   [built on pass 1]
+deps: l_p, t_p, T_p, m_p, K, pi, s, zhe_2, zhe_3, zhe_4, IB
+computed: 0.00000000000000000000001380649000092463103116094598340492859453748750669626248764243545439418516013794396853788240530270413 J/K
+expected: 1.38064900000000 × 10^⁻²³ J/K   (SI exact (defined))
+digits:   full match (7/7)
+
+205. k_B ⃛  —  Boltzmann constant in eV/K   [built on pass 1]
+deps: l_p, t_p, T_p, m_p, K, eV, joule, pi, s, zhe_2, zhe_3, zhe_4, IB
+computed: 0.00008617333261538147876279660420672262683931391889333043132196655412618768648255439261596970722486256965 eV/K
+expected: 8.61733326200000 × 10^⁻⁵ eV/K   (SI exact (defined))
+digits:   full match (9/10)
+
+206. K⋮J  —  kelvin-joule relationship   [built on pass 1]
+deps: l_p, t_p, T_p, m_p, K, kelvin, pi, s, zhe_2, zhe_3, zhe_4, IB
+computed: 0.00000000000000000000001380649000092463103116094598340492859453748750669626248764243545439418516013794396853788240530270413 J
+expected: 1.38064900000000 × 10^⁻²³ J   (SI exact (defined))
+digits:   full match (7/7)
+
+207. K⋮eV  —  kelvin-electron volt relationship   [built on pass 1]
+deps: l_p, t_p, T_p, m_p, K, eV, joule, kelvin, pi, s, zhe_2, zhe_3, zhe_4, IB
+computed: 0.00008617333261538147876279660420672262683931391889333043132196655412618768648255439261596970722486256965 eV
+expected: 8.61733326200000 × 10^⁻⁵ eV   (SI exact (defined))
+digits:   full match (9/10)
+
+208. eV⋮K  —  electron volt-kelvin relationship   [built on pass 1]
+deps: l_p, t_p, T_p, m_p, K, eV, pi, s, zhe_2, zhe_3, zhe_4, IB
+computed: 11604.51812210913615367052652114067525271668912037026240931128550030105866478744950098430558600969312 K
+expected: 1.16045181200000 × 10^⁴ K   (SI exact (defined))
+digits:   full match (10/10)
+
+209. J⋮K  —  joule-kelvin relationship   [built on pass 1]
+deps: l_p, t_p, T_p, m_p, K, joule, pi, s, zhe_2, zhe_3, zhe_4, IB
+computed: 72429705153935714244060.44822234693982684178128881385287205334731299984378629738552489352295237077531 K
+expected: 7.24297051600000 × 10^²² K   (SI exact (defined))
+digits:   full match (9/10)
+
+210. n_0  —  Loschmidt constant (273.15 K, 100 kPa)   [built on pass 1]
+deps: l_p, t_p, T_p, m_p, K, T_0, p_0, pi, s, zhe_2, zhe_3, zhe_4, IB
+computed: 26516458046471065071960625.37885665012880899919048649199050095087424486318370762786926359983612329317 1/m^3
+expected: 2.65164580400000 × 10^²⁵ 1/m^3   (SI exact (defined))
+digits:   full match (10/10)
+
+211. n_1  —  Loschmidt constant (273.15 K, 101.325 kPa)   [built on pass 1]
+deps: l_p, t_p, T_p, m_p, K, T_0, p_1, pi, s, zhe_2, zhe_3, zhe_4, IB
+computed: 26867801115586806684164103.66512650074301571842976043800937508847332860762089175393853134253395192681 1/m^3
+expected: 2.68678011100000 × 10^²⁵ 1/m^3   (SI exact (defined))
+digits:   full match (10/10)
+
+212. μ_B/k_B  —  Bohr magneton in K/T   [built on pass 1]
+deps: t_p, q_p, T_p, G_Gi, m_e, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.6717138149618068191986614137016816793102378831113950349352121240163894574618691581560962733099796412 K/T
+expected: 6.7171381472(21) × 10^⁻¹ K/T   (SI measured)
+abs err:  0.000000002418068 × 10^⁻¹ K/T
+sigma:    +1.15
+within 5.2σ: yes
+
+213. μ_N/k_B  —  nuclear magneton in K/T   [built on pass 1]
+deps: t_p, q_p, T_p, G_Gi, m_+, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.0003658267771998760838693309972015718649411820216770468711109174557360347972978652846914536017816000441 K/T
+expected: 3.6582677706(11) × 10^⁻⁴ K/T   (SI measured)
+abs err:  0.000000001398761 × 10^⁻⁴ K/T
+sigma:    +1.27
+within 5.2σ: yes
+
+214. R_∞hc ̈  —  Rydberg constant times hc in J   [built on pass 1]
+deps: l_p, t_p, D_d, m_e, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.000000000000000002179872361112194423804079982779732381806677041308389818034942774490816939900110496040399658128766003 J
+expected: 2.1798723611030(24) × 10^⁻¹⁸ J   (SI measured)
+abs err:  0.000000000009194 × 10^⁻¹⁸ J
+sigma:    +3.83
+within 5.2σ: yes
+
+215. E_h  —  Hartree energy   [built on pass 1]
+deps: l_p, t_p, D_d, m_e, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.000000000000000004359744722224388847608159965559464763613354082616779636069885548981633879800220992080799316257532007 J
+expected: 4.3597447222060(48) × 10^⁻¹⁸ J   (SI measured)
+abs err:  0.000000000018389 × 10^⁻¹⁸ J
+sigma:    +3.83
+within 5.2σ: yes
+
+216. J⋮E_h  —  joule-hartree relationship   [built on pass 1]
+deps: l_p, t_p, D_d, m_e, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 229371227838602555.8783494784140091156927975891514440783395676351802751869378803096618868761345866524 E_h
+expected: 2.2937122783969(25) × 10^¹⁷ E_h   (SI measured)
+abs err:  0.000000000010874 × 10^¹⁷ E_h
+sigma:    -4.35
+within 5.2σ: yes
+
+217. K_J  —  Josephson constant   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, pi, zhe_1, zhe_2, IB
+computed: 483597848424072.4133100413989614775940543247222968764778154510953785415335053583856676117233347834767 Hz/V
+expected: 4.83597848400000 × 10^¹⁴ Hz/V   (SI exact (defined))
+digits:   full match (10/10)
+
+218. e/ℏ  —  elementary charge over h-bar   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, pi, zhe_1, zhe_2, IB
+computed: 1519267447900894.697016839138749349156198672900641432605517013428972803237059097251591434812368125148 A/J
+expected: 1.51926744700000 × 10^¹⁵ A/J   (SI exact (defined))
+digits:   full match (10/10)
+
+219. Φ_0  —  magnetic flux quantum   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, pi, zhe_1, zhe_2, IB
+computed: 0.000000000000002067833848431147128541188740752831811749460145283916702755249279695079336555756301886124706526881298 Wb
+expected: 2.06783384800000 × 10^⁻¹⁵ Wb   (SI exact (defined))
+digits:   full match (10/10)
+
+220. ℏ/e  —  reduced Planck constant in eV s   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, coulomb, pi, zhe_1, zhe_2, IB
+computed: 0.0000000000000006582119569411089714745688515801497352101184815682534394796055959659779456808470481558061900633902347 eV*s
+expected: 6.58211956900000 × 10^⁻¹⁶ eV*s   (SI exact (defined))
+digits:   full match (10/10)
+
+221. h/e  —  Planck constant in eV/Hz   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, coulomb, pi, zhe_1, zhe_2, IB
+computed: 0.000000000000004135667696862294257082377481505663623498920290567833405510498559390158673111512603772249413053762597 eV/Hz
+expected: 4.13566769600000 × 10^⁻¹⁵ eV/Hz   (SI exact (defined))
+digits:   full match (10/10)
+
+222. c_1  —  first radiation constant   [built on pass 1]
+deps: l_p, t_p, m_p, pi, zhe_1, zhe_2, IB
+computed: 0.0000000000000003741771852856867788512506890751025801155500818232263234073182384221959623621459242693193871531894719 W*m^2
+expected: 3.74177185200000 × 10^⁻¹⁶ W*m^2   (SI exact (defined))
+digits:   full match (10/10)
+
+223. c_1L  —  first radiation constant for spectral radiance   [built on pass 1]
+deps: l_p, t_p, m_p, pi, zhe_1, zhe_2, IB
+computed: 0.0000000000000001191042972608582349424564657868746235443622606418786101303454547369096857296680088469822673141220262 W*m^2/sr
+expected: 1.19104297200000 × 10^⁻¹⁶ W*m^2/sr   (SI exact (defined))
+digits:   full match (10/10)
+
+224. γ_he'  —  shielded helion gyromagnetic ratio   [built on pass 2]
+deps: q_p, C_CFP, C_d, m_he, zhe_1, zhe_2, IB
+computed: 203789460.8784158338849071624516445281983769213627609588655018187448099601448742770595652673320159401 1/s*T
+expected: 2.0378946078(18) × 10^⁸ 1/s*T   (SI measured)
+abs err:  0.000000000984158 × 10^⁸ 1/s*T
+sigma:    +0.55
+within 5.2σ: yes
+
+225. γ_he ̇'  —  shielded helion gyromagnetic ratio in MHz/T   [built on pass 2]
+deps: q_p, C_CFP, C_d, MHz, m_he, pi, second, zhe_1, zhe_2, IB
+computed: 32.43410004883233634002668950596056887820458522147689690149528445210305126577187724399196262898630812 MHz/T
+expected: 3.2434100033(28) × 10^¹ MHz/T   (SI measured)
+abs err:  0.000000001583233 × 10^¹ MHz/T
+sigma:    +0.57
+within 5.2σ: yes
+
+226. μ_he  —  helion magnetic moment   [built on pass 2]
+deps: l_p, t_p, q_p, m_p, C_CFP, D_d, m_he, zhe_1, zhe_2, IB
+computed: -0.00000000000000000000000001074617554202697991053881988275803276800673415326696898188500353907833551907762021923357649474313192 J/T
+expected: -1.07461755198(93) × 10^⁻²⁶ J/T   (SI measured)
+abs err:  0.000000002222698 × 10^⁻²⁶ J/T
+sigma:    -2.39
+within 5.2σ: yes
+
+227. μ_he'  —  shielded helion magnetic moment   [built on pass 2]
+deps: l_p, t_p, q_p, m_p, C_CFP, m_he, pi, zhe_1, zhe_2, IB
+computed: -0.00000000000000000000000001074553110984421887570502834351551206041944337038805625986475192153014353533884667368470073885435825 J/T
+expected: -1.07455311035(93) × 10^⁻²⁶ J/T   (SI measured)
+abs err:  0.000000000634422 × 10^⁻²⁶ J/T
+sigma:    -0.68
+within 5.2σ: yes
+
+228. μ_he'/μ_+  —  shielded helion to proton magnetic moment ratio   [built on pass 2]
+deps: C_CFP, L, S, m_+, m_he, zhe_1, zhe_2, IB
+computed: -0.7617665773067863415827653512586698460560288583157908841178140339176909907779830915153180754651387914 -
+expected: -7.6176657721(66) × 10^⁻¹ -   (SI measured)
+abs err:  0.000000000967864 × 10^⁻¹ -
+sigma:    -0.15
+within 5.2σ: yes
+
+229. μ_he'/μ_+'  —  shielded helion to shielded proton magnetic moment ratio   [built on pass 2]
+deps: C_CFP, L, S, m_+, m_he, pi, zhe_1, zhe_2, IB
+computed: -0.7617861346170878796251798675868983207359209359553437052534763577583524977727417429324201687544631611 -
+expected: -7.617861334(31) × 10^⁻¹ -   (SI measured)
+abs err:  0.000000012170879 × 10^⁻¹ -
+sigma:    -0.39
+within 5.2σ: yes
+
+230. μ_e/μ_he'  —  electron to shielded helion magnetic moment ratio   [built on pass 2]
+deps: C_CFP, L, P_up, e, m_e, m_he, zhe_1, zhe_2, γ, IB
+computed: 864.0582365416067132532474783724647943479027112272717690897986276859331766616155927528504294001449527 -
+expected: 8.6405823986(70) × 10^² -   (SI measured)
+abs err:  0.000000033183933 × 10^² -
+sigma:    -4.74
+within 5.2σ: yes
+
+231. A_mass⋮E_h  —  atomic mass unit-hartree relationship   [built on pass 1]
+deps: P_up, zeta(3), zhe_1, zhe_2, IB
+computed: 34231776.90770011008199585450676297590233916253057361067362157181682033868398026375157242232563113989 E_h
+expected: 3.4231776922(11) × 10^⁷ E_h   (SI measured)
+abs err:  0.000000001429989 × 10^⁷ E_h
+sigma:    -1.30
+within 5.2σ: yes
+
+232. E_h⋮A_mass  —  hartree-atomic mass unit relationship   [built on pass 1]
+deps: P_up, zeta(3), zhe_1, zhe_2, IB
+computed: 0.00000002921262319207979677506151158057042493312019325678429487737687519147427664852965896292260564548754782 u
+expected: 2.92126231797(91) × 10^⁻⁸ u   (SI measured)
+abs err:  0.000000001237979 × 10^⁻⁸ u
+sigma:    +1.36
+within 5.2σ: yes
+
+233. kg⋮E_h  —  kilogram-hartree relationship   [built on pass 1]
+deps: A_mass, P_up, kilogram, zeta(3), zhe_1, zhe_2, IB
+computed: 20614857887405338322130732293687395.59218597593895756211322021198472464440620975198959849768236863972 E_h
+expected: 2.0614857887415(22) × 10^³⁴ E_h   (SI measured)
+abs err:  0.000000000000966 × 10^³⁴ E_h
+sigma:    -0.44
+within 5.2σ: yes
+
+234. E_h⋮kg  —  hartree-kilogram relationship   [built on pass 1]
+deps: A_mass, P_up, zeta(3), zhe_1, zhe_2, IB
+computed: 4.850870209544022885982359394477180805428638684224900957947669690471482845136613956493245104534826573e-35 kg
+expected: 4.8508702095419(53) × 10^⁻³⁵ kg   (SI measured)
+abs err:  0.000000000002122 × 10^⁻³⁵ kg
+sigma:    +0.40
+within 5.2σ: yes
+
+235. K⋮kg  —  kelvin-kilogram relationship   [built on pass 1]
+deps: T_p, m_p, L_2, V_fe, kelvin, zhe_3, zhe_4, IB
+computed: 1.536179186883722841041430213340101745511253893491631646280721627180276398416264767431378238541940762e-40 kg
+expected: 1.53617918700000 × 10^⁻⁴⁰ kg   (SI exact (defined))
+digits:   full match (9/10)
+
+236. kg⋮K  —  kilogram-kelvin relationship   [built on pass 1]
+deps: T_p, m_p, L_2, V_fe, kilogram, zhe_3, zhe_4, IB
+computed: 6509657262047572173750605919176222081607.147642609866036596023951053707742024189383698130597260827518 K
+expected: 6.50965726000000 × 10^³⁹ K   (SI exact (defined))
+digits:   almost-full match (9/10)
+
+237. K⋮A_mass  —  kelvin-atomic mass unit relationship   [built on pass 1]
+deps: T_p, m_p, A_mass, L_2, V_fe, kelvin, zhe_3, zhe_4, IB
+computed: 0.00000000000009251087290205608346435263296308161343782214020469081805569625712369541508730186868613023669237592277 u
+expected: 9.2510872884(29) × 10^⁻¹⁴ u   (SI measured)
+abs err:  0.000000001805607 × 10^⁻¹⁴ u
+sigma:    +0.62
+within 5.2σ: yes
+
+238. A_mass⋮K  —  atomic mass unit-kelvin relationship   [built on pass 1]
+deps: T_p, m_p, A_mass, L_2, V_fe, zhe_3, zhe_4, IB
+computed: 10809540204307.92817247083795151477335975146921350942815371682146170900934187882029393449340193132783 K
+expected: 1.08095402067(34) × 10^¹³ K   (SI measured)
+abs err:  0.000000000239207 × 10^¹³ K
+sigma:    -0.70
+within 5.2σ: yes
+
+239. kg⋮1/m  —  kilogram-inverse meter relationship   [built on pass 1]
+deps: l_p, m_p, P_up, i, kilogram, pi, zhe_3, zhe_4, IB
+computed: 452443833598083488301396266461072868283888.1893756415351339803965847034721535876682790035971573135810 cycles/m
+expected: 4.52443833500000 × 10^⁴¹ cycles/m   (SI exact (defined))
+digits:   full match (10/10)
+
+240. A_mass⋮1/m  —  atomic mass unit-inverse meter relationship   [built on pass 1]
+deps: l_p, m_p, A_mass, P_up, i, pi, zhe_3, zhe_4, IB
+computed: 751300661861780.9254091925343124426748773402277046924047088511235264522665176388297815354186290151758 cycles/m
+expected: 7.5130066209(23) × 10^¹⁴ cycles/m   (SI measured)
+abs err:  0.000000002282191 × 10^¹⁴ cycles/m
+sigma:    -0.99
+within 5.2σ: yes
+
+241. 1/m⋮kg  —  inverse meter-kilogram relationship   [built on pass 1]
+deps: l_p, m_p, P_up, i, meter, pi, zhe_3, zhe_4, IB
+computed: 2.210219094040204244780910433049013156605669413619671760761595339619220342388023841142485603666588845e-42 kg
+expected: 2.21021909400000 × 10^⁻⁴² kg   (SI exact (defined))
+digits:   full match (10/10)
+
+242. 1/m⋮A_mass  —  inverse meter-atomic mass unit relationship   [built on pass 1]
+deps: l_p, m_p, A_mass, P_up, i, meter, pi, zhe_3, zhe_4, IB
+computed: 0.000000000000001331025048641852601969255115014769196077931280931349012081346677071790256240828898303298510301796481 u
+expected: 1.33102504824(41) × 10^⁻¹⁵ u   (SI measured)
+abs err:  0.000000000401853 × 10^⁻¹⁵ u
+sigma:    +0.98
+within 5.2σ: yes
+
+243. λ_C  —  Compton wavelength   [built on pass 1]
+deps: l_p, m_p, P_up, i, m_e, pi, zhe_3, zhe_4, IB
+computed: 0.000000000002426310236092927160328761818699365739856733145766061364345217120937724367606106436546084296981078933 m/cycle
+expected: 2.42631023538(76) × 10^⁻¹² m/cycle   (SI measured)
+abs err:  0.000000000712927 × 10^⁻¹² m/cycle
+sigma:    +0.94
+within 5.2σ: yes
+
+244. λ_μ  —  muon Compton wavelength   [built on pass 2]
+deps: l_p, m_p, P_up, i, m_μ, pi, zhe_3, zhe_4, IB
+computed: 0.00000000000001173444117640932422977601951002182773325899063935917940537836097647617735984746840112840569778729455 m/cycle
+expected: 1.173444110(26) × 10^⁻¹⁴ m/cycle   (SI measured)
+abs err:  0.000000007640932 × 10^⁻¹⁴ m/cycle
+sigma:    +0.29
+within 5.2σ: yes
+
+245. λ_+  —  proton Compton wavelength   [built on pass 1]
+deps: l_p, m_p, P_up, i, m_+, pi, zhe_3, zhe_4, IB
+computed: 0.000000000000001321409853997739869720508132127588945057926691816882863768657542505383151470449154474897603065188377 m/cycle
+expected: 1.32140985360(41) × 10^⁻¹⁵ m/cycle   (SI measured)
+abs err:  0.000000000397740 × 10^⁻¹⁵ m/cycle
+sigma:    +0.97
+within 5.2σ: yes
+
+246. λ_n  —  neutron Compton wavelength   [built on pass 1]
+deps: l_p, m_p, P_up, i, m_n, pi, zhe_3, zhe_4, IB
+computed: 0.000000000000001319590904991281139442774749756234612501120555045987404112363790966393882218440273795174089051142946 m/cycle
+expected: 1.31959090382(67) × 10^⁻¹⁵ m/cycle   (SI measured)
+abs err:  0.000000001171281 × 10^⁻¹⁵ m/cycle
+sigma:    +1.75
+within 5.2σ: yes
+
+247. λ_τ  —  tau Compton wavelength   [built on pass 1]
+deps: l_p, m_p, P_up, i, m_τ, pi, zhe_3, zhe_4, IB
+computed: 0.0000000000000006977702821579818635290220737298159136492718208175277339737114214138238444806406772774411674319210901 m/cycle
+expected: 6.97771(47) × 10^⁻¹⁶ m/cycle   (SI measured)
+abs err:  0.000007178420181 × 10^⁻¹⁶ m/cycle
+sigma:    -0.02
+within 5.2σ: yes
+
+248. λ_-  —  reduced Compton wavelength   [built on pass 1]
+deps: l_p, m_p, P_up, i, m_e, zhe_3, zhe_4, IB
+computed: 0.0000000000003861592675486533567968783526577886946421787989424674938416755513325235550143884776780148550470980125 m/cycle
+expected: 3.8615926744(12) × 10^⁻¹³ m/cycle   (SI measured)
+abs err:  0.000000001086533 × 10^⁻¹³ m/cycle
+sigma:    +0.91
+within 5.2σ: yes
+
+249. λ_μ_-  —  reduced muon Compton wavelength   [built on pass 2]
+deps: l_p, m_p, P_up, i, m_μ, zhe_3, zhe_4, IB
+computed: 0.000000000000001867594317646621279605853786198097962660252988019131038146522299385340233340956436321930802629533557 m/cycle
+expected: 1.867594306(42) × 10^⁻¹⁵ m/cycle   (SI measured)
+abs err:  0.000000011646621 × 10^⁻¹⁵ m/cycle
+sigma:    +0.28
+within 5.2σ: yes
+
+250. λ_+_-  —  reduced proton Compton wavelength   [built on pass 1]
+deps: l_p, m_p, P_up, i, m_+, zhe_3, zhe_4, IB
+computed: 0.0000000000000002103089101140802301093459703693810849591409697667094968615656413997568564131926561688174106036106037 m/cycle
+expected: 2.10308910051(66) × 10^⁻¹⁶ m/cycle   (SI measured)
+abs err:  0.000000000630802 × 10^⁻¹⁶ m/cycle
+sigma:    +0.96
+within 5.2σ: yes
+
+251. λ_n_-  —  reduced neutron Compton wavelength   [built on pass 1]
+deps: l_p, m_p, P_up, i, m_n, zhe_3, zhe_4, IB
+computed: 0.0000000000000002100194153884702310320247356771939323081642272312003406246482097901015410405965668036127774170945940 m/cycle
+expected: 2.1001941520(11) × 10^⁻¹⁶ m/cycle   (SI measured)
+abs err:  0.000000001884703 × 10^⁻¹⁶ m/cycle
+sigma:    +1.71
+within 5.2σ: yes
+
+252. λ_τ_-  —  reduced tau Compton wavelength   [built on pass 1]
+deps: l_p, m_p, P_up, i, m_τ, zhe_3, zhe_4, IB
+computed: 0.0000000000000001110535895480694693313427304313139186105523637890447372228798674683651309157022236249635669249807362 m/cycle
+expected: 1.110538(75) × 10^⁻¹⁶ m/cycle   (SI measured)
+abs err:  0.000002104519305 × 10^⁻¹⁶ m/cycle
+sigma:    -0.03
+within 5.2σ: yes
+
+253. b'  —  Wien frequency displacement law constant   [built on pass 1]
+deps: t_p, T_p, nu_peak, pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 58789257579.63094156321955698820617721532519620679598115570163499460259299985609330915430092847525333 Hz/K
+expected: 5.87892575700000 × 10^¹⁰ Hz/K   (SI exact (defined))
+digits:   full match (10/10)
+
+254. k_B ̈  —  Boltzmann constant in Hz/K   [built on pass 1]
+deps: t_p, T_p, pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 20836619124.44858852940757707212621766806859063567886168166944979781093210853418005916504009452554591 Hz/K
+expected: 2.08366191200000 × 10^¹⁰ Hz/K   (SI exact (defined))
+digits:   full match (10/10)
+
+255. K⋮Hz  —  kelvin-hertz relationship   [built on pass 1]
+deps: t_p, T_p, kelvin, pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 20836619124.44858852940757707212621766806859063567886168166944979781093210853418005916504009452554591 Hz
+expected: 2.08366191200000 × 10^¹⁰ Hz   (SI exact (defined))
+digits:   full match (10/10)
+
+256. Hz⋮K  —  hertz-kelvin relationship   [built on pass 1]
+deps: t_p, T_p, pi, s, second, zhe_1, zhe_3, zhe_4, IB
+computed: 0.00000000004799243073023195820460900703090291629479969567582026987374696057256132960017993586615838985233300613 K
+expected: 4.79924307300000 × 10^⁻¹¹ K   (SI exact (defined))
+digits:   full match (10/10)
+
+257. b  —  Wien wavelength displacement law constant   [built on pass 1]
+deps: l_p, T_p, P, lambda_peak, pi, zhe_1, zhe_3, zhe_4, IB
+computed: 0.002897771953794263988572863232447310724552401995140878556830869234505528072723347976562693878964645311 m*K/cycle
+expected: 2.89777195500000 × 10^⁻³ m*K/cycle   (SI exact (defined))
+digits:   almost-full match (9/10)
+
+258. c_2  —  second radiation constant   [built on pass 1]
+deps: l_p, T_p, P, pi, zhe_1, zhe_3, zhe_4, IB
+computed: 0.01438776876813329930788440147461592835416761220426938520528719277983598472721412734308229204066026815 m*K
+expected: 1.43877687700000 × 10^⁻² m*K   (SI exact (defined))
+digits:   full match (9/10)
+
+259. 1/m⋮K  —  inverse meter-kelvin relationship   [built on pass 1]
+deps: l_p, T_p, P, meter, pi, zhe_1, zhe_3, zhe_4, IB
+computed: 0.01438776876813329930788440147461592835416761220426938520528719277983598472721412734308229204066026815 cycles/m
+expected: 1.43877687700000 × 10^⁻² cycles/m   (SI exact (defined))
+digits:   full match (9/10)
+
+260. K⋮1/m  —  kelvin-inverse meter relationship   [built on pass 1]
+deps: l_p, T_p, P, kelvin, pi, zhe_1, zhe_3, zhe_4, IB
+computed: 69.50348008052510925719712468760956561421110552357723341028763839123048398195897303968091432028068868 cycles/m
+expected: 6.95034800400000 × 10^¹ cycles/m   (SI exact (defined))
+digits:   almost-full match (9/10)
+
+261. k_B ̇  —  Boltzmann constant in inverse meter per kelvin   [built on pass 1]
+deps: l_p, T_p, P, kelvin, pi, zhe_1, zhe_3, zhe_4, IB
+computed: 69.50348008052510925719712468760956561421110552357723341028763839123048398195897303968091432028068868 cycles/m*K
+expected: 6.95034800400000 × 10^¹ cycles/m*K   (SI exact (defined))
+digits:   almost-full match (9/10)
+
+262. E_h⋮K  —  Hartree-kelvin relationship   [built on pass 1]
+deps: T_p, m_p, m_e, pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 315775.0248038168893653535122242969926548616896537681972085748059361585570656249823089412567655484627 K
+expected: 3.1577502480398(34) × 10^⁵ K   (SI measured)
+abs err:  0.000000000001631 × 10^⁵ K
+sigma:    -0.48
+within 5.2σ: yes
+
+263. K⋮E_h  —  kelvin-hartree relationship   [built on pass 1]
+deps: T_p, m_p, kelvin, m_e, pi, s, zhe_1, zhe_3, zhe_4, IB
+computed: 0.000003166811563458113710268824897125260921765194728659564144137361843006400365840390846904555328478108208 E_h
+expected: 3.1668115634564(34) × 10^⁻⁶ E_h   (SI measured)
+abs err:  0.000000000001714 × 10^⁻⁶ E_h
+sigma:    +0.50
+within 5.2σ: yes
+
+264. M_e  —  electron molar mass   [built on pass 1]
+deps: q_p, m_p, C_Q, e, m_e, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.0000005485799097965875893830724432255587262146966972669153180285661568562105047546868997971461457477189038 kg/mol
+expected: 5.4857990962(17) × 10^⁻⁷ kg/mol   (SI measured)
+abs err:  0.000000001765876 × 10^⁻⁷ kg/mol
+sigma:    +1.04
+within 5.2σ: yes
+
+265. M_μ  —  muon molar mass   [built on pass 2]
+deps: q_p, m_p, C_Q, e, m_μ, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.0001134289251992894315719903446440412638741284623531255609886745339971957629233948335940709594160924465 kg/mol
+expected: 1.134289258(25) × 10^⁻⁴ kg/mol   (SI measured)
+abs err:  0.000000006007106 × 10^⁻⁴ kg/mol
+sigma:    -0.24
+within 5.2σ: yes
+
+266. M_A_mass  —  molar mass constant   [built on pass 1]
+deps: q_p, m_p, A_mass, C_Q, e, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.001000000001361764392865288626410988144108235714605785205361896912203796726124192386565652989790104149 kg/mol
+expected: 1.00000000105(31) × 10^⁻³ kg/mol   (SI measured)
+abs err:  0.000000000311764 × 10^⁻³ kg/mol
+sigma:    +1.01
+within 5.2σ: yes
+
+267. M_+  —  proton molar mass   [built on pass 1]
+deps: q_p, m_p, C_Q, e, m_+, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.001007276467953955257296394536902724096176794203831040216467321374725006158334034769069920837770790739 kg/mol
+expected: 1.00727646764(31) × 10^⁻³ kg/mol   (SI measured)
+abs err:  0.000000000313955 × 10^⁻³ kg/mol
+sigma:    +1.01
+within 5.2σ: yes
+
+268. M_n  —  neutron molar mass   [built on pass 1]
+deps: q_p, m_p, C_Q, e, m_n, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.001008664916846474876227241352491894920569292959711831014764101571808706530427784988056362164459683127 kg/mol
+expected: 1.00866491712(51) × 10^⁻³ kg/mol   (SI measured)
+abs err:  0.000000000273525 × 10^⁻³ kg/mol
+sigma:    -0.54
+within 5.2σ: yes
+
+269. M_τ  —  tau molar mass   [built on pass 1]
+deps: q_p, m_p, C_Q, e, m_τ, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.001907540467814073975364902151411013058833738312076000250204745644967729404596241638255244275331311877 kg/mol
+expected: 1.90754(13) × 10^⁻³ kg/mol   (SI measured)
+abs err:  0.000000467814074 × 10^⁻³ kg/mol
+sigma:    +0.00
+within 5.2σ: yes
+
+270. M_de  —  deuteron molar mass   [built on pass 2]
+deps: q_p, m_p, C_Q, e, m_de, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.002013553215290803755545639826789150703482395343819794288872588047009386448784247845414101329495377852 kg/mol
+expected: 2.01355321466(63) × 10^⁻³ kg/mol   (SI measured)
+abs err:  0.000000000630804 × 10^⁻³ kg/mol
+sigma:    +1.00
+within 5.2σ: yes
+
+271. M_he  —  helion molar mass   [built on pass 2]
+deps: q_p, m_p, C_Q, e, m_he, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.003014932251036421724279866433392001496125160281031066483224629974692175598904549887253357991800266786 kg/mol
+expected: 3.01493225010(94) × 10^⁻³ kg/mol   (SI measured)
+abs err:  0.000000000936422 × 10^⁻³ kg/mol
+sigma:    +1.00
+within 5.2σ: yes
+
+272. M_tri  —  triton molar mass   [built on pass 1]
+deps: q_p, m_p, C_Q, e, m_tri, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.003015500719828056842750653608073434288513325239327393488032064197256703270909204087574527520372164284 kg/mol
+expected: 3.01550071913(94) × 10^⁻³ kg/mol   (SI measured)
+abs err:  0.000000000698057 × 10^⁻³ kg/mol
+sigma:    +0.74
+within 5.2σ: yes
+
+273. M_α  —  alpha particle molar mass   [built on pass 2]
+deps: q_p, m_p, C_Q, e, m_α, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.004001506184578358378776767168341075486960158661073316748609663900326302727818304415560131893152314157 kg/mol
+expected: 4.0015061833(12) × 10^⁻³ kg/mol   (SI measured)
+abs err:  0.000000001278358 × 10^⁻³ kg/mol
+sigma:    +1.07
+within 5.2σ: yes
+
+274. M_12_C  —  molar mass of carbon-12   [built on pass 1]
+deps: q_p, m_p, A_mass, C_Q, e, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 0.01200000001634117271438346351693185772929882857526942246434276294644556071349030863878783587748124979 kg/mol
+expected: 1.20000000126(36) × 10^⁻² kg/mol   (SI measured)
+abs err:  0.000000000374117 × 10^⁻² kg/mol
+sigma:    +1.04
+within 5.2σ: yes
+
+275. N_A  —  Avogadro constant   [built on pass 1]
+deps: q_p, m_p, C_Q, e, zhe_1, zhe_3, zhe_4, γ, IB
+computed: 602214076443130916631964.1081823651954198950560659493601490014120154043236272000256305048436059009846 1/mol
+expected: 6.02214076000000 × 10^²³ 1/mol   (SI exact (defined))
+digits:   full match (9/9)
+
+276. ST_0  —  Sackur-Tetrode constant (1K, 100 kPa)   [built on pass 1]
+deps: l_p, t_p, T_p, m_p, A_mass, j_01, kelvin, p_0, pi, zhe_1, zhe_3, zhe_4, IB
+computed: -1.151707534324295179552989171818971494063331675174147828437828213715561167933935550882945902351869602 -
+expected: -1.15170753496(47) × 10^⁰ -   (SI measured)
+abs err:  0.000000000635705 × 10^⁰ -
+sigma:    +1.35
+within 5.2σ: yes
+
+277. ST_1  —  Sackur-Tetrode constant (1K, 101.325 kPa)   [built on pass 1]
+deps: l_p, t_p, T_p, m_p, A_mass, G_Ga, kelvin, p_1, pi, zhe_1, zhe_3, zhe_4, IB
+computed: -1.164870520455957943261923581118726050256454499904769120028994999513988379877981703369364913912434826 -
+expected: -1.16487052149(47) × 10^⁰ -   (SI measured)
+abs err:  0.000000001034042 × 10^⁰ -
+sigma:    +2.20
+within 5.2σ: yes
+
+278. σ  —  Stefan-Boltzmann constant   [built on pass 1]
+deps: t_p, T_p, m_p, K, pi, zhe_1, zhe_3, zhe_4, Γ(5), IB
+computed: 0.00000005670374419873165667663806664606519299097145700989492267508540673752032652532002624171284871871342069 W/m^2*K^4
+expected: 5.67037441900000 × 10^⁻⁸ W/m^2*K^4   (SI exact (defined))
+digits:   full match (10/10)
+
+279. V_90  —  conventional value of volt-90   [built on pass 1]
+deps: L_1, volt, zhe_1, zhe_3, zhe_4, IB
+computed: 1.000000106652175107921655813058060892600436137071076009752740495654900000000000000000000000000000000 V
+expected: 1.00000010666000 × 10^⁰ V   (SI exact (defined))
+digits:   full match (11/12)
+
+280. W_90  —  conventional value of watt-90   [built on pass 1]
+deps: j_01, watt, zhe_1, zhe_3, zhe_4, IB
+computed: 1.000000195522849642363414518612025826933041019355395947516270929353464000000000000000000000000000000 W
+expected: 1.00000019553000 × 10^⁰ W   (SI exact (defined))
+digits:   full match (11/12)
+
+281. A_ef∇  —  atomic unit of electric field gradient   [built on pass 1]
+deps: t_p, q_p, m_p, V_fe, m_e, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 9717362427793018139509.448756036338940570794263153016449598868363324060259068307766931780751724493840 V/m^2
+expected: 9.7173624424(30) × 10^²¹ V/m^2   (SI measured)
+abs err:  0.000000014606982 × 10^²¹ V/m^2
+sigma:    -4.87
+within 5.2σ: yes
+
+282. A_current  —  atomic unit of current   [built on pass 1]
+deps: t_p, q_p, m_p, C_CFP, V_fe, m_e, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.006623618237480917722613938508122427764122572575698427196796525703359934498625234988733819349911502239 A
+expected: 6.6236182375082(72) × 10^⁻³ A   (SI measured)
+abs err:  0.000000000027282 × 10^⁻³ A
+sigma:    -3.79
+within 5.2σ: yes
+
+283. A_mfd  —  atomic unit of magnetic flux density   [built on pass 1]
+deps: t_p, q_p, m_p, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 235051.7567706029583717894958060221013457030372880713379415115072106186001419282246195977946142244599 T
+expected: 2.35051757077(73) × 10^⁵ T   (SI measured)
+abs err:  0.000000003063971 × 10^⁵ T
+sigma:    -4.20
+within 5.2σ: yes
+
+284. A_edm  —  atomic unit of electric dipole moment   [built on pass 1]
+deps: l_p, q_p, m_p, L_2, P, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.000000000000000000000000000008478353620166742518220840169885475970646355564597441465354195879307481518637170847786888575274752786 m*C
+expected: 8.4783536198(13) × 10^⁻³⁰ m*C   (SI measured)
+abs err:  0.000000000366742 × 10^⁻³⁰ m*C
+sigma:    +0.28
+within 5.2σ: yes
+
+285. A_mag  —  atomic unit of magnetizability   [built on pass 1]
+deps: l_p, q_p, m_p, L_LL, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 0.00000000000000000000000000007891036569360171782998212940951052970545810222243849267425020822087123546968642369801296864440155877 J/T^2
+expected: 7.8910365794(49) × 10^⁻²⁹ J/T^2   (SI measured)
+abs err:  0.000000010039828 × 10^⁻²⁹ J/T^2
+sigma:    -2.05
+within 5.2σ: yes
+
+286. A_eqm  —  atomic unit of electric quadrupole moment   [built on pass 1]
+deps: l_p, q_p, m_p, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, γ, IB
+computed: 4.486551513426490239268678452321974558852592301005030666921899916886040888603079411215008794847182460e-40 m*C
+expected: 4.4865515185(14) × 10^⁻⁴⁰ m*C   (SI measured)
+abs err:  0.000000005073509 × 10^⁻⁴⁰ m*C
+sigma:    -3.62
+within 5.2σ: yes
+
+287. A_1^st_hp  —  atomic unit of 1st hyperpolarizability   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 3.206361295662607448083271936832356012102613772328940657691896462747191188253395449374049973966069561e-53 m^3*C^3/J^2
+expected: 3.2063612996(15) × 10^⁻⁵³ m^3*C^3/J^2   (SI measured)
+abs err:  0.000000003937393 × 10^⁻⁵³ m^3*C^3/J^2
+sigma:    -2.62
+within 5.2σ: yes
+
+288. A_2^nd_hp  —  atomic unit of 2nd hyperpolarizability   [built on pass 1]
+deps: l_p, t_p, q_p, m_p, D_Do, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 6.235379980291313576577344321626049396928674216594536790644261156859382108960911918695386556787534164e-65 m^4*C^4/J^3
+expected: 6.2353799735(39) × 10^⁻⁶⁵ m^4*C^4/J^3   (SI measured)
+abs err:  0.000000006791314 × 10^⁻⁶⁵ m^4*C^4/J^3
+sigma:    +1.74
+within 5.2σ: yes
+
+Build complete.

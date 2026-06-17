@@ -870,7 +870,6 @@ def main() -> None:
     failed_measured_ids: List[str] = []
 
     build_errors: Dict[str, str] = {}   # <-- persist across passes
-    built_records: Dict[str, Tuple[int, Quantity, str]] = {}
 
     while True:
 
@@ -911,7 +910,6 @@ def main() -> None:
                 value_q = Quantity(value_real, value_q.units)
 
             built_this_pass.append((cid, value_q, dim))
-            built_records[cid] = (pass_number, value_q, dim)
             symbols[cid] = value_q
             unresolved.discard(cid)
 
@@ -987,26 +985,18 @@ def main() -> None:
 
             break
 
+        print("\nBuilt this pass:")
+        for cid, value, dim in built_this_pass:
+            recipe = recipe_by_id[cid]
+            name = recipe.get("display_name", cid)
+            deps_display, _ = collect_dependencies(recipe)
+
+            print(f"\n{cid}  —  {name}")
+            print(f"deps: {', '.join(deps_display)}")
+            for line in verify_and_format(recipe, value):
+                print(line)
+
         append_generated_symbols(built_this_pass)
-
-    print("\n=== Constants in official order ===")
-
-    for recipe in recipes:
-        cid = recipe["constant_id"]
-
-        if cid not in built_records:
-            continue
-
-        pass_built, value, dim = built_records[cid]
-        recipe_number = int(recipe.get("recipe_number", 0))
-        name = recipe.get("display_name", cid)
-        deps_display, _ = collect_dependencies(recipe)
-
-        print(f"\n{recipe_number:03}. {cid}  —  {name}   [built on pass {pass_built}]")
-        print(f"deps: {', '.join(deps_display)}")
-
-        for line in verify_and_format(recipe, value):
-            print(line)
 
     print("\nBuild complete.")
 

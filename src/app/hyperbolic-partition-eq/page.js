@@ -658,13 +658,13 @@ export default function HyperbolicPartitionEq() {
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.0em' }}
   />. Unlike{' '}
   <img
-    src="/equations/e_to_m.svg"
+    src="/equations/e_to_matrix.svg"
     alt="e^M"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.0em' }}
   />
   , the interpolating flow{' '}
   <img
-    src="/equations/e_to_at.svg"
+    src="/equations/e_to_lambdat.svg"
     alt="e^{Λt}"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.00em', display: 'inline', marginLeft: '0.0em' }}
   />{' '}
@@ -696,7 +696,7 @@ export default function HyperbolicPartitionEq() {
     alt="(2π)^k"
     style={{ height: '16px', width: 'auto', verticalAlign: '-0.20em', display: 'inline', marginLeft: '0.2em' }}
   />{' '}
-  at integer times. Thus, the algebraic structure is clear: the discrete step{' '}
+  at integer times. The algebraic structure is clear: the discrete step{' '}
   <img
     src="/equations/m_matrix.svg"
     alt="M"
