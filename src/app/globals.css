@@ -232,11 +232,26 @@ body {
 .hyperbolic-partition-content {
   position: relative;
   z-index: 1;
-  padding: 1rem 1rem;
-  max-width: 800px;
+  padding: 1rem 2rem;
+  width: min(1500px, calc(100vw - var(--sidebar-width) - 4rem));
+  max-width: none !important;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+}
+
+.legend-content > *,
+.partition-content > *,
+.hyperbolic-partition-content > * {
+  max-width: none;
+}
+
+.legend-content .equation-description,
+.partition-content .equation-description,
+.hyperbolic-partition-content .equation-description {
+  width: 100%;
+  max-width: none !important;
 }
 
 .legend-title {
@@ -830,6 +845,8 @@ body {
   outline-offset: 3px;
   border-radius: 50%;
 }
+
+
 
 
 

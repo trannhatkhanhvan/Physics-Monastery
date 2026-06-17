@@ -14,7 +14,13 @@ export default function HyperbolicPartitionEq() {
     width: "100vw",
   }}
 />
-      <div className="hyperbolic-partition-content">
+      <div
+  className="hyperbolic-partition-content"
+  style={{
+    width: "min(1400px, calc(100vw - 220px))",
+    maxWidth: "none",
+  }}
+>
         <div className="legend-title">the hyperbolic partition equation</div>
 
         <div className="equation-line">

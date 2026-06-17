@@ -16,7 +16,13 @@ export default function TransformSpace() {
 />
 
       {/* ✅ Shared layout and font styling */}
-      <div className="partition-content">
+      <div
+  className="partition-content"
+  style={{
+    width: "min(1400px, calc(100vw - 220px))",
+    maxWidth: "none",
+  }}
+>
         <div className="legend-title">the transform space</div>
 
         <div className="equation-line">

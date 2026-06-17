@@ -28,7 +28,13 @@ export default function MonasteryEvents() {
 />
 
       {/* ✅ Content structure */}
-      <div className="partition-content">
+      <div
+  className="partition-content"
+  style={{
+    width: "min(1400px, calc(100vw - 220px))",
+    maxWidth: "none",
+  }}
+>
         <div className="legend-title">Physics Monastery events</div>
 
         {/* 1️⃣ First two lines */}

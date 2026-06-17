@@ -42,7 +42,13 @@ export default function ContactUs() {
 />
 
       {/* ✅ Page content */}
-      <div className="partition-content">
+      <div
+  className="partition-content"
+  style={{
+    width: "min(1400px, calc(100vw - 220px))",
+    maxWidth: "none",
+  }}
+>
         <div className="legend-title">contact us</div>
 
         <p className="equation-description">

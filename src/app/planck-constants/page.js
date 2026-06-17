@@ -58,7 +58,13 @@ export default function PlanckConstants() {
     width: "100vw",
   }}
 />
-      <div className="partition-content">
+      <div
+  className="partition-content"
+  style={{
+    width: "min(1400px, calc(100vw - 220px))",
+    maxWidth: "none",
+  }}
+>
         <div className="legend-title">the Planck constants</div>
 
         <p className="equation-description">

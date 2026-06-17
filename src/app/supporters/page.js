@@ -21,7 +21,13 @@ export default function Supporters() {
 />
 
       {/* Page content */}
-      <div className="partition-content">
+      <div
+  className="partition-content"
+  style={{
+    width: "min(1400px, calc(100vw - 220px))",
+    maxWidth: "none",
+  }}
+>
         <div className="legend-title">supporters</div>
 
         <p className="equation-description">

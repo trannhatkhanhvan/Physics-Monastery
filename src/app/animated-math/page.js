@@ -202,7 +202,13 @@ export default function AnimatedMath() {
     width: "100vw",
   }}
 />
-      <div className="partition-content">
+      <div
+  className="partition-content"
+  style={{
+    width: "min(1400px, calc(100vw - 220px))",
+    maxWidth: "none",
+  }}
+>
         <div className="legend-title">animated math</div>
 
         <div style={{ height: '1rem' }} />
