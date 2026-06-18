@@ -16,12 +16,12 @@ from evaluator import evaluate_constant, Quantity, parse_dimension
 
 
 # ------------------------------------------------------------
-# High precision
+# Precision
 # ------------------------------------------------------------
-mp.mp.dps = 150  # compute precision
+mp.mp.dps = 30  # compute precision
 
-PRINT_DIGITS = 100
-CSV_DIGITS = 120
+PRINT_DIGITS = 15
+CSV_DIGITS = 15
 
 
 def require_effectively_real(
@@ -70,7 +70,7 @@ def as_display_real(cid: str, x: Any) -> Any:
     - Otherwise return x unchanged
     """
     if isinstance(x, (mp.mpc, complex)):
-        return require_effectively_real(cid, x, abs_tol=1e-12, rel_tol=1e-30)
+        return require_effectively_real(cid, x, abs_tol=1e-12, rel_tol=1e-20)
     return x
 
 

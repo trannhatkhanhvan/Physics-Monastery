@@ -64,10 +64,8 @@ export default function ConstantEnginePage() {
 
                 <p className="equation-description">
                     The Constant Engine is the reproducible computation system
-                    used to evaluate the Transform Dictionary expressions in
-                    <em> The Logic of Persistence</em>. It computes proposed
-                    closed-form expressions, compares them to reference values
-                    where available, and reports the numerical structure used
+                    used to evaluate the constants of Nature in the Transform Dictionary. It computes proposed
+                    closed-form expressions, compares them to CODATA 2022 values and their error bars, and reports the numerical structure used
                     throughout this project.
                 </p>
 
