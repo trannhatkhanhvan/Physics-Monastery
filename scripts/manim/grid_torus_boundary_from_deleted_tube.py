@@ -74,7 +74,7 @@ AMBIENT_ROTATION_RATE = 0.08
 # During the close-up, focus near the initial sweep circle.
 CLOSE_FRAME_CENTER = np.array([CORE_RADIUS * 0.95, 0.0, 0.0])
 # During the wide shot, move frame center to the right so the torus appears left of center.
-WIDE_FRAME_CENTER = np.array([2.85, 0.0, 0.0])
+WIDE_FRAME_CENTER = np.array([2.00, 1.50, 0.0])
 
 # Unwrap diagram.
 UNWRAP_RECT_WIDTH = 4.60
@@ -110,6 +110,19 @@ class GridTorusBoundaryFromDeletedTube(ThreeDScene):
         boundary_edges = self.make_boundary_edges()
         torus_surface = self.make_torus_surface()
         torus_loops = self.make_torus_direction_loops()
+
+        boundary_dots_all = VGroup(*boundary_dot_bins)
+
+        rotating_world = VGroup(
+            all_dots,
+            all_edges,
+            boundary_dots_all,
+            core_loop,
+            torus_surface,
+            open_ports,
+            boundary_edges,
+            torus_loops,
+        )
 
         # ------------------------------------------------------------
         # 1. Show grid and circular core loop.
@@ -246,11 +259,20 @@ class GridTorusBoundaryFromDeletedTube(ThreeDScene):
         self.wait(1.4)
 
         # ------------------------------------------------------------
-        # 7. Final slow rotation.
+        # 7. Final slow object rotation.
+        # Rotate the grid/torus around its own center, not the camera frame.
+        # This keeps it from drifting toward the unwrap map.
         # ------------------------------------------------------------
-        self.begin_ambient_camera_rotation(rate=AMBIENT_ROTATION_RATE)
-        self.wait(4.0)
-        self.stop_ambient_camera_rotation()
+        self.play(
+            Rotate(
+                rotating_world,
+                angle=55 * DEGREES,
+                axis=OUT,
+                about_point=ORIGIN,
+            ),
+            run_time=4.0,
+            rate_func=smooth,
+        )
 
         final_label = self.fixed_label(
             "Result: grid with a deleted tube,\nplus a surviving torus boundary interface."
@@ -722,6 +744,6 @@ class GridTorusBoundaryFromDeletedTube(ThreeDScene):
         )
 
         group.to_corner(UR, buff=0.28)
-        group.shift(DOWN * 1.00)
+        group.shift(DOWN * 2.00)
 
         return group

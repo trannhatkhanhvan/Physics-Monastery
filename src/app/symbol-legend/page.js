@@ -1119,37 +1119,8 @@ export default function SymbolLegend() {
     },
 
 
+
 // 35
-    {
-      left: (
-          <>
-            <img
-                src="/equations/continued_fraction_constant.svg"
-                alt="C_CF"
-                style={{
-                  height: '16px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.2em',
-                  display: 'inline',
-                }}
-            />
-            {' = 0.697774657964819 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://www.wolframalpha.com/input?i=0.697774657964007982006790"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            continued fraction constant
-          </a>
-      ),
-    },
-
-
-// 36
     {
       left: (
           <>
@@ -1179,7 +1150,7 @@ export default function SymbolLegend() {
     },
 
 
-// 37
+// 36
     {
       left: (
           <>
@@ -1209,7 +1180,7 @@ export default function SymbolLegend() {
     },
 
 
-// 38
+// 37
     {
       left: (
           <>
@@ -1239,7 +1210,7 @@ export default function SymbolLegend() {
     },
 
 
-// 39
+// 38
     {
       left: (
           <>
@@ -1276,7 +1247,7 @@ export default function SymbolLegend() {
     },
 
 
-// 40
+// 39
     {
       left: (
           <>
@@ -1306,7 +1277,7 @@ export default function SymbolLegend() {
     },
 
 
-// 41
+// 40
     {
       left: (
           <>
@@ -1336,7 +1307,7 @@ export default function SymbolLegend() {
     },
 
 
-// 42
+// 41
     {
       left: (
           <>
@@ -1366,7 +1337,7 @@ export default function SymbolLegend() {
     },
 
 
-// 43
+// 42
     {
       left: (
           <>
@@ -1398,7 +1369,7 @@ export default function SymbolLegend() {
 
 
 
-// 44
+// 43
     {
       left: (
           <>
@@ -1430,7 +1401,7 @@ export default function SymbolLegend() {
 
 
 
-// 45
+// 44
     {
       left: (
           <>
@@ -1461,7 +1432,7 @@ export default function SymbolLegend() {
 
 
 
-// 46
+// 45
     {
       left: (
           <>
@@ -1499,7 +1470,7 @@ export default function SymbolLegend() {
       right: '',
     },
 
-// 47
+// 46
     {
       left: (
           <>
@@ -1529,7 +1500,7 @@ export default function SymbolLegend() {
     },
 
 
-// 48
+// 47
     {
       left: (
           <>
@@ -1559,7 +1530,7 @@ export default function SymbolLegend() {
     },
 
 
-// 49
+// 48
     {
       left: (
           <>
@@ -1589,7 +1560,7 @@ export default function SymbolLegend() {
     },
 
 
-// 50
+// 49
     {
       left: (
           <>
@@ -1621,7 +1592,7 @@ export default function SymbolLegend() {
 
 
 
-// 51
+// 50
     {
       left: (
           <>
@@ -1651,7 +1622,7 @@ export default function SymbolLegend() {
     },
 
 
-// 52
+// 51
     {
       left: (
           <>
@@ -1681,7 +1652,7 @@ export default function SymbolLegend() {
     },
 
 
-// 53
+// 52
     {
       left: (
           <>
@@ -1718,7 +1689,7 @@ export default function SymbolLegend() {
     },
 
 
-// 54
+// 53
     {
       left: (
           <>
@@ -1750,7 +1721,7 @@ export default function SymbolLegend() {
     },
 
 
-// 55
+// 54
     {
       left: (
           <>
@@ -1782,7 +1753,7 @@ export default function SymbolLegend() {
     },
 
 
-// 56
+// 55
     {
       left: (
           <>
@@ -1814,7 +1785,7 @@ export default function SymbolLegend() {
     },
 
 
-// 57
+// 56
     {
       left: (
           <>
@@ -1855,7 +1826,7 @@ export default function SymbolLegend() {
     },
 
 
-// 58
+// 57
     {
       left: (
           <>
@@ -1887,7 +1858,7 @@ export default function SymbolLegend() {
     },
 
 
-// 59
+// 58
     {
       left: (
           <>
@@ -1926,7 +1897,7 @@ export default function SymbolLegend() {
     },
 
 
-// 60
+// 59
     {
       left: (
           <>
@@ -1963,7 +1934,7 @@ export default function SymbolLegend() {
     },
 
 
-// 61
+// 60
     {
       left: (
           <>
@@ -1993,7 +1964,7 @@ export default function SymbolLegend() {
 
 
 
-// 62
+// 61
     {
       left: (
           <>
@@ -2022,7 +1993,7 @@ export default function SymbolLegend() {
     },
 
 
-// 63
+// 62
     {
       left: (
           <>
@@ -2051,7 +2022,7 @@ export default function SymbolLegend() {
     },
 
 
-// 64
+// 63
     {
       left: (
           <>
@@ -2080,7 +2051,7 @@ export default function SymbolLegend() {
     },
 
 
-// 65
+// 64
     {
       left: (
           <>
