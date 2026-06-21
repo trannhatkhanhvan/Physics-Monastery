@@ -32,6 +32,171 @@ const DEFAULT_MODULUS = 2;
 
 const CUSTOM_SEQUENCE_ID = "custom-sequence";
 
+const CUSTOM_INPUT_MODES = {
+    SEQUENCE: "sequence",
+    FUNCTION: "function",
+};
+
+const CUSTOM_FUNCTION_TERM_COUNT = 100;
+
+const CUSTOM_FUNCTION_NAMES = new Set([
+    "abs",
+    "floor",
+    "ceil",
+    "round",
+    "sqrt",
+    "cbrt",
+    "pow",
+    "log",
+    "exp",
+    "sin",
+    "cos",
+    "tan",
+    "min",
+    "max",
+]);
+
+const CUSTOM_ALLOWED_IDENTIFIERS = new Set([
+    "n",
+    "pi",
+    "e",
+    ...CUSTOM_FUNCTION_NAMES,
+]);
+
+const CUSTOM_FUNCTION_LIBRARY = Object.freeze({
+    abs: Math.abs,
+    floor: Math.floor,
+    ceil: Math.ceil,
+    round: Math.round,
+    sqrt: Math.sqrt,
+    cbrt: Math.cbrt,
+    pow: Math.pow,
+    log: Math.log,
+    exp: Math.exp,
+    sin: Math.sin,
+    cos: Math.cos,
+    tan: Math.tan,
+    min: Math.min,
+    max: Math.max,
+    pi: Math.PI,
+    e: Math.E,
+});
+
+function stripFunctionPrefix(rawExpression) {
+    return String(rawExpression)
+        .trim()
+        .replace(/^([A-Za-z_][A-Za-z0-9_]*\s*\(\s*n\s*\)|[A-Za-z_][A-Za-z0-9_]*)\s*=/, "");
+}
+
+function isNumberToken(token) {
+    return /^(?:\d+(?:\.\d+)?|\.\d+)$/.test(token);
+}
+
+function isIdentifierToken(token) {
+    return /^[A-Za-z_][A-Za-z0-9_]*$/.test(token);
+}
+
+function isValueEndToken(token) {
+    return token === "n" || token === "pi" || token === "e" || token === ")" || isNumberToken(token);
+}
+
+function isValueStartToken(token) {
+    return (
+        token === "n" ||
+        token === "pi" ||
+        token === "e" ||
+        token === "(" ||
+        isNumberToken(token) ||
+        CUSTOM_FUNCTION_NAMES.has(token)
+    );
+}
+
+function tokenizeCustomFunction(rawExpression) {
+    const normalized = stripFunctionPrefix(rawExpression)
+        .replaceAll("π", "pi")
+        .replaceAll("−", "-")
+        .replace(/\s+/g, "")
+        .replace(/\^/g, "**");
+
+    if (!normalized) {
+        throw new Error("Enter a function of n.");
+    }
+
+    const tokenPattern = /(?:\d+(?:\.\d+)?|\.\d+|[A-Za-z_][A-Za-z0-9_]*|\*\*|[()+\-*/%,])/g;
+    const tokens = normalized.match(tokenPattern) ?? [];
+
+    if (tokens.join("") !== normalized) {
+        throw new Error("Only numbers, n, +, -, *, /, ^, %, parentheses, commas, and supported functions are allowed.");
+    }
+
+    for (const token of tokens) {
+        if (isIdentifierToken(token) && !CUSTOM_ALLOWED_IDENTIFIERS.has(token)) {
+            throw new Error(`Unsupported symbol "${token}". Use n, pi, e, or functions like floor, sqrt, sin, cos.`);
+        }
+    }
+
+    for (let i = 0; i < tokens.length; i += 1) {
+        const token = tokens[i];
+
+        if (CUSTOM_FUNCTION_NAMES.has(token) && tokens[i + 1] !== "(") {
+            throw new Error(`Use ${token}(...) with parentheses.`);
+        }
+    }
+
+    return tokens;
+}
+
+function normalizeCustomFunctionExpression(rawExpression) {
+    const tokens = tokenizeCustomFunction(rawExpression);
+    const expandedTokens = [];
+
+    for (let i = 0; i < tokens.length; i += 1) {
+        const previous = tokens[i - 1];
+        const current = tokens[i];
+
+        if (i > 0 && isValueEndToken(previous) && isValueStartToken(current)) {
+            expandedTokens.push("*");
+        }
+
+        if (current === "n") {
+            expandedTokens.push("n");
+        } else if (current === "pi" || current === "e") {
+            expandedTokens.push(`M.${current}`);
+        } else if (CUSTOM_FUNCTION_NAMES.has(current)) {
+            expandedTokens.push(`M.${current}`);
+        } else {
+            expandedTokens.push(current);
+        }
+    }
+
+    return expandedTokens.join("");
+}
+
+function buildSequenceFromCustomFunction(rawExpression, count) {
+    const jsExpression = normalizeCustomFunctionExpression(rawExpression);
+    const evaluator = new Function("n", "M", `"use strict"; return (${jsExpression});`);
+
+    return Array.from({ length: count }, (_, n) => {
+        const value = evaluator(n, CUSTOM_FUNCTION_LIBRARY);
+
+        if (typeof value !== "number" || !Number.isFinite(value)) {
+            throw new Error(`The function did not produce a finite number at n=${n}.`);
+        }
+
+        const roundedValue = Math.round(value);
+
+        if (Math.abs(value - roundedValue) > 1e-9) {
+            throw new Error(`The function produced a non-integer at n=${n}: ${value}. Number walls require integer terms.`);
+        }
+
+        if (!Number.isSafeInteger(roundedValue)) {
+            throw new Error(`The function produced a value too large at n=${n}: ${value}.`);
+        }
+
+        return String(Object.is(roundedValue, -0) ? 0 : roundedValue);
+    });
+}
+
 function isPrimeNumber(value) {
     if (value < 2) {
         return false;
@@ -206,7 +371,13 @@ function customWallEntry(sequence, row, col) {
     return String(customBareissDet(matrix));
 }
 
-function buildCustomWallData(customSequenceValues) {
+function buildCustomWallData(customSequenceValues, options = {}) {
+    const {
+        title = "Custom Sequence",
+        emptyDescription = "Enter up to 100 sequence entries. Each square can contain a whole number.",
+        filledDescription = null,
+    } = options;
+
     const trimmedValues = customSequenceValues.map((value) => String(value).trim());
 
     let usedLength = 0;
@@ -225,8 +396,8 @@ function buildCustomWallData(customSequenceValues) {
 
     const visibleWidth = 100;
     const visibleDepth = sequence.length > 0
-    ? Math.max(1, Math.min(50, Math.floor((sequence.length - 1) / 2)))
-    : 1;
+        ? Math.max(1, Math.min(50, Math.floor((sequence.length - 1) / 2)))
+        : 1;
 
     const rows = [];
 
@@ -245,12 +416,12 @@ function buildCustomWallData(customSequenceValues) {
 
     return {
         id: CUSTOM_SEQUENCE_ID,
-        title: "Custom Sequence",
+        title,
         category: "custom",
         kind: "terms",
         description: sequence.length === 0
-            ? "Enter up to 100 sequence entries. Each square can contain a whole number."
-            : `Custom number wall built from ${sequence.length} entered term${sequence.length === 1 ? "" : "s"}.`,
+            ? emptyDescription
+            : filledDescription || `Custom number wall built from ${sequence.length} entered term${sequence.length === 1 ? "" : "s"}.`,
         visibleWidth,
         visibleDepth,
         sequence: sequence.map((value) => String(value)),
@@ -641,6 +812,28 @@ export default function NumberWallsPage() {
     const [customSequenceValues, setCustomSequenceValues] = useState(
     Array.from({ length: 100 }, () => "")
 );
+    const [customInputMode, setCustomInputMode] = useState(CUSTOM_INPUT_MODES.SEQUENCE);
+    const [customFunctionText, setCustomFunctionText] = useState("n(n+1)/2");
+    const customFunctionState = useMemo(() => {
+    if (customInputMode !== CUSTOM_INPUT_MODES.FUNCTION) {
+        return {
+            sequence: [],
+            error: "",
+        };
+    }
+
+    try {
+        return {
+            sequence: buildSequenceFromCustomFunction(customFunctionText, CUSTOM_FUNCTION_TERM_COUNT),
+            error: "",
+        };
+    } catch (error) {
+        return {
+            sequence: [],
+            error: error instanceof Error ? error.message : "Invalid function.",
+        };
+    }
+}, [customInputMode, customFunctionText]);
 
     useEffect(() => {
         async function loadIndex() {
@@ -666,7 +859,21 @@ export default function NumberWallsPage() {
             }
 
             if (selectedId === CUSTOM_SEQUENCE_ID) {
-    setWallData(buildCustomWallData(customSequenceValues));
+    if (customInputMode === CUSTOM_INPUT_MODES.FUNCTION) {
+        setWallData(buildCustomWallData(customFunctionState.sequence, {
+            title: "Custom Function",
+            emptyDescription: customFunctionState.error
+                ? `Function error: ${customFunctionState.error}`
+                : "Enter a function a(n) to generate the first 100 terms.",
+            filledDescription: `a(n) = ${customFunctionText}. Generated for n = 0 through ${CUSTOM_FUNCTION_TERM_COUNT - 1}.`,
+        }));
+    } else {
+        setWallData(buildCustomWallData(customSequenceValues, {
+            title: "Custom Sequence",
+            emptyDescription: "Enter up to 100 sequence entries. Each square can contain a whole number.",
+        }));
+    }
+
     setLoading(false);
     return;
 }
@@ -690,7 +897,7 @@ export default function NumberWallsPage() {
         }
 
         loadWall();
-    }, [selectedId, indexItems, customSequenceValues]);
+    }, [selectedId, indexItems, customSequenceValues, customInputMode, customFunctionText, customFunctionState]);
 
     const scales = useMemo(() => {
         return {
@@ -1031,6 +1238,67 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
     border-color: #75c7ff;
 }
 
+.custom-input-panel {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 12px 0;
+    padding: 10px;
+    background: #171717;
+    border: 1px solid #303030;
+    box-sizing: border-box;
+}
+
+.custom-mode-toggle {
+    display: flex;
+    gap: 6px;
+}
+
+.custom-mode-button {
+    background: #222222;
+    color: #eeeeee;
+    border: 1px solid #555555;
+    padding: 4px 10px;
+    font-size: var(--control-font-size);
+    font-family: "Times New Roman", Times, serif;
+    cursor: pointer;
+}
+
+.custom-mode-button:hover {
+    background: #303030;
+}
+
+.custom-mode-button.active {
+    background: #334b5f;
+    border-color: #75c7ff;
+}
+
+.custom-function-label {
+    color: #aaaaaa;
+    font-size: var(--control-font-size);
+}
+
+.custom-function-input {
+    width: 260px;
+    background: #222222;
+    color: #eeeeee;
+    border: 1px solid #555555;
+    padding: 5px 8px;
+    font-size: var(--control-font-size);
+    font-family: "Times New Roman", Times, serif;
+}
+
+.custom-function-error {
+    color: #ff8f8f;
+    font-size: var(--control-font-size);
+}
+
+.custom-function-help {
+    color: #aaaaaa;
+    font-size: 13px;
+}
+
 .wall-description {
     font-size: var(--description-font-size);
 }
@@ -1080,13 +1348,11 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
 --constant-cell-width: 69px;
 --constant-cell-height: 34px;
 
-\`\`\`
 display: grid;
 grid-template-rows: repeat(36, var(--constant-cell-height));
 grid-auto-flow: column;
 grid-auto-columns: var(--constant-cell-width);
 width: max-content;
-\`\`\`
 
 }
 
@@ -1097,12 +1363,10 @@ min-width: 0;
 max-width: var(--constant-cell-width);
 box-sizing: border-box;
 
-\`\`\`
 display: flex;
 align-items: center;
 justify-content: center;
 overflow: hidden;
-\`\`\`
 
 }
 
@@ -1237,7 +1501,7 @@ overflow: hidden;
         className={selectedId === CUSTOM_SEQUENCE_ID ? "sequence-button custom-sequence-button active" : "sequence-button custom-sequence-button"}
         onClick={() => setSelectedId(CUSTOM_SEQUENCE_ID)}
     >
-        Custom Sequence
+        Custom Sequence / Function
     </button>
 
     <div className="sidebar-heading">Famous Sequences</div>
@@ -1384,23 +1648,84 @@ overflow: hidden;
             type="button"
             className="clear-custom-sequence-button"
             onClick={() => {
-                setCustomSequenceValues(Array.from({ length: 100 }, () => ""));
+                if (customInputMode === CUSTOM_INPUT_MODES.FUNCTION) {
+    setCustomFunctionText("n(n+1)/2");
+    return;
+}
 
-                setTimeout(() => {
-                    const firstCell = document.getElementById("custom-sequence-cell-0");
+setCustomSequenceValues(Array.from({ length: 100 }, () => ""));
 
-                    if (firstCell) {
-                        firstCell.focus();
-                    }
-                }, 0);
+setTimeout(() => {
+    const firstCell = document.getElementById("custom-sequence-cell-0");
+
+    if (firstCell) {
+        firstCell.focus();
+    }
+}, 0);
             }}
         >
-            Clear
+            {customInputMode === CUSTOM_INPUT_MODES.FUNCTION ? "Reset" : "Clear"}
         </button>
     )}
 </div>
 
                             <p className="wall-description">{wallData.description}</p>
+                            {selectedId === CUSTOM_SEQUENCE_ID && (
+    <div className="custom-input-panel">
+        <div className="custom-mode-toggle">
+            <button
+                type="button"
+                className={
+                    customInputMode === CUSTOM_INPUT_MODES.SEQUENCE
+                        ? "custom-mode-button active"
+                        : "custom-mode-button"
+                }
+                onClick={() => setCustomInputMode(CUSTOM_INPUT_MODES.SEQUENCE)}
+            >
+                Sequence
+            </button>
+
+            <button
+                type="button"
+                className={
+                    customInputMode === CUSTOM_INPUT_MODES.FUNCTION
+                        ? "custom-mode-button active"
+                        : "custom-mode-button"
+                }
+                onClick={() => setCustomInputMode(CUSTOM_INPUT_MODES.FUNCTION)}
+            >
+                Function
+            </button>
+        </div>
+
+        {customInputMode === CUSTOM_INPUT_MODES.FUNCTION && (
+            <>
+                <label className="custom-function-label" htmlFor="custom-function-input">
+                    a(n) =
+                </label>
+
+                <input
+                    id="custom-function-input"
+                    className="custom-function-input"
+                    type="text"
+                    value={customFunctionText}
+                    onChange={(event) => setCustomFunctionText(event.target.value)}
+                    placeholder="n(n+1)/2"
+                />
+
+                {customFunctionState.error ? (
+                    <span className="custom-function-error">
+                        {customFunctionState.error}
+                    </span>
+                ) : (
+                    <span className="custom-function-help">
+                        Examples: n(n+1)/2, n^2, 2n+1, floor(n/2)
+                    </span>
+                )}
+            </>
+        )}
+    </div>
+)}
 
                             <div className="wall-frame">
                                 <table className="wall-table">
@@ -1410,11 +1735,24 @@ overflow: hidden;
                                                 <td className="row-label">{row.row}</td>
 
                                                 {row.values.map((value, index) => {
-    const isCustomEntryCell = selectedId === CUSTOM_SEQUENCE_ID && row.row === 0;
+    const isCustomSequenceMode =
+    selectedId === CUSTOM_SEQUENCE_ID &&
+    customInputMode === CUSTOM_INPUT_MODES.SEQUENCE;
+
+const isCustomFunctionMode =
+    selectedId === CUSTOM_SEQUENCE_ID &&
+    customInputMode === CUSTOM_INPUT_MODES.FUNCTION;
+
+const isCustomEntryCell = isCustomSequenceMode && row.row === 0;
 const customUsedLength = getContiguousCustomLength(customSequenceValues);
 
-const displayValue = isCustomEntryCell
-    ? (index <= customUsedLength ? customSequenceValues[index] : "")
+const displayValue =
+    selectedId === CUSTOM_SEQUENCE_ID && row.row === 0
+        ? (
+            isCustomFunctionMode
+                ? value
+                : (index <= customUsedLength ? customSequenceValues[index] : "")
+        )
     : value;
 
 let colors = cellColor(
@@ -1427,7 +1765,7 @@ let colors = cellColor(
 );
 
 if (
-    selectedId === CUSTOM_SEQUENCE_ID &&
+    isCustomSequenceMode &&
     row.row === 0 &&
     String(displayValue || "").trim() === ""
 ) {
