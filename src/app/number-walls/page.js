@@ -1495,14 +1495,15 @@ overflow: hidden;
 
             <div className="number-walls-layout">
                 <aside className="number-walls-sidebar">
-    <div className="sidebar-heading">Build Your Own</div>
+    <div className="sidebar-heading">Build Your Own Custom</div>
 
-    <button
-        className={selectedId === CUSTOM_SEQUENCE_ID ? "sequence-button custom-sequence-button active" : "sequence-button custom-sequence-button"}
-        onClick={() => setSelectedId(SEQUENCE_ID)}
-    >
-        Sequence / Function
-    </button>
+<button
+    type="button"
+    className={selectedId === CUSTOM_SEQUENCE_ID ? "sequence-button custom-sequence-button active" : "sequence-button custom-sequence-button"}
+    onClick={() => setSelectedId(CUSTOM_SEQUENCE_ID)}
+>
+    Sequence / Function
+</button>
 
     <div className="sidebar-heading">Famous Sequences</div>
 
