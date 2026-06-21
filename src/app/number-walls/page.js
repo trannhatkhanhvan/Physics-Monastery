@@ -1495,7 +1495,7 @@ overflow: hidden;
 
             <div className="number-walls-layout">
                 <aside className="number-walls-sidebar">
-    <div className="sidebar-heading">Build Your Own Custom</div>
+    <div className="sidebar-heading">Build Your Own</div>
 
 <button
     type="button"
