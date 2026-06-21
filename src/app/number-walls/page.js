@@ -680,7 +680,9 @@ export default function NumberWallsPage() {
                 return;
             }
 
-            const response = await fetch(`/number-walls/data/${item.filename}`);
+            const response = await fetch(`/number-walls/data/${item.filename}?time=${Date.now()}`, {
+    cache: "no-store",
+});
             const data = await response.json();
 
             setWallData(data);

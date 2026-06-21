@@ -6,16 +6,16 @@ NATURE_CONSTANTS = [
 
     {
         "slot": 1,
-        "id": "nature-001-delta-nu-cs",
-        "title": "Delta_nu_Cs",
+        "id": "nature-001-hyperfine-transition-frequency-of-Cesium-133",
+        "title": "hyperfine transition frequency of Cesium-133",
         "symbol": "Δν_Cs",
         "symbolImage": "/equations/hyperfine_symbol.svg",
         "symbolParts": [
             {"type": "latex", "latex": "\\Delta\\text{ν}_{\\mathrm{Cs}}"},
         ],
-        "value": "9192631770.42969468208523447254625875572451026483529616417679823109845934829346789244765835709066789161997225409317625125",
+        "value": "9192631770.42965287609936094355428681420081231466760793060074333672518180454791335620236032675439348455330399101970733781",
         "dimension": "Hz",
-        "description": "The first 100 significant digits of the model value for Delta_nu_Cs, read as a digit sequence.",
+        "description": "The first 100 digits of the hyperfine transition frequency of Cesium-133, read as a digit sequence.",
     },
 
     {
@@ -29,9 +29,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{Hz}"},
         ],
-        "value": "241798924253021.037871675332152522293756311222278112850285165391460690236874134705702802316738864714166502350361699822695",
+        "value": "241798924253020.810194283650938042305370321199047191853365584135522141464142016339098152704558420325843831504597278938875",
         "dimension": "Hz",
-        "description": "The first 100 significant digits of the model value for the electron volt-hertz relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the electron volt-hertz relationship, read as a digit sequence.",
     },
 
     {
@@ -45,9 +45,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{Hz}"},
         ],
-        "value": "1509190179712698114980147519458844.37329766393258320681078735038417993123939004187135402959882653536749451557226904519811",
+        "value": "1509190179712691251528536579042656.59377268794454801941429855218309316610923780147161835529606045090372644271009875219156",
         "dimension": "Hz",
-        "description": "The first 100 significant digits of the model value for the joule-hertz relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the joule-hertz relationship, read as a digit sequence.",
     },
 
     {
@@ -61,9 +61,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{J}"},
         ],
-        "value": "6.62607014968851298199828136648981179568738397252512350591706468282385151654172277432493189248902164963883604819123336832e-34",
+        "value": "0.000000000000000000000000000000000662607014968854311584917333373068619858819478723780934266563751448881891069839360305736835500698770500440494331922011325",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the hertz-joule relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hertz-joule relationship, read as a digit sequence.",
     },
 
     {
@@ -77,9 +77,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{eV}"},
         ],
-        "value": "4.13566769686229425708237748150566362349892029056783340551049855939015867311151260377224941305376259677494044411426198932e-15",
+        "value": "0.00000000000000413566769616115061586660689987077411204868655263797142029321940941753590853050707153744358273754902533052166576050412619",
         "dimension": "eV",
-        "description": "The first 100 significant digits of the model value for the hertz-electron volt relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hertz-electron volt relationship, read as a digit sequence.",
     },
 
     {
@@ -91,9 +91,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\dot{\\hbar}"},
         ],
-        "value": "6.58211956941108971474568851580149735210118481568253439479605595965977945680847048155806190063390234682339415167913569408e-16",
+        "value": "0.000000000000000658211956829517816649919608865379670905199299025828516016422096417008481994125546209013195126703005041447743990904801054",
         "dimension": "eV s",
-        "description": "The first 100 significant digits of the model value for the natural unit of action in eV s, read as a digit sequence.",
+        "description": "The first 100 digits of the natural unit of action in eV s, read as a digit sequence.",
     },
 
     {
@@ -105,9 +105,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\hbar"},
         ],
-        "value": "1.05457181759658277972769760153539139608948324554251032289067909851463232740056843607116899134602606463806410978155952953e-34",
+        "value": "0.000000000000000000000000000000000105457181759658648858982414688273753577210053063270151451070496421112323923009456934924667531648685191350703785031951114",
         "dimension": "J s",
-        "description": "The first 100 significant digits of the model value for the reduced Planck constant, read as a digit sequence.",
+        "description": "The first 100 digits of the reduced Planck constant, read as a digit sequence.",
     },
 
     {
@@ -119,9 +119,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "h"},
         ],
-        "value": "6.62607014968851298199828136648981179568738397252512350591706468282385151654172277432493189248902164963883604819123336832e-34",
+        "value": "0.000000000000000000000000000000000662607014968854311584917333373068619858819478723780934266563751448881891069839360305736835500698770500440494331922011325",
         "dimension": "J s",
-        "description": "The first 100 significant digits of the model value for the Planck constant, read as a digit sequence.",
+        "description": "The first 100 digits of the Planck constant, read as a digit sequence.",
     },
 
     {
@@ -133,9 +133,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "q_{\\mathrm{c}}"},
         ],
-        "value": "3.63694754800778851746725676122219360708072240391273178704918567706766395564914252776483660610926259880511138028849913458e-4",
+        "value": "0.000363694754800780460243224579690402132010206492304935833466779955016282970406130515600956803689818516087053418649628386309",
         "dimension": "m^2 s^-1",
-        "description": "The first 100 significant digits of the model value for the quantum of circulation, read as a digit sequence.",
+        "description": "The first 100 digits of the quantum of circulation, read as a digit sequence.",
     },
 
     {
@@ -147,9 +147,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "2q_{\\mathrm{c}}"},
         ],
-        "value": "7.27389509601557703493451352244438721416144480782546357409837135413532791129828505552967321221852519761022276057699826916e-4",
+        "value": "0.000727389509601560920486449159380804264020412984609871666933559910032565940812261031201913607379637032174106837299256772618",
         "dimension": "m^2 s^-1",
-        "description": "The first 100 significant digits of the model value for twice the quantum of circulation, read as a digit sequence.",
+        "description": "The first 100 digits of the quantum of circulation times 2, read as a digit sequence.",
     },
 
     {
@@ -161,9 +161,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{B}}/e"},
         ],
-        "value": "5.78838180031388457838017417232231002111069578956415444148254625336250709123205973498513478967237397165656264879836780936e-5",
+        "value": "0.0000578838180031390421153237445623981283666209626509321525437761579047244795745183081723300169496953001665889750435418321179",
         "dimension": "eV T^-1",
-        "description": "The first 100 significant digits of the model value for the Bohr magneton in eV per T, read as a digit sequence.",
+        "description": "The first 100 digits of the Bohr magneton in eV per T, read as a digit sequence.",
     },
 
     {
@@ -175,9 +175,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{N}}/e"},
         ],
-        "value": "3.15245125534845105219251792066121639345677658147127786304960883259567403950994514769001071281881852438469516561882090776e-8",
+        "value": "0.0000000315245125534847045994894391427676923268947366805983534874805343694244089220401948639916410986461056936721662913357284847",
         "dimension": "eV T^-1",
-        "description": "The first 100 significant digits of the model value for the nuclear magneton in eV per T, read as a digit sequence.",
+        "description": "The first 100 digits of the nuclear magneton in eV per T, read as a digit sequence.",
     },
 
     {
@@ -189,9 +189,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "G_0^{-1}"},
         ],
-        "value": "12906.4037306099482214459631370883673503767050308052745736906675368696920681734137827017203064616041772667932685381089209",
+        "value": "12906.4037306099138313618281777221969059434760282402212666652741273285595550951490240766174237633243474033981637488313493",
         "dimension": "Ohm",
-        "description": "The first 100 significant digits of the model value for the inverse of conductance quantum, read as a digit sequence.",
+        "description": "The first 100 digits of the inverse of conductance quantum, read as a digit sequence.",
     },
 
     {
@@ -203,9 +203,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "G_0"},
         ],
-        "value": "0.0000774809172928721874818790853740813977101814911608424360054050751619100181944726951621895948187373332442738670588863889681",
+        "value": "0.0000774809172928723939356147790860472446566719191209958037346505976716579765100061939845527947635964643931008425801947044004",
         "dimension": "S",
-        "description": "The first 100 significant digits of the model value for the conductance quantum, read as a digit sequence.",
+        "description": "The first 100 digits of the conductance quantum, read as a digit sequence.",
     },
 
     {
@@ -217,9 +217,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{eV}"},
         ],
-        "value": "1.60217663422016087188095023615526930866112976551112252930352091995933182012261977182551268284075244319682894328943004603e-19",
+        "value": "0.000000000000000000160217663422016664960731073851661043249653509338657172351589985820875404281971668599670820751524443337606454826202044026",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the electron volt, read as a digit sequence.",
+        "description": "The first 100 digits of the electron volt, read as a digit sequence.",
     },
 
     {
@@ -233,9 +233,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{eV}"},
         ],
-        "value": "6241509073603085526.64116180900951546319125612789654441429277001442574726830933406972822234628955120012499457406598037065",
+        "value": "6241509073603063018.67872268404606572747892096082005443450037545732892284370222372123709013037966095927067941365097388605",
         "dimension": "eV",
-        "description": "The first 100 significant digits of the model value for the joule-electron volt relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the joule-electron volt relationship, read as a digit sequence.",
     },
 
     {
@@ -247,9 +247,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "-e/m_{\\mathrm{e}}"},
         ],
-        "value": "-175882000934.635754069423620039985587235309755514966066777869409559241756525817993683410780336412712068069741808159750609",
+        "value": "-175882000934.636366324723537113987690177082741001453828833055447997257852627140768116345527626365279657478697821741501393",
         "dimension": "C/kg",
-        "description": "The first 100 significant digits of the model value for the electron charge to mass quotient, read as a digit sequence.",
+        "description": "The first 100 digits of the electron charge to mass quotient, read as a digit sequence.",
     },
 
     {
@@ -261,9 +261,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "e/m_+"},
         ],
-        "value": "95788331.4831657172528065204789977326871243786840676542670883823039242574011658692770746080288456049692737472189570259936",
+        "value": "95788331.4831663155120871133884039863934280398589444875783924367551233773364161287210701147669638150537442162083722904216",
         "dimension": "C/kg",
-        "description": "The first 100 significant digits of the model value for the proton charge to mass quotient, read as a digit sequence.",
+        "description": "The first 100 digits of the proton charge to mass quotient, read as a digit sequence.",
     },
 
     {
@@ -275,9 +275,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{B}}/h"},
         ],
-        "value": "13996244924.8203322759509016578297028886182776580561804345811212754000668381485080460496883278213893690792439652584998435",
+        "value": "13996244924.8203665698650154074197906531101549118626312319360858371495506357012139459452438036905583458231211187039440722",
         "dimension": "Hz T^-1",
-        "description": "The first 100 significant digits of the model value for the Bohr magneton in Hz per T, read as a digit sequence.",
+        "description": "The first 100 digits of the Bohr magneton in Hz per T, read as a digit sequence.",
     },
 
     {
@@ -289,9 +289,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{N}}/h"},
         ],
-        "value": "7.62259322303543089428900677168941668896447906291705777689003402114497215975007380728352371035852807400427815170736372591",
+        "value": "7.62259322303547064461647428250786608400252108052522195330562799374743561574761812453383148610123633831218272335677821667",
         "dimension": "MHz T^-1",
-        "description": "The first 100 significant digits of the model value for the nuclear magneton in MHz per T, read as a digit sequence.",
+        "description": "The first 100 digits of the nuclear magneton in MHz per T, read as a digit sequence.",
     },
 
     {
@@ -303,9 +303,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "a"},
         ],
-        "value": "5.43102018763798540749797085170654869039644069671587715875456926473447424950590168322034557650128422322658763854223770036e-10",
+        "value": "0.000000000543102018763796842678227001265666638883117175666801358867451369721965046711188751018338817949431464398790955911768186115",
         "dimension": "m",
-        "description": "The first 100 significant digits of the model value for the lattice parameter of silicon, read as a digit sequence.",
+        "description": "The first 100 digits of the lattice parameter of silicon, read as a digit sequence.",
     },
 
     {
@@ -317,9 +317,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "d_{220}"},
         ],
-        "value": "1.92015560171992761289786942089561464757012347383052565034589468744115727125055828303003570417187780062127582563676479847e-10",
+        "value": "0.000000000192015560171992160930825868881059568818896356179627995065765252392453679146410827524910971249773615605551418252891143902",
         "dimension": "m",
-        "description": "The first 100 significant digits of the model value for the lattice spacing of ideal Si (220), read as a digit sequence.",
+        "description": "The first 100 digits of the lattice spacing of ideal Si (220), read as a digit sequence.",
     },
 
     {
@@ -331,9 +331,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "R_{\\infty}"},
         ],
-        "value": "10973731.5681099733990732957934683212305400594176805734327091270023434427787153860956138134436120922926490047495861613148",
+        "value": "10973731.5681099875848955583986700928900252552820101900731391112516498358348976066584623518528163117559314194791778262519",
         "dimension": "1/m",
-        "description": "The first 100 significant digits of the model value for the Rydberg constant, read as a digit sequence.",
+        "description": "The first 100 digits of the Rydberg constant, read as a digit sequence.",
     },
 
     {
@@ -347,9 +347,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "1/\\mathrm{m}"},
         ],
-        "value": "21947463.1362199467981465915869366424610801188353611468654182540046868855574307721912276268872241845852980094991723226296",
+        "value": "21947463.1362199751697911167973401857800505105640203801462782225032996716697952133169247037056326235118628389583556525038",
         "dimension": "1/m",
-        "description": "The first 100 significant digits of the model value for the hartree-inverse meter relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hartree-inverse meter relationship, read as a digit sequence.",
     },
 
     {
@@ -363,9 +363,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "E_h"},
         ],
-        "value": "4.55633525292919696796070951726410246502469746048780595180688285791937746958224391485045362174582438790854607478711092720e-8",
+        "value": "0.0000000455633525292919107795313412470989438963447631534874361841697760508934871732197741592691244437989621642028280816616003112",
         "dimension": "E_h",
-        "description": "The first 100 significant digits of the model value for the inverse meter-hartree relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the inverse meter-hartree relationship, read as a digit sequence.",
     },
 
     {
@@ -377,9 +377,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{90}"},
         ],
-        "value": "1.00000008888172757311990506448693682650691707274304754725917808489133471562999504110579926694809474142835099469625493028",
+        "value": "1.00000008888172757311121315907763702662095129511184518553359549390327942054800294697703637483683786630202108312045510258",
         "dimension": "A",
-        "description": "The first 100 significant digits of the model value for the conventional value of ampere-90, read as a digit sequence.",
+        "description": "The first 100 digits of the conventional value of ampere-90, read as a digit sequence.",
     },
 
     {
@@ -391,9 +391,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{C}_{90}"},
         ],
-        "value": "1.00000008888172757311990506448693682650691707274304754725917808489133471562999504110579926694809474142835099469625493028",
+        "value": "1.00000008888172757311121315907763702662095129511184518553359549390327942054800294697703637483683786630202108312045510258",
         "dimension": "C",
-        "description": "The first 100 significant digits of the model value for the conventional value of coulomb-90, read as a digit sequence.",
+        "description": "The first 100 digits of the conventional value of coulomb-90, read as a digit sequence.",
     },
 
     {
@@ -405,9 +405,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{B}}/hc"},
         ],
-        "value": "46.6864477302115774685886560366278903058616304426425715341858132369452035611673681004070536082206766458469668082584175730",
+        "value": "46.6864477302115842442852007082729620031220368736142463535492666632397433583663190738927610479827122715249718200904319634",
         "dimension": "1/m*T",
-        "description": "The first 100 significant digits of the model value for the Bohr magneton in inverse meter per tesla, read as a digit sequence.",
+        "description": "The first 100 digits of the Bohr magneton in inverse meter per tesla, read as a digit sequence.",
     },
 
     {
@@ -419,9 +419,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{N}}/hc"},
         ],
-        "value": "2.54262341068939902804385193554864976180999959145581489632515764217979187370194741503540957288065646291304465169733670823e-2",
+        "value": "0.0254262341068940642634876155667776963799720770869854147461367702457885805801685441589055792229384355750068144071017810399",
         "dimension": "1/m*T",
-        "description": "The first 100 significant digits of the model value for the nuclear magneton in inverse meter per tesla, read as a digit sequence.",
+        "description": "The first 100 digits of the nuclear magneton in inverse meter per tesla, read as a digit sequence.",
     },
 
     {
@@ -433,9 +433,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\kappa"},
         ],
-        "value": "8987551793.02984761796920436850333507384556867773207818917678926907040048663964695025548095516824242918110959527742669579",
+        "value": "8987551793.02985044756669477311642573414178300857314478129081746901693652812986049681556634984783036146162476277408329427",
         "dimension": "m/F",
-        "description": "The first 100 significant digits of the model value for Coulomb's constant, read as a digit sequence.",
+        "description": "The first 100 digits of the Coulomb's constant, read as a digit sequence.",
     },
 
     {
@@ -447,9 +447,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{perm}}"},
         ],
-        "value": "1.11265005535270230254661509366123025497497334763514644423486354752281546764353190179608458173822595099714652727896345258e-10",
+        "value": "0.000000000111265005535270195224523415842151293599028887801492056443902839582601443810942764745663132738653943766817025195217259323",
         "dimension": "F/m",
-        "description": "The first 100 significant digits of the model value for the atomic unit of permittivity, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of permittivity, read as a digit sequence.",
     },
 
     {
@@ -461,9 +461,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\varepsilon_0"},
         ],
-        "value": "8.85418781204268564158776754593419497453153893559532231215936178266263494005303242081660055116707262552152251234837209555e-12",
+        "value": "0.00000000000885418781204267372677413077190902756199824976971360164838499112733518718308196070915702906793459072723984766667995826425",
         "dimension": "F/m",
-        "description": "The first 100 significant digits of the model value for the vacuum electric permittivity, read as a digit sequence.",
+        "description": "The first 100 digits of the vacuum electric permittivity, read as a digit sequence.",
     },
 
     {
@@ -475,9 +475,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{time}}"},
         ],
-        "value": "2.41888432657499787303594488997122578419620513512602289689385102372069231372953632703989722519651100710377126936196862075e-17",
+        "value": "0.0000000000000000241888432657498667684046339932807046452050590829418391591432139748385651693968381346657173535650646971864640047523150844",
         "dimension": "s",
-        "description": "The first 100 significant digits of the model value for the atomic unit of time, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of time, read as a digit sequence.",
     },
 
     {
@@ -491,9 +491,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "E_h"},
         ],
-        "value": "1.51982984605029995167820385335687324833821816365077311772749518827129601843330189476793791817546128911989777105995557470e-16",
+        "value": "0.000000000000000151982984605029448359441534779869632217690891190435293343278502025375217309974709914648702721984326999862234382773393894",
         "dimension": "E_h",
-        "description": "The first 100 significant digits of the model value for the hertz-hartree relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hertz-hartree relationship, read as a digit sequence.",
     },
 
     {
@@ -507,9 +507,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{Hz}"},
         ],
-        "value": "6579683920520725.03875761236245610055909527611909749399307308597227551745727633770714733563728579066745994612348991401184",
+        "value": "6579683920520748.71131745358133342739051913767432097056526626388570541245446703329980718160798854649623236619442151304193",
         "dimension": "Hz",
-        "description": "The first 100 significant digits of the model value for the hartree-hertz relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hartree-hertz relationship, read as a digit sequence.",
     },
 
     {
@@ -521,9 +521,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{R_{\\infty}c}"},
         ],
-        "value": "3289841960260362.51937880618122805027954763805954874699653654298613775872863816885357366781864289533372997306174495700592",
+        "value": "3289841960260374.35565872679066671369525956883716048528263313194285270622723351664990359080399427324811618309721075652097",
         "dimension": "Hz",
-        "description": "The first 100 significant digits of the model value for the Rydberg constant times c in Hz, read as a digit sequence.",
+        "description": "The first 100 digits of the Rydberg constant times c in Hz, read as a digit sequence.",
     },
 
     {
@@ -535,9 +535,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_n/\\mu_+"},
         ],
-        "value": "-6.84979091085629224119353382476450733932079164255217864512782322344588697976206896778967687790365255673662583894450409002e-1",
+        "value": "-0.684979091085622566263778146411948253578452483765451094249819093508416371730960598213698692173499570745595592346712811671",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the neutron-proton magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron-proton magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -549,9 +549,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_+/\\mu_n"},
         ],
-        "value": "-1.45989857648806687093807707979375109959717139710537033027903597316367217267656553569261309455446219628766809933162743137",
+        "value": "-1.45989857648808106085132150507998473478814709915198851632410624115086037887393732007435576839514538347723028632547850272",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the proton-neutron magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the proton-neutron magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -563,9 +563,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_e/\\mu_n"},
         ],
-        "value": "960.920149475114877616398301716851489746603917340936814819211133599654572114977422729044492590222194123864554821313565414",
+        "value": "960.920149475118220402783614616727925154626057805249549336306667265452231177659593247537586509524430381194607102386791113",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the electron-neutron magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the electron-neutron magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -577,9 +577,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_n/\\mu_e"},
         ],
-        "value": "1.04066919665097227760807185335556078689057010896276404364847832124078544763323415211310581670241034216470426010746157382e-3",
+        "value": "0.00104066919665096865739589909418676054863414305402138952756442792737980403594398684744421036866041729683065489004601790842",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the neutron-electron magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron-electron magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -591,9 +591,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mdm}}"},
         ],
-        "value": "1.85480201153127636945597104110253885343044730733257144566895808162437991279110465348389807353327778946632013162899061342e-23",
+        "value": "0.0000000000000000000000185480201153128934935639063236867656843338089431179614438865214721828463529166464045422832465647661542282439897829691761",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the atomic unit of magnetic dipole moment, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of magnetic dipole moment, read as a digit sequence.",
     },
 
     {
@@ -605,9 +605,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{B}}"},
         ],
-        "value": "9.27401005765638184727985520551269426715223653666285722834479040812189956395552326741949036766638894733160065814495306712e-24",
+        "value": "0.00000000000000000000000927401005765644674678195316184338284216690447155898072194326073609142317645832320227114162328238307711412199489148458806",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the Bohr magneton, read as a digit sequence.",
+        "description": "The first 100 digits of the Bohr magneton, read as a digit sequence.",
     },
 
     {
@@ -619,9 +619,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{N}}"},
         ],
-        "value": "5.05078373489248044293394576966762108080518839814276608420885169377631623253150953149496331247413968561079112033011962005e-27",
+        "value": "0.00000000000000000000000000505078373489252975160935796560584967357823362137558596936869455736515066483733954799939159760098461555731023634174162717",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the nuclear magneton, read as a digit sequence.",
+        "description": "The first 100 digits of the nuclear magneton, read as a digit sequence.",
     },
 
     {
@@ -633,9 +633,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{tri}}"},
         ],
-        "value": "1.50460951611436896056600414876420461002990989184799900537626032083104080755167491943309517049371854168224830017659582105e-26",
+        "value": "0.0000000000000000000000000150460951611439371224803696403839915504524780607222266064430556853341544457061682441350539376268932544332258113467674303",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the triton magnetic moment, read as a digit sequence.",
+        "description": "The first 100 digits of the triton magnetic moment, read as a digit sequence.",
     },
 
     {
@@ -647,9 +647,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{tri}}/\\mu_+"},
         ],
-        "value": "1.06663991754136917691397752326782520844222002214894718399273845890794790048164120426672584823645383151390449025673311962",
+        "value": "1.06663991754137526414308057673529222943673224833893681868618803323286173133172087606750051247868172984664137987044022358",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the triton to proton magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the triton to proton magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -661,9 +661,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{tri}}/\\mu_{\\mathrm{N}}"},
         ],
-        "value": "2.97896247563035569148481664211434933162523358831536479262021149614472445719881230090729325057552600041060998252017111603",
+        "value": "2.97896247563037561475739710944500169936854925058160842254858439338544302581646551695558361223720378800859352039035194438",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the triton magnetic moment to nuclear magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the triton magnetic moment to nuclear magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -675,9 +675,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{tri}}/\\mu_{\\mathrm{B}}"},
         ],
-        "value": "1.62239367061578418540484491056970362096256180816503368429684685746109515021627003154200168753608442982400883082543181003e-3",
+        "value": "0.00162239367061579952119729684626053402204402017055341273317801962935032271302526213178544396095732811563576707778657982409",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the triton magnetic moment to Bohr magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the triton magnetic moment to Bohr magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -689,9 +689,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "g_{\\mathrm{tri}}"},
         ],
-        "value": "5.95792495126071138296963328422869866325046717663072958524042299228944891439762460181458650115105200082121996504034223207",
+        "value": "5.95792495126075122951479421889000339873709850116321684509716878677088605163293103391116722447440757601718704078070388875",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the triton g factor, read as a digit sequence.",
+        "description": "The first 100 digits of the triton g factor, read as a digit sequence.",
     },
 
     {
@@ -703,9 +703,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{e}}/\\mu_{\\mu}"},
         ],
-        "value": "206.766985041623099680729663190524605470284166666092700089877884078263714242145286173872976525083244386626447081355816735",
+        "value": "206.766985041623063932988208442830437264220207803522713760661307478173531390150289099116407738298643609680339128073579212",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the electron-muon magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the electron-muon magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -717,9 +717,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "G"},
         ],
-        "value": "6.67430315504532878095791466654436025279560404163263292111865023679112510929356803254105477540919717725789358186508378961e-11",
+        "value": "0.0000000000667430315504537914154749753283213701101898364856048773069893609643826617003719830346656874911818966171256293154797234263",
         "dimension": "m^3/(s^2*kg)",
-        "description": "The first 100 significant digits of the model value for the Newtonian constant of gravitation, read as a digit sequence.",
+        "description": "The first 100 digits of the Newtonian constant of gravitation, read as a digit sequence.",
     },
 
     {
@@ -731,9 +731,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "G/\\hbar c"},
         ],
-        "value": "6.70882525604657705311374626932129743337721526469644522533518582146218141654998939452130285098821352676185178243200345273e-39",
+        "value": "0.00000000000000000000000000000000000000670882525604658244411313306838037478353414278243755236312513261791595119858233657180945057153203754654811022624963674535",
         "dimension": "c^4/GeV^2",
-        "description": "The first 100 significant digits of the model value for the Newtonian constant of gravitation over h-bar c, read as a digit sequence.",
+        "description": "The first 100 digits of the Newtonian constant of gravitation over h-bar c, read as a digit sequence.",
     },
 
     {
@@ -745,9 +745,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_n"},
         ],
-        "value": "1.67492749887875871961022373218156906735912552910735073362285651745855385315284045947576806054874996022555033479061088191e-27",
+        "value": "0.00000000000000000000000000167492749887876529397035046602473893949664998218541895754290700371635594047165898410909510344485333110956296780793727400",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the neutron mass, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron mass, read as a digit sequence.",
     },
 
     {
@@ -759,9 +759,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_+"},
         ],
-        "value": "1.67262192525165215563793856479631466017202871303977219204689664499749709030403726242448129019903881189235273618596909510e-27",
+        "value": "0.00000000000000000000000000167262192525164774081050492208600182390257690471206603953052851515993846092468591866657200435168668590419718390792594789",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the proton mass, read as a digit sequence.",
+        "description": "The first 100 digits of the proton mass, read as a digit sequence.",
     },
 
     {
@@ -773,9 +773,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\mathrm{de}}"},
         ],
-        "value": "3.34358377536356093465510742738427511404975942970751775350812947039787512334075288741196566127272026553951715074643928435e-27",
+        "value": "0.00000000000000000000000000334358377536355929242363700468215825866605254608379805061244894805233156183739707491459826383171431663007343975474428072",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the deuteron mass, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron mass, read as a digit sequence.",
     },
 
     {
@@ -787,9 +787,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\mu}"},
         ],
-        "value": "1.88353161502363027570481169457139751372637916234397988124749760575243089282090877217897608930248289481941030959576184240e-28",
+        "value": "0.000000000000000000000000000188353161502363018585972699027569275107858211850010481703676576480597785923237805663815602476957906586513313403847420178",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the muon mass, read as a digit sequence.",
+        "description": "The first 100 digits of the muon mass, read as a digit sequence.",
     },
 
     {
@@ -801,9 +801,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{de}}/\\mu_{\\mathrm{e}}"},
         ],
-        "value": "-4.66434558972162708487009161206087811806888693180506340790002780714907281389057491015350617564441178576079845792963828726e-4",
+        "value": "-0.000466434558972164822698477362127810532199281281701809435830167478914945022118024903287581128279963485342770409493541000726",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the deuteron-electron magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron-electron magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -815,9 +815,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{e}}/\\mu_{\\mathrm{de}}"},
         ],
-        "value": "-2143.92347386009410748526340245492037598860478278143416376328015341363000702881593589840029988524723263164919875729450651",
+        "value": "-2143.92347386008438970704952301107986623109395986637141199282978056122405431443054685606636283954379207441524027049112118",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the electron-deuteron magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the electron-deuteron magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -829,9 +829,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{de}}/\\mu_+"},
         ],
-        "value": "3.07012209390825305234433494564789690132292011487260661216099369323269728832295316106011030469510757447560954750156199375e-1",
+        "value": "0.307012209390824781143002798240648610141259110015115417894586537008434557696084016359854352258328032182744791985060101954",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the deuteron-proton magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron-proton magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -843,9 +843,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{de}}/\\mu_n"},
         ],
-        "value": "-4.48206589662325990729473073256784832073469897521440800092913847893508853887800508374575848772087612879295672739524233041e-1",
+        "value": "-0.448206589662329581762684441985201298485910480176267787023510375416559978977402511157816390598216393452469269622366060247",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the deuteron-neutron magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron-neutron magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -857,9 +857,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{de}}"},
         ],
-        "value": "4.33073505993239524539102822906115899980428964942473041930933018327797028335644599058560738902476395290905390154002859056e-27",
+        "value": "0.00000000000000000000000000433073505993243437959857647229274715083837893218306438463689797060171315665946005013333121008537475114959973492732691549",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the deuteron magnetic moment, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron magnetic moment, read as a digit sequence.",
     },
 
     {
@@ -871,9 +871,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{he}}'/\\mu_{\\mathrm{B}}"},
         ],
-        "value": "-1.15867149694878292696011396042385226428627241201510153389292513049776509687615813906764566466936687230835858924363494836e-3",
+        "value": "-0.00115867149694879229059067815191513298316015896578289134529032853307113457003834313275851104596435601236506570089601843933",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the shielded helion magnetic moment to Bohr magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded helion magnetic moment to Bohr magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -885,9 +885,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{he}}'/\\mu_{\\mathrm{N}}"},
         ],
-        "value": "-2.12749776673055993232575813870957830462859375999891308216448756168669551364350302640068569910071095059854044106502958429",
+        "value": "-2.12749776673057124374067004399017054949017084757356428499365020286144386905526291624375147308614767274737841816594487357",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the shielded helion magnetic moment to nuclear magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded helion magnetic moment to nuclear magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -899,9 +899,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "g_{\\mathrm{he}}"},
         ],
-        "value": "-4.25525070422297953622211401776089776402769897888590985519292655446782456956883196575261577428613387681438194699304826536",
+        "value": "-4.25525070422300216416684776259936304106148921677337919754150931723922278393351668804677336737361884445349628651974751029",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the helion g factor, read as a digit sequence.",
+        "description": "The first 100 digits of the helion g factor, read as a digit sequence.",
     },
 
     {
@@ -913,9 +913,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{he}}/\\mu_{\\mathrm{N}}"},
         ],
-        "value": "-2.12762535211148976811105700888044888201384948944295492759646327723391228478441598287630788714306693840719097349652413268",
+        "value": "-2.12762535211150108208342388129968152053074460838668959877075465861961139196675834402338668368680942222674814325987375515",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the helion magnetic moment to nuclear magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the helion magnetic moment to nuclear magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -927,9 +927,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{he}}/\\mu_{\\mathrm{B}}"},
         ],
-        "value": "-1.15874098211893092252343411668204392782504245500727818210928786927310344029070427876498406269398886734500094008796158051e-3",
+        "value": "-0.00115874098211894028773892921176049195667172042278337064863892308893859377018791252732531505385252071990432012891773727157",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the helion magnetic moment to Bohr magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the helion magnetic moment to Bohr magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -941,9 +941,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_0"},
         ],
-        "value": "1.25663706158248976005065868391094091644161950848482784787658454948538297182639531886568393813886392106399215956876777154e-6",
+        "value": "0.00000125663706158248565765508740894681802275479566142014170156589352904725774373793104467320959125389532375077659157181098967",
         "dimension": "N/A^2",
-        "description": "The first 100 significant digits of the model value for the vacuum magnetic permeability, read as a digit sequence.",
+        "description": "The first 100 digits of the vacuum magnetic permeability, read as a digit sequence.",
     },
 
     {
@@ -955,9 +955,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\mathrm{e}}"},
         ],
-        "value": "9.10938371013637074203113184613844109457853032911255629331631200491582105589417783415206454705523292725520028240988367566e-31",
+        "value": "0.000000000000000000000000000000910938371013637188176063189660823004593468239349526995331166761871220899951124579441633890074450687808578991568072624478",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the electron mass, read as a digit sequence.",
+        "description": "The first 100 digits of the electron mass, read as a digit sequence.",
     },
 
     {
@@ -969,9 +969,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\tau}"},
         ],
-        "value": "3.16754546668955085871712328719389126718209544904138692042596230085699698145683551303691617652280289038749563520264386097e-27",
+        "value": "0.00000000000000000000000000316754546668953450148595778116447915049847893602179578776215366018004016251608588174180081610359611244570734245749159438",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the tau mass, read as a digit sequence.",
+        "description": "The first 100 digits of the tau mass, read as a digit sequence.",
     },
 
     {
@@ -983,9 +983,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\mathrm{tri}}"},
         ],
-        "value": "5.00735674868075029319723373096761924379549526160838299117935473316848582296548281700064918729321435658870140506394609543e-27",
+        "value": "0.00000000000000000000000000500735674868071370790310052169746011211231434000659216331954251694293143339429079327800426119341893640982452842122354742",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the triton mass, read as a digit sequence.",
+        "description": "The first 100 digits of the triton mass, read as a digit sequence.",
     },
 
     {
@@ -997,9 +997,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "K_{\\mathrm{cd}}"},
         ],
-        "value": "683.002503039578295309308962652283363353647349792529698712464801101974668697143784295592408011498573879329232937153730422",
+        "value": "683.002503039571805361361427279054362670363714297168735262614550218383244737740944914967318336162877471366198212052882178",
         "dimension": "lm/W",
-        "description": "The first 100 significant digits of the model value for the luminous efficacy, read as a digit sequence.",
+        "description": "The first 100 digits of the luminous efficacy, read as a digit sequence.",
     },
 
     {
@@ -1011,9 +1011,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\mathrm{he}}"},
         ],
-        "value": "5.00641278404446567311432120140752562260929539402497766813588415857283504467328360940716889162850693377795497286171831760e-27",
+        "value": "0.00000000000000000000000000500641278404441780575653794513071831303465016456457967396930376299182562962796465752881696668241626043538692262730154869",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the helion mass, read as a digit sequence.",
+        "description": "The first 100 digits of the helion mass, read as a digit sequence.",
     },
 
     {
@@ -1025,9 +1025,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\alpha}"},
         ],
-        "value": "6.64465734214074610911058809705418273587075808359983156337218976771888553015946036278564336899400373508827788308030759849e-27",
+        "value": "0.00000000000000000000000000664465734214072909658758237064604293694208962442806538514978090749310336512023127398848334156076665543614454512284147393",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the alpha particle mass, read as a digit sequence.",
+        "description": "The first 100 digits of the alpha particle mass, read as a digit sequence.",
     },
 
     {
@@ -1039,9 +1039,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathrm{E}_{\\mathrm{p}}}"},
         ],
-        "value": "12208857275407741594.5078289050327068472602639128580966296560607297885956406882246688447572667570446160755127229596202741",
+        "value": "12208857275407736688.7492336623412709339098037109784715076725880011289937179964809124426789791704382350499052545847611259",
         "dimension": "GeV",
-        "description": "The first 100 significant digits of the model value for the Planck mass energy equivalent in GeV, read as a digit sequence.",
+        "description": "The first 100 digits of the Planck mass energy equivalent in GeV, read as a digit sequence.",
     },
 
     {
@@ -1053,9 +1053,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "R_{\\mathrm{K}}"},
         ],
-        "value": "25812.8074493917913692643717287477761226945976950478250902507867451150907615117805721727908233926521731037193995362712180",
+        "value": "25812.8074493917225890841423028336851565480253289300906424857563373127163233752251804447215234507001220591730736367803209",
         "dimension": "Ohm",
-        "description": "The first 100 significant digits of the model value for the von Klitzing constant, read as a digit sequence.",
+        "description": "The first 100 digits of the von Klitzing constant, read as a digit sequence.",
     },
 
     {
@@ -1067,9 +1067,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "Z_0"},
         ],
-        "value": "376.730313712033083044900406090573810732210060436244685906210628701279018711781618412903621318186230459622221340511229824",
+        "value": "376.730313712032721586267031121516362948732176908468934644029939078962543102884456141107373119209747321706070684860095164",
         "dimension": "Ohm",
-        "description": "The first 100 significant digits of the model value for the characteristic impedance of vacuum, read as a digit sequence.",
+        "description": "The first 100 digits of the characteristic impedance of vacuum, read as a digit sequence.",
     },
 
     {
@@ -1081,9 +1081,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "Z_p"},
         ],
-        "value": "29.9792458199152821131509271087947656285649106682545685255404100935937846455247380402954711394153148000724576494586908684",
+        "value": "29.9792458199152224455406803927357864334499957929388966219190538701634058437588247276484875458116814361635061345624391673",
         "dimension": "Ohm",
-        "description": "The first 100 significant digits of the model value for the Planck electric impedance, read as a digit sequence.",
+        "description": "The first 100 digits of the Planck electric impedance, read as a digit sequence.",
     },
 
     {
@@ -1097,9 +1097,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "1/\\mathrm{m}"},
         ],
-        "value": "3.33564095322874785998743959239420766063088328057547611167194553134546901434086546055131260681510682696299093180145437926e-9",
+        "value": "0.00000000333564095322874017089658310915804424331693111780066970267332598004710723316039053980795196624630042390282144330960330307",
         "dimension": "cycles/m",
-        "description": "The first 100 significant digits of the model value for the hertz-inverse meter relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hertz-inverse meter relationship, read as a digit sequence.",
     },
 
     {
@@ -1111,9 +1111,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{vel}}"},
         ],
-        "value": "2187691.26392058179159644397498869341942728259902855189163103507674260334554403782607308087751495227475379578607849164161",
+        "value": "2187691.26392059056477354383345549968045456042163991774113533552097712841303669738169311266317677827503852474038429118330",
         "dimension": "m/s",
-        "description": "The first 100 significant digits of the model value for the atomic unit of velocity, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of velocity, read as a digit sequence.",
     },
 
     {
@@ -1125,9 +1125,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mom}}"},
         ],
-        "value": "1.99285191623657955870871360755081349802891616076096741686196937946256658137520272391985136190404966194203864265186031838e-24",
+        "value": "0.00000000000000000000000199285191623658779986999661606686770633159909604250283319671199635120562144590530248336504087735258432134810809701072904",
         "dimension": "m*kg/s",
-        "description": "The first 100 significant digits of the model value for the atomic unit of momentum, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of momentum, read as a digit sequence.",
     },
 
     {
@@ -1139,9 +1139,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathcal{N}_{\\mathrm{mom}}"},
         ],
-        "value": "2.73092453230546682052103192694036248659930621786907686254167832333625150832756101448261467174569062937976003227681466338e-22",
+        "value": "0.000000000000000000000273092453230547345734335829789674903077963611060951443954379095428289688084496749751788320730366313588872994782944546642",
         "dimension": "m*kg/s",
-        "description": "The first 100 significant digits of the model value for the natural unit of momentum, read as a digit sequence.",
+        "description": "The first 100 digits of the natural unit of momentum, read as a digit sequence.",
     },
 
     {
@@ -1155,9 +1155,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{kg}"},
         ],
-        "value": "1.78266192320573459023026463029763987260211113836511617713713087085687882302278655150321069498265055451809513774830752676e-36",
+        "value": "0.00000000000000000000000000000000000178266192320573280027771196413223393441577157128428021233723058947571496403830184049962780846183609645659902102083834141",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the electron volt-kilogram relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the electron volt-kilogram relationship, read as a digit sequence.",
     },
 
     {
@@ -1171,9 +1171,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{kg}"},
         ],
-        "value": "1.11265005688553349830462993610212078346003456129062195637425180424824024141984882925373733208092415435476035762254306964e-17",
+        "value": "0.0000000000000000111265005688552836869535914031089369165320098365528051596160227867022343381822661102493064114724089685948235350123878225",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the joule-kilogram relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the joule-kilogram relationship, read as a digit sequence.",
     },
 
     {
@@ -1187,9 +1187,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "6700535254.99263600708112862295704998937678894990112995747249943232777357588310709789430357401278164435341414894377932129",
+        "value": "6700535254.99260963170652616905450407635646632255984756039580621047302248186724484736676076408929033548927145968121081246",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the joule-atomic mass unit relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the joule-atomic mass unit relationship, read as a digit sequence.",
     },
 
     {
@@ -1203,9 +1203,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{J}"},
         ],
-        "value": "1.49241808593480201431710626389364082513046919590151797103605071883118502802080937475910748036485105141094497484637516695e-10",
+        "value": "0.000000000149241808593480788893526466801595104611485283837562055229901495806405002369136488951554716957286451237169113707501984601",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the atomic mass unit-joule relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic mass unit-joule relationship, read as a digit sequence.",
     },
 
     {
@@ -1217,9 +1217,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathcal{N}_{\\mathrm{mom}}}"},
         ],
-        "value": "0.510998950028076088246424494692266848628298500594898983379056874413700551611712255125696104634856161353309556725612154713",
+        "value": "0.510998950028076387191255222113779450125006426248385488711565508190062716773095403192448257259831824869310653937378755871",
         "dimension": "MeV/c",
-        "description": "The first 100 significant digits of the model value for the natural unit of momentum in MeV/c, read as a digit sequence.",
+        "description": "The first 100 digits of the natural unit of momentum in MeV/c, read as a digit sequence.",
     },
 
     {
@@ -1231,9 +1231,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": r"\overset{\cdot}{\mathrm{E}_{\mathrm{A}_{\mathrm{mass}}}}"},
         ],
-        "value": "931.494102497143440871910234056803170180625296745247319406742183827527139451055681628148785933173092761442423297764810020",
+        "value": "931.494102497143241485757267106434914685681725261700321414883228637087980067622332094824941877657675325164704147997073210",
         "dimension": "MeV",
-        "description": "The first 100 significant digits of the model value for the atomic mass constant energy equivalent in MeV, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic mass constant energy equivalent in MeV, read as a digit sequence.",
     },
 
     {
@@ -1247,9 +1247,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{J}"},
         ],
-        "value": "89875517806435918.6321978659562088693875645555480166073405353386705623555364346981634963314428081546197685129301358112092",
+        "value": "89875517806436332.9819626499853102887733728924855533375411160502583982096704344008473183779630432945159547938019980210158",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the kilogram-joule relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kilogram-joule relationship, read as a digit sequence.",
     },
 
     {
@@ -1263,9 +1263,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{eV}"},
         ],
-        "value": "560958859883646258843549768353014518.818020706079978151801920395581872636713303231985034444891750461624854311351468748945",
+        "value": "560958859883646822096587328996850640.811769955748137991577798552319600764816531537196759098844590569379393002768872556428",
         "dimension": "eV",
-        "description": "The first 100 significant digits of the model value for the kilogram-electron volt relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kilogram-electron volt relationship, read as a digit sequence.",
     },
 
     {
@@ -1277,9 +1277,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{E}_{\\Delta}"},
         ],
-        "value": "2.07214623577065037052553417858479362610095485212946979631791103685520953019853962396271912386011794117737460349193343723e-13",
+        "value": "0.000000000000207214623578053651288704393301660883169792001196166125339804691625008418684797510027612170251822351789366719706500610088",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the neutron-proton mass difference energy equivalent, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron-proton mass difference energy equivalent, read as a digit sequence.",
     },
 
     {
@@ -1291,9 +1291,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathrm{E}_{\\Delta}}"},
         ],
-        "value": "1.29333195323950181119688296479780510428481887370361192839822917720759582276152164107989513930208036432306913201591887473",
+        "value": "1.29333195324566688813092901267077652616704319585452933487373762036766300563655722411515344430064665573548120759834522630",
         "dimension": "MeV",
-        "description": "The first 100 significant digits of the model value for the neutron-proton mass energy equivalent in MeV, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron-proton mass energy equivalent in MeV, read as a digit sequence.",
     },
 
     {
@@ -1305,9 +1305,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathrm{E}_e}"},
         ],
-        "value": "0.510998950028076088246424494692266848628298500594898983379056874413700551611712255125696104634856161353309556725612154713",
+        "value": "0.510998950028076387191255222113779450125006426248385488711565508190062716773095403192448257259831824869310653937378755871",
         "dimension": "MeV",
-        "description": "The first 100 significant digits of the model value for the natural unit of energy in MeV, read as a digit sequence.",
+        "description": "The first 100 digits of the natural unit of energy in MeV, read as a digit sequence.",
     },
 
     {
@@ -1319,9 +1319,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathrm{E}_{\\mu}}"},
         ],
-        "value": "105.658374731845913750373565007041375765667043155848447097394558014812456884307066124965228788794812858629470650305696726",
+        "value": "105.658374731845957303191394293103058776222140234639785693029853332109340098148490158471169437193381681217144479070937749",
         "dimension": "MeV",
-        "description": "The first 100 significant digits of the model value for the muon mass energy equivalent in MeV, read as a digit sequence.",
+        "description": "The first 100 digits of the muon mass energy equivalent in MeV, read as a digit sequence.",
     },
 
     {
@@ -1333,9 +1333,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathrm{E}_+}"},
         ],
-        "value": "938.272088205556698393731261329144156224305182458002303301395266921866257542755353121977521771026159714073408322603949264",
+        "value": "938.272088205554653372682736919556482530006252486284519265919322522578946819277335961384976873435208450999373355230636089",
         "dimension": "MeV",
-        "description": "The first 100 significant digits of the model value for the proton mass energy equivalent in MeV, read as a digit sequence.",
+        "description": "The first 100 digits of the proton mass energy equivalent in MeV, read as a digit sequence.",
     },
 
     {
@@ -1347,9 +1347,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathrm{E}_n}"},
         ],
-        "value": "939.565420158796200204928144293941961328590001331705915229793496099073853365516874763057416910328240078396477454619868139",
+        "value": "939.565420158800320260813665932227259056173295682139048600793060142946609824913893185500130317735855106734854562828981315",
         "dimension": "MeV",
-        "description": "The first 100 significant digits of the model value for the neutron mass energy equivalent in MeV, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron mass energy equivalent in MeV, read as a digit sequence.",
     },
 
     {
@@ -1361,9 +1361,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathrm{E}_{\\tau}}"},
         ],
-        "value": "1776.86269362378362522802865950359090348793081418910336682026143410498134105091393321414645416547592294808820939947381394",
+        "value": "1776.86269362377526668135546044524365787729956984618345163148631499638316810194659585386064826000144897054078145384762169",
         "dimension": "MeV",
-        "description": "The first 100 significant digits of the model value for the tau energy equivalent, read as a digit sequence.",
+        "description": "The first 100 digits of the tau energy equivalent, read as a digit sequence.",
     },
 
     {
@@ -1375,9 +1375,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathrm{E}_{\\mathrm{de}}}"},
         ],
-        "value": "1875.61294255340176699207109359691923437101636624798509959632477142083456851153044004789925362138339862509936930566698493",
+        "value": "1875.61294255340170837052964827496872101149487267821510503589368350978426953845773667967206141876615033207349273766317111",
         "dimension": "MeV",
-        "description": "The first 100 significant digits of the model value for the deuteron mass energy equivalent in MeV, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron mass energy equivalent in MeV, read as a digit sequence.",
     },
 
     {
@@ -1389,9 +1389,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathrm{E}_{\\mathrm{he}}}"},
         ],
-        "value": "2808.39160744449632438767979866240168315060055766024801664962232335549025814802638769793701759639883761587238451339342526",
+        "value": "2808.39160744447076436104929705424755278405397657581523233279554697252359420971981710546461342854165794888725336298557049",
         "dimension": "MeV",
-        "description": "The first 100 significant digits of the model value for the helion mass energy equivalent in MeV, read as a digit sequence.",
+        "description": "The first 100 digits of the helion mass energy equivalent in MeV, read as a digit sequence.",
     },
 
     {
@@ -1403,9 +1403,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathrm{E}_{\\mathrm{tri}}}"},
         ],
-        "value": "2808.92113277063702597613230450678471888332083245154552953798809451156158370938857501390669059321629155406259631789176446",
+        "value": "2808.92113277061779496659512558354747350788194953707187278378831307577574487815892007470415474942635961762138002001194654",
         "dimension": "MeV",
-        "description": "The first 100 significant digits of the model value for the triton mass energy equivalent in MeV, read as a digit sequence.",
+        "description": "The first 100 digits of the triton mass energy equivalent in MeV, read as a digit sequence.",
     },
 
     {
@@ -1417,9 +1417,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\mathrm{E}_{\\alpha}}"},
         ],
-        "value": "3727.37940696477418484038952948869815042098528721882943877401736241340339636286506053165033360221766744318338001766213767",
+        "value": "3727.37940696476635575328264794535329815551193865101006505571472300448760267507472998913900932243006229629445135390122723",
         "dimension": "MeV",
-        "description": "The first 100 significant digits of the model value for the alpha particle mass energy equivalent in MeV, read as a digit sequence.",
+        "description": "The first 100 digits of the alpha particle mass energy equivalent in MeV, read as a digit sequence.",
     },
 
     {
@@ -1431,9 +1431,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{E}_e"},
         ],
-        "value": "8.18710577846018681400724591029539782116524278224388448651252249323436634736116729336671601919258898067616322838217975637e-14",
+        "value": "0.0000000000000818710577846022558305501189807866288780970015470870757304303691089205006070160847505240267396704785002826406056280917571",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the electron mass energy equivalent, read as a digit sequence.",
+        "description": "The first 100 digits of the electron mass energy equivalent, read as a digit sequence.",
     },
 
     {
@@ -1445,9 +1445,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{E}_{\\mu}"},
         ],
-        "value": "1.69283379205041286480191030996843981794915825256739258605822277243052330204710333134161257305943514952639949138664436510e-11",
+        "value": "0.0000000000169283379205042058846199169158793533511559542687621202154288457054140702283799506631492778159359835714080047051501360970",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the muon mass energy equivalent, read as a digit sequence.",
+        "description": "The first 100 digits of the muon mass energy equivalent, read as a digit sequence.",
     },
 
     {
@@ -1459,9 +1459,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{E}_+"},
         ],
-        "value": "1.50327761626389991406795692169526642481445180365366100563763034335524240347354695801106435579809898248974965509786758312e-10",
+        "value": "0.000000000150327761626390287672395368102474028180692941014839430175314004439969554297047418780745281377140109415046510759167822376",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the proton mass energy equivalent, read as a digit sequence.",
+        "description": "The first 100 digits of the proton mass energy equivalent, read as a digit sequence.",
     },
 
     {
@@ -1473,9 +1473,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{E}_n"},
         ],
-        "value": "1.50534976249967056443848245587385121844055275850579047543394825439209761300374549763502707492195910043092702970135951656e-10",
+        "value": "0.000000000150534976249968341323684072495775689063862733016035596300653809131594562715732216290772893547391931766835877478874322986",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the neutron mass energy equivalent, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron mass energy equivalent, read as a digit sequence.",
     },
 
     {
@@ -1487,9 +1487,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{E}_{\\tau}"},
         ],
-        "value": "2.84684788994152100164037264306919817433962242481427991978202674473348056497031200018651117865430397658608250326698721677e-10",
+        "value": "0.000000000284684788994151942521135450407526466378611841899725121794304452743551037329716079821179020144951754777346714754288199215",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the tau mass energy equivalent, read as a digit sequence.",
+        "description": "The first 100 digits of the tau mass energy equivalent, read as a digit sequence.",
     },
 
     {
@@ -1501,9 +1501,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{E}_{\\mathrm{de}}"},
         ],
-        "value": "3.00506323139997955372156570244878538366070984747323093934655078057297898812465716922798056661916586370992570447097832419e-10",
+        "value": "0.000000000300506323139999193188903665566662726427090924966416287984487235576137383446015811007640313809491722112425504857113583790",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the deuteron mass energy equivalent, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron mass energy equivalent, read as a digit sequence.",
     },
 
     {
@@ -1515,9 +1515,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{E}_{\\mathrm{he}}"},
         ],
-        "value": "4.49953941318756795912780524166791601553967807111305530169534805475053981792934072681892922911217487396693417008273287017e-10",
+        "value": "0.000000000449953941318754568215173208639123354624359257768230303535836922279715134789625948287853358880598379406192116740852237789",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the helion mass energy equivalent, read as a digit sequence.",
+        "description": "The first 100 digits of the helion mass energy equivalent, read as a digit sequence.",
     },
 
     {
@@ -1529,9 +1529,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{E}_{\\mathrm{tri}}"},
         ],
-        "value": "4.50038780629233840090499366761224865922332893378864709908545360417969107115888281958329651339978043823705313834244304236e-10",
+        "value": "0.000000000450038780629232626765336049390365753164990799515901088346745307415250420964923003565332283084672470466833116909162856105",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the triton mass energy equivalent, read as a digit sequence.",
+        "description": "The first 100 digits of the triton mass energy equivalent, read as a digit sequence.",
     },
 
     {
@@ -1543,9 +1543,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{E}_{\\alpha}"},
         ],
-        "value": "5.97192019271235791027503380813950630249575167523647149246916171360955243257775787702205415368242633480531517570573203722e-10",
+        "value": "0.000000000597192019271237015230395833732521295754841476578617707221535310047102288507750230814548591550893423787998138023988619196",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the alpha particle mass energy equivalent, read as a digit sequence.",
+        "description": "The first 100 digits of the alpha particle mass energy equivalent, read as a digit sequence.",
     },
 
     {
@@ -1557,9 +1557,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "g_{\\mathrm{de}}"},
         ],
-        "value": "0.857438235960774930274706322158841223936165975995989734828348578229994902957206374338489246969177619089838065454557425494",
+        "value": "0.857438235960775800070490309333106100650671960399955499143477825300055970764650518142458911851704798971228942708210868114",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the deuteron g factor, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron g factor, read as a digit sequence.",
     },
 
     {
@@ -1571,9 +1571,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{de}}/\\mu_{\\mathrm{N}}"},
         ],
-        "value": "0.857438235960774930274706322158841223936165975995989734828348578229994902957206374338489246969177619089838065454557425494",
+        "value": "0.857438235960775800070490309333106100650671960399955499143477825300055970764650518142458911851704798971228942708210868114",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the deuteron magnetic moment to nuclear magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron magnetic moment to nuclear magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -1585,9 +1585,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{de}}/\\mu_{\\mathrm{B}}"},
         ],
-        "value": "4.66975458182756693834895390191367272988729704578421020868061968073359772511354247838993504925200930396074251491838173088e-4",
+        "value": "0.000466975458182758458532068637161401909488552703393480853856773950972850494585040982874864440309041162454039207105466769154",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the deuteron magnetic moment to Bohr magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron magnetic moment to Bohr magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -1599,9 +1599,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mu}"},
         ],
-        "value": "-4.49044833035195301944244713371863957610274256285446594822542212590444636436646660198159017441133156871991782398153834352e-26",
+        "value": "-0.0000000000000000000000000449044833035197401363576222499483257689805621835361431284806921148726361875978801554919536671694742675533024978648435540",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the muon magnetic moment, read as a digit sequence.",
+        "description": "The first 100 digits of the muon magnetic moment, read as a digit sequence.",
     },
 
     {
@@ -1613,9 +1613,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "a_{\\mathrm{e}}"},
         ],
-        "value": "0.00115965218025404901421436569333246239250498964499749625432941389630632240358458459732974525248956956509423782831087749036",
+        "value": "0.00115965218025155033824168288249750876620481434454458981400694637060054884059078720444761487966857271391853861648697112610",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the electron magnetic moment anomaly, read as a digit sequence.",
+        "description": "The first 100 digits of the electron magnetic moment anomaly, read as a digit sequence.",
     },
 
     {
@@ -1627,9 +1627,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "a_{\\mu}"},
         ],
-        "value": "0.00116592060110719739593877728927052005330992957927941881133936060887883486545924609908878784593331805231329738172686598711",
+        "value": "0.00116592060110469897123079691828346471175726360728702776410312101047274349101793796571425130436960067052402048243134360933",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the muon magnetic moment anomaly, read as a digit sequence.",
+        "description": "The first 100 digits of the muon magnetic moment anomaly, read as a digit sequence.",
     },
 
     {
@@ -1641,9 +1641,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "g_{\\mu}"},
         ],
-        "value": "-2.00233184172840312100719196717888210208605767990752943783354467083422680460394735819173269760199021604465846821418991890",
+        "value": "-2.00233184172839812387702909877042405073565895938520408829592152372916991330717464091852562688020844633509317709655047368",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the muon g factor, read as a digit sequence.",
+        "description": "The first 100 digits of the muon g factor, read as a digit sequence.",
     },
 
     {
@@ -1655,9 +1655,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mu}/\\mu_{\\mathrm{B}}"},
         ],
-        "value": "-0.00484197050791187248475043227743019686591769093638514524480192300313515731790090909388353618316681785065180020651013189718",
+        "value": "-0.00484197050791186123763236020123759861000778555640566011719033638380925151219182627626159012979842311178794917819135886863",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the muon magnetic moment to Bohr magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the muon magnetic moment to Bohr magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -1669,9 +1669,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mu}/\\mu_{\\mathrm{N}}"},
         ],
-        "value": "-8.89059709269183312224985556331831057302734284038292382866265436682681222526087539544822677666868498780713202929548105548",
+        "value": "-8.89059709269178789204614092529044970147648759073233705908599485248854612001538320354128696137923758105791889481209441703",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the muon magnetic moment to nuclear magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the muon magnetic moment to nuclear magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -1683,9 +1683,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "R"},
         ],
-        "value": "8.31446261978164823226709698071824714268144195191395144312076166969606683271338106689458616137478198326360543775644073854",
+        "value": "8.31446261978168298621585137663326414069973985776418924654272731435386414606849646739424776043926557183675774333607888591",
         "dimension": "J/mol*K",
-        "description": "The first 100 significant digits of the model value for the molar gas constant, read as a digit sequence.",
+        "description": "The first 100 digits of the molar gas constant, read as a digit sequence.",
     },
 
     {
@@ -1697,9 +1697,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "V_{m_0}"},
         ],
-        "value": "0.0227109546459335721464375754028318920702343586916529583668843605007748065535566003842225620997952169872845382532317178773",
+        "value": "0.0227109546459336670768485980352737610003213394214828829269314596591575799149860981006873877576398539094721037759224994769",
         "dimension": "m^3/mol",
-        "description": "The first 100 significant digits of the model value for the molar volume of ideal gas_0, read as a digit sequence.",
+        "description": "The first 100 digits of the molar volume of ideal gas_0, read as a digit sequence.",
     },
 
     {
@@ -1711,9 +1711,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "V_{m_1}"},
         ],
-        "value": "0.0224139695494039695499013820901375692773100011760700304632463464108312919354123862661954720945425284848601413799474146334",
+        "value": "0.0224139687188157131944833745387362687697778223009455230032570611636539124092012647583012908506565274093762544989523090441",
         "dimension": "m^3/mol",
-        "description": "The first 100 significant digits of the model value for the molar volume of ideal gas_1, read as a digit sequence.",
+        "description": "The first 100 digits of the molar volume of ideal gas_1, read as a digit sequence.",
     },
 
     {
@@ -1725,9 +1725,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "g_{\\mathrm{e}}"},
         ],
-        "value": "-2.00231930436065339343055776535733117542913409386404722042425932750149236641885696484735851582149559891659595754905434378",
+        "value": "-2.00231930436064839847755065116728056500815079524665249013921092906736965507514378123806692801181667242426675671453624019",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the electron g factor, read as a digit sequence.",
+        "description": "The first 100 digits of the electron g factor, read as a digit sequence.",
     },
 
     {
@@ -1739,9 +1739,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{e}}/\\mu_{\\mathrm{B}}"},
         ],
-        "value": "-1.00115965218032669671527888267866558771456704693202361021212966375074618320942848242367925791074779945829797877452717189",
+        "value": "-1.00115965218032419923877532558364028250407539762332624506960546453368482753757189061903346400590833621213337835726812010",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the electron magnetic moment to Bohr magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the electron magnetic moment to Bohr magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -1753,9 +1753,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{e}}/\\mu_{\\mathrm{N}}"},
         ],
-        "value": "-1838.28197186466271222770275226316800564640485684681380321289166448798514531253061361274164599959911706585820515032333321",
+        "value": "-1838.28197186465304439971892591215769367487799921785165381589554404324575707295000847447226306050651957707355574142200753",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the electron magnetic moment to nuclear magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the electron magnetic moment to nuclear magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -1767,9 +1767,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{e}}"},
         ],
-        "value": "-9.28476469207108848229854668130408214398986659476120163685872364793398650564872824442960929966204978288351712543497006132e-24",
+        "value": "-0.00000000000000000000000928476469207113029718649387059058714462963567279825693566915171425091648319574233687326922976858362352492470136026955304",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the electron magnetic moment, read as a digit sequence.",
+        "description": "The first 100 digits of the electron magnetic moment, read as a digit sequence.",
     },
 
     {
@@ -1781,9 +1781,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\gamma_{\\mathrm{e}}"},
         ],
-        "value": "176085962907.619728313709146469323194427937825057132988282909163722659521571154066058651842746842495907458841091191887326",
+        "value": "176085962907.619902049639944612228942352888832629176564865839020559356839239877109494410156517185650852836262178199096008",
         "dimension": "1/s*T",
-        "description": "The first 100 significant digits of the model value for the electron gyromagnetic ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the electron gyromagnetic ratio, read as a digit sequence.",
     },
 
     {
@@ -1795,9 +1795,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\dot{\\gamma}_{\\mathrm{e}}"},
         ],
-        "value": "28024.9514058438397001184784149444978440426716725991040875000277324506206213282042244045061445812192872851307951375089911",
+        "value": "28024.9514058438384619589713442850655600206578573975615095696384660503697747854324572381402780903487483552872081733610324",
         "dimension": "MHz/T",
-        "description": "The first 100 significant digits of the model value for the electron gyromagnetic ratio in MHz/T, read as a digit sequence.",
+        "description": "The first 100 digits of the electron gyromagnetic ratio in MHz/T, read as a digit sequence.",
     },
 
     {
@@ -1809,9 +1809,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\dot{\\gamma}_{+}'"},
         ],
-        "value": "42.5763852810155127163554176058095508667258703749938010539501353799692588609620564414420659659631831326030445415461219662",
+        "value": "42.5763852810157765273100527469685110271524791134773797645821538210165418413757212217668111608724748751519383697864323004",
         "dimension": "MHz/T",
-        "description": "The first 100 significant digits of the model value for the shielded proton gyromagnetic ratio in MHz/T, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded proton gyromagnetic ratio in MHz/T, read as a digit sequence.",
     },
 
     {
@@ -1823,9 +1823,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\gamma_{+}'"},
         ],
-        "value": "267515318.430493602807240784264274793739732383081594262800201991723352074698411228423625060864818800567889350553861999340",
+        "value": "267515318.430495536144421266528532201437075199382898104579201612514065757541114796051407023623860649013192899124743388427",
         "dimension": "1/s*T",
-        "description": "The first 100 significant digits of the model value for the shielded proton gyromagnetic ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded proton gyromagnetic ratio, read as a digit sequence.",
     },
 
     {
@@ -1837,9 +1837,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{+}'"},
         ],
-        "value": "1.41057057939798181121396396160851006368950511710057262506867289423544717139761032604681457347139410580901333622769513103e-26",
+        "value": "0.0000000000000000000000000141057057939799696641523685275593736906123446690371462442772609091393377136940074169764005846852783993407012760776172967",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the shielded proton magnetic moment, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded proton magnetic moment, read as a digit sequence.",
     },
 
     {
@@ -1851,9 +1851,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_+/\\mu_{\\mathrm{B}}"},
         ],
-        "value": "0.00152103220255242807501907173470127098715118239469622601717044815662972448631120709461809822515633172207265506298300660980",
+        "value": "0.00152103220255243377243370913914987610579259536380270296323244636154945808455312568312546125680620773456808756285819820720",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the proton magnetic moment to Bohr magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the proton magnetic moment to Bohr magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -1865,9 +1865,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_+/\\mu_{\\mathrm{N}}"},
         ],
-        "value": "2.79284734506470463120591203225881471000376698956928024217520212019052070657157337449091098703412035054070435138558394767",
+        "value": "2.79284734506470737147569656385676879446622892550689884634951526227985978007410640811951525706951119682550500270779723721",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the proton magnetic moment to nuclear magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the proton magnetic moment to nuclear magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -1879,9 +1879,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "g_+"},
         ],
-        "value": "5.58569469012940926241182406451762942000753397913856048435040424038104141314314674898182197406824070108140870277116789533",
+        "value": "5.58569469012941474295139312771353758893245785101379769269903052455971956014821281623903051413902239365101000541559447443",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the proton g factor, read as a digit sequence.",
+        "description": "The first 100 digits of the proton g factor, read as a digit sequence.",
     },
 
     {
@@ -1893,9 +1893,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{n}}/\\mu_{+}'"},
         ],
-        "value": "-0.684997004903261491114743365597373335241274274160863130334149602536935451852485287571168086525566271766041737745203237724",
+        "value": "-0.684997004903254832471689537412314922338348507336241818505647997927008349604418728957192811963621807856491439778551479514",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the neutron to shielded proton magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron to shielded proton magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -1907,9 +1907,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{e}}/\\mu_+"},
         ],
-        "value": "-658.210687490440505082324962681775272426194355736777033884887676258849643157914816957787081568252488966089609338562514283",
+        "value": "-658.210687490436396695740289572629903003721940266836810319849279877131947879443165856001976283919248679001917223224834632",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the electron-proton magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the electron-proton magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -1921,9 +1921,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{e}}/\\mu_{+}'"},
         ],
-        "value": "-658.227587029050725683533779292238011855738742256789799889536400851891528569319456208327246089515374061067053237646565652",
+        "value": "-658.227587029046617344049118478262764190474499928164391744104887254403377193035292214754058306755579932852467652427604636",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the electron to shielded proton magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the electron to shielded proton magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -1935,9 +1935,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mu}/\\mu_+"},
         ],
-        "value": "-3.18334511221315984115366059249040436969563710854531132944055409265151067929430216560202598486531954502576321798356829686",
+        "value": "-3.18334511221314052196006839118715034075824698942586072167144093935781717328222603218355304627030868662512750278290815297",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the muon-proton magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the muon-proton magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -1949,9 +1949,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{+}'/\\mu_{\\mathrm{N}}"},
         ],
-        "value": "2.79277562234849205811245629085142236550960929831708861258377896087090223171586371593250260679195109409525596483089997470",
+        "value": "2.79277562234849479993746626162234790443494693366330680623950723171000303805377140447532460726831004721952478253493708635",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the shielded proton magnetic moment to nuclear magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded proton magnetic moment to nuclear magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -1963,9 +1963,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{+}'/\\mu_{\\mathrm{B}}"},
         ],
-        "value": "0.00152099314114035103027811953570967831133553545030129528405500449921920980063640718816101850164451378176019429548461498154",
+        "value": "0.00152099314114035672843177074015348699807840205614578787592844673150364013425549827838261171208200340146080428691366709740",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the shielded proton magnetic moment to Bohr magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded proton magnetic moment to Bohr magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -1977,9 +1977,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\gamma_+"},
         ],
-        "value": "267522187.170410969891026399844555764834260231354206074728597967731673784701296834910509963271519923616226754037500285063",
+        "value": "267522187.170412903227068017523541295361091193786302502647203118325618648247887979191305547169627981777330002758174396792",
         "dimension": "1/s*T",
-        "description": "The first 100 significant digits of the model value for the proton gyromagnetic ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the proton gyromagnetic ratio, read as a digit sequence.",
     },
 
     {
@@ -1991,9 +1991,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\dot{\\gamma}_+"},
         ],
-        "value": "42.5774784749261743055733112508631141029357250697430174043048507316941240750993505767541453628094330836156311447690667357",
+        "value": "42.5774784749264381152197882736894647402848995786562179716690252354313652924478119781577279333191374879451823860341539321",
         "dimension": "MHz/T",
-        "description": "The first 100 significant digits of the model value for the proton gyromagnetic ratio in MHz/T, read as a digit sequence.",
+        "description": "The first 100 digits of the proton gyromagnetic ratio in MHz/T, read as a digit sequence.",
     },
 
     {
@@ -2005,9 +2005,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_+"},
         ],
-        "value": "1.41060679716310730208605915594564187303801316558953690305579385903512392545888034858122489666637912363091259781591372035e-26",
+        "value": "0.0000000000000000000000000141060679716312245732973720884847720105355991691393941565416200210712029023841636871595778010964640974878339539961982681",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the proton magnetic moment, read as a digit sequence.",
+        "description": "The first 100 digits of the proton magnetic moment, read as a digit sequence.",
     },
 
     {
@@ -2019,9 +2019,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "F"},
         ],
-        "value": "96485.3322042857456999524446675087891523194786592556804653225751981460530225987303126026143348965565198786967727730701273",
+        "value": "96485.3322042858853185340377490680134184531062528471200911762024717304095714355610969580744714344342242444079585209342268",
         "dimension": "C/mol",
-        "description": "The first 100 significant digits of the model value for the Faraday constant, read as a digit sequence.",
+        "description": "The first 100 digits of the Faraday constant, read as a digit sequence.",
     },
 
     {
@@ -2033,9 +2033,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_p"},
         ],
-        "value": "3.99031271062295308235114036163852565374642489550913493392840661312814713433634574325045908065000594070761229247133740511e-10",
+        "value": "0.000000000399031271062296261398819019271222601284592353559019184876680600530641178812519589124505688684334719162266543094274645503",
         "dimension": "J/(Hz*mol)",
-        "description": "The first 100 significant digits of the model value for the molar Planck constant, read as a digit sequence.",
+        "description": "The first 100 digits of the molar Planck constant, read as a digit sequence.",
     },
 
     {
@@ -2047,9 +2047,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "V_m(Si)"},
         ],
-        "value": "1.20588317215772307099719130419695733176141676484189732257658276810448744152488092396121658845860883580502504241041012490e-5",
+        "value": "0.0000120588317215770915403257613910205942680613304009994157508326119671560885516598406247273579679240345323984158655431051671",
         "dimension": "m^3/mol",
-        "description": "The first 100 significant digits of the model value for the molar volume of silicon, read as a digit sequence.",
+        "description": "The first 100 digits of the molar volume of silicon, read as a digit sequence.",
     },
 
     {
@@ -2061,9 +2061,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "c"},
         ],
-        "value": "299792458.097898067100794773544544131361807175533912848383688763921755368359125852166015861693330550487329483065676444038",
+        "value": "299792458.097898758162019055622329918715577987896200987353422805976226748434447062658111596128039477529990870719977580813",
         "dimension": "m/s",
-        "description": "The first 100 significant digits of the model value for the speed of light in vacuum, read as a digit sequence.",
+        "description": "The first 100 digits of the speed of light in vacuum, read as a digit sequence.",
     },
 
     {
@@ -2077,9 +2077,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{Hz}"},
         ],
-        "value": "299792458.097898067100794773544544131361807175533912848383688763921755368359125852166015861693330550487329483065676444038",
+        "value": "299792458.097898758162019055622329918715577987896200987353422805976226748434447062658111596128039477529990870719977580813",
         "dimension": "Hz",
-        "description": "The first 100 significant digits of the model value for the inverse meter-hertz relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the inverse meter-hertz relationship, read as a digit sequence.",
     },
 
     {
@@ -2091,9 +2091,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "r_{\\mathrm{e}}"},
         ],
-        "value": "2.81794032699478519341139126536961649412643462603402897155518575765336213414612396670665128926834381500193143084622661658e-15",
+        "value": "0.00000000000000281794032699479306053496355813945762155512364631851440080681955916956354297277858698042502761602242238339245841076740681",
         "dimension": "m",
-        "description": "The first 100 significant digits of the model value for the classical electron radius, read as a digit sequence.",
+        "description": "The first 100 digits of the classical electron radius, read as a digit sequence.",
     },
 
     {
@@ -2105,9 +2105,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "a_0"},
         ],
-        "value": "5.29177210521100955370443245697651398149229391417645754082513932083294446005715756756565477602214089685228974827882356204e-11",
+        "value": "0.0000000000529177210521100628112905474993367977690533530946857935459768106576289610992639955452309112539940053908935470394468861736",
         "dimension": "m",
-        "description": "The first 100 significant digits of the model value for the atomic unit of length, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of length, read as a digit sequence.",
     },
 
     {
@@ -2119,9 +2119,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\sigma_{\\mathrm{e}}"},
         ],
-        "value": "6.65245873589771112649843843728985955783296765892767206440981950806313390136159399428081575461471482756401803249253485166e-29",
+        "value": "0.0000000000000000000000000000665245873589775512874163674919455290517078605934828260693398863960867010862289835965192714157722530165568952613757844147",
         "dimension": "m^2",
-        "description": "The first 100 significant digits of the model value for the Thomson cross section, read as a digit sequence.",
+        "description": "The first 100 digits of the Thomson cross section, read as a digit sequence.",
     },
 
     {
@@ -2133,9 +2133,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "G_{\\mathrm{F}}/(\\hbar c)^3"},
         ],
-        "value": "1.16637852183352842045191442836385058888290572744871363312097026996079546588361052181472877974203227703697375294050045808e-5",
+        "value": "0.0000116637852183351139393185789746955072440271534937900694238590030585569093272129560307830742086061969787224989018106590409",
         "dimension": "1/GeV^2",
-        "description": "The first 100 significant digits of the model value for the Fermi coupling constant, read as a digit sequence.",
+        "description": "The first 100 digits of the Fermi coupling constant, read as a digit sequence.",
     },
 
     {
@@ -2147,9 +2147,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "1.66053906821322488228384537073691586172462041367745049046034497107480939577907298020285342864966469504611379276326264778e-27",
+        "value": "0.00000000000000000000000000166053906821322376315642398496240830327694050941941865000791660706876950294636079147634060770919437489911144537594263324",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the atomic mass constant, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic mass constant, read as a digit sequence.",
     },
 
     {
@@ -2163,9 +2163,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "602214075623045991946866105.280162492482108251189978780768224941194023543842349256694620907989963994011669030418440513104",
+        "value": "602214075623046397811623204.654361981072955493305612198409461880347242219140404545596758297582776222420071798106471790293",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the kilogram-atomic mass unit relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kilogram-atomic mass unit relationship, read as a digit sequence.",
     },
 
     {
@@ -2177,9 +2177,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{r}}(e)"},
         ],
-        "value": "5.48579909049540763997588021515687754819327964870299114561045444029211146538994633805441547665696275484275332512562029607e-4",
+        "value": "0.000548579909049541202351483438786161640865341540665874852241766745665179566395666320003634100960580048756796263319671164405",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the electron relative atomic mass, read as a digit sequence.",
+        "description": "The first 100 digits of the electron relative atomic mass, read as a digit sequence.",
     },
 
     {
@@ -2191,9 +2191,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{r}}(+)"},
         ],
-        "value": "1.00727646658226323169974975737160481576754929829515943718878645296808468790057816613766640344944125541136616591913682576",
+        "value": "1.00727646658226125188681918231003465255596505988813349480034508347514195936197041944431382525027543346956878231261994788",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the proton relative atomic mass, read as a digit sequence.",
+        "description": "The first 100 digits of the proton relative atomic mass, read as a digit sequence.",
     },
 
     {
@@ -2205,9 +2205,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{r}}(n)"},
         ],
-        "value": "1.00866491547289208445625493821818832578188904440447943248413882610409221207916706970073439266688563917646584725391866751",
+        "value": "1.00866491547289672342250396374347854202553756850576051288665786053562292148043829981209640745479599414085977172877161853",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the neutron relative atomic mass, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron relative atomic mass, read as a digit sequence.",
     },
 
     {
@@ -2219,9 +2219,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{r}}(\\mathrm{de})"},
         ],
-        "value": "2.01355321254878110694829831828536522311472545740206690491959241990114817588436381808228559322905956823193963668813379786",
+        "value": "2.01355321254878147501620822794175539904041404980160278029745495597632298899457703697376331457050562984074182452406706507",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the deuteron relative atomic mass, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron relative atomic mass, read as a digit sequence.",
     },
 
     {
@@ -2233,9 +2233,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{r}}(\\mathrm{he})"},
         ],
-        "value": "3.01493224693073807333424898918251449276186709804567308916657123378613265401679855719811719406293564350517023301893547094",
+        "value": "3.01493224693071127886413756327724975413624674345258806882870366392062444703338714957377962786815589781197170568696566227",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the helion relative atomic mass, read as a digit sequence.",
+        "description": "The first 100 digits of the helion relative atomic mass, read as a digit sequence.",
     },
 
     {
@@ -2247,9 +2247,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{r}}(\\mathrm{tri})"},
         ],
-        "value": "3.01550071572159906063738329527375419227862880817622009716040674398682650490129920368504521143569251300637804492441866823",
+        "value": "3.01550071572157906076792598061547809105831623038777908301984360514447776935293443575829686651885141621620947047250921758",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the triton relative atomic mass, read as a digit sequence.",
+        "description": "The first 100 digits of the triton relative atomic mass, read as a digit sequence.",
     },
 
     {
@@ -2261,9 +2261,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{r}}(\\alpha)"},
         ],
-        "value": "4.00150617912917506278898992307773976347644510359044280211902505291726321223471141470010747355477352134472402617978341490",
+        "value": "4.00150617912916751444041219026526600087520504285879450119780484265388291613023781354703794678657059928010061816243376218",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the alpha particle relative atomic mass, read as a digit sequence.",
+        "description": "The first 100 digits of the alpha particle relative atomic mass, read as a digit sequence.",
     },
 
     {
@@ -2275,9 +2275,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_e/\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "5.48579909049540763997588021515687754819327964870299114561045444029211146538994633805441547665696275484275332512562029607e-4",
+        "value": "0.000548579909049541202351483438786161640865341540665874852241766745665179566395666320003634100960580048756796263319671164405",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the electron mass in A_mass, read as a digit sequence.",
+        "description": "The first 100 digits of the electron mass in u, read as a digit sequence.",
     },
 
     {
@@ -2289,9 +2289,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\Delta}/\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "0.00138844889062885275650518084658351001433974610931999529535237313600752417858890356306798921744438376509968133478184174471",
+        "value": "0.00138844889063547153568478143344388946957250861762701808631277706048096211846788036778258220452056067129098941615167064935",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the neutron-proton mass difference in A_mass, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron-proton mass difference in u, read as a digit sequence.",
     },
 
     {
@@ -2303,9 +2303,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\mu}/\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "0.113428925044823843307124860572908349494921912345029734867036219077105678065997168809934059952795756106664136097311963437",
+        "value": "0.113428925044823914342437539181503829994891109081677858252107465720044687883387166454712375319939338298493949389300410337",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the muon mass in A_mass, read as a digit sequence.",
+        "description": "The first 100 digits of the muon mass in u, read as a digit sequence.",
     },
 
     {
@@ -2317,9 +2317,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_+/\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "1.00727646658226323169974975737160481576754929829515943718878645296808468790057816613766640344944125541136616591913682576",
+        "value": "1.00727646658226125188681918231003465255596505988813349480034508347514195936197041944431382525027543346956878231261994788",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the proton mass in A_mass, read as a digit sequence.",
+        "description": "The first 100 digits of the proton mass in u, read as a digit sequence.",
     },
 
     {
@@ -2331,9 +2331,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_n/\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "1.00866491547289208445625493821818832578188904440447943248413882610409221207916706970073439266688563917646584725391866751",
+        "value": "1.00866491547289672342250396374347854202553756850576051288665786053562292148043829981209640745479599414085977172877161853",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the neutron mass in A_mass, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron mass in u, read as a digit sequence.",
     },
 
     {
@@ -2345,9 +2345,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\tau}/\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "1.90754046521641768987817823051490934104657424931333283492895706751394279865823292289641814787597391811449045967773537290",
+        "value": "1.90754046521640912491840358199399296820906944627098278285211262841615468056165101313128287126990622658892242249968615558",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the tau mass in A_mass, read as a digit sequence.",
+        "description": "The first 100 digits of the tau mass in u, read as a digit sequence.",
     },
 
     {
@@ -2359,9 +2359,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\mathrm{de}}/\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "2.01355321254878110694829831828536522311472545740206690491959241990114817588436381808228559322905956823193963668813379786",
+        "value": "2.01355321254878147501620822794175539904041404980160278029745495597632298899457703697376331457050562984074182452406706507",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the deuteron mass in A_mass, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron mass in u, read as a digit sequence.",
     },
 
     {
@@ -2373,9 +2373,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\mathrm{he}}/\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "3.01493224693073807333424898918251449276186709804567308916657123378613265401679855719811719406293564350517023301893547094",
+        "value": "3.01493224693071127886413756327724975413624674345258806882870366392062444703338714957377962786815589781197170568696566227",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the helion mass in A_mass, read as a digit sequence.",
+        "description": "The first 100 digits of the helion mass in u, read as a digit sequence.",
     },
 
     {
@@ -2387,9 +2387,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\mathrm{tri}}/\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "3.01550071572159906063738329527375419227862880817622009716040674398682650490129920368504521143569251300637804492441866823",
+        "value": "3.01550071572157906076792598061547809105831623038777908301984360514447776935293443575829686651885141621620947047250921758",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the triton mass in A_mass, read as a digit sequence.",
+        "description": "The first 100 digits of the triton mass in u, read as a digit sequence.",
     },
 
     {
@@ -2401,9 +2401,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\alpha}/\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "4.00150617912917506278898992307773976347644510359044280211902505291726321223471141470010747355477352134472402617978341490",
+        "value": "4.00150617912916751444041219026526600087520504285879450119780484265388291613023781354703794678657059928010061816243376218",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the alpha particle mass in A_mass, read as a digit sequence.",
+        "description": "The first 100 digits of the alpha particle mass in u, read as a digit sequence.",
     },
 
     {
@@ -2417,9 +2417,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "1.07354410142667000475156886712701584097431116321367034004401544051887768764159412635560011081802146643812257886458627269e-9",
+        "value": "0.00000000107354410142666965033483006685193134503159621703635995329009124912586494435378334717827262961176462222656377331375108047",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the electron volt-A_mass relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the electron volt-A_mass relationship, read as a digit sequence.",
     },
 
     {
@@ -2433,9 +2433,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{eV}"},
         ],
-        "value": "931494103.195445304610574939178943095898416993313979441477292194309668772897175487629168691789321027233367018109529041034",
+        "value": "931494103.195445612131338950062749426276478536945676526172045413228580943475927084275068554969097118538452736873745244049",
         "dimension": "eV",
-        "description": "The first 100 significant digits of the model value for the A_mass-electron volt relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the A_mass-electron volt relationship, read as a digit sequence.",
     },
 
     {
@@ -2449,9 +2449,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "1/\\mathrm{m}"},
         ],
-        "value": "5034116567783844453122477.23149893976452248527601615163662561896914064750289553427484214782600210725777933185148598607362",
+        "value": "5034116567783809954814640.90130440384967063612360852934005104936438840822819205169244808930530451444840069694617288292442",
         "dimension": "cycles/m",
-        "description": "The first 100 significant digits of the model value for the joule-inverse meter relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the joule-inverse meter relationship, read as a digit sequence.",
     },
 
     {
@@ -2465,9 +2465,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "1/\\mathrm{m}"},
         ],
-        "value": "806554.393884386823819696927425490491062073747280009716156513576605352105029700195035876496800391512974020495794442482047",
+        "value": "806554.393884384205156222929793448665805146522012888195910407111581388693487461453667148372990353947800180720509021883442",
         "dimension": "cycles/m",
-        "description": "The first 100 significant digits of the model value for the electron volt-inverse meter relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the electron volt-inverse meter relationship, read as a digit sequence.",
     },
 
     {
@@ -2481,9 +2481,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{eV}"},
         ],
-        "value": "1.23984198410221360327497500811747582984975810283508214443552238253990932665615716517974473509129089839904309814349873671e-6",
+        "value": "0.00000123984198410221762870579767225728639813581586746445820091101769801715229587320050671434022968606876815896989580840606271",
         "dimension": "eV",
-        "description": "The first 100 significant digits of the model value for the inverse meter-electron volt relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the inverse meter-electron volt relationship, read as a digit sequence.",
     },
 
     {
@@ -2497,9 +2497,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{J}"},
         ],
-        "value": "1.98644585705373079505866142355490978158351146589993384796682808372849520195769450676986207285375883137590621743722208750e-25",
+        "value": "0.000000000000000000000000198644585705374440797758257061211334287244915939059765054608315509213922880158320752445171458492677130083059715185557002",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the inverse meter-joule relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the inverse meter-joule relationship, read as a digit sequence.",
     },
 
     {
@@ -2511,9 +2511,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{\\hbar c}"},
         ],
-        "value": "197.326980422730718426418357936631166662339367096538960365709238617550643961222853679778107661756907105119466857413565147",
+        "value": "197.326980422731048299698726254224204299911412843058805434761483278857911462821360690688398147368643884105720416377511999",
         "dimension": "MeV fm",
-        "description": "The first 100 significant digits of the model value for the reduced Planck constant times c in MeV fm, read as a digit sequence.",
+        "description": "The first 100 digits of the reduced Planck constant times c in MeV fm, read as a digit sequence.",
     },
 
     {
@@ -2525,9 +2525,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{e\\,pot}}"},
         ],
-        "value": "27.2113862459608560098512137201353815836045435272065583543999072280585044520329037195448249982589055302964997815236623577",
+        "value": "27.2113862459609795341667272917057473146000491293991036318265438860617635853146395495076601839135263150402979864752090382",
         "dimension": "V",
-        "description": "The first 100 significant digits of the model value for the atomic unit of electric potential, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of electric potential, read as a digit sequence.",
     },
 
     {
@@ -2539,9 +2539,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdot}{R_{\\infty}hc}"},
         ],
-        "value": "13.6056931229804280049256068600676907918022717636032791771999536140292522260164518597724124991294527651482498907618311788",
+        "value": "13.6056931229804897670833636458528736573000245646995518159132719430308817926573197747538300919567631575201489932376045191",
         "dimension": "eV",
-        "description": "The first 100 significant digits of the model value for the Rydberg constant times hc in eV, read as a digit sequence.",
+        "description": "The first 100 digits of the Rydberg constant times hc in eV, read as a digit sequence.",
     },
 
     {
@@ -2555,9 +2555,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{eV}"},
         ],
-        "value": "27.2113862459608560098512137201353815836045435272065583543999072280585044520329037195448249982589055302964997815236623577",
+        "value": "27.2113862459609795341667272917057473146000491293991036318265438860617635853146395495076601839135263150402979864752090382",
         "dimension": "eV",
-        "description": "The first 100 significant digits of the model value for the hartree-electron volt relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hartree-electron volt relationship, read as a digit sequence.",
     },
 
     {
@@ -2571,9 +2571,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "E_h"},
         ],
-        "value": "0.0367493221756772858473139892746349778980208535268705304842482041337205890900719422434338850749895793416860077094653947798",
+        "value": "0.0367493221756771190261595539988456141595978569349791286698057164069959392057897940111628909620094229947618444767385252438",
         "dimension": "E_h",
-        "description": "The first 100 significant digits of the model value for the electron volt-hartree relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the electron volt-hartree relationship, read as a digit sequence.",
     },
 
     {
@@ -2585,9 +2585,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{F}_{90}"},
         ],
-        "value": "0.999999982178025823787364471804248334577950344404695786666666666666666666666666666666666666666666666666666666666666666667",
+        "value": "0.999999982178025823787377739288397686140775150440146551195539452353897729518731341256412860417870264101028870073936171829",
         "dimension": "F",
-        "description": "The first 100 significant digits of the model value for the conventional value of farad-90, read as a digit sequence.",
+        "description": "The first 100 digits of the conventional value of farad-90, read as a digit sequence.",
     },
 
     {
@@ -2599,9 +2599,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{H}_{90}"},
         ],
-        "value": "1.00000001782197417621263552819575166542204965559530421333333333333333333333333333333333333333333333333333333333333333333",
+        "value": "1.00000001782197417621262226071160231385922484955985344880446054764610227048126865874358713958212973589897112992606382817",
         "dimension": "H",
-        "description": "The first 100 significant digits of the model value for the conventional value of henry-90, read as a digit sequence.",
+        "description": "The first 100 digits of the conventional value of henry-90, read as a digit sequence.",
     },
 
     {
@@ -2613,9 +2613,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\Omega_{90}"},
         ],
-        "value": "1.00000001782197417621263552819575166542204965559530421333333333333333333333333333333333333333333333333333333333333333333",
+        "value": "1.00000001782197417621262226071160231385922484955985344880446054764610227048126865874358713958212973589897112992606382817",
         "dimension": "Ω",
-        "description": "The first 100 significant digits of the model value for the conventional value of ohm-90, read as a digit sequence.",
+        "description": "The first 100 digits of the conventional value of ohm-90, read as a digit sequence.",
     },
 
     {
@@ -2627,9 +2627,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "m_{\\Delta}"},
         ],
-        "value": "2.30557506525214150003809269058252955356538197776797080766209716298358568645428606366193579800287284615141509126782001922e-30",
+        "value": "0.00000000000000000000000000000230557506526313069445211421556146728580558919763621070896252861236343940848580569771989660195054738975967939040660077478",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the neutron-proton mass difference, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron-proton mass difference, read as a digit sequence.",
     },
 
     {
@@ -2641,9 +2641,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\sigma_{\\mathrm{he}}"},
         ],
-        "value": "5.99670299153336358753805706195738506245079826344464202113115973151733277091259940561904320643311063542487425212283100924e-5",
+        "value": "0.0000599670299153331779329249587394580752181339726924874412852614238220457773713967616590418270375346846064991104426470076530",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the helion shielding shift, read as a digit sequence.",
+        "description": "The first 100 digits of the helion shielding shift, read as a digit sequence.",
     },
 
     {
@@ -2655,9 +2655,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\sigma_{\\mathrm{tp}}"},
         ],
-        "value": "2.39369251464031766148326327079057219886366741236192301629373486164192978898331571094276905971914576406724458970154402282e-8",
+        "value": "0.0000000239369251464031462661371021889095377464120298698144705911755026661060403447779743988389789019904332778900655132738178423",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the shielding difference of t and p in HT, read as a digit sequence.",
+        "description": "The first 100 digits of the shielding difference of t and p in HT, read as a digit sequence.",
     },
 
     {
@@ -2669,9 +2669,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\sigma_{\\mathrm{dp}}"},
         ],
-        "value": "1.98769745110889468541152929562163802433646159623193130905467041891283981778839680962691670295585534219582585686665120864e-8",
+        "value": "0.0000000198769745110889011629985508094826298010396204869681393659047522583246859582173910103860775172688965649930290896481111036",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the shielding difference of d and p in HD, read as a digit sequence.",
+        "description": "The first 100 digits of the shielding difference of d and p in HD, read as a digit sequence.",
     },
 
     {
@@ -2683,9 +2683,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\sigma_{+}'"},
         ],
-        "value": "2.56684124759787072769287809897533308481965097488536814032648783776064338519864865329339755638304635766239123335534753959e-5",
+        "value": "0.0000256684124759787424563422695304874706101708777793683809530597575410059325778377929579350612300202504127038762435871733160",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the proton magnetic shielding correction, read as a digit sequence.",
+        "description": "The first 100 digits of the proton magnetic shielding correction, read as a digit sequence.",
     },
 
     {
@@ -2697,9 +2697,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{ep}}"},
         ],
-        "value": "1.64877727300423498208967230216350604170388626463422889191731619780452403947738933661590691461616034198481133390971330066e-41",
+        "value": "1.64877727300423140407584158921271088411643530298927199568076773778402617577788734918436402771131155347940936573505607290e-41",
         "dimension": "m^2*C^2/J",
-        "description": "The first 100 significant digits of the model value for the atomic unit of electric polarizability, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of electric polarizability, read as a digit sequence.",
     },
 
     {
@@ -2711,9 +2711,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{ef}}"},
         ],
-        "value": "514220674774.742339279400842082636377820764640000791239725607950074271033083293149686276433320880658153510373083994067075",
+        "value": "514220674774.744991555440021389654792207129593005526402040716307687611804471825868518206812579105935257690423135226285065",
         "dimension": "V/m",
-        "description": "The first 100 significant digits of the model value for the atomic unit of electric field, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of electric field, read as a digit sequence.",
     },
 
     {
@@ -2725,9 +2725,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{force}}"},
         ],
-        "value": "8.23872349803770692841457837135209227417128166070813100589475818650935861053948758306097582150497597290579252750517099395e-8",
+        "value": "0.0000000823872349803777913283250428562832255676955517446739847842540156730121826675648661779119609663746142203293159796866584677",
         "dimension": "N",
-        "description": "The first 100 significant digits of the model value for the atomic unit of force, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of force, read as a digit sequence.",
     },
 
     {
@@ -2739,9 +2739,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{cd}}"},
         ],
-        "value": "1081202385617.97366810865447543785588758941337061557656841011800237410678400934188611894837600065808991791757630375595352",
+        "value": "1081202385617.97957303476295237298115750923432534631246957748798211635315990085235386044173397010033557028064239531180052",
         "dimension": "C/m^3",
-        "description": "The first 100 significant digits of the model value for the atomic unit of charge density, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of charge density, read as a digit sequence.",
     },
 
     {
@@ -2753,9 +2753,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{n}}"},
         ],
-        "value": "-9.66235818798182864486582965246268295389841089444086809551518070692173168307202683672207033021976387892482357959513601514e-27",
+        "value": "-0.00000000000000000000000000966235818798183853296068048363610514531038662549992709616309046674077099960245005109747787931797451396248431231081240311",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the neutron magnetic moment, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron magnetic moment, read as a digit sequence.",
     },
 
     {
@@ -2767,9 +2767,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\dot{\\gamma}_{\\mathrm{n}}"},
         ],
-        "value": "29.1646871897930907412381506718610346233665687485630327481133987214277523312901493295519891237246366052624570682738124253",
+        "value": "29.1646871897929879529617834000502585041370636430566298220042989267031383574271704655938619154331457236504415568049240907",
         "dimension": "MHz/T",
-        "description": "The first 100 significant digits of the model value for the neutron gyromagnetic ratio in MHz/T, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron gyromagnetic ratio in MHz/T, read as a digit sequence.",
     },
 
     {
@@ -2781,9 +2781,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\gamma_{\\mathrm{n}}"},
         ],
-        "value": "183247134.039396462641008330524600978189007908233640793142172888237213643652391258384930043971411388038937899371669346124",
+        "value": "183247134.039396005700720449575243558143219848531658105881960352640670321252141650460200959117416822971920351516806855781",
         "dimension": "1/(s*T)",
-        "description": "The first 100 significant digits of the model value for the neutron gyromagnetic ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron gyromagnetic ratio, read as a digit sequence.",
     },
 
     {
@@ -2795,9 +2795,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{n}}/\\mu_{\\mathrm{B}}"},
         ],
-        "value": "-0.00104187546165271803439192497936915726439479129913278195546433163188572868559712393004941398031906982361853490138599106266",
+        "value": "-0.00104187546165271180957025140740827895177514579537043236091561185728134357230987107272591113242347809451566583773330034050",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the neutron magnetic moment to Bohr magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron magnetic moment to Bohr magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -2809,9 +2809,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{n}}/\\mu_{\\mathrm{N}}"},
         ],
-        "value": "-1.91304241427758983339698440362261275615659505462801610223507861464319259070081139211676942263757019995231322628805293390",
+        "value": "-1.91304241427757311491288647807662015701045040745666476253372267817754118027807052165022696628659461781104135802764786920",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the neutron magnetic moment to nuclear magneton ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron magnetic moment to nuclear magneton ratio, read as a digit sequence.",
     },
 
     {
@@ -2823,9 +2823,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "g_n"},
         ],
-        "value": "-3.82608482855517966679396880724522551231319010925603220447015722928638518140162278423353884527514039990462645257610586780",
+        "value": "-3.82608482855514622982577295615324031402090081491332952506744535635508236055614104330045393257318923562208271605529573841",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the neutron g factor, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron g factor, read as a digit sequence.",
     },
 
     {
@@ -2839,9 +2839,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{kg}"},
         ],
-        "value": "7.37249732369514811958314623894604095643783497296572534727102999780982971860084512851291924729806419025170767085294390337e-51",
+        "value": "7.37249732369514765880163380635207598488349464804505093103997759999345535214328718704894208330139132674706788215696071975e-51",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the hertz-kilogram relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hertz-kilogram relationship, read as a digit sequence.",
     },
 
     {
@@ -2855,9 +2855,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "4.43982166082253697905347562911104276739845175363038633084625905762529525970943801210981433131954702133037569671959257063e-24",
+        "value": "0.00000000000000000000000443982166082253969380119855205637176153264200592449937172939790826394125871822418390851316625558458336244434747467609814",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the hertz-A_mass relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hertz-A_mass relationship, read as a digit sequence.",
     },
 
     {
@@ -2869,9 +2869,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathcal{N}_{\\mathrm{time}}"},
         ],
-        "value": "1.28808866695581035545528272443985104863993854673690604896073979088351300008292201656030978099587176570905648523325960102e-21",
+        "value": "0.00000000000000000000128808866695580878598272291359730137575404239106516973152744578852695382758459891528038425545165706520330510833323530669",
         "dimension": "s",
-        "description": "The first 100 significant digits of the model value for the natural unit of time, read as a digit sequence.",
+        "description": "The first 100 digits of the natural unit of time, read as a digit sequence.",
     },
 
     {
@@ -2885,9 +2885,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{Hz}"},
         ],
-        "value": "225234272093083596964785.140779021414010467697156388171644703601435614051268630807035900634696884124900785604595496370178",
+        "value": "225234272093083459244337.343505683957809978024117556476262029479587058229372448377337532693059510853786283403976571383979",
         "dimension": "Hz",
-        "description": "The first 100 significant digits of the model value for the atomic mass unit-hertz relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic mass unit-hertz relationship, read as a digit sequence.",
     },
 
     {
@@ -2901,9 +2901,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{Hz}"},
         ],
-        "value": "135639248967168494267965903591166778072494481788549.700901673382982794663295353630522563361450106356877283854448557206804",
+        "value": "135639248967168502745426872458550000925385742310914.338926942376298216345554503902509503515390561312217921918410415009327",
         "dimension": "Hz",
-        "description": "The first 100 significant digits of the model value for the kilogram-hertz relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kilogram-hertz relationship, read as a digit sequence.",
     },
 
     {
@@ -2915,9 +2915,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "k_{\\mathrm{B}}"},
         ],
-        "value": "1.38064900009246310311609459834049285945374875066962624876424354543941851601379439685378824053027041255925908286066478858e-23",
+        "value": "0.0000000000000000000000138064900009247185530377311437977418601671426922308928404503124829003871880185991759993367390699285654159699797797842072",
         "dimension": "J/K",
-        "description": "The first 100 significant digits of the model value for the Boltzmann constant, read as a digit sequence.",
+        "description": "The first 100 digits of the Boltzmann constant, read as a digit sequence.",
     },
 
     {
@@ -2929,9 +2929,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{\\cdots}{k_{\\mathrm{B}}}"},
         ],
-        "value": "8.61733326153814787627966042067226268393139188933304313219665541261876864825543926159697072248625696463340398520570874549e-5",
+        "value": "0.0000861733326153817142754263405884849251069264974642799499008557868427452808324133938230196645589251187073824213155158166671",
         "dimension": "eV/K",
-        "description": "The first 100 significant digits of the model value for the Boltzmann constant in eV/K, read as a digit sequence.",
+        "description": "The first 100 digits of the Boltzmann constant in eV/K, read as a digit sequence.",
     },
 
     {
@@ -2945,9 +2945,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{J}"},
         ],
-        "value": "1.38064900009246310311609459834049285945374875066962624876424354543941851601379439685378824053027041255925908286066478858e-23",
+        "value": "0.0000000000000000000000138064900009247185530377311437977418601671426922308928404503124829003871880185991759993367390699285654159699797797842072",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the kelvin-joule relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kelvin-joule relationship, read as a digit sequence.",
     },
 
     {
@@ -2961,9 +2961,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{eV}"},
         ],
-        "value": "8.61733326153814787627966042067226268393139188933304313219665541261876864825543926159697072248625696463340398520570874549e-5",
+        "value": "0.0000861733326153817142754263405884849251069264974642799499008557868427452808324133938230196645589251187073824213155158166671",
         "dimension": "eV",
-        "description": "The first 100 significant digits of the model value for the kelvin-electron volt relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kelvin-electron volt relationship, read as a digit sequence.",
     },
 
     {
@@ -2977,9 +2977,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{K}"},
         ],
-        "value": "11604.5181221091361536705265211406752527166891203702624093112855003010586647874495009843055860096931196521701617599594946",
+        "value": "11604.5181221091044383997253767188923096554245467188266812053568162245872822920798881660695968194572583687154802611240707",
         "dimension": "K",
-        "description": "The first 100 significant digits of the model value for the electron volt-kelvin relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the electron volt-kelvin relationship, read as a digit sequence.",
     },
 
     {
@@ -2993,9 +2993,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{K}"},
         ],
-        "value": "72429705153935714244060.4482223469398268417812888138528720533473129998437862973855248935229523707753066312417461539649283",
+        "value": "72429705153935255098851.9545227232166954151373485210743408630119870987445067894009839738869121996549971071561221544739749",
         "dimension": "K",
-        "description": "The first 100 significant digits of the model value for the joule-kelvin relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the joule-kelvin relationship, read as a digit sequence.",
     },
 
     {
@@ -3007,9 +3007,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "n_0"},
         ],
-        "value": "26516458046471065071960625.3788566501288089991904864919905009508742448631837076278692635998361232931746773720469170656886",
+        "value": "26516458046470896979261195.1391994203534377218921914971044711740754525881408710968273746611430348361695431653385152751144",
         "dimension": "1/m^3",
-        "description": "The first 100 significant digits of the model value for the Loschmidt constant (273.15 K, 100 kPa), read as a digit sequence.",
+        "description": "The first 100 digits of the Loschmidt constant (273.15 K, 100 kPa), read as a digit sequence.",
     },
 
     {
@@ -3021,9 +3021,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "n_1"},
         ],
-        "value": "26867801115586806684164103.6651265007430157184297604380093750884733286076208917539385313425339519268092418472265387168089",
+        "value": "26867802111219443649453098.6099087672370930232946471878642008587064177719018310461749672838813004331889530213674915979856",
         "dimension": "1/m^3",
-        "description": "The first 100 significant digits of the model value for the Loschmidt constant (273.15 K, 101.325 kPa), read as a digit sequence.",
+        "description": "The first 100 digits of the Loschmidt constant (273.15 K, 101.325 kPa), read as a digit sequence.",
     },
 
     {
@@ -3035,9 +3035,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{B}}/k_{\\mathrm{B}}"},
         ],
-        "value": "0.671713814961806819198661413701681679310237883111395034935212124016389457461869158156096273309979641234089178333429481863",
+        "value": "0.671713814961807261743172002431607669003205034305637712956666701429932933306298836942045591377916593446199463446317343946",
         "dimension": "K/T",
-        "description": "The first 100 significant digits of the model value for the Bohr magneton in K/T, read as a digit sequence.",
+        "description": "The first 100 digits of the Bohr magneton in K/T, read as a digit sequence.",
     },
 
     {
@@ -3049,9 +3049,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{N}}/k_{\\mathrm{B}}"},
         ],
-        "value": "3.65826777199876083869330997201571864941182021677046871110917455736034797297865284691453601781600044086606417148318199466e-4",
+        "value": "0.000365826777199877336244443953479167192561215893667227789347309461342351552686812947548388380184655108428211404134922720307",
         "dimension": "K/T",
-        "description": "The first 100 significant digits of the model value for the nuclear magneton in K/T, read as a digit sequence.",
+        "description": "The first 100 digits of the nuclear magneton in K/T, read as a digit sequence.",
     },
 
     {
@@ -3063,9 +3063,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\overset{..}{R_{\\infty}hc}"},
         ],
-        "value": "2.17987236111219442380407998277973238180667704130838981803494277449081693990011049604039965812876600342288206115889145338e-18",
+        "value": "0.00000000000000000217987236111221218017783575321296233674009336702699124591302473701904490252691061880342564575397724960621476755963986699",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the Rydberg constant times hc in J, read as a digit sequence.",
+        "description": "The first 100 digits of the Rydberg constant times hc in J, read as a digit sequence.",
     },
 
     {
@@ -3077,9 +3077,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "E_h"},
         ],
-        "value": "4.35974472222438884760815996555946476361335408261677963606988554898163387980022099208079931625753200684576412231778290676e-18",
+        "value": "0.00000000000000000435974472222442436035567150642592467348018673405398249182604947403808980505382123760685129150795449921242953511927973399",
         "dimension": "J",
-        "description": "The first 100 significant digits of the model value for the Hartree energy, read as a digit sequence.",
+        "description": "The first 100 digits of the Hartree energy, read as a digit sequence.",
     },
 
     {
@@ -3093,9 +3093,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "E_h"},
         ],
-        "value": "229371227838602555.878349478414009115692797589151444078339567635180275186937880309661886876134586652411644941778937567048",
+        "value": "229371227838600687.511502418527538435078932237904928986205568401633767925948720818389402263310173569956305634849181067523",
         "dimension": "E_h",
-        "description": "The first 100 significant digits of the model value for the joule-hartree relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the joule-hartree relationship, read as a digit sequence.",
     },
 
     {
@@ -3107,9 +3107,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "K_{\\mathrm{J}}"},
         ],
-        "value": "483597848424072.413310041398961477594054324722296876477815451095378541533505358385667611723334783476707102269417013614098",
+        "value": "483597848424071.957956579793464766524885092512146469973400320162554673543388228217864630549374748274848356266582448147681",
         "dimension": "Hz/V",
-        "description": "The first 100 significant digits of the model value for the Josephson constant, read as a digit sequence.",
+        "description": "The first 100 digits of the Josephson constant, read as a digit sequence.",
     },
 
     {
@@ -3121,9 +3121,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "e/\\hbar"},
         ],
-        "value": "1519267447900894.69701683913874934915619867290064143260551701342897280323705909725159143481236812514807445106924719841073",
+        "value": "1519267447900894.83259531591412697985142284370035388902745337202126457396041353289187042724036835631339684604668618656223",
         "dimension": "A/J",
-        "description": "The first 100 significant digits of the model value for the elementary charge over h-bar, read as a digit sequence.",
+        "description": "The first 100 digits of the elementary charge over h-bar, read as a digit sequence.",
     },
 
     {
@@ -3135,9 +3135,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\Phi_0"},
         ],
-        "value": "2.06783384843114712854118874075283181174946014528391670275524927969507933655575630188612470652688129838747022205713099466e-15",
+        "value": "0.00000000000000206783384843114907560382348794549560919297717438683120807665035043070408717677187062586546661345939494005369869835553581",
         "dimension": "Wb",
-        "description": "The first 100 significant digits of the model value for the magnetic flux quantum, read as a digit sequence.",
+        "description": "The first 100 digits of the magnetic flux quantum, read as a digit sequence.",
     },
 
     {
@@ -3149,9 +3149,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\hbar/e"},
         ],
-        "value": "6.58211956941108971474568851580149735210118481568253439479605595965977945680847048155806190063390234682339415167913569408e-16",
+        "value": "0.000000000000000658211956941108912736145515908783163998617320458965768651066293570646378132455138240956099897396914369236568076605278112",
         "dimension": "eV*s",
-        "description": "The first 100 significant digits of the model value for the reduced Planck constant in eV s, read as a digit sequence.",
+        "description": "The first 100 digits of the reduced Planck constant in eV s, read as a digit sequence.",
     },
 
     {
@@ -3163,9 +3163,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "h/e"},
         ],
-        "value": "4.13566769686229425708237748150566362349892029056783340551049855939015867311151260377224941305376259677494044411426198932e-15",
+        "value": "0.00000000000000413566769686229815120764697589099121838595434877366241615330070086140817435354374125173093322691878988010739739671107163",
         "dimension": "eV/Hz",
-        "description": "The first 100 significant digits of the model value for the Planck constant in eV/Hz, read as a digit sequence.",
+        "description": "The first 100 digits of the Planck constant in eV/Hz, read as a digit sequence.",
     },
 
     {
@@ -3177,9 +3177,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "c_1"},
         ],
-        "value": "3.74177185285686778851250689075102580115550081823226323407318238422195962362145924269319387153189471944828067138782815567e-16",
+        "value": "0.000000000000000374177185285690591293604262391270781086058524239348888720980572898720706419495626650695673403869149553264814538474198327",
         "dimension": "W*m^2",
-        "description": "The first 100 significant digits of the model value for the first radiation constant, read as a digit sequence.",
+        "description": "The first 100 digits of the first radiation constant, read as a digit sequence.",
     },
 
     {
@@ -3191,9 +3191,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "c_{1\\mathrm{L}}"},
         ],
-        "value": "1.19104297260858234942456465786874623544362260641878610130345454736909685729668008846982267314122026152329443117780436607e-16",
+        "value": "0.000000000000000119104297260859325703708505258619958526522333436156273659004806148690995163731751920703009652047319583931621330180352137",
         "dimension": "W*m^2/sr",
-        "description": "The first 100 significant digits of the model value for the first radiation constant for spectral radiance, read as a digit sequence.",
+        "description": "The first 100 digits of the first radiation constant for spectral radiance, read as a digit sequence.",
     },
 
     {
@@ -3205,9 +3205,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\gamma_{\\mathrm{he}}'"},
         ],
-        "value": "203789460.878415833884907162451644528198376921362760958865501818744809960144874277059565267332015940110876711643644237674",
+        "value": "203789460.878419646051667119135867038996201424652255864161197973072019268569414675513025984526092904866503122118094716684",
         "dimension": "1/s*T",
-        "description": "The first 100 significant digits of the model value for the shielded helion gyromagnetic ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded helion gyromagnetic ratio, read as a digit sequence.",
     },
 
     {
@@ -3219,9 +3219,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\dot{\\gamma}_{\\mathrm{he}}'"},
         ],
-        "value": "32.4341000488323363400266895059605688782045852214768969014952844521030512657718772439919626289863081165311476038052770719",
+        "value": "32.4341000488329096310154306613975890262995006503288733184325093144789074867076187676149956099113025450520962421556697888",
         "dimension": "MHz/T",
-        "description": "The first 100 significant digits of the model value for the shielded helion gyromagnetic ratio in MHz/T, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded helion gyromagnetic ratio in MHz/T, read as a digit sequence.",
     },
 
     {
@@ -3233,9 +3233,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{he}}"},
         ],
-        "value": "-1.07461755420269799105388198827580327680067341532669689818850035390783355190776202192335764947431319233711078111451904898e-26",
+        "value": "-0.0000000000000000000000000107461755420272187229304600529569412279837487892380128044098233159091410445903094328382157727630945885610925817819489482",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the helion magnetic moment, read as a digit sequence.",
+        "description": "The first 100 digits of the helion magnetic moment, read as a digit sequence.",
     },
 
     {
@@ -3247,9 +3247,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{he}}'"},
         ],
-        "value": "-1.07455311098442188757050283435155120604194433703880562598647519215301435353388466736847007388543582499799837815765696493e-26",
+        "value": "-0.0000000000000000000000000107455311098444576772276891178221701888901804354353488156267904079219262497057967527791289092962128702210269106177951028",
         "dimension": "J/T",
-        "description": "The first 100 significant digits of the model value for the shielded helion magnetic moment, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded helion magnetic moment, read as a digit sequence.",
     },
 
     {
@@ -3261,9 +3261,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{he}}'/\\mu_+"},
         ],
-        "value": "-0.761766577306786341582765351258669846056028858315790884117814033917690990777983091515318075465138791353506307204028483653",
+        "value": "-0.761766577306795086256552815256072371707183645955458513983827499668733346042494452616097050577402956255732513146452699736",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the shielded helion to proton magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded helion to proton magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -3275,9 +3275,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{he}}'/\\mu_{+}'"},
         ],
-        "value": "-0.761786134617087879625179867586898320735920935955343705253476357758352497772741742932420168754463161069902943090299584842",
+        "value": "-0.761786134617096624540720748641857701129650815532433387943506571276616785915302188308083667633528308498109180810919866653",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the shielded helion to shielded proton magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the shielded helion to shielded proton magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -3289,9 +3289,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mu_{\\mathrm{e}}/\\mu_{\\mathrm{he}}'"},
         ],
-        "value": "864.058236541606713253247478372464794347902711227271769089798627685933176661615592752850429400144952654238410935841399622",
+        "value": "864.058236541591401060058825128812258888206768959050123592145742552874477375892292849754603126341105302288347373574000265",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the electron to shielded helion magnetic moment ratio, read as a digit sequence.",
+        "description": "The first 100 digits of the electron to shielded helion magnetic moment ratio, read as a digit sequence.",
     },
 
     {
@@ -3305,9 +3305,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "E_h"},
         ],
-        "value": "34231776.9077001100819958545067629759023391625305736106736215718168203386839802637515724223256311398922649950196308643347",
+        "value": "34231776.9076999659902917029303854042781773942599083918460791282422435457844934408962521370230391743202698119220876907369",
         "dimension": "E_h",
-        "description": "The first 100 significant digits of the model value for the atomic mass unit-hartree relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic mass unit-hartree relationship, read as a digit sequence.",
     },
 
     {
@@ -3321,9 +3321,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "2.92126231920797967750615115805704249331201932567842948773768751914742766485296589629226056454875478164861872997566309235e-8",
+        "value": "0.0000000292126231920799197396586995793794008337444007074581105228019187142963410239585516444653062141611639207088158129091119957",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the hartree-atomic mass unit relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hartree-atomic mass unit relationship, read as a digit sequence.",
     },
 
     {
@@ -3337,9 +3337,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "E_h"},
         ],
-        "value": "20614857887405338322130732293687395.5921859759389575621132202119847246444062097519895984976823686397155035939508851997648",
+        "value": "20614857887405265441550131421986250.5870167207959477595060346764702346695067348853725488970042323535373135617957457206236",
         "dimension": "E_h",
-        "description": "The first 100 significant digits of the model value for the kilogram-hartree relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kilogram-hartree relationship, read as a digit sequence.",
     },
 
     {
@@ -3353,9 +3353,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{kg}"},
         ],
-        "value": "4.85087020954402288598235939447718080542863868422490095794766969047148284513661395649324510453482657294440693712042741089e-35",
+        "value": "0.0000000000000000000000000000000000485087020954404003546935668521730799515020370852162677067154783232720170165226080204361584100375161100222695255482796497",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the hartree-kilogram relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hartree-kilogram relationship, read as a digit sequence.",
     },
 
     {
@@ -3369,9 +3369,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{kg}"},
         ],
-        "value": "1.53617918688372284104143021334010174551125389349163164628072162718027639841626476743137823854194076242622153629007561881e-40",
+        "value": "1.53617918688372549699278083047327937791810722990220557565464089718348716668838383837857799095103979986019418680186554266e-40",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the kelvin-kilogram relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kelvin-kilogram relationship, read as a digit sequence.",
     },
 
     {
@@ -3385,9 +3385,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{K}"},
         ],
-        "value": "6509657262047572173750605919176222081607.14764260986603659602395105370774202418938369813059726082751820380814058887011173",
+        "value": "6509657262047560918987394792769967945972.15645653628863683152405304278383546353360121683832310105763137758216031035150936",
         "dimension": "K",
-        "description": "The first 100 significant digits of the model value for the kilogram-kelvin relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kilogram-kelvin relationship, read as a digit sequence.",
     },
 
     {
@@ -3401,9 +3401,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "9.25108729020560834643526329630816134378221402046908180556962571236954150873018686861302366923759227749359333167863188851e-14",
+        "value": "0.0000000000000925108729020563057575806386893918637217246111898760574682229564016466090889708672418365088851629092460095123935790785555",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the kelvin-atomic mass unit relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kelvin-atomic mass unit relationship, read as a digit sequence.",
     },
 
     {
@@ -3417,9 +3417,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{K}"},
         ],
-        "value": "10809540204307.9281724708379515147733597514692135094281537168214617090093418788202939344934019313278296516522072019159773",
+        "value": "10809540204307.9021983608766067214858555878135420114965806077613331329020628517582689407706290111211106160216789109725577",
         "dimension": "K",
-        "description": "The first 100 significant digits of the model value for the atomic mass unit-kelvin relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic mass unit-kelvin relationship, read as a digit sequence.",
     },
 
     {
@@ -3433,9 +3433,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "1/\\mathrm{m}"},
         ],
-        "value": "452443833598083488301396266461072868283888.189375641535133980396584703472153587668279003597157313580964183848206550692034",
+        "value": "452443833598082473632312169534315539750874.158698168844041757706232794820896009426506843884895769079472150299792877965151",
         "dimension": "cycles/m",
-        "description": "The first 100 significant digits of the model value for the kilogram-inverse meter relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kilogram-inverse meter relationship, read as a digit sequence.",
     },
 
     {
@@ -3449,9 +3449,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "1/\\mathrm{m}"},
         ],
-        "value": "751300661861780.925409192534312442674877340227704692404708851123526452266517638829781535418629015175806708948099078000696",
+        "value": "751300661861778.734169236266718881017082020428638083362301357283798486633626926810240346792009230233332673043496533105274",
         "dimension": "cycles/m",
-        "description": "The first 100 significant digits of the model value for the atomic mass unit-inverse meter relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic mass unit-inverse meter relationship, read as a digit sequence.",
     },
 
     {
@@ -3465,9 +3465,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{kg}"},
         ],
-        "value": "2.21021909404020424478091043304901315660566941361967176076159533961922034238802384114248560366658884481790840000000000000e-42",
+        "value": "2.21021909404020920150883391095575558754445451820045028138580267048644475743091037713266402690234594724320204932654678057e-42",
         "dimension": "kg",
-        "description": "The first 100 significant digits of the model value for the inverse meter-kilogram relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the inverse meter-kilogram relationship, read as a digit sequence.",
     },
 
     {
@@ -3481,9 +3481,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mass}}"},
         ],
-        "value": "1.33102504864185260196925511501476919607793128093134901208134667707179025624082889830329851030179648056233829813082814567e-15",
+        "value": "0.00000000000000133102504864185648403061540611187584800425159434914105322300164542893582259347639290137963196211490753529916859617389387",
         "dimension": "A_mass",
-        "description": "The first 100 significant digits of the model value for the inverse meter-atomic mass unit relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the inverse meter-atomic mass unit relationship, read as a digit sequence.",
     },
 
     {
@@ -3495,9 +3495,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\lambda_C"},
         ],
-        "value": "2.42631023609292716032876181869936573985673314576606136434521712093772436760610643654608429698107893302432519658183304347e-12",
+        "value": "0.00000000000242631023609293229810134574785855552842033746447772930369429942558401907096134939049144478172199867155874041020914601057",
         "dimension": "m/cycle",
-        "description": "The first 100 significant digits of the model value for the Compton wavelength, read as a digit sequence.",
+        "description": "The first 100 digits of the Compton wavelength, read as a digit sequence.",
     },
 
     {
@@ -3509,9 +3509,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\lambda_{\\mu}"},
         ],
-        "value": "1.17344411764093242297760195100218277332589906393591794053783609764761773598474684011284056977872945455265954031227747234e-14",
+        "value": "0.0000000000000117344411764093511056514720152650510418921264677567080610997326172791237461015792963440874075359874262651356114088108954",
         "dimension": "m/cycle",
-        "description": "The first 100 significant digits of the model value for the muon Compton wavelength, read as a digit sequence.",
+        "description": "The first 100 digits of the muon Compton wavelength, read as a digit sequence.",
     },
 
     {
@@ -3523,9 +3523,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\lambda_+"},
         ],
-        "value": "1.32140985399773986972050813212758894505792669181688286376865754250538315147044915447489760306518837681256984964355691825e-15",
+        "value": "0.00000000000000132140985399774632098378232930837239867621330118621045517438636673925631137844446260350257249892502825998479945403339864",
         "dimension": "m/cycle",
-        "description": "The first 100 significant digits of the model value for the proton Compton wavelength, read as a digit sequence.",
+        "description": "The first 100 digits of the proton Compton wavelength, read as a digit sequence.",
     },
 
     {
@@ -3537,9 +3537,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\lambda_n"},
         ],
-        "value": "1.31959090499128113944277474975623461250112055504598740411236379096639388221844027379517408905114294612742320506944499021e-15",
+        "value": "0.00000000000000131959090499127891920464003239850818770732387181610903950410584149828854827906893614235366838445089683935963562323036407",
         "dimension": "m/cycle",
-        "description": "The first 100 significant digits of the model value for the neutron Compton wavelength, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron Compton wavelength, read as a digit sequence.",
     },
 
     {
@@ -3551,9 +3551,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\lambda_{\\tau}"},
         ],
-        "value": "6.97770282157981863529022073729815913649271820817527733973711421413823844480640677277441167431921090104372647211178630262e-16",
+        "value": "0.000000000000000697770282157987031668801379038999245983264824896067454014458492204371149682387776506658612681275969919494985078981459467",
         "dimension": "m/cycle",
-        "description": "The first 100 significant digits of the model value for the tau Compton wavelength, read as a digit sequence.",
+        "description": "The first 100 digits of the tau Compton wavelength, read as a digit sequence.",
     },
 
     {
@@ -3565,9 +3565,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\lambda_{-}"},
         ],
-        "value": "3.86159267548653356796878352657788694642178798942467493841675551332523555014388477678014855047098012535979361891295221936e-13",
+        "value": "0.000000000000386159267548653776432418340826451421402599495006164148230446169167234377046248391090301429165113134275694315627968123785",
         "dimension": "m/cycle",
-        "description": "The first 100 significant digits of the model value for the reduced Compton wavelength, read as a digit sequence.",
+        "description": "The first 100 digits of the reduced Compton wavelength, read as a digit sequence.",
     },
 
     {
@@ -3579,9 +3579,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\lambda_{\\mu_-}"},
         ],
-        "value": "1.86759431764662127960585378619809796266025298801913103814652229938534023334095643632193080262953355737951081360468335643e-15",
+        "value": "0.00000000000000186759431764662363185329971623308331771287691285461603985681663758918271809519565818215166400669619619256569811099828418",
         "dimension": "m/cycle",
-        "description": "The first 100 significant digits of the model value for the reduced muon Compton wavelength, read as a digit sequence.",
+        "description": "The first 100 digits of the reduced muon Compton wavelength, read as a digit sequence.",
     },
 
     {
@@ -3593,9 +3593,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": r"\lambda_{+_{-}}"},
         ],
-        "value": "2.10308910114080230109345970369381084959140969766709496861565641399756856413192656168817410603610603683946617274898364655e-16",
+        "value": "0.000000000000000210308910114081040066068149456615378798394558264595396124433597992809773752002039216416442470781280903391896691999406139",
         "dimension": "m/cycle",
-        "description": "The first 100 significant digits of the model value for the reduced proton Compton wavelength, read as a digit sequence.",
+        "description": "The first 100 digits of the reduced proton Compton wavelength, read as a digit sequence.",
     },
 
     {
@@ -3607,9 +3607,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\lambda_{n_-}"},
         ],
-        "value": "2.10019415388470231032024735677193932308164227231200340624648209790101541040596566803612777417094593985505918468294482433e-16",
+        "value": "0.000000000000000210019415388469661174854859192487634931202307341940264838744705108548111190583338105145053234321010435709291737753596685",
         "dimension": "m/cycle",
-        "description": "The first 100 significant digits of the model value for the reduced neutron Compton wavelength, read as a digit sequence.",
+        "description": "The first 100 digits of the reduced neutron Compton wavelength, read as a digit sequence.",
     },
 
     {
@@ -3621,9 +3621,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\lambda_{\\tau_-}"},
         ],
-        "value": "1.11053589548069469331342730431313918610552363789044737222879867468365130915702223624963566924980736169140110100834313861e-16",
+        "value": "0.000000000000000111053589548070177388444260075267712466155918987473099262846551220497503701189799939494719576099126706109768858182876072",
         "dimension": "m/cycle",
-        "description": "The first 100 significant digits of the model value for the reduced tau Compton wavelength, read as a digit sequence.",
+        "description": "The first 100 digits of the reduced tau Compton wavelength, read as a digit sequence.",
     },
 
     {
@@ -3635,9 +3635,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "b'"},
         ],
-        "value": "58789257579.6309415632195569882061772153251962067959811557016349946025929998560933091543009284752533344016396506642922999",
+        "value": "58789257579.6312321872169627678579987110444455322077433913558599624608181257407111534158105117869490088730601529871351392",
         "dimension": "Hz/K",
-        "description": "The first 100 significant digits of the model value for the Wien frequency displacement law constant, read as a digit sequence.",
+        "description": "The first 100 digits of the Wien frequency displacement law constant, read as a digit sequence.",
     },
 
     {
@@ -3649,9 +3649,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\ddot{k}_{\\mathrm{B}}"},
         ],
-        "value": "20836619124.4485885294075770721262176680685906356788616816694497978109321085341800591650400945255459099274617556586103539",
+        "value": "20836619124.4486258562923680304850784185669679364871157568345082684760464517373770056351039034940786798261186199871355893",
         "dimension": "Hz/K",
-        "description": "The first 100 significant digits of the model value for the Boltzmann constant in Hz/K, read as a digit sequence.",
+        "description": "The first 100 digits of the Boltzmann constant in Hz/K, read as a digit sequence.",
     },
 
     {
@@ -3665,9 +3665,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{Hz}"},
         ],
-        "value": "20836619124.4485885294075770721262176680685906356788616816694497978109321085341800591650400945255459099274617556586103539",
+        "value": "20836619124.4486258562923680304850784185669679364871157568345082684760464517373770056351039034940786798261186199871355893",
         "dimension": "Hz",
-        "description": "The first 100 significant digits of the model value for the kelvin-hertz relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kelvin-hertz relationship, read as a digit sequence.",
     },
 
     {
@@ -3681,9 +3681,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{K}"},
         ],
-        "value": "4.79924307302319582046090070309029162947996956758202698737469605725613296001799358661583898523330061299143372155305300768e-11",
+        "value": "0.0000000000479924307302318722305878886096798311750299087157608063178162531335774910858372428719215980088916866656485502146671614512",
         "dimension": "K",
-        "description": "The first 100 significant digits of the model value for the hertz-kelvin relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hertz-kelvin relationship, read as a digit sequence.",
     },
 
     {
@@ -3695,9 +3695,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "b"},
         ],
-        "value": "0.00289777195379426398857286323244731072455240199514087855683086923450552807272334797656269387896464531079413240492131524063",
+        "value": "0.00289777195379426179808151712189209765259131546647102781538002130310570699363242612697928891691802491087473425584885584043",
         "dimension": "m*K/cycle",
-        "description": "The first 100 significant digits of the model value for the Wien wavelength displacement law constant, read as a digit sequence.",
+        "description": "The first 100 digits of the Wien wavelength displacement law constant, read as a digit sequence.",
     },
 
     {
@@ -3709,9 +3709,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "c_2"},
         ],
-        "value": "0.0143877687681332993078844014746159283541676122042693852052871927798359847272141273430822920406602681517883812804378256615",
+        "value": "0.0143877687681333066985261137668719832993841111989704603271986665899938049392227118139536803703050508286257918976861971245",
         "dimension": "m*K",
-        "description": "The first 100 significant digits of the model value for the second radiation constant, read as a digit sequence.",
+        "description": "The first 100 digits of the second radiation constant, read as a digit sequence.",
     },
 
     {
@@ -3725,9 +3725,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{K}"},
         ],
-        "value": "0.0143877687681332993078844014746159283541676122042693852052871927798359847272141273430822920406602681517883812804378256615",
+        "value": "0.0143877687681333066985261137668719832993841111989704603271986665899938049392227118139536803703050508286257918976861971245",
         "dimension": "cycles/m",
-        "description": "The first 100 significant digits of the model value for the inverse meter-kelvin relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the inverse meter-kelvin relationship, read as a digit sequence.",
     },
 
     {
@@ -3741,9 +3741,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "1/\\mathrm{m}"},
         ],
-        "value": "69.5034800805251092571971246876095656142111055235772334102876383912304839819589730396809143202806886781267950848852724479",
+        "value": "69.5034800805250735549747938909390337332960588863995383935741965299634840802252877736857424530861379930510124823391403209",
         "dimension": "cycles/m",
-        "description": "The first 100 significant digits of the model value for the kelvin-inverse meter relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kelvin-inverse meter relationship, read as a digit sequence.",
     },
 
     {
@@ -3755,9 +3755,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\dot{k}_{\\mathrm{B}}"},
         ],
-        "value": "69.5034800805251092571971246876095656142111055235772334102876383912304839819589730396809143202806886781267950848852724479",
+        "value": "69.5034800805250735549747938909390337332960588863995383935741965299634840802252877736857424530861379930510124823391403209",
         "dimension": "cycles/m*K",
-        "description": "The first 100 significant digits of the model value for the Boltzmann constant in inverse meter per kelvin, read as a digit sequence.",
+        "description": "The first 100 digits of the Boltzmann constant in inverse meter per kelvin, read as a digit sequence.",
     },
 
     {
@@ -3771,9 +3771,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "\\mathrm{K}"},
         ],
-        "value": "315775.024803816889365353512224296992654861689653768197208574805936158557065624982308941256765548462681912444410210156682",
+        "value": "315775.024803817459785301109398302346308430518150525808054775101529379559494138174722286207167358258436368342914717573344",
         "dimension": "K",
-        "description": "The first 100 significant digits of the model value for the hartree-kelvin relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the hartree-kelvin relationship, read as a digit sequence.",
     },
 
     {
@@ -3787,9 +3787,9 @@ NATURE_CONSTANTS = [
             {"type": "text", "text": " ⋮ "},
             {"type": "latex", "latex": "E_h"},
         ],
-        "value": "3.16681156345811371026882489712526092176519472865956414413736184300640036584039084690455532847810820768156807916429765842e-6",
+        "value": "0.00000316681156345810798970087561051699719380992534650195050674136250346119811655899896704193754198947472682083352421316409100",
         "dimension": "E_h",
-        "description": "The first 100 significant digits of the model value for the kelvin-hartree relationship, read as a digit sequence.",
+        "description": "The first 100 digits of the kelvin-hartree relationship, read as a digit sequence.",
     },
 
     {
@@ -3801,9 +3801,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_e"},
         ],
-        "value": "5.48579909796587589383072443225558726214696697266915318028566156856210504754686899797146145747718903774288892253561190876e-7",
+        "value": "0.000000548579909796586473568613361578692325150953036683338117066624239518043357072760730484720961728959473835625189250889363129",
         "dimension": "kg/mol",
-        "description": "The first 100 significant digits of the model value for the electron molar mass, read as a digit sequence.",
+        "description": "The first 100 digits of the electron molar mass, read as a digit sequence.",
     },
 
     {
@@ -3815,9 +3815,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_{\\mu}"},
         ],
-        "value": "1.13428925199289431571990344644041263874128462353125560988674533997195762923394833594070959416092446536856902463301637600e-4",
+        "value": "0.000113428925199289181254583216996108040010792226050175034039650237797719923887589420119044641443183544697523006322976070779",
         "dimension": "kg/mol",
-        "description": "The first 100 significant digits of the model value for the muon molar mass, read as a digit sequence.",
+        "description": "The first 100 digits of the muon molar mass, read as a digit sequence.",
     },
 
     {
@@ -3829,9 +3829,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_{\\mathrm{u}}"},
         ],
-        "value": "0.00100000000136176439286528862641098814410823571460578520536189691220379672612419238656565298979010414910264384629064301828",
+        "value": "0.00100000000136176155978968841262646161844039944208848231906036275466762579487447971421178715487710787310670229331019139431",
         "dimension": "kg/mol",
-        "description": "The first 100 significant digits of the model value for the molar mass constant, read as a digit sequence.",
+        "description": "The first 100 digits of the molar mass constant, read as a digit sequence.",
     },
 
     {
@@ -3843,9 +3843,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_+"},
         ],
-        "value": "0.00100727646795395525729639453690272409617679420383104021646732137472500615833403476906992083777079073925979211439715107178",
+        "value": "0.00100727646795395042379308112180731347472102578711965721426250632742284016365815404588886688982624667255686218318648960113",
         "dimension": "kg/mol",
-        "description": "The first 100 significant digits of the model value for the proton molar mass, read as a digit sequence.",
+        "description": "The first 100 digits of the proton molar mass, read as a digit sequence.",
     },
 
     {
@@ -3857,9 +3857,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_n"},
         ],
-        "value": "0.00100866491684647487622724135249189492056929295971183101476410157180870653042778498805636216445968312745015248841227767741",
+        "value": "0.00100866491684647665756953587712116235912641086022675328978714589433123670854946943291432214947689228472431025584087826483",
         "dimension": "kg/mol",
-        "description": "The first 100 significant digits of the model value for the neutron molar mass, read as a digit sequence.",
+        "description": "The first 100 digits of the neutron molar mass, read as a digit sequence.",
     },
 
     {
@@ -3871,9 +3871,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_{\\tau}"},
         ],
-        "value": "0.00190754046781407397536490215141101305883373831207600025020474564496772940459624163825524427533131187718750573923338058353",
+        "value": "0.00190754046781406000619876741383747531066388809215322838377104046863536329524382979061340302219342282722344290159461813549",
         "dimension": "kg/mol",
-        "description": "The first 100 significant digits of the model value for the tau molar mass, read as a digit sequence.",
+        "description": "The first 100 digits of the tau molar mass, read as a digit sequence.",
     },
 
     {
@@ -3885,9 +3885,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_{\\mathrm{de}}"},
         ],
-        "value": "0.00201355321529080375554563982678915070348239534381979428887258804700938644878424784541410132949537785166431929756336242041",
+        "value": "0.00201355321529079841906507403324471801601741586559341288120854215391033368818929256333994129510349658228199830953547198682",
         "dimension": "kg/mol",
-        "description": "The first 100 significant digits of the model value for the deuteron molar mass, read as a digit sequence.",
+        "description": "The first 100 digits of the deuteron molar mass, read as a digit sequence.",
     },
 
     {
@@ -3899,9 +3899,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_{\\mathrm{he}}"},
         ],
-        "value": "0.00301493225103642172427986643339200149612516028103106648322462997469217559890454988725335799180026678623622369108932550020",
+        "value": "0.00301493225103638638827873344151900142592530841023446065747659160772988037879266896557441314448943580603608064175743858687",
         "dimension": "kg/mol",
-        "description": "The first 100 significant digits of the model value for the helion molar mass, read as a digit sequence.",
+        "description": "The first 100 digits of the helion molar mass, read as a digit sequence.",
     },
 
     {
@@ -3913,9 +3913,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_{\\mathrm{tri}}"},
         ],
-        "value": "0.00301550071982805684275065360807343428851332523932739348803206419725670327090920408757452752037216428410943717404419373877",
+        "value": "0.00301550071982802829973966891932881315094528388410931014596674608411654407544540542159373909740337617058958947619329275231",
         "dimension": "kg/mol",
-        "description": "The first 100 significant digits of the model value for the triton molar mass, read as a digit sequence.",
+        "description": "The first 100 digits of the triton molar mass, read as a digit sequence.",
     },
 
     {
@@ -3927,9 +3927,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_{\\alpha}"},
         ],
-        "value": "0.00400150618457835837877676716834107548696015866107331674860966390032630272781830441556013189315231415732067987466126762023",
+        "value": "0.00400150618457833949385865895999392521634429726604676671114398430309715706334041101681805373247628240197780385448059634699",
         "dimension": "kg/mol",
-        "description": "The first 100 significant digits of the model value for the alpha particle molar mass, read as a digit sequence.",
+        "description": "The first 100 digits of the alpha particle molar mass, read as a digit sequence.",
     },
 
     {
@@ -3941,9 +3941,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{M}_{12_{\\mathrm{C}}}"},
         ],
-        "value": "0.0120000000163411727143834635169318577292988285752694224643427629464455607134903086387878358774812497892317261554877162194",
+        "value": "0.0120000000163411387174762609515175394212847933050617878287243530560115095384937565705414458585252944772804275197222967318",
         "dimension": "kg/mol",
-        "description": "The first 100 significant digits of the model value for the molar mass of carbon-12, read as a digit sequence.",
+        "description": "The first 100 digits of the molar mass of carbon-12, read as a digit sequence.",
     },
 
     {
@@ -3955,9 +3955,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "N_{\\mathrm{A}}"},
         ],
-        "value": "602214076443130916631964.108182365195419895056065949360149001412015404323627200025630504843605900984582419907039145109824",
+        "value": "602214076443129616378718.007186178543009641833277070733497426553337967805327336626240306405629699931814601117858052653493",
         "dimension": "1/mol",
-        "description": "The first 100 significant digits of the model value for the Avogadro constant, read as a digit sequence.",
+        "description": "The first 100 digits of the Avogadro constant, read as a digit sequence.",
     },
 
     {
@@ -3969,9 +3969,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{ST}_0"},
         ],
-        "value": "-1.15170753432429517955298917181897149406333167517414782843782821371556116793393555088294590235186960156581853586083429642",
+        "value": "-1.15170753432429243957503945542106232119824411862866693872490863752141025774791836399341721404887033090999139311650853846",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the Sackur-Tetrode constant (1K, 100 kPa), read as a digit sequence.",
+        "description": "The first 100 digits of the Sackur-Tetrode constant (1K, 100 kPa), read as a digit sequence.",
     },
 
     {
@@ -3983,9 +3983,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{ST}_1"},
         ],
-        "value": "-1.16487052045595794326192358111872605025645449990476912002899499951398837987798170336936491391243482598330568317607028805",
+        "value": "-1.16487055751257917997773961369235382410705784051853051976053836132021188705656087227342438861968822289398277170306857735",
         "dimension": "-",
-        "description": "The first 100 significant digits of the model value for the Sackur-Tetrode constant (1K, 101.325 kPa), read as a digit sequence.",
+        "description": "The first 100 digits of the Sackur-Tetrode constant (1K, 101.325 kPa), read as a digit sequence.",
     },
 
     {
@@ -3997,9 +3997,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\sigma"},
         ],
-        "value": "5.67037441987316566766380666460651929909714570098949226750854067375203265253200262417128487187134206935038528306533901221e-8",
+        "value": "0.0000000567037441987323517137318535030322967542705131646630085583219252928969390308090033324174221007915380151479631967805829644",
         "dimension": "W/m^2*K^4",
-        "description": "The first 100 significant digits of the model value for the Stefan-Boltzmann constant, read as a digit sequence.",
+        "description": "The first 100 digits of the Stefan-Boltzmann constant, read as a digit sequence.",
     },
 
     {
@@ -4011,9 +4011,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{V}_{90}"},
         ],
-        "value": "1.00000010665217510792165581305806089260043613707107600975274049565490000000000000000000000000000000000000000000000000000",
+        "value": "1.00000010665217510792244125005117997523293987439785899065958255285504367456255910536872283246347583028031011694924042628",
         "dimension": "V",
-        "description": "The first 100 significant digits of the model value for the conventional value of volt-90, read as a digit sequence.",
+        "description": "The first 100 digits of the conventional value of volt-90, read as a digit sequence.",
     },
 
     {
@@ -4025,9 +4025,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{W}_{90}"},
         ],
-        "value": "1.00000019552284964236341451861202582693304101935539594751627092935346400000000000000000000000000000000000000000000000000",
+        "value": "1.00000019552284964236343988565089629330849266498584719723061534856533552956191548835118869255155980585983907265255044924",
         "dimension": "W",
-        "description": "The first 100 significant digits of the model value for the conventional value of watt-90, read as a digit sequence.",
+        "description": "The first 100 digits of the conventional value of watt-90, read as a digit sequence.",
     },
 
     {
@@ -4039,9 +4039,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{ef}\\,\\nabla}"},
         ],
-        "value": "9717362427793018139509.44875603633894057079426315301644959886836332406025906830776693178075172449383958435586989652362431",
+        "value": "9717362427793074269551.41052228956894371285384002636000337278524645480495098362239587098410629428099829451779601800685582",
         "dimension": "V/m^2",
-        "description": "The first 100 significant digits of the model value for the atomic unit of electric field gradient, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of electric field gradient, read as a digit sequence.",
     },
 
     {
@@ -4053,9 +4053,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{current}}"},
         ],
-        "value": "0.00662361823748091772261393850812242776412257257569842719679652570335993449862523498873381934991150223898488930891630090527",
+        "value": "0.00662361823748097226702022868540304747054176173795327515661974676639426610220603660136886604001841633174888628545012035344",
         "dimension": "A",
-        "description": "The first 100 significant digits of the model value for the atomic unit of current, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of current, read as a digit sequence.",
     },
 
     {
@@ -4067,9 +4067,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mfd}}"},
         ],
-        "value": "235051.756770602958371789495806022101345703037288071337941511507210618600141928224619597794614224459949153770611229080148",
+        "value": "235051.756770603228119379599867611684300298617453151836726128505395997008232544017804190753578741620167130371359280968632",
         "dimension": "T",
-        "description": "The first 100 significant digits of the model value for the atomic unit of magnetic flux density, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of magnetic flux density, read as a digit sequence.",
     },
 
     {
@@ -4081,9 +4081,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{edm}}"},
         ],
-        "value": "8.47835362016674251822084016988547597064635556459744146535419587930748151863717084778688857527475278644248659977253035274e-30",
+        "value": "0.00000000000000000000000000000847835362016676784944579033165738124938550940081695392085367611674267097979303934923171727520501809683677658726629633490",
         "dimension": "m*C",
-        "description": "The first 100 significant digits of the model value for the atomic unit of electric dipole moment, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of electric dipole moment, read as a digit sequence.",
     },
 
     {
@@ -4095,9 +4095,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{mag}}"},
         ],
-        "value": "7.89103656936017178299821294095105297054581022224384926742502082208712354696864236980129686444015587696239549218061512471e-29",
+        "value": "0.0000000000000000000000000000789103656936021794858647317045137981714837998751613325372145148560005013409373102982779446982352735363045316102483563119",
         "dimension": "J/T^2",
-        "description": "The first 100 significant digits of the model value for the atomic unit of magnetizability, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of magnetizability, read as a digit sequence.",
     },
 
     {
@@ -4109,9 +4109,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{\\mathrm{eqm}}"},
         ],
-        "value": "4.4865515134264902392686784523219745588525923010050306669218999168860408886030794112150087948471824599545452144517205567540e-40",
+        "value": "4.48655151342650086937676333781071549233282845989328052604002234980474453120071576032453070373955922330644344401916560753e-40",
         "dimension": "m*C",
-        "description": "The first 100 significant digits of the model value for the atomic unit of electric quadrupole moment, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of electric quadrupole moment, read as a digit sequence.",
     },
 
     {
@@ -4123,9 +4123,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{1^{\\mathrm{st}}\\mathrm{hp}}"},
         ],
-        "value": "3.2063612956626074480832719368323560121026137723289406576918964627471911882533954493740499739660695610817688972630568700253e-53",
+        "value": "3.20636129566258395204326169061825990873801999435801765231898457452297636053240178056558354288110756633017489818793993942e-53",
         "dimension": "m^3*C^3/J^2",
-        "description": "The first 100 significant digits of the model value for the atomic unit of 1st hyperpolarizibility, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of 1ˢᵗ hyperpolarizibility, read as a digit sequence.",
     },
 
     {
@@ -4137,9 +4137,9 @@ NATURE_CONSTANTS = [
         "symbolParts": [
             {"type": "latex", "latex": "\\mathrm{A}_{2^{\\mathrm{nd}}\\mathrm{hp}}"},
         ],
-        "value": "6.2353799802913135765773443216260493969286742165945367906442611568593821089609119186953865567875341638421761652722427087265e-65",
+        "value": "6.23537998029123572287356801368530723844783095124507339972027119151886830259861164479124018778492142257880179046483654696e-65",
         "dimension": "m^4*C^4/J^3",
-        "description": "The first 100 significant digits of the model value for the atomic unit of 2nd hyperpolarizibility, read as a digit sequence.",
+        "description": "The first 100 digits of the atomic unit of 2ⁿᵈ hyperpolarizibility, read as a digit sequence.",
     },
 
 ]

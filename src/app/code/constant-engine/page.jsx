@@ -174,12 +174,13 @@ export default function ConstantEnginePage() {
 
                     <div style={innerPanelStyle}>
                         <p>
-                            To run the Constant Engine locally from the project
-                            folder, use:
+                            To run the Constant Engine locally, use:
                         </p>
 
                         <pre style={smallCodeBoxStyle}>
-                            <code>{`python constant_engine/src/build_all.py > public/code/constant-engine/latest-output.txt 2>&1`}</code>
+                            <code>{`source /Users/thadroberts/manim-venv/bin/activate
+cd /Users/thadroberts/physics-monastery-site
+python constant_engine/src/build_all.py > public/code/constant-engine/latest-output.txt 2>&1`}</code>
                         </pre>
 
                         <p>

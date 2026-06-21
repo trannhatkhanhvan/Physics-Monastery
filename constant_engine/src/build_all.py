@@ -18,10 +18,9 @@ from evaluator import evaluate_constant, Quantity, parse_dimension
 # ------------------------------------------------------------
 # Precision
 # ------------------------------------------------------------
-mp.mp.dps = 30  # compute precision
-
+mp.mp.dps = 180
 PRINT_DIGITS = 15
-CSV_DIGITS = 15
+CSV_DIGITS = 120
 
 
 def require_effectively_real(
@@ -762,6 +761,18 @@ def _parse_csv_number_to_mp(value: str) -> Any:
     return mp.mpf(s)
 
 
+def _parse_csv_dimension(dim: str) -> Dict[str, int]:
+    """
+    CSV convention:
+      - "-" means dimensionless
+      - "" also means dimensionless
+    """
+    d = (dim or "").strip()
+    if d in {"", "-"}:
+        return {}
+    return parse_dimension(d)
+
+
 def load_symbols(path: Path) -> Dict[str, Quantity]:
     symbols: Dict[str, Quantity] = {}
     if not path.exists():
@@ -775,7 +786,7 @@ def load_symbols(path: Path) -> Dict[str, Quantity]:
             dim = (row.get("dimension") or "").strip()
             if token and value:
                 v = _parse_csv_number_to_mp(value)
-                symbols[token] = Quantity(v, parse_dimension(dim))
+                symbols[token] = Quantity(v, _parse_csv_dimension(dim))
 
             if token == "m_+":
                 symbols["m_plus"] = symbols[token]
