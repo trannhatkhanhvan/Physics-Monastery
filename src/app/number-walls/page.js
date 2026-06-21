@@ -1499,9 +1499,9 @@ overflow: hidden;
 
     <button
         className={selectedId === CUSTOM_SEQUENCE_ID ? "sequence-button custom-sequence-button active" : "sequence-button custom-sequence-button"}
-        onClick={() => setSelectedId(CUSTOM_SEQUENCE_ID)}
+        onClick={() => setSelectedId(SEQUENCE_ID)}
     >
-        Custom Sequence / Function
+        Sequence / Function
     </button>
 
     <div className="sidebar-heading">Famous Sequences</div>
