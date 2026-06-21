@@ -5,6 +5,48 @@ import "../../globals.css";
 
 export const dynamic = "force-dynamic";
 
+const INPUT_PARAMETER_DISPLAY_DIGITS = 15;
+
+function formatInputParameterValue(value, digitLimit = INPUT_PARAMETER_DISPLAY_DIGITS) {
+    const text = String(value || "");
+
+    return text.replace(/[+-]?(?:\d+\.\d+|\d+|\.\d+)(?:[eE][+-]?\d+)?/g, (match) => {
+        const exponentMatch = match.match(/([eE][+-]?\d+)$/);
+        const exponent = exponentMatch ? exponentMatch[1] : "";
+        const body = exponent ? match.slice(0, -exponent.length) : match;
+
+        const sign = body.startsWith("-") || body.startsWith("+") ? body[0] : "";
+        const unsigned = sign ? body.slice(1) : body;
+
+        const dotIndex = unsigned.indexOf(".");
+        const digits = unsigned.replace(/\./g, "");
+
+        if (digits.length <= digitLimit) {
+            return match;
+        }
+
+        const trimmedDigits = digits.slice(0, digitLimit);
+
+        let rebuilt;
+
+        if (dotIndex === -1) {
+            rebuilt = trimmedDigits;
+        } else {
+            const integerDigitCount = unsigned.slice(0, dotIndex).length;
+
+            if (integerDigitCount >= digitLimit) {
+                rebuilt = trimmedDigits;
+            } else {
+                const beforeDecimal = trimmedDigits.slice(0, integerDigitCount) || "0";
+                const afterDecimal = trimmedDigits.slice(integerDigitCount);
+                rebuilt = `${beforeDecimal}.${afterDecimal}`;
+            }
+        }
+
+        return `${sign}${rebuilt}…${exponent}`;
+    });
+}
+
 export default function ConstantEnginePage() {
     const codePath = path.join(
         process.cwd(),
@@ -37,7 +79,8 @@ export default function ConstantEnginePage() {
             const [token, value, dimension] = line.split(",");
             return {
                 token: token || "",
-                value: value || "",
+                value: formatInputParameterValue(value || ""),
+                rawValue: value || "",
                 dimension: dimension || "",
             };
         });
@@ -144,7 +187,7 @@ export default function ConstantEnginePage() {
                                     {symbolRows.map((row, index) => (
                                         <tr key={`${row.token}-${index}`}>
                                             <td style={tdTokenStyle}>{row.token}</td>
-                                            <td style={tdValueStyle}>{row.value}</td>
+                                            <td style={tdValueStyle} title={row.rawValue}>{row.value}</td>
                                             <td style={tdStyle}>{row.dimension}</td>
                                         </tr>
                                     ))}
