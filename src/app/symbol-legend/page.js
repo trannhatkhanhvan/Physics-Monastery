@@ -1282,6 +1282,36 @@ export default function SymbolLegend() {
       left: (
           <>
             <img
+                src="/equations/1st_foias_constant.svg"
+                alt="x_infinity"
+                style={{
+                  height: '12px',           // Set preferred height
+                  width: 'auto',            // Maintain aspect ratio
+                  verticalAlign: '-0.2em',
+                  display: 'inline',
+                }}
+            />
+            {' = 2.29316628741186 ...'}
+          </>
+      ),
+      right: (
+          <a
+              href="https://mathworld.wolfram.com/FoiasConstant.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legend-link"
+          >
+            1<sup>st</sup> Foias constant
+          </a>
+      ),
+    },
+
+
+// 41
+    {
+      left: (
+          <>
+            <img
                 src="/equations/euler-mascheroni_constant.svg"
                 alt="y"
                 style={{
@@ -1307,7 +1337,7 @@ export default function SymbolLegend() {
     },
 
 
-// 41
+// 42
     {
       left: (
           <>
@@ -1337,7 +1367,7 @@ export default function SymbolLegend() {
     },
 
 
-// 42
+// 43
     {
       left: (
           <>
@@ -1369,7 +1399,7 @@ export default function SymbolLegend() {
 
 
 
-// 43
+// 44
     {
       left: (
           <>
@@ -1401,7 +1431,7 @@ export default function SymbolLegend() {
 
 
 
-// 44
+// 45
     {
       left: (
           <>
@@ -1432,7 +1462,7 @@ export default function SymbolLegend() {
 
 
 
-// 45
+// 46
     {
       left: (
           <>
@@ -1470,7 +1500,7 @@ export default function SymbolLegend() {
       right: '',
     },
 
-// 46
+// 47
     {
       left: (
           <>
@@ -1500,7 +1530,7 @@ export default function SymbolLegend() {
     },
 
 
-// 47
+// 48
     {
       left: (
           <>
@@ -1530,7 +1560,7 @@ export default function SymbolLegend() {
     },
 
 
-// 48
+// 49
     {
       left: (
           <>
@@ -1560,7 +1590,7 @@ export default function SymbolLegend() {
     },
 
 
-// 49
+// 50
     {
       left: (
           <>
@@ -1592,7 +1622,7 @@ export default function SymbolLegend() {
 
 
 
-// 50
+// 51
     {
       left: (
           <>
@@ -1621,35 +1651,6 @@ export default function SymbolLegend() {
       ),
     },
 
-
-// 51
-    {
-      left: (
-          <>
-            <img
-                src="/equations/1st_foias_constant.svg"
-                alt="x_infinity"
-                style={{
-                  height: '12px',           // Set preferred height
-                  width: 'auto',            // Maintain aspect ratio
-                  verticalAlign: '-0.2em',
-                  display: 'inline',
-                }}
-            />
-            {' = 2.29316628741186 ...'}
-          </>
-      ),
-      right: (
-          <a
-              href="https://mathworld.wolfram.com/FoiasConstant.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="legend-link"
-          >
-            1<sup>st</sup> Foias constant
-          </a>
-      ),
-    },
 
 
 // 52

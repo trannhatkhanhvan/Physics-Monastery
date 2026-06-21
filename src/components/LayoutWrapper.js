@@ -76,6 +76,7 @@ export default function LayoutWrapper({ children }) {
     pathname === '/monastery-events' ? 'monastery-events-page' :
     pathname === '/supporters' ? 'supporters-page' :
     pathname === '/contact-us' ? 'contact-us-page' :
+    pathname === '/forum' ? 'forum-page' :
     '';
 
   return (
@@ -204,9 +205,10 @@ export default function LayoutWrapper({ children }) {
 
           <div className="separator"></div>
 
-          <a href="/supporters" className="menu-text-link">Supporters</a>
+          <a href="/forum" className="menu-text-link">Forum</a>
           <a href="/monastery-events" className="menu-text-link">Events</a>
           <a href="/books" className="menu-text-link">Books</a>
+          <a href="/supporters" className="menu-text-link">Supporters</a>
           <a href="/contact-us" className="menu-text-link">Contact Us</a>
 
 

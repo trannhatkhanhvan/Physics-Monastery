@@ -195,7 +195,8 @@ body {
 /* Shared Page Styles */
 .symbol-legend-page,
 .constants-of-nature-page,
-.hyperbolic-partition-page {
+.hyperbolic-partition-page,
+.forum-page {
   position: relative;
   min-height: 100vh;
   font-family: "Times New Roman", serif;
@@ -807,6 +808,16 @@ body {
   z-index: 1;
 }
 
+/* Forum page background */
+.main-content.forum-page {
+  background-image:
+    url('/physics_monastery_background.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  min-height: 100vh !important;
+}
+
 /* --- Sidebar moon/sun toggle icon --- */
 
 .sidebar-toggle {
@@ -844,6 +855,15 @@ body {
   outline: 1px solid rgba(255, 204, 0, 0.8);
   outline-offset: 3px;
   border-radius: 50%;
+}
+
+.main-content.forum-page {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
+    url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 
