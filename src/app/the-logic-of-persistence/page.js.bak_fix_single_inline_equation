@@ -36,85 +36,59 @@ function getPdfFileForChapter(chapter) {
 }
 
 
-
-function InlineChapter8Equation() {
-  const wrapperStyle = {
-    fontFamily:
-      "'Cambria Math', 'STIX Two Math', 'Latin Modern Math', 'TeX Gyre Termes Math', 'STIXGeneral', 'Times New Roman', serif",
+function InlineConnectiveActionEquation() {
+  const mathStyle = {
+    fontFamily: "'Times New Roman', Times, serif",
+    fontStyle: "italic",
     whiteSpace: "nowrap",
   };
 
-  const romanStyle = {
-    fontStyle: "normal",
-  };
-
-  const italicStyle = {
-    fontStyle: "italic",
-  };
-
   const subStyle = {
-    fontSize: "0.7em",
+    fontSize: "0.72em",
     lineHeight: 0,
-    verticalAlign: "-0.28em",
-    fontStyle: "italic",
+    verticalAlign: "-0.25em",
   };
 
   const supStyle = {
     fontSize: "0.72em",
     lineHeight: 0,
-    verticalAlign: "0.58em",
+    verticalAlign: "0.55em",
   };
 
   const nestedSubStyle = {
-    fontSize: "0.78em",
+    fontSize: "0.72em",
     lineHeight: 0,
-    verticalAlign: "-0.22em",
-    fontStyle: "italic",
+    verticalAlign: "-0.25em",
   };
 
   return (
-    <span style={wrapperStyle}>
-      <span style={romanStyle}>A</span>
-      <sub style={subStyle}>k</sub>
-      <span style={italicStyle}>e</span>
+    <span style={mathStyle}>
+      A<sub style={subStyle}>k</sub>
+      e
       <sup style={supStyle}>
-        <span style={romanStyle}>φ</span>
-        <sub style={nestedSubStyle}>k</sub>
+        φ<sub style={nestedSubStyle}>k</sub>
       </sup>
       {" = "}
-      <span style={italicStyle}>n</span>
-      <sub style={subStyle}>k</sub>
+      n<sub style={subStyle}>k</sub>
     </span>
   );
 }
 
-
 function renderChapterSummary(summary) {
-  const tokens = [
-    "Aₖe^{φₖ}=nₖ",
-    "Aₖe^{φₖ} = nₖ",
-    "Aₖe^φₖ = nₖ",
-    "A_k e^(phi_k) = n_k",
-  ];
+  const target = "Aₖe^φₖ = nₖ";
 
-  let token = null;
-  for (const candidate of tokens) {
-    if (summary.includes(candidate)) {
-      token = candidate;
-      break;
-    }
+  if (!summary.includes(target)) {
+    return summary;
   }
 
-  if (!token) return summary;
-
-  const parts = summary.split(token);
+  const parts = summary.split(target);
 
   return (
     <>
       {parts.map((part, index) => (
         <span key={index}>
           {part}
-          {index < parts.length - 1 && <InlineChapter8Equation />}
+          {index < parts.length - 1 && <InlineConnectiveActionEquation />}
         </span>
       ))}
     </>

@@ -38,25 +38,16 @@ function getPdfFileForChapter(chapter) {
 
 
 function InlineChapter8Equation() {
-  const wrapperStyle = {
-    fontFamily:
-      "'Cambria Math', 'STIX Two Math', 'Latin Modern Math', 'TeX Gyre Termes Math', 'STIXGeneral', 'Times New Roman', serif",
-    whiteSpace: "nowrap",
-  };
-
-  const romanStyle = {
+  const mathStyle = {
+    fontFamily: "'Times New Roman', Times, serif",
     fontStyle: "normal",
-  };
-
-  const italicStyle = {
-    fontStyle: "italic",
+    whiteSpace: "nowrap",
   };
 
   const subStyle = {
     fontSize: "0.7em",
     lineHeight: 0,
     verticalAlign: "-0.28em",
-    fontStyle: "italic",
   };
 
   const supStyle = {
@@ -69,25 +60,20 @@ function InlineChapter8Equation() {
     fontSize: "0.78em",
     lineHeight: 0,
     verticalAlign: "-0.22em",
-    fontStyle: "italic",
   };
 
   return (
-    <span style={wrapperStyle}>
-      <span style={romanStyle}>A</span>
-      <sub style={subStyle}>k</sub>
-      <span style={italicStyle}>e</span>
+    <span style={mathStyle}>
+      A<sub style={subStyle}>k</sub>
+      e
       <sup style={supStyle}>
-        <span style={romanStyle}>φ</span>
-        <sub style={nestedSubStyle}>k</sub>
+        φ<sub style={nestedSubStyle}>k</sub>
       </sup>
       {" = "}
-      <span style={italicStyle}>n</span>
-      <sub style={subStyle}>k</sub>
+      n<sub style={subStyle}>k</sub>
     </span>
   );
 }
-
 
 function renderChapterSummary(summary) {
   const tokens = [

@@ -36,91 +36,38 @@ function getPdfFileForChapter(chapter) {
 }
 
 
+function ChapterSummary({ chapter }) {
+  if (chapter.summaryBlocks?.length) {
+    return (
+      <div>
+        {chapter.summaryBlocks.map((block, index) => {
+          if (block.type === "math") {
+            return (
+              <div
+                key={index}
+                style={{
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: "1.22rem",
+                  fontStyle: "italic",
+                  textAlign: "center",
+                  margin: "1.05rem 0",
+                  color: "#f4efe2",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {block.content}
+              </div>
+            );
+          }
 
-function InlineChapter8Equation() {
-  const wrapperStyle = {
-    fontFamily:
-      "'Cambria Math', 'STIX Two Math', 'Latin Modern Math', 'TeX Gyre Termes Math', 'STIXGeneral', 'Times New Roman', serif",
-    whiteSpace: "nowrap",
-  };
-
-  const romanStyle = {
-    fontStyle: "normal",
-  };
-
-  const italicStyle = {
-    fontStyle: "italic",
-  };
-
-  const subStyle = {
-    fontSize: "0.7em",
-    lineHeight: 0,
-    verticalAlign: "-0.28em",
-    fontStyle: "italic",
-  };
-
-  const supStyle = {
-    fontSize: "0.72em",
-    lineHeight: 0,
-    verticalAlign: "0.58em",
-  };
-
-  const nestedSubStyle = {
-    fontSize: "0.78em",
-    lineHeight: 0,
-    verticalAlign: "-0.22em",
-    fontStyle: "italic",
-  };
-
-  return (
-    <span style={wrapperStyle}>
-      <span style={romanStyle}>A</span>
-      <sub style={subStyle}>k</sub>
-      <span style={italicStyle}>e</span>
-      <sup style={supStyle}>
-        <span style={romanStyle}>φ</span>
-        <sub style={nestedSubStyle}>k</sub>
-      </sup>
-      {" = "}
-      <span style={italicStyle}>n</span>
-      <sub style={subStyle}>k</sub>
-    </span>
-  );
-}
-
-
-function renderChapterSummary(summary) {
-  const tokens = [
-    "Aₖe^{φₖ}=nₖ",
-    "Aₖe^{φₖ} = nₖ",
-    "Aₖe^φₖ = nₖ",
-    "A_k e^(phi_k) = n_k",
-  ];
-
-  let token = null;
-  for (const candidate of tokens) {
-    if (summary.includes(candidate)) {
-      token = candidate;
-      break;
-    }
+          return <p key={index}>{block.content}</p>;
+        })}
+      </div>
+    );
   }
 
-  if (!token) return summary;
-
-  const parts = summary.split(token);
-
-  return (
-    <>
-      {parts.map((part, index) => (
-        <span key={index}>
-          {part}
-          {index < parts.length - 1 && <InlineChapter8Equation />}
-        </span>
-      ))}
-    </>
-  );
+  return <p>{chapter.summary}</p>;
 }
-
 
 function ChapterPdf({ chapter }) {
   const pdfFile = getPdfFileForChapter(chapter);
@@ -358,7 +305,7 @@ export default function TheLogicOfPersistencePage() {
                   <span style={metaPillStyle}>Updated {chapter.updated}</span>
                 </div>
 
-                <p>{renderChapterSummary(chapter.summary)}</p>
+                <ChapterSummary chapter={chapter} />
 
                 {chapter.sections?.length > 0 && (
                   <details style={infoBoxStyle}>

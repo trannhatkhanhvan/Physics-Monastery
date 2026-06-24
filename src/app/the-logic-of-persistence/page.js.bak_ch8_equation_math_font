@@ -39,8 +39,7 @@ function getPdfFileForChapter(chapter) {
 
 function InlineChapter8Equation() {
   const wrapperStyle = {
-    fontFamily:
-      "'Cambria Math', 'STIX Two Math', 'Latin Modern Math', 'TeX Gyre Termes Math', 'STIXGeneral', 'Times New Roman', serif",
+    fontFamily: "'Times New Roman', Times, serif",
     whiteSpace: "nowrap",
   };
 
