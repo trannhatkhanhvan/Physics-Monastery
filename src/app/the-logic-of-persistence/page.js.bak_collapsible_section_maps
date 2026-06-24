@@ -275,29 +275,14 @@ export default function TheLogicOfPersistencePage() {
                 <p>{chapter.summary}</p>
 
                 {chapter.sections?.length > 0 && (
-                  <details style={infoBoxStyle}>
-                    <summary
-                      style={{
-                        ...smallHeadingStyle,
-                        cursor: "pointer",
-                        userSelect: "none",
-                        marginBottom: 0,
-                      }}
-                    >
-                      Section map
-                    </summary>
-
-                    <ul
-                      style={{
-                        ...compactListStyle,
-                        marginTop: "0.65rem",
-                      }}
-                    >
+                  <div style={infoBoxStyle}>
+                    <div style={smallHeadingStyle}>Section map</div>
+                    <ul style={compactListStyle}>
                       {chapter.sections.map((section) => (
                         <li key={section.id}>{section.title}</li>
                       ))}
                     </ul>
-                  </details>
+                  </div>
                 )}
             <ChapterPdf chapter={chapter} />
               </section>
