@@ -3,95 +3,6 @@
 import LayoutWrapper from '@/components/LayoutWrapper';
 import '../globals.css';
 import { bookMeta, chapters } from './chapters';
-
-function getPdfFileForChapter(chapter) {
-  const explicit = {
-    "front-matter": "abstract_dedication_preface.pdf",
-    "chapter-01": "chapter_1.pdf",
-    "chapter-02": "chapter_2.pdf",
-    "chapter-03": "chapter_3.pdf",
-    "chapter-04": "chapter_4.pdf",
-    "chapter-05": "chapter_5.pdf",
-    "chapter-06": "chapter_6.pdf",
-    "chapter-07": "chapter_7.pdf",
-    "chapter-08": "chapter_8.pdf",
-    "chapter-09": "chapter_9.pdf",
-    "chapter-10": "chapter_10.pdf",
-    "chapter-11": "chapter_11.pdf",
-    "chapter-12": "chapter_12.pdf",
-    "epilogue": "epilogue.pdf",
-    "transform-dictionary": "transform_dictionary.pdf",
-    "transformation-dictionary": "transform_dictionary.pdf",
-    "acknowledgements": "acknowledgments.pdf",
-    "appendices": "appendices.pdf",
-    "footnotes-references": "references.pdf",
-  };
-
-  if (explicit[chapter.id]) return explicit[chapter.id];
-
-  return `${chapter.title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "_")
-    .replace(/^_+|_+$/g, "")}.pdf`;
-}
-
-function ChapterPdf({ chapter }) {
-  const pdfFile = getPdfFileForChapter(chapter);
-  const pdfPath = `/the-logic-of-persistence/pdfs/${pdfFile}`;
-
-  return (
-    <div style={{ marginTop: "1.5rem" }}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          gap: "1rem",
-          alignItems: "center",
-          marginBottom: "0.65rem",
-        }}
-      >
-        <div
-          style={{
-            fontFamily: "Georgia, 'Times New Roman', serif",
-            fontSize: "1rem",
-            color: "#d8d1b8",
-            letterSpacing: "0.02em",
-          }}
-        >
-          Manuscript PDF
-        </div>
-
-        <a
-          href={pdfPath}
-          target="_blank"
-          rel="noreferrer"
-          style={{
-            color: "#d8d1b8",
-            fontSize: "0.9rem",
-            textDecoration: "underline",
-            textUnderlineOffset: "3px",
-          }}
-        >
-          Open PDF
-        </a>
-      </div>
-
-      <iframe
-        src={pdfPath}
-        title={`${chapter.title} PDF`}
-        loading="lazy"
-        style={{
-          width: "100%",
-          height: "78vh",
-          border: "1px solid rgba(216, 209, 184, 0.25)",
-          borderRadius: "10px",
-          background: "rgba(0,0,0,0.35)",
-        }}
-      />
-    </div>
-  );
-}
-
 const PAGE_EDGE_GAP = "10px";
 const MENU_TEXT_GAP = "15px";
 
@@ -284,7 +195,10 @@ export default function TheLogicOfPersistencePage() {
                     </ul>
                   </div>
                 )}
-            <ChapterPdf chapter={chapter} />
+
+                <p style={{ color: "rgba(244, 239, 226, 0.62)" }}>
+                  Manuscript text will be inserted here.
+                </p>
               </section>
             ))}
           </article>

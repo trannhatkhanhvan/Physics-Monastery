@@ -6436,22 +6436,357 @@ export const chapters = [
       "chapter-12"
     ]
   },
-  {
+    {
     id: "footnotes-references",
     part: "Back Matter",
     shortLabel: "References",
     title: "Footnotes and References",
-    status: "Awaiting metadata",
+    status: "Public draft",
     version: "0.1",
-    updated: "Pending",
-    summary: "Metadata pending.",
-    aiSummary: "",
-    aiSearchDescription: "",
-    keywords: [],
-    keyConcepts: [],
-    keyEquations: [],
-    sections: [],
-    dependencies: [],
-    relatedChapters: []
+    updated: "June 2026",
+
+    summary:
+      "The Footnotes and References section provides the source apparatus for The Logic of Persistence. It includes historical and conceptual sources for the development of measurement, geometry, algebra, calculus, matrices, relativity, quantum mechanics, and topology; CODATA and SI references for the constants of Nature; technical notes on the hyperbolic partition equation, Planck boundaries, quartic invariants, figure-eight knot complement, dilogarithms, Cayley-Menger normalization, Leech lattice, and 24-dimensional transform space; and reference links for the arithmetic constants, special functions, matrix methods, operator grammar, and epilogue themes used throughout the book.",
+
+    aiSummary:
+      "This back-matter section contains the book’s footnotes and references. Notes 1–34 support the historical arc of Chapter 1, including mythic cognition, Einstein’s view of unified natural law, Anaximander and systematic measurement, Aristotle, Galileo, Kepler, Newton, Cayley, Sylvester, Hamilton, Riemann, Einstein, Dirac, Noether, Thurston, Perelman, and the figure-eight knot complement. Notes 35–42 document the CODATA selection logic, omitted/redundant constants, missing constants, CODATA 2022 recommended values, SI base-unit definitions, Penrose’s precision comparison, natural units, and Planck units. Notes 43–59 support the fine-structure constant discussion, including Feynman, Pauli, Wyler, Hans de Vries, Weyl invariance, Vieta relations, quartic resolvents, projective invariants, cross-ratio, Newton identities, elliptic j-invariant, and the WolframAlpha surface plots for the Planck boundary candidate definitions. Notes 60–75 support the figure-eight/Leech-lattice architecture, including Wheeler’s information quote, ζ(2), ζ(3), polylogarithmic constants, Thurston, Adams, Neumann-Zagier, Lewin, Zagier, Cayley-Menger determinants, dilogarithmic six-cycle structure, Conway and Sloane, the Leech lattice, 24-ball volume, Cohn-Kumar-Miller-Radchenko-Viazovska sphere-packing result, Golay-code construction, 23-dimensional unimodular lattices, and composite unit definitions. Notes 76–102 support the Transform Dictionary arithmetic alphabet, including figure-eight knot sources, Li₂, Catalan’s constant from i, e, domino tiling, dimer constant, lemniscate constant, Gauss constant, ubiquitous constant, Sierpiński constant, universal parabolic constant, omega-2, Euler-Mascheroni, Dottie, hyperbolic cotangent, Laplace limit, golden ratio, imaginary golden ratio, plastic constant, Ramanujan continued fractions, Bessel zeros, Feigenbaum constants, silver constant, Hafner-Sarnak-McCurley constant, QRS constant, and synchronization literature. Notes 103–121 support the matrix/operator chapter, including Cayley and Sylvester, determinants, unimodular lattices, Hermitian operators, Lagrangian and Hamiltonian mechanics, quaternions, Dirac correspondence, Heisenberg-Born-Jordan matrix mechanics, Lie algebras, matrix exponentials, Klein-Gordon, Dirac, companion matrices, quartic factorization, adjoint operators, U(1) phase invariance, first-order ODE systems, Yukawa-type couplings, Clifford algebras, and spinors. Notes 122–128 support the Epilogue’s discussion of writing, Euclid, algebra, calculus, matrices, information theory, and the figure-eight knot complement as a minimal hyperbolic 3-manifold.",
+
+    aiSearchDescription:
+      "Retrieve this section for questions about the references, footnotes, bibliography, sources for The Logic of Persistence, historical sources, Anaximander, Galileo, Kepler, Newton, Cayley, Sylvester, Hamilton, Riemann, Einstein, Dirac, Noether, Thurston, Perelman, CODATA 2022, SI base units, Planck units, fine-structure constant sources, Feynman QED, Pauli quote, Wyler constant, Hans de Vries, Weyl invariance, Vieta relations, resolvent cubics, binary quartic invariants, cross-ratio, Newton-Girard identities, Planck boundary WolframAlpha plots, Wheeler information quote, zeta values, polylogarithms, figure-eight knot complement, Gieseking manifold, Neumann-Zagier, Lewin, Zagier, Cayley-Menger determinant, Leech lattice, 24-ball, sphere packing in dimension 24, Golay code, 23-dimensional lattices, Transform Dictionary constants, MathWorld and WolframAlpha references, QRS synchronization, matrix mechanics, companion matrices, Clifford algebras, spinors, writing, Euclid, algebra, calculus, Shannon information theory, and epilogue references.",
+
+    keywords: [
+      "Footnotes",
+      "References",
+      "bibliography",
+      "source apparatus",
+      "Merlin Donald",
+      "Einstein",
+      "Anaximander",
+      "Thales",
+      "gnomon",
+      "Aristotle",
+      "Galileo",
+      "Kepler",
+      "Newton",
+      "Cayley",
+      "Sylvester",
+      "Hamilton",
+      "Riemann",
+      "Dirac",
+      "Noether",
+      "Thurston",
+      "Perelman",
+      "CODATA",
+      "CODATA 2022",
+      "CODATA 2018",
+      "BIPM",
+      "SI units",
+      "Planck units",
+      "Penrose",
+      "Feynman",
+      "Pauli",
+      "Wyler",
+      "Hans de Vries",
+      "Weyl",
+      "Vieta",
+      "resolvent cubic",
+      "quartic invariants",
+      "cross-ratio",
+      "Newton-Girard",
+      "j-invariant",
+      "WolframAlpha plots",
+      "Wheeler",
+      "ζ(2)",
+      "ζ(3)",
+      "polylogarithms",
+      "dilogarithm",
+      "figure-eight knot complement",
+      "Gieseking",
+      "Neumann-Zagier",
+      "Lewin",
+      "Zagier",
+      "Cayley-Menger",
+      "Leech lattice",
+      "Niemeier lattices",
+      "24-ball",
+      "sphere packing",
+      "Golay code",
+      "Conway",
+      "Sloane",
+      "shorter Leech lattice",
+      "MathWorld",
+      "WolframAlpha",
+      "QRS constant",
+      "Pikovsky",
+      "Rosenblum",
+      "Kurths",
+      "matrix mechanics",
+      "Heisenberg",
+      "Born",
+      "Jordan",
+      "Lie algebras",
+      "Pauli matrices",
+      "Klein-Gordon",
+      "gamma matrices",
+      "companion matrices",
+      "Clifford algebra",
+      "spinors",
+      "Shannon",
+      "Euclid",
+      "al-Khwarizmi",
+      "calculus",
+      "writing",
+      "information theory"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Historical-source layer",
+        description:
+          "References supporting the historical development from mythic cognition and early measurement through Galileo, Kepler, Newton, matrices, manifolds, relativity, Dirac, Noether, and Thurston."
+      },
+      {
+        term: "CODATA and SI layer",
+        description:
+          "References documenting CODATA constant selection, excluded or redundant constants, CODATA 2022 values, SI base-unit definitions, Planck units, and natural units."
+      },
+      {
+        term: "Fine-structure and partition-equation layer",
+        description:
+          "Sources supporting the discussion of α, Feynman, Pauli, Wyler, Hans de Vries, the hyperbolic partition equation, quartic roots, Vieta relations, resolvents, and projective invariants."
+      },
+      {
+        term: "Planck-boundary plot layer",
+        description:
+          "WolframAlpha plot references for the five candidate closed-form Planck boundary surfaces."
+      },
+      {
+        term: "Figure-eight and polylogarithm layer",
+        description:
+          "References for the figure-eight knot complement, hyperbolic volume, dilogarithms, polylogarithms, zeta values, and the Gieseking/figure-eight connection."
+      },
+      {
+        term: "Leech-lattice and transform-space layer",
+        description:
+          "References for even unimodular lattices, Niemeier lattices, Leech lattice rootlessness, 24-dimensional sphere packing, Golay code construction, and 23-dimensional lattice classes."
+      },
+      {
+        term: "Transform Dictionary arithmetic layer",
+        description:
+          "Web and text references for constants and special functions appearing in the Dictionary’s arithmetic alphabet."
+      },
+      {
+        term: "Matrix/operator layer",
+        description:
+          "References for matrix theory, determinants, Hermitian operators, Lagrangian and Hamiltonian mechanics, commutators, Lie generators, companion matrices, Clifford algebras, and spinors."
+      },
+      {
+        term: "Epilogue-source layer",
+        description:
+          "References for writing, Euclid, algebra, calculus, matrices, Shannon information theory, and the figure-eight knot complement as a minimal hyperbolic 3-manifold."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "de Vries expression as cited",
+        latex: "\\alpha^{-1/2}+\\left(1+\\frac{\\alpha}{2\\pi}\\right)\\alpha^{1/2}=e^{\\pi^2/4}",
+        plainLanguage:
+          "The references record Hans de Vries’s original form of the expression related to √α.",
+        role:
+          "Supports the fine-structure constant discussion."
+      },
+      {
+        label: "Critical quartic double-root condition",
+        latex: "T(x_*;a_*)=0,\\qquad T'(x_*;a_*)=0",
+        plainLanguage:
+          "At the critical parameter value, the quartic and its derivative vanish at the same point.",
+        role:
+          "Supports the discussion of discriminant collapse and eigenvalue merging."
+      },
+      {
+        label: "Cross-ratio invariant",
+        latex: "\\lambda=\\frac{(\\text{ж}_1-\\text{ж}_3)(\\text{ж}_2-\\text{ж}_4)}{(\\text{ж}_1-\\text{ж}_4)(\\text{ж}_2-\\text{ж}_3)},\\qquad |\\lambda|=1",
+        plainLanguage:
+          "The cross-ratio of the four partition roots has unit modulus.",
+        role:
+          "Supports the projective-invariant discussion of the root system."
+      },
+      {
+        label: "Dilogarithmic six-cycle",
+        latex: "i\\left[\\operatorname{Li}_2\\left(\\frac{1}{\\varphi_i^k}\\right)-\\operatorname{Li}_2(\\varphi_i^k)\\right]\\in\\left\\{V_{fe},\\frac{2}{3}V_{fe},0,-\\frac{2}{3}V_{fe},-V_{fe},0\\right\\}",
+        plainLanguage:
+          "Powers of the imaginary golden ratio generate a six-cycle with two zeros in the figure-eight dilogarithmic structure.",
+        role:
+          "Supports the twisted-zero and figure-eight partition discussion."
+      },
+      {
+        label: "Leech-lattice stitching recipe",
+        latex: "s_r\\delta_8^3=s_r\\rho_{8D}^3=V_{24}=\\frac{\\pi^{12}}{12!},\\qquad s_r=\\frac{2^{14}}{44\\cdot35\\cdot18\\cdot5}",
+        plainLanguage:
+          "The references include a stitching recipe for interlacing three E8-like layers into a 24-dimensional transform domain.",
+        role:
+          "Supports the 24-ball and Leech-lattice transform-space discussion."
+      },
+      {
+        label: "QRS zeta-root structure",
+        latex: "C_Q=\\operatorname{root}\\,\\zeta\\left(\\frac12,\\frac{x}{2}\\right),\\qquad 4C_{QA}=\\operatorname{root}\\,\\zeta\\left(\\frac32,\\frac{C_Q}{2}\\right)",
+        plainLanguage:
+          "The QRS constants are characterized by structural limits of the Hurwitz zeta function.",
+        role:
+          "Supports the QRS synchronization and molar-mass discussion."
+      }
+    ],
+
+    sections: [
+      {
+        id: "references-chapter-01-history",
+        title: "Historical and Conceptual Sources",
+        summary:
+          "Notes 1–34 document sources for the historical arc from mythic cognition and early measurement through Galileo, Kepler, Newton, matrices, manifolds, relativity, Dirac, Noether, and Thurston.",
+        aiSummary:
+          "Use this section for queries about historical sources for Chapter 1, Merlin Donald, Einstein, Anaximander, Thales, gnomon, Galileo, Kepler, Newton, Cayley, Sylvester, Hamilton, Riemann, Einstein relativity, Dirac, Noether, Thurston, Perelman, and the figure-eight knot complement.",
+        keywords: [
+          "historical sources",
+          "Chapter 1",
+          "Anaximander",
+          "Galileo",
+          "Kepler",
+          "Newton",
+          "Dirac",
+          "Noether",
+          "Thurston"
+        ]
+      },
+      {
+        id: "references-codata-si",
+        title: "CODATA, SI, and Planck Unit Sources",
+        summary:
+          "Notes 35–42 document CODATA selection logic, excluded constants, CODATA 2022, SI base units, Penrose’s precision comparison, natural units, and Planck units.",
+        aiSummary:
+          "Use this section for queries about CODATA 2022, CODATA 2018, omitted constants, redundant mass ratios, missing constants, SI unit definitions, BIPM, Planck units, natural units, and Penrose’s 10⁷ versus 10¹⁴ precision comparison.",
+        keywords: [
+          "CODATA",
+          "SI units",
+          "Planck units",
+          "BIPM",
+          "Penrose",
+          "natural units",
+          "omitted constants"
+        ]
+      },
+      {
+        id: "references-alpha-partition",
+        title: "Fine-Structure Constant and Partition Equation Sources",
+        summary:
+          "Notes 43–59 support the fine-structure constant, de Vries expression, hyperbolic partition quartic, invariants, root identities, and Planck-boundary plots.",
+        aiSummary:
+          "Use this section for queries about Feynman QED, Pauli quote, Wyler formula, Hans de Vries, Weyl invariance, Vieta, Ferrari quartics, resolvent cubics, quartic invariants I and J, cross-ratio, Newton identities, elliptic j-invariant, and WolframAlpha plots of candidate Planck boundary surfaces.",
+        keywords: [
+          "fine-structure constant",
+          "Feynman",
+          "Pauli",
+          "Wyler",
+          "Hans de Vries",
+          "Vieta",
+          "quartic invariants",
+          "Planck boundary plots"
+        ]
+      },
+      {
+        id: "references-figure-eight-leech",
+        title: "Figure-Eight, Diligarithm, Cayley-Menger, and Leech-Lattice Sources",
+        summary:
+          "Notes 60–75 support the figure-eight knot complement, polylogarithms, dilogarithms, Cayley-Menger determinant, Leech lattice, 24-ball, Golay code, and 23-dimensional lattice classification.",
+        aiSummary:
+          "Use this section for queries about Wheeler, ζ(2), ζ(3), polylogarithms, figure-eight knot complement, Thurston, Adams, Neumann-Zagier, Lewin, Zagier, Cayley-Menger determinant, Leech lattice, 24-ball volume, dimension-24 sphere packing, Golay code, and 23-dimensional unimodular lattices.",
+        keywords: [
+          "figure-eight knot",
+          "dilogarithm",
+          "Cayley-Menger",
+          "Leech lattice",
+          "24-ball",
+          "Golay code",
+          "23-dimensional lattices"
+        ]
+      },
+      {
+        id: "references-arithmetic-constants",
+        title: "Transform Dictionary Arithmetic Sources",
+        summary:
+          "Notes 76–102 cite sources for figure-eight knot data, Li₂, Catalan, e, domino/dimer constants, lemniscate and fixed-point constants, Bessel zeros, Feigenbaum constants, prime constants, and QRS synchronization.",
+        aiSummary:
+          "Use this section for queries about MathWorld, WolframAlpha, Li₂, Catalan, e, domino tiling, dimer constant, lemniscate constant, Gauss constant, ubiquitous constant, Sierpiński constant, universal parabolic constant, Euler-Mascheroni, Dottie, Laplace limit, golden ratio, plastic constant, Ramanujan continued fractions, Bessel zeros, Feigenbaum constants, silver constant, Hafner-Sarnak-McCurley constant, QRS constant, and synchronization.",
+        keywords: [
+          "arithmetic constants",
+          "MathWorld",
+          "WolframAlpha",
+          "Catalan",
+          "lemniscate",
+          "Feigenbaum",
+          "QRS constant",
+          "synchronization"
+        ]
+      },
+      {
+        id: "references-matrix-operator",
+        title: "Matrix and Operator Sources",
+        summary:
+          "Notes 103–121 support the matrix/operator chapter, including matrix theory, determinants, lattices, Hermitian operators, Lagrangian/Hamiltonian mechanics, commutators, Lie theory, companion matrices, Clifford algebras, and spinors.",
+        aiSummary:
+          "Use this section for queries about Cayley and Sylvester matrices, determinants as volume scaling, unimodular lattices, Hermitian operators, Lagrangian mechanics, Hamiltonian mechanics, quaternions, Dirac correspondence, Heisenberg matrix mechanics, Lie algebras, matrix exponentials, Klein-Gordon equation, Dirac equation, companion matrices, quartic factorization, adjoint operators, U(1) phase invariance, first-order ODE systems, Yukawa couplings, Clifford algebras, and spinors.",
+        keywords: [
+          "matrix sources",
+          "operator sources",
+          "companion matrices",
+          "Clifford algebra",
+          "spinors",
+          "Dirac equation",
+          "matrix mechanics"
+        ]
+      },
+      {
+        id: "references-epilogue",
+        title: "Epilogue Sources",
+        summary:
+          "Notes 122–128 support the Epilogue’s discussion of writing, Euclid, algebra, calculus, matrices, Shannon information theory, and the figure-eight knot complement.",
+        aiSummary:
+          "Use this section for queries about writing as external memory, Euclid, al-Khwarizmi, calculus, matrices, Shannon information theory, and the figure-eight knot complement as simplest nontrivial hyperbolic 3-manifold.",
+        keywords: [
+          "Epilogue sources",
+          "writing",
+          "Euclid",
+          "algebra",
+          "calculus",
+          "Shannon",
+          "information theory",
+          "figure-eight knot"
+        ]
+      }
+    ],
+
+    dependencies: [
+      "This section documents the source layer for the complete manuscript.",
+      "It should be used as a reference map for historical claims, CODATA and SI claims, mathematical background, web references, and technical support for the Transform Dictionary."
+    ],
+
+    relatedChapters: [
+      "front-matter",
+      "chapter-01",
+      "chapter-02",
+      "chapter-03",
+      "chapter-04",
+      "chapter-05",
+      "chapter-06",
+      "chapter-07",
+      "chapter-08",
+      "chapter-09",
+      "chapter-10",
+      "chapter-11",
+      "chapter-12",
+      "epilogue",
+      "transform-dictionary",
+      "appendices"
+    ]
   },
 ];

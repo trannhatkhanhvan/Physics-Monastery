@@ -22,7 +22,7 @@ function getPdfFileForChapter(chapter) {
     "epilogue": "epilogue.pdf",
     "transform-dictionary": "transform_dictionary.pdf",
     "transformation-dictionary": "transform_dictionary.pdf",
-    "acknowledgements": "acknowledgments.pdf",
+    "acknowledgements": "acknowledgements.pdf",
     "appendices": "appendices.pdf",
     "footnotes-references": "references.pdf",
   };
