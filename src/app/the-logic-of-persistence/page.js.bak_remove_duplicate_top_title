@@ -94,7 +94,6 @@ function ChapterPdf({ chapter }) {
 
 const PAGE_EDGE_GAP = "10px";
 const MENU_TEXT_GAP = "15px";
-const PAGE_TOP_PADDING = "1rem";
 
 export default function TheLogicOfPersistencePage() {
   return (
@@ -115,10 +114,12 @@ export default function TheLogicOfPersistencePage() {
     boxSizing: "border-box",
     paddingLeft: PAGE_EDGE_GAP,
     paddingRight: PAGE_EDGE_GAP,
-    paddingTop: PAGE_TOP_PADDING,
+    paddingTop: "5.5rem",
     paddingBottom: "6rem",
   }}
 >
+        <div className="legend-title">the logic of persistence</div>
+
         <div
           style={{
             display: "grid",
