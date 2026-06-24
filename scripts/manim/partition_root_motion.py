@@ -34,40 +34,21 @@ PLANE_SHIFT_DOWN = 0.00
 
 
 # ============================================================
-# Header controls: formula + title together
+# Header controls
 # ============================================================
 
-HEADER_TOP_BUFF = 0.50
+HEADER_TOP_BUFF = 0.35
 HEADER_GAP = 0.55
 HEADER_SHIFT_RIGHT = 0.00
 HEADER_SHIFT_DOWN = 0.00
 
-
-# ============================================================
-# Title controls
-# ============================================================
-
 TITLE_TEXT_FONT = "Times New Roman"
-TITLE_WORD_FONT_SIZE = 34
-TITLE_MATH_FONT_SIZE = 40
+TITLE_FONT_SIZE = 34
 TITLE_COLOR = WHITE
-TITLE_PART_GAP = 0.12
 
-TITLE_SHIFT_RIGHT = 0.00
-TITLE_SHIFT_DOWN = 0.00
-
-
-# ============================================================
-# Formula controls
-# Negative FORMULA_SHIFT_RIGHT moves formula left.
-# Positive FORMULA_SHIFT_RIGHT moves formula right.
-# ============================================================
-
-FORMULA_FONT_SIZE = 40
+FORMULA_FONT_SIZE = 30
 FORMULA_COLOR = WHITE
-
-FORMULA_SHIFT_RIGHT = -1.50
-FORMULA_SHIFT_DOWN = 0.00
+FORMULA_LINE_GAP = 0.12
 
 
 # ============================================================
@@ -75,22 +56,11 @@ FORMULA_SHIFT_DOWN = 0.00
 # ============================================================
 
 SHOW_COORDINATES = True
-
 STANDARD_COORD_LABEL_FONT_SIZE = 18
-
-PI_AXIS_LABEL_FONT_SIZE = 18
-PI_X_LABEL_DOWN_BUFF = 0.10
-PI_Y_LABEL_RIGHT_BUFF = 0.10
 
 REAL_IMAG_LABEL_FONT_SIZE = 22
 REAL_LABEL_BUFF = 0.12
 IMAG_LABEL_BUFF = 0.12
-
-REAL_LABEL_SHIFT_RIGHT = 0.00
-REAL_LABEL_SHIFT_DOWN = 0.00
-
-IMAG_LABEL_SHIFT_RIGHT = 0.00
-IMAG_LABEL_SHIFT_DOWN = 0.00
 
 
 # ============================================================
@@ -103,10 +73,25 @@ PATH_OPACITY = 0.45
 
 
 # ============================================================
-# Dot controls
+# Dot / marker controls
 # ============================================================
 
-DOT_RADIUS = 0.07
+T_DOT_RADIUS = 0.07
+T_PRIME_MARKER_SCALE = 0.12
+
+T_COLORS = [BLUE_C, GREEN_C, RED_C, YELLOW_C]
+T_PRIME_COLORS = [PURPLE_C, TEAL_C, ORANGE]
+
+
+# ============================================================
+# Legend controls
+# ============================================================
+
+LEGEND_FONT_SIZE = 24
+LEGEND_RIGHT_BUFF = 0.35
+LEGEND_TOP_BUFF = 1.45
+LEGEND_ROW_GAP = 0.15
+LEGEND_SYMBOL_GAP = 0.12
 
 
 # ============================================================
@@ -116,13 +101,10 @@ DOT_RADIUS = 0.07
 SHOW_SPECIAL_A_MARKERS = True
 
 SPECIAL_RING_RADIUS = 0.12
-SPECIAL_RING_COLOR = WHITE
 SPECIAL_RING_STROKE_WIDTH = 2
 
 SPECIAL_TEXT_FONT_SIZE = 20
 SPECIAL_TEXT_BUFF = 0.18
-SPECIAL_TEXT_SHIFT_RIGHT = 0.00
-SPECIAL_TEXT_SHIFT_DOWN = 0.00
 
 
 # ============================================================
@@ -138,8 +120,14 @@ A_LABEL_GAP = 0.08
 A_LABEL_TEXT_COLOR = WHITE
 A_LABEL_NUMBER_COLOR = YELLOW
 
-A_LABEL_SHIFT_RIGHT = 0.00
-A_LABEL_SHIFT_DOWN = 0.00
+
+# ============================================================
+# Manual bounds
+# Leave None for automatic bounds.
+# ============================================================
+
+MANUAL_BOUNDS = (-5, 5, -4.5, 4.5)
+MANUAL_STEP = 1
 
 
 # ============================================================
@@ -181,7 +169,7 @@ def roots_T_prime(a: float) -> np.ndarray:
 
 def sorted_initial_roots(roots: np.ndarray) -> np.ndarray:
     """
-    Gives a stable initial order:
+    Stable initial order:
     first by real part, then by imaginary part.
     """
     return np.array(
@@ -195,7 +183,7 @@ def track_roots(root_rows: list[np.ndarray]) -> np.ndarray:
     Tracks roots frame-by-frame by choosing the permutation that minimizes
     motion from the previous frame.
 
-    This keeps dot colors attached to continuous branches as much as possible.
+    This keeps dot colors attached to continuous branches.
     """
     tracked = [sorted_initial_roots(root_rows[0])]
 
@@ -286,95 +274,53 @@ def compute_complex_bounds(tracked: np.ndarray):
     return min_re, max_re, min_im, max_im
 
 
-def add_pi_axis_labels(plane):
-    """
-    Custom coordinate labels for a [-π, π] × [-π, π] complex plane.
-    """
-    labels = VGroup()
-
-    x_labels = [
-        (-np.pi, r"-\pi"),
-        (-np.pi / 2, r"-\frac{\pi}{2}"),
-        (np.pi / 2, r"\frac{\pi}{2}"),
-        (np.pi, r"\pi"),
-    ]
-
-    y_labels = [
-        (-np.pi, r"-\pi i"),
-        (-np.pi / 2, r"-\frac{\pi}{2}i"),
-        (np.pi / 2, r"\frac{\pi}{2}i"),
-        (np.pi, r"\pi i"),
-    ]
-
-    for x, tex in x_labels:
-        label = MathTex(
-            tex,
-            font_size=PI_AXIS_LABEL_FONT_SIZE,
-            color=GREY_A,
-        )
-        label.next_to(
-            plane.n2p(complex(x, 0)),
-            DOWN,
-            buff=PI_X_LABEL_DOWN_BUFF,
-        )
-        labels.add(label)
-
-    for y, tex in y_labels:
-        label = MathTex(
-            tex,
-            font_size=PI_AXIS_LABEL_FONT_SIZE,
-            color=GREY_A,
-        )
-        label.next_to(
-            plane.n2p(complex(0, y)),
-            RIGHT,
-            buff=PI_Y_LABEL_RIGHT_BUFF,
-        )
-        labels.add(label)
-
-    return labels
-
-
 # ============================================================
-# Shared scene builder
+# Combined scene
 # ============================================================
 
-class RootMotionBase(Scene):
-    root_function = None
-
-    title_prefix_text = "Roots of"
-    title_math_tex = r"T(x)"
-    title_suffix_text = "as a varies"
-
-    formula_tex = ""
-    root_colors = [BLUE_C, GREEN_C, RED_C, YELLOW_C]
-
-    # Leave as None for automatic bounds.
-    # Override in a subclass for manual bounds.
-    manual_bounds = None
-    manual_step = None
-    use_pi_labels = False
-
+class TAndTPrimeRootMotion(Scene):
     def construct(self):
-        if self.root_function is None:
-            raise ValueError("root_function must be defined on subclass.")
-
+        # ----------------------------------------------------
+        # Precompute roots for both T and T'
+        # ----------------------------------------------------
         a_values = np.linspace(A_START, A_END, FRAME_COUNT)
-        raw_roots = [self.root_function(a) for a in a_values]
-        tracked = track_roots(raw_roots)
-        root_count = tracked.shape[1]
 
-        if self.manual_bounds is None:
-            min_re, max_re, min_im, max_im = compute_complex_bounds(tracked)
+        raw_T_roots = [
+            roots_T(a)
+            for a in a_values
+        ]
+
+        raw_T_prime_roots = [
+            roots_T_prime(a)
+            for a in a_values
+        ]
+
+        tracked_T = track_roots(raw_T_roots)
+        tracked_T_prime = track_roots(raw_T_prime_roots)
+
+        root_count_T = tracked_T.shape[1]
+        root_count_T_prime = tracked_T_prime.shape[1]
+
+        # ----------------------------------------------------
+        # Shared complex plane bounds
+        # ----------------------------------------------------
+        if MANUAL_BOUNDS is None:
+            combined_tracked = np.concatenate(
+                [tracked_T, tracked_T_prime],
+                axis=1,
+            )
+
+            min_re, max_re, min_im, max_im = compute_complex_bounds(combined_tracked)
 
             x_span = max_re - min_re
             y_span = max_im - min_im
+
             x_step = nice_step(x_span)
             y_step = nice_step(y_span)
         else:
-            min_re, max_re, min_im, max_im = self.manual_bounds
-            x_step = self.manual_step
-            y_step = self.manual_step
+            min_re, max_re, min_im, max_im = MANUAL_BOUNDS
+            x_step = MANUAL_STEP
+            y_step = MANUAL_STEP
 
         plane = ComplexPlane(
             x_range=[min_re, max_re, x_step],
@@ -398,62 +344,8 @@ class RootMotionBase(Scene):
             + DOWN * PLANE_SHIFT_DOWN
         )
 
-        coordinate_labels = VGroup()
-
         if SHOW_COORDINATES:
-            if self.use_pi_labels:
-                coordinate_labels = add_pi_axis_labels(plane)
-            else:
-                plane.add_coordinates(font_size=STANDARD_COORD_LABEL_FONT_SIZE)
-
-        title_prefix = Text(
-            self.title_prefix_text,
-            font=TITLE_TEXT_FONT,
-            font_size=TITLE_WORD_FONT_SIZE,
-            color=TITLE_COLOR,
-        )
-
-        title_math = MathTex(
-            self.title_math_tex,
-            font_size=TITLE_MATH_FONT_SIZE,
-            color=TITLE_COLOR,
-        )
-
-        title_suffix = Text(
-            self.title_suffix_text,
-            font=TITLE_TEXT_FONT,
-            font_size=TITLE_WORD_FONT_SIZE,
-            color=TITLE_COLOR,
-        )
-
-        title = VGroup(title_prefix, title_math, title_suffix).arrange(
-            RIGHT,
-            buff=TITLE_PART_GAP,
-        )
-
-        formula = MathTex(
-            self.formula_tex,
-            font_size=FORMULA_FONT_SIZE,
-            color=FORMULA_COLOR,
-        )
-
-        header = VGroup(formula, title).arrange(RIGHT, buff=HEADER_GAP)
-        header.to_edge(UP, buff=HEADER_TOP_BUFF)
-
-        header.shift(
-            RIGHT * HEADER_SHIFT_RIGHT
-            + DOWN * HEADER_SHIFT_DOWN
-        )
-
-        formula.shift(
-            RIGHT * FORMULA_SHIFT_RIGHT
-            + DOWN * FORMULA_SHIFT_DOWN
-        )
-
-        title.shift(
-            RIGHT * TITLE_SHIFT_RIGHT
-            + DOWN * TITLE_SHIFT_DOWN
-        )
+            plane.add_coordinates(font_size=STANDARD_COORD_LABEL_FONT_SIZE)
 
         real_label = Text(
             "Re",
@@ -465,10 +357,6 @@ class RootMotionBase(Scene):
             plane.x_axis.get_end(),
             RIGHT,
             buff=REAL_LABEL_BUFF,
-        )
-        real_label.shift(
-            RIGHT * REAL_LABEL_SHIFT_RIGHT
-            + DOWN * REAL_LABEL_SHIFT_DOWN
         )
 
         imag_label = Text(
@@ -482,11 +370,55 @@ class RootMotionBase(Scene):
             UP,
             buff=IMAG_LABEL_BUFF,
         )
-        imag_label.shift(
-            RIGHT * IMAG_LABEL_SHIFT_RIGHT
-            + DOWN * IMAG_LABEL_SHIFT_DOWN
+
+        # ----------------------------------------------------
+        # Header
+        # ----------------------------------------------------
+        title = Text(
+            "Roots of T(x) and T′(x) as a varies",
+            font=TITLE_TEXT_FONT,
+            font_size=TITLE_FONT_SIZE,
+            color=TITLE_COLOR,
         )
 
+        formula_T = MathTex(
+            r"T(x)=x^4+2\pi x^2-2\pi a x+2\pi",
+            font_size=FORMULA_FONT_SIZE,
+            color=FORMULA_COLOR,
+        )
+
+        formula_T_prime = MathTex(
+            r"T^{\prime}(x)=4x^3+4\pi x-2\pi a",
+            font_size=FORMULA_FONT_SIZE,
+            color=FORMULA_COLOR,
+        )
+
+        formulas = VGroup(
+            formula_T,
+            formula_T_prime,
+        ).arrange(
+            DOWN,
+            aligned_edge=LEFT,
+            buff=FORMULA_LINE_GAP,
+        )
+
+        header = VGroup(
+            formulas,
+            title,
+        ).arrange(
+            RIGHT,
+            buff=HEADER_GAP,
+        )
+
+        header.to_edge(UP, buff=HEADER_TOP_BUFF)
+        header.shift(
+            RIGHT * HEADER_SHIFT_RIGHT
+            + DOWN * HEADER_SHIFT_DOWN
+        )
+
+        # ----------------------------------------------------
+        # Shared frame/a tracker
+        # ----------------------------------------------------
         frame_tracker = ValueTracker(0)
 
         def current_frame_value():
@@ -496,9 +428,21 @@ class RootMotionBase(Scene):
             s = current_frame_value() / (FRAME_COUNT - 1)
             return A_START + s * (A_END - A_START)
 
-        def current_roots():
-            return interpolate_tracked_roots(tracked, current_frame_value())
+        def current_T_roots():
+            return interpolate_tracked_roots(
+                tracked_T,
+                current_frame_value(),
+            )
 
+        def current_T_prime_roots():
+            return interpolate_tracked_roots(
+                tracked_T_prime,
+                current_frame_value(),
+            )
+
+        # ----------------------------------------------------
+        # Current a label
+        # ----------------------------------------------------
         a_label_text = MathTex(
             r"a =",
             font_size=A_LABEL_FONT_SIZE,
@@ -513,50 +457,109 @@ class RootMotionBase(Scene):
         )
         a_number.add_updater(lambda m: m.set_value(current_a()))
 
-        a_label = VGroup(a_label_text, a_number).arrange(
+        a_label = VGroup(
+            a_label_text,
+            a_number,
+        ).arrange(
             RIGHT,
             buff=A_LABEL_GAP,
         )
-        a_label.to_corner(A_LABEL_CORNER, buff=A_LABEL_CORNER_BUFF)
-        a_label.shift(
-            RIGHT * A_LABEL_SHIFT_RIGHT
-            + DOWN * A_LABEL_SHIFT_DOWN
-        )
 
-        root_paths = VGroup()
+        a_label.to_corner(A_LABEL_CORNER, buff=A_LABEL_CORNER_BUFF)
+
+        # ----------------------------------------------------
+        # Root paths for T(x)
+        # ----------------------------------------------------
+        T_paths = VGroup()
 
         if SHOW_PATHS:
-            for j in range(root_count):
-                points = [plane.n2p(z) for z in tracked[:, j]]
+            for j in range(root_count_T):
+                points = [
+                    plane.n2p(z)
+                    for z in tracked_T[:, j]
+                ]
+
                 path = VMobject()
                 path.set_points_smoothly(points)
                 path.set_stroke(
-                    self.root_colors[j % len(self.root_colors)],
+                    T_COLORS[j % len(T_COLORS)],
                     width=PATH_STROKE_WIDTH,
                     opacity=PATH_OPACITY,
                 )
-                root_paths.add(path)
 
-        dots = VGroup()
+                T_paths.add(path)
 
-        for j in range(root_count):
+        # ----------------------------------------------------
+        # Root paths for T'(x)
+        # ----------------------------------------------------
+        T_prime_paths = VGroup()
+
+        if SHOW_PATHS:
+            for j in range(root_count_T_prime):
+                points = [
+                    plane.n2p(z)
+                    for z in tracked_T_prime[:, j]
+                ]
+
+                path = VMobject()
+                path.set_points_smoothly(points)
+                path.set_stroke(
+                    T_PRIME_COLORS[j % len(T_PRIME_COLORS)],
+                    width=PATH_STROKE_WIDTH,
+                    opacity=PATH_OPACITY,
+                )
+
+                T_prime_paths.add(path)
+
+        # ----------------------------------------------------
+        # Moving T(x) roots: dots
+        # ----------------------------------------------------
+        T_dots = VGroup()
+
+        for j in range(root_count_T):
             dot = Dot(
-                radius=DOT_RADIUS,
-                color=self.root_colors[j % len(self.root_colors)],
+                radius=T_DOT_RADIUS,
+                color=T_COLORS[j % len(T_COLORS)],
             )
 
-            def make_updater(index):
-                return lambda mob: mob.move_to(plane.n2p(current_roots()[index]))
+            def make_T_updater(index):
+                return lambda mob: mob.move_to(
+                    plane.n2p(current_T_roots()[index])
+                )
 
-            dot.add_updater(make_updater(j))
-            dot.move_to(plane.n2p(tracked[0, j]))
-            dots.add(dot)
+            dot.add_updater(make_T_updater(j))
+            dot.move_to(plane.n2p(tracked_T[0, j]))
+            T_dots.add(dot)
 
+        # ----------------------------------------------------
+        # Moving T'(x) roots: triangles
+        # ----------------------------------------------------
+        T_prime_markers = VGroup()
+
+        for j in range(root_count_T_prime):
+            marker = Triangle(
+                color=T_PRIME_COLORS[j % len(T_PRIME_COLORS)],
+                fill_color=T_PRIME_COLORS[j % len(T_PRIME_COLORS)],
+                fill_opacity=1.0,
+                stroke_width=1,
+            )
+            marker.scale(T_PRIME_MARKER_SCALE)
+
+            def make_T_prime_updater(index):
+                return lambda mob: mob.move_to(
+                    plane.n2p(current_T_prime_roots()[index])
+                )
+
+            marker.add_updater(make_T_prime_updater(j))
+            marker.move_to(plane.n2p(tracked_T_prime[0, j]))
+            T_prime_markers.add(marker)
+
+        # ----------------------------------------------------
+        # Special a markers
+        # ----------------------------------------------------
         special_markers = VGroup()
 
         if SHOW_SPECIAL_A_MARKERS and A_START <= SPECIAL_A <= A_END:
-            special_roots = sorted_initial_roots(self.root_function(SPECIAL_A))
-
             special_index = int(
                 round(
                     (SPECIAL_A - A_START)
@@ -565,22 +568,23 @@ class RootMotionBase(Scene):
                 )
             )
             special_index = int(np.clip(special_index, 0, FRAME_COUNT - 1))
-            tracked_special = tracked[special_index]
 
-            matched_special = []
-            remaining = list(special_roots)
+            special_T_roots = tracked_T[special_index]
+            special_T_prime_roots = tracked_T_prime[special_index]
 
-            for z in tracked_special:
-                best_i = min(
-                    range(len(remaining)),
-                    key=lambda i: abs(remaining[i] - z),
-                )
-                matched_special.append(remaining.pop(best_i))
-
-            for z in matched_special:
+            for j, z in enumerate(special_T_roots):
                 ring = Circle(
                     radius=SPECIAL_RING_RADIUS,
-                    color=SPECIAL_RING_COLOR,
+                    color=T_COLORS[j % len(T_COLORS)],
+                    stroke_width=SPECIAL_RING_STROKE_WIDTH,
+                )
+                ring.move_to(plane.n2p(z))
+                special_markers.add(ring)
+
+            for j, z in enumerate(special_T_prime_roots):
+                ring = Circle(
+                    radius=SPECIAL_RING_RADIUS,
+                    color=T_PRIME_COLORS[j % len(T_PRIME_COLORS)],
                     stroke_width=SPECIAL_RING_STROKE_WIDTH,
                 )
                 ring.move_to(plane.n2p(z))
@@ -592,18 +596,83 @@ class RootMotionBase(Scene):
                 color=WHITE,
             )
             special_text.next_to(a_label, DOWN, buff=SPECIAL_TEXT_BUFF)
-            special_text.shift(
-                RIGHT * SPECIAL_TEXT_SHIFT_RIGHT
-                + DOWN * SPECIAL_TEXT_SHIFT_DOWN
-            )
             special_markers.add(special_text)
 
-        self.add(plane, coordinate_labels, real_label, imag_label)
-        self.add(header)
-        self.add(root_paths)
-        self.add(special_markers)
-        self.add(dots, a_label)
+        # ----------------------------------------------------
+        # Legend
+        # ----------------------------------------------------
+        legend_T_dot = Dot(
+            radius=T_DOT_RADIUS,
+            color=T_COLORS[0],
+        )
 
+        legend_T_text = MathTex(
+            r"T(x)",
+            font_size=LEGEND_FONT_SIZE,
+            color=WHITE,
+        )
+
+        legend_T = VGroup(
+            legend_T_dot,
+            legend_T_text,
+        ).arrange(
+            RIGHT,
+            buff=LEGEND_SYMBOL_GAP,
+        )
+
+        legend_T_prime_marker = Triangle(
+            color=T_PRIME_COLORS[0],
+            fill_color=T_PRIME_COLORS[0],
+            fill_opacity=1.0,
+            stroke_width=1,
+        ).scale(T_PRIME_MARKER_SCALE)
+
+        legend_T_prime_text = MathTex(
+            r"T^{\prime}(x)",
+            font_size=LEGEND_FONT_SIZE,
+            color=WHITE,
+        )
+
+        legend_T_prime = VGroup(
+            legend_T_prime_marker,
+            legend_T_prime_text,
+        ).arrange(
+            RIGHT,
+            buff=LEGEND_SYMBOL_GAP,
+        )
+
+        legend = VGroup(
+            legend_T,
+            legend_T_prime,
+        ).arrange(
+            DOWN,
+            aligned_edge=LEFT,
+            buff=LEGEND_ROW_GAP,
+        )
+
+        legend.to_corner(UR, buff=LEGEND_RIGHT_BUFF)
+        legend.shift(DOWN * LEGEND_TOP_BUFF)
+
+        # ----------------------------------------------------
+        # Add everything
+        # ----------------------------------------------------
+        self.add(
+            plane,
+            real_label,
+            imag_label,
+            header,
+            T_paths,
+            T_prime_paths,
+            special_markers,
+            T_dots,
+            T_prime_markers,
+            a_label,
+            legend,
+        )
+
+        # ----------------------------------------------------
+        # Animate a from A_START to A_END
+        # ----------------------------------------------------
         self.play(
             frame_tracker.animate.set_value(FRAME_COUNT - 1),
             run_time=RUN_TIME,
@@ -611,41 +680,3 @@ class RootMotionBase(Scene):
         )
 
         self.wait(1.0)
-
-
-# ============================================================
-# Scene 1: roots of T(x)
-# ============================================================
-
-class TRootMotion(RootMotionBase):
-    root_function = staticmethod(roots_T)
-
-    title_prefix_text = "Roots of"
-    title_math_tex = r"T(x)"
-    title_suffix_text = "as a varies"
-
-    formula_tex = r"T(x)=x^4+2\pi x^2-2\pi a x+2\pi"
-    root_colors = [BLUE_C, GREEN_C, RED_C, YELLOW_C]
-
-    manual_bounds = (-5, 5, -4.5, 4.5)
-    manual_step = 1
-    use_pi_labels = False
-
-
-# ============================================================
-# Scene 2: roots of T'(x)
-# ============================================================
-
-class TPrimeRootMotion(RootMotionBase):
-    root_function = staticmethod(roots_T_prime)
-
-    title_prefix_text = "Roots of"
-    title_math_tex = r"T^{\prime}(x)"
-    title_suffix_text = "as a varies"
-
-    formula_tex = r"T^{\prime}(x)=4x^3+4\pi x-2\pi a"
-    root_colors = [BLUE_C, GREEN_C, RED_C]
-
-    manual_bounds = (-np.pi, np.pi, -np.pi, np.pi)
-    manual_step = np.pi / 2
-    use_pi_labels = True

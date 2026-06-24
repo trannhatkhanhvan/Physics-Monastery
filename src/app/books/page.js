@@ -164,6 +164,71 @@ export default function BooksPage() {
     maxWidth: "none",
   }}
 >
+        <div className="legend-title"> public drafts</div>
+
+        <div
+          style={{
+            margin: "0 auto 3rem",
+            maxWidth: "920px",
+            padding: "1.6rem 1.8rem",
+            borderRadius: "18px",
+            border: "1px solid rgba(216, 209, 184, 0.22)",
+            background: "rgba(0, 0, 0, 0.42)",
+            color: "#f4efe2",
+            boxShadow: "0 0 18px rgba(0,0,0,0.22)",
+          }}
+        >
+          <div
+            style={{
+              color: "#d8d1b8",
+              fontSize: "0.78rem",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              marginBottom: "0.55rem",
+            }}
+          >
+            Public Draft Edition
+          </div>
+
+          <h2
+            style={{
+              margin: 0,
+              fontSize: "2rem",
+              fontWeight: 500,
+              color: "#ffffff",
+            }}
+          >
+            The Logic of Persistence
+          </h2>
+
+          <p
+            style={{
+              margin: "0.85rem 0 1.3rem",
+              fontSize: "1.02rem",
+              lineHeight: 1.6,
+              color: "rgba(244, 239, 226, 0.82)",
+            }}
+          >
+            A living manuscript shared for public access, review, correction,
+            and AI-readable reference.
+          </p>
+
+          <a
+            href="/the-logic-of-persistence"
+            style={{
+              display: "inline-block",
+              padding: "0.72rem 1rem",
+              borderRadius: "999px",
+              border: "1px solid rgba(216, 209, 184, 0.42)",
+              color: "#d8d1b8",
+              textDecoration: "none",
+              fontSize: "0.95rem",
+            }}
+          >
+            Open Public Draft
+          </a>
+        </div>
+
         <div className="legend-title"> related books</div>
 
         <div className="books-gallery">

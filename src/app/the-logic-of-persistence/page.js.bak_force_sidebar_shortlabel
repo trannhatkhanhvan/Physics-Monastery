@@ -1,0 +1,265 @@
+'use client';
+
+import LayoutWrapper from '@/components/LayoutWrapper';
+import '../globals.css';
+import { bookMeta, chapters } from './chapters';
+const PAGE_EDGE_GAP = "10px";
+const MENU_TEXT_GAP = "15px";
+
+export default function TheLogicOfPersistencePage() {
+  return (
+    <LayoutWrapper>
+      <div
+        className="symbol-overlay"
+        style={{
+          left: 0,
+          width: "100vw",
+        }}
+      />
+
+      <div
+  className="partition-content"
+  style={{
+    width: "100%",
+    maxWidth: "none",
+    boxSizing: "border-box",
+    paddingLeft: PAGE_EDGE_GAP,
+    paddingRight: PAGE_EDGE_GAP,
+    paddingTop: "5.5rem",
+    paddingBottom: "6rem",
+  }}
+>
+        <div className="legend-title">the logic of persistence</div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "117px minmax(0, 1fr)",
+            gap: MENU_TEXT_GAP,
+            alignItems: "start",
+          }}
+        >
+          <aside
+            style={{
+              position: "sticky",
+              top: "110px",
+              alignSelf: "start",
+              border: "1px solid rgba(216, 209, 184, 0.22)",
+              borderRadius: "18px",
+              padding: "22px 20px",
+              background: "rgba(0, 0, 0, 0.42)",
+              boxShadow: "0 0 18px rgba(0,0,0,0.22)",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "0.78rem",
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "#d8d1b8",
+                marginBottom: "1rem",
+              }}
+            >
+              Contents
+            </div>
+
+            <nav
+              style={{
+                display: "grid",
+                gap: "0.45rem",
+              }}
+            >
+              {chapters.map((chapter) => (
+                <a
+                  key={chapter.id}
+                  href={`#${chapter.id}`}
+                  title={chapter.title}
+                  style={{
+                    color: "#f4efe2",
+                    textDecoration: "none",
+                    fontSize: "0.95rem",
+                    lineHeight: 1.35,
+                    opacity: 0.86,
+                  }}
+                >
+                  {chapter.shortLabel}
+                </a>
+              ))}
+            </nav>
+          </aside>
+
+          <article
+            style={{
+              maxWidth: "960px",
+              color: "#f4efe2",
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: "1.12rem",
+              fontWeight: 400,
+              lineHeight: 1.75,
+              letterSpacing: "0.005em",
+            }}
+          >
+            <header
+              style={{
+                marginBottom: "4rem",
+                padding: "2rem",
+                borderRadius: "22px",
+                border: "1px solid rgba(216, 209, 184, 0.22)",
+                background: "rgba(0, 0, 0, 0.42)",
+                boxShadow: "0 0 18px rgba(0,0,0,0.22)",
+              }}
+            >
+              <div style={eyebrowStyle}>{bookMeta.edition}</div>
+
+              <h1
+                style={{
+                  margin: 0,
+                  color: "#ffffff",
+                  fontSize: "clamp(2.7rem, 5vw, 5rem)",
+                  lineHeight: 0.98,
+                  fontWeight: 500,
+                }}
+              >
+                {bookMeta.title}
+              </h1>
+
+              <p
+                style={{
+                  marginTop: "1.35rem",
+                  maxWidth: "760px",
+                  fontSize: "1.28rem",
+                  lineHeight: 1.48,
+                  color: "rgba(244, 239, 226, 0.84)",
+                }}
+              >
+                {bookMeta.subtitle}
+              </p>
+
+              <div style={metaRowStyle}>
+                <span style={metaPillStyle}>{bookMeta.status}</span>
+                <span style={metaPillStyle}>Version {bookMeta.version}</span>
+                <span style={metaPillStyle}>Updated {bookMeta.updated}</span>
+              </div>
+
+              <div
+                style={{
+                  marginTop: "1.5rem",
+                  padding: "1rem 1.15rem",
+                  borderRadius: "14px",
+                  background: "rgba(216, 209, 184, 0.08)",
+                  border: "1px solid rgba(216, 209, 184, 0.18)",
+                  color: "rgba(244, 239, 226, 0.78)",
+                  fontSize: "0.98rem",
+                  lineHeight: 1.55,
+                }}
+              >
+                {bookMeta.citationNote}
+              </div>
+            </header>
+
+            {chapters.map((chapter) => (
+              <section
+                key={chapter.id}
+                id={chapter.id}
+                style={{
+                  scrollMarginTop: "120px",
+                  marginTop: chapter.id === "front-matter" ? 0 : "4.5rem",
+                  paddingTop: chapter.id === "front-matter" ? 0 : "2rem",
+                  borderTop:
+                    chapter.id === "front-matter"
+                      ? "none"
+                      : "1px solid rgba(216, 209, 184, 0.16)",
+                }}
+              >
+                <div style={eyebrowStyle}>
+                  {chapter.part || chapter.shortLabel}
+                </div>
+
+                <h2 style={chapterHeadingStyle}>{chapter.title}</h2>
+
+                <div style={metaRowStyle}>
+                  <span style={metaPillStyle}>{chapter.status}</span>
+                  <span style={metaPillStyle}>Version {chapter.version}</span>
+                  <span style={metaPillStyle}>Updated {chapter.updated}</span>
+                </div>
+
+                <p>{chapter.summary}</p>
+
+                {chapter.sections?.length > 0 && (
+                  <div style={infoBoxStyle}>
+                    <div style={smallHeadingStyle}>Section map</div>
+                    <ul style={compactListStyle}>
+                      {chapter.sections.map((section) => (
+                        <li key={section.id}>{section.title}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <p style={{ color: "rgba(244, 239, 226, 0.62)" }}>
+                  Manuscript text will be inserted here.
+                </p>
+              </section>
+            ))}
+          </article>
+        </div>
+      </div>
+    </LayoutWrapper>
+  );
+}
+
+const eyebrowStyle = {
+  color: "#d8d1b8",
+  fontSize: "0.78rem",
+  letterSpacing: "0.14em",
+  textTransform: "uppercase",
+  marginBottom: "1rem",
+};
+
+const chapterHeadingStyle = {
+  marginTop: 0,
+  marginBottom: "0.85rem",
+  color: "#ffffff",
+  fontSize: "2rem",
+  fontWeight: 500,
+  lineHeight: 1.15,
+};
+
+const metaRowStyle = {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "0.45rem",
+  margin: "1rem 0 1.2rem",
+};
+
+const metaPillStyle = {
+  display: "inline-block",
+  padding: "0.22rem 0.55rem",
+  borderRadius: "999px",
+  border: "1px solid rgba(216, 209, 184, 0.24)",
+  color: "rgba(244, 239, 226, 0.78)",
+  fontSize: "0.78rem",
+  lineHeight: 1.2,
+  background: "rgba(0, 0, 0, 0.22)",
+};
+
+const infoBoxStyle = {
+  margin: "1.25rem 0",
+  padding: "1rem 1.15rem",
+  borderRadius: "14px",
+  border: "1px solid rgba(216, 209, 184, 0.16)",
+  background: "rgba(0, 0, 0, 0.24)",
+};
+
+const smallHeadingStyle = {
+  color: "#d8d1b8",
+  fontSize: "0.78rem",
+  letterSpacing: "0.12em",
+  textTransform: "uppercase",
+  marginBottom: "0.5rem",
+};
+
+const compactListStyle = {
+  margin: 0,
+  paddingLeft: "1.1rem",
+};

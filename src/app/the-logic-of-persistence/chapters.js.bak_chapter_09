@@ -1,0 +1,3144 @@
+export const bookMeta = {
+  title: "The Logic of Persistence",
+  subtitle:
+    "A living manuscript by Thad Roberts, shared for review, discussion, correction, public access, and AI-readable reference.",
+  edition: "Public Draft Edition",
+  status: "Living draft",
+  version: "0.1",
+  updated: "June 2026",
+  citationNote:
+    "This manuscript is shared as a public draft. It is not the final published edition. The text may change before formal publication. Please cite the page URL and version date when referencing this draft.",
+};
+
+export const chapters = [
+  {
+    id: "front-matter",
+    part: "Opening",
+    shortLabel: "Opening",
+    title: "Abstract, Dedication, and Preface",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "The opening front matter introduces The Logic of Persistence as a search for a coherent structural account of the measured constants of Nature. The abstract frames the book around the possibility that the 288 CODATA constants form a closed algebraic-geometric transformation space grounded in the figure-eight knot complement, its sister, the binomial constructor, and the hyperbolic partition equation. The dedication is brief and direct. The Preface places the scientific project inside a larger account of consciousness, measurement, conceptual alignment, and the escape from inherited narrative into quantitatively constrained understanding.",
+
+    aiSummary:
+      "This front-matter section contains the book abstract, dedication, and preface. It defines the core research aim: to explain the measured constants of Nature as a coherent, mutually constraining set rather than isolated numerical facts. It introduces the proposed geometric framework: the figure-eight knot complement and its sister, the 24-dimensional unit ball B²⁴, the binomial constructor, the hyperbolic partition equation, Planck-normalized boundaries of time, length, charge, temperature, and mass, and the Transform Dictionary organizing 288 constants. The preface frames science as the disciplined alignment of human conceptual models with measurable reality, emphasizing measurement as the first foothold beyond inherited narratives.",
+
+    aiSearchDescription:
+      "Retrieve this section for questions about the book's thesis, purpose, research target, public draft framing, constants of Nature, CODATA constants, the 288-constant Transform Dictionary, the figure-eight knot complement, the figure-eight knot sister, B²⁴, the binomial constructor, the hyperbolic partition equation, Planck-normalized boundaries, measurement, conceptual alignment, scientific understanding, narrative enclosure, and the philosophical motivation for seeking a theory of everything.",
+
+    keywords: [
+      "The Logic of Persistence",
+      "abstract",
+      "dedication",
+      "preface",
+      "constants of Nature",
+      "CODATA constants",
+      "288 physical constants",
+      "Transform Dictionary",
+      "figure-eight knot complement",
+      "figure-eight knot sister",
+      "hyperbolic 3-geometry",
+      "minimal-volume hyperbolic knot complement",
+      "24-dimensional unit ball",
+      "B²⁴",
+      "binomial constructor",
+      "hyperbolic partition equation",
+      "Planck boundaries",
+      "Planck-normalized boundaries",
+      "measurement",
+      "scientific understanding",
+      "conceptual alignment",
+      "narrative enclosure",
+      "theory of everything",
+      "arithmetic of persistence"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Measured constants of Nature",
+        description:
+          "The central empirical target of the book. The constants are treated not as isolated numerical facts, but as a coherent and mutually constraining set that any serious account of reality must eventually explain."
+      },
+      {
+        term: "288 physical constants",
+        description:
+          "The proposed complete set of CODATA constants organized by the book into a finite transformation space called the Transform Dictionary."
+      },
+      {
+        term: "Figure-eight knot complement",
+        description:
+          "The base hyperbolic space proposed as the geometric source structure for the organization of physical constants."
+      },
+      {
+        term: "Binomial constructor",
+        description:
+          "One of the two governing construction principles. It prescribes how internal and external geometric actions combine coherently."
+      },
+      {
+        term: "Hyperbolic partition equation",
+        description:
+          "One of the two governing construction principles. It encodes how curvature is discretely partitioned across Planck-normalized boundaries."
+      },
+      {
+        term: "Measurement as foothold",
+        description:
+          "The preface’s framing of measurement as the first disciplined step by which explanation escapes inherited narrative and becomes accountable to quantity, proportion, and structure."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "24-dimensional transformation space",
+        latex: "B^{24}",
+        plainLanguage:
+          "The abstract names the 24-dimensional unit ball as the model for the completed space of transformations available to the proposed deformation level.",
+        role:
+          "Introduces the dimensional setting for the transformation space used in the book's proposed organization of constants."
+      }
+    ],
+
+    sections: [
+      {
+        id: "abstract",
+        title: "Abstract",
+        type: "front-matter",
+        summary:
+          "Introduces the book’s central demand: that any serious account of reality must explain the measured constants of Nature as a coherent set. It presents the proposed framework: the figure-eight knot complement and its sister, the 24-dimensional unit ball, the binomial constructor, the hyperbolic partition equation, Planck-normalized boundaries, and the Transform Dictionary of 288 constants.",
+        aiSummary:
+          "Use this section to identify the book’s thesis, target data, proposed geometric foundation, and two governing construction principles."
+      },
+      {
+        id: "dedication",
+        title: "Dedication",
+        type: "front-matter",
+        summary:
+          "A short dedication: 'To figuring it out.'",
+        aiSummary:
+          "This section contains the dedication. It expresses the book’s orientation toward discovery, investigation, and the process of figuring out reality."
+      },
+      {
+        id: "preface",
+        title: "Preface: Ascending the Footholds of Awareness",
+        type: "preface",
+        summary:
+          "The Preface frames scientific understanding as the disciplined alignment of consciousness with reality. It argues that inherited narratives stabilize perception but can also limit access to unseen structures. Measurement becomes the first foothold of scientific ascent because it forces explanation to answer to quantity, proportion, and the world’s own constraints.",
+        aiSummary:
+          "Use this section for questions about the philosophical motivation of the book. The Preface explains consciousness as model-building, inherited narratives as early stabilizing worldviews, scarcity as a constraint on exploration, science as alignment with reality, measurement as the escape from narrative enclosure, and deeper structural understanding as access to Nature’s real degrees of freedom."
+      }
+    ],
+
+    relatedChapters: [
+      "chapter-01",
+      "chapter-07",
+      "chapter-08",
+      "chapter-11",
+      "chapter-12"
+    ]
+  },
+
+  {
+    id: "chapter-01",
+    part: "Part 1: Measurement and Structure",
+    shortLabel: "Ch. 1",
+    title: "Overview of the Search for a Theory of Everything",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "Chapter 1 traces the historical ascent of scientific understanding from narrative inheritance to measurement, mathematical law, geometric structure, algebraic transformation, and hyperbolic topology. Beginning with Anaximander’s shift from mythic explanation to ordered investigation, the chapter follows Galileo, Kepler, Newton, Cayley, Sylvester, Hamilton, Riemann, Einstein, Dirac, Noether, and Thurston as successive footholds in humanity’s search for a theory of everything. The chapter ends by locating the present search in the measured constants of Nature: the fixed numerical features of reality that may reveal a symmetry-constrained algebraic-geometric transformation structure rooted in hyperbolic geometry.",
+
+    aiSummary:
+      "This chapter provides the historical and conceptual overview for The Logic of Persistence. It explains the progression from inherited stories about reality to measurement, from measurement to coherent physical law, from law to geometry, from geometry to algebraic transformations, and from algebraic persistence to hyperbolic 3-manifolds. It introduces Anaximander as an early figure of ordered investigation, Galileo as the discoverer of coherent mathematical relations in motion and inertial-frame invariance, Kepler as the extractor of planetary law from data, Newton as the unifier of dynamics through mathematical law and calculus, Cayley and Sylvester as founders of matrix-based transformation logic, Hamilton as the discoverer of noncommutative algebra through quaternions, Riemann as the creator of manifold geometry, Einstein as the geometer of spacetime, Dirac as the algebraist of quantum persistence, Noether as the theorist of symmetry-protected conservation, and Thurston as the geometer of 3-manifold classification. The chapter concludes that the constants of Nature should be examined as measurable footprints of a possible underlying hyperbolic transformation geometry.",
+
+    aiSearchDescription:
+      "Retrieve this chapter for questions about the historical development of the search for a theory of everything, the role of measurement in science, Anaximander, Galileo, Kepler, Newton, Cayley, Sylvester, Hamilton, Riemann, Einstein, Dirac, Noether, Thurston, matrix transformations, manifolds, spacetime geometry, the Dirac equation, hyperbolic geometry, the figure-eight knot complement, constants of Nature, CODATA constants, symmetry, conservation laws, algebraic-geometric transforms, and why The Logic of Persistence begins with measured constants rather than with an assumed final theory.",
+
+    keywords: [
+      "theory of everything",
+      "measurement",
+      "structure",
+      "scientific history",
+      "Anaximander",
+      "gnomon",
+      "Galileo",
+      "falling bodies",
+      "Galilean relativity",
+      "Kepler",
+      "planetary motion",
+      "Newton",
+      "calculus",
+      "Cayley",
+      "Sylvester",
+      "matrix",
+      "Hamilton",
+      "quaternions",
+      "Riemann",
+      "manifold",
+      "Einstein",
+      "general relativity",
+      "Lorentzian manifold",
+      "Dirac",
+      "Dirac equation",
+      "Clifford algebra",
+      "fine-structure constant",
+      "Noether",
+      "symmetry",
+      "conservation laws",
+      "Thurston",
+      "Geometrization Conjecture",
+      "hyperbolic geometry",
+      "figure-eight knot complement",
+      "sibling manifold",
+      "constants of Nature",
+      "logic of persistence"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Measurement as scientific rupture",
+        description:
+          "The chapter presents measurement as the decisive break from inherited narrative. Measurement makes explanation accountable to proportion, quantity, and structure."
+      },
+      {
+        term: "Coherence",
+        description:
+          "The idea that measured quantities are not isolated facts but mutually constraining relations. Galileo’s analysis of falling bodies is used as the first clear example of coherent interdependence among distance, time, and acceleration."
+      },
+      {
+        term: "Matrix as transformation object",
+        description:
+          "Cayley and Sylvester’s matrix concept is framed as the discovery that transformations themselves can be treated as mathematical objects."
+      },
+      {
+        term: "Manifold",
+        description:
+          "Riemann’s manifold is presented as a space that can curve and twist while retaining local Euclidean structure and a metric for measuring distance."
+      },
+      {
+        term: "Spacetime as dynamic geometry",
+        description:
+          "Einstein’s general relativity is described as the move from absolute space and time to a Lorentzian manifold whose curvature is gravity itself."
+      },
+      {
+        term: "Dirac equation",
+        description:
+          "The Dirac equation is presented as a Lorentz-covariant, first-order, linear equation that joins quantum mechanics and special relativity while revealing an algebraic grammar of quantum persistence."
+      },
+      {
+        term: "Symmetry-protected persistence",
+        description:
+          "Noether’s theorem is used to connect continuous symmetries with conserved quantities, grounding the idea that persistence is protected by symmetry."
+      },
+      {
+        term: "Figure-eight knot complement",
+        description:
+          "The chapter identifies the figure-eight knot complement as the smallest-volume hyperbolic knot complement and presents it as a candidate minimal structure for hyperbolic persistence."
+      },
+      {
+        term: "Constants as footprints",
+        description:
+          "The chapter ends by arguing that the constants of Nature should be examined as measurable footprints of the underlying structure that calibrates physical law into this Universe."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "Galilean falling-body square law",
+        latex: "d \\propto t^2",
+        plainLanguage:
+          "The distance fallen by an object under constant acceleration grows with the square of elapsed time.",
+        role:
+          "Introduces the coherence between time, distance, and acceleration as a mathematical relation in Nature."
+      },
+      {
+        label: "Kepler's third law",
+        latex: "T^2 \\propto a^3",
+        plainLanguage:
+          "The square of a planet's orbital period is proportional to the cube of its orbital distance scale.",
+        role:
+          "Summarizes the lawful pattern Kepler extracted from planetary data."
+      },
+      {
+        label: "Natural-unit simplification",
+        latex: "c=\\ℏ=1",
+        plainLanguage:
+          "Physicists often set the speed of light and reduced Planck constant to one to expose the algebraic form of a theory while suppressing measured scale.",
+        role:
+          "Explains why physical constants can be hidden by unit conventions even though they remain necessary for empirical calibration."
+      },
+      {
+        label: "Dirac scaling constants",
+        latex: "c,\\ \\ℏ,\\ mₑ",
+        plainLanguage:
+          "The Dirac equation must be calibrated by physical constants such as the speed of light, reduced Planck constant, and electron mass.",
+        role:
+          "Introduces the problem of explaining the measured scales that fit abstract law to the physical world."
+      }
+    ],
+
+    sections: [
+      {
+        id: "chapter-01-anaximander",
+        title: "Anaximander and the Beginning of Structural Inquiry",
+        summary:
+          "Introduces Anaximander as an early figure who treated the world as an ordered structure to investigate rather than merely a story to inherit.",
+        aiSummary:
+          "Use this section for queries about Anaximander, the transition from mythic narrative to ordered investigation, the gnomon, early measurement of time and space, early cartography, balanced opposites, and the first step toward treating Nature as intelligible structure."
+      },
+      {
+        id: "chapter-01-galileo",
+        title: "Galileo and the Coherence of Measured Motion",
+        summary:
+          "Explains Galileo’s shift from asking what gravity is to measuring how it behaves. Falling bodies reveal the square law of distance and time, odd-number interval structure, and the coherence of distance, time, and acceleration.",
+        aiSummary:
+          "Use this section for queries about Galileo, falling bodies, distance proportional to time squared, odd-number distance intervals, mathematical symmetry in motion, Galilean relativity, inertial frames, and invariance."
+      },
+      {
+        id: "chapter-01-kepler",
+        title: "Kepler and the Hidden Grammar of Planetary Motion",
+        summary:
+          "Presents Kepler as the scientist who converted Tycho Brahe’s data into law.",
+        aiSummary:
+          "Use this section for queries about Kepler, Tycho Brahe, planetary data, ellipses, equal areas in equal times, Kepler's third law, and empirical pattern-finding before dynamical explanation."
+      },
+      {
+        id: "chapter-01-newton",
+        title: "Newton and the Mathematics of Predictive Law",
+        summary:
+          "Describes Newton’s unification of terrestrial and celestial motion under universal mathematical law, with calculus as the language of change and accumulation.",
+        aiSummary:
+          "Use this section for queries about Newton, universal law, absolute space and time, calculus, fluxions, rates of change, motion, force, prediction, and dynamics."
+      },
+      {
+        id: "chapter-01-matrices",
+        title: "Matrices and the Objecthood of Transformation",
+        summary:
+          "Introduces Cayley and Sylvester’s matrix concept as the realization that transformations can be treated as mathematical objects.",
+        aiSummary:
+          "Use this section for queries about matrices, Cayley, Sylvester, transformations as objects, eigenvectors, eigenspaces, eigenvalues, determinant, trace, operators, and symmetry groups."
+      },
+      {
+        id: "chapter-01-hamilton",
+        title: "Hamilton and Noncommutative Algebra",
+        summary:
+          "Frames Hamilton’s discovery of quaternions as a major extension beyond real numbers and an early sign that lawful physical transformations possess intrinsic algebraic structure.",
+        aiSummary:
+          "Use this section for queries about Hamilton, quaternions, noncommutative algebra, rotations, algebraic structure, and transformation algebra."
+      },
+      {
+        id: "chapter-01-riemann",
+        title: "Riemann and the Geometry of Manifolds",
+        summary:
+          "Explains Riemann’s development of manifold geometry: spaces that may curve and twist while preserving local Euclidean behavior and possessing a metric for distance.",
+        aiSummary:
+          "Use this section for queries about Riemann, manifolds, metrics, curvature, intrinsic geometry, local Euclidean structure, differentiable spaces, and the mathematical foundation of general relativity."
+      },
+      {
+        id: "chapter-01-einstein",
+        title: "Einstein and Spacetime as Dynamic Geometry",
+        summary:
+          "Presents Einstein’s general relativity as the transformation of space and time into a dynamic Lorentzian manifold.",
+        aiSummary:
+          "Use this section for queries about Einstein, general relativity, spacetime, Lorentzian manifold, curvature, gravity, mass-energy equivalence, light bending, time dilation, reference frames, and invariant geometric structure."
+      },
+      {
+        id: "chapter-01-dirac",
+        title: "Dirac and the Algebraic Logic of Persistence",
+        summary:
+          "Introduces the Dirac equation as a Lorentz-covariant, first-order, linear equation joining quantum mechanics and special relativity.",
+        aiSummary:
+          "Use this section for queries about Dirac, the Dirac equation, quantum mechanics, special relativity, Lorentz covariance, spin-1/2 particles, Clifford algebra, gamma matrices, natural units, and the fine-structure constant."
+      },
+      {
+        id: "chapter-01-algebra-geometry-bridge",
+        title: "The Bridge Between Geometry and Algebra",
+        summary:
+          "Explores the possibility that the algebraic rulebooks of physics arise from an underlying geometry.",
+        aiSummary:
+          "Use this section for queries about the relationship between algebra and geometry, continuous and discrete structures, Weyl, transformation algebras, operator rules, and the bridge between Einstein's geometry and Dirac's algebra."
+      },
+      {
+        id: "chapter-01-thurston",
+        title: "Thurston, Hyperbolic Geometry, and the Minimal Stage of Persistence",
+        summary:
+          "Introduces Thurston’s geometrization program and hyperbolic 3-manifolds as arenas for persistent geometric form.",
+        aiSummary:
+          "Use this section for queries about Thurston, Geometrization Conjecture, Perelman, 3-manifolds, canonical geometries, hyperbolic geometry, hyperbolic knot complements, figure-eight knot complement, sibling manifold, and minimal volume."
+      },
+      {
+        id: "chapter-01-noether-and-constants",
+        title: "Noether, Conservation, and the Constants as Footprints",
+        summary:
+          "Connects Noether’s theorem to the idea that persistence is protected by symmetry, then transitions to the constants of Nature as measurable footprints of a possible underlying geometry.",
+        aiSummary:
+          "Use this section for queries about Noether's theorem, symmetry, conservation laws, constants of Nature, calibration of physical law, measured footprints, and why the book begins with empirical constants."
+      }
+    ],
+
+    relatedChapters: [
+      "front-matter",
+      "chapter-07",
+      "chapter-08",
+      "chapter-11",
+      "chapter-12"
+    ]
+  },
+
+  {
+    id: "chapter-02",
+    part: "Part 1: Measurement and Structure",
+    shortLabel: "Ch. 2",
+    title: "Measuring the Signatures of Reality",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "Chapter 2 establishes the constants of Nature as the empirical foundation of the book’s search. If the Universe is structured by an underlying geometry, then the constants are treated as measurable signatures, residues, or symmetry-constrained transforms of that geometry. The chapter introduces this idea through three discovery narratives: the speed of light c, the reduced Planck constant ℏ, and the electron mass mₑ. It then presents the complete 288-constant CODATA vocabulary as the numerical portrait of Nature’s internal logic, emphasizing that the second, meter, coulomb, kelvin, and kilogram recur throughout the list as the atomic units through which physical law becomes coherent and measurable.",
+
+    aiSummary:
+      "This chapter explains why The Logic of Persistence begins with measured constants rather than abstract theory. It treats the constants of Nature as stable empirical traits of reality and possible structural residues of an underlying hyperbolic manifold. The chapter gives accessible discovery accounts for c, ℏ, and mₑ: Rømer, Bradley, Fizeau, Foucault, and Einstein for the speed of light; Planck, blackbody radiation, the ultraviolet catastrophe, Einstein's photoelectric effect, Bohr, and Schrödinger for the quantum of action; Thomson and Millikan for the electron mass. It explains that c calibrates spacetime and causality, ℏ calibrates quantum action and the scale of transformation, and mₑ calibrates matter and the rest-energy scale in the Dirac equation. The chapter then lists all 288 CODATA constants as the working vocabulary of Nature’s internal logic, ending with the claim that the constants enforce coherence across the atomic units second, meter, coulomb, kelvin, and kilogram and may reveal a deeper geometric structure.",
+
+    aiSearchDescription:
+      "Retrieve this chapter for questions about why measured constants are the starting point of The Logic of Persistence, how constants of Nature function as empirical signatures, how c, ℏ, and mₑ were discovered or interpreted, how constants calibrate physical law, what CODATA is, why there are 288 constants in this framework, how second meter coulomb kelvin kilogram recur through the constant list, how the Dirac equation depends on c ℏ and electron mass, and why the constants are described as the empirical skeleton or working vocabulary of Nature's internal logic.",
+
+    keywords: [
+      "constants of Nature",
+      "CODATA",
+      "288 constants",
+      "measured signatures",
+      "empirical skeleton of reality",
+      "symmetry-constrained transform",
+      "underlying geometry",
+      "underlying manifold",
+      "hyperbolic stage",
+      "speed of light",
+      "c",
+      "Ole Rømer",
+      "Io eclipses",
+      "James Bradley",
+      "stellar aberration",
+      "Fizeau",
+      "Foucault",
+      "Einstein",
+      "special relativity",
+      "causality",
+      "meter",
+      "second",
+      "cesium-133",
+      "hyperfine transition frequency",
+      "Planck constant",
+      "reduced Planck constant",
+      "ℏ",
+      "blackbody radiation",
+      "ultraviolet catastrophe",
+      "Max Planck",
+      "E=hf",
+      "quantum of action",
+      "photoelectric effect",
+      "Bohr",
+      "Schrodinger",
+      "electron mass",
+      "mₑ",
+      "J.J. Thomson",
+      "cathode rays",
+      "charge-to-mass ratio",
+      "Millikan oil-drop experiment",
+      "electron charge",
+      "Dirac equation",
+      "atomic units",
+      "second",
+      "meter",
+      "coulomb",
+      "kelvin",
+      "kilogram",
+      "coherence",
+      "measurement domains",
+      "physical law",
+      "geometric structure"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Constants as signatures",
+        description:
+          "The chapter frames physical constants as stable empirical signatures of the architecture beneath physical law. They are treated as measurable residues of transformation and possible clues to the underlying geometry of reality."
+      },
+      {
+        term: "Symmetry-constrained transform",
+        description:
+          "A proposed interpretation in which each constant corresponds to a constrained transformation of the underlying manifold or geometric structure."
+      },
+      {
+        term: "Hyperbolic stage",
+        description:
+          "The hypothesized geometric setting whose measurable signatures are expressed through the constants of Nature."
+      },
+      {
+        term: "Speed of light c",
+        description:
+          "Presented first as a finite speed inferred from astronomical observations, then as the invariant speed of causality and a structural feature of spacetime."
+      },
+      {
+        term: "Reduced Planck constant ℏ",
+        description:
+          "Presented as the quantum of action: the scale that sets the smallest unit of interaction, transformation, and change in quantum evolution."
+      },
+      {
+        term: "Electron mass mₑ",
+        description:
+          "Presented as the mass scale anchoring atomic matter, electron behavior, scattering, atomic size, and the rest-energy scale in the Dirac equation."
+      },
+      {
+        term: "Dirac calibration constants",
+        description:
+          "The chapter describes c, ℏ, and mₑ as the constants that calibrate the relativistic quantum dynamics of the electron in the Dirac equation."
+      },
+      {
+        term: "CODATA",
+        description:
+          "The Committee on Data for Science and Technology, presented as maintaining the most precise internationally curated values of physical constants."
+      },
+      {
+        term: "288 constants",
+        description:
+          "The complete list of CODATA constants used in the book as the working vocabulary of Nature’s internal logic and as the empirical basis for the Transform Dictionary developed later."
+      },
+      {
+        term: "Atomic units of measurement",
+        description:
+          "The second, meter, coulomb, kelvin, and kilogram are identified as the recurring base units through which physical law becomes measurable and coherent."
+      },
+      {
+        term: "Coherence across measurement domains",
+        description:
+          "The constants do not merely set magnitudes; they ensure that different measurement domains interact without contradiction."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "Planck energy-frequency relation",
+        latex: "E = hf",
+        plainLanguage:
+          "Energy is proportional to frequency, with Planck's constant h setting the size of the quantum step.",
+        role:
+          "Introduces Planck's constant as the scale of quantized energy exchange and the origin of ℏ as the reduced quantum of action."
+      },
+      {
+        label: "Reduced Planck constant",
+        latex: "\\ℏ = \\frac{h}{2\\pi}",
+        plainLanguage:
+          "The reduced Planck constant is Planck's constant divided by 2π.",
+        role:
+          "Defines the form of Planck's constant most commonly used in quantum mechanics and the Dirac equation."
+      },
+      {
+        label: "Natural-unit simplification",
+        latex: "c = \\ℏ = 1",
+        plainLanguage:
+          "Physicists often set the speed of light and reduced Planck constant to one to reveal the algebraic form of a theory while hiding measured scale.",
+        role:
+          "Explains how constants can be suppressed in theory even though they remain necessary for empirical calibration."
+      },
+      {
+        label: "Dirac equation calibration",
+        latex: "\\left(i\\ℏ c\\,\\gamma^\\mu\\partial_\\mu - mₑ c^2\\right)\\psi = 0",
+        plainLanguage:
+          "The Dirac equation uses c, ℏ, and the electron mass to calibrate the relativistic quantum dynamics of the electron.",
+        role:
+          "Shows how the three highlighted constants c, ℏ, and mₑ fit together in the algebraic law governing relativistic quantum persistence."
+      },
+      {
+        label: "Defined speed of light",
+        latex: "c = 299792458\\ \\mathrm{m/s}",
+        plainLanguage:
+          "The speed of light is fixed exactly by definition in the modern SI system.",
+        role:
+          "Connects the meter and second to a fixed physical constant."
+      },
+      {
+        label: "Cesium-133 hyperfine transition frequency",
+        latex: "\\Delta\\nu_{\\mathrm{Cs}} = 9192631770\\ \\mathrm{Hz}",
+        plainLanguage:
+          "The second is defined through the fixed hyperfine transition frequency of cesium-133.",
+        role:
+          "Shows how the base unit of time is anchored in an atomic constant."
+      }
+    ],
+
+    sections: [
+      {
+        id: "chapter-02-constants-as-signatures",
+        title: "Constants as Signatures of Reality",
+        summary:
+          "Introduces the chapter’s central premise: if an underlying geometry structures the Universe, then the constants of Nature are stable empirical traits and possible structural residues of that geometry.",
+        aiSummary:
+          "Use this section for queries about constants as empirical signatures, constants as residues of transformation, symmetry-constrained transforms, underlying manifolds, hidden geometry, and why measurement of constants is the proper starting point for the book.",
+        keywords: [
+          "constants as signatures",
+          "empirical traits",
+          "symmetry-constrained transform",
+          "underlying manifold",
+          "hidden geometry",
+          "measurement"
+        ]
+      },
+      {
+        id: "chapter-02-speed-of-light",
+        title: "c: The Speed of Light",
+        summary:
+          "Traces the discovery of finite light speed from Rømer’s observations of Io’s eclipses to Bradley’s stellar aberration, Fizeau’s rotating gears, Foucault’s mirrors, and Einstein’s reinterpretation of c as the invariant speed of causality.",
+        aiSummary:
+          "Use this section for queries about the speed of light, Ole Rømer, Io eclipses, James Bradley, stellar aberration, Fizeau, Foucault, Einstein, special relativity, causality, spacetime invariance, and the modern definition of the meter.",
+        keywords: [
+          "speed of light",
+          "c",
+          "Ole Romer",
+          "Io",
+          "Jupiter",
+          "stellar aberration",
+          "Fizeau",
+          "Foucault",
+          "Einstein",
+          "special relativity",
+          "causality",
+          "meter definition"
+        ]
+      },
+      {
+        id: "chapter-02-ℏ",
+        title: "ℏ: The Quantum of Action",
+        summary:
+          "Explains how Planck introduced quantized energy to solve the blackbody radiation problem and how ℏ became the structural scale of quantum action, interaction, and transformation.",
+        aiSummary:
+          "Use this section for queries about Planck's constant, reduced Planck constant, ℏ, blackbody radiation, ultraviolet catastrophe, E=hf, quantum mechanics, photoelectric effect, Bohr orbits, Schrodinger wavefunction, quantum of action, and quantized persistence.",
+        keywords: [
+          "Planck constant",
+          "reduced Planck constant",
+          "ℏ",
+          "blackbody radiation",
+          "ultraviolet catastrophe",
+          "E=hf",
+          "quantum of action",
+          "photoelectric effect",
+          "Bohr",
+          "Schrodinger",
+          "persistence is quantized"
+        ]
+      },
+      {
+        id: "chapter-02-electron-mass",
+        title: "mₑ: The Electron Mass",
+        summary:
+          "Describes the discovery of the electron through Thomson’s cathode-ray experiments, the measurement of electron charge through Millikan’s oil-drop experiment, and the resulting determination of electron mass as a scale anchoring matter.",
+        aiSummary:
+          "Use this section for queries about electron mass, mₑ, J.J. Thomson, cathode rays, charge-to-mass ratio, Millikan oil-drop experiment, electron charge, atomic structure, scattering, matter scale, and the electron mass as the rest-energy scale in the Dirac equation.",
+        keywords: [
+          "electron mass",
+          "mₑ",
+          "J.J. Thomson",
+          "cathode rays",
+          "charge-to-mass ratio",
+          "Millikan",
+          "oil-drop experiment",
+          "electron charge",
+          "atomic structure",
+          "Dirac equation"
+        ]
+      },
+      {
+        id: "chapter-02-dirac-calibration",
+        title: "c, ℏ, and mₑ as Dirac Calibration Constants",
+        summary:
+          "Explains that in the Dirac equation c fixes spacetime scale, ℏ fixes quantum-action scale, and mₑ fixes rest-energy scale.",
+        aiSummary:
+          "Use this section for queries about how c, ℏ, and electron mass calibrate the Dirac equation, relativistic quantum dynamics, spacetime scale, quantum-action scale, rest-energy scale, and constants hidden by natural units.",
+        keywords: [
+          "Dirac equation",
+          "c",
+          "ℏ",
+          "mₑ",
+          "spacetime scale",
+          "quantum-action scale",
+          "rest-energy scale",
+          "natural units",
+          "calibration"
+        ]
+      },
+      {
+        id: "chapter-02-codata-list",
+        title: "The 288 Constants of Nature via CODATA",
+        summary:
+          "Presents the complete CODATA list of 288 constants as the working vocabulary of Nature’s internal logic. The table begins with alpha-particle and atomic mass constants, continues through atomic units, electromagnetic constants, particle masses and magnetic moments, unit relationships, Planck-related quantities, Rydberg and radiation constants, and ends with Wien displacement constants.",
+        aiSummary:
+          "Use this section for queries about the complete 288-constant CODATA list, the table of constants, physical constant names, symbols, values, uncertainty notation, unit relationships, atomic units, particle constants, electromagnetic constants, Planck constant, reduced Planck constant, speed of light, vacuum permittivity, vacuum permeability, von Klitzing constant, and Wien constants. The visual table spans pages 5 through 10.",
+        keywords: [
+          "CODATA list",
+          "288 constants",
+          "table of constants",
+          "physical constant values",
+          "uncertainty notation",
+          "atomic units",
+          "unit relationships",
+          "particle masses",
+          "magnetic moments",
+          "electromagnetic constants",
+          "Planck constants",
+          "Rydberg constant",
+          "radiation constants",
+          "Wien constants"
+        ]
+      },
+      {
+        id: "chapter-02-coherence-closing",
+        title: "Constants as the Empirical Skeleton of Reality",
+        summary:
+          "Concludes that the constants enforce coherence across the base measurement domains second, meter, coulomb, kelvin, and kilogram. They are described as the empirical skeleton of reality and the basis for investigating whether all 288 constants are unified by a single underlying geometry.",
+        aiSummary:
+          "Use this section for queries about the closing thesis of Chapter 2, constants enforcing coherence, second meter coulomb kelvin kilogram, empirical skeleton of reality, single underlying geometry, and the transition into the detailed investigation of the 288 constants.",
+        keywords: [
+          "empirical skeleton of reality",
+          "coherence",
+          "second",
+          "meter",
+          "coulomb",
+          "kelvin",
+          "kilogram",
+          "single underlying geometry",
+          "288 constants"
+        ]
+      }
+    ],
+
+    dependencies: [
+      "Chapter 1 establishes the historical progression from measurement to geometry and algebraic persistence.",
+      "Basic familiarity with physical constants, measurement units, and the role of CODATA is helpful.",
+      "No detailed knowledge of the full CODATA table is required before this chapter; the chapter introduces the list as the empirical dataset for the rest of the book."
+    ],
+
+    relatedChapters: [
+      "front-matter",
+      "chapter-01",
+      "chapter-03",
+      "chapter-07",
+      "chapter-08",
+      "chapter-11",
+      "chapter-12"
+    ]
+  },
+  {
+    id: "chapter-03",
+    part: "Part II: Structural Rules of the Constants",
+    shortLabel: "Ch. 3",
+    title: "From Measurement to Manifold",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "Chapter 3 begins the transition from the measured CODATA constants to the structural grammar proposed to organize them. Before explaining how the full Transform Dictionary was discovered, the chapter presents one vertical slice of it: a single column of 36 algebraic-geometric expressions. This slice shows that constants of Nature can be written from shared Planck-boundary ingredients, recurring complex-iteration terms, and a common syntax. The chapter then identifies the infinite power tower of i as a recurring structural clue, introduces the binomial constructor and the hyperbolic partition equation, and frames the 288 constants as bi-part manifold transformations governed by two symmetry-based rules.",
+
+    aiSummary:
+      "This chapter introduces the structural syntax behind the Transform Dictionary. It shows one vertical slice of the full 8 by 36 grid of equations, displaying 36 constants written as algebraic-geometric expressions built from Planck boundaries, roots ж₁ through ж₄, the internal inversion boundary ⊠, and recurring real or imaginary parts of the infinite power tower of i. The chapter explains that the repeated appearance of the same complex-iteration structure beneath many constants suggests that the constants are not isolated measured facts but expressions of a shared recursive geometric process. It then introduces the two governing structural rules: the binomial constructor, which composes every transformation from an external part and an internal part about the inversion boundary, and the hyperbolic partition equation, which partitions the Planck mass gap through a quartic whose roots encode the hyperbolic subdivision structure. The chapter concludes by framing the constants as structural invariants and bi-part manifold transformations, preparing later chapters to connect the rules to the figure-eight knot, the Dirac equation, and the 24-dimensional unit ball B²⁴.",
+
+    aiSearchDescription:
+      "Retrieve this chapter for questions about the transition from measurement to manifold, the Transform Dictionary, the 8 by 36 grid of constants, one-column slices of the 288 constants, algebraic-geometric expressions for constants, Planck boundaries, Planck time, Planck length, Planck charge, Planck temperature, Planck mass, the infinite power tower of i, complex iteration, fixed points in the complex plane, roots ж₁ ж₂ ж₃ ж₄, the internal inversion boundary ⊠, the binomial constructor, the hyperbolic partition equation, the Planck mass gap, bi-part manifold transformations, B²⁴, and the figure-eight knot as a candidate base geometry.",
+
+    keywords: [
+      "Part II",
+      "structural rules",
+      "measurement to manifold",
+      "Transform Dictionary",
+      "288 constants",
+      "8 columns",
+      "36 equations",
+      "8 by 36 grid",
+      "vertical slice",
+      "algebraic-geometric expressions",
+      "grammar of transformation",
+      "constants of Nature",
+      "Planck boundaries",
+      "Planck time",
+      "Planck length",
+      "Planck charge",
+      "Planck temperature",
+      "Planck mass",
+      "atomic bases",
+      "internal inversion boundary",
+      "⊠",
+      "roots",
+      "ж₁",
+      "ж₂",
+      "ж₃",
+      "ж₄",
+      "infinite power tower of i",
+      "i power tower",
+      "complex iteration",
+      "complex exponential",
+      "fixed point",
+      "spiral strands",
+      "binomial constructor",
+      "external geometric action",
+      "internal geometric action",
+      "hyperbolic partition equation",
+      "Planck mass gap",
+      "monic quartic",
+      "logic space",
+      "constraint architecture",
+      "structural invariants",
+      "bi-part manifold transformation",
+      "figure-eight knot",
+      "Dirac equation",
+      "24-dimensional unit ball",
+      "B²⁴"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Transform Dictionary",
+        description:
+          "The proposed map of all 288 constants of Nature. Chapter 3 shows one vertical slice of this dictionary before explaining the discovery of the whole structure."
+      },
+      {
+        term: "8 × 36 grid",
+        description:
+          "The organizational form of the Transform Dictionary: 8 columns of 36 equations, yielding 288 algebraic-geometric expressions governed by a shared syntax."
+      },
+      {
+        term: "Vertical slice",
+        description:
+          "A single column of 36 constant expressions used to make the repeated structure visible before all symbols are fully decoded."
+      },
+      {
+        term: "Grammar of transformation",
+        description:
+          "The recurring algebraic-geometric syntax by which constants are constructed from Planck boundaries, structural roots, complex-iteration components, and internal inversion."
+      },
+      {
+        term: "Planck boundaries",
+        description:
+          "The five normalized limits—Planck time, Planck length, Planck charge, Planck temperature, and Planck mass—from which the constants are algebraically constructed."
+      },
+      {
+        term: "Internal inversion boundary ⊠",
+        description:
+          "A normalized Planck-boundary structure used as the internal inversion boundary in the binomial constructor."
+      },
+      {
+        term: "Infinite power tower of i",
+        description:
+          "A recursively defined complex exponential in which i is repeatedly raised to the power of itself. In this chapter it appears as a recurring geometric ingredient beneath the 36 expressions in the displayed slice."
+      },
+      {
+        term: "Complex-iteration fixed point",
+        description:
+          "The limiting value toward which the power tower of i spirals in the complex plane. The page 5 figure shows iterates winding inward toward a fixed point between the real and imaginary axes."
+      },
+      {
+        term: "Binomial constructor",
+        description:
+          "The first structural rule. It composes every transformation from an external geometric action and arrangement together with an internal action about the inversion boundary."
+      },
+      {
+        term: "Hyperbolic partition equation",
+        description:
+          "The second structural rule. It governs how the system partitions within the Planck mass gap and defines a monic quartic whose roots encode the hyperbolic subdivision."
+      },
+      {
+        term: "Planck mass gap",
+        description:
+          "The normalized mass-scale gap within which the hyperbolic partition equation organizes the subdivision structure."
+      },
+      {
+        term: "Bi-part manifold transformation",
+        description:
+          "The chapter’s proposed form for each constant: every constant is represented as a two-part transformation composed from external and internal geometric structure."
+      },
+      {
+        term: "B²⁴",
+        description:
+          "The 24-dimensional unit ball later introduced as the transition-state space available to the base geometry."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "Transform Dictionary size",
+        latex: "8 \\times 36 = 288",
+        plainLanguage:
+          "The Transform Dictionary is organized as 8 columns of 36 expressions, giving 288 total expressions.",
+        role:
+          "Establishes the structural grid that organizes the constants of Nature."
+      },
+      {
+        label: "Infinite power tower of i",
+        latex: "i^{i^{i^{\\cdot^{\\cdot^{\\cdot}}}}}",
+        plainLanguage:
+          "The imaginary unit is repeatedly raised to the power of itself, producing an iterated complex exponential.",
+        role:
+          "Identifies the recurring complex-iteration ingredient appearing beneath the displayed constants."
+      },
+      {
+        label: "Binomial constructor",
+        latex: "A_{\\mathrm{ext}}B_{\\mathrm{ext}}\\left(1+A_{\\mathrm{int}}\\,\\boxtimes\\right)",
+        plainLanguage:
+          "Each transformation is built from an external part and an internal part coupled through the inversion boundary.",
+        role:
+          "Introduces the first structural rule governing the construction of the constants."
+      },
+      {
+        label: "Internal inversion boundary",
+        latex: "\\boxtimes = \\frac{l_p m_p}{q_p^2}\\times\\frac{\\mathrm{coulomb}^2}{\\mathrm{meter}\\,\\mathrm{kilogram}}",
+        plainLanguage:
+          "The inversion boundary is composed from normalized Planck length, Planck mass, and Planck charge, with SI units restoring dimensional coherence.",
+        role:
+          "Defines the internal inversion boundary used inside the binomial constructor."
+      },
+      {
+        label: "Hyperbolic partition equation",
+        latex: "\\frac{1}{x}+x+\\frac{x^3}{2\\pi}=\\left(i^i\\right)^{-4\\pi/8}-\\frac{m_p}{\\mathrm{kg}}",
+        plainLanguage:
+          "The partition equation relates reciprocal, linear, and cubic terms in x to a complex phase term and the normalized Planck mass.",
+        role:
+          "Introduces the second structural rule governing partition within the Planck mass gap."
+      },
+      {
+        label: "Quartic roots",
+        latex: "\\{\\text{ж}_1,\\text{ж}_2,\\text{ж}_3,\\text{ж}_4\\}",
+        plainLanguage:
+          "The hyperbolic partition equation defines a monic quartic whose four roots encode the partition structure.",
+        role:
+          "Names the four roots used throughout the transformation grammar."
+      }
+    ],
+
+    sections: [
+      {
+        id: "chapter-03-opening",
+        title: "From Measurement to Manifold",
+        summary:
+          "Introduces the chapter’s purpose: to show a visible slice of the Transform Dictionary before explaining how the full 288-constant map was discovered.",
+        aiSummary:
+          "Use this section for queries about the transition from measured constants to manifold structure, why the chapter begins with a slice of the Transform Dictionary, and how the reader is invited to see pattern before decoding every symbol.",
+        keywords: [
+          "measurement to manifold",
+          "Transform Dictionary",
+          "visible pattern",
+          "structural grammar",
+          "288 constants"
+        ]
+      },
+      {
+        id: "chapter-03-symbol-name-legend",
+        title: "Symbol/Name Legend",
+        summary:
+          "Provides the legend for the constants and Planck-boundary symbols used in the displayed vertical slice.",
+        aiSummary:
+          "Use this section for queries about the symbol legend, Planck mass energy equivalent, von Klitzing constant, characteristic impedance of vacuum, atomic unit of velocity, atomic unit of momentum, natural unit of momentum, energy equivalents, unit relationships, and the five Planck boundaries.",
+        keywords: [
+          "symbol legend",
+          "constant names",
+          "Planck boundaries",
+          "energy equivalents",
+          "unit relationships",
+          "atomic unit of velocity",
+          "atomic unit of momentum"
+        ]
+      },
+      {
+        id: "chapter-03-transform-dictionary-slice",
+        title: "A Vertical Slice of the Transform Dictionary",
+        summary:
+          "Displays 36 algebraic-geometric expressions from one column of the full 8 × 36 grid, showing repeated syntax and shared ingredients.",
+        aiSummary:
+          "Use this section for queries about the displayed 36-equation column, the 8 by 36 grid, Planck-boundary construction, recurring roots ж₃ and ж₄, real and imaginary parts of the power tower of i, and the repeated inversion boundary ⊠.",
+        keywords: [
+          "vertical slice",
+          "36 equations",
+          "8 by 36 grid",
+          "Planck-boundary construction",
+          "ж₃",
+          "ж₄",
+          "Re",
+          "Im",
+          "⊠"
+        ]
+      },
+      {
+        id: "chapter-03-power-tower-of-i",
+        title: "The Infinite Power Tower of i",
+        summary:
+          "Explains that the displayed constants share an iterated complex exponential, the infinite power tower of i, whose iterates spiral inward toward a fixed point in the complex plane.",
+        aiSummary:
+          "Use this section for queries about the infinite power tower of i, recursive exponentiation, complex iteration, fixed points, interleaved spiral strands, the page 5 figure, and the role of complex iteration as a structural clue linking otherwise disparate constants.",
+        keywords: [
+          "infinite power tower of i",
+          "complex iteration",
+          "recursive exponentiation",
+          "fixed point",
+          "complex plane",
+          "spiral strands",
+          "structural clue"
+        ]
+      },
+      {
+        id: "chapter-03-reframing-constants",
+        title: "Reframing the Constants Through Planck Boundaries",
+        summary:
+          "Argues that the constants initially appear as an eclectic catalog, but become coherent when reframed as constructs built from five Planck boundaries and their bases.",
+        aiSummary:
+          "Use this section for queries about reframing CODATA constants through Planck boundaries, dimensional and dimensionless constants, atomic bases, five geometric limits, and coherence across the system.",
+        keywords: [
+          "Planck boundaries",
+          "atomic bases",
+          "five geometric limits",
+          "dimensional constants",
+          "dimensionless constants",
+          "coherence"
+        ]
+      },
+      {
+        id: "chapter-03-binomial-constructor",
+        title: "The Binomial Constructor",
+        summary:
+          "Introduces the first rule: a binomial combinatorial rule that composes transformations from an external part and an internal part about the inversion boundary.",
+        aiSummary:
+          "Use this section for queries about the binomial constructor, external geometric action A_ext, external arrangement B_ext, internal geometric action A_int, internal inversion boundary ⊠, and two-part transformation structure.",
+        keywords: [
+          "binomial constructor",
+          "A_ext",
+          "B_ext",
+          "A_int",
+          "internal inversion boundary",
+          "⊠",
+          "two-part transformation"
+        ]
+      },
+      {
+        id: "chapter-03-hyperbolic-partition-equation",
+        title: "The Hyperbolic Partition Equation",
+        summary:
+          "Introduces the second rule: a partition equation governing how the system subdivides within the Planck mass gap while remaining dynamically whole.",
+        aiSummary:
+          "Use this section for queries about the hyperbolic partition equation, Planck mass gap, normalized Planck mass, i^i on the principal branch, monic quartic, and the roots ж₁, ж₂, ж₃, and ж₄.",
+        keywords: [
+          "hyperbolic partition equation",
+          "Planck mass gap",
+          "normalized Planck mass",
+          "i^i",
+          "principal branch",
+          "monic quartic",
+          "ж₁",
+          "ж₂",
+          "ж₃",
+          "ж₄"
+        ]
+      },
+      {
+        id: "chapter-03-logic-space",
+        title: "Logic Space and Bi-Part Manifold Transformations",
+        summary:
+          "Concludes that the two rules define a logic space or constraint architecture in which all 288 constants can be represented as structural invariants and bi-part manifold transformations.",
+        aiSummary:
+          "Use this section for queries about logic space, constraint architecture, structural invariants, bi-part manifold transformations, self-organization from inside out, and the transition into later chapters on the figure-eight knot, Dirac equation, and B²⁴.",
+        keywords: [
+          "logic space",
+          "constraint architecture",
+          "structural invariants",
+          "bi-part manifold transformations",
+          "figure-eight knot",
+          "Dirac equation",
+          "B²⁴"
+        ]
+      }
+    ],
+
+    dependencies: [
+      "Chapter 1 establishes the historical movement from measurement to geometry, transformation, and hyperbolic topology.",
+      "Chapter 2 establishes the measured constants of Nature as the empirical dataset.",
+      "This chapter begins the structural explanation of how the constants are organized by the Transform Dictionary.",
+      "Familiarity with Planck boundaries, CODATA constants, complex numbers, and the figure-eight knot is helpful but not required."
+    ],
+
+    relatedChapters: [
+      "front-matter",
+      "chapter-01",
+      "chapter-02",
+      "chapter-04",
+      "chapter-07",
+      "chapter-08",
+      "chapter-11",
+      "chapter-12"
+    ]
+  },
+  {
+    id: "chapter-04",
+    part: "Part II: Structural Rules of the Constants",
+    shortLabel: "Ch. 4",
+    title: "The Coherent Bases and Their Boundaries",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "Chapter 4 identifies the five coherent bases of atomic logic—second, meter, coulomb, kelvin, and kilogram—and the five Planck boundaries that limit them: tₚ, lₚ, qₚ, Tₚ, and mₚ. The chapter argues that the constants of Nature are not merely a list of measured facts, but a network of combinatorial relationships that repeatedly reconstruct these bases and boundaries. Some combinations recover the atomic bases to approximately 14-digit precision, while others recover the bases or Planck boundaries to approximately seven-digit precision. This two-tier precision pattern becomes evidence for a deeper two-part structure in the connective logic of atoms and motivates the search for exact geometric definitions of the Planck boundaries.",
+
+    aiSummary:
+      "This chapter explains why the constants of Nature must be understood through the five coherent bases of atomic logic and their Planck boundaries. It begins by stating the core problem: physical theories use constants such as c, mₑ, and α, but do not explain why those constants have their measured values. The chapter then shows that combinations of CODATA constants recover the SI base units second, meter, coulomb, kelvin, and kilogram. Some combinations match the bases to roughly 14 significant digits, while others match to roughly seven digits. The chapter then shows that combinations of constants also recover the Planck boundaries tₚ, lₚ, qₚ, Tₚ, and mₚ to roughly seven digits. This precision split is interpreted as the first sign of a two-part structure in the connective logic of atoms. The chapter concludes that Planck boundaries cannot be final if they remain empirically derived from other constants; they must be defined geometrically as exact structural features of a deeper space whose partition logic, symmetries, and boundaries generate the constants rather than merely summarize them.",
+
+    aiSearchDescription:
+      "Retrieve this chapter for questions about the coherent bases of atomic logic, SI base units, second meter coulomb kelvin kilogram, Planck boundaries, Planck time, Planck length, Planck charge, Planck temperature, Planck mass, exact matches among CODATA constants, 14-digit precision, half-precision matches, seven-digit precision, two-part structure, full precision versus half precision, constant combinations that reconstruct units, Planck units as natural units, why constants cannot remain brute facts, why Planck constants need geometric definitions, and why the book seeks structural origins for the constants of Nature.",
+
+    keywords: [
+      "coherent bases",
+      "atomic logic",
+      "coherent bases of atomic logic",
+      "constants of Nature",
+      "brute facts",
+      "structural origin",
+      "second",
+      "meter",
+      "coulomb",
+      "kelvin",
+      "kilogram",
+      "SI base units",
+      "Planck boundaries",
+      "Planck constants",
+      "Planck time",
+      "tₚ",
+      "Planck length",
+      "lₚ",
+      "Planck charge",
+      "qₚ",
+      "Planck temperature",
+      "Tₚ",
+      "Planck mass",
+      "mₚ",
+      "CODATA",
+      "exact matches",
+      "14-digit precision",
+      "half-precision matches",
+      "seven-digit precision",
+      "2-part structure",
+      "two-part structure",
+      "full precision",
+      "half precision",
+      "natural units",
+      "Planck units",
+      "boundary ambiguity",
+      "geometric definition",
+      "structural features",
+      "deeper space",
+      "partition logic",
+      "symmetry",
+      "bounded architecture",
+      "fine-structure constant",
+      "α",
+      "electron mass",
+      "mₑ",
+      "speed of light",
+      "c",
+      "Boltzmann constant",
+      "k_B",
+      "reduced Planck constant",
+      "ℏ",
+      "Newtonian constant of gravitation",
+      "G"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Coherent bases of atomic logic",
+        description:
+          "The five recurring base dimensions through which physical law becomes measurable and coherent: second, meter, coulomb, kelvin, and kilogram."
+      },
+      {
+        term: "Planck boundaries",
+        description:
+          "The five natural limits associated with the coherent bases: Planck time tₚ, Planck length lₚ, Planck charge qₚ, Planck temperature Tₚ, and Planck mass mₚ."
+      },
+      {
+        term: "Constants as consequences",
+        description:
+          "The chapter argues that a final theory cannot leave the constants as empirical brute facts. It must explain them as consequences of deeper structure."
+      },
+      {
+        term: "Exact matches",
+        description:
+          "Combinations of CODATA constants that reconstruct one of the five coherent bases to about 14 significant digits, treated here as exact within available measurement precision."
+      },
+      {
+        term: "Half-precision matches",
+        description:
+          "Combinations of constants that reconstruct one of the coherent bases or Planck boundaries to roughly seven significant digits, revealing a lower-precision structural layer."
+      },
+      {
+        term: "Two-part precision structure",
+        description:
+          "The observed split between roughly 14-digit and roughly seven-digit matches. The chapter treats this as the first evidence of a two-part structure in the connective logic of atoms."
+      },
+      {
+        term: "Single-dimension reduction",
+        description:
+          "A pattern-finding method in which constants are multiplied or divided to produce outputs with only one dimension, isolating either a coherent base or a Planck boundary."
+      },
+      {
+        term: "Planck units as natural units",
+        description:
+          "The Planck constants are described as natural boundaries in the constructive logic of atoms, defining natural limits for time, length, charge, temperature, and mass."
+      },
+      {
+        term: "Boundary ambiguity",
+        description:
+          "The fact that different combinations of empirical constants yield Planck boundary values agreeing for about seven digits and then diverging. The chapter treats this ambiguity as a clue."
+      },
+      {
+        term: "Geometric definition of boundaries",
+        description:
+          "The chapter concludes that to construct a world from Planck boundaries, those boundaries must be defined geometrically rather than only as products of empirical constants."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "Planck constant over hertz-joule relationship",
+        latex: "\\frac{h}{\\mathrm{Hz}\\mathrel{\\vdots}\\mathrm{J}} = 1\\ \\mathrm{second}",
+        plainLanguage:
+          "Dividing the Planck constant by the hertz-joule relationship recovers one second.",
+        role:
+          "Introduces the exact-match pattern in which combinations of constants recover a coherent base."
+      },
+      {
+        label: "Speed of light over inverse-meter-hertz relationship",
+        latex: "\\frac{c}{(1/\\mathrm{m})\\mathrel{\\vdots}\\mathrm{Hz}} = 1\\ \\mathrm{meter}",
+        plainLanguage:
+          "Dividing the speed of light by the inverse-meter-hertz relationship recovers one meter.",
+        role:
+          "Shows that the meter is encoded by a simple combination of constants."
+      },
+      {
+        label: "Kelvin-joule relationship over Boltzmann constant",
+        latex: "\\frac{\\mathrm{K}\\mathrel{\\vdots}\\mathrm{J}}{k_B} = 1\\ \\mathrm{kelvin}",
+        plainLanguage:
+          "Dividing the kelvin-joule relationship by the Boltzmann constant recovers one kelvin.",
+        role:
+          "Shows how thermal scale is encoded through CODATA relationships."
+      },
+      {
+        label: "Kilogram-joule relationship over speed of light squared",
+        latex: "\\frac{\\mathrm{kg}\\mathrel{\\vdots}\\mathrm{J}}{c^2} \\approx 1\\ \\mathrm{kilogram}",
+        plainLanguage:
+          "Dividing the kilogram-joule relationship by c squared approximately recovers one kilogram.",
+        role:
+          "Illustrates a half-precision match and the seven-digit structural layer."
+      },
+      {
+        label: "Planck time",
+        latex: "t_p = \\sqrt{\\frac{\\hbar G}{c^5}}",
+        plainLanguage:
+          "Planck time is constructed from ℏ, G, and c.",
+        role:
+          "Defines the time boundary of atomic logic."
+      },
+      {
+        label: "Planck length",
+        latex: "l_p = \\sqrt{\\frac{\\hbar G}{c^3}}",
+        plainLanguage:
+          "Planck length is constructed from ℏ, G, and c.",
+        role:
+          "Defines the length boundary of atomic logic."
+      },
+      {
+        label: "Planck charge from vacuum permittivity",
+        latex: "q_p = \\sqrt{4\\pi\\varepsilon_0\\hbar c}",
+        plainLanguage:
+          "Planck charge can be constructed from vacuum permittivity, ℏ, and c.",
+        role:
+          "Defines one construction path for the charge boundary."
+      },
+      {
+        label: "Planck charge from Planck impedance",
+        latex: "q_p = \\sqrt{\\frac{4\\pi\\hbar}{Z_0}}",
+        plainLanguage:
+          "Planck charge can also be constructed from ℏ and the characteristic impedance of vacuum.",
+        role:
+          "Shows that Planck boundaries can arise through multiple constant combinations."
+      },
+      {
+        label: "Planck temperature",
+        latex: "T_p = \\sqrt{\\frac{\\hbar c^5}{G k_B^2}}",
+        plainLanguage:
+          "Planck temperature is constructed from ℏ, c, G, and Boltzmann's constant.",
+        role:
+          "Defines the temperature boundary of atomic logic."
+      },
+      {
+        label: "Planck mass",
+        latex: "m_p = \\sqrt{\\frac{\\hbar c}{G}}",
+        plainLanguage:
+          "Planck mass is constructed from ℏ, c, and G.",
+        role:
+          "Defines the mass boundary of atomic logic."
+      }
+    ],
+
+    sections: [
+      {
+        id: "chapter-04-problem-of-constants",
+        title: "The Constants Cannot Remain Brute Facts",
+        summary:
+          "Introduces the problem that physical theories require constants such as c, mₑ, and α, but do not explain why they take their measured values.",
+        aiSummary:
+          "Use this section for queries about why a theory of everything must explain the constants of Nature, why constants cannot remain brute facts, and why measured constants are both the triumph and limitation of modern physics.",
+        keywords: [
+          "constants of Nature",
+          "brute facts",
+          "theory of everything",
+          "speed of light",
+          "electron mass",
+          "fine-structure constant",
+          "structural origin"
+        ]
+      },
+      {
+        id: "chapter-04-five-coherent-bases",
+        title: "The Five Coherent Bases of Atomic Logic",
+        summary:
+          "Identifies the second, meter, coulomb, kelvin, and kilogram as the five coherent bases repeatedly encoded by the constants of Nature.",
+        aiSummary:
+          "Use this section for queries about the five coherent bases of atomic logic, SI base units, second meter coulomb kelvin kilogram, and how constants form a conversation about these bases and their Planck boundaries.",
+        keywords: [
+          "five coherent bases",
+          "atomic logic",
+          "second",
+          "meter",
+          "coulomb",
+          "kelvin",
+          "kilogram",
+          "SI base units"
+        ]
+      },
+      {
+        id: "chapter-04-exact-matches",
+        title: "Exact Matches at Fourteen-Digit Precision",
+        summary:
+          "Gives examples of constant combinations that recover one of the coherent bases to about 14 significant digits, treated as exact within available measurement precision.",
+        aiSummary:
+          "Use this section for queries about exact matches, 14-digit precision, constant combinations that produce one second, one meter, one coulomb, one kelvin, or one kilogram, and the use of the CODATA relationship symbol ⋮.",
+        keywords: [
+          "exact matches",
+          "14-digit precision",
+          "constant combinations",
+          "Hz ⋮ J",
+          "one second",
+          "one meter",
+          "one coulomb",
+          "one kelvin",
+          "one kilogram",
+          "relationship notation"
+        ]
+      },
+      {
+        id: "chapter-04-half-precision-matches",
+        title: "Half-Precision Matches at Seven Digits",
+        summary:
+          "Shows that other constant combinations recover the coherent bases to roughly seven significant digits, revealing a lower-precision structural layer.",
+        aiSummary:
+          "Use this section for queries about half-precision matches, seven-digit precision, 2-part structure, full precision versus half precision, and the Penrose quote contrasting 10⁷ and 10¹⁴ precision.",
+        keywords: [
+          "half-precision matches",
+          "seven-digit precision",
+          "2-part structure",
+          "full precision",
+          "half precision",
+          "Roger Penrose",
+          "10^7",
+          "10^14"
+        ]
+      },
+      {
+        id: "chapter-04-single-dimension-reduction",
+        title: "Single-Dimension Reduction",
+        summary:
+          "Explains the method of reducing combinations of constants to outputs with only one dimension in order to isolate a coherent base or a Planck boundary.",
+        aiSummary:
+          "Use this section for queries about reducing complexity in multidimensional constant data, multiplying and dividing constants, single-dimension outputs, coherent bases, and Planck boundaries.",
+        keywords: [
+          "single dimension",
+          "dimensional reduction",
+          "multiply constants",
+          "divide constants",
+          "pattern finding",
+          "coherent base",
+          "Planck boundary"
+        ]
+      },
+      {
+        id: "chapter-04-planck-boundary-combinations",
+        title: "Combinations That Encode Planck Boundaries",
+        summary:
+          "Lists combinations of constants that encode Planck time, Planck length, Planck charge, Planck temperature, and Planck mass to roughly seven digits.",
+        aiSummary:
+          "Use this section for queries about Planck time, Planck length, Planck charge, Planck temperature, Planck mass, tₚ, lₚ, qₚ, Tₚ, mₚ, and the standard formulas involving ℏ, G, c, ε₀, Z₀, and k_B.",
+        keywords: [
+          "Planck time",
+          "Planck length",
+          "Planck charge",
+          "Planck temperature",
+          "Planck mass",
+          "tₚ",
+          "lₚ",
+          "qₚ",
+          "Tₚ",
+          "mₚ",
+          "ℏ",
+          "G",
+          "c",
+          "ε₀",
+          "Z₀",
+          "k_B"
+        ]
+      },
+      {
+        id: "chapter-04-planck-boundaries-as-natural-limits",
+        title: "Planck Boundaries as Natural Limits",
+        summary:
+          "Interprets the Planck constants as natural boundaries in the constructive logic of atoms: the minimum time, minimum length, strongest charge, hottest temperature, and largest coherent mass scale.",
+        aiSummary:
+          "Use this section for queries about Planck units as natural units, natural boundaries, bounded architecture, smallest time, shortest length, strongest charge, hottest temperature, largest mass, and the constructive logic of atoms.",
+        keywords: [
+          "natural units",
+          "Planck units",
+          "natural boundaries",
+          "bounded architecture",
+          "constructive logic",
+          "minimum time",
+          "minimum length",
+          "strongest charge",
+          "hottest temperature",
+          "largest mass"
+        ]
+      },
+      {
+        id: "chapter-04-boundary-ambiguity",
+        title: "Boundary Ambiguity as a Clue",
+        summary:
+          "Explains that Planck boundary values are derived from empirical constants and that different construction paths agree for about seven digits before diverging.",
+        aiSummary:
+          "Use this section for queries about the ambiguity in Planck constants, why Planck boundary values are only known to about seven significant digits, why different constant combinations diverge, and why this ambiguity is interpreted as a structural clue.",
+        keywords: [
+          "boundary ambiguity",
+          "seven significant digits",
+          "Planck constant values",
+          "derived constants",
+          "different combinations",
+          "precision limit",
+          "structural clue"
+        ]
+      },
+      {
+        id: "chapter-04-geometric-definition",
+        title: "The Need for Geometric Definitions",
+        summary:
+          "Concludes that to construct a world from Planck boundaries, those boundaries must be defined geometrically as structural features of a deeper space rather than merely as products of empirical constants.",
+        aiSummary:
+          "Use this section for queries about defining Planck boundaries geometrically, structural features of deeper space, exact partition logic, symmetries, boundaries, persistence, and the transition from empirical constants to geometric construction.",
+        keywords: [
+          "geometric definition",
+          "Planck boundaries",
+          "deeper space",
+          "partition logic",
+          "symmetries",
+          "persistence",
+          "constants from structure",
+          "geometric construction"
+        ]
+      }
+    ],
+
+    dependencies: [
+      "Chapter 2 introduces the 288 constants as the empirical vocabulary of Nature’s internal logic.",
+      "Chapter 3 introduces the Transform Dictionary and the two structural rules that organize the constants.",
+      "This chapter identifies the five coherent bases and five Planck boundaries that repeatedly appear inside the constant system.",
+      "Basic familiarity with SI units, CODATA constants, and Planck units is helpful."
+    ],
+
+    relatedChapters: [
+      "chapter-02",
+      "chapter-03",
+      "chapter-05",
+      "chapter-07",
+      "chapter-08",
+      "chapter-11",
+      "chapter-12"
+    ]
+  },
+  {
+    id: "chapter-05",
+    part: "Part II: Structural Rules of the Constants",
+    shortLabel: "Ch. 5",
+    title: "Discovering the Bipartite Logic of the Constants",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "Chapter 5 explains how the two-part logic of the constants was discovered. After years of comparing constants through dimensional analysis, ratios, powers, and logarithms, a persistent seven-digit agreement limit appeared when trying to construct constants from Planck boundaries. This precision threshold suggested that the constants are not single-layer constructions, but dual structures: a dominant external expression and a subtler internal contribution. The chapter identifies the internal inversion boundary ⊠ as having the correct magnitude to appear near the seventh digit and presents the binomial constructor as the proposed two-layer form of every constant of Nature.",
+
+    aiSummary:
+      "This chapter narrates the discovery of the bipartite logic behind the constants of Nature. It begins with a systematic search using WolframAlpha, comparing constants by dimensional analysis, ratios, powers, logarithms, and other numerical relationships. The key clue was that attempts to construct constants from Planck boundaries consistently agreed for about seven significant digits and then diverged, regardless of how the unknown Planck-boundary digits were varied. The chapter interprets this as evidence for a two-layer structure: a dominant external layer and a smaller internal layer that begins to appear at roughly half of the 14-digit precision limit. The chapter then identifies a specific dimensionless combination of Planck boundaries, the internal inversion boundary ⊠ = lₚmₚ/qₚ² × C²/(m kg), whose magnitude is close to the seventh-digit threshold. This motivates the binomial constructor C = A_ext B_ext (1 + A_int ⊠), where A_ext and A_int are dimensionless geometric actions, B_ext is drawn from 32 structural boundaries, and ⊠ is the internal inversion boundary. The chapter concludes that precise geometric definitions of the Planck boundaries are needed before the constructor can fully decode every constant into its external and internal geometric arrangements.",
+
+    aiSearchDescription:
+      "Retrieve this chapter for questions about the discovery of the bipartite logic of the constants, the seven-digit threshold, half-precision structure, scanning Planck boundary digits, WolframAlpha searches, comparing constants by ratios powers logarithms and dimensional analysis, why Planck constants diverge after seven digits, the internal inversion boundary ⊠, the magnitude of ⊠, external and internal layers, the binomial constructor, A_ext, B_ext, A_int, 32 structural boundaries, the five Planck boundaries, five base units, five derived units, ten mass constants, seven limits, and why geometric definitions of the Planck boundaries are required before the decoder can be completed.",
+
+    keywords: [
+      "bipartite logic",
+      "two-part logic",
+      "two-layer structure",
+      "constants of Nature",
+      "Planck boundaries",
+      "Planck constants",
+      "seven-digit threshold",
+      "seven significant digits",
+      "half precision",
+      "14-digit precision",
+      "constructive feature",
+      "structural transition",
+      "WolframAlpha",
+      "dimensional analysis",
+      "ratios",
+      "powers",
+      "logarithms",
+      "Planck length",
+      "Planck mass",
+      "Planck charge",
+      "lₚ",
+      "mₚ",
+      "qₚ",
+      "internal inversion boundary",
+      "⊠",
+      "external action",
+      "internal action",
+      "external arrangement",
+      "A_ext",
+      "B_ext",
+      "A_int",
+      "binomial constructor",
+      "dominant structure",
+      "subtle structure",
+      "Planck-bounded threads",
+      "structural boundaries",
+      "32 structural boundaries",
+      "five Planck boundaries",
+      "five base units",
+      "five derived units",
+      "10 mass constants",
+      "seven limits",
+      "geometric definitions",
+      "decoder",
+      "external and internal geometric arrangements"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Seven-digit threshold",
+        description:
+          "The repeated agreement limit encountered when constructing constants from Planck boundaries. The chapter treats this threshold as evidence that a second constructive layer begins to appear around the seventh significant digit."
+      },
+      {
+        term: "Bipartite logic",
+        description:
+          "The proposed two-part structure of every constant of Nature: a dominant external arrangement and a subtler internal contribution bound together in one expression."
+      },
+      {
+        term: "Half-precision point",
+        description:
+          "The midpoint of the available 14-digit measurement precision. The chapter interprets the appearance of a second layer around seven digits as structurally significant."
+      },
+      {
+        term: "Internal inversion boundary ⊠",
+        description:
+          "A dimensionless Planck-boundary combination formed from Planck length, Planck mass, and Planck charge squared, normalized by base units. Its magnitude is close to the seventh-digit deviation scale."
+      },
+      {
+        term: "External action A_ext",
+        description:
+          "A dimensionless geometric action applied to the external arrangement of boundaries in the binomial constructor."
+      },
+      {
+        term: "External arrangement B_ext",
+        description:
+          "The dimensional boundary arrangement selected from 32 structural boundaries. It carries all dimensional content of the constant being constructed."
+      },
+      {
+        term: "Internal action A_int",
+        description:
+          "A second dimensionless geometric action applied to the internal inversion boundary ⊠."
+      },
+      {
+        term: "32 structural boundaries",
+        description:
+          "The boundary vocabulary available to B_ext: five Planck boundaries, five base units, five derived units, ten mass constants, and seven constructive limits."
+      },
+      {
+        term: "Binomial constructor",
+        description:
+          "The proposed construction rule for every constant of Nature: C = A_ext B_ext (1 + A_int ⊠). It decomposes each constant into external and internal geometric layers."
+      },
+      {
+        term: "Decoder",
+        description:
+          "The chapter describes the binomial constructor as a potential decoder for pulling every constant apart into its external and internal geometric arrangements, provided exact geometric definitions of the Planck boundaries are found."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "Seventh-digit comparison",
+        latex: "1.0000000000000\\ldots\\times10^{-6}\\quad\\text{and}\\quad0.9999991999736\\ldots\\times10^{-6}",
+        plainLanguage:
+          "The seventh-digit scale is compared with the magnitude of the internal inversion boundary.",
+        role:
+          "Shows why the inversion boundary was identified as the hidden second-layer contribution."
+      },
+      {
+        label: "Internal inversion boundary",
+        latex: "\\boxtimes = \\frac{l_p m_p}{q_p^2}\\times\\frac{\\mathrm{C}^2}{\\mathrm{m}\\,\\mathrm{kg}}",
+        plainLanguage:
+          "The inversion boundary combines Planck length, Planck mass, and Planck charge squared, then normalizes them with coulomb squared over meter-kilogram.",
+        role:
+          "Defines the dimensionless internal boundary responsible for the smaller contribution in the bipartite construction."
+      },
+      {
+        label: "Binomial constructor",
+        latex: "\\mathcal{C}=A_{\\mathrm{ext}}B_{\\mathrm{ext}}\\left(1+A_{\\mathrm{int}}\\boxtimes\\right)",
+        plainLanguage:
+          "Every constant is represented as an external arrangement multiplied by a binomial internal correction.",
+        role:
+          "States the core construction rule introduced in Chapter 5."
+      },
+      {
+        label: "External and internal actions are dimensionless",
+        latex: "A_{\\mathrm{ext}}\\in\\mathbb{R},\\quad A_{\\mathrm{int}}\\in\\mathbb{R},\\quad \\boxtimes\\in\\mathbb{R}",
+        plainLanguage:
+          "The external action, internal action, and inversion boundary are treated as dimensionless quantities.",
+        role:
+          "Clarifies that dimensional content is carried by B_ext while the actions and inversion boundary are dimensionless."
+      },
+      {
+        label: "External boundary membership",
+        latex: "B_{\\mathrm{ext}}\\in\\{t_p,l_p,q_p,T_p,m_p,\\mathrm{s},\\mathrm{m},\\mathrm{C},\\mathrm{K},\\mathrm{kg},\\mathrm{MHz},\\mathrm{fm},\\mathrm{eV},\\mathrm{MeV},\\mathrm{GeV},m_e,m_+,m_n,m_\\mu,m_\\tau,A_{\\mathrm{mass}},m_{de},m_{he},m_{tri},m_\\alpha,T_0,p_0,p_1,E_1,f_1,\\nu_{\\mathrm{peak}},\\lambda_{\\mathrm{peak}}\\}",
+        plainLanguage:
+          "The external arrangement is selected from the full set of 32 structural boundaries.",
+        role:
+          "Records the boundary vocabulary that carries dimensional content in the binomial constructor."
+      }
+    ],
+
+    sections: [
+      {
+        id: "chapter-05-search-for-pattern",
+        title: "The Search for What the Constants Say to Each Other",
+        summary:
+          "Describes the long systematic search through dimensional analysis, ratios, powers, and logarithms to find relationships among the constants of Nature.",
+        aiSummary:
+          "Use this section for queries about the discovery process, WolframAlpha searches, comparing constants, dimensional analysis, ratios, powers, logarithms, and the search for reasons beneath numerical patterns.",
+        keywords: [
+          "discovery process",
+          "WolframAlpha",
+          "dimensional analysis",
+          "ratios",
+          "powers",
+          "logarithms",
+          "patterns",
+          "constants of Nature"
+        ]
+      },
+      {
+        id: "chapter-05-seven-digit-agreement-limit",
+        title: "The Seven-Digit Agreement Limit",
+        summary:
+          "Explains that attempts to construct constants from Planck boundaries consistently agree to about seven digits and then diverge, regardless of how the unknown Planck-boundary digits are varied.",
+        aiSummary:
+          "Use this section for queries about the seven-digit threshold, Planck boundary uncertainty, scanning unknown Planck digits, agreement limits, divergence after seven digits, and the constructive feature that cannot be normalized away.",
+        keywords: [
+          "seven-digit threshold",
+          "agreement limit",
+          "Planck boundary uncertainty",
+          "unknown digits",
+          "divergence",
+          "constructive feature",
+          "half precision"
+        ]
+      },
+      {
+        id: "chapter-05-second-layer",
+        title: "The Second Layer Appears",
+        summary:
+          "Interprets the seven-digit threshold as evidence that constants are built from two coherently bound parts: a dominant expression and a smaller Planck-constructed contribution.",
+        aiSummary:
+          "Use this section for queries about the second layer, dominant structure, subtle structure, Planck-constructed contribution, two coherently bound parts, and the constants speaking in pairs.",
+        keywords: [
+          "second layer",
+          "dominant expression",
+          "subtle contribution",
+          "two parts",
+          "Planck-constructed contribution",
+          "constants speaking in pairs"
+        ]
+      },
+      {
+        id: "chapter-05-inversion-boundary",
+        title: "The Internal Inversion Boundary ⊠",
+        summary:
+          "Identifies the dimensionless combination lₚmₚ/qₚ² normalized by C²/(m kg) as the internal inversion boundary whose magnitude matches the seventh-digit deviation scale.",
+        aiSummary:
+          "Use this section for queries about the internal inversion boundary, ⊠, lₚmₚ/qₚ², base normalization, C²/(m kg), seventh-digit magnitude, and why ⊠ was identified as the hidden second contribution.",
+        keywords: [
+          "internal inversion boundary",
+          "⊠",
+          "lₚmₚ/qₚ²",
+          "C²/(m kg)",
+          "dimensionless",
+          "seventh digit",
+          "deviation term"
+        ]
+      },
+      {
+        id: "chapter-05-binomial-constructor",
+        title: "The Binomial Constructor",
+        summary:
+          "Presents the central formula C = A_ext B_ext (1 + A_int ⊠), defining every constant as a two-layer structure composed of external and internal geometric actions.",
+        aiSummary:
+          "Use this section for queries about the binomial constructor, C = A_ext B_ext (1 + A_int ⊠), external action, internal action, external arrangement, internal inversion boundary, and the two-part logic of constants.",
+        keywords: [
+          "binomial constructor",
+          "C = A_ext B_ext (1 + A_int ⊠)",
+          "external action",
+          "internal action",
+          "external arrangement",
+          "two-layer structure"
+        ]
+      },
+      {
+        id: "chapter-05-structural-boundaries",
+        title: "The 32 Structural Boundaries",
+        summary:
+          "Defines B_ext as an arrangement drawn from 32 structural boundaries: five Planck boundaries, five base units, five derived units, ten mass constants, and seven limits.",
+        aiSummary:
+          "Use this section for queries about the 32 structural boundaries, B_ext, five Planck boundaries, five base units, five derived units, ten mass constants, seven limits, and dimensional content of constants.",
+        keywords: [
+          "32 structural boundaries",
+          "B_ext",
+          "five Planck boundaries",
+          "five base units",
+          "five derived units",
+          "ten mass constants",
+          "seven limits",
+          "dimensional content"
+        ]
+      },
+      {
+        id: "chapter-05-decoder-awaits-planck-boundaries",
+        title: "The Decoder Awaits Exact Planck Boundaries",
+        summary:
+          "Concludes that the binomial constructor could decode every constant into external and internal geometric arrangements, but only after the Planck boundaries are defined precisely and geometrically.",
+        aiSummary:
+          "Use this section for queries about why exact geometric definitions of the Planck boundaries are needed, why the binomial constructor is a decoder, and why the power of the decoder must wait until the Planck boundaries are known precisely.",
+        keywords: [
+          "decoder",
+          "geometric definitions",
+          "exact Planck boundaries",
+          "external arrangement",
+          "internal arrangement",
+          "power of decoder",
+          "Planck boundary precision"
+        ]
+      }
+    ],
+
+    dependencies: [
+      "Chapter 4 establishes the seven-digit and fourteen-digit precision split in the constants.",
+      "Chapter 4 introduces the five coherent bases and five Planck boundaries.",
+      "Chapter 5 explains how the seven-digit split led to the internal inversion boundary and binomial constructor.",
+      "The chapter depends on the distinction between external dimensional arrangements and internal dimensionless actions."
+    ],
+
+    relatedChapters: [
+      "chapter-03",
+      "chapter-04",
+      "chapter-06",
+      "chapter-07",
+      "chapter-08",
+      "chapter-12"
+    ]
+  },
+  {
+    id: "chapter-06",
+    part: "Part II: Structural Rules of the Constants",
+    shortLabel: "Ch. 6",
+    title: "The Partition Equation Emerges",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "Chapter 6 explains how the hyperbolic partition equation emerged from the search for the meaning of the fine-structure constant. Beginning with Feynman’s and Pauli’s remarks about the mystery of α, the chapter compares earlier numerical attempts such as Wyler’s constant with Hans de Vries’s more accurate expression for √α. Although de Vries’s expression is still outside the measured error bars, its correction term δ appears on the scale of the normalized Planck mass. This suggests a hyperbolic mass-gap structure and leads to the hyperbolic partition equation. The chapter then analyzes its four roots, showing that ж₁² approximates α and that the roots form a constrained algebraic-geometric system with product 2π, sum 0, and quadrance −4π.",
+
+    aiSummary:
+      "This chapter derives the hyperbolic partition equation from the fine-structure constant problem. It begins with Feynman’s observation that the electron-photon coupling amplitude √α is one of the deepest unexplained numbers in physics and Pauli’s famous concern with the meaning of α. The chapter reviews failed or partial attempts to approximate α, including Wyler’s constant, then focuses on Hans de Vries’s expression involving e and π, which approximates √α more accurately but remains outside the CODATA error bars. By subtracting a correction δ from the de Vries expression and inserting the measured α, the missing term is found to be approximately 1.65 × 10⁻⁸, the same scale as the normalized Planck mass. This motivates interpreting the correction as a Planck-mass gap in a hyperbolic geometry. The resulting hyperbolic partition equation is presented as the rule governing how Planck boundaries internally partition while obeying the binomial constructor. The equation has four roots, ж₁, ж₂, ж₃, and ж₄. The first root squared approximates the fine-structure constant, while the full root system satisfies product 2π, sum 0, and quadrance −4π. The chapter concludes by identifying the admissible real partition actions: 2-part and 3-part products, sums, quadrances, and polar data from the complex conjugate root pair.",
+
+    aiSearchDescription:
+      "Retrieve this chapter for questions about the fine-structure constant, Feynman’s 0.08542455 coupling number, Pauli and α, Wyler’s constant, Hans de Vries’s approximation, the de Vries expression for square root alpha, the correction δ, the normalized Planck mass correction, the Planck mass gap, hyperbolic mass gap, one-sheeted and two-sheeted hyperboloids, the hyperbolic partition equation, roots ж₁ ж₂ ж₃ ж₄, ж₁ squared approximating α, product 2π, sum 0, quadrance −4π, real scalar partition actions, 2-part and 3-part products sums quadrances, complex conjugate roots, polar radius and angle, and the transition from the partition equation to root invariants.",
+
+    keywords: [
+      "fine-structure constant",
+      "α",
+      "sqrt alpha",
+      "√α",
+      "0.08542455",
+      "Feynman",
+      "Pauli",
+      "electron photon coupling",
+      "Wyler constant",
+      "Hans de Vries",
+      "de Vries number",
+      "de Vries expression",
+      "e",
+      "π",
+      "CODATA 2014",
+      "sigma",
+      "standard deviation",
+      "correction term",
+      "δ",
+      "Planck mass",
+      "normalized Planck mass",
+      "mₚ/kg",
+      "Planck mass gap",
+      "hyperbolic mass gap",
+      "mass gap",
+      "one-sheeted hyperboloid",
+      "two-sheeted hyperboloid",
+      "double cone",
+      "hyperbolic partition equation",
+      "partition equation",
+      "binomial constructor",
+      "Planck boundaries",
+      "principal branch",
+      "complex logarithm",
+      "i^i",
+      "roots",
+      "ж₁",
+      "ж₂",
+      "ж₃",
+      "ж₄",
+      "root system",
+      "quadrance",
+      "product 2π",
+      "sum zero",
+      "quadrance -4π",
+      "real scalar actions",
+      "2-part products",
+      "3-part products",
+      "2-part sums",
+      "3-part sums",
+      "2-part quadrances",
+      "3-part quadrances",
+      "complex conjugates",
+      "polar data",
+      "partition actions",
+      "root invariants"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Fine-structure constant α",
+        description:
+          "The dimensionless electromagnetic coupling constant that motivates the chapter. The chapter focuses especially on √α, the coupling amplitude highlighted by Feynman."
+      },
+      {
+        term: "Hans de Vries expression",
+        description:
+          "An expression involving only e and π that approximates √α more accurately than earlier simple formulas, but still fails to match the measured value within error bars."
+      },
+      {
+        term: "Correction term δ",
+        description:
+          "The small term subtracted from the de Vries expression to make it match the measured value of α. Its scale is close to the normalized Planck mass."
+      },
+      {
+        term: "Normalized Planck mass",
+        description:
+          "The Planck mass divided by the kilogram. Its exponent of −8 makes it the only Planck boundary on the scale of the missing de Vries correction."
+      },
+      {
+        term: "Hyperbolic mass gap",
+        description:
+          "The geometric gap associated with the two-sheeted hyperboloid inside the double cone. The chapter uses this as the geometric clue behind the Planck-mass correction."
+      },
+      {
+        term: "Hyperbolic partition equation",
+        description:
+          "The governing partition rule produced by centering the de Vries form on √α and setting the correction gap to the normalized Planck mass."
+      },
+      {
+        term: "Partition roots",
+        description:
+          "The four roots ж₁, ж₂, ж₃, and ж₄ of the partition equation. They encode the algebraic-geometric subdivision of the hyperbolic structure."
+      },
+      {
+        term: "ж₁² as α",
+        description:
+          "The first root squared approximates the measured fine-structure constant to 3.32σ, making α one quadrance component of a larger root system."
+      },
+      {
+        term: "Root-system invariants",
+        description:
+          "The partition roots obey simple relations: product 2π, sum 0, and quadrance −4π."
+      },
+      {
+        term: "Real scalar partition actions",
+        description:
+          "The admissible root combinations that can function as simple real transforms: symmetric products, sums, quadrances, and polar data associated with the conjugate pair."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "Wyler constant",
+        latex: "W_{\\mathrm{Wy}}=\\frac{9}{8\\pi^4}\\left(\\frac{\\pi^5}{2^4\\cdot5!}\\right)^{1/4}",
+        plainLanguage:
+          "Wyler's constant is an earlier simple expression that approximates the fine-structure constant to about five digits.",
+        role:
+          "Establishes a comparison point for earlier numerical attempts to understand α."
+      },
+      {
+        label: "de Vries expression",
+        latex: "\\frac{1}{\\sqrt{\\beta}}+\\sqrt{\\beta}+\\frac{\\sqrt{\\beta}^{\,3}}{2\\pi}=e^{\\pi^2/4}",
+        plainLanguage:
+          "Hans de Vries's expression approximates the square root of the fine-structure constant using only e and π.",
+        role:
+          "Introduces the geometric form that leads to the partition equation."
+      },
+      {
+        label: "Corrected de Vries expression",
+        latex: "\\frac{1}{\\sqrt{\\alpha}}+\\sqrt{\\alpha}+\\frac{\\sqrt{\\alpha}^{\,3}}{2\\pi}=e^{\\pi^2/4}-\\delta",
+        plainLanguage:
+          "The measured fine-structure constant is inserted into the de Vries form, and the required correction δ is solved for.",
+        role:
+          "Identifies the missing term whose scale points toward the normalized Planck mass."
+      },
+      {
+        label: "Correction scale",
+        latex: "\\delta=1.65(13)\\times10^{-8}",
+        plainLanguage:
+          "The correction term is on the order of 10⁻⁸.",
+        role:
+          "Connects the de Vries correction to the Planck mass scale."
+      },
+      {
+        label: "Normalized Planck mass",
+        latex: "\\frac{m_p}{\\mathrm{kg}}=2.17647(24)\\times10^{-8}",
+        plainLanguage:
+          "The Planck mass divided by the kilogram has the same order of magnitude as the correction term.",
+        role:
+          "Motivates the Planck-mass-gap interpretation."
+      },
+      {
+        label: "Hyperbolic partition equation",
+        latex: "\\frac{1}{x}+x+\\frac{x^3}{2\\pi}=\\left(i^i\\right)^{-4\\pi/8}-\\frac{m_p}{\\mathrm{kg}}",
+        plainLanguage:
+          "The partition equation balances reciprocal, linear, and cubic terms against a complex phase term and the normalized Planck mass.",
+        role:
+          "Defines the governing partition rule behind the dual-layer structure of the constants."
+      },
+      {
+        label: "Partition roots",
+        latex: "\\text{ж}_1=0.0854245431533304\\ldots,\\quad\\text{ж}_2=3.66756753485501\\ldots,\\quad\\text{ж}_3=-1.87649603900417\\ldots+4.06615262615972\\ldots i,\\quad\\text{ж}_4=-1.87649603900417\\ldots-4.06615262615972\\ldots i",
+        plainLanguage:
+          "The hyperbolic partition equation has two real roots and one complex-conjugate pair.",
+        role:
+          "Names the four roots used in the partition-action system."
+      },
+      {
+        label: "Fine-structure approximation",
+        latex: "\\text{ж}_1^2\\approx\\alpha",
+        plainLanguage:
+          "The square of the first partition root approximates the measured fine-structure constant.",
+        role:
+          "Places α inside the partition root system."
+      },
+      {
+        label: "Root product",
+        latex: "\\text{ж}_1\\text{ж}_2\\text{ж}_3\\text{ж}_4=2\\pi",
+        plainLanguage:
+          "The product of all four roots equals 2π.",
+        role:
+          "One of the simple invariants of the partition root system."
+      },
+      {
+        label: "Root sum",
+        latex: "\\text{ж}_1+\\text{ж}_2+\\text{ж}_3+\\text{ж}_4=0",
+        plainLanguage:
+          "The sum of all four roots equals zero.",
+        role:
+          "Shows the root system is balanced."
+      },
+      {
+        label: "Root quadrance",
+        latex: "\\text{ж}_1^2+\\text{ж}_2^2+\\text{ж}_3^2+\\text{ж}_4^2=-4\\pi",
+        plainLanguage:
+          "The sum of the squared roots equals −4π.",
+        role:
+          "Identifies the quadrance invariant of the partition root system."
+      }
+    ],
+
+    sections: [
+      {
+        id: "chapter-06-feynman-pauli-alpha",
+        title: "Feynman, Pauli, and the Fine-Structure Mystery",
+        summary:
+          "Opens with Feynman and Pauli on the unexplained status of the fine-structure constant and frames α as the simplest keyhole into the rules of reality.",
+        aiSummary:
+          "Use this section for queries about Feynman's 0.08542455 coupling amplitude, Pauli's question about α, the fine-structure constant as a dimensionless mystery, and why α motivates the partition equation search.",
+        keywords: [
+          "Feynman",
+          "Pauli",
+          "fine-structure constant",
+          "α",
+          "0.08542455",
+          "dimensionless constant",
+          "electromagnetic coupling"
+        ]
+      },
+      {
+        id: "chapter-06-wyler-devries",
+        title: "From Wyler to de Vries",
+        summary:
+          "Compares Wyler’s five-digit approximation with Hans de Vries’s more accurate expression involving only e and π.",
+        aiSummary:
+          "Use this section for queries about Wyler's constant, Hans de Vries, de Vries's blog post, Phillip Preetz, expressions involving e and π, and approximations to the fine-structure constant.",
+        keywords: [
+          "Wyler constant",
+          "Hans de Vries",
+          "Phillip Preetz",
+          "e",
+          "π",
+          "√α",
+          "CODATA 2014",
+          "approximation"
+        ]
+      },
+      {
+        id: "chapter-06-correction-delta",
+        title: "The Correction Term δ",
+        summary:
+          "Introduces the correction δ needed to make the de Vries expression match measured α and identifies its magnitude as approximately 1.65 × 10⁻⁸.",
+        aiSummary:
+          "Use this section for queries about correcting de Vries's equation, δ, measured α, error bars, sigma, 5σ discovery threshold, and why the correction term matters.",
+        keywords: [
+          "correction term",
+          "δ",
+          "sigma",
+          "error bars",
+          "5σ",
+          "measured alpha",
+          "de Vries correction"
+        ]
+      },
+      {
+        id: "chapter-06-planck-mass-gap",
+        title: "The Planck-Mass Scale and Hyperbolic Mass Gap",
+        summary:
+          "Recognizes that δ lies on the scale of the normalized Planck mass and interprets that correction as evidence of a hyperbolic mass-gap structure.",
+        aiSummary:
+          "Use this section for queries about the normalized Planck mass, mₚ/kg, exponent −8, hyperbolic mass gap, one-sheeted hyperboloid, two-sheeted hyperboloid, double cone, and the geometric meaning of the Planck-mass correction.",
+        keywords: [
+          "normalized Planck mass",
+          "mₚ/kg",
+          "10^-8",
+          "mass gap",
+          "hyperbolic geometry",
+          "one-sheeted hyperboloid",
+          "two-sheeted hyperboloid",
+          "double cone"
+        ]
+      },
+      {
+        id: "chapter-06-hyperbolic-partition-equation",
+        title: "The Hyperbolic Partition Equation",
+        summary:
+          "Defines the partition equation by centering the de Vries expression on √α and setting the correction gap to the normalized Planck mass.",
+        aiSummary:
+          "Use this section for queries about the hyperbolic partition equation, reciprocal and cubic terms, i^i, principal branch, normalized Planck mass, partition rule, and how the equation subdivides the binomial constructor.",
+        keywords: [
+          "hyperbolic partition equation",
+          "partition rule",
+          "√α",
+          "i^i",
+          "principal branch",
+          "normalized Planck mass",
+          "binomial constructor"
+        ]
+      },
+      {
+        id: "chapter-06-root-system",
+        title: "The Four Partition Roots",
+        summary:
+          "Lists the four roots of the partition equation and shows that the first root squared approximates the fine-structure constant.",
+        aiSummary:
+          "Use this section for queries about the roots ж₁, ж₂, ж₃, ж₄, two real roots, complex conjugate roots, ж₁², α, and the 3.32σ match to the measured fine-structure constant.",
+        keywords: [
+          "partition roots",
+          "ж₁",
+          "ж₂",
+          "ж₃",
+          "ж₄",
+          "complex conjugates",
+          "ж₁²",
+          "α",
+          "3.32σ"
+        ]
+      },
+      {
+        id: "chapter-06-root-invariants",
+        title: "Product, Sum, and Quadrance",
+        summary:
+          "Shows that the four roots obey three simple invariants: product 2π, sum 0, and quadrance −4π.",
+        aiSummary:
+          "Use this section for queries about root invariants, product 2π, sum zero, quadrance −4π, and the algebraic-geometric structure of the partition roots.",
+        keywords: [
+          "product 2π",
+          "sum zero",
+          "quadrance -4π",
+          "root invariants",
+          "algebraic-geometric structure"
+        ]
+      },
+      {
+        id: "chapter-06-real-partition-actions",
+        title: "Real Scalar Partition Actions",
+        summary:
+          "Identifies which partial combinations of the roots can function as real scalar actions: admissible products, sums, quadrances, and polar data associated with the conjugate pair.",
+        aiSummary:
+          "Use this section for queries about real scalar actions, 2-part products, 3-part products, 2-part sums, 3-part sums, 2-part quadrances, 3-part quadrances, complex outputs, conjugate symmetry, polar radius, polar angle, and the eight partition groups.",
+        keywords: [
+          "real scalar actions",
+          "2-part products",
+          "3-part products",
+          "sums",
+          "quadrances",
+          "polar data",
+          "conjugate pair",
+          "eight partition groups",
+          "simple linear transforms"
+        ]
+      }
+    ],
+
+    dependencies: [
+      "Chapter 5 introduces the binomial constructor and the need for a partition rule.",
+      "Chapter 6 derives the hyperbolic partition equation from the fine-structure constant and normalized Planck mass correction.",
+      "The chapter depends on the role of √α, the Planck mass boundary, complex roots, and real scalar transform admissibility.",
+      "This chapter prepares Chapter 7 by identifying the root invariants and real partition-action families."
+    ],
+
+    relatedChapters: [
+      "chapter-03",
+      "chapter-04",
+      "chapter-05",
+      "chapter-07",
+      "chapter-08",
+      "chapter-11",
+      "chapter-12"
+    ]
+  },
+  {
+    id: "chapter-07",
+    part: "Part II: Structural Rules of the Constants",
+    shortLabel: "Ch. 7",
+    title: "Invariants of the Hyperbolic Partition Equation",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "Chapter 7 studies what remains invariant inside the hyperbolic partition equation. Beginning with the zero-parameter core, the chapter reduces the even quartic P(x) to a quadratic Q(t), then analyzes its Möbius fixed-point maps, continued fractions, Vieta relations, resolvent cubic, projective invariants, and quartic root structure. It then restores the nonzero partition parameter a to produce the full gapped quartic T(x). The chapter shows that the roots obey simple product, sum, reciprocal, quadrance, power-sum, cross-ratio, and projective identities. These invariants function as algebraic conservation laws for the partition system and prepare the later test of whether the same partition logic governs all 288 constants of Nature.",
+
+    aiSummary:
+      "This chapter catalogs the invariant algebraic structure of the hyperbolic partition equation. It opens with Weyl's principle that what is invariant under transformation is what is real, then examines the zero-parameter core A(x) = 1/x + x + x^3/(2π) = 0. Multiplying through gives an even quartic P(x) = x^4 + 2πx^2 + 2π, which reduces under t = x^2 to the quadratic Q(t) = t^2 + 2πt + 2π. The chapter uses Euler's fixed-point Möbius maps to express the quadratic roots dynamically as continued fractions, then uses Vieta relations to identify the static invariants of Q(t), P(x), and the resolvent cubic R(y). It then studies the full gapped partition equation F(x) = 1/x + x + x^3/(2π) = a, giving the depressed quartic T(x) = x^4 + 2πx^2 − 2πax + 2π. For the physical value of a, the roots are ж₁, ж₂, ж₃, and ж₄, with ж₁² corresponding to the fine-structure constant and ж₃, ж₄ forming a complex-conjugate pair. The chapter records Vieta relations, reciprocal identities, Newton power sums, cross-ratio symmetry, projective invariants, and norm-preserving quadratic composition identities, including the Brahmagupta-Fibonacci identity and its extension through complex numbers, quaternions, and octonions. The chapter concludes that the partition equation is not merely a numerical approximation to α; it is a structured algebraic-geometric object with invariants suitable for testing against the full set of constants.",
+
+    aiSearchDescription:
+      "Retrieve this chapter for questions about invariants of the hyperbolic partition equation, Weyl invariance, zero-parameter core equation, A(x), P(x), Q(t), even quartic, quadratic reduction t = x^2, Euler fixed-point Möbius maps, continued fractions, Vieta relations, resolvent cubic R(y), quartic invariants, projective invariants I and J, discriminants, j-invariant, cross ratio, full partition equation, gapped quartic T(x), partition parameter a, roots ж₁ ж₂ ж₃ ж₄, fine-structure constant as ж₁², Brahmagupta-Fibonacci identity, norm-preserving quadratic composition, complex numbers quaternions octonions, reciprocal identities, Newton power sums, and algebraic conservation laws of the partition system.",
+
+    keywords: [
+      "invariants",
+      "hyperbolic partition equation",
+      "Weyl",
+      "what is invariant under transformation",
+      "zero-parameter core",
+      "A(x)",
+      "P(x)",
+      "Q(t)",
+      "T(x)",
+      "even quartic",
+      "quadratic reduction",
+      "t = x^2",
+      "Euler fixed-point maps",
+      "Möbius maps",
+      "linear fractional transformation",
+      "continued fractions",
+      "Vieta relations",
+      "quartic roots",
+      "quadratic roots",
+      "resolvent cubic",
+      "R(y)",
+      "projective invariants",
+      "binary quartic invariants",
+      "I invariant",
+      "J invariant",
+      "discriminant",
+      "j-invariant",
+      "cross ratio",
+      "Newton power sums",
+      "reciprocal identities",
+      "root invariants",
+      "ж₁",
+      "ж₂",
+      "ж₃",
+      "ж₄",
+      "partition parameter",
+      "a",
+      "fine-structure constant",
+      "α",
+      "ж₁²",
+      "Brahmagupta-Fibonacci identity",
+      "norm-preserving symmetry",
+      "quadratic composition",
+      "complex numbers",
+      "quaternions",
+      "octonions",
+      "rank-one perturbation",
+      "algebraic conservation laws",
+      "partition system",
+      "Planck boundaries",
+      "288 constants"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Invariant",
+        description:
+          "A quantity or relation that remains fixed under transformation. The chapter treats invariants as the algebraic signs of what is structurally real in the partition system."
+      },
+      {
+        term: "Zero-parameter core",
+        description:
+          "The stripped-down form of the partition equation before the Planck-mass gap parameter is introduced."
+      },
+      {
+        term: "Even quartic P(x)",
+        description:
+          "The quartic P(x) = x⁴ + 2πx² + 2π obtained from the zero-parameter core. Because it contains only even powers, it reduces to a quadratic under t = x²."
+      },
+      {
+        term: "Quadratic Q(t)",
+        description:
+          "The reduced quadratic Q(t) = t² + 2πt + 2π governing the squared-root structure of the zero-parameter quartic."
+      },
+      {
+        term: "Euler fixed-point Möbius maps",
+        description:
+          "Two linear-fractional transformations whose fixed points are the roots of Q(t). Their iterations unfold as continued fractions."
+      },
+      {
+        term: "Vieta relations",
+        description:
+          "Symmetric root relations that encode the coefficients of a polynomial as sums and products of its roots."
+      },
+      {
+        term: "Resolvent cubic R(y)",
+        description:
+          "A cubic whose roots encode the three pairings of the four quartic roots, linking the quadratic reduction to the full quartic structure."
+      },
+      {
+        term: "Projective invariants",
+        description:
+          "Invariants such as I, J, discriminants, j-invariant, and cross ratio that describe how the quartic persists under projective transformation."
+      },
+      {
+        term: "Full gapped quartic T(x)",
+        description:
+          "The nonzero partition equation T(x) = x⁴ + 2πx² − 2πax + 2π, obtained by introducing the finite partition parameter a."
+      },
+      {
+        term: "Rank-one perturbation",
+        description:
+          "The chapter notes that the parameter a enters in a constrained way while certain relations such as product and pairwise-product sum remain independent of a."
+      },
+      {
+        term: "Norm-preserving quadratic composition",
+        description:
+          "The structure expressed by the Brahmagupta-Fibonacci identity and generalized through complex numbers, quaternions, and octonions."
+      },
+      {
+        term: "Algebraic conservation laws",
+        description:
+          "The chapter interprets the invariant relations of the partition roots as conservation-like laws within the algebraic-geometric partition system."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "Zero-parameter core",
+        latex: "A(x)=\\frac{1}{x}+x+\\frac{x^3}{2\\pi}=0",
+        plainLanguage:
+          "The partition equation is stripped of the Planck-mass offset so its internal symmetry can be examined directly.",
+        role:
+          "Defines the symmetric core of the partition rule."
+      },
+      {
+        label: "Even quartic core",
+        latex: "P(x)=x^4+2\\pi x^2+2\\pi=0",
+        plainLanguage:
+          "Multiplying the zero-parameter core by 2πx gives an even quartic.",
+        role:
+          "Provides the quartic structure whose invariants are studied first."
+      },
+      {
+        label: "Quadratic reduction",
+        latex: "Q(t)=t^2+2\\pi t+2\\pi=0,\\qquad t=x^2",
+        plainLanguage:
+          "Because P(x) contains only even powers, substituting t = x² reduces the quartic to a quadratic.",
+        role:
+          "Connects the quartic root structure to quadratic fixed-point dynamics."
+      },
+      {
+        label: "Euler Möbius maps",
+        latex: "F(t)=-\\frac{2\\pi}{2\\pi+t},\\qquad G(t)=-2\\pi-\\frac{2\\pi}{t}",
+        plainLanguage:
+          "The roots of Q(t) are fixed points of two inverse Möbius transformations.",
+        role:
+          "Introduces the continued-fraction and dynamical fixed-point structure of Q(t)."
+      },
+      {
+        label: "Q(t) roots",
+        latex: "t_1=-\\pi+\\sqrt{\\pi(\\pi-2)},\\qquad t_2=-\\pi-\\sqrt{\\pi(\\pi-2)}",
+        plainLanguage:
+          "The reduced quadratic has two roots expressed directly in terms of π.",
+        role:
+          "Defines the quadratic roots used to construct the quartic roots."
+      },
+      {
+        label: "Q(t) Vieta relations",
+        latex: "t_1+t_2=-2\\pi,\\qquad t_1t_2=2\\pi,\\qquad t_1^2+t_2^2=4\\pi(\\pi-1)",
+        plainLanguage:
+          "The roots of Q(t) have simple sum, product, and quadrance relations.",
+        role:
+          "Records the first invariant layer of the partition structure."
+      },
+      {
+        label: "Resolvent cubic",
+        latex: "R(y)=y^3-2\\pi y^2-8\\pi y+16\\pi^2=(y-2\\pi)(y^2-8\\pi)",
+        plainLanguage:
+          "The resolvent cubic encodes the three possible pairings of the quartic roots.",
+        role:
+          "Links the quadratic reduction to the pairwise structure of the quartic."
+      },
+      {
+        label: "Zero-core quartic Vieta relations",
+        latex: "\\sum_{i=1}^{4}x_i=0,\\quad\\prod_{i=1}^{4}x_i=2\\pi,\\quad\\sum_{i<j}x_ix_j=2\\pi,\\quad\\sum_{i<j<k}x_ix_jx_k=0,\\quad\\sum_{i=1}^{4}x_i^2=-4\\pi",
+        plainLanguage:
+          "The roots of the zero-core quartic satisfy simple symmetric relations involving 0, 2π, and −4π.",
+        role:
+          "Captures the invariant structure of P(x)."
+      },
+      {
+        label: "Zero-core Newton power sums",
+        latex: "S_{k+4}+2\\pi S_{k+2}+2\\pi S_k=0,\\qquad S_k=\\sum_{i=1}^{4}x_i^k",
+        plainLanguage:
+          "Power sums of the roots obey a recurrence relation determined by the quartic.",
+        role:
+          "Describes how higher powers of the roots are constrained."
+      },
+      {
+        label: "Full partition equation",
+        latex: "F(x)=\\frac{1}{x}+x+\\frac{x^3}{2\\pi}=a",
+        plainLanguage:
+          "The full equation introduces a nonzero partition parameter a.",
+        role:
+          "Moves from the symmetric core to the gapped physical form."
+      },
+      {
+        label: "Full gapped quartic",
+        latex: "T(x)=x^4+2\\pi x^2-2\\pi ax+2\\pi=0",
+        plainLanguage:
+          "Multiplying through gives the depressed quartic for the full partition system.",
+        role:
+          "Defines the quartic whose roots are used in the physical partition logic."
+      },
+      {
+        label: "Brahmagupta-Fibonacci identity",
+        latex: "(A^2+B^2)(C^2+D^2)=(AC-BD)^2+(AD+BC)^2",
+        plainLanguage:
+          "The product of two sums of squares is itself a sum of squares.",
+        role:
+          "Connects the conjugate-pair root structure to norm-preserving quadratic composition."
+      },
+      {
+        label: "Norm-preserving composition",
+        latex: "N(xy)=N(x)N(y)",
+        plainLanguage:
+          "The norm of a product equals the product of the norms.",
+        role:
+          "Frames the algebraic chain ℝ → ℂ → ℍ → 𝕆 as norm-preserving composition."
+      },
+      {
+        label: "T(x) Vieta relations",
+        latex: "\\sum_i \\text{ж}_i=0,\\quad\\prod_i \\text{ж}_i=2\\pi,\\quad\\sum_{i<j}\\text{ж}_i\\text{ж}_j=2\\pi,\\quad\\sum_{i<j<k}\\text{ж}_i\\text{ж}_j\\text{ж}_k=2\\pi a,\\quad\\sum_i\\text{ж}_i^2=-4\\pi",
+        plainLanguage:
+          "The full partition roots obey simple sum, product, pairwise, triple-product, and quadrance relations.",
+        role:
+          "Records the main Vieta invariants of the full gapped system."
+      },
+      {
+        label: "T(x) reciprocal identities",
+        latex: "\\sum_i\\frac{1}{\\text{ж}_i}=a,\\qquad\\sum_{i<j}\\frac{1}{\\text{ж}_i\\text{ж}_j}=1,\\qquad\\sum_{i<j<k}\\frac{1}{\\text{ж}_i\\text{ж}_j\\text{ж}_k}=0",
+        plainLanguage:
+          "The reciprocals of the roots obey simple invariant identities.",
+        role:
+          "Shows the closed inversion structure of the partition roots."
+      },
+      {
+        label: "T(x) Newton power sums",
+        latex: "S_k+2\\pi S_{k-2}-2\\pi aS_{k-3}+2\\pi S_{k-4}=0",
+        plainLanguage:
+          "Power sums for the gapped quartic satisfy a recurrence in which a propagates through the hierarchy.",
+        role:
+          "Describes how the partition parameter a enters higher root powers."
+      },
+      {
+        label: "Projective invariants of T(x)",
+        latex: "I=4\\pi(\\pi+6),\\qquad J=\\pi^2(288-108a^2-16\\pi),\\qquad \\Delta_x=\\frac{4I^3-J^2}{3^3},\\qquad j(T)=\\frac{4^4I^3}{\\Delta_x}",
+        plainLanguage:
+          "The projective invariants classify how the quartic persists under projective transformation.",
+        role:
+          "Records the final invariant layer of the full partition equation."
+      }
+    ],
+
+    sections: [
+      {
+        id: "chapter-07-zero-parameter-core",
+        title: "The Zero-Parameter Core",
+        summary:
+          "Introduces the stripped-down partition equation A(x), its even quartic P(x), and the quadratic Q(t) obtained by substituting t = x².",
+        aiSummary:
+          "Use this section for queries about A(x), P(x), Q(t), the zero-parameter core, even quartic, quadratic reduction, and the hierarchy from quartic to quadratic to Möbius fixed-point structure.",
+        keywords: [
+          "zero-parameter core",
+          "A(x)",
+          "P(x)",
+          "Q(t)",
+          "even quartic",
+          "quadratic reduction",
+          "t = x^2"
+        ]
+      },
+      {
+        id: "chapter-07-euler-mobius",
+        title: "Euler’s Fixed-Point Möbius Maps",
+        summary:
+          "Explains how a monic quadratic can be represented by two fixed-point Möbius maps whose iterations unfold as continued fractions.",
+        aiSummary:
+          "Use this section for queries about Euler fixed-point maps, Möbius transformations, continued fractions, fixed points of quadratics, affine shift, inversion, rescaling, and Vieta invariants as dynamical iteration.",
+        keywords: [
+          "Euler",
+          "Möbius maps",
+          "fixed points",
+          "continued fractions",
+          "quadratic roots",
+          "linear fractional transformation"
+        ]
+      },
+      {
+        id: "chapter-07-vieta-relations",
+        title: "Vieta Relations",
+        summary:
+          "Reviews Vieta relations for monic quartics and frames them as static algebraic invariants of root systems.",
+        aiSummary:
+          "Use this section for queries about Vieta relations, symmetric root sums, pairwise product sums, triple product sums, products of roots, and static invariants of quartics.",
+        keywords: [
+          "Vieta relations",
+          "symmetric sums",
+          "quartic roots",
+          "static invariants",
+          "root products"
+        ]
+      },
+      {
+        id: "chapter-07-continued-fractions-q",
+        title: "Continued Fractions for Q(t)",
+        summary:
+          "Applies Euler’s method to Q(t), producing two inverse Möbius maps and their continued-fraction fixed points.",
+        aiSummary:
+          "Use this section for queries about continued fractions for Q(t), F(t), G(t), inverse Möbius transformations, matrix representations M_F and M_G, determinant, trace, eigenlines, attractors, and repellers.",
+        keywords: [
+          "Q(t)",
+          "continued fractions",
+          "F(t)",
+          "G(t)",
+          "inverse Möbius transformations",
+          "2x2 matrices",
+          "eigenlines"
+        ]
+      },
+      {
+        id: "chapter-07-q-invariants",
+        title: "Q(t) Invariants",
+        summary:
+          "Lists the roots of Q(t) and their sum, product, and quadrance invariants.",
+        aiSummary:
+          "Use this section for queries about Q(t) roots, t₁, t₂, Q(t) Vieta relations, sum −2π, product 2π, quadrance 4π(π−1), and the relation between sum and negative product.",
+        keywords: [
+          "Q(t) invariants",
+          "t₁",
+          "t₂",
+          "sum -2π",
+          "product 2π",
+          "quadrance"
+        ]
+      },
+      {
+        id: "chapter-07-resolvent-cubic",
+        title: "Resolvent Cubic R(y)",
+        summary:
+          "Introduces the resolvent cubic R(y), whose roots encode the three distinct pairings of the quartic roots.",
+        aiSummary:
+          "Use this section for queries about resolvent cubic R(y), quartic root pairings, roots r₁ r₂ r₃, three pairings of four roots, and how Q(t) lifts into the quartic P(x).",
+        keywords: [
+          "resolvent cubic",
+          "R(y)",
+          "quartic pairings",
+          "r₁",
+          "r₂",
+          "r₃",
+          "root pairings"
+        ]
+      },
+      {
+        id: "chapter-07-p-invariants",
+        title: "Quartic Invariants P(x)",
+        summary:
+          "Returns to the full zero-core quartic P(x), listing its roots and Vieta relations, including sum 0, product 2π, pairwise product sum 2π, quadrance −4π, and square-modulus sum 4π.",
+        aiSummary:
+          "Use this section for queries about P(x), quartic roots, two-sheeted cover of the t-plane, particle-antiparticle pairing analogy, Vieta relations for P(x), quadrance, square moduli, and simple expressions involving 0, 2π, and −4π.",
+        keywords: [
+          "P(x)",
+          "quartic invariants",
+          "two-sheeted cover",
+          "particle-antiparticle pairing",
+          "sum zero",
+          "product 2π",
+          "quadrance -4π"
+        ]
+      },
+      {
+        id: "chapter-07-newton-power-sums-core",
+        title: "Newton Power Sums for the Core",
+        summary:
+          "Defines the recurrence relation for power sums of the zero-core quartic roots and notes that all odd sums vanish.",
+        aiSummary:
+          "Use this section for queries about Newton power sums, recurrence relations, S_k, zero-core quartic, seeds S₀ S₁ S₂ S₃, and vanishing odd sums.",
+        keywords: [
+          "Newton power sums",
+          "power sums",
+          "recurrence",
+          "S_k",
+          "odd sums vanish"
+        ]
+      },
+      {
+        id: "chapter-07-projective-invariants-core",
+        title: "Projective Invariants of the Core",
+        summary:
+          "Introduces binary-quartic invariants I and J, discriminants, the elliptic j-invariant, and cross ratio for Q(t), R(y), and P(x).",
+        aiSummary:
+          "Use this section for queries about projective invariants, I, J, discriminant, elliptic j-invariant, cross ratio, binary quartic invariants, and how hyperbolic structure persists under projective transformation.",
+        keywords: [
+          "projective invariants",
+          "I",
+          "J",
+          "discriminant",
+          "j-invariant",
+          "cross ratio",
+          "binary quartic"
+        ]
+      },
+      {
+        id: "chapter-07-full-partition-equation",
+        title: "The Full Partition Equation",
+        summary:
+          "Introduces the nonzero parameter a, producing the full gapped quartic T(x) = x⁴ + 2πx² − 2πax + 2π.",
+        aiSummary:
+          "Use this section for queries about the full partition equation, nonzero a, gapped quartic, depressed quartic, F(x), T(x), p = 2π, q = −2πa, and r = 2π.",
+        keywords: [
+          "full partition equation",
+          "a parameter",
+          "gapped quartic",
+          "T(x)",
+          "depressed quartic",
+          "rank-one perturbation"
+        ]
+      },
+      {
+        id: "chapter-07-roots-of-t",
+        title: "Roots of T(x)",
+        summary:
+          "Lists the physical roots ж₁, ж₂, ж₃, and ж₄ and identifies ж₁² with the fine-structure constant and ж₃, ж₄ as a conjugate pair.",
+        aiSummary:
+          "Use this section for queries about roots of T(x), ж₁, ж₂, ж₃, ж₄, fine-structure constant, ж₁², complex conjugates, polar form, жᵣ, and conjugate-pair product.",
+        keywords: [
+          "roots of T(x)",
+          "ж₁",
+          "ж₂",
+          "ж₃",
+          "ж₄",
+          "ж₁²",
+          "fine-structure constant",
+          "complex conjugates"
+        ]
+      },
+      {
+        id: "chapter-07-brahmagupta-fibonacci",
+        title: "Brahmagupta-Fibonacci Identity and Norm Preservation",
+        summary:
+          "Connects the complex-conjugate pair to norm-preserving quadratic composition and the chain ℝ → ℂ → ℍ → 𝕆.",
+        aiSummary:
+          "Use this section for queries about the Brahmagupta-Fibonacci identity, product of sums of squares, rotational invariance, norm preservation, complex multiplication, quaternions, octonions, and quadratic composition algebras.",
+        keywords: [
+          "Brahmagupta-Fibonacci identity",
+          "sum of squares",
+          "norm preserving",
+          "rotational invariance",
+          "complex numbers",
+          "quaternions",
+          "octonions",
+          "ℝ → ℂ → ℍ → 𝕆"
+        ]
+      },
+      {
+        id: "chapter-07-vieta-t",
+        title: "Vieta Relations for T(x)",
+        summary:
+          "Lists the sum, product, pairwise product sum, triple product sum, quadrance, cube sum, fourth-power sum, reciprocal identities, cross-ratio magnitude, and product/sum notation for the full partition roots.",
+        aiSummary:
+          "Use this section for queries about Vieta relations for T(x), product 2π, pairwise product sum 2π, triple product sum 2πa, reciprocal sum a, reciprocal pairwise sum 1, reciprocal triple product sum 0, inverse bi-product sums, cross ratio magnitude 1, and rank-one perturbation.",
+        keywords: [
+          "Vieta relations for T(x)",
+          "reciprocal identities",
+          "cross ratio magnitude",
+          "|λ| = 1",
+          "rank-one perturbation",
+          "product and summation notation"
+        ]
+      },
+      {
+        id: "chapter-07-newton-power-sums-t",
+        title: "Newton Power Sums for T(x)",
+        summary:
+          "Defines the power-sum recurrence for T(x) and shows how the partition parameter a propagates through successive power sums.",
+        aiSummary:
+          "Use this section for queries about Newton power sums for T(x), S_k recurrence, seeds S₀ S₁ S₂ S₃, hierarchy of power identities, and propagation of a through higher root powers.",
+        keywords: [
+          "Newton power sums for T(x)",
+          "S_k",
+          "recurrence",
+          "partition parameter a",
+          "power identities",
+          "higher powers"
+        ]
+      },
+      {
+        id: "chapter-07-projective-invariants-t",
+        title: "Projective Invariants of T(x)",
+        summary:
+          "Lists the projective invariants I, J, discriminant Δx, and j-invariant for the full quartic T(x).",
+        aiSummary:
+          "Use this section for queries about projective invariants of T(x), quartic invariant I, quartic invariant J, discriminant Δx, j(T), elliptic curve Y² = T(x), and projective persistence of the quartic.",
+        keywords: [
+          "projective invariants of T(x)",
+          "I",
+          "J",
+          "Δx",
+          "j(T)",
+          "elliptic curve",
+          "Y² = T(x)"
+        ]
+      },
+      {
+        id: "chapter-07-conclusion",
+        title: "Invariants as Algebraic Conservation Laws",
+        summary:
+          "Concludes that the partition equation’s invariants form a closed algebra under inversion and scaling by 2π and function like conservation laws within the partition system.",
+        aiSummary:
+          "Use this section for queries about invariants as algebraic conservation laws, closed algebra under inversion and 2π scaling, testing partition logic against constants of Nature, and decomposing constants through exact Planck boundaries.",
+        keywords: [
+          "algebraic conservation laws",
+          "closed algebra",
+          "inversion",
+          "2π scaling",
+          "partition system",
+          "288 constants",
+          "exact Planck boundaries"
+        ]
+      }
+    ],
+
+    dependencies: [
+      "Chapter 6 introduces the hyperbolic partition equation and its four physical roots.",
+      "Chapter 7 catalogs the invariant algebra of the partition equation.",
+      "The chapter depends on Vieta relations, Möbius maps, continued fractions, root systems, and Newton power sums.",
+      "This chapter prepares the later test of whether the same partition logic governs all 288 constants of Nature."
+    ],
+
+    relatedChapters: [
+      "chapter-03",
+      "chapter-05",
+      "chapter-06",
+      "chapter-08",
+      "chapter-11",
+      "chapter-12"
+    ]
+  },
+  {
+    id: "chapter-08",
+    part: "Part II: Structural Rules of the Constants",
+    shortLabel: "Ch. 8",
+    title: "Closed-Form Planck Boundaries",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "Chapter 8 searches for precise closed-form definitions of the five Planck boundaries: tₚ, lₚ, qₚ, Tₚ, and mₚ. Because empirical Planck values are derived from combinations of other constants and diverge after roughly seven digits, the chapter argues that the boundaries must ultimately be defined geometrically rather than merely measured. Each boundary is normalized by its associated unit and decomposed into a digit string, decimal scale, and signed exponent. This leads to the relation Aₖe^φₖ = nₖ, allowing the search for dimensionless geometric actions Aₖ. The chapter presents five candidate hyperbolic closed forms matching the CODATA Planck values within reported 1σ uncertainty, then identifies their shared geometric parameter web—π, e, i, W_We, the unit lemniscate arc length s, the lemniscate constant L, and the gamma function Γ—as evidence of coherent geometric ancestry. The surface plots are used as diagnostic visualizations of the analytic behavior of the candidate definitions.",
+
+    aiSummary:
+      "This chapter introduces the search for closed-form Planck boundary definitions. It begins from the problem that Planck boundaries are foundational to the binomial constructor and hyperbolic partition equation, but are only empirically known to about seven digits because they are derived from other constants. The chapter proposes that if Planck boundaries are structural anchors of Nature, their exact definitions should be geometric closed forms rather than measurement-dependent products. Each normalized boundary Bₖ/uₖ is written as φₖ × 10ⁿᵏ, separating the digit string φₖ from the signed exponent nₖ. The relation Aₖe^φₖ = nₖ is introduced to connect each digit string to its exponent through a dimensionless geometric action Aₖ. Searching for simple hyperbolic-geometric expressions yields a matched set of five candidates for Planck mass, temperature, charge, length, and time. The candidate forms involve π, e, i, cosine, hyperbolic sine, the Weierstrass constant W_We, derangement !5, and simple integer structures such as 5, 7, 4, 32, 18, 35, and 44. The chapter compares the resulting coherent Planck constants to CODATA values and finds all within 1σ. It then identifies the deeper coherence among the geometric parameters themselves: π, e, i, the Weierstrass constant W_We, the unit lemniscate arc length s, the lemniscate constant L, and the gamma function Γ. These constants form a single classical-geometric web, which is the main evidence that the five candidate boundary definitions are not arbitrary but belong to one architectural scheme. The complex surface plots are used afterward as diagnostic visualizations of their analytic behavior. The chapter concludes that these candidate definitions remain hypotheses until they help reconstruct all 288 constants, and it transitions toward the simplest constructible 3-manifold and the Dirac equation.",
+
+    aiSearchDescription:
+      "Retrieve this chapter for questions about closed-form Planck boundaries, exact definitions of Planck time Planck length Planck charge Planck temperature Planck mass, why empirical Planck values diverge after seven digits, digit strings φₖ, exponents nₖ, the equation Aₖe^φₖ = nₖ, geometric actions Aₖ, normalized Planck boundaries, candidate hyperbolic closed forms, cosine and hyperbolic sine expressions, Weierstrass constant W_We, derangement !5, lemniscate constant, gamma function, unit lemniscate arc length, geometric parameter coherence, Weierstrass constant, π, e, i, unit lemniscate arc length, lemniscate constant, gamma function, CODATA comparison within 1σ, surface plots of Planck boundary definitions, and why these definitions are treated as hypotheses for reconstructing all 288 constants of Nature.",
+
+    keywords: [
+      "closed-form Planck boundaries",
+      "Planck time",
+      "Planck length",
+      "Planck charge",
+      "Planck temperature",
+      "Planck mass",
+      "tₚ",
+      "lₚ",
+      "qₚ",
+      "Tₚ",
+      "mₚ",
+      "Planck constants",
+      "closed forms",
+      "geometric definitions",
+      "empirical divergence",
+      "seven-digit precision",
+      "two-layer boundary structure",
+      "dimensionless target",
+      "digit string",
+      "φₖ",
+      "nₖ",
+      "Aₖ",
+      "Aₖe^φₖ = nₖ",
+      "scientific notation",
+      "significand",
+      "signed exponent",
+      "base-ten scale",
+      "WolframAlpha",
+      "hyperbolic character",
+      "simplicity",
+      "cosine",
+      "cos",
+      "sinh",
+      "hyperbolic sine",
+      "π",
+      "e",
+      "i",
+      "Weierstrass constant",
+      "W_We",
+      "derangement",
+      "!5",
+      "subfactorial",
+      "lemniscate",
+      "lemniscate constant",
+      "unit lemniscate",
+      "gamma function",
+      "Γ",
+      "surface plots",
+      "complex plane",
+      "lemniscate-like contours",
+      "CODATA",
+      "1 sigma",
+      "coherent Planck constants",
+      "candidate definitions",
+      "288 constants",
+      "binomial constructor",
+      "hyperbolic partition equation",
+      "simplest constructible 3-manifold",
+      "Dirac equation"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Closed-form Planck boundaries",
+        description:
+          "Candidate exact geometric definitions for tₚ, lₚ, qₚ, Tₚ, and mₚ, intended to replace empirically fuzzy derived values with precise structural anchors."
+      },
+      {
+        term: "Two-layer boundary structure",
+        description:
+          "The observed fact that different empirical constructions of Planck boundaries agree for roughly seven digits and then diverge, suggesting that the boundaries contain more structure than a single empirical value."
+      },
+      {
+        term: "Normalized Planck boundary",
+        description:
+          "Each Planck boundary divided by its associated unit: second, meter, coulomb, kelvin, or kilogram."
+      },
+      {
+        term: "Digit string φₖ",
+        description:
+          "The significand of a normalized Planck boundary in scientific notation, treated as a partially known digit string."
+      },
+      {
+        term: "Signed exponent nₖ",
+        description:
+          "The integer power of ten associated with each normalized Planck boundary: −44 for time, −35 for length, −18 for charge, +32 for temperature, and −8 for mass."
+      },
+      {
+        term: "Connective geometric action Aₖ",
+        description:
+          "The dimensionless geometric action satisfying Aₖe^φₖ = nₖ, used to connect a boundary’s digit string to its signed order of magnitude."
+      },
+      {
+        term: "Candidate hyperbolic expressions",
+        description:
+          "The matched set of five simple expressions involving trigonometric, hyperbolic, modular, and classical geometric constants that reproduce the Planck boundary values within reported uncertainty."
+      },
+      {
+        term: "Weierstrass constant W_We",
+        description:
+          "A classical constant appearing in the candidate Planck charge expression and linked in the chapter to π, e, i, the lemniscate constant, and the gamma function."
+      },
+      {
+        term: "Geometric parameter coherence",
+        description:
+          "The main evidence that the five candidate definitions form a coherent set: their parameters belong to a shared classical-geometric web involving π, e, i, the Weierstrass constant W_We, the unit lemniscate arc length s, the lemniscate constant L, and the gamma function Γ."
+      },
+      {
+        term: "Lemniscate-like surface structure",
+        description:
+          "A diagnostic visualization of the analytic behavior of the candidate boundary definitions after their trigonometric or hyperbolic arguments are extended into the complex plane. These surfaces illustrate the behavior of the definitions but are not the primary evidence for coherence."
+      },
+      {
+        term: "Hypothesis status",
+        description:
+          "The chapter explicitly treats the closed forms as hypotheses until they help reconstruct the constants of Nature as one organized system."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "Boundary indexing",
+        latex: "B_0=t_p,\\quad B_1=l_p,\\quad B_2=q_p,\\quad B_3=T_p,\\quad B_4=m_p",
+        plainLanguage:
+          "The five Planck boundaries are indexed from time through mass.",
+        role:
+          "Defines the indexing convention for the closed-form search."
+      },
+      {
+        label: "Unit indexing",
+        latex: "u_0=\\mathrm{s},\\quad u_1=\\mathrm{m},\\quad u_2=\\mathrm{C},\\quad u_3=\\mathrm{K},\\quad u_4=\\mathrm{kg}",
+        plainLanguage:
+          "Each Planck boundary is normalized by its associated unit.",
+        role:
+          "Defines the unit normalization used to make each boundary dimensionless."
+      },
+      {
+        label: "Scientific-notation decomposition",
+        latex: "\\frac{B_k}{u_k}=\\phi_k\\times10^{n_k}",
+        plainLanguage:
+          "Each normalized Planck boundary is decomposed into a digit string and a signed base-ten exponent.",
+        role:
+          "Separates each boundary into significand, scale, and order of magnitude."
+      },
+      {
+        label: "Digit-exponent action relation",
+        latex: "A_k e^{\\phi_k}=n_k,\\qquad A_k=\\frac{n_k}{e^{\\phi_k}}",
+        plainLanguage:
+          "The geometric action Aₖ is the signed exponent divided by e raised to the digit string.",
+        role:
+          "Creates the dimensionless target used in the closed-form search."
+      },
+      {
+        label: "Mass closed-form candidate",
+        latex: "5\\left(\\frac{4\\pi}{2}\\right)\\cos^2\\left(\\frac{7}{5}\\right)=\\frac{8}{e^{\\phi_4}}",
+        plainLanguage:
+          "The Planck mass boundary is associated with a cosine expression involving 5, 4π/2, and 7/5.",
+        role:
+          "Candidate closed form for the Planck mass significand relation."
+      },
+      {
+        label: "Temperature closed-form candidate",
+        latex: "2\\left(\\frac{5}{\\sqrt7}\\right)^2\\cos^2\\left(\\frac{5i}{2}\\right)\\cos^2\\left(\\frac{7}{5}\\right)=\\frac{32}{e^{\\phi_3}}",
+        plainLanguage:
+          "The Planck temperature boundary is associated with a complex cosine expression involving 5/√7, 5i/2, and 7/5.",
+        role:
+          "Candidate closed form for the Planck temperature significand relation."
+      },
+      {
+        label: "Charge closed-form candidate",
+        latex: "\\left(\\frac{5}{\\sqrt7}\\right)\\left(\\frac{3^{-1/3}}{W_{We}}\\right)=\\frac{18}{e^{\\phi_2}}",
+        plainLanguage:
+          "The Planck charge boundary is associated with 5/√7, a cube-root factor, and the Weierstrass constant.",
+        role:
+          "Candidate closed form for the Planck charge significand relation."
+      },
+      {
+        label: "Length closed-form candidate",
+        latex: "\\left(\\sinh\\left(\\sinh\\left(\\frac{1}{7}\\right)\\right)\\right)^{-1}=\\frac{35}{e^{\\phi_1}}",
+        plainLanguage:
+          "The Planck length boundary is associated with the reciprocal of a nested hyperbolic sine expression.",
+        role:
+          "Candidate closed form for the Planck length significand relation."
+      },
+      {
+        label: "Time closed-form candidate",
+        latex: "\\left(\\frac{4\\pi}{4}\\right)\\sinh^2\\left(\\frac{1}{4}\\right)=\\frac{!5}{e^{\\phi_0}}=\\frac{44}{e^{\\phi_0}}",
+        plainLanguage:
+          "The Planck time boundary is associated with a hyperbolic sine square and the derangement !5 = 44.",
+        role:
+          "Candidate closed form for the Planck time significand relation."
+      },
+      {
+        label: "Weierstrass and lemniscate relations",
+        latex: "i^{-i}=\\frac{s^4W_{We}^4}{8},\\qquad e^{\\pi}=\\frac{s^8W_{We}^8}{8^2},\\qquad s=\\frac{\\Gamma^2(1/4)}{\\sqrt{2\\pi}},\\qquad s=2L",
+        plainLanguage:
+          "The Weierstrass constant is linked to i, e, π, the unit lemniscate arc length, the lemniscate constant, and the gamma function.",
+        role:
+          "Places the candidate boundary definitions inside a web of classical geometric constants."
+      }
+    ],
+
+    sections: [
+      {
+        id: "chapter-08-need-for-closed-forms",
+        title: "Why Closed-Form Boundaries Are Needed",
+        summary:
+          "Explains that a world cannot be constructed from fuzzy Planck-boundary inputs; if the boundaries are structural, they must have precise geometric definitions.",
+        aiSummary:
+          "Use this section for queries about why Planck boundaries need closed forms, why empirical Planck values are insufficient, seven-digit divergence, two-layer boundary structure, and exact geometric definitions.",
+        keywords: [
+          "closed-form boundaries",
+          "Planck boundaries",
+          "seven-digit divergence",
+          "fuzzy inputs",
+          "geometric definitions"
+        ]
+      },
+      {
+        id: "chapter-08-search-method",
+        title: "The Search Method",
+        summary:
+          "Describes the algorithmic search: normalize each Planck boundary, convert it into a dimensionless target, and search for simple hyperbolic-geometric closed forms using tools such as WolframAlpha.",
+        aiSummary:
+          "Use this section for queries about the algorithmic search process, dimensionless targets, WolframAlpha, simplicity, hyperbolic character, cosine, hyperbolic sine, π, e, i, and coherent closed-form sets.",
+        keywords: [
+          "search method",
+          "dimensionless target",
+          "WolframAlpha",
+          "simplicity",
+          "hyperbolic character",
+          "closed forms"
+        ]
+      },
+      {
+        id: "chapter-08-boundary-decomposition",
+        title: "Digit Strings, Scales, and Exponents",
+        summary:
+          "Separates each normalized Planck boundary into a digit string φₖ, decimal scale, and signed exponent nₖ.",
+        aiSummary:
+          "Use this section for queries about Bₖ, uₖ, normalized Planck boundaries, scientific notation, digit strings φₖ, signed exponents nₖ, and the relation Bₖ/uₖ = φₖ × 10ⁿᵏ.",
+        keywords: [
+          "digit strings",
+          "φₖ",
+          "nₖ",
+          "scientific notation",
+          "significand",
+          "normalized Planck boundaries"
+        ]
+      },
+      {
+        id: "chapter-08-geometric-actions",
+        title: "Connective Geometric Actions Aₖ",
+        summary:
+          "Introduces Aₖe^φₖ = nₖ and uses it to search for simple expressions characterizing the geometric action associated with each boundary.",
+        aiSummary:
+          "Use this section for queries about Aₖ, Aₖe^φₖ = nₖ, nₖ/e^φₖ, connective geometric actions, digit strings, and signed orders of magnitude.",
+        keywords: [
+          "Aₖ",
+          "Aₖe^φₖ",
+          "geometric action",
+          "signed exponent",
+          "digit string"
+        ]
+      },
+      {
+        id: "chapter-08-candidate-closed-forms",
+        title: "Candidate Closed Forms",
+        summary:
+          "Lists the five candidate expressions for mass, temperature, charge, length, and time, each reproducing its corresponding CODATA Planck value within reported uncertainty.",
+        aiSummary:
+          "Use this section for queries about the five candidate Planck boundary closed forms, mass expression, temperature expression, charge expression, length expression, time expression, Weierstrass constant, derangement !5, and CODATA comparison within 1σ.",
+        keywords: [
+          "candidate closed forms",
+          "mass",
+          "temperature",
+          "charge",
+          "length",
+          "time",
+          "W_We",
+          "!5",
+          "CODATA",
+          "1σ"
+        ]
+      },
+      {
+        id: "chapter-08-surface-plots",
+        title: "Complex Surface Plots",
+        summary:
+          "Extends the trigonometric and hyperbolic arguments into the complex plane and compares the resulting surfaces for the five Planck boundaries.",
+        aiSummary:
+          "Use this section for queries about Planck boundary surface plots, complex-plane extension, analytic character, Planck time surface, Planck length surface, Planck charge surface, Planck temperature surface, Planck mass surface, and shared geometric behavior.",
+        keywords: [
+          "surface plots",
+          "complex plane",
+          "analytic character",
+          "Planck time surface",
+          "Planck length surface",
+          "Planck charge surface",
+          "Planck temperature surface",
+          "Planck mass surface"
+        ]
+      },
+      {
+        id: "chapter-08-geometric-parameter-coherence",
+        title: "Geometric Parameter Coherence",
+        summary:
+          "Identifies the main coherence evidence: the parameters appearing in the five candidate definitions belong to one connected classical-geometric web involving π, e, i, W_We, the unit lemniscate arc length s, the lemniscate constant L, and Γ(1/4).",
+        aiSummary:
+          "Use this section for queries about why the candidate Planck boundary definitions form a coherent geometric set, the shared role of π, e, i, W_We, s, L, and Γ(1/4), and the classical geometric web connecting the Weierstrass constant to lemniscate geometry.",
+        keywords: [
+          "geometric parameter coherence",
+          "π",
+          "e",
+          "i",
+          "W_We",
+          "Weierstrass constant",
+          "unit lemniscate arc length",
+          "s",
+          "lemniscate constant",
+          "L",
+          "gamma function",
+          "Γ(1/4)",
+          "classical geometric constants"
+        ]
+      },
+      {
+        id: "chapter-08-weierstrass-lemniscate-web",
+        title: "The Weierstrass-Lemniscate Web",
+        summary:
+          "Connects W_We with π, e, i, the unit lemniscate arc length s, the lemniscate constant L, and the gamma function Γ.",
+        aiSummary:
+          "Use this section for queries about W_We, Weierstrass constant, lemniscate constant, unit lemniscate arc length, gamma function, e^π, i^-i, s = 2L, and classical geometric constants.",
+        keywords: [
+          "Weierstrass constant",
+          "W_We",
+          "lemniscate constant",
+          "unit lemniscate",
+          "s",
+          "L",
+          "gamma function",
+          "Γ",
+          "e^π",
+          "i^-i"
+        ]
+      },
+      {
+        id: "chapter-08-hypothesis-and-test",
+        title: "Hypotheses Awaiting Structural Test",
+        summary:
+          "Clarifies that the five closed forms are candidate definitions, not yet proven; they must reconstruct the full system of 288 constants to justify themselves structurally.",
+        aiSummary:
+          "Use this section for queries about the hypothesis status of the closed forms, structural testing, reconstructing the constants of Nature, the binomial constructor, hyperbolic partition equation, and why the boundaries must earn their place in the theory.",
+        keywords: [
+          "hypothesis",
+          "structural test",
+          "288 constants",
+          "binomial constructor",
+          "hyperbolic partition equation",
+          "candidate definitions"
+        ]
+      },
+      {
+        id: "chapter-08-transition-to-manifold",
+        title: "Toward the Simplest Constructible 3-Manifold",
+        summary:
+          "Concludes that the coherent boundary definitions point toward a common geometric origin: the simplest possible arena constructible as a 3-manifold.",
+        aiSummary:
+          "Use this section for queries about the transition from Planck boundary definitions to the simplest constructible 3-manifold, common geometric origin, structure, transformation, persistence, and the next chapter on the Dirac equation.",
+        keywords: [
+          "simplest constructible 3-manifold",
+          "common geometric origin",
+          "structure",
+          "transformation",
+          "persistence",
+          "Dirac equation"
+        ]
+      }
+    ],
+
+    dependencies: [
+      "Chapter 4 establishes the five coherent bases and Planck boundaries.",
+      "Chapter 5 introduces the binomial constructor and the need to decode constants through Planck boundaries.",
+      "Chapter 6 introduces the hyperbolic partition equation.",
+      "Chapter 7 establishes the invariant algebra of the partition equation.",
+      "Chapter 8 proposes candidate closed-form definitions for the Planck boundaries required by the constructor and partition logic."
+    ],
+
+    relatedChapters: [
+      "chapter-04",
+      "chapter-05",
+      "chapter-06",
+      "chapter-07",
+      "chapter-09",
+      "chapter-11",
+      "chapter-12"
+    ]
+  },
+  { id: "chapter-09", shortLabel: "Ch. 9", title: "Chapter 9", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-10", shortLabel: "Ch. 10", title: "Chapter 10", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-11", shortLabel: "Ch. 11", title: "Chapter 11", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-12", shortLabel: "Ch. 12", title: "Chapter 12", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-13", shortLabel: "Ch. 13", title: "Chapter 13", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-14", shortLabel: "Ch. 14", title: "Chapter 14", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "epilogue", shortLabel: "Epilogue", title: "Epilogue", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+];

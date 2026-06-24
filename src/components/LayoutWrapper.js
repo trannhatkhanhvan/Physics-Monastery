@@ -73,6 +73,7 @@ export default function LayoutWrapper({ children }) {
     pathname === '/number-walls' ? 'number-walls-wrapper-page' :
     pathname === '/animated-math' ? 'animated-math-page' :
     pathname === '/books' ? 'books-page' :
+    pathname === '/the-logic-of-persistence' ? 'books-page' :
     pathname === '/monastery-events' ? 'monastery-events-page' :
     pathname === '/supporters' ? 'supporters-page' :
     pathname === '/contact-us' ? 'contact-us-page' :
@@ -208,6 +209,7 @@ export default function LayoutWrapper({ children }) {
           <a href="/forum" className="menu-text-link">Forum</a>
           <a href="/monastery-events" className="menu-text-link">Events</a>
           <a href="/books" className="menu-text-link">Books</a>
+          <a href="/the-logic-of-persistence" className="menu-text-link">The Logic of Persistence</a>
           <a href="/supporters" className="menu-text-link">Supporters</a>
           <a href="/contact-us" className="menu-text-link">Contact Us</a>
 

@@ -1,0 +1,905 @@
+from manim import *
+import numpy as np
+import math
+
+
+# ============================================================
+# TOP-LEVEL CONTROLS
+# ============================================================
+
+V_FE = 2.029883212819307
+V_FE_DISPLAY = "2.029883"
+
+SERIES_FACTOR = 2.0
+
+N_ENTRIES = 12
+
+TITLE_TEXT = "figure-eight volume as a sixth-root comb"
+
+LEFT_CENTER = LEFT * 4.90 + DOWN * 0.20
+RIGHT_CENTER = RIGHT * 1.70 + DOWN * 0.20
+
+CIRCLE_RADIUS = 1.40
+
+COMB_WIDTH = 9.00
+COMB_SPINE_Y_OFFSET = -0.30
+MAX_TOOTH_LENGTH = 1.625
+TOOTH_STROKE_WIDTH = 2.0
+
+COMB_SPINE_STROKE_WIDTH = 1.0
+COMB_SPINE_MIN_ZOOM_STROKE_WIDTH = 0.05
+
+ZOOM_STAGE_TITLE_TEXT = "zoom in to scan the reduced 1/k^2 data"
+ZOOM_STAGE_TITLE_FONT_SIZE = 24
+ZOOM_STAGE_TITLE_Y_OFFSET = 2.55
+
+ZOOM_FRAME_WIDTH_START = 2.20
+ZOOM_FRAME_WIDTH_END = 1.50
+ZOOM_FRAME_Y_OFFSET = 0.00
+ZOOM_IN_TIME = 0.85
+ZOOM_STEP_RUN_TIME = 0.075
+ZOOM_STEP_FADE_TIME = 0.025
+ZOOM_RESET_TIME = 0.85
+
+BAR_HIGHLIGHT_STROKE_WIDTH = TOOTH_STROKE_WIDTH
+BAR_HIGHLIGHT_LENGTH_MULTIPLIER = 3.0
+BAR_HIGHLIGHT_COLOR = "#f2c66d"
+
+TITLE_Y = 3.35
+
+INFO_LEFT_OFFSET = -0.90
+INFO_LINE_GAP = 0.10
+SUM_Y = -2.55
+FINAL_Y = -3.22
+
+AXIS_STROKE_WIDTH = 0.5
+AXIS_STROKE_OPACITY = 0.12
+
+ROTOR_TITLE_FONT_SIZE = 24
+ROTOR_TITLE_Y_OFFSET = 1.90
+
+ROOT_DOT_RADIUS = 0.05
+MOVING_DOT_RADIUS = 0.05
+
+RADIUS_STROKE_WIDTH = 2.5
+Y_HEIGHT_STROKE_WIDTH = 2.5
+Y_HEIGHT_DASH_LENGTH = 0.10
+
+K_COUNT_FONT_SIZE = 36
+K_COUNT_Y_OFFSET = -1.90
+K_COUNT_LEFT_OFFSET = -0.25
+
+REDUCE_POPUP_FONT_SIZE = 24
+REDUCE_POPUP_X_OFFSET = -1.58
+REDUCE_POPUP_Y_OFFSET = 2.48
+
+FIRST_STAGE_HEIGHT_LABEL_FONT_SIZE = 24
+FIRST_STAGE_HEIGHT_LABEL_X_OFFSET = 0.25
+RHYTHM_FONT_SIZE = 24
+RHYTHM_Y_OFFSET = 3.18
+
+ROTOR_ZERO_EPS = 1e-9
+
+INFO_FONT_SIZE = 36
+INFO_LEFT_MARGIN = 6.00
+INFO_BOTTOM_MARGIN = 1.75
+INFO_VALUE_BUFF = 0.12
+INFO_EQ_GAP = 0.18
+INFO_NUMBER_GAP = 0.18
+INFO_NUM_DECIMALS = 6
+
+COMB_AXIS_DOT_RADIUS = 0.055
+COMB_AXIS_DOT_Z_INDEX = 10
+COMB_AXIS_DOT_HOLD_AFTER_BUILD = 1.0
+
+END_TEXT_LEFT_MARGIN = 8.00
+END_TEXT_TOP_MARGIN = 1.25
+
+END_TEXT_FONT_SIZE = 30
+END_TEXT_LINE_GAP = 0.00
+END_TEXT_SECTION_GAP = 0.40
+
+END_TEXT_WRITE_TIME_1 = 1.0
+END_TEXT_WRITE_TIME_2 = 1.0
+END_TEXT_WRITE_TIME_3 = 1.4
+END_TEXT_TIME_GAP_12 = 0.15
+END_TEXT_TIME_GAP_23 = 0.20
+
+TEXT_COLOR = "#d8d1b8"
+CIRCLE_COLOR = "#d8d1b8"
+ROOT_COLOR = "#d8d1b8"
+ACTIVE_COLOR = "#f2c66d"
+POSITIVE_COLOR = "#f2c66d"
+NEGATIVE_COLOR = "#8fb8ff"
+ZERO_COLOR = "#777777"
+HIGHLIGHT_COLOR = WHITE
+
+BACKGROUND_COLOR = BLACK
+
+
+class FigureEightSixthRootComb(MovingCameraScene):
+    def construct(self):
+        self.camera.background_color = BACKGROUND_COLOR
+
+        # ----------------------------------------------------
+        # Correct sixth-root comb data
+        # ----------------------------------------------------
+        ks = list(range(1, N_ENTRIES + 1))
+
+        angles = [
+            k * PI / 3
+            for k in ks
+        ]
+
+        actual_heights = [
+            SERIES_FACTOR * math.sin(theta)
+            for theta in angles
+        ]
+
+        reduced_heights = [
+            actual_heights[k] / (ks[k] ** 2)
+            for k in range(N_ENTRIES)
+        ]
+
+        # Literal signed partial sums:
+        # S_n = sum_{k=1}^{n} 2 sin(kπ/3) / k²
+        # lim_{n→∞} S_n = V_fe
+        partial_sums = np.cumsum(reduced_heights)
+
+        # ----------------------------------------------------
+        # Title
+        # ----------------------------------------------------
+        title = Text(
+            TITLE_TEXT,
+            font_size=28,
+            color=TEXT_COLOR,
+        ).move_to(UP * TITLE_Y)
+
+        self.play(FadeIn(title), run_time=0.8)
+
+        # ----------------------------------------------------
+        # Unit circle, left
+        # ----------------------------------------------------
+        circle = Circle(
+            radius=CIRCLE_RADIUS,
+            color=CIRCLE_COLOR,
+            stroke_width=3,
+        ).move_to(LEFT_CENTER)
+
+        center_dot = Dot(
+            LEFT_CENTER,
+            radius=0.035,
+            color=TEXT_COLOR,
+        )
+
+        x_axis = Line(
+            LEFT_CENTER + LEFT * (CIRCLE_RADIUS + 0.18),
+            LEFT_CENTER + RIGHT * (CIRCLE_RADIUS + 0.18),
+            color=TEXT_COLOR,
+            stroke_opacity=AXIS_STROKE_OPACITY,
+            stroke_width=AXIS_STROKE_WIDTH,
+        )
+
+        y_axis = Line(
+            LEFT_CENTER + DOWN * (CIRCLE_RADIUS + 0.18),
+            LEFT_CENTER + UP * (CIRCLE_RADIUS + 0.18),
+            color=TEXT_COLOR,
+            stroke_opacity=0.3,
+            stroke_width=2,
+        )
+
+        root_angles = [
+            k * PI / 3
+            for k in range(6)
+        ]
+
+        root_points = VGroup()
+
+        for theta in root_angles:
+            point = LEFT_CENTER + CIRCLE_RADIUS * np.array([
+                math.cos(theta),
+                math.sin(theta),
+                0,
+            ])
+            root_points.add(
+                Dot(point, radius=ROOT_DOT_RADIUS, color=ROOT_COLOR)
+            )
+
+        self.play(
+            Create(circle),
+            Create(x_axis),
+            Create(y_axis),
+            FadeIn(center_dot),
+            FadeIn(root_points),
+            run_time=1.0,
+        )
+
+        # ----------------------------------------------------
+        # Rotor title and k-count
+        # ----------------------------------------------------
+        rotor_title = Text(
+            "sixth-root rotor",
+            font_size=ROTOR_TITLE_FONT_SIZE,
+            color=TEXT_COLOR,
+        ).move_to(
+            LEFT_CENTER + UP * ROTOR_TITLE_Y_OFFSET
+        )
+
+        k_tracker = ValueTracker(1)
+
+        k_count_left_x = LEFT_CENTER[0] + K_COUNT_LEFT_OFFSET
+        k_count_y = LEFT_CENTER[1] + K_COUNT_Y_OFFSET
+
+        def make_k_count():
+            k_value = int(round(k_tracker.get_value()))
+
+            group = MathTex(
+                rf"\varphi_i^{{{k_value}}}",
+                color=ACTIVE_COLOR,
+                font_size=K_COUNT_FONT_SIZE,
+            )
+
+            # Left-justified: the left edge stays fixed as the exponent grows.
+            group.move_to([
+                k_count_left_x + group.width / 2,
+                k_count_y,
+                0,
+            ])
+
+            return group
+
+        k_count = always_redraw(make_k_count)
+
+        self.play(
+            FadeIn(rotor_title),
+            FadeIn(k_count),
+            run_time=0.5,
+        )
+
+        # ----------------------------------------------------
+        # Rotor with internal y-height tracker
+        # ----------------------------------------------------
+        theta_tracker = ValueTracker(PI / 3)
+
+        def current_theta():
+            return theta_tracker.get_value()
+
+        def rotor_color_from_height(y):
+            if abs(y) <= ROTOR_ZERO_EPS:
+                return WHITE
+            return POSITIVE_COLOR if y > 0 else NEGATIVE_COLOR
+
+        def rotor_color():
+            return rotor_color_from_height(math.sin(current_theta()))
+
+        def moving_point_position():
+            theta = current_theta()
+            return LEFT_CENTER + CIRCLE_RADIUS * np.array([
+                math.cos(theta),
+                math.sin(theta),
+                0,
+            ])
+
+        def x_axis_projection():
+            theta = current_theta()
+            return LEFT_CENTER + CIRCLE_RADIUS * np.array([
+                math.cos(theta),
+                0,
+                0,
+            ])
+
+        moving_dot = always_redraw(
+            lambda: Dot(
+                moving_point_position(),
+                radius=MOVING_DOT_RADIUS,
+                color=rotor_color(),
+            )
+        )
+
+        radius_line = always_redraw(
+            lambda: Line(
+                LEFT_CENTER,
+                moving_point_position(),
+                color=rotor_color(),
+                stroke_width=RADIUS_STROKE_WIDTH,
+            )
+        )
+
+        internal_y_height = always_redraw(
+            lambda: DashedLine(
+                x_axis_projection(),
+                moving_point_position(),
+                color=rotor_color(),
+                stroke_width=Y_HEIGHT_STROKE_WIDTH,
+                dash_length=Y_HEIGHT_DASH_LENGTH,
+            )
+        )
+
+        projection_dot = always_redraw(
+            lambda: Dot(
+                x_axis_projection(),
+                radius=0.03,
+                color=rotor_color(),
+            )
+        )
+
+        self.play(
+            FadeIn(radius_line),
+            FadeIn(internal_y_height),
+            FadeIn(projection_dot),
+            FadeIn(moving_dot),
+            run_time=0.6,
+        )
+
+        # ----------------------------------------------------
+        # Comb, right
+        # ----------------------------------------------------
+        comb_spine_y = RIGHT_CENTER[1] + COMB_SPINE_Y_OFFSET
+        comb_left_x = RIGHT_CENTER[0] - COMB_WIDTH / 2
+        comb_right_x = RIGHT_CENTER[0] + COMB_WIDTH / 2
+
+        spine = Line(
+            [comb_left_x, comb_spine_y, 0],
+            [comb_right_x, comb_spine_y, 0],
+            color=TEXT_COLOR,
+            stroke_width=COMB_SPINE_STROKE_WIDTH,
+        )
+
+        tooth_xs = np.linspace(
+            comb_left_x + 0.08,
+            comb_right_x - 0.08,
+            N_ENTRIES,
+        )
+
+        comb_axis_tracker = ValueTracker(0)
+        comb_axis_use_reduced = False
+        comb_axis_base_frame_width = self.camera.frame.width
+
+        def comb_axis_screen_radius():
+            return COMB_AXIS_DOT_RADIUS * (
+                self.camera.frame.width / comb_axis_base_frame_width
+            )
+
+        def comb_axis_x():
+            t = max(0.0, min(float(comb_axis_tracker.get_value()), N_ENTRIES - 1))
+            left_index = int(math.floor(t))
+            right_index = min(left_index + 1, N_ENTRIES - 1)
+            alpha = t - left_index
+            return (1 - alpha) * tooth_xs[left_index] + alpha * tooth_xs[right_index]
+
+        def comb_axis_color():
+            idx = int(round(max(0.0, min(float(comb_axis_tracker.get_value()), N_ENTRIES - 1))))
+            heights = reduced_heights if comb_axis_use_reduced else actual_heights
+            return rotor_color_from_height(heights[idx])
+
+        comb_axis_dot = always_redraw(
+            lambda: Dot(
+                [comb_axis_x(), comb_spine_y, 0],
+                radius=comb_axis_screen_radius(),
+                color=comb_axis_color(),
+            ).set_z_index(COMB_AXIS_DOT_Z_INDEX)
+        )
+
+        def tooth_color(height):
+            if abs(height) < 1e-9:
+                return ZERO_COLOR
+            return POSITIVE_COLOR if height > 0 else NEGATIVE_COLOR
+
+        def make_tooth(k, height, scale=MAX_TOOTH_LENGTH):
+            x = tooth_xs[k]
+            y0 = comb_spine_y
+            y1 = comb_spine_y + scale * height
+
+            if abs(height) < 1e-9:
+                return Line(
+                    [x, y0, 0],
+                    [x, y0, 0],
+                    color=ZERO_COLOR,
+                    stroke_width=0,
+                    stroke_opacity=0,
+                )
+
+            return Line(
+                [x, y0, 0],
+                [x, y1, 0],
+                color=tooth_color(height),
+                stroke_width=TOOTH_STROKE_WIDTH,
+            )
+
+        actual_teeth = VGroup(*[
+            make_tooth(k, actual_heights[k])
+            for k in range(N_ENTRIES)
+        ])
+
+        reduced_teeth = VGroup(*[
+            make_tooth(k, reduced_heights[k])
+            for k in range(N_ENTRIES)
+        ])
+
+        # Reduced data is shown directly as bars, not endpoint dots.
+
+        self.play(
+            Create(spine),
+            FadeIn(comb_axis_dot),
+            run_time=0.6,
+        )
+        height_label_x = comb_left_x - FIRST_STAGE_HEIGHT_LABEL_X_OFFSET
+        base_height = MAX_TOOTH_LENGTH * math.sqrt(3)
+
+        positive_height_label = MathTex(
+            r"\sqrt{3}",
+            color=TEXT_COLOR,
+            font_size=FIRST_STAGE_HEIGHT_LABEL_FONT_SIZE,
+        ).move_to([height_label_x, comb_spine_y + base_height, 0])
+
+        zero_height_label = MathTex(
+            r"0",
+            color=TEXT_COLOR,
+            font_size=FIRST_STAGE_HEIGHT_LABEL_FONT_SIZE,
+        ).move_to([height_label_x, comb_spine_y, 0])
+
+        negative_height_label = MathTex(
+            r"-\sqrt{3}",
+            color=TEXT_COLOR,
+            font_size=FIRST_STAGE_HEIGHT_LABEL_FONT_SIZE,
+        ).move_to([height_label_x, comb_spine_y - base_height, 0])
+
+        first_stage_height_labels = VGroup(
+            positive_height_label,
+            zero_height_label,
+            negative_height_label,
+        )
+
+        rhythm_label = VGroup(
+            Text(
+                "rhythm:",
+                font_size=RHYTHM_FONT_SIZE,
+                color=TEXT_COLOR,
+            ),
+            MathTex(
+                r"+\quad+\quad0\quad-\quad-\quad0",
+                font_size=RHYTHM_FONT_SIZE,
+                color=TEXT_COLOR,
+            ),
+        ).arrange(RIGHT, buff=0.16).move_to(
+            [RIGHT_CENTER[0], comb_spine_y - RHYTHM_Y_OFFSET, 0]
+        )
+
+        self.play(
+            FadeIn(first_stage_height_labels),
+            FadeIn(rhythm_label),
+            run_time=0.5,
+        )
+
+        # ----------------------------------------------------
+        # Stage 1: build actual signed sixth-root comb
+        # ----------------------------------------------------
+        for k, theta in enumerate(angles):
+            active_sample = Dot(
+                LEFT_CENTER + CIRCLE_RADIUS * np.array([
+                    math.cos(theta),
+                    math.sin(theta),
+                    0,
+                ]),
+                radius=0.045,
+                color=rotor_color_from_height(actual_heights[k]),
+            )
+
+            self.play(
+                theta_tracker.animate.set_value(theta),
+                k_tracker.animate.set_value(k + 1),
+                comb_axis_tracker.animate.set_value(k),
+                FadeIn(active_sample),
+                GrowFromPoint(actual_teeth[k], actual_teeth[k].get_start()),
+                run_time=0.055,
+                rate_func=linear,
+            )
+
+            self.play(
+                FadeOut(active_sample),
+                run_time=0.02,
+                rate_func=linear,
+            )
+
+        self.wait(COMB_AXIS_DOT_HOLD_AFTER_BUILD)
+
+        self.play(
+            FadeOut(comb_axis_dot),
+            run_time=0.35,
+        )
+
+        self.play(
+            FadeOut(first_stage_height_labels),
+            FadeOut(rhythm_label),
+            run_time=0.35,
+        )
+
+        # ----------------------------------------------------
+        # Stage 2: popup title, then reduce by 1/k^2
+        # ----------------------------------------------------
+        reduce_popup = VGroup(
+            Text(
+                "reduce by",
+                font_size=REDUCE_POPUP_FONT_SIZE,
+                color=TEXT_COLOR,
+            ),
+            MathTex(
+                r"\frac{1}{k^2}",
+                font_size=REDUCE_POPUP_FONT_SIZE + 6,
+                color=TEXT_COLOR,
+            ),
+        ).arrange(RIGHT, buff=0.16).move_to(
+            RIGHT_CENTER + RIGHT * REDUCE_POPUP_X_OFFSET + UP * REDUCE_POPUP_Y_OFFSET
+        )
+
+        self.play(
+            LaggedStart(
+                *[Write(m) for m in reduce_popup],
+                lag_ratio=0.15,
+            ),
+            run_time=1.0,
+        )
+
+        self.play(
+            Transform(actual_teeth, reduced_teeth),
+            run_time=1.35,
+            rate_func=smooth,
+        )
+
+        # No endpoint dots: the reduced bars themselves show the data.
+        comb_axis_use_reduced = True
+
+        self.play(
+            FadeOut(reduce_popup),
+            run_time=0.35,
+        )
+
+        # ----------------------------------------------------
+        # Stage 3: zoom-scan the real reduced 1/k² data
+        # No log scaling. The camera zooms in only for visibility.
+        # ----------------------------------------------------
+        zoom_stage_title = VGroup(
+            Text(
+                "zoom in to scan the reduced",
+                font_size=ZOOM_STAGE_TITLE_FONT_SIZE,
+                color=TEXT_COLOR,
+            ),
+            MathTex(
+                r"\frac{1}{k^2}",
+                font_size=ZOOM_STAGE_TITLE_FONT_SIZE + 6,
+                color=TEXT_COLOR,
+            ),
+            Text(
+                "data",
+                font_size=ZOOM_STAGE_TITLE_FONT_SIZE,
+                color=TEXT_COLOR,
+            ),
+        ).arrange(RIGHT, buff=0.14).move_to(
+            RIGHT_CENTER + UP * ZOOM_STAGE_TITLE_Y_OFFSET
+        )
+
+        self.play(
+            LaggedStart(
+                *[Write(m) for m in zoom_stage_title],
+                lag_ratio=0.12,
+            ),
+            run_time=1.2,
+        )
+
+        sum_tracker = ValueTracker(0)
+
+        original_frame_width = self.camera.frame.width
+        original_frame_center = self.camera.frame.get_center()
+
+        def keep_spine_thin_during_zoom(m):
+            zoom_scale = self.camera.frame.width / original_frame_width
+            m.set_stroke(
+                width=max(
+                    COMB_SPINE_MIN_ZOOM_STROKE_WIDTH,
+                    COMB_SPINE_STROKE_WIDTH * zoom_scale,
+                )
+            )
+
+        spine.add_updater(keep_spine_thin_during_zoom)
+
+        def frame_scale():
+            return self.camera.frame.width / original_frame_width
+
+        def info_anchor():
+            scale = frame_scale()
+            frame = self.camera.frame
+            return np.array([
+                frame.get_left()[0] + INFO_LEFT_MARGIN * scale,
+                frame.get_bottom()[1] + INFO_BOTTOM_MARGIN * scale,
+                0,
+            ])
+
+        def make_info_overlay():
+            sum_label = MathTex(
+                r"S_k",
+                color=TEXT_COLOR,
+                font_size=INFO_FONT_SIZE,
+            )
+
+            sum_eq = MathTex(
+                r"=",
+                color=TEXT_COLOR,
+                font_size=INFO_FONT_SIZE,
+            )
+
+            sum_number = DecimalNumber(
+                sum_tracker.get_value(),
+                num_decimal_places=INFO_NUM_DECIMALS,
+                color=ACTIVE_COLOR,
+                font_size=INFO_FONT_SIZE,
+            )
+
+            final_label = MathTex(
+                r"\mathrm{V}_{\mathrm{fe}}",
+                color=TEXT_COLOR,
+                font_size=INFO_FONT_SIZE,
+            )
+
+            final_eq = MathTex(
+                r"=",
+                color=TEXT_COLOR,
+                font_size=INFO_FONT_SIZE,
+            )
+
+            final_number = DecimalNumber(
+                V_FE,
+                num_decimal_places=INFO_NUM_DECIMALS,
+                color=TEXT_COLOR,
+                font_size=INFO_FONT_SIZE,
+            )
+
+            label_col_width = max(sum_label.width, final_label.width)
+            eq_col_width = max(sum_eq.width, final_eq.width)
+
+            sum_label.move_to([label_col_width / 2, 0, 0])
+            final_label.move_to([label_col_width / 2, 0, 0])
+
+            sum_eq.move_to([label_col_width + INFO_EQ_GAP + eq_col_width / 2, 0, 0])
+            final_eq.move_to([label_col_width + INFO_EQ_GAP + eq_col_width / 2, 0, 0])
+
+            number_left_x = label_col_width + INFO_EQ_GAP + eq_col_width + INFO_NUMBER_GAP
+
+            sum_number.move_to([number_left_x + sum_number.width / 2, 0, 0])
+            final_number.move_to([number_left_x + final_number.width / 2, 0, 0])
+
+            sum_line = VGroup(sum_label, sum_eq, sum_number)
+            final_line = VGroup(final_label, final_eq, final_number)
+
+            group = VGroup(
+                sum_line,
+                final_line,
+            ).arrange(
+                DOWN,
+                aligned_edge=LEFT,
+                buff=INFO_LINE_GAP,
+            )
+
+            scale = frame_scale()
+            group.scale(scale)
+
+            anchor = info_anchor()
+            group.move_to([
+                anchor[0] + group.width / 2,
+                anchor[1] + group.height / 2,
+                0,
+            ])
+
+            return group
+
+            scale = frame_scale()
+            group.scale(scale)
+
+            anchor = info_anchor()
+            group.move_to([
+                anchor[0] + group.width / 2,
+                anchor[1] + group.height / 2,
+                0,
+            ])
+
+            return group
+
+        info_overlay = always_redraw(make_info_overlay)
+
+        # Explanatory overlay, built the same way as the S_k / V_fe overlay.
+        # This clock runs independently of the bar-scan movement.
+        explain_clock = ValueTracker(0)
+        self.add(explain_clock)
+
+        def reveal_alpha(elapsed, start, duration):
+            if elapsed <= start:
+                return 0.0
+            if elapsed >= start + duration:
+                return 1.0
+            return (elapsed - start) / duration
+
+        def apply_reveal(mobject, alpha):
+            alpha = max(0.0, min(1.0, float(alpha)))
+            pieces = [
+                sm
+                for sm in mobject.family_members_with_points()
+                if sm is not mobject
+            ]
+
+            if len(pieces) == 0:
+                mobject.set_opacity(alpha)
+                return mobject
+
+            cutoff = alpha * len(pieces)
+
+            for i, piece in enumerate(pieces):
+                if i + 1 <= cutoff:
+                    piece.set_opacity(1.0)
+                elif i < cutoff:
+                    piece.set_opacity(cutoff - i)
+                else:
+                    piece.set_opacity(0.0)
+
+            return mobject
+
+        def make_end_text_overlay():
+            line1 = MathTex(
+                r"\text{as } n \text{ increases, } S_n \text{ approaches } \mathrm{V}_{\mathrm{fe}}",
+                font_size=END_TEXT_FONT_SIZE,
+                color=TEXT_COLOR,
+            )
+
+            line2 = MathTex(
+                r"\lim_{n\to\infty} S_n = \mathrm{V}_{\mathrm{fe}}",
+                font_size=END_TEXT_FONT_SIZE,
+                color=TEXT_COLOR,
+            )
+
+            line3 = MathTex(
+                r"\mathrm{V}_{\mathrm{fe}}=2\sum_{k=1}^{\infty}\frac{\sin\!\left(k\pi/3\right)}{k^2}",
+                font_size=END_TEXT_FONT_SIZE,
+                color=TEXT_COLOR,
+            )
+
+            elapsed = max(0.0, explain_clock.get_value())
+
+            t1_start = 0.0
+            t2_start = t1_start + END_TEXT_WRITE_TIME_1 + END_TEXT_TIME_GAP_12
+            t3_start = t2_start + END_TEXT_WRITE_TIME_2 + END_TEXT_TIME_GAP_23
+
+            apply_reveal(line1, reveal_alpha(elapsed, t1_start, END_TEXT_WRITE_TIME_1))
+            apply_reveal(line2, reveal_alpha(elapsed, t2_start, END_TEXT_WRITE_TIME_2))
+            apply_reveal(line3, reveal_alpha(elapsed, t3_start, END_TEXT_WRITE_TIME_3))
+
+            line_spacer = Rectangle(
+                width=0.01,
+                height=END_TEXT_SECTION_GAP,
+                stroke_opacity=0,
+                fill_opacity=0,
+            )
+
+            section_spacer = Rectangle(
+                width=0.01,
+                height=END_TEXT_SECTION_GAP,
+                stroke_opacity=0,
+                fill_opacity=0,
+            )
+
+            group = VGroup(
+                line1,
+                line_spacer,
+                line2,
+                section_spacer,
+                line3,
+            ).arrange(
+                DOWN,
+                aligned_edge=LEFT,
+                buff=END_TEXT_LINE_GAP,
+            )
+
+            scale = frame_scale()
+            group.scale(scale)
+
+            frame = self.camera.frame
+            anchor = np.array([
+                frame.get_left()[0] + END_TEXT_LEFT_MARGIN * scale,
+                frame.get_top()[1] - END_TEXT_TOP_MARGIN * scale,
+                0,
+            ])
+
+            group.move_to([
+                anchor[0] + group.width / 2,
+                anchor[1] - group.height / 2,
+                0,
+            ])
+
+            return group
+
+        end_text_overlay = always_redraw(make_end_text_overlay)
+        self.add(end_text_overlay)
+
+        self.play(
+            FadeIn(info_overlay),
+            FadeIn(comb_axis_dot),
+            run_time=0.5,
+        )
+
+        first_zoom_center = [
+            tooth_xs[0],
+            comb_spine_y + ZOOM_FRAME_Y_OFFSET,
+            0,
+        ]
+
+        self.play(
+            self.camera.frame.animate.set(width=ZOOM_FRAME_WIDTH_START).move_to(first_zoom_center),
+            FadeOut(zoom_stage_title),
+            run_time=ZOOM_IN_TIME,
+            rate_func=smooth,
+        )
+        explain_clock.set_value(0)
+        explain_clock.add_updater(lambda m, dt: m.increment_value(dt))
+
+        for k in range(N_ENTRIES):
+            zoom_alpha = 0 if N_ENTRIES <= 1 else k / (N_ENTRIES - 1)
+            current_zoom_width = (
+                ZOOM_FRAME_WIDTH_START
+                + zoom_alpha * (ZOOM_FRAME_WIDTH_END - ZOOM_FRAME_WIDTH_START)
+            )
+
+            zoom_center = [
+                tooth_xs[k],
+                comb_spine_y + ZOOM_FRAME_Y_OFFSET,
+                0,
+            ]
+
+            height = reduced_heights[k]
+            x = tooth_xs[k]
+            y0 = comb_spine_y
+            y1 = comb_spine_y + MAX_TOOTH_LENGTH * height * BAR_HIGHLIGHT_LENGTH_MULTIPLIER
+
+            if abs(height) < 1e-9:
+                highlight_bar = Line(
+                    [x, y0, 0],
+                    [x, y0, 0],
+                    color=BAR_HIGHLIGHT_COLOR,
+                    stroke_width=0,
+                    stroke_opacity=0,
+                )
+            else:
+                highlight_bar = Line(
+                    [x, y0, 0],
+                    [x, y1, 0],
+                    color=BAR_HIGHLIGHT_COLOR,
+                    stroke_width=BAR_HIGHLIGHT_STROKE_WIDTH,
+                    stroke_opacity=1.0,
+                )
+
+            self.play(
+                self.camera.frame.animate.set(width=current_zoom_width).move_to(zoom_center),
+                comb_axis_tracker.animate.set_value(k),
+                FadeIn(highlight_bar),
+                sum_tracker.animate.set_value(float(partial_sums[k])),
+                run_time=ZOOM_STEP_RUN_TIME,
+                rate_func=linear,
+            )
+
+            self.play(
+                FadeOut(highlight_bar),
+                run_time=ZOOM_STEP_FADE_TIME,
+                rate_func=linear,
+            )
+
+        self.play(
+            FadeOut(comb_axis_dot),
+            run_time=0.35,
+        )
+
+        self.play(
+            self.camera.frame.animate.set(width=original_frame_width).move_to(original_frame_center),
+            run_time=ZOOM_RESET_TIME,
+            rate_func=smooth,
+        )
+
+        spine.remove_updater(keep_spine_thin_during_zoom)
+        spine.set_stroke(width=COMB_SPINE_STROKE_WIDTH)
+
+        self.wait(2.0)

@@ -1,0 +1,747 @@
+export const bookMeta = {
+  title: "The Logic of Persistence",
+  subtitle:
+    "A living manuscript by Thad Roberts, shared for review, discussion, correction, public access, and AI-readable reference.",
+  edition: "Public Draft Edition",
+  status: "Living draft",
+  version: "0.1",
+  updated: "June 2026",
+  citationNote:
+    "This manuscript is shared as a public draft. It is not the final published edition. The text may change before formal publication. Please cite the page URL and version date when referencing this draft.",
+};
+
+export const chapters = [
+  {
+    id: "front-matter",
+    part: "Opening",
+    shortLabel: "Opening",
+    title: "Abstract, Dedication, and Preface",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "The opening front matter introduces The Logic of Persistence as a search for a coherent structural account of the measured constants of Nature. The abstract frames the book around the possibility that the 288 CODATA constants form a closed algebraic-geometric transformation space grounded in the figure-eight knot complement, its sister, the binomial constructor, and the hyperbolic partition equation. The dedication is brief and direct. The Preface places the scientific project inside a larger account of consciousness, measurement, conceptual alignment, and the escape from inherited narrative into quantitatively constrained understanding.",
+
+    aiSummary:
+      "This front-matter section contains the book abstract, dedication, and preface. It defines the core research aim: to explain the measured constants of Nature as a coherent, mutually constraining set rather than isolated numerical facts. It introduces the proposed geometric framework: the figure-eight knot complement and its sister, the 24-dimensional unit ball B²⁴, the binomial constructor, the hyperbolic partition equation, Planck-normalized boundaries of time, length, charge, temperature, and mass, and the Transform Dictionary organizing 288 constants. The preface frames science as the disciplined alignment of human conceptual models with measurable reality, emphasizing measurement as the first foothold beyond inherited narratives.",
+
+    aiSearchDescription:
+      "Retrieve this section for questions about the book's thesis, purpose, research target, public draft framing, constants of Nature, CODATA constants, the 288-constant Transform Dictionary, the figure-eight knot complement, the figure-eight knot sister, B²⁴, the binomial constructor, the hyperbolic partition equation, Planck-normalized boundaries, measurement, conceptual alignment, scientific understanding, narrative enclosure, and the philosophical motivation for seeking a theory of everything.",
+
+    keywords: [
+      "The Logic of Persistence",
+      "abstract",
+      "dedication",
+      "preface",
+      "constants of Nature",
+      "CODATA constants",
+      "288 physical constants",
+      "Transform Dictionary",
+      "figure-eight knot complement",
+      "figure-eight knot sister",
+      "hyperbolic 3-geometry",
+      "minimal-volume hyperbolic knot complement",
+      "24-dimensional unit ball",
+      "B²⁴",
+      "binomial constructor",
+      "hyperbolic partition equation",
+      "Planck boundaries",
+      "Planck-normalized boundaries",
+      "measurement",
+      "scientific understanding",
+      "conceptual alignment",
+      "narrative enclosure",
+      "theory of everything",
+      "arithmetic of persistence"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Measured constants of Nature",
+        description:
+          "The central empirical target of the book. The constants are treated not as isolated numerical facts, but as a coherent and mutually constraining set that any serious account of reality must eventually explain."
+      },
+      {
+        term: "288 physical constants",
+        description:
+          "The proposed complete set of CODATA constants organized by the book into a finite transformation space called the Transform Dictionary."
+      },
+      {
+        term: "Figure-eight knot complement",
+        description:
+          "The base hyperbolic space proposed as the geometric source structure for the organization of physical constants."
+      },
+      {
+        term: "Binomial constructor",
+        description:
+          "One of the two governing construction principles. It prescribes how internal and external geometric actions combine coherently."
+      },
+      {
+        term: "Hyperbolic partition equation",
+        description:
+          "One of the two governing construction principles. It encodes how curvature is discretely partitioned across Planck-normalized boundaries."
+      },
+      {
+        term: "Measurement as foothold",
+        description:
+          "The preface’s framing of measurement as the first disciplined step by which explanation escapes inherited narrative and becomes accountable to quantity, proportion, and structure."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "24-dimensional transformation space",
+        latex: "B^{24}",
+        plainLanguage:
+          "The abstract names the 24-dimensional unit ball as the model for the completed space of transformations available to the proposed deformation level.",
+        role:
+          "Introduces the dimensional setting for the transformation space used in the book's proposed organization of constants."
+      }
+    ],
+
+    sections: [
+      {
+        id: "abstract",
+        title: "Abstract",
+        type: "front-matter",
+        summary:
+          "Introduces the book’s central demand: that any serious account of reality must explain the measured constants of Nature as a coherent set. It presents the proposed framework: the figure-eight knot complement and its sister, the 24-dimensional unit ball, the binomial constructor, the hyperbolic partition equation, Planck-normalized boundaries, and the Transform Dictionary of 288 constants.",
+        aiSummary:
+          "Use this section to identify the book’s thesis, target data, proposed geometric foundation, and two governing construction principles."
+      },
+      {
+        id: "dedication",
+        title: "Dedication",
+        type: "front-matter",
+        summary:
+          "A short dedication: 'To figuring it out.'",
+        aiSummary:
+          "This section contains the dedication. It expresses the book’s orientation toward discovery, investigation, and the process of figuring out reality."
+      },
+      {
+        id: "preface",
+        title: "Preface: Ascending the Footholds of Awareness",
+        type: "preface",
+        summary:
+          "The Preface frames scientific understanding as the disciplined alignment of consciousness with reality. It argues that inherited narratives stabilize perception but can also limit access to unseen structures. Measurement becomes the first foothold of scientific ascent because it forces explanation to answer to quantity, proportion, and the world’s own constraints.",
+        aiSummary:
+          "Use this section for questions about the philosophical motivation of the book. The Preface explains consciousness as model-building, inherited narratives as early stabilizing worldviews, scarcity as a constraint on exploration, science as alignment with reality, measurement as the escape from narrative enclosure, and deeper structural understanding as access to Nature’s real degrees of freedom."
+      }
+    ],
+
+    relatedChapters: [
+      "chapter-01",
+      "chapter-07",
+      "chapter-08",
+      "chapter-11",
+      "chapter-12"
+    ]
+  },
+
+  {
+    id: "chapter-01",
+    part: "Part 1: Measurement and Structure",
+    shortLabel: "Ch. 1",
+    title: "Overview of the Search for a Theory of Everything",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "Chapter 1 traces the historical ascent of scientific understanding from narrative inheritance to measurement, mathematical law, geometric structure, algebraic transformation, and hyperbolic topology. Beginning with Anaximander’s shift from mythic explanation to ordered investigation, the chapter follows Galileo, Kepler, Newton, Cayley, Sylvester, Hamilton, Riemann, Einstein, Dirac, Noether, and Thurston as successive footholds in humanity’s search for a theory of everything. The chapter ends by locating the present search in the measured constants of Nature: the fixed numerical features of reality that may reveal a symmetry-constrained algebraic-geometric transformation structure rooted in hyperbolic geometry.",
+
+    aiSummary:
+      "This chapter provides the historical and conceptual overview for The Logic of Persistence. It explains the progression from inherited stories about reality to measurement, from measurement to coherent physical law, from law to geometry, from geometry to algebraic transformations, and from algebraic persistence to hyperbolic 3-manifolds. It introduces Anaximander as an early figure of ordered investigation, Galileo as the discoverer of coherent mathematical relations in motion and inertial-frame invariance, Kepler as the extractor of planetary law from data, Newton as the unifier of dynamics through mathematical law and calculus, Cayley and Sylvester as founders of matrix-based transformation logic, Hamilton as the discoverer of noncommutative algebra through quaternions, Riemann as the creator of manifold geometry, Einstein as the geometer of spacetime, Dirac as the algebraist of quantum persistence, Noether as the theorist of symmetry-protected conservation, and Thurston as the geometer of 3-manifold classification. The chapter concludes that the constants of Nature should be examined as measurable footprints of a possible underlying hyperbolic transformation geometry.",
+
+    aiSearchDescription:
+      "Retrieve this chapter for questions about the historical development of the search for a theory of everything, the role of measurement in science, Anaximander, Galileo, Kepler, Newton, Cayley, Sylvester, Hamilton, Riemann, Einstein, Dirac, Noether, Thurston, matrix transformations, manifolds, spacetime geometry, the Dirac equation, hyperbolic geometry, the figure-eight knot complement, constants of Nature, CODATA constants, symmetry, conservation laws, algebraic-geometric transforms, and why The Logic of Persistence begins with measured constants rather than with an assumed final theory.",
+
+    keywords: [
+      "theory of everything",
+      "measurement",
+      "structure",
+      "scientific history",
+      "Anaximander",
+      "gnomon",
+      "Galileo",
+      "falling bodies",
+      "Galilean relativity",
+      "Kepler",
+      "planetary motion",
+      "Newton",
+      "calculus",
+      "Cayley",
+      "Sylvester",
+      "matrix",
+      "Hamilton",
+      "quaternions",
+      "Riemann",
+      "manifold",
+      "Einstein",
+      "general relativity",
+      "Lorentzian manifold",
+      "Dirac",
+      "Dirac equation",
+      "Clifford algebra",
+      "fine-structure constant",
+      "Noether",
+      "symmetry",
+      "conservation laws",
+      "Thurston",
+      "Geometrization Conjecture",
+      "hyperbolic geometry",
+      "figure-eight knot complement",
+      "sibling manifold",
+      "constants of Nature",
+      "logic of persistence"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Measurement as scientific rupture",
+        description:
+          "The chapter presents measurement as the decisive break from inherited narrative. Measurement makes explanation accountable to proportion, quantity, and structure."
+      },
+      {
+        term: "Coherence",
+        description:
+          "The idea that measured quantities are not isolated facts but mutually constraining relations. Galileo’s analysis of falling bodies is used as the first clear example of coherent interdependence among distance, time, and acceleration."
+      },
+      {
+        term: "Matrix as transformation object",
+        description:
+          "Cayley and Sylvester’s matrix concept is framed as the discovery that transformations themselves can be treated as mathematical objects."
+      },
+      {
+        term: "Manifold",
+        description:
+          "Riemann’s manifold is presented as a space that can curve and twist while retaining local Euclidean structure and a metric for measuring distance."
+      },
+      {
+        term: "Spacetime as dynamic geometry",
+        description:
+          "Einstein’s general relativity is described as the move from absolute space and time to a Lorentzian manifold whose curvature is gravity itself."
+      },
+      {
+        term: "Dirac equation",
+        description:
+          "The Dirac equation is presented as a Lorentz-covariant, first-order, linear equation that joins quantum mechanics and special relativity while revealing an algebraic grammar of quantum persistence."
+      },
+      {
+        term: "Symmetry-protected persistence",
+        description:
+          "Noether’s theorem is used to connect continuous symmetries with conserved quantities, grounding the idea that persistence is protected by symmetry."
+      },
+      {
+        term: "Figure-eight knot complement",
+        description:
+          "The chapter identifies the figure-eight knot complement as the smallest-volume hyperbolic knot complement and presents it as a candidate minimal structure for hyperbolic persistence."
+      },
+      {
+        term: "Constants as footprints",
+        description:
+          "The chapter ends by arguing that the constants of Nature should be examined as measurable footprints of the underlying structure that calibrates physical law into this Universe."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "Galilean falling-body square law",
+        latex: "d \\propto t^2",
+        plainLanguage:
+          "The distance fallen by an object under constant acceleration grows with the square of elapsed time.",
+        role:
+          "Introduces the coherence between time, distance, and acceleration as a mathematical relation in Nature."
+      },
+      {
+        label: "Kepler's third law",
+        latex: "T^2 \\propto a^3",
+        plainLanguage:
+          "The square of a planet's orbital period is proportional to the cube of its orbital distance scale.",
+        role:
+          "Summarizes the lawful pattern Kepler extracted from planetary data."
+      },
+      {
+        label: "Natural-unit simplification",
+        latex: "c=\\ℏ=1",
+        plainLanguage:
+          "Physicists often set the speed of light and reduced Planck constant to one to expose the algebraic form of a theory while suppressing measured scale.",
+        role:
+          "Explains why physical constants can be hidden by unit conventions even though they remain necessary for empirical calibration."
+      },
+      {
+        label: "Dirac scaling constants",
+        latex: "c,\\ \\ℏ,\\ mₑ",
+        plainLanguage:
+          "The Dirac equation must be calibrated by physical constants such as the speed of light, reduced Planck constant, and electron mass.",
+        role:
+          "Introduces the problem of explaining the measured scales that fit abstract law to the physical world."
+      }
+    ],
+
+    sections: [
+      {
+        id: "chapter-01-anaximander",
+        title: "Anaximander and the Beginning of Structural Inquiry",
+        summary:
+          "Introduces Anaximander as an early figure who treated the world as an ordered structure to investigate rather than merely a story to inherit.",
+        aiSummary:
+          "Use this section for queries about Anaximander, the transition from mythic narrative to ordered investigation, the gnomon, early measurement of time and space, early cartography, balanced opposites, and the first step toward treating Nature as intelligible structure."
+      },
+      {
+        id: "chapter-01-galileo",
+        title: "Galileo and the Coherence of Measured Motion",
+        summary:
+          "Explains Galileo’s shift from asking what gravity is to measuring how it behaves. Falling bodies reveal the square law of distance and time, odd-number interval structure, and the coherence of distance, time, and acceleration.",
+        aiSummary:
+          "Use this section for queries about Galileo, falling bodies, distance proportional to time squared, odd-number distance intervals, mathematical symmetry in motion, Galilean relativity, inertial frames, and invariance."
+      },
+      {
+        id: "chapter-01-kepler",
+        title: "Kepler and the Hidden Grammar of Planetary Motion",
+        summary:
+          "Presents Kepler as the scientist who converted Tycho Brahe’s data into law.",
+        aiSummary:
+          "Use this section for queries about Kepler, Tycho Brahe, planetary data, ellipses, equal areas in equal times, Kepler's third law, and empirical pattern-finding before dynamical explanation."
+      },
+      {
+        id: "chapter-01-newton",
+        title: "Newton and the Mathematics of Predictive Law",
+        summary:
+          "Describes Newton’s unification of terrestrial and celestial motion under universal mathematical law, with calculus as the language of change and accumulation.",
+        aiSummary:
+          "Use this section for queries about Newton, universal law, absolute space and time, calculus, fluxions, rates of change, motion, force, prediction, and dynamics."
+      },
+      {
+        id: "chapter-01-matrices",
+        title: "Matrices and the Objecthood of Transformation",
+        summary:
+          "Introduces Cayley and Sylvester’s matrix concept as the realization that transformations can be treated as mathematical objects.",
+        aiSummary:
+          "Use this section for queries about matrices, Cayley, Sylvester, transformations as objects, eigenvectors, eigenspaces, eigenvalues, determinant, trace, operators, and symmetry groups."
+      },
+      {
+        id: "chapter-01-hamilton",
+        title: "Hamilton and Noncommutative Algebra",
+        summary:
+          "Frames Hamilton’s discovery of quaternions as a major extension beyond real numbers and an early sign that lawful physical transformations possess intrinsic algebraic structure.",
+        aiSummary:
+          "Use this section for queries about Hamilton, quaternions, noncommutative algebra, rotations, algebraic structure, and transformation algebra."
+      },
+      {
+        id: "chapter-01-riemann",
+        title: "Riemann and the Geometry of Manifolds",
+        summary:
+          "Explains Riemann’s development of manifold geometry: spaces that may curve and twist while preserving local Euclidean behavior and possessing a metric for distance.",
+        aiSummary:
+          "Use this section for queries about Riemann, manifolds, metrics, curvature, intrinsic geometry, local Euclidean structure, differentiable spaces, and the mathematical foundation of general relativity."
+      },
+      {
+        id: "chapter-01-einstein",
+        title: "Einstein and Spacetime as Dynamic Geometry",
+        summary:
+          "Presents Einstein’s general relativity as the transformation of space and time into a dynamic Lorentzian manifold.",
+        aiSummary:
+          "Use this section for queries about Einstein, general relativity, spacetime, Lorentzian manifold, curvature, gravity, mass-energy equivalence, light bending, time dilation, reference frames, and invariant geometric structure."
+      },
+      {
+        id: "chapter-01-dirac",
+        title: "Dirac and the Algebraic Logic of Persistence",
+        summary:
+          "Introduces the Dirac equation as a Lorentz-covariant, first-order, linear equation joining quantum mechanics and special relativity.",
+        aiSummary:
+          "Use this section for queries about Dirac, the Dirac equation, quantum mechanics, special relativity, Lorentz covariance, spin-1/2 particles, Clifford algebra, gamma matrices, natural units, and the fine-structure constant."
+      },
+      {
+        id: "chapter-01-algebra-geometry-bridge",
+        title: "The Bridge Between Geometry and Algebra",
+        summary:
+          "Explores the possibility that the algebraic rulebooks of physics arise from an underlying geometry.",
+        aiSummary:
+          "Use this section for queries about the relationship between algebra and geometry, continuous and discrete structures, Weyl, transformation algebras, operator rules, and the bridge between Einstein's geometry and Dirac's algebra."
+      },
+      {
+        id: "chapter-01-thurston",
+        title: "Thurston, Hyperbolic Geometry, and the Minimal Stage of Persistence",
+        summary:
+          "Introduces Thurston’s geometrization program and hyperbolic 3-manifolds as arenas for persistent geometric form.",
+        aiSummary:
+          "Use this section for queries about Thurston, Geometrization Conjecture, Perelman, 3-manifolds, canonical geometries, hyperbolic geometry, hyperbolic knot complements, figure-eight knot complement, sibling manifold, and minimal volume."
+      },
+      {
+        id: "chapter-01-noether-and-constants",
+        title: "Noether, Conservation, and the Constants as Footprints",
+        summary:
+          "Connects Noether’s theorem to the idea that persistence is protected by symmetry, then transitions to the constants of Nature as measurable footprints of a possible underlying geometry.",
+        aiSummary:
+          "Use this section for queries about Noether's theorem, symmetry, conservation laws, constants of Nature, calibration of physical law, measured footprints, and why the book begins with empirical constants."
+      }
+    ],
+
+    relatedChapters: [
+      "front-matter",
+      "chapter-07",
+      "chapter-08",
+      "chapter-11",
+      "chapter-12"
+    ]
+  },
+
+  {
+    id: "chapter-02",
+    part: "Part 1: Measurement and Structure",
+    shortLabel: "Ch. 2",
+    title: "Measuring the Signatures of Reality",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "Chapter 2 establishes the constants of Nature as the empirical foundation of the book’s search. If the Universe is structured by an underlying geometry, then the constants are treated as measurable signatures, residues, or symmetry-constrained transforms of that geometry. The chapter introduces this idea through three discovery narratives: the speed of light c, the reduced Planck constant ℏ, and the electron mass mₑ. It then presents the complete 288-constant CODATA vocabulary as the numerical portrait of Nature’s internal logic, emphasizing that the second, meter, coulomb, kelvin, and kilogram recur throughout the list as the atomic units through which physical law becomes coherent and measurable.",
+
+    aiSummary:
+      "This chapter explains why The Logic of Persistence begins with measured constants rather than abstract theory. It treats the constants of Nature as stable empirical traits of reality and possible structural residues of an underlying hyperbolic manifold. The chapter gives accessible discovery accounts for c, ℏ, and mₑ: Rømer, Bradley, Fizeau, Foucault, and Einstein for the speed of light; Planck, blackbody radiation, the ultraviolet catastrophe, Einstein's photoelectric effect, Bohr, and Schrödinger for the quantum of action; Thomson and Millikan for the electron mass. It explains that c calibrates spacetime and causality, ℏ calibrates quantum action and the scale of transformation, and mₑ calibrates matter and the rest-energy scale in the Dirac equation. The chapter then lists all 288 CODATA constants as the working vocabulary of Nature’s internal logic, ending with the claim that the constants enforce coherence across the atomic units second, meter, coulomb, kelvin, and kilogram and may reveal a deeper geometric structure.",
+
+    aiSearchDescription:
+      "Retrieve this chapter for questions about why measured constants are the starting point of The Logic of Persistence, how constants of Nature function as empirical signatures, how c, ℏ, and mₑ were discovered or interpreted, how constants calibrate physical law, what CODATA is, why there are 288 constants in this framework, how second meter coulomb kelvin kilogram recur through the constant list, how the Dirac equation depends on c ℏ and electron mass, and why the constants are described as the empirical skeleton or working vocabulary of Nature's internal logic.",
+
+    keywords: [
+      "constants of Nature",
+      "CODATA",
+      "288 constants",
+      "measured signatures",
+      "empirical skeleton of reality",
+      "symmetry-constrained transform",
+      "underlying geometry",
+      "underlying manifold",
+      "hyperbolic stage",
+      "speed of light",
+      "c",
+      "Ole Rømer",
+      "Io eclipses",
+      "James Bradley",
+      "stellar aberration",
+      "Fizeau",
+      "Foucault",
+      "Einstein",
+      "special relativity",
+      "causality",
+      "meter",
+      "second",
+      "cesium-133",
+      "hyperfine transition frequency",
+      "Planck constant",
+      "reduced Planck constant",
+      "ℏ",
+      "blackbody radiation",
+      "ultraviolet catastrophe",
+      "Max Planck",
+      "E=hf",
+      "quantum of action",
+      "photoelectric effect",
+      "Bohr",
+      "Schrodinger",
+      "electron mass",
+      "mₑ",
+      "J.J. Thomson",
+      "cathode rays",
+      "charge-to-mass ratio",
+      "Millikan oil-drop experiment",
+      "electron charge",
+      "Dirac equation",
+      "atomic units",
+      "second",
+      "meter",
+      "coulomb",
+      "kelvin",
+      "kilogram",
+      "coherence",
+      "measurement domains",
+      "physical law",
+      "geometric structure"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Constants as signatures",
+        description:
+          "The chapter frames physical constants as stable empirical signatures of the architecture beneath physical law. They are treated as measurable residues of transformation and possible clues to the underlying geometry of reality."
+      },
+      {
+        term: "Symmetry-constrained transform",
+        description:
+          "A proposed interpretation in which each constant corresponds to a constrained transformation of the underlying manifold or geometric structure."
+      },
+      {
+        term: "Hyperbolic stage",
+        description:
+          "The hypothesized geometric setting whose measurable signatures are expressed through the constants of Nature."
+      },
+      {
+        term: "Speed of light c",
+        description:
+          "Presented first as a finite speed inferred from astronomical observations, then as the invariant speed of causality and a structural feature of spacetime."
+      },
+      {
+        term: "Reduced Planck constant ℏ",
+        description:
+          "Presented as the quantum of action: the scale that sets the smallest unit of interaction, transformation, and change in quantum evolution."
+      },
+      {
+        term: "Electron mass mₑ",
+        description:
+          "Presented as the mass scale anchoring atomic matter, electron behavior, scattering, atomic size, and the rest-energy scale in the Dirac equation."
+      },
+      {
+        term: "Dirac calibration constants",
+        description:
+          "The chapter describes c, ℏ, and mₑ as the constants that calibrate the relativistic quantum dynamics of the electron in the Dirac equation."
+      },
+      {
+        term: "CODATA",
+        description:
+          "The Committee on Data for Science and Technology, presented as maintaining the most precise internationally curated values of physical constants."
+      },
+      {
+        term: "288 constants",
+        description:
+          "The complete list of CODATA constants used in the book as the working vocabulary of Nature’s internal logic and as the empirical basis for the Transform Dictionary developed later."
+      },
+      {
+        term: "Atomic units of measurement",
+        description:
+          "The second, meter, coulomb, kelvin, and kilogram are identified as the recurring base units through which physical law becomes measurable and coherent."
+      },
+      {
+        term: "Coherence across measurement domains",
+        description:
+          "The constants do not merely set magnitudes; they ensure that different measurement domains interact without contradiction."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "Planck energy-frequency relation",
+        latex: "E = hf",
+        plainLanguage:
+          "Energy is proportional to frequency, with Planck's constant h setting the size of the quantum step.",
+        role:
+          "Introduces Planck's constant as the scale of quantized energy exchange and the origin of ℏ as the reduced quantum of action."
+      },
+      {
+        label: "Reduced Planck constant",
+        latex: "\\ℏ = \\frac{h}{2\\pi}",
+        plainLanguage:
+          "The reduced Planck constant is Planck's constant divided by 2π.",
+        role:
+          "Defines the form of Planck's constant most commonly used in quantum mechanics and the Dirac equation."
+      },
+      {
+        label: "Natural-unit simplification",
+        latex: "c = \\ℏ = 1",
+        plainLanguage:
+          "Physicists often set the speed of light and reduced Planck constant to one to reveal the algebraic form of a theory while hiding measured scale.",
+        role:
+          "Explains how constants can be suppressed in theory even though they remain necessary for empirical calibration."
+      },
+      {
+        label: "Dirac equation calibration",
+        latex: "\\left(i\\ℏ c\\,\\gamma^\\mu\\partial_\\mu - mₑ c^2\\right)\\psi = 0",
+        plainLanguage:
+          "The Dirac equation uses c, ℏ, and the electron mass to calibrate the relativistic quantum dynamics of the electron.",
+        role:
+          "Shows how the three highlighted constants c, ℏ, and mₑ fit together in the algebraic law governing relativistic quantum persistence."
+      },
+      {
+        label: "Defined speed of light",
+        latex: "c = 299792458\\ \\mathrm{m/s}",
+        plainLanguage:
+          "The speed of light is fixed exactly by definition in the modern SI system.",
+        role:
+          "Connects the meter and second to a fixed physical constant."
+      },
+      {
+        label: "Cesium-133 hyperfine transition frequency",
+        latex: "\\Delta\\nu_{\\mathrm{Cs}} = 9192631770\\ \\mathrm{Hz}",
+        plainLanguage:
+          "The second is defined through the fixed hyperfine transition frequency of cesium-133.",
+        role:
+          "Shows how the base unit of time is anchored in an atomic constant."
+      }
+    ],
+
+    sections: [
+      {
+        id: "chapter-02-constants-as-signatures",
+        title: "Constants as Signatures of Reality",
+        summary:
+          "Introduces the chapter’s central premise: if an underlying geometry structures the Universe, then the constants of Nature are stable empirical traits and possible structural residues of that geometry.",
+        aiSummary:
+          "Use this section for queries about constants as empirical signatures, constants as residues of transformation, symmetry-constrained transforms, underlying manifolds, hidden geometry, and why measurement of constants is the proper starting point for the book.",
+        keywords: [
+          "constants as signatures",
+          "empirical traits",
+          "symmetry-constrained transform",
+          "underlying manifold",
+          "hidden geometry",
+          "measurement"
+        ]
+      },
+      {
+        id: "chapter-02-speed-of-light",
+        title: "c: The Speed of Light",
+        summary:
+          "Traces the discovery of finite light speed from Rømer’s observations of Io’s eclipses to Bradley’s stellar aberration, Fizeau’s rotating gears, Foucault’s mirrors, and Einstein’s reinterpretation of c as the invariant speed of causality.",
+        aiSummary:
+          "Use this section for queries about the speed of light, Ole Rømer, Io eclipses, James Bradley, stellar aberration, Fizeau, Foucault, Einstein, special relativity, causality, spacetime invariance, and the modern definition of the meter.",
+        keywords: [
+          "speed of light",
+          "c",
+          "Ole Romer",
+          "Io",
+          "Jupiter",
+          "stellar aberration",
+          "Fizeau",
+          "Foucault",
+          "Einstein",
+          "special relativity",
+          "causality",
+          "meter definition"
+        ]
+      },
+      {
+        id: "chapter-02-ℏ",
+        title: "ℏ: The Quantum of Action",
+        summary:
+          "Explains how Planck introduced quantized energy to solve the blackbody radiation problem and how ℏ became the structural scale of quantum action, interaction, and transformation.",
+        aiSummary:
+          "Use this section for queries about Planck's constant, reduced Planck constant, ℏ, blackbody radiation, ultraviolet catastrophe, E=hf, quantum mechanics, photoelectric effect, Bohr orbits, Schrodinger wavefunction, quantum of action, and quantized persistence.",
+        keywords: [
+          "Planck constant",
+          "reduced Planck constant",
+          "ℏ",
+          "blackbody radiation",
+          "ultraviolet catastrophe",
+          "E=hf",
+          "quantum of action",
+          "photoelectric effect",
+          "Bohr",
+          "Schrodinger",
+          "persistence is quantized"
+        ]
+      },
+      {
+        id: "chapter-02-electron-mass",
+        title: "mₑ: The Electron Mass",
+        summary:
+          "Describes the discovery of the electron through Thomson’s cathode-ray experiments, the measurement of electron charge through Millikan’s oil-drop experiment, and the resulting determination of electron mass as a scale anchoring matter.",
+        aiSummary:
+          "Use this section for queries about electron mass, mₑ, J.J. Thomson, cathode rays, charge-to-mass ratio, Millikan oil-drop experiment, electron charge, atomic structure, scattering, matter scale, and the electron mass as the rest-energy scale in the Dirac equation.",
+        keywords: [
+          "electron mass",
+          "mₑ",
+          "J.J. Thomson",
+          "cathode rays",
+          "charge-to-mass ratio",
+          "Millikan",
+          "oil-drop experiment",
+          "electron charge",
+          "atomic structure",
+          "Dirac equation"
+        ]
+      },
+      {
+        id: "chapter-02-dirac-calibration",
+        title: "c, ℏ, and mₑ as Dirac Calibration Constants",
+        summary:
+          "Explains that in the Dirac equation c fixes spacetime scale, ℏ fixes quantum-action scale, and mₑ fixes rest-energy scale.",
+        aiSummary:
+          "Use this section for queries about how c, ℏ, and electron mass calibrate the Dirac equation, relativistic quantum dynamics, spacetime scale, quantum-action scale, rest-energy scale, and constants hidden by natural units.",
+        keywords: [
+          "Dirac equation",
+          "c",
+          "ℏ",
+          "mₑ",
+          "spacetime scale",
+          "quantum-action scale",
+          "rest-energy scale",
+          "natural units",
+          "calibration"
+        ]
+      },
+      {
+        id: "chapter-02-codata-list",
+        title: "The 288 Constants of Nature via CODATA",
+        summary:
+          "Presents the complete CODATA list of 288 constants as the working vocabulary of Nature’s internal logic. The table begins with alpha-particle and atomic mass constants, continues through atomic units, electromagnetic constants, particle masses and magnetic moments, unit relationships, Planck-related quantities, Rydberg and radiation constants, and ends with Wien displacement constants.",
+        aiSummary:
+          "Use this section for queries about the complete 288-constant CODATA list, the table of constants, physical constant names, symbols, values, uncertainty notation, unit relationships, atomic units, particle constants, electromagnetic constants, Planck constant, reduced Planck constant, speed of light, vacuum permittivity, vacuum permeability, von Klitzing constant, and Wien constants. The visual table spans pages 5 through 10.",
+        keywords: [
+          "CODATA list",
+          "288 constants",
+          "table of constants",
+          "physical constant values",
+          "uncertainty notation",
+          "atomic units",
+          "unit relationships",
+          "particle masses",
+          "magnetic moments",
+          "electromagnetic constants",
+          "Planck constants",
+          "Rydberg constant",
+          "radiation constants",
+          "Wien constants"
+        ]
+      },
+      {
+        id: "chapter-02-coherence-closing",
+        title: "Constants as the Empirical Skeleton of Reality",
+        summary:
+          "Concludes that the constants enforce coherence across the base measurement domains second, meter, coulomb, kelvin, and kilogram. They are described as the empirical skeleton of reality and the basis for investigating whether all 288 constants are unified by a single underlying geometry.",
+        aiSummary:
+          "Use this section for queries about the closing thesis of Chapter 2, constants enforcing coherence, second meter coulomb kelvin kilogram, empirical skeleton of reality, single underlying geometry, and the transition into the detailed investigation of the 288 constants.",
+        keywords: [
+          "empirical skeleton of reality",
+          "coherence",
+          "second",
+          "meter",
+          "coulomb",
+          "kelvin",
+          "kilogram",
+          "single underlying geometry",
+          "288 constants"
+        ]
+      }
+    ],
+
+    dependencies: [
+      "Chapter 1 establishes the historical progression from measurement to geometry and algebraic persistence.",
+      "Basic familiarity with physical constants, measurement units, and the role of CODATA is helpful.",
+      "No detailed knowledge of the full CODATA table is required before this chapter; the chapter introduces the list as the empirical dataset for the rest of the book."
+    ],
+
+    relatedChapters: [
+      "front-matter",
+      "chapter-01",
+      "chapter-03",
+      "chapter-07",
+      "chapter-08",
+      "chapter-11",
+      "chapter-12"
+    ]
+  },
+  { id: "chapter-03", shortLabel: "Ch. 3", title: "Chapter 3", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-04", shortLabel: "Ch. 4", title: "Chapter 4", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-05", shortLabel: "Ch. 5", title: "Chapter 5", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-06", shortLabel: "Ch. 6", title: "Chapter 6", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-07", shortLabel: "Ch. 7", title: "Chapter 7", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-08", shortLabel: "Ch. 8", title: "Chapter 8", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-09", shortLabel: "Ch. 9", title: "Chapter 9", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-10", shortLabel: "Ch. 10", title: "Chapter 10", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-11", shortLabel: "Ch. 11", title: "Chapter 11", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-12", shortLabel: "Ch. 12", title: "Chapter 12", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-13", shortLabel: "Ch. 13", title: "Chapter 13", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "chapter-14", shortLabel: "Ch. 14", title: "Chapter 14", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+  { id: "epilogue", shortLabel: "Epilogue", title: "Epilogue", status: "Awaiting metadata", version: "0.1", updated: "Pending", summary: "Metadata pending.", aiSummary: "", aiSearchDescription: "", keywords: [], keyConcepts: [], keyEquations: [], sections: [], relatedChapters: [] },
+];
