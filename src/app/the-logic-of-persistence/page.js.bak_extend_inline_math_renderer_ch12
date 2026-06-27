@@ -19,8 +19,6 @@ function getPdfFileForChapter(chapter) {
     "chapter-10": "chapter_10.pdf",
     "chapter-11": "chapter_11.pdf",
     "chapter-12": "chapter_12.pdf",
-    "chapter-13": "chapter_13.pdf",
-    "chapter-14": "chapter_14.pdf",
     "epilogue": "epilogue.pdf",
     "transform-dictionary": "transform_dictionary.pdf",
     "transformation-dictionary": "transform_dictionary.pdf",
@@ -39,246 +37,102 @@ function getPdfFileForChapter(chapter) {
 
 
 
-function InlineMath({ children }) {
+function InlineActionEquation({ symbol = "G" }) {
+  const wrapperStyle = {
+    fontFamily:
+      "'Cambria Math', 'STIX Two Math', 'Latin Modern Math', 'TeX Gyre Termes Math', 'STIXGeneral', 'Times New Roman', serif",
+    whiteSpace: "nowrap",
+  };
+
+  const italicStyle = {
+    fontStyle: "italic",
+  };
+
+  const subStyle = {
+    fontSize: "0.7em",
+    lineHeight: 0,
+    verticalAlign: "-0.28em",
+    fontStyle: "italic",
+  };
+
+  const supStyle = {
+    fontSize: "0.72em",
+    lineHeight: 0,
+    verticalAlign: "0.58em",
+  };
+
+  const nestedSubStyle = {
+    fontSize: "0.78em",
+    lineHeight: 0,
+    verticalAlign: "-0.22em",
+    fontStyle: "italic",
+  };
+
   return (
-    <span
-      style={{
-        fontFamily:
-          "'Cambria Math', 'STIX Two Math', 'Latin Modern Math', 'TeX Gyre Termes Math', 'STIXGeneral', 'Times New Roman', serif",
-        whiteSpace: "nowrap",
-        fontStyle: "normal",
-      }}
-    >
-      {children}
+    <span style={wrapperStyle}>
+      <span style={italicStyle}>{symbol}</span>
+      <sub style={subStyle}>k</sub>
+      <span style={italicStyle}>e</span>
+      <sup style={supStyle}>
+        <span style={italicStyle}>φ</span>
+        <sub style={nestedSubStyle}>k</sub>
+      </sup>
+      {" = "}
+      <span style={italicStyle}>n</span>
+      <sub style={subStyle}>k</sub>
     </span>
   );
 }
 
 
-function MathSub({ children }) {
-  return (
-    <sub
-      style={{
-        fontSize: "0.7em",
-        lineHeight: 0,
-        verticalAlign: "-0.28em",
-        fontStyle: "normal",
-      }}
-    >
-      {children}
-    </sub>
-  );
-}
-
-
-function MathSup({ children }) {
-  return (
-    <sup
-      style={{
-        fontSize: "0.72em",
-        lineHeight: 0,
-        verticalAlign: "0.58em",
-        fontStyle: "normal",
-      }}
-    >
-      {children}
-    </sup>
-  );
-}
-
-
-function InlineActionEquation({ symbol = "G" }) {
-  return (
-    <InlineMath>
-      {symbol}
-      <MathSub>k</MathSub>
-      e
-      <MathSup>
-        φ
-        <MathSub>k</MathSub>
-      </MathSup>
-      {" = "}
-      n
-      <MathSub>k</MathSub>
-    </InlineMath>
-  );
-}
-
-
 function InlineBoundaryNotation() {
-  return (
-    <InlineMath>
-      B
-      <MathSub>k</MathSub>
-      {"/"}
-      u
-      <MathSub>k</MathSub>
-      {" = "}
-      φ
-      <MathSub>k</MathSub>
-      {" × 10"}
-      <MathSup>
-        n
-        <MathSub>k</MathSub>
-      </MathSup>
-    </InlineMath>
-  );
-}
-
-
-function InlineNamedMath({ name }) {
-  const renderers = {
-    "V_fe": (
-      <InlineMath>
-        V<MathSub>fe</MathSub>
-      </InlineMath>
-    ),
-    "G_Gi": (
-      <InlineMath>
-        G<MathSub>Gi</MathSub>
-      </InlineMath>
-    ),
-    "G_Ga": (
-      <InlineMath>
-        G<MathSub>Ga</MathSub>
-      </InlineMath>
-    ),
-    "φ_i": (
-      <InlineMath>
-        φ<MathSub>i</MathSub>
-      </InlineMath>
-    ),
-    "1/φ_i": (
-      <InlineMath>
-        1/φ<MathSub>i</MathSub>
-      </InlineMath>
-    ),
-    "φ_i⁻¹": (
-      <InlineMath>
-        φ<MathSub>i</MathSub>
-        <MathSup>−1</MathSup>
-      </InlineMath>
-    ),
-    "Li₂": (
-      <InlineMath>
-        Li<MathSub>2</MathSub>
-      </InlineMath>
-    ),
-    "Li₃": (
-      <InlineMath>
-        Li<MathSub>3</MathSub>
-      </InlineMath>
-    ),
-    "Li₂(1)": (
-      <InlineMath>
-        Li<MathSub>2</MathSub>(1)
-      </InlineMath>
-    ),
-    "Li₃(1)": (
-      <InlineMath>
-        Li<MathSub>3</MathSub>(1)
-      </InlineMath>
-    ),
-    "Li_s(1)": (
-      <InlineMath>
-        Li<MathSub>s</MathSub>(1)
-      </InlineMath>
-    ),
-    "ζ(2)": <InlineMath>ζ(2)</InlineMath>,
-    "ζ(3)": <InlineMath>ζ(3)</InlineMath>,
-    "ζ(x)": <InlineMath>ζ(x)</InlineMath>,
-    "ζ(s)": <InlineMath>ζ(s)</InlineMath>,
-    "Γ(5)": <InlineMath>Γ(5)</InlineMath>,
-    "Γ(x)": <InlineMath>Γ(x)</InlineMath>,
-    "Γ'(1)": <InlineMath>Γ′(1)</InlineMath>,
-    "4π": <InlineMath>4π</InlineMath>,
-    "2K": <InlineMath>2K</InlineMath>,
-    "C_d": (
-      <InlineMath>
-        C<MathSub>d</MathSub>
-      </InlineMath>
-    ),
-    "D_d": (
-      <InlineMath>
-        D<MathSub>d</MathSub>
-      </InlineMath>
-    ),
-    "L_1": (
-      <InlineMath>
-        L<MathSub>1</MathSub>
-      </InlineMath>
-    ),
-    "L_2": (
-      <InlineMath>
-        L<MathSub>2</MathSub>
-      </InlineMath>
-    ),
-    "C_U": (
-      <InlineMath>
-        C<MathSub>U</MathSub>
-      </InlineMath>
-    ),
-    "P_up": (
-      <InlineMath>
-        P<MathSub>up</MathSub>
-      </InlineMath>
-    ),
-    "ω_1": (
-      <InlineMath>
-        ω<MathSub>1</MathSub>
-      </InlineMath>
-    ),
-    "ω_2": (
-      <InlineMath>
-        ω<MathSub>2</MathSub>
-      </InlineMath>
-    ),
-    "mₑ": (
-      <InlineMath>
-        m<MathSub>e</MathSub>
-      </InlineMath>
-    ),
-    "mₚ": (
-      <InlineMath>
-        m<MathSub>p</MathSub>
-      </InlineMath>
-    ),
-    "tₚ": (
-      <InlineMath>
-        t<MathSub>p</MathSub>
-      </InlineMath>
-    ),
-    "lₚ": (
-      <InlineMath>
-        l<MathSub>p</MathSub>
-      </InlineMath>
-    ),
-    "qₚ": (
-      <InlineMath>
-        q<MathSub>p</MathSub>
-      </InlineMath>
-    ),
-    "Tₚ": (
-      <InlineMath>
-        T<MathSub>p</MathSub>
-      </InlineMath>
-    ),
-    "V_24": (
-      <InlineMath>
-        V<MathSub>24</MathSub>
-      </InlineMath>
-    ),
-    "ρ_Leech": (
-      <InlineMath>
-        ρ<MathSub>Leech</MathSub>
-      </InlineMath>
-    ),
-    "!5": <InlineMath>!5</InlineMath>,
-    "8×36": <InlineMath>8 × 36</InlineMath>,
-    "24-ball": <InlineMath>24-ball</InlineMath>,
+  const wrapperStyle = {
+    fontFamily:
+      "'Cambria Math', 'STIX Two Math', 'Latin Modern Math', 'TeX Gyre Termes Math', 'STIXGeneral', 'Times New Roman', serif",
+    whiteSpace: "nowrap",
   };
 
-  return renderers[name] || name;
+  const italicStyle = {
+    fontStyle: "italic",
+  };
+
+  const subStyle = {
+    fontSize: "0.7em",
+    lineHeight: 0,
+    verticalAlign: "-0.28em",
+    fontStyle: "italic",
+  };
+
+  const supStyle = {
+    fontSize: "0.72em",
+    lineHeight: 0,
+    verticalAlign: "0.58em",
+  };
+
+  const nestedSubStyle = {
+    fontSize: "0.78em",
+    lineHeight: 0,
+    verticalAlign: "-0.22em",
+    fontStyle: "italic",
+  };
+
+  return (
+    <span style={wrapperStyle}>
+      <span style={italicStyle}>B</span>
+      <sub style={subStyle}>k</sub>
+      {"/"}
+      <span style={italicStyle}>u</span>
+      <sub style={subStyle}>k</sub>
+      {" = "}
+      <span style={italicStyle}>φ</span>
+      <sub style={subStyle}>k</sub>
+      {" × 10"}
+      <sup style={supStyle}>
+        <span style={italicStyle}>n</span>
+        <sub style={nestedSubStyle}>k</sub>
+      </sup>
+    </span>
+  );
 }
 
 
@@ -311,60 +165,6 @@ function renderChapterSummary(summary) {
       ],
       render: () => <InlineBoundaryNotation />,
     },
-    {
-      tokens: [
-        "(4π/Γ(5))²",
-        "(4π/Γ(5))^2",
-      ],
-      render: () => (
-        <InlineMath>
-          (4π/Γ(5))<MathSup>2</MathSup>
-        </InlineMath>
-      ),
-    },
-    {
-      tokens: [
-        "V_fe",
-        "G_Gi",
-        "G_Ga",
-        "1/φ_i",
-        "φ_i⁻¹",
-        "φ_i",
-        "Li₂(1)",
-        "Li₃(1)",
-        "Li_s(1)",
-        "Li₂",
-        "Li₃",
-        "ζ(2)",
-        "ζ(3)",
-        "ζ(x)",
-        "ζ(s)",
-        "Γ(5)",
-        "Γ(x)",
-        "Γ'(1)",
-        "C_d",
-        "D_d",
-        "L_1",
-        "L_2",
-        "C_U",
-        "P_up",
-        "ω_1",
-        "ω_2",
-        "mₑ",
-        "mₚ",
-        "tₚ",
-        "lₚ",
-        "qₚ",
-        "Tₚ",
-        "V_24",
-        "ρ_Leech",
-        "8×36",
-        "!5",
-        "4π",
-        "2K",
-      ],
-      render: (token) => <InlineNamedMath name={token} />,
-    },
   ];
 
   const flatTokens = mathTokens.flatMap((entry) =>
@@ -373,9 +173,6 @@ function renderChapterSummary(summary) {
       render: entry.render,
     }))
   );
-
-  // Prefer longest matches first when two tokens begin at the same position.
-  flatTokens.sort((a, b) => b.token.length - a.token.length);
 
   const nodes = [];
   let remaining = summary;
@@ -386,12 +183,7 @@ function renderChapterSummary(summary) {
 
     for (const entry of flatTokens) {
       const index = remaining.indexOf(entry.token);
-      if (
-        index !== -1 &&
-        (!best ||
-          index < best.index ||
-          (index === best.index && entry.token.length > best.token.length))
-      ) {
+      if (index !== -1 && (!best || index < best.index)) {
         best = { ...entry, index };
       }
     }
@@ -405,7 +197,7 @@ function renderChapterSummary(summary) {
       nodes.push(<span key={key++}>{remaining.slice(0, best.index)}</span>);
     }
 
-    nodes.push(<span key={key++}>{best.render(best.token)}</span>);
+    nodes.push(<span key={key++}>{best.render()}</span>);
     remaining = remaining.slice(best.index + best.token.length);
   }
 

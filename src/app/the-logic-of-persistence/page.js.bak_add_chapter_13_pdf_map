@@ -19,8 +19,6 @@ function getPdfFileForChapter(chapter) {
     "chapter-10": "chapter_10.pdf",
     "chapter-11": "chapter_11.pdf",
     "chapter-12": "chapter_12.pdf",
-    "chapter-13": "chapter_13.pdf",
-    "chapter-14": "chapter_14.pdf",
     "epilogue": "epilogue.pdf",
     "transform-dictionary": "transform_dictionary.pdf",
     "transformation-dictionary": "transform_dictionary.pdf",

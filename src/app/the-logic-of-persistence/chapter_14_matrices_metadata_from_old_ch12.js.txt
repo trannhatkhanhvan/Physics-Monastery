@@ -1,0 +1,654 @@
+{
+    id: "chapter-12",
+    part: "Part III: Geometry Speaks Physics",
+    shortLabel: "Ch. 12",
+    title: "Matrices—the Grammar of Transformation",
+    status: "Public draft",
+    version: "0.1",
+    updated: "June 2026",
+
+    summary:
+      "Chapter 12 translates the hyperbolic partition equation into matrix and operator language. If geometry provides the nouns of reality, matrices provide the verbs: the lawful transformations by which structures change while preserving coherence. The chapter begins with the general role of determinants, traces, eigenvalues, unimodular maps, Hermitian operators, unitary transformations, Lagrangian and Hamiltonian flows, commutators, Lie generators, and Dirac’s gamma matrices. It then returns to the partition quartic T(x), builds its Frobenius companion matrix M, and interprets the roots ж₁, ж₂, ж₃, ж₄ as eigenvalues. The matrix invariants recover the quartic’s Vieta and power-sum invariants. The chapter then introduces the logarithmic generator Λ = log(M), the first-order state generator H = Mᵀ, the hyperbolic/oscillatory block decomposition, a doubled Lagrangian for forward and backward flows, U(1) phase structure, and finally the Clifford-style square-root grammar that connects the quartic operator to Dirac-like first-order evolution.",
+
+    aiSummary:
+      "This chapter presents matrices as the grammar of transformation and applies that grammar to the hyperbolic partition equation. It first explains standard matrix ideas: determinants measure volume scaling, unimodular matrices preserve lattice cells, eigenvalues reveal invariant stretching or rotation directions, trace sums eigenvalues and measures local expansion for generators, Hermitian matrices have real eigenvalues and represent observables, and unitary matrices preserve inner products and probability amplitudes. The chapter then reviews how Lagrangian action, Hamiltonian flow, Poisson brackets, quantum commutators, Heisenberg matrix mechanics, Lie generators, and Pauli and gamma matrices lead to the operator language of quantum physics. Dirac’s equation is presented as the algebraic square root of spacetime geometry, with c, ℏ, and mₑ calibrating spacetime scale, quantum action scale, and rest-energy scale. The chapter then applies this language to the partition quartic T(x) = x⁴ + 2πx² − 2πax + 2π. Its Frobenius companion matrix M has eigenvalues equal to the roots ж₁, ж₂, ж₃, and ж₄. The trace, determinant, higher traces, determinant powers, and spectral radius of M reproduce the quartic’s invariant structure. The matrix logarithm Λ = log(M) gives a continuous interpolation Mᵗ = e^{tΛ}, whose determinant scales as (2π)^t, connecting discrete spectral steps to continuous volume dilation. The coefficient 2πa introduces odd-power directed asymmetry, splitting the system into a two-dimensional oscillatory block from the complex-conjugate root pair and a two-dimensional hyperbolic block from the real root pair. Ferrari’s resolvent decomposes the quartic into two real quadratic factors with local 2 × 2 companion matrices. The chapter then constructs a doubled two-field Lagrangian using L and its adjoint L*, pairing forward and backward flows into one real time-reversal-invariant action. Packaging the fields as ψ = (x + iy)/√2 exposes U(1) phase symmetry and prepares a route toward U(n) and SU(n)-type symmetry. Finally, the fourth-order differential equation is rewritten as a first-order state evolution du/dt = Hu with H = Mᵀ. Splitting H = H₀ + aY identifies the directed mixing term. The quartic operator factors into two quadratic operators, and each quadratic admits a first-order square-root representation governed by Clifford anticommutation relations. The result is a finite-dimensional Dirac-like operator grammar for the hyperbolic partition system.",
+
+    aiSearchDescription:
+      "Retrieve this chapter for questions about matrices as grammar of transformation, companion matrix M, Frobenius companion matrix, hyperbolic partition quartic, T(x), roots as eigenvalues, ж₁ ж₂ ж₃ ж₄, traces, determinants, spectral radius, matrix logarithm, Λ = log(M), continuous interpolation M^t, determinant scaling (2π)^t, first-order generator H, H = M transpose, state vector u(t), Lagrangian, doubled action, adjoint operator L*, forward and backward flows, U(1) phase symmetry, U(n), SU(n), Ferrari resolvent, quadratic blocks, oscillatory block, hyperbolic block, complex conjugate roots, real-similar block decomposition, Clifford structure, gamma matrices, Dirac equation, anticommutation relations, Pauli matrices, Heisenberg matrix mechanics, commutators, Poisson brackets, Hamiltonian flow, unitary and unimodular transformations, and why the partition equation has a Dirac-like operator grammar.",
+
+    keywords: [
+      "matrices",
+      "grammar of transformation",
+      "operator structure",
+      "hyperbolic partition equation",
+      "partition quartic",
+      "T(x)",
+      "companion matrix",
+      "Frobenius companion matrix",
+      "M",
+      "H",
+      "H = Mᵀ",
+      "eigenvalues",
+      "roots",
+      "ж₁",
+      "ж₂",
+      "ж₃",
+      "ж₄",
+      "trace",
+      "determinant",
+      "spectral radius",
+      "Vieta relations",
+      "matrix invariants",
+      "higher traces",
+      "power sums",
+      "matrix logarithm",
+      "Λ = log(M)",
+      "continuous interpolation",
+      "M^t",
+      "volume scaling",
+      "det(e^M)",
+      "det(e^{tΛ})",
+      "2π",
+      "directed asymmetry",
+      "odd-power term",
+      "a parameter",
+      "real-similar block form",
+      "oscillatory block",
+      "hyperbolic block",
+      "complex conjugate roots",
+      "rotation-scaling block",
+      "radial dilation",
+      "phase advance",
+      "Ferrari resolvent",
+      "quadratic factors",
+      "2x2 companion matrices",
+      "Lagrangian",
+      "Hamiltonian",
+      "action",
+      "stationary action",
+      "Poisson brackets",
+      "commutators",
+      "Dirac correspondence principle",
+      "Heisenberg matrix mechanics",
+      "Born and Jordan",
+      "position momentum commutator",
+      "[X,P] = iℏI",
+      "Lie algebra",
+      "Lie generator",
+      "matrix exponential",
+      "Pascal triangle",
+      "Pauli matrices",
+      "Schrodinger equation",
+      "Klein-Gordon equation",
+      "Dirac equation",
+      "gamma matrices",
+      "Clifford algebra",
+      "anticommutation",
+      "spinor",
+      "double-valued representation",
+      "doubled action",
+      "adjoint operator",
+      "forward backward flows",
+      "complex field",
+      "U(1)",
+      "U(n)",
+      "SU(n)",
+      "first-order evolution",
+      "state vector",
+      "H0 plus aY",
+      "mixing term",
+      "Clifford structure"
+    ],
+
+    keyConcepts: [
+      {
+        term: "Matrices as verbs",
+        description:
+          "Matrices encode transformations: how structures change, couple, scale, rotate, or preserve coherence."
+      },
+      {
+        term: "Companion matrix M",
+        description:
+          "The Frobenius companion matrix associated with the partition quartic T(x). Its eigenvalues are the roots ж₁, ж₂, ж₃, and ж₄."
+      },
+      {
+        term: "Trace and determinant invariants",
+        description:
+          "The trace, determinant, and traces of powers of M recover coordinate-free access to the quartic’s root sums, products, and power sums."
+      },
+      {
+        term: "Matrix logarithm Λ",
+        description:
+          "A logarithmic generator satisfying e^Λ = M, allowing the discrete companion dynamics to be interpolated as a continuous flow Mᵗ = e^{tΛ}."
+      },
+      {
+        term: "Continuous geometry with discrete action steps",
+        description:
+          "The logarithmic generator gives smooth volume dilation by (2π)^t, whose integer-time values match the discrete determinant jumps of M^k."
+      },
+      {
+        term: "Directed asymmetry",
+        description:
+          "The nonzero coefficient 2πa introduces an odd-power term that breaks the even symmetry of the untwisted quartic and gives the recurrence a directional bias."
+      },
+      {
+        term: "Hyperbolic/oscillatory splitting",
+        description:
+          "The real root pair generates a two-dimensional hyperbolic invariant subspace, while the complex-conjugate pair generates a two-dimensional oscillatory rotation-dilation plane."
+      },
+      {
+        term: "Quadratic companion blocks",
+        description:
+          "Ferrari’s factorization pairs the quartic roots into two quadratic factors, each with its own 2 × 2 companion matrix and local Vieta data."
+      },
+      {
+        term: "Doubled Lagrangian",
+        description:
+          "A two-field action using L and L* that binds forward and backward laws into one real time-reversal-invariant variational structure."
+      },
+      {
+        term: "U(1) phase structure",
+        description:
+          "Combining the doubled fields into ψ = (x + iy)/√2 exposes a global phase symmetry ψ ↦ e^{iθ}ψ."
+      },
+      {
+        term: "First-order state generator H",
+        description:
+          "The fourth-order differential equation is rewritten as a first-order system du/dt = Hu, with H = Mᵀ sharing the same characteristic polynomial and spectrum as M."
+      },
+      {
+        term: "Directed mixing term aY",
+        description:
+          "The decomposition H = H₀ + aY separates the even unperturbed flow from the odd-derivative contribution controlled by the partition parameter a."
+      },
+      {
+        term: "Clifford square-root grammar",
+        description:
+          "The quartic operator factors into two quadratic operators, each of which admits a first-order square-root representation governed by Clifford anticommutation relations."
+      },
+      {
+        term: "Dirac-like finite operator grammar",
+        description:
+          "The hyperbolic partition structure carries the same algebraic sequence used by Dirac: second-order geometry is linearized by first-order matrix operators obeying anticommutation rules."
+      }
+    ],
+
+    keyEquations: [
+      {
+        label: "Stationary action",
+        latex: "S=\\int L\\,dt",
+        plainLanguage:
+          "The action is the time integral of the Lagrangian.",
+        role:
+          "Introduces the variational foundation of physical transformation."
+      },
+      {
+        label: "Dirac correspondence principle",
+        latex: "\\{A,B\\}\\longrightarrow\\frac{1}{i\\hbar}[\\hat A,\\hat B]",
+        plainLanguage:
+          "Classical Poisson brackets become quantum commutators.",
+        role:
+          "Links classical Hamiltonian flow to quantum operator calculus."
+      },
+      {
+        label: "Canonical commutator",
+        latex: "[X,P]=i\\hbar I",
+        plainLanguage:
+          "Position and momentum do not commute in matrix mechanics.",
+        role:
+          "Marks the operator structure of quantum mechanics."
+      },
+      {
+        label: "Lie exponential",
+        latex: "e^{At}",
+        plainLanguage:
+          "An infinitesimal generator A exponentiates to a global transformation.",
+        role:
+          "Introduces the generator-to-transformation principle."
+      },
+      {
+        label: "Schrodinger eigenvalue equation",
+        latex: "\\hat H\\psi=E\\psi",
+        plainLanguage:
+          "The Hamiltonian acts as an operator whose eigenvalues are energies.",
+        role:
+          "Connects matrix mechanics to wave mechanics."
+      },
+      {
+        label: "Gamma matrix anticommutation",
+        latex: "\\{\\gamma^\\mu,\\gamma^\\nu\\}=2\\eta^{\\mu\\nu}I",
+        plainLanguage:
+          "Dirac’s gamma matrices multiply so as to reproduce the spacetime metric.",
+        role:
+          "Defines the Clifford relation underlying the Dirac equation."
+      },
+      {
+        label: "Dirac equation",
+        latex: "\\left(i\\hbar c\\,\\gamma^\\mu\\partial_\\mu-m_e c^2\\right)\\psi=0",
+        plainLanguage:
+          "The Dirac equation is first order in space and time and calibrates its geometry with c, ℏ, and mₑ.",
+        role:
+          "Provides the model of first-order operator grammar that the partition quartic later echoes."
+      },
+      {
+        label: "Partition quartic",
+        latex: "T(x)=x^4+2\\pi x^2-2\\pi ax+2\\pi=0",
+        plainLanguage:
+          "The hyperbolic partition equation is written as a depressed quartic.",
+        role:
+          "Defines the polynomial whose matrix realization is studied."
+      },
+      {
+        label: "Frobenius companion matrix",
+        latex: "M=\\begin{pmatrix}0&0&0&-2\\pi\\\\1&0&0&2\\pi a\\\\0&1&0&-2\\pi\\\\0&0&1&0\\end{pmatrix}",
+        plainLanguage:
+          "The companion matrix has characteristic polynomial T(x).",
+        role:
+          "Turns the quartic into an operator whose eigenvalues are the partition roots."
+      },
+      {
+        label: "Companion matrix invariants",
+        latex: "\\operatorname{tr}(M)=0,\\qquad \\det(M)=2\\pi,\\qquad \\operatorname{tr}(M^2)=-4\\pi,\\qquad \\det(M^k)=(2\\pi)^k",
+        plainLanguage:
+          "The trace and determinant data reproduce the quartic’s invariant relations.",
+        role:
+          "Records the primary matrix invariants of M."
+      },
+      {
+        label: "Volume-preserving exponential of M",
+        latex: "\\det(e^M)=e^{\\operatorname{tr}(M)}=1",
+        plainLanguage:
+          "Since tr(M)=0, the exponential e^M preserves four-dimensional volume.",
+        role:
+          "Distinguishes exponential flow from the discrete volume-rescaling companion map."
+      },
+      {
+        label: "Matrix logarithm interpolation",
+        latex: "e^{\\Lambda}=M,\\qquad M^t=e^{t\\Lambda}",
+        plainLanguage:
+          "The logarithm of M generates a continuous interpolation of the discrete powers of M.",
+        role:
+          "Connects discrete dynamics to continuous operator flow."
+      },
+      {
+        label: "Continuous determinant scaling",
+        latex: "\\det(e^{t\\Lambda})=e^{\\operatorname{tr}(\\Lambda)t}=(\\det M)^t=(2\\pi)^t",
+        plainLanguage:
+          "The interpolating flow scales volume continuously by (2π)^t.",
+        role:
+          "Shows how continuous geometry reproduces discrete determinant jumps at integer time."
+      },
+      {
+        label: "Invariant splitting",
+        latex: "\\mathbb{R}^4\\cong\\mathbb{R}^2_{osc}\\oplus\\mathbb{R}^2_{hyp}",
+        plainLanguage:
+          "The four-dimensional system splits into oscillatory and hyperbolic two-dimensional sectors.",
+        role:
+          "Describes the real block structure of the companion dynamics."
+      },
+      {
+        label: "Quadratic companion blocks",
+        latex: "M_+=\\begin{pmatrix}0&-\\text{ж}_1\\text{ж}_2\\\\1&\\text{ж}_1+\\text{ж}_2\\end{pmatrix},\\qquad M_-=\\begin{pmatrix}0&-\\text{ж}_3\\text{ж}_4\\\\1&\\text{ж}_3+\\text{ж}_4\\end{pmatrix}",
+        plainLanguage:
+          "The real root pair and complex-conjugate pair each define their own 2 × 2 companion matrix.",
+        role:
+          "Decomposes the quartic into two local quadratic operator grammars."
+      },
+      {
+        label: "Oscillatory rotation-dilation block",
+        latex: "M_{osc,+}=\\text{ж}_r\\begin{pmatrix}\\cos(\\text{ж}_\\theta)&-\\sin(\\text{ж}_\\theta)\\\\\\sin(\\text{ж}_\\theta)&\\cos(\\text{ж}_\\theta)\\end{pmatrix},\\qquad M_{osc,-}=\\text{ж}_r\\begin{pmatrix}\\cos(\\text{ж}_\\theta)&\\sin(\\text{ж}_\\theta)\\\\-\\sin(\\text{ж}_\\theta)&\\cos(\\text{ж}_\\theta)\\end{pmatrix}",
+        plainLanguage:
+          "The complex-conjugate root pair acts as a rotation by ±жθ together with dilation by жᵣ.",
+        role:
+          "Defines the oscillatory subsystem."
+      },
+      {
+        label: "Differential operator for T",
+        latex: "L=D^4+2\\pi D^2-2\\pi aD+2\\pi,\\qquad D=\\frac{d}{dt}",
+        plainLanguage:
+          "The quartic polynomial becomes a fourth-order differential operator.",
+        role:
+          "Begins the Lagrangian formulation of the partition dynamics."
+      },
+      {
+        label: "Adjoint operator",
+        latex: "L^*=D^4+2\\pi D^2+2\\pi aD+2\\pi",
+        plainLanguage:
+          "Under time reversal, the odd-derivative term changes sign.",
+        role:
+          "Defines the backward partner needed for a real doubled action."
+      },
+      {
+        label: "Doubled Lagrangian",
+        latex: "\\mathcal{L}(x,y)=\\frac12\\left(yL[x]+xL^*[y]\\right)",
+        plainLanguage:
+          "Forward and backward flows are paired in one real variational structure.",
+        role:
+          "Restores time-reversal symmetry at the action level."
+      },
+      {
+        label: "Complex field from doubled pair",
+        latex: "\\psi=\\frac{x+iy}{\\sqrt2},\\qquad \\psi\\mapsto e^{i\\theta}\\psi",
+        plainLanguage:
+          "The doubled real fields combine into a complex field with U(1) phase symmetry.",
+        role:
+          "Exposes the phase structure of the doubled action."
+      },
+      {
+        label: "First-order state vector",
+        latex: "\\mathbf{u}(t)=\\begin{pmatrix}x\\\\\\dot{x}\\\\\\ddot{x}\\\\\\dddot{x}\\end{pmatrix}",
+        plainLanguage:
+          "The fourth-order equation is rewritten as a first-order system in four variables.",
+        role:
+          "Defines the state vector for the generator H."
+      },
+      {
+        label: "First-order generator H",
+        latex: "H=\\begin{pmatrix}0&1&0&0\\\\0&0&1&0\\\\0&0&0&1\\\\-2\\pi&2\\pi a&-2\\pi&0\\end{pmatrix}",
+        plainLanguage:
+          "H generates first-order evolution of the four-component state vector.",
+        role:
+          "Gives the state-evolution matrix sharing the same spectrum as M."
+      },
+      {
+        label: "Characteristic polynomial of H",
+        latex: "\\det(zI-H)=z^4+2\\pi z^2-2\\pi az+2\\pi",
+        plainLanguage:
+          "The generator H has the same characteristic polynomial as the partition quartic.",
+        role:
+          "Shows that H and M are two realizations of the same quartic geometry."
+      },
+      {
+        label: "Transpose relation",
+        latex: "H=M^T",
+        plainLanguage:
+          "The first-order state generator is the transpose companion realization of the same quartic.",
+        role:
+          "Connects the recurrence companion matrix and differential flow generator."
+      },
+      {
+        label: "Even plus directed mixing split",
+        latex: "H=H_0+aY",
+        plainLanguage:
+          "H splits into an even unperturbed part and a directed interaction part.",
+        role:
+          "Identifies the role of a as the coupling that introduces directed mixing."
+      },
+      {
+        label: "Evolution operator",
+        latex: "\\mathbf{u}(t)=e^{tH}\\mathbf{u}(0)",
+        plainLanguage:
+          "The state evolves by exponentiating the generator H.",
+        role:
+          "Places the partition system in first-order operator evolution form."
+      },
+      {
+        label: "Quartic factorization",
+        latex: "L=(D^2+pD+q)(D^2-pD+r)",
+        plainLanguage:
+          "The fourth-order operator factors into two quadratic operators.",
+        role:
+          "Prepares the Clifford square-root interpretation."
+      },
+      {
+        label: "Clifford relation",
+        latex: "\\{\\Gamma^\\mu,\\Gamma^\\nu\\}=2\\eta^{\\mu\\nu}I",
+        plainLanguage:
+          "First-order matrix directions preserve a quadratic form through anticommutation.",
+        role:
+          "States the square-root grammar shared with Dirac’s construction."
+      }
+    ],
+
+    sections: [
+      {
+        id: "chapter-12-matrices-as-grammar",
+        title: "Matrices as the Grammar of Transformation",
+        summary:
+          "Introduces matrices as the algebraic language of coherent transformation, including determinants, traces, eigenvalues, lattices, unimodular maps, Hermitian operators, and unitary transformations.",
+        aiSummary:
+          "Use this section for queries about matrices as verbs, determinants as volume scaling, unimodular matrices, lattices, eigenvalues, trace, Hermitian matrices, unitary matrices, and invariant-preserving transformations.",
+        keywords: [
+          "matrices",
+          "grammar of transformation",
+          "determinant",
+          "trace",
+          "eigenvalues",
+          "unimodular",
+          "Hermitian",
+          "unitary"
+        ]
+      },
+      {
+        id: "chapter-12-action-to-operators",
+        title: "From Action Principles to Operator Calculus",
+        summary:
+          "Connects Lagrangian action, Hamiltonian flows, Poisson brackets, commutators, Heisenberg matrix mechanics, Lie generators, and Pauli matrices.",
+        aiSummary:
+          "Use this section for queries about Lagrangian action, Hamiltonian flow, Poisson brackets, commutators, Dirac correspondence, Heisenberg matrix mechanics, [X,P]=iℏI, Lie algebras, generator exponentials, Pascal triangle, and Pauli matrices.",
+        keywords: [
+          "action principle",
+          "Hamiltonian flow",
+          "Poisson brackets",
+          "commutators",
+          "Heisenberg matrix mechanics",
+          "Lie generators",
+          "Pauli matrices"
+        ]
+      },
+      {
+        id: "chapter-12-dirac-square-root",
+        title: "Dirac’s Square Root of Spacetime Geometry",
+        summary:
+          "Explains how Dirac used gamma matrices and Clifford anticommutation to write a first-order relativistic wave equation.",
+        aiSummary:
+          "Use this section for queries about Schrodinger equation, Klein-Gordon equation, Dirac equation, gamma matrices, anticommutation, spacetime metric, Clifford algebra, spinors, and c ℏ mₑ as calibration constants.",
+        keywords: [
+          "Dirac equation",
+          "gamma matrices",
+          "Clifford algebra",
+          "anticommutation",
+          "spinor",
+          "c",
+          "ℏ",
+          "mₑ"
+        ]
+      },
+      {
+        id: "chapter-12-companion-matrix",
+        title: "The Companion Matrix",
+        summary:
+          "Builds the Frobenius companion matrix M for the partition quartic and identifies its roots as eigenvalues.",
+        aiSummary:
+          "Use this section for queries about T(x), Frobenius companion matrix M, roots as eigenvalues, trace zero, determinant 2π, tr(M²) = −4π, determinant powers, and spectral radius.",
+        keywords: [
+          "companion matrix",
+          "M",
+          "T(x)",
+          "roots as eigenvalues",
+          "trace",
+          "determinant",
+          "spectral radius"
+        ]
+      },
+      {
+        id: "chapter-12-logarithmic-generator",
+        title: "The Logarithmic Generator",
+        summary:
+          "Introduces Λ = log(M) and interprets Mᵗ = e^{tΛ} as a continuous interpolation of the discrete companion dynamics.",
+        aiSummary:
+          "Use this section for queries about matrix logarithm, Λ = log(M), M^t, continuous interpolation, determinant scaling, (2π)^t, discrete action steps, and continuous volume dilation.",
+        keywords: [
+          "matrix logarithm",
+          "Λ",
+          "M^t",
+          "continuous interpolation",
+          "determinant scaling",
+          "discrete spectral steps"
+        ]
+      },
+      {
+        id: "chapter-12-block-decomposition",
+        title: "Hyperbolic and Oscillatory Blocks",
+        summary:
+          "Explains how the companion dynamics split into a real-root hyperbolic block and a complex-conjugate oscillatory block.",
+        aiSummary:
+          "Use this section for queries about directed asymmetry, odd-power term, real-similar block form, R²_osc, R²_hyp, complex-conjugate roots, oscillatory plane, hyperbolic invariant subspace, and rotation-dilation dynamics.",
+        keywords: [
+          "block decomposition",
+          "hyperbolic block",
+          "oscillatory block",
+          "complex conjugate roots",
+          "rotation dilation",
+          "directed asymmetry"
+        ]
+      },
+      {
+        id: "chapter-12-quadratic-factors",
+        title: "Decomposing the Quartic",
+        summary:
+          "Uses Ferrari’s factorization to pair the four roots into two real quadratic factors, each with its own 2 × 2 companion matrix.",
+        aiSummary:
+          "Use this section for queries about Ferrari resolvent, quartic decomposition, real quadratic factors, root pairings, M_plus, M_minus, local Vieta data, traces, and determinants of quadratic companion blocks.",
+        keywords: [
+          "Ferrari resolvent",
+          "quadratic factors",
+          "root pairings",
+          "2x2 companion matrices",
+          "local Vieta data"
+        ]
+      },
+      {
+        id: "chapter-12-oscillatory-block",
+        title: "The Oscillatory Block",
+        summary:
+          "Writes the complex-conjugate subsystem as two oriented rotation-dilation blocks with identical invariants and opposite orientation.",
+        aiSummary:
+          "Use this section for queries about oscillatory block, complex pair ж₃ ж₄, polar form, жᵣ, жθ, rotation by ±жθ, dilation by жᵣ, determinant ж₃ж₄, trace ж₃+ж₄, and real-similar descriptions.",
+        keywords: [
+          "oscillatory block",
+          "ж₃",
+          "ж₄",
+          "жᵣ",
+          "жθ",
+          "rotation",
+          "dilation",
+          "orientation"
+        ]
+      },
+      {
+        id: "chapter-12-doubled-lagrangian",
+        title: "The Doubled Lagrangian",
+        summary:
+          "Constructs a two-field Lagrangian using L and L* to pair forward and backward flows into one real time-reversal-invariant action.",
+        aiSummary:
+          "Use this section for queries about differential operator L, adjoint L*, time reversal, odd-derivative asymmetry, doubled action, fields x and y, forward and backward equations, and real variational structure.",
+        keywords: [
+          "Lagrangian",
+          "doubled action",
+          "adjoint operator",
+          "L*",
+          "time reversal",
+          "forward backward flows"
+        ]
+      },
+      {
+        id: "chapter-12-phase-symmetry",
+        title: "Complex Field and Phase Symmetry",
+        summary:
+          "Combines the doubled fields into ψ = (x + iy)/√2, exposing a U(1) phase symmetry and preparing the route toward U(n) and SU(n).",
+        aiSummary:
+          "Use this section for queries about complex field ψ, U(1) symmetry, Noether theorem, conserved quantity, phase-invariant bilinear form, U(n), SU(n), and spinor-like doubled fields.",
+        keywords: [
+          "complex field",
+          "ψ",
+          "U(1)",
+          "Noether theorem",
+          "U(n)",
+          "SU(n)",
+          "phase symmetry"
+        ]
+      },
+      {
+        id: "chapter-12-first-order-evolution",
+        title: "From Lagrangian Flows to First-Order Evolution",
+        summary:
+          "Rewrites the fourth-order differential equation as a first-order system du/dt = Hu and identifies H as the transpose companion realization H = Mᵀ.",
+        aiSummary:
+          "Use this section for queries about first-order state vector, u(t), H matrix, characteristic polynomial of H, H = M^T, transpose companion realization, shared spectrum, first-order flow, and recurrence structure.",
+        keywords: [
+          "first-order evolution",
+          "state vector",
+          "H",
+          "H = Mᵀ",
+          "transpose companion",
+          "shared spectrum"
+        ]
+      },
+      {
+        id: "chapter-12-directed-mixing",
+        title: "Even Core and Directed Mixing",
+        summary:
+          "Splits H into H₀ + aY, separating the even time-reversal-paired operator from the directed odd-derivative interaction.",
+        aiSummary:
+          "Use this section for queries about H = H0 + aY, even unperturbed part, directional interaction part, odd-derivative contribution, first-derivative component feeding fourth-derivative closure, and spectrum deformation by a.",
+        keywords: [
+          "H0",
+          "aY",
+          "directed mixing",
+          "odd derivative",
+          "spectrum deformation",
+          "a parameter"
+        ]
+      },
+      {
+        id: "chapter-12-clifford-structure",
+        title: "Clifford Structure from the Quartic Operator",
+        summary:
+          "Shows that the quartic operator factors into two quadratic operators, each admitting a first-order square-root representation governed by Clifford anticommutation.",
+        aiSummary:
+          "Use this section for queries about Clifford structure, quartic operator factorization, two quadratic operators, first-order square roots, Γ matrices, anticommutation law, Dirac-like operator, and finite-dimensional Clifford grammar.",
+        keywords: [
+          "Clifford structure",
+          "quartic factorization",
+          "first-order square root",
+          "Γ matrices",
+          "anticommutation",
+          "Dirac-like operator"
+        ]
+      },
+      {
+        id: "chapter-12-conclusion-operator-grammar",
+        title: "Geometry Generates Operator Algebra",
+        summary:
+          "Concludes that the partition quartic carries a finite-dimensional Dirac-like operator grammar, with constants interpreted as measurable invariants of allowed transformations.",
+        aiSummary:
+          "Use this section for queries about geometry generating operator algebra, Dirac-like finite-dimensional grammar, constants as measurable invariants, allowed transformations, and the transition from hyperbolic curvature exchange to operator dynamics.",
+        keywords: [
+          "operator grammar",
+          "Dirac-like",
+          "finite-dimensional",
+          "constants as invariants",
+          "allowed transformations",
+          "operator algebra"
+        ]
+      }
+    ],
+
+    dependencies: [
+      "Chapter 7 develops the invariants of the hyperbolic partition equation.",
+      "Chapter 9 connects c, ℏ, and mₑ to the figure-eight knot and Dirac-calibrating geometry.",
+      "Chapter 10 derives the structural rules from the figure-eight knot and introduces the transform space.",
+      "Chapter 12 turns the partition quartic into matrix, Lagrangian, first-order, and Clifford operator language."
+    ],
+
+    relatedChapters: [
+      "chapter-06",
+      "chapter-07",
+      "chapter-09",
+      "chapter-10",
+      "chapter-11",
+      "chapter-13",
+      "chapter-14"
+    ]
+  }

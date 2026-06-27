@@ -59,3 +59,6 @@ next-env.d.ts
 # (Optional) if you also keep images elsewhere in /public, you can still ignore non-video roots above
 # but we explicitly unignore the videos folder entirely as above
 
+
+# Local patch backups
+*.bak*
