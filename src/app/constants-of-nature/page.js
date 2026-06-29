@@ -174,7 +174,7 @@ const GROUP_SPACER_HEIGHT = '35px';
         87: "kilogram-joule relationship",
         88: "kilogram-electron volt relationship",
         89: "neutron-proton mass difference energy equivalent",
-        90: "neutron-proton mass energy equivalent in MeV",
+        90: "neutron-proton mass difference energy equivalent in MeV",
         91: "natural unit of energy in MeV",
         92: "muon mass energy equivalent in MeV",
         93: "proton mass energy equivalent in MeV",
@@ -21527,7 +21527,7 @@ J ⋮ kg{" "}
                         justifyContent: "flex-end"}}
 >
                     <img
-                        src="/equations/neutron-proton_mass_energy_equivalent_in_mev.svg"
+                        src="/equations/neutron-proton_mass_difference_energy_equivalent_in_mev.svg"
                         alt="neutron-proton mass difference energy equivalent in MeV equation"
                         className="popup-equation"
                     />
@@ -70697,7 +70697,7 @@ J ⋮ kg{" "}
                                                                                                                                                                                                                                                                                                                                                                                 eqNumber === 87 ? "/equations/kilogram-joule_relationship.svg" :
                                                                                                                                                                                                                                                                                                                                                                                     eqNumber === 88 ? "/equations/kilogram-electron_volt_relationship.svg" :
                                                                                                                                                                                                                                                                                                                                                                                         eqNumber === 89 ? "/equations/neutron-proton_mass_difference_energy_equivalent.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 90 ? "/equations/neutron-proton_mass_energy_equivalent_in_mev.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 90 ? "/equations/neutron-proton_mass_difference_energy_equivalent_in_mev.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                 eqNumber === 91 ? "/equations/natural_unit_of_energy_in_mev.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                     eqNumber === 92 ? "/equations/muon_mass_energy_equivalent_in_mev.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                         eqNumber === 93 ? "/equations/proton_mass_energy_equivalent_in_mev.svg" :
