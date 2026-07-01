@@ -53816,18 +53816,10 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/h-bar_symbol.svg"
-      alt="h-bar"
+      src="/equations/h-bar_double_dot.svg"
+      alt="h-bar double dot"
       style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
-  />{" / "}<img
-      src="/equations/e_symbol.svg"
-      alt="e"
-      style={{
-          height: "0.55em",
+          height: "1.00em",
           verticalAlign: "-0.0em",
           display: "inline",
       }}
@@ -53849,18 +53841,10 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/h-bar_symbol.svg"
-      alt="h-bar"
+      src="/equations/h-bar_double_dot.svg"
+      alt="h-bar double dot"
       style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
-  />{" / "}<img
-      src="/equations/e_symbol.svg"
-      alt="e"
-      style={{
-          height: "0.55em",
+          height: "1.00em",
           verticalAlign: "-0.0em",
           display: "inline",
       }}
@@ -53895,18 +53879,10 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/h-bar_symbol.svg"
-      alt="h-bar"
+      src="/equations/h-bar_double_dot.svg"
+      alt="h-bar double dot"
       style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
-  />{" / "}<img
-      src="/equations/e_symbol.svg"
-      alt="e"
-      style={{
-          height: "0.55em",
+          height: "1.00em",
           verticalAlign: "-0.0em",
           display: "inline",
       }}
@@ -54087,18 +54063,10 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/h_symbol.svg"
-      alt="h"
+      src="/equations/h_dot.svg"
+      alt="h dot"
       style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
-  />{" / "}<img
-      src="/equations/e_symbol.svg"
-      alt="e"
-      style={{
-          height: "0.55em",
+          height: "1.00em",
           verticalAlign: "-0.0em",
           display: "inline",
       }}
@@ -54120,18 +54088,10 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/h_symbol.svg"
-      alt="h"
+      src="/equations/h_dot.svg"
+      alt="h dot"
       style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
-  />{" / "}<img
-      src="/equations/e_symbol.svg"
-      alt="e"
-      style={{
-          height: "0.55em",
+          height: "1.00em",
           verticalAlign: "-0.0em",
           display: "inline",
       }}
@@ -54166,18 +54126,10 @@ J ⋮ kg{" "}
                 >
   <span>
   <img
-      src="/equations/h_symbol.svg"
-      alt="h"
+      src="/equations/h_dot.svg"
+      alt="h dot"
       style={{
-          height: "0.75em",
-          verticalAlign: "-0.0em",
-          display: "inline",
-      }}
-  />{" / "}<img
-      src="/equations/e_symbol.svg"
-      alt="e"
-      style={{
-          height: "0.55em",
+          height: "1.00em",
           verticalAlign: "-0.0em",
           display: "inline",
       }}
