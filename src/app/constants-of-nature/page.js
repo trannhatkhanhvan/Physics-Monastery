@@ -35133,7 +35133,7 @@ J ⋮ kg{" "}
                 >
   <span>
   M<sub><i>p</i></sub>{" "}
-      = 3.99031271062295... &times; 10<sup>&minus;10</sup> J/s mol
+      = 3.99031271062295... &times; 10<sup>&minus;10</sup> J/Hz mol
 </span>
 
                     <span>prediction</span>
@@ -35150,7 +35150,7 @@ J ⋮ kg{" "}
                 >
   <span>
   M<sub><i>p</i></sub>{" "}
-      = 3.990312712 &times; 10<sup>&minus;10</sup> J/s mol
+      = 3.990312712 &times; 10<sup>&minus;10</sup> J/Hz mol
 </span>
                     <span>
     <a
@@ -35180,7 +35180,7 @@ J ⋮ kg{" "}
                 >
   <span>
   M<sub><i>p</i></sub>{" "}
-      = 3.990312712 &times; 10<sup>&minus;10</sup> J/s mol
+      = 3.990312712 &times; 10<sup>&minus;10</sup> J/Hz mol
   </span>
                     <span>
     CODATA 2018, 9.46-digit match
