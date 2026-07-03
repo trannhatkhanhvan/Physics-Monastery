@@ -1,12 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import LayoutWrapper from '@/components/LayoutWrapper';
 
 export default function HomePage() {
   const [showParagraph, setShowParagraph] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [hideMessage, setHideMessage] = useState(false);
+  const [foxHovered, setFoxHovered] = useState(false);
 
   useEffect(() => {
     const paragraphTimer = setTimeout(() => setShowParagraph(true), 2000);
@@ -134,7 +136,8 @@ export default function HomePage() {
       {/* Scroll section with related YouTube videos */}
       <div
         style={{
-          padding: '4rem 2rem',
+          position: 'relative',
+          padding: '4rem 2rem 6rem',
           color: '#fff',
           textAlign: 'center',
           backgroundColor: 'transparent',
@@ -173,6 +176,70 @@ export default function HomePage() {
               />
             );
           })}
+        </div>
+
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            marginTop: '2.75rem',
+            paddingRight: '0rem',
+            paddingBottom: '0.0rem',
+          }}
+        >
+          <Link
+            href="/typed-boundary-calculus"
+            aria-label="Open Typed Boundary Calculus"
+            title=""
+            onMouseEnter={() => setFoxHovered(true)}
+            onMouseLeave={() => setFoxHovered(false)}
+            onFocus={() => setFoxHovered(true)}
+            onBlur={() => setFoxHovered(false)}
+            style={{
+              position: 'relative',
+              display: 'inline-block',
+              width: '94px',
+              height: '67px',
+              opacity: 0.9,
+              textDecoration: 'none',
+              transform: 'translate(20px, 80px)',
+              filter: foxHovered
+                ? 'drop-shadow(0 0 10px rgba(255, 204, 0, 0.85))'
+                : 'drop-shadow(0 0 5px rgba(255, 255, 255, 0.28))',
+              transition: 'filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease',
+            }}
+          >
+            <img
+              src="/images/hidden_fox_full_body.png"
+              alt=""
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                opacity: foxHovered ? 0 : 1,
+                pointerEvents: 'none',
+                transition: 'opacity 0.22s ease',
+              }}
+            />
+            <img
+              src="/images/hidden_fox_full_body_gold.png"
+              alt=""
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                opacity: foxHovered ? 1 : 0,
+                pointerEvents: 'none',
+                transition: 'opacity 0.22s ease',
+              }}
+            />
+          </Link>
         </div>
       </div>
     </LayoutWrapper>

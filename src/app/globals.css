@@ -867,9 +867,53 @@ body {
 }
 
 
+/* Hidden homepage fox link */
+.secret-fox-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  text-decoration: none;
+  transition:
+    opacity 0.25s ease,
+    filter 0.25s ease,
+    transform 0.25s ease;
+}
 
+.secret-fox-link:hover {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.82));
+}
 
+.hidden-fox-image-stack {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  line-height: 0;
+  pointer-events: none;
+}
 
+.hidden-fox-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  transition:
+    opacity 0.22s ease,
+    filter 0.22s ease;
+}
 
+.hidden-fox-image-gold {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
 
+.secret-fox-link:hover .hidden-fox-image-white {
+  opacity: 0;
+}
+
+.secret-fox-link:hover .hidden-fox-image-gold {
+  opacity: 1;
+}
 

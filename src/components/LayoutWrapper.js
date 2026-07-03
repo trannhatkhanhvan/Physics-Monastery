@@ -66,6 +66,7 @@ export default function LayoutWrapper({ children }) {
     pathname === '/hyperbolic-partition-eq' ? 'hyperbolic-partition-page' :
     pathname === '/binomial-constructor' ? 'binomial-constructor-page' :
     pathname === '/transform-space' ? 'external-transform-page' :
+    pathname === '/typed-boundary-calculus' ? 'external-transform-page typed-boundary-calculus-page' :
     pathname === '/planck-constants' ? 'planck-constants-page' :
     pathname === '/coherent-units' ? 'coherent-units-page' :
     pathname === '/simplest-manifold' ? 'simplest-manifold-page' :
