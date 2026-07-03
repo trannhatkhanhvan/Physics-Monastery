@@ -227,7 +227,7 @@ export default function TypedBoundaryExplorer() {
           <h1
             style={{
               margin: "0 0 16px",
-              fontSize: "clamp(34px, 5vw, 64px)",
+              fontSize: "clamp(18px, 2.5vw, 20px)",
               lineHeight: 1.04,
               letterSpacing: "0.02em",
               fontWeight: 500,
@@ -239,7 +239,7 @@ export default function TypedBoundaryExplorer() {
           <p
             style={{
               margin: 0,
-              fontSize: "clamp(18px, 2.1vw, 25px)",
+              fontSize: "clamp(14px, 2.0vw, 14px)",
               lineHeight: 1.48,
               maxWidth: "none",
             }}
@@ -343,7 +343,7 @@ function TransformSelector({ transforms, groups, selectedId, onSelect }) {
     <div
       style={{
         display: "grid",
-        gap: "18px",
+        gap: "12px",
         maxHeight: "calc(100vh - 20px)",
         overflowY: "auto",
         paddingRight: "4px",
@@ -353,7 +353,7 @@ function TransformSelector({ transforms, groups, selectedId, onSelect }) {
         <div key={group.title}>
           <h3 style={selectorGroupHeading}>{group.title}</h3>
 
-          <div style={{ display: "grid", gap: "8px" }}>
+          <div style={{ display: "grid", gap: "5px" }}>
             {group.ids
               .map((id) => byId.get(id))
               .filter(Boolean)
@@ -368,7 +368,7 @@ function TransformSelector({ transforms, groups, selectedId, onSelect }) {
                     style={{
                       width: "100%",
                       textAlign: "left",
-                      padding: "10px 10px",
+                      padding: "7px 8px",
                       borderRadius: "5px",
                       cursor: "pointer",
                       color: "#e8dfc8",
@@ -380,8 +380,8 @@ function TransformSelector({ transforms, groups, selectedId, onSelect }) {
                     }}
                   >
                     <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "8px" }}>
-                      <div style={{ fontSize: "17px", lineHeight: 1.18 }}>{shortTransformName(transform)}</div>
-                      <div style={{ fontFamily: MATH_FONT, fontSize: "15px", opacity: 0.86 }}>
+                      <div style={{ fontSize: "13px", lineHeight: 1.14 }}>{shortTransformName(transform)}</div>
+                      <div style={{ fontFamily: MATH_FONT, fontSize: "12px", opacity: 0.86 }}>
                         <MathText value={transform.symbol} />
                       </div>
                     </div>
@@ -390,7 +390,7 @@ function TransformSelector({ transforms, groups, selectedId, onSelect }) {
                       style={{
                         marginTop: "6px",
                         fontFamily: MATH_FONT,
-                        fontSize: "14px",
+                        fontSize: "11px",
                         opacity: 0.72,
                       }}
                     >
@@ -419,7 +419,7 @@ function TransformSelector({ transforms, groups, selectedId, onSelect }) {
                       <div
                         style={{
                           marginTop: "4px",
-                          fontSize: "13px",
+                          fontSize: "11px",
                           opacity: 0.58,
                         }}
                       >
@@ -2859,7 +2859,7 @@ function Panel({ title, children }) {
       <h2
         style={{
           margin: "0 0 14px",
-          fontSize: "clamp(22px, 2.2vw, 34px)",
+          fontSize: "clamp(16px, 1.6vw, 21px)",
           lineHeight: 1.12,
           fontWeight: 500,
         }}
@@ -2869,7 +2869,7 @@ function Panel({ title, children }) {
 
       <div
         style={{
-          fontSize: "clamp(16px, 1.5vw, 21px)",
+          fontSize: "14px",
           lineHeight: 1.45,
         }}
       >
@@ -2886,8 +2886,8 @@ const miniHeadingStyle = {
 };
 
 const selectorGroupHeading = {
-  margin: "0 0 8px",
-  fontSize: "17px",
+  margin: "0 0 6px",
+  fontSize: "13px",
   fontWeight: 500,
   opacity: 0.82,
 };

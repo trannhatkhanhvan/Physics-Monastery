@@ -69820,7 +69820,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>eqm</sub>{" "}
-      = 4.48655151342649... &times; 10<sup>&minus;40</sup> m C
+      = 4.48655151342649... &times; 10<sup>&minus;40</sup> m<sup>2</sup> C
 </span>
 
                     <span>prediction</span>
@@ -69837,7 +69837,7 @@ J ⋮ kg{" "}
                 >
   <span>
  A<sub>eqm</sub>{" "}
-      = 4.4865515185(14) &times; 10<sup>&minus;40</sup> m C
+      = 4.4865515185(14) &times; 10<sup>&minus;40</sup> m<sup>2</sup> C
 </span>
                     <span>
     <a
@@ -69867,7 +69867,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>eqm</sub>{" "}
-      = 4.4865515246(14) &times; 10<sup>&minus;40</sup> m C
+      = 4.4865515246(14) &times; 10<sup>&minus;40</sup> m<sup>2</sup> C
   </span>
                     <span>
     CODATA 2018, σ = − 9.87
