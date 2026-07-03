@@ -1383,7 +1383,7 @@ function Axis3DViewport({
   gridRadius,
   expanded,
 }) {
-  const [rotation, setRotation] = useState({ yaw: -0.72, pitch: 0.42 });
+  const [rotation, setRotation] = useState({ yaw: 0, pitch: 0.42 });
   const [drag, setDrag] = useState(null);
   const [selectedRotationAxis, setSelectedRotationAxis] = useState("t");
   const [axisOrientation, setAxisOrientation] = useState(makeIdentityOrientation);
