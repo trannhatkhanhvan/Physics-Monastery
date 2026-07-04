@@ -224,7 +224,7 @@ export default function HomePage() {
                 transition: 'opacity 0.22s ease',
               }}
             />
-            <img
+                        <img
               src="/images/hidden_fox_full_body_gold.png"
               alt=""
               aria-hidden="true"
@@ -239,6 +239,29 @@ export default function HomePage() {
                 transition: 'opacity 0.22s ease',
               }}
             />
+
+            <span
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                left: '40%',
+                top: 'calc(100% - 0.20rem)',
+                transform: 'translateX(-50%)',
+                color: 'rgba(255, 218, 82, 0.42)',
+                fontFamily: '"Times New Roman", Times, serif',
+                fontSize: '0.78rem',
+                letterSpacing: '0.08em',
+                textShadow: '0 0 8px rgba(255, 204, 0, 0.32)',
+                opacity: foxHovered ? 1 : 0,
+                pointerEvents: 'none',
+                userSelect: 'none',
+                transition: foxHovered
+                  ? 'opacity 0.75s ease 1s'
+                  : 'opacity 0.15s ease',
+              }}
+            >
+              Matt
+            </span>
           </Link>
         </div>
       </div>

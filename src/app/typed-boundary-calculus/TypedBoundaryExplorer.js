@@ -77,9 +77,80 @@ const TOKEN_AXIS_KEYS = {
   mol_SI: "n",
 };
 
+function axisKeyForTraceEntry(entry) {
+  return TOKEN_AXIS_KEYS[entry?.factor?.tokenId];
+}
+
 function stepColorForTraceEntry(entry) {
-  const axisKey = TOKEN_AXIS_KEYS[entry?.factor?.tokenId];
+  const axisKey = axisKeyForTraceEntry(entry);
   return axisStepColor(axisKey);
+}
+
+function makeAllAxesVisible() {
+  return TYPE_AXES.reduce(
+    (visibility, axis) => ({
+      ...visibility,
+      [axis.key]: true,
+    }),
+    {}
+  );
+}
+
+function visibleAxisLabel(axisKey) {
+  return AXIS_WORD_LABELS[axisKey] ?? axisKey;
+}
+
+function undirectedSegmentKey(sourceType, targetType, axisKey) {
+  const sourceKey = typeKey(sourceType);
+  const targetKey = typeKey(targetType);
+  const ordered = sourceKey < targetKey
+    ? `${sourceKey}<->${targetKey}`
+    : `${targetKey}<->${sourceKey}`;
+
+  return `${axisKey}|${ordered}`;
+}
+
+function countConnectedSegmentComponents(segments) {
+  if (segments.length === 0) return 0;
+
+  const adjacency = new Map();
+
+  const addNeighbor = (a, b) => {
+    if (!adjacency.has(a)) adjacency.set(a, new Set());
+    adjacency.get(a).add(b);
+  };
+
+  segments.forEach((segment) => {
+    const sourceKey = typeKey(segment.sourceType);
+    const targetKey = typeKey(segment.targetType);
+
+    addNeighbor(sourceKey, targetKey);
+    addNeighbor(targetKey, sourceKey);
+  });
+
+  const visited = new Set();
+  let components = 0;
+
+  Array.from(adjacency.keys()).forEach((startKey) => {
+    if (visited.has(startKey)) return;
+
+    components += 1;
+    const stack = [startKey];
+    visited.add(startKey);
+
+    while (stack.length > 0) {
+      const key = stack.pop();
+      const neighbors = adjacency.get(key) ?? new Set();
+
+      neighbors.forEach((neighbor) => {
+        if (visited.has(neighbor)) return;
+        visited.add(neighbor);
+        stack.push(neighbor);
+      });
+    }
+  });
+
+  return components;
 }
 
 const AXIS_ROTATION_STEP = Math.PI / 36;
@@ -88,6 +159,8 @@ const MAX_TRANSFORM_HOPS = 7;
 const STEP_ANIMATION_MS = 70;
 const ROUTE_CYCLE_PLAYBACK_MS = 950;
 const ROUTE_STACK_PLAYBACK_MS = 320;
+
+const DEFAULT_LATTICE_ROTATION = { yaw: 0, pitch: 0.42 };
 
 const IDENTITY_ORIENTATION = {
   i: { x: 1, y: 0, z: 0 },
@@ -143,6 +216,54 @@ function rotateOrientationAboutAxis(orientation, axisKey, angle) {
   };
 }
 
+function dot3D(a, b) {
+  return a.x * b.x + a.y * b.y + a.z * b.z;
+}
+
+function cross3D(a, b) {
+  return {
+    x: a.y * b.z - a.z * b.y,
+    y: a.z * b.x - a.x * b.z,
+    z: a.x * b.y - a.y * b.x,
+  };
+}
+
+function makeOrientationAligningAxisToPositiveX(axisKey) {
+  const source = normalize3D(AXIS_3D[axisKey] ?? AXIS_3D.t);
+  const target = { x: 1, y: 0, z: 0 };
+  const cross = cross3D(source, target);
+  const crossLength = Math.hypot(cross.x, cross.y, cross.z);
+  const dot = clampNumber(dot3D(source, target), -1, 1);
+
+  if (crossLength < 1e-10) {
+    if (dot > 0) return makeIdentityOrientation();
+
+    // 180-degree flip for the rare case where the chosen axis is exactly -x.
+    const fallbackAxis = Math.abs(source.y) < 0.9
+      ? normalize3D(cross3D(source, { x: 0, y: 1, z: 0 }))
+      : normalize3D(cross3D(source, { x: 0, y: 0, z: 1 }));
+
+    return {
+      i: rotatePointAroundAxis(IDENTITY_ORIENTATION.i, fallbackAxis, Math.PI),
+      j: rotatePointAroundAxis(IDENTITY_ORIENTATION.j, fallbackAxis, Math.PI),
+      k: rotatePointAroundAxis(IDENTITY_ORIENTATION.k, fallbackAxis, Math.PI),
+    };
+  }
+
+  const rotationAxis = {
+    x: cross.x / crossLength,
+    y: cross.y / crossLength,
+    z: cross.z / crossLength,
+  };
+  const angle = Math.acos(dot);
+
+  return {
+    i: rotatePointAroundAxis(IDENTITY_ORIENTATION.i, rotationAxis, angle),
+    j: rotatePointAroundAxis(IDENTITY_ORIENTATION.j, rotationAxis, angle),
+    k: rotatePointAroundAxis(IDENTITY_ORIENTATION.k, rotationAxis, angle),
+  };
+}
+
 function typeDelta(sourceType, targetType) {
   return TYPE_AXES.reduce(
     (delta, axis) => ({
@@ -184,7 +305,9 @@ function formatViewerTypeDetailed(type) {
 }
 
 export default function TypedBoundaryExplorer() {
-  const [selectedId, setSelectedId] = useState(UNIT_TRANSFORMS[0]?.id);
+  const [selectedId, setSelectedId] = useState(null);
+  const [unitFieldMode, setUnitFieldMode] = useState("grid");
+  const [unitFieldModeChangeKey, setUnitFieldModeChangeKey] = useState(0);
   const selectedTransform = useMemo(
     () => UNIT_TRANSFORMS.find((transform) => transform.id === selectedId) ?? UNIT_TRANSFORMS[0],
     [selectedId]
@@ -194,6 +317,11 @@ export default function TypedBoundaryExplorer() {
     () => validatePairedTransform(selectedTransform),
     [selectedTransform]
   );
+
+  const handleUnitFieldModeChange = (mode) => {
+    setUnitFieldMode(mode);
+    setUnitFieldModeChangeKey((key) => key + 1);
+  };
 
   return (
     <main
@@ -266,7 +394,12 @@ export default function TypedBoundaryExplorer() {
               transforms={UNIT_TRANSFORMS}
               groups={UNIT_SELECTOR_GROUPS}
               selectedId={selectedId}
-              onSelect={setSelectedId}
+              onSelect={(id) => {
+                handleUnitFieldModeChange("selected");
+                setSelectedId(id);
+              }}
+              unitFieldMode={unitFieldMode}
+              onUnitFieldModeChange={handleUnitFieldModeChange}
             />
           </Panel>
 
@@ -277,7 +410,12 @@ export default function TypedBoundaryExplorer() {
               </>
             }
           >
-            <LatticeProjection transform={selectedTransform} />
+            <LatticeProjection
+              transform={selectedTransform}
+              unitFieldMode={unitFieldMode}
+              unitFieldModeChangeKey={unitFieldModeChangeKey}
+              onUnitFieldModeChange={handleUnitFieldModeChange}
+            />
           </Panel>
 
         </div>
@@ -318,7 +456,14 @@ export default function TypedBoundaryExplorer() {
   );
 }
 
-function TransformSelector({ transforms, groups, selectedId, onSelect }) {
+function TransformSelector({
+  transforms,
+  groups,
+  selectedId,
+  onSelect,
+  unitFieldMode = "selected",
+  onUnitFieldModeChange = () => {},
+}) {
   const selectorGroups =
     groups ??
     [
@@ -382,7 +527,7 @@ function TransformSelector({ transforms, groups, selectedId, onSelect }) {
                     <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "8px" }}>
                       <div style={{ fontSize: "13px", lineHeight: 1.14 }}>{shortTransformName(transform)}</div>
                       <div style={{ fontFamily: MATH_FONT, fontSize: "12px", opacity: 0.86 }}>
-                        <MathText value={transform.symbol} />
+                        {transform.symbol}
                       </div>
                     </div>
 
@@ -432,6 +577,60 @@ function TransformSelector({ transforms, groups, selectedId, onSelect }) {
           </div>
         </div>
       ))}
+
+      <div
+        style={{
+          marginTop: "4px",
+          paddingTop: "10px",
+          borderTop: "1px solid rgba(232,223,200,0.16)",
+        }}
+      >
+        <div
+          style={{
+            marginBottom: "6px",
+            fontSize: "12px",
+            opacity: 0.68,
+            letterSpacing: "0.03em",
+            textTransform: "uppercase",
+          }}
+        >
+          all moves from source
+        </div>
+
+        <div style={{ display: "grid", gap: "5px" }}>
+          {[
+            ["white", "all net arrows"],
+            ["canonical", "all canonical paths"],
+            ["allpaths", "all paths"],
+          ].map(([mode, label]) => {
+            const active = unitFieldMode === mode;
+
+            return (
+              <button
+                key={mode}
+                type="button"
+                onClick={() => onUnitFieldModeChange(mode)}
+                style={{
+                  width: "100%",
+                  textAlign: "left",
+                  padding: "6px 8px",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  color: "#e8dfc8",
+                  background: active ? "rgba(232, 223, 200, 0.18)" : "rgba(255,255,255,0.045)",
+                  border: active
+                    ? "1px solid rgba(232, 223, 200, 0.48)"
+                    : "1px solid rgba(232, 223, 200, 0.12)",
+                  fontFamily: PROSE_FONT,
+                  fontSize: "12px",
+                }}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
@@ -658,9 +857,14 @@ function UnitFormulaInline({ transform, size = "1em", displayStyle = false }) {
   );
 }
 
-function LatticeProjection({ transform }) {
+function LatticeProjection({
+  transform,
+  unitFieldMode = "selected",
+  unitFieldModeChangeKey = 0,
+  onUnitFieldModeChange = () => {},
+}) {
   const [viewMode, setViewMode] = useState("both");
-  const [labelMode, setLabelMode] = useState("numbers");
+  const [labelMode, setLabelMode] = useState("none");
   const [gridRadius, setGridRadius] = useState(1);
   const [expanded, setExpanded] = useState(false);
   const [boxWordExpanded, setBoxWordExpanded] = useState(false);
@@ -691,6 +895,14 @@ function LatticeProjection({ transform }) {
     setSelectedPathIndex(0);
     setPathMode("canonical");
   }, [transform.id]);
+
+  useEffect(() => {
+    setCyclePlaybackActive(false);
+    setCyclePlaybackMode("single");
+    setCycleStackCount(1);
+    setSelectedPathIndex(0);
+    setPathMode("canonical");
+  }, [unitFieldModeChangeKey]);
 
   useEffect(() => {
     if (!cyclePlaybackActive) return undefined;
@@ -852,11 +1064,16 @@ function LatticeProjection({ transform }) {
         pathMode={pathMode}
         selectedPathIndex={selectedPathIndex}
         cyclePlaybackMode={cyclePlaybackMode}
+        setCyclePlaybackMode={setCyclePlaybackMode}
+        setCyclePlaybackActive={setCyclePlaybackActive}
+        setPathMode={setPathMode}
         cycleStackCount={cycleStackCount}
         showInversionBranch={!isUnitModel}
         viewMode={viewMode}
         labelMode={labelMode}
         gridRadius={gridRadius}
+        unitFieldMode={isUnitModel ? unitFieldMode : "selected"}
+        onUnitFieldModeChange={onUnitFieldModeChange}
         expanded={false}
       />
 
@@ -971,11 +1188,16 @@ function LatticeProjection({ transform }) {
               pathMode={pathMode}
               selectedPathIndex={selectedPathIndex}
               cyclePlaybackMode={cyclePlaybackMode}
+              setCyclePlaybackMode={setCyclePlaybackMode}
+              setCyclePlaybackActive={setCyclePlaybackActive}
+              setPathMode={setPathMode}
               cycleStackCount={cycleStackCount}
               showInversionBranch={!isUnitModel}
               viewMode={viewMode}
               labelMode={labelMode}
               gridRadius={gridRadius}
+              unitFieldMode={isUnitModel ? unitFieldMode : "selected"}
+              onUnitFieldModeChange={onUnitFieldModeChange}
               expanded
             />
 
@@ -1217,7 +1439,7 @@ function SvgAxisLabel({ x, y, sign, symbol, opacity = 1, expanded = false }) {
       y={y}
       fill="#e8dfc8"
       opacity={opacity}
-      fontSize={expanded ? "24" : "18"}
+      fontSize={expanded ? "24" : "12"}
       textAnchor="middle"
       dominantBaseline="middle"
       pointerEvents="none"
@@ -1242,6 +1464,9 @@ function AxisRotationControls({
   setSelectedAxis,
   onRotate,
   onReset,
+  onAxisDoubleClick = () => {},
+  onToggleAxisVisibility = () => {},
+  axisVisibility = {},
   onStep,
   canStep,
   onZoom,
@@ -1281,45 +1506,88 @@ function AxisRotationControls({
       aria-label="lattice-axis rotation controls"
     >
       <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "4px" }}>
-        {TYPE_AXES.map((axis) => (
-          <button
-            key={axis.key}
-            type="button"
-            onClick={() => setSelectedAxis(axis.key)}
-            style={buttonStyle(selectedAxis === axis.key)}
-            title={`Rotate about ${AXIS_CONTROL_LABEL_LATEX[axis.key]} axis`}
-          >
-            <span
+        {TYPE_AXES.map((axis) => {
+          const axisVisible = axisVisibility[axis.key] !== false;
+
+          return (
+            <div
+              key={axis.key}
               style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "5px",
-                color: axisStepColor(axis.key),
+                display: "grid",
+                gridTemplateColumns: "minmax(0, 1fr) auto",
+                gap: "4px",
+                alignItems: "stretch",
               }}
             >
-              <span
-                aria-hidden="true"
-                style={{
-                  display: "inline-block",
-                  width: expanded ? "14px" : "11px",
-                  height: expanded ? "2px" : "1.5px",
-                  borderRadius: "999px",
-                  background: axisStepColor(axis.key),
-                  boxShadow: `0 0 5px ${axisStepColor(axis.key)}`,
+              <button
+                type="button"
+                onClick={() => setSelectedAxis(axis.key)}
+                onDoubleClick={(event) => {
+                  event.preventDefault();
+                  onAxisDoubleClick(axis.key);
                 }}
-              />
-              <span
-                style={{
-                  color: axisStepColor(axis.key),
-                  opacity: 1,
-                }}
+                style={buttonStyle(selectedAxis === axis.key)}
+                title={`Click to rotate about this axis; double-click to aim this axis toward +x`}
               >
-                <LatexInline latex={AXIS_CONTROL_LABEL_LATEX[axis.key]} />
-              </span>
-            </span>
-          </button>
-        ))}
+                <span
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "5px",
+                    color: axisStepColor(axis.key),
+                    opacity: axisVisible ? 1 : 0.30,
+                  }}
+                >
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      display: "inline-block",
+                      width: expanded ? "14px" : "11px",
+                      height: expanded ? "2px" : "1.5px",
+                      borderRadius: "999px",
+                      background: axisStepColor(axis.key),
+                      boxShadow: axisVisible ? `0 0 5px ${axisStepColor(axis.key)}` : "none",
+                    }}
+                  />
+                  <span
+                    style={{
+                      color: axisStepColor(axis.key),
+                      opacity: 1,
+                    }}
+                  >
+                    <LatexInline latex={AXIS_CONTROL_LABEL_LATEX[axis.key]} />
+                  </span>
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  onToggleAxisVisibility(axis.key);
+                }}
+                style={{
+                  border: "1px solid rgba(232,223,200,0.16)",
+                  borderRadius: "5px",
+                  padding: expanded ? "5px 7px" : "3px 6px",
+                  minWidth: expanded ? "28px" : "24px",
+                  cursor: "pointer",
+                  color: axisVisible ? axisStepColor(axis.key) : "rgba(232,223,200,0.34)",
+                  background: axisVisible ? "rgba(232,223,200,0.12)" : "rgba(0,0,0,0.24)",
+                  fontFamily: PROSE_FONT,
+                  fontSize: expanded ? "10px" : "10px",
+                  lineHeight: 1.12,
+                  textAlign: "center",
+                }}
+                title={`${axisVisible ? "Hide" : "Show"} ${visibleAxisLabel(axis.key)} segments`}
+                aria-label={`${axisVisible ? "Hide" : "Show"} ${visibleAxisLabel(axis.key)} segments`}
+              >
+                {axisVisible ? "on" : "off"}
+              </button>
+            </div>
+          );
+        })}
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px" }}>
@@ -1376,16 +1644,22 @@ function Axis3DViewport({
   pathMode = "canonical",
   selectedPathIndex = 0,
   cyclePlaybackMode = "single",
+  setCyclePlaybackMode = () => {},
+  setCyclePlaybackActive = () => {},
+  setPathMode = () => {},
   cycleStackCount = 1,
   showInversionBranch = true,
   viewMode,
   labelMode,
   gridRadius,
+  unitFieldMode = "selected",
+  onUnitFieldModeChange = () => {},
   expanded,
 }) {
-  const [rotation, setRotation] = useState({ yaw: 0, pitch: 0.42 });
+  const [rotation, setRotation] = useState(DEFAULT_LATTICE_ROTATION);
   const [drag, setDrag] = useState(null);
   const [selectedRotationAxis, setSelectedRotationAxis] = useState("t");
+  const [axisVisibility, setAxisVisibility] = useState(makeAllAxesVisible);
   const [axisOrientation, setAxisOrientation] = useState(makeIdentityOrientation);
   const [zoomScale, setZoomScale] = useState(1);
   const [hopCount, setHopCount] = useState(1);
@@ -1489,13 +1763,27 @@ function Axis3DViewport({
     );
   };
 
+  const alignAxisToPositiveX = (axisKey) => {
+    setSelectedRotationAxis(axisKey);
+    setRotation(DEFAULT_LATTICE_ROTATION);
+    setAxisOrientation(makeOrientationAligningAxisToPositiveX(axisKey));
+    setZoomScale(1);
+    setDrag(null);
+  };
+
   const resetAxisRotations = () => {
+    setRotation(DEFAULT_LATTICE_ROTATION);
+    setAxisVisibility(makeAllAxesVisible());
     setAxisOrientation(makeIdentityOrientation());
     setZoomScale(1);
     setHopCount(1);
     setRevealedStepCount(0);
     setVisibleNetHops(0);
+    setCyclePlaybackMode("single");
+    setCyclePlaybackActive(false);
+    setPathMode("canonical");
     setAnimationRun((run) => run + 1);
+    onUnitFieldModeChange("grid");
   };
 
   const stepForward = () => {
@@ -1510,6 +1798,20 @@ function Axis3DViewport({
       const factor = direction > 0 ? 1.15 : 1 / 1.15;
       return clampNumber(value * factor, 0.35, 3.5);
     });
+  };
+
+  const isAxisVisible = (axisKey) => axisVisibility[axisKey] !== false;
+
+  const toggleAxisVisibility = (axisKey) => {
+    setAxisVisibility((previous) => ({
+      ...previous,
+      [axisKey]: previous[axisKey] === false,
+    }));
+  };
+
+  const shouldDrawTraceEntry = (entry) => {
+    const axisKey = axisKeyForTraceEntry(entry);
+    return !axisKey || isAxisVisible(axisKey);
   };
 
   const handleAxisKeyDown = (event) => {
@@ -1544,6 +1846,17 @@ function Axis3DViewport({
   const showNet = viewMode === "both" || viewMode === "net";
   const shouldDrawNet = !equalType(transform.sourceType, transform.targetType);
 
+  const gridOnlyModeActive = isUnitModel && unitFieldMode === "grid";
+  const allMovesSectionActive = isUnitModel && unitFieldMode !== "selected" && unitFieldMode !== "grid";
+  const supportGraphModeActive = cyclePlaybackMode === "support";
+  const unitFieldActive =
+    isUnitModel && (unitFieldMode === "white" || unitFieldMode === "canonical" || unitFieldMode === "allpaths");
+  const showSelectedTransform = !unitFieldActive && !gridOnlyModeActive && !supportGraphModeActive;
+  const showAllWhiteUnitArrows = !supportGraphModeActive && unitFieldActive && unitFieldMode === "white";
+  const showAllCanonicalUnitPaths = !supportGraphModeActive && unitFieldActive && unitFieldMode === "canonical";
+  const showAllOrderedUnitPaths = !supportGraphModeActive && unitFieldActive && unitFieldMode === "allpaths";
+  const showAllColoredUnitPaths = showAllCanonicalUnitPaths || showAllOrderedUnitPaths;
+
   const ordinaryHopPaths = ordinaryRepeatedTraces.map((trace) =>
     trace.map((entry) => projectType3D(entry.type, rotation, expanded, axisOrientation, zoomScale))
   );
@@ -1562,6 +1875,240 @@ function Axis3DViewport({
     };
   });
 
+  const allUnitFieldTraces = useMemo(() => {
+    if (!unitFieldActive || supportGraphModeActive) return [];
+
+    const sourceType = transform.sourceType ?? ZERO_TYPE;
+
+    return UNIT_TRANSFORMS.flatMap((unitTransform) => {
+      const metadata = getPathFamilyMetadata(unitTransform.ordinaryLeg.boundaryWord);
+      const pathFamilySize = metadata.pathFamilySize ?? 1;
+      const enumerationLimit = metadata.enumerationLimit ?? 720;
+
+      const routeCount = showAllOrderedUnitPaths
+        ? Math.max(1, Math.min(pathFamilySize, enumerationLimit))
+        : 1;
+
+      return Array.from({ length: routeCount }, (_, routeIndex) => {
+        const routeOptions =
+          showAllOrderedUnitPaths && routeCount > 1
+            ? { pathMode: "cycle", selectedPathIndex: routeIndex }
+            : { pathMode: "canonical" };
+
+        return {
+          id: routeCount > 1 ? `${unitTransform.id}-route-${routeIndex}` : unitTransform.id,
+          unitId: unitTransform.id,
+          symbol: unitTransform.symbol,
+          current: unitTransform.id === transform.id,
+          routeIndex,
+          routeCount,
+          pathFamilySize,
+          trace: traceBoundaryPath(sourceType, unitTransform.ordinaryLeg.boundaryWord, routeOptions),
+        };
+      });
+    });
+  }, [unitFieldActive, supportGraphModeActive, showAllOrderedUnitPaths, transform.id]);
+
+  const allUnitFieldPaths = allUnitFieldTraces.map((entry) => ({
+    ...entry,
+    path: entry.trace.map((traceEntry) =>
+      projectType3D(traceEntry.type, rotation, expanded, axisOrientation, zoomScale)
+    ),
+  }));
+
+  const allUnitMoveArrows = allUnitFieldPaths.map((entry) => ({
+    id: entry.id,
+    symbol: entry.symbol,
+    current: entry.current,
+    source: entry.path[0],
+    target: entry.path[entry.path.length - 1],
+  }));
+
+  const supportGraph = useMemo(() => {
+    if (!supportGraphModeActive) return null;
+
+    const sourceType = transform.sourceType ?? makeZeroType();
+    const supportTransforms = allMovesSectionActive ? UNIT_TRANSFORMS : [transform];
+
+    return mergeSupportGraphs(sourceType, supportTransforms);
+  }, [supportGraphModeActive, allMovesSectionActive, transform.id]);
+
+  const projectedSupportGraph = useMemo(() => {
+    if (!supportGraph) return null;
+
+    const maxEdgeMultiplicity = supportGraph.maxEdgeMultiplicity || 1;
+    const maxNodeMultiplicity = supportGraph.maxNodeMultiplicity || 1;
+
+    return {
+      ...supportGraph,
+      nodes: supportGraph.nodes.map((node) => {
+        const point = projectType3D(node.type, rotation, expanded, axisOrientation, zoomScale);
+        const weight =
+          Math.log1p(node.multiplicity) / Math.log1p(maxNodeMultiplicity);
+
+        return {
+          ...node,
+          ...point,
+          weight,
+        };
+      }),
+      edges: supportGraph.edges.map((edge) => {
+        const source = projectType3D(edge.sourceType, rotation, expanded, axisOrientation, zoomScale);
+        const target = projectType3D(edge.targetType, rotation, expanded, axisOrientation, zoomScale);
+        const weight =
+          Math.log1p(edge.multiplicity) / Math.log1p(maxEdgeMultiplicity);
+
+        return {
+          ...edge,
+          source,
+          target,
+          weight,
+        };
+      }),
+    };
+  }, [supportGraph, rotation, expanded, axisOrientation, zoomScale]);
+
+  const unitFieldAudit = useMemo(() => {
+    if (!isUnitModel) return null;
+
+    const sourceType = transform.sourceType ?? ZERO_TYPE;
+    let theoreticalOrderedPathCount = 0;
+    let drawnOrderedPathCount = 0;
+    let cappedUnitCount = 0;
+
+    const endpointKeys = new Set();
+    const visitedCounts = new Map();
+
+    UNIT_TRANSFORMS.forEach((unitTransform) => {
+      const metadata = getPathFamilyMetadata(unitTransform.ordinaryLeg.boundaryWord);
+      const pathFamilySize = metadata.pathFamilySize ?? 1;
+      const enumerationLimit = metadata.enumerationLimit ?? 720;
+      const routeCount =
+        unitFieldMode === "allpaths"
+          ? Math.max(1, Math.min(pathFamilySize, enumerationLimit))
+          : unitFieldMode === "canonical"
+            ? 1
+            : 0;
+
+      theoreticalOrderedPathCount += pathFamilySize;
+      drawnOrderedPathCount += routeCount;
+
+      if (unitFieldMode === "allpaths" && pathFamilySize > enumerationLimit) {
+        cappedUnitCount += 1;
+      }
+
+      const endpointType = addType(sourceType, unitTransform.targetType ?? ZERO_TYPE);
+      endpointKeys.add(typeKey(endpointType));
+
+      for (let routeIndex = 0; routeIndex < routeCount; routeIndex += 1) {
+        const routeOptions =
+          unitFieldMode === "allpaths" && routeCount > 1
+            ? { pathMode: "cycle", selectedPathIndex: routeIndex }
+            : { pathMode: "canonical" };
+
+        const trace = traceBoundaryPath(
+          sourceType,
+          unitTransform.ordinaryLeg.boundaryWord,
+          routeOptions
+        );
+
+        trace.forEach((entry) => {
+          const key = typeKey(entry.type);
+          visitedCounts.set(key, (visitedCounts.get(key) ?? 0) + 1);
+        });
+      }
+    });
+
+    const reusedVisitedAddressCount = Array.from(visitedCounts.values()).filter((count) => count > 1).length;
+
+    return {
+      unitAddressCount: UNIT_TRANSFORMS.length,
+      theoreticalOrderedPathCount,
+      drawnOrderedPathCount,
+      cappedUnitCount,
+      uniqueEndpointCount: endpointKeys.size,
+      uniqueVisitedAddressCount: visitedCounts.size,
+      reusedVisitedAddressCount,
+    };
+  }, [isUnitModel, transform.id, unitFieldMode]);
+
+  const supportGraphSubjectLabel = supportGraph
+    ? allMovesSectionActive
+      ? "all unit moves from source"
+      : shortTransformName(transform)
+    : "";
+
+  const supportGraphScopeLabel = supportGraph
+    ? allMovesSectionActive
+      ? `unit addresses: ${supportGraph.transformCount}`
+      : `unit: ${transform.unitFormula ?? transform.symbol}`
+    : "";
+
+  const visibleSegmentStats = useMemo(() => {
+    const records = [];
+
+    const addSegment = (sourceType, targetType, factor) => {
+      const axisKey = TOKEN_AXIS_KEYS[factor?.tokenId];
+      if (!axisKey || !isAxisVisible(axisKey)) return;
+
+      records.push({
+        axisKey,
+        sourceType,
+        targetType,
+        segmentKey: undirectedSegmentKey(sourceType, targetType, axisKey),
+      });
+    };
+
+    if (supportGraph) {
+      supportGraph.edges.forEach((edge) => {
+        addSegment(edge.sourceType, edge.targetType, edge.factor);
+      });
+    } else if (showAllColoredUnitPaths) {
+      allUnitFieldTraces.forEach((entry) => {
+        entry.trace.slice(1).forEach((traceEntry, index) => {
+          addSegment(entry.trace[index].type, traceEntry.type, traceEntry.factor);
+        });
+      });
+    } else if (showSelectedTransform && showOrdinary) {
+      ordinaryRepeatedTraces.forEach((trace, hopIndex) => {
+        const visibleSteps = isStackingRoutes
+          ? trace.length - 1
+          : visibleStepsForHop(revealedStepCount, stepsPerHop, hopIndex);
+
+        trace.slice(1).forEach((traceEntry, index) => {
+          if (index + 1 > visibleSteps) return;
+          addSegment(trace[index].type, traceEntry.type, traceEntry.factor);
+        });
+      });
+    }
+
+    return TYPE_AXES.map((axis) => {
+      const axisRecords = records.filter((record) => record.axisKey === axis.key);
+      const uniqueSegments = Array.from(
+        new Map(axisRecords.map((record) => [record.segmentKey, record])).values()
+      );
+
+      return {
+        axisKey: axis.key,
+        label: visibleAxisLabel(axis.key),
+        visible: isAxisVisible(axis.key),
+        uniqueSegmentCount: uniqueSegments.length,
+        componentCount: countConnectedSegmentComponents(uniqueSegments),
+      };
+    });
+  }, [
+    supportGraph,
+    showAllColoredUnitPaths,
+    showSelectedTransform,
+    showOrdinary,
+    allUnitFieldTraces,
+    ordinaryRepeatedTraces,
+    isStackingRoutes,
+    revealedStepCount,
+    stepsPerHop,
+    axisVisibility,
+  ]);
+
   const firstSource = netHops[0]?.source ?? projectType3D(transform.sourceType, rotation, expanded, axisOrientation, zoomScale);
   const finalTarget = netHops[netHops.length - 1]?.target ?? firstSource;
 
@@ -1579,8 +2126,10 @@ function Axis3DViewport({
       makeProjectedGridDots({
         radius: gridRadius,
         traces: [
-          ...(showOrdinary ? ordinaryTracesForGrid : []),
-          ...(showInversion ? [inversionTrace] : []),
+          ...(showSelectedTransform && showOrdinary ? ordinaryTracesForGrid : []),
+          ...(showSelectedTransform && showInversion ? [inversionTrace] : []),
+          ...(unitFieldActive && !supportGraphModeActive ? allUnitFieldTraces.map((entry) => entry.trace) : []),
+          ...(supportGraph ? [supportGraph.nodes.map((node) => ({ type: node.type }))] : []),
         ],
         rotation,
         axisOrientation,
@@ -1601,6 +2150,11 @@ function Axis3DViewport({
       revealedStepCount,
       showOrdinary,
       showInversion,
+      showSelectedTransform,
+      unitFieldActive,
+      allUnitFieldTraces,
+      supportGraph,
+      supportGraphModeActive,
     ]
   );
 
@@ -1651,6 +2205,9 @@ function Axis3DViewport({
         width: "100%",
         height: expanded ? "100%" : "auto",
         outline: "none",
+        display: expanded ? "grid" : "block",
+        gridTemplateRows: expanded ? "minmax(0, 1fr) auto" : undefined,
+        gap: expanded ? "8px" : undefined,
       }}
     >
       <AxisRotationControls
@@ -1658,6 +2215,9 @@ function Axis3DViewport({
         setSelectedAxis={setSelectedRotationAxis}
         onRotate={rotateSelectedAxis}
         onReset={resetAxisRotations}
+        onAxisDoubleClick={alignAxisToPositiveX}
+        onToggleAxisVisibility={toggleAxisVisibility}
+        axisVisibility={axisVisibility}
         onStep={stepForward}
         canStep={hopCount < MAX_TRANSFORM_HOPS}
         onZoom={adjustZoom}
@@ -1720,7 +2280,9 @@ function Axis3DViewport({
         />
       ))}
 
-      {axisSegments.map((segment) => (
+      {axisSegments
+        .filter((segment) => isAxisVisible(segment.axis.key))
+        .map((segment) => (
         <g key={segment.axis.key}>
           <line
             x1={segment.negative.x}
@@ -1750,7 +2312,105 @@ function Axis3DViewport({
         </g>
       ))}
 
-      {showNet && shouldDrawNet &&
+      {showAllWhiteUnitArrows &&
+        allUnitMoveArrows.map((arrow) => (
+          <line
+            key={`all-unit-white-${arrow.id}`}
+            x1={arrow.source.x}
+            y1={arrow.source.y}
+            x2={arrow.target.x}
+            y2={arrow.target.y}
+            stroke={arrow.current ? "rgba(242,234,210,0.54)" : "rgba(242,234,210,0.24)"}
+            strokeWidth={arrow.current ? (expanded ? "2.4" : "1.7") : (expanded ? "1.5" : "1.0")}
+            strokeLinecap="round"
+            markerEnd={`url(#${expanded ? "arrowNetLarge" : "arrowNet"})`}
+            opacity={arrow.current ? 0.9 : 0.7}
+          >
+            <title>{arrow.symbol}</title>
+          </line>
+        ))}
+
+      {showAllColoredUnitPaths &&
+        allUnitFieldPaths.map((entry) =>
+          entry.path.slice(1).map((point, index) => {
+            const previous = entry.path[index];
+            const traceEntry = entry.trace[index + 1];
+
+            if (!shouldDrawTraceEntry(traceEntry)) return null;
+
+            return (
+              <line
+                key={`all-unit-colored-${entry.id}-${index}`}
+                x1={previous.x}
+                y1={previous.y}
+                x2={point.x}
+                y2={point.y}
+                stroke={stepColorForTraceEntry(traceEntry)}
+                strokeWidth={expanded ? "1.2" : "0.85"}
+                strokeLinecap="round"
+                opacity={showAllOrderedUnitPaths ? (entry.current ? 0.74 : 0.38) : (entry.current ? 0.95 : 0.56)}
+              >
+                <title>
+                  {entry.routeCount > 1
+                    ? `${entry.symbol} route ${entry.routeIndex + 1}/${entry.routeCount}`
+                    : entry.symbol}
+                </title>
+              </line>
+            );
+          })
+        )}
+
+      {projectedSupportGraph &&
+        projectedSupportGraph.edges
+          .filter((edge) => isAxisVisible(TOKEN_AXIS_KEYS[edge.factor?.tokenId]))
+          .map((edge) => {
+          const strokeWidth = expanded
+            ? 0.9 + 2.6 * edge.weight
+            : 0.55 + 1.8 * edge.weight;
+          const opacity = 0.24 + 0.58 * edge.weight;
+
+          return (
+            <line
+              key={`support-edge-${edge.key}`}
+              x1={edge.source.x}
+              y1={edge.source.y}
+              x2={edge.target.x}
+              y2={edge.target.y}
+              stroke={stepColorForTraceEntry({ factor: edge.factor })}
+              strokeWidth={strokeWidth}
+              strokeLinecap="round"
+              opacity={opacity}
+            >
+              <title>
+                {`${edge.stepLabel}; ordered-route reuse ${Math.round(edge.multiplicity).toLocaleString()}`}
+              </title>
+            </line>
+          );
+        })}
+
+      {projectedSupportGraph &&
+        projectedSupportGraph.nodes.map((node) => {
+          const radius = expanded
+            ? 2.1 + 2.6 * node.weight
+            : 1.35 + 1.75 * node.weight;
+
+          return (
+            <circle
+              key={`support-node-${node.key}`}
+              cx={node.x}
+              cy={node.y}
+              r={radius}
+              fill="rgba(255,247,223,0.82)"
+              opacity={0.35 + 0.5 * node.weight}
+            >
+              <title>
+                {`${formatViewerTypeDetailed(node.type)}; ordered-route reuse ${Math.round(node.multiplicity).toLocaleString()}`}
+              </title>
+            </circle>
+          );
+        })}
+
+      {showSelectedTransform && showNet && shouldDrawNet &&
         netHops.map((hop, hopIndex) =>
           isStackingRoutes || hopIndex < visibleNetHops ? (
             <line
@@ -1766,7 +2426,7 @@ function Axis3DViewport({
           ) : null
         )}
 
-      {showOrdinary &&
+      {showSelectedTransform && showOrdinary &&
         ordinaryHopPaths.map((path, hopIndex) =>
           path.slice(1).map((point, index) => {
             const globalStep = hopIndex * stepsPerHop + index + 1;
@@ -1774,6 +2434,8 @@ function Axis3DViewport({
 
             const previous = path[index];
             const traceEntry = ordinaryRepeatedTraces[hopIndex][index + 1];
+
+            if (!shouldDrawTraceEntry(traceEntry)) return null;
 
             return (
               <line
@@ -1791,7 +2453,7 @@ function Axis3DViewport({
           })
         )}
 
-      {showInversion && (
+      {showSelectedTransform && showInversion && (
         <polyline
           points={toPointString(inversionPath)}
           fill="none"
@@ -1802,12 +2464,13 @@ function Axis3DViewport({
         />
       )}
 
-      {showOrdinary &&
+      {showSelectedTransform && showOrdinary &&
         ordinaryHopPaths.map((path, hopIndex) => {
           const visibleSteps = visibleStepsForHop(revealedStepCount, stepsPerHop, hopIndex);
 
           return path.map((point, index) => {
             if (!isStackingRoutes && index > visibleSteps) return null;
+            if (index > 0 && !shouldDrawTraceEntry(ordinaryRepeatedTraces[hopIndex][index])) return null;
 
             return (
               <PathNode3D
@@ -1827,7 +2490,7 @@ function Axis3DViewport({
           });
         })}
 
-      {showInversion &&
+      {showSelectedTransform && showInversion &&
         inversionPath.map((point, index) => (
           <PathNode3D
             key={`inv-node-${index}`}
@@ -1841,26 +2504,126 @@ function Axis3DViewport({
           />
         ))}
 
-      <text
-        x={firstSource.x - 10}
-        y={firstSource.y - 12}
-        fill="#e8dfc8"
-        fontSize={expanded ? "18" : "14"}
-        textAnchor="end"
-        fontFamily={PROSE_FONT}
-      >
-        source
-      </text>
-      <text
-        x={finalTarget.x + 10}
-        y={finalTarget.y - 12}
-        fill="#e8dfc8"
-        fontSize={expanded ? "18" : "14"}
-        fontFamily={PROSE_FONT}
-      >
-        target
-      </text>
+      {!gridOnlyModeActive && (
+        <text
+          x={firstSource.x - 10}
+          y={firstSource.y - 12}
+          fill="#e8dfc8"
+          fontSize={expanded ? "18" : "14"}
+          textAnchor="end"
+          fontFamily={PROSE_FONT}
+        >
+          source
+        </text>
+      )}
+      {showSelectedTransform && (
+        <text
+          x={finalTarget.x + 10}
+          y={finalTarget.y - 12}
+          fill="#e8dfc8"
+          fontSize={expanded ? "18" : "14"}
+          fontFamily={PROSE_FONT}
+        >
+          target
+        </text>
+      )}
       </svg>
+
+      {isUnitModel && (
+        <div
+          style={{
+            position: "relative",
+            marginTop: expanded ? 0 : "8px",
+            padding: "8px 10px",
+            borderRadius: "6px",
+            background: "rgba(0,0,0,0.24)",
+            border: "1px solid rgba(232,223,200,0.13)",
+            boxSizing: "border-box",
+            fontFamily: PROSE_FONT,
+            fontSize: expanded ? "12px" : "11px",
+            lineHeight: 1.35,
+            opacity: 0.88,
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "8px 14px",
+          }}
+        >
+          <span style={{ fontWeight: 600 }}>unique colored segments</span>
+          {visibleSegmentStats.map((stat) => (
+            <span
+              key={stat.axisKey}
+              style={{
+                color: stat.visible ? axisStepColor(stat.axisKey) : "rgba(232,223,200,0.34)",
+                opacity: stat.visible ? 1 : 0.54,
+                whiteSpace: "nowrap",
+              }}
+              title={`${stat.label}: ${stat.uniqueSegmentCount} unique segments; ${stat.componentCount} disconnected component${stat.componentCount === 1 ? "" : "s"}`}
+            >
+              {stat.label}: {stat.uniqueSegmentCount} seg / {stat.componentCount} comp
+            </span>
+          ))}
+        </div>
+      )}
+
+      {supportGraph && (
+        <div
+          style={{
+            position: "relative",
+            marginTop: expanded ? 0 : "8px",
+            padding: "8px 10px",
+            borderRadius: "6px",
+            background: "rgba(0,0,0,0.30)",
+            border: "1px solid rgba(232,223,200,0.16)",
+            boxSizing: "border-box",
+            fontFamily: PROSE_FONT,
+            fontSize: expanded ? "13px" : "12px",
+            lineHeight: 1.35,
+            opacity: 0.90,
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "10px 16px",
+          }}
+        >
+          <span style={{ fontWeight: 600 }}>
+            Full support graph of {supportGraphSubjectLabel}
+          </span>
+          <span>{supportGraphScopeLabel}</span>
+          <span>ordered routes represented: {Math.round(supportGraph.theoreticalOrderedPathCount).toLocaleString()}</span>
+          <span>support addresses: {supportGraph.nodes.length.toLocaleString()}</span>
+          <span>support edges: {supportGraph.edges.length.toLocaleString()}</span>
+          <span>max address reuse: {Math.round(supportGraph.maxNodeMultiplicity).toLocaleString()}</span>
+          <span>max edge reuse: {Math.round(supportGraph.maxEdgeMultiplicity).toLocaleString()}</span>
+        </div>
+      )}
+
+      {unitFieldAudit && unitFieldMode !== "selected" && !supportGraphModeActive && (
+        <div
+          style={{
+            position: "relative",
+            marginTop: expanded ? 0 : "8px",
+            padding: "8px 10px",
+            borderRadius: "6px",
+            background: "rgba(0,0,0,0.30)",
+            border: "1px solid rgba(232,223,200,0.16)",
+            boxSizing: "border-box",
+            fontFamily: PROSE_FONT,
+            fontSize: expanded ? "13px" : "12px",
+            lineHeight: 1.35,
+            opacity: 0.86,
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "10px 16px",
+          }}
+        >
+          <span>unit addresses: {unitFieldAudit.unitAddressCount}</span>
+          <span>ordered paths drawn: {unitFieldAudit.drawnOrderedPathCount.toLocaleString()}</span>
+          <span>theoretical ordered paths: {unitFieldAudit.theoreticalOrderedPathCount.toLocaleString()}</span>
+          <span>capped units: {unitFieldAudit.cappedUnitCount}</span>
+          <span>unique endpoints: {unitFieldAudit.uniqueEndpointCount}</span>
+          <span>unique visited addresses: {unitFieldAudit.uniqueVisitedAddressCount}</span>
+          <span>reused addresses: {unitFieldAudit.reusedVisitedAddressCount}</span>
+        </div>
+      )}
     </div>
   );
 }
@@ -1963,17 +2726,19 @@ function PathModeControls({
       ? ((selectedPathIndex % routeCycleCount) + routeCycleCount) % routeCycleCount
       : 0;
 
-  if (isUnitModel && ordinaryMeta.pathFamilySize <= 1) {
-    return null;
-  }
-
   const routeCountLabel =
     ordinaryMeta.pathFamilySize === 1
       ? "1 admissible route"
       : `${ordinaryMeta.pathFamilySize.toLocaleString()} admissible routes`;
 
+  const cycleCapLabel =
+    ordinaryMeta.pathFamilySize > cycleLimit
+      ? `${routeCountLabel}; route cycling capped at ${cycleLimit.toLocaleString()} — use full support`
+      : routeCountLabel;
+
   const setCanonicalRoute = () => {
     setCyclePlaybackActive(false);
+    setCyclePlaybackMode("single");
     setPathMode("canonical");
     setSelectedPathIndex(0);
     setCycleStackCount(1);
@@ -1983,28 +2748,21 @@ function PathModeControls({
     if (!ordinaryCanCycle || routeCycleCount <= 1) return;
 
     setCyclePlaybackActive(false);
+    setCyclePlaybackMode("single");
     setPathMode("cycle");
+    setCycleStackCount(1);
 
     setSelectedPathIndex((index) => {
       const current =
         ((index % routeCycleCount) + routeCycleCount) % routeCycleCount;
-      const next = (current + 1) % routeCycleCount;
-
-      if (cyclePlaybackMode === "stack") {
-        setCycleStackCount((count) =>
-          Math.min(Math.max(count, next + 1), routeCycleCount)
-        );
-      } else {
-        setCycleStackCount(1);
-      }
-
-      return next;
+      return (current + 1) % routeCycleCount;
     });
   };
 
   const startRoutePlayback = () => {
     if (!ordinaryCanCycle || routeCycleCount <= 1) return;
 
+    setCyclePlaybackMode("single");
     setPathMode("cycle");
     setSelectedPathIndex(0);
     setCycleStackCount(1);
@@ -2015,25 +2773,20 @@ function PathModeControls({
     setCyclePlaybackActive(false);
   };
 
-  const setSingleMode = () => {
+  const setSupportMode = () => {
     setCyclePlaybackActive(false);
-    setCyclePlaybackMode("single");
+    setCyclePlaybackMode("support");
+    setPathMode("canonical");
+    setSelectedPathIndex(0);
     setCycleStackCount(1);
   };
 
-  const setStackMode = () => {
-    setCyclePlaybackActive(false);
-    setCyclePlaybackMode("stack");
-    setPathMode("cycle");
-    setCycleStackCount(Math.max(1, ordinaryIndex + 1));
-  };
-
   const readout = isUnitModel
-    ? cyclePlaybackMode === "stack" && pathMode === "cycle"
-      ? `stack ${Math.min(cycleStackCount, routeCycleCount)}/${routeCycleCount}; ${routeCountLabel}`
-      : pathMode === "cycle"
+    ? cyclePlaybackMode === "support"
+      ? `full support; ${routeCountLabel} represented exactly`
+      : pathMode === "cycle" && ordinaryCanCycle
         ? `route ${ordinaryIndex + 1}/${routeCycleCount}; ${routeCountLabel}`
-        : routeCountLabel
+        : cycleCapLabel
     : pathMode === "cycle" && ordinaryCanCycle
       ? `ordinary ${ordinaryIndex + 1}/${ordinaryMeta.pathFamilySize.toLocaleString()}; inversion ${
           inversionCanCycle
@@ -2042,16 +2795,16 @@ function PathModeControls({
         }`
       : `canonical; ordinary ${ordinaryMeta.pathFamilySize.toLocaleString()} paths, inversion ${inversionMeta.pathFamilySize.toLocaleString()} paths`;
 
-  const buttonStyle = (active, disabled = false) => ({
+  const buttonStyle = (active) => ({
     border: "none",
     borderRadius: "5px",
     padding: "1px 7px",
-    cursor: disabled ? "not-allowed" : "pointer",
+    cursor: "pointer",
     color: "#e8dfc8",
     background: active ? "rgba(232,223,200,0.18)" : "transparent",
     fontFamily: PROSE_FONT,
     fontSize: "14px",
-    opacity: disabled ? 0.46 : 1,
+    opacity: 1,
   });
 
   return (
@@ -2074,59 +2827,54 @@ function PathModeControls({
       <button
         type="button"
         onClick={setCanonicalRoute}
-        style={buttonStyle(pathMode === "canonical")}
+        style={buttonStyle(cyclePlaybackMode !== "support" && pathMode === "canonical")}
+        title="Show the canonical representative route"
       >
         canonical
       </button>
 
-      <button
-        type="button"
-        disabled={!ordinaryCanCycle}
-        onClick={advanceRoute}
-        style={buttonStyle(pathMode === "cycle" && !cyclePlaybackActive, !ordinaryCanCycle)}
-      >
-        next
-      </button>
+      {ordinaryCanCycle && (
+        <button
+          type="button"
+          onClick={advanceRoute}
+          style={buttonStyle(cyclePlaybackMode !== "support" && pathMode === "cycle" && !cyclePlaybackActive)}
+          title="Advance to the next ordered route"
+        >
+          next
+        </button>
+      )}
+
+      {ordinaryCanCycle && (
+        <button
+          type="button"
+          onClick={cyclePlaybackActive ? stopRoutePlayback : startRoutePlayback}
+          style={buttonStyle(cyclePlaybackActive)}
+          title={cyclePlaybackActive ? "Stop route playback" : "Play through ordered routes"}
+          aria-label={cyclePlaybackActive ? "Stop route playback" : "Play through ordered routes"}
+        >
+          <span
+            style={{
+              display: "inline-block",
+              fontFamily: PROSE_FONT,
+              fontSize: "0.95em",
+              lineHeight: 1,
+              transform: cyclePlaybackActive ? "translateY(-1px)" : "translateX(1px)",
+            }}
+          >
+            {cyclePlaybackActive ? "■" : "▶"}
+          </span>
+        </button>
+      )}
 
       {isUnitModel && (
-        <>
-          <button
-            type="button"
-            disabled={!ordinaryCanCycle}
-            onClick={cyclePlaybackActive ? stopRoutePlayback : startRoutePlayback}
-            style={buttonStyle(cyclePlaybackActive, !ordinaryCanCycle)}
-            title={cyclePlaybackActive ? "Stop route playback" : "Play route sequence"}
-            aria-label={cyclePlaybackActive ? "Stop route playback" : "Play route sequence"}
-          >
-            <span
-              style={{
-                display: "inline-block",
-                fontFamily: PROSE_FONT,
-                fontSize: "0.95em",
-                lineHeight: 1,
-                transform: cyclePlaybackActive ? "translateY(-1px)" : "translateX(1px)",
-              }}
-            >
-              {cyclePlaybackActive ? "■" : "▶"}
-            </span>
-          </button>
-
-          <button
-            type="button"
-            onClick={setSingleMode}
-            style={buttonStyle(cyclePlaybackMode === "single")}
-          >
-            single
-          </button>
-
-          <button
-            type="button"
-            onClick={setStackMode}
-            style={buttonStyle(cyclePlaybackMode === "stack")}
-          >
-            stack
-          </button>
-        </>
+        <button
+          type="button"
+          onClick={setSupportMode}
+          style={buttonStyle(cyclePlaybackMode === "support")}
+          title="Draw the exact deduplicated support graph for this route family"
+        >
+          full support
+        </button>
       )}
 
       {!isUnitModel && pathMode === "cycle" && ordinaryCanCycle && (
@@ -2241,6 +2989,217 @@ function traceBoundaryPath(sourceType, word, pathOptions = {}) {
   });
 
   return points;
+}
+
+
+function supportFactorKey(factor) {
+  return `${factor.tokenId}:${factor.exponent}`;
+}
+
+function addTypesRepeated(type, delta, count) {
+  let current = type;
+  for (let index = 0; index < count; index += 1) {
+    current = addType(current, delta);
+  }
+  return current;
+}
+
+const SUPPORT_FACTORIAL_CACHE = [1];
+
+function factorialNumber(n) {
+  for (let index = SUPPORT_FACTORIAL_CACHE.length; index <= n; index += 1) {
+    SUPPORT_FACTORIAL_CACHE[index] = SUPPORT_FACTORIAL_CACHE[index - 1] * index;
+  }
+
+  return SUPPORT_FACTORIAL_CACHE[n] ?? 1;
+}
+
+function orderedRouteCountFromCounts(counts) {
+  const total = counts.reduce((sum, count) => sum + count, 0);
+  const denominator = counts.reduce(
+    (product, count) => product * factorialNumber(count),
+    1
+  );
+
+  return factorialNumber(total) / denominator;
+}
+
+function supportStateMultiplicity(counts, totals) {
+  const remaining = totals.map((total, index) => total - counts[index]);
+  return orderedRouteCountFromCounts(counts) * orderedRouteCountFromCounts(remaining);
+}
+
+function supportEdgeMultiplicity(counts, totals, groupIndex) {
+  const remainingAfterEdge = totals.map((total, index) =>
+    total - counts[index] - (index === groupIndex ? 1 : 0)
+  );
+
+  if (remainingAfterEdge.some((count) => count < 0)) return 0;
+
+  return orderedRouteCountFromCounts(counts) * orderedRouteCountFromCounts(remainingAfterEdge);
+}
+
+function makeSupportFactorGroups(word) {
+  const factors = getRepresentativePathFactors(word, { pathMode: "canonical" });
+  const groups = new Map();
+
+  factors.forEach((factor) => {
+    const key = supportFactorKey(factor);
+    const token = getBoundaryToken(factor.tokenId);
+    const delta = scaleType(factor.exponent, token.type);
+    const baseSymbol = token.displaySymbol ?? token.symbol;
+    const stepLabel = factor.exponent === -1 ? `${baseSymbol}^-1` : baseSymbol;
+
+    if (!groups.has(key)) {
+      groups.set(key, {
+        key,
+        factor,
+        delta,
+        stepLabel,
+        count: 0,
+      });
+    }
+
+    groups.get(key).count += 1;
+  });
+
+  return Array.from(groups.values());
+}
+
+function makeBoundarySupportGraph(sourceType, word, owner = {}) {
+  const groups = makeSupportFactorGroups(word);
+  const totals = groups.map((group) => group.count);
+  const metadata = getPathFamilyMetadata(word);
+  const theoreticalOrderedPathCount =
+    metadata.pathFamilySize ?? orderedRouteCountFromCounts(totals);
+
+  const nodes = new Map();
+  const edges = new Map();
+  const counts = Array(groups.length).fill(0);
+  const states = [];
+
+  function recordState(type) {
+    const stateCounts = [...counts];
+    const key = typeKey(type);
+    const multiplicity = supportStateMultiplicity(stateCounts, totals);
+
+    states.push({
+      key,
+      type,
+      counts: stateCounts,
+      multiplicity,
+    });
+
+    const previous = nodes.get(key);
+    nodes.set(key, {
+      key,
+      type,
+      multiplicity: (previous?.multiplicity ?? 0) + multiplicity,
+      owners: new Set([...(previous?.owners ?? []), owner.id].filter(Boolean)),
+    });
+  }
+
+  function walk(groupIndex, currentType) {
+    if (groupIndex >= groups.length) {
+      recordState(currentType);
+      return;
+    }
+
+    const group = groups[groupIndex];
+    let typeAtCount = currentType;
+
+    for (let count = 0; count <= group.count; count += 1) {
+      counts[groupIndex] = count;
+      walk(groupIndex + 1, typeAtCount);
+
+      if (count < group.count) {
+        typeAtCount = addType(typeAtCount, group.delta);
+      }
+    }
+  }
+
+  walk(0, sourceType);
+
+  states.forEach((state) => {
+    groups.forEach((group, groupIndex) => {
+      if (state.counts[groupIndex] >= group.count) return;
+
+      const targetType = addType(state.type, group.delta);
+      const sourceKey = typeKey(state.type);
+      const targetKey = typeKey(targetType);
+      const edgeKey = `${sourceKey}->${targetKey}|${group.key}`;
+      const multiplicity = supportEdgeMultiplicity(state.counts, totals, groupIndex);
+      const previous = edges.get(edgeKey);
+
+      edges.set(edgeKey, {
+        key: edgeKey,
+        sourceKey,
+        targetKey,
+        sourceType: state.type,
+        targetType,
+        factor: group.factor,
+        stepLabel: group.stepLabel,
+        multiplicity: (previous?.multiplicity ?? 0) + multiplicity,
+        owners: new Set([...(previous?.owners ?? []), owner.id].filter(Boolean)),
+      });
+    });
+  });
+
+  return {
+    owner,
+    theoreticalOrderedPathCount,
+    nodes: Array.from(nodes.values()),
+    edges: Array.from(edges.values()),
+  };
+}
+
+function mergeSupportGraphs(sourceType, transforms) {
+  const nodes = new Map();
+  const edges = new Map();
+  let theoreticalOrderedPathCount = 0;
+
+  transforms.forEach((transform) => {
+    const graph = makeBoundarySupportGraph(
+      sourceType,
+      transform.ordinaryLeg.boundaryWord,
+      {
+        id: transform.id,
+        symbol: transform.symbol,
+      }
+    );
+
+    theoreticalOrderedPathCount += graph.theoreticalOrderedPathCount;
+
+    graph.nodes.forEach((node) => {
+      const previous = nodes.get(node.key);
+      nodes.set(node.key, {
+        ...node,
+        multiplicity: (previous?.multiplicity ?? 0) + node.multiplicity,
+        owners: new Set([...(previous?.owners ?? []), ...(node.owners ?? [])]),
+      });
+    });
+
+    graph.edges.forEach((edge) => {
+      const previous = edges.get(edge.key);
+      edges.set(edge.key, {
+        ...edge,
+        multiplicity: (previous?.multiplicity ?? 0) + edge.multiplicity,
+        owners: new Set([...(previous?.owners ?? []), ...(edge.owners ?? [])]),
+      });
+    });
+  });
+
+  const nodeList = Array.from(nodes.values());
+  const edgeList = Array.from(edges.values());
+
+  return {
+    transformCount: transforms.length,
+    theoreticalOrderedPathCount,
+    nodes: nodeList,
+    edges: edgeList,
+    maxNodeMultiplicity: Math.max(1, ...nodeList.map((node) => node.multiplicity)),
+    maxEdgeMultiplicity: Math.max(1, ...edgeList.map((edge) => edge.multiplicity)),
+  };
 }
 
 function makeProjectedGridDots({ radius, traces, rotation, axisOrientation, zoomScale, expanded }) {
