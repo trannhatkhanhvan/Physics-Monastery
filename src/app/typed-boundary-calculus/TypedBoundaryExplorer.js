@@ -304,23 +304,136 @@ function formatViewerTypeDetailed(type) {
   return TYPE_AXES.map((axis) => `${axisDisplayLabel(axis.key)}:${type[axis.key] ?? 0}`).join(" ");
 }
 
+
+const CUSTOM_ADDRESS_ID = "custom_six_axis_address";
+
+const CUSTOM_ADDRESS_INITIAL = {
+  t: 0,
+  l: 0,
+  q: 0,
+  theta: 0,
+  m: 0,
+  n: 0,
+};
+
+const CUSTOM_AXIS_TOKENS = {
+  t: "t_p",
+  l: "l_p",
+  q: "q_p",
+  theta: "T_p",
+  m: "m_p",
+  n: "N_A",
+};
+
+function makeZeroTypeAddress() {
+  return TYPE_AXES.reduce(
+    (address, axis) => ({
+      ...address,
+      [axis.key]: 0,
+    }),
+    {}
+  );
+}
+
+function clampSingleDigitAddressValue(rawValue) {
+  const parsed = Number.parseInt(String(rawValue), 10);
+  if (!Number.isFinite(parsed)) return 0;
+  return clampNumber(parsed, -9, 9);
+}
+
+function customAddressSignature(address) {
+  return TYPE_AXES.map((axis) => address[axis.key] ?? 0).join("_");
+}
+
+function customAddressBoundaryFactors(address) {
+  return TYPE_AXES.flatMap((axis) => {
+    const value = address[axis.key] ?? 0;
+    if (value === 0) return [];
+
+    // N_A is inverse amount in this boundary model.
+    // Positive mol address therefore uses N_A^-1.
+    const exponent = axis.key === "n" ? -value : value;
+
+    return [
+      {
+        tokenId: CUSTOM_AXIS_TOKENS[axis.key],
+        exponent,
+      },
+    ];
+  });
+}
+
+function makeCustomAddressTransform(address) {
+  const targetType = TYPE_AXES.reduce(
+    (type, axis) => ({
+      ...type,
+      [axis.key]: address[axis.key] ?? 0,
+    }),
+    {}
+  );
+
+  const boundaryWord = {
+    factors: customAddressBoundaryFactors(address),
+  };
+
+  return {
+    id: `${CUSTOM_ADDRESS_ID}_${customAddressSignature(address)}`,
+    modelKind: "unit_model",
+    name: "custom address",
+    symbol: "custom",
+    unitFormula: "custom address",
+    aliases: [],
+    sourceType: makeZeroTypeAddress(),
+    targetType,
+    ordinaryLeg: {
+      boundaryWord,
+      netTypeDisplacement: targetType,
+    },
+    inversionLeg: {
+      boundaryWord,
+      netTypeDisplacement: targetType,
+    },
+  };
+}
+
 export default function TypedBoundaryExplorer() {
   const [selectedId, setSelectedId] = useState(null);
   const [unitFieldMode, setUnitFieldMode] = useState("grid");
   const [unitFieldModeChangeKey, setUnitFieldModeChangeKey] = useState(0);
-  const selectedTransform = useMemo(
-    () => UNIT_TRANSFORMS.find((transform) => transform.id === selectedId) ?? UNIT_TRANSFORMS[0],
-    [selectedId]
-  );
+  const [customAddress, setCustomAddress] = useState(CUSTOM_ADDRESS_INITIAL);
+
+  const selectedTransform = useMemo(() => {
+    if (selectedId === CUSTOM_ADDRESS_ID) {
+      return makeCustomAddressTransform(customAddress);
+    }
+
+    return UNIT_TRANSFORMS.find((transform) => transform.id === selectedId)
+      ?? makeCustomAddressTransform(CUSTOM_ADDRESS_INITIAL);
+  }, [selectedId, customAddress]);
 
   const selectedChecks = useMemo(
-    () => validatePairedTransform(selectedTransform),
-    [selectedTransform]
+    () =>
+      selectedId === CUSTOM_ADDRESS_ID || selectedId === null
+        ? []
+        : validatePairedTransform(selectedTransform),
+    [selectedTransform, selectedId]
   );
 
   const handleUnitFieldModeChange = (mode) => {
     setUnitFieldMode(mode);
     setUnitFieldModeChangeKey((key) => key + 1);
+  };
+
+  const handleCustomAddressChange = (axisKey, rawValue) => {
+    const value = clampSingleDigitAddressValue(rawValue);
+
+    setCustomAddress((previous) => ({
+      ...previous,
+      [axisKey]: value,
+    }));
+
+    setSelectedId(CUSTOM_ADDRESS_ID);
+    handleUnitFieldModeChange("selected");
   };
 
   return (
@@ -400,6 +513,9 @@ export default function TypedBoundaryExplorer() {
               }}
               unitFieldMode={unitFieldMode}
               onUnitFieldModeChange={handleUnitFieldModeChange}
+              customAddress={customAddress}
+              customSelected={selectedId === CUSTOM_ADDRESS_ID && unitFieldMode === "selected"}
+              onCustomAddressChange={handleCustomAddressChange}
             />
           </Panel>
 
@@ -463,6 +579,9 @@ function TransformSelector({
   onSelect,
   unitFieldMode = "selected",
   onUnitFieldModeChange = () => {},
+  customAddress = CUSTOM_ADDRESS_INITIAL,
+  customSelected = false,
+  onCustomAddressChange = () => {},
 }) {
   const selectorGroups =
     groups ??
@@ -484,6 +603,326 @@ function TransformSelector({
 
   const byId = new Map(transforms.map((transform) => [transform.id, transform]));
 
+  const baseGroups = selectorGroups.filter((group) => /base/i.test(group.title));
+  const remainingGroups = selectorGroups.filter((group) => !/base/i.test(group.title));
+  const orderedGroups = [...baseGroups, ...remainingGroups];
+
+  const [customAddressDraft, setCustomAddressDraft] = useState(() =>
+    TYPE_AXES.reduce(
+      (draft, axis) => ({
+        ...draft,
+        [axis.key]: String(customAddress[axis.key] ?? 0),
+      }),
+      {}
+    )
+  );
+
+  useEffect(() => {
+    setCustomAddressDraft(
+      TYPE_AXES.reduce(
+        (draft, axis) => ({
+          ...draft,
+          [axis.key]: String(customAddress[axis.key] ?? 0),
+        }),
+        {}
+      )
+    );
+  }, [customAddress]);
+
+  const focusCustomAddressInput = (index) => {
+    const wrappedIndex = ((index % TYPE_AXES.length) + TYPE_AXES.length) % TYPE_AXES.length;
+
+    window.requestAnimationFrame(() => {
+      const input = document.querySelector(`[data-custom-address-index="${wrappedIndex}"]`);
+      input?.focus();
+      input?.select?.();
+    });
+  };
+
+  const commitCustomAddressInputValue = (axisKey, rawValue) => {
+    const cleanedValue = String(rawValue).trim();
+
+    if (cleanedValue === "" || cleanedValue === "-") {
+      setCustomAddressDraft((previous) => ({
+        ...previous,
+        [axisKey]: "0",
+      }));
+      onCustomAddressChange(axisKey, 0);
+      return;
+    }
+
+    const value = clampSingleDigitAddressValue(cleanedValue);
+
+    setCustomAddressDraft((previous) => ({
+      ...previous,
+      [axisKey]: String(value),
+    }));
+
+    onCustomAddressChange(axisKey, value);
+  };
+
+  const updateCustomAddressDraft = (axisKey, rawValue) => {
+    const cleanedValue = String(rawValue).replace(/[^0-9-]/g, "");
+
+    if (!/^-?\d?$/.test(cleanedValue)) return;
+
+    setCustomAddressDraft((previous) => ({
+      ...previous,
+      [axisKey]: cleanedValue,
+    }));
+
+    if (cleanedValue !== "" && cleanedValue !== "-") {
+      onCustomAddressChange(axisKey, cleanedValue);
+    }
+  };
+
+  const renderAllMovesSection = () => (
+    <div
+      style={{
+        paddingBottom: "10px",
+        borderBottom: "1px solid rgba(232,223,200,0.16)",
+      }}
+    >
+      <div
+        style={{
+          marginBottom: "6px",
+          fontSize: "12px",
+          opacity: 0.68,
+          letterSpacing: "0.03em",
+          textTransform: "uppercase",
+        }}
+      >
+        all moves from source
+      </div>
+
+      <div style={{ display: "grid", gap: "5px" }}>
+        {[
+          ["white", "all net arrows"],
+          ["canonical", "all canonical paths"],
+          ["allpaths", "all paths"],
+        ].map(([mode, label]) => {
+          const active = unitFieldMode === mode;
+
+          return (
+            <button
+              key={mode}
+              type="button"
+              onClick={() => onUnitFieldModeChange(mode)}
+              style={{
+                width: "100%",
+                textAlign: "left",
+                padding: "6px 8px",
+                borderRadius: "5px",
+                cursor: "pointer",
+                color: "#e8dfc8",
+                background: active ? "rgba(232, 223, 200, 0.18)" : "rgba(255,255,255,0.045)",
+                border: active
+                  ? "1px solid rgba(232, 223, 200, 0.48)"
+                  : "1px solid rgba(232, 223, 200, 0.12)",
+                fontFamily: PROSE_FONT,
+                fontSize: "12px",
+              }}
+            >
+              {label}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+
+  const renderCustomAddressSection = () => (
+    <div
+      style={{
+        paddingBottom: "10px",
+        borderBottom: "1px solid rgba(232,223,200,0.16)",
+      }}
+    >
+      <div
+        style={{
+          marginBottom: "8px",
+          fontSize: "12px",
+          opacity: 0.68,
+          letterSpacing: "0.03em",
+          textTransform: "uppercase",
+        }}
+      >
+        custom address
+      </div>
+
+      <div
+        role="group"
+        aria-label="Custom six-component address"
+        onClick={() => onSelect(CUSTOM_ADDRESS_ID)}
+        style={{
+          width: "100%",
+          boxSizing: "border-box",
+          padding: "7px 8px",
+          borderRadius: "7px",
+          cursor: "text",
+          color: "#e8dfc8",
+          background: customSelected ? "rgba(232, 223, 200, 0.13)" : "rgba(255,255,255,0.045)",
+          border: customSelected
+            ? "1px solid rgba(232, 223, 200, 0.40)"
+            : "1px solid rgba(232, 223, 200, 0.14)",
+          fontFamily: MATH_FONT,
+          fontSize: "18px",
+          lineHeight: 1.18,
+          textAlign: "center",
+          whiteSpace: "nowrap",
+          overflowX: "auto",
+        }}
+      >
+        <span style={{ color: "#e8dfc8" }}>(</span>
+        {TYPE_AXES.map((axis, index) => (
+          <span key={axis.key}>
+            <input
+              data-custom-address-index={index}
+              aria-label={`Custom address ${AXIS_WORD_LABELS[axis.key] ?? axis.key} component`}
+              type="text"
+              inputMode="numeric"
+              value={customAddressDraft[axis.key] ?? String(customAddress[axis.key] ?? 0)}
+              onChange={(event) => updateCustomAddressDraft(axis.key, event.target.value)}
+              onFocus={(event) => {
+                onSelect(CUSTOM_ADDRESS_ID);
+                event.currentTarget.select();
+              }}
+              onBlur={(event) => commitCustomAddressInputValue(axis.key, event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "ArrowRight") {
+                  event.preventDefault();
+                  focusCustomAddressInput(index + 1);
+                  return;
+                }
+
+                if (event.key === "ArrowLeft") {
+                  event.preventDefault();
+                  focusCustomAddressInput(index - 1);
+                  return;
+                }
+
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  commitCustomAddressInputValue(axis.key, event.currentTarget.value);
+                  focusCustomAddressInput(index + 1);
+                }
+              }}
+              style={{
+                width: "1.85ch",
+                border: "none",
+                borderBottom: customSelected
+                  ? `1px solid ${axisStepColor(axis.key)}`
+                  : "1px solid transparent",
+                borderRadius: 0,
+                background: "transparent",
+                color: axisStepColor(axis.key),
+                fontFamily: MATH_FONT,
+                fontSize: "inherit",
+                fontWeight: 600,
+                lineHeight: 1,
+                textAlign: "center",
+                outline: "none",
+                padding: 0,
+                margin: 0,
+                appearance: "textfield",
+              }}
+            />
+            {index < TYPE_AXES.length - 1 && (
+              <span style={{ color: "#e8dfc8", opacity: 0.82 }}>,</span>
+            )}
+          </span>
+        ))}
+        <span style={{ color: "#e8dfc8" }}>)</span>
+      </div>
+    </div>
+  );
+
+  const renderUnitGroup = (group) => (
+    <div key={group.title}>
+      <h3 style={selectorGroupHeading}>{group.title}</h3>
+
+      <div style={{ display: "grid", gap: "5px" }}>
+        {group.ids
+          .map((id) => byId.get(id))
+          .filter(Boolean)
+          .map((transform) => {
+            const active = unitFieldMode === "selected" && transform.id === selectedId;
+
+            return (
+              <button
+                key={transform.id}
+                type="button"
+                onClick={() => onSelect(transform.id)}
+                style={{
+                  width: "100%",
+                  textAlign: "left",
+                  padding: "7px 8px",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  color: "#e8dfc8",
+                  background: active ? "rgba(232, 223, 200, 0.18)" : "rgba(255,255,255,0.055)",
+                  border: active
+                    ? "1px solid rgba(232, 223, 200, 0.48)"
+                    : "1px solid rgba(232, 223, 200, 0.14)",
+                  fontFamily: PROSE_FONT,
+                }}
+              >
+                <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "8px" }}>
+                  <div style={{ fontSize: "13px", lineHeight: 1.14 }}>
+                    {shortTransformName(transform)}
+                  </div>
+                  <div style={{ fontFamily: MATH_FONT, fontSize: "12px", opacity: 0.86 }}>
+                    {transform.symbol}
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    marginTop: "6px",
+                    fontFamily: MATH_FONT,
+                    fontSize: "11px",
+                    opacity: 0.72,
+                  }}
+                >
+                  {transform.unitFormula ? (
+                    <>
+                      <span
+                        style={{
+                          display: "inline-block",
+                          fontSize: "1.00em",
+                          lineHeight: 1.05,
+                          verticalAlign: "middle",
+                        }}
+                      >
+                        <LatexInline latex={String.raw`\displaystyle ${formatUnitFormulaLatex(transform)}`} />
+                      </span>
+                      <span style={{ marginLeft: "7px", opacity: 0.72 }}>
+                        <MathText value={formatType(transform.targetType)} />
+                      </span>
+                    </>
+                  ) : (
+                    <MathText value={formatType(transform.targetType)} />
+                  )}
+                </div>
+
+                {transform.aliases?.length > 0 && (
+                  <div
+                    style={{
+                      marginTop: "4px",
+                      fontSize: "11px",
+                      opacity: 0.58,
+                    }}
+                  >
+                    aliases: {transform.aliases.join(", ")}
+                  </div>
+                )}
+              </button>
+            );
+          })}
+      </div>
+    </div>
+  );
+
   return (
     <div
       style={{
@@ -494,143 +933,9 @@ function TransformSelector({
         paddingRight: "4px",
       }}
     >
-      {selectorGroups.map((group) => (
-        <div key={group.title}>
-          <h3 style={selectorGroupHeading}>{group.title}</h3>
-
-          <div style={{ display: "grid", gap: "5px" }}>
-            {group.ids
-              .map((id) => byId.get(id))
-              .filter(Boolean)
-              .map((transform) => {
-                const active = transform.id === selectedId;
-
-                return (
-                  <button
-                    key={transform.id}
-                    type="button"
-                    onClick={() => onSelect(transform.id)}
-                    style={{
-                      width: "100%",
-                      textAlign: "left",
-                      padding: "7px 8px",
-                      borderRadius: "5px",
-                      cursor: "pointer",
-                      color: "#e8dfc8",
-                      background: active ? "rgba(232, 223, 200, 0.18)" : "rgba(255,255,255,0.055)",
-                      border: active
-                        ? "1px solid rgba(232, 223, 200, 0.48)"
-                        : "1px solid rgba(232, 223, 200, 0.14)",
-                      fontFamily: PROSE_FONT,
-                    }}
-                  >
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "8px" }}>
-                      <div style={{ fontSize: "13px", lineHeight: 1.14 }}>{shortTransformName(transform)}</div>
-                      <div style={{ fontFamily: MATH_FONT, fontSize: "12px", opacity: 0.86 }}>
-                        {transform.symbol}
-                      </div>
-                    </div>
-
-                    <div
-                      style={{
-                        marginTop: "6px",
-                        fontFamily: MATH_FONT,
-                        fontSize: "11px",
-                        opacity: 0.72,
-                      }}
-                    >
-                      {transform.unitFormula ? (
-  <>
-    <span
-                            style={{
-                              display: "inline-block",
-                              fontSize: "1.00em",
-                              lineHeight: 1.05,
-                              verticalAlign: "middle",
-                            }}
-                          >
-                            <LatexInline latex={String.raw`\displaystyle ${formatUnitFormulaLatex(transform)}`} />
-                          </span>
-    <span style={{ marginLeft: "7px", opacity: 0.72 }}>
-      <MathText value={formatType(transform.targetType)} />
-    </span>
-  </>
-) : (
-  <MathText value={formatType(transform.targetType)} />
-)}
-                    </div>
-
-                    {transform.aliases?.length > 0 && (
-                      <div
-                        style={{
-                          marginTop: "4px",
-                          fontSize: "11px",
-                          opacity: 0.58,
-                        }}
-                      >
-                        aliases: {transform.aliases.join(", ")}
-                      </div>
-                    )}
-                  </button>
-                );
-              })}
-          </div>
-        </div>
-      ))}
-
-      <div
-        style={{
-          marginTop: "4px",
-          paddingTop: "10px",
-          borderTop: "1px solid rgba(232,223,200,0.16)",
-        }}
-      >
-        <div
-          style={{
-            marginBottom: "6px",
-            fontSize: "12px",
-            opacity: 0.68,
-            letterSpacing: "0.03em",
-            textTransform: "uppercase",
-          }}
-        >
-          all moves from source
-        </div>
-
-        <div style={{ display: "grid", gap: "5px" }}>
-          {[
-            ["white", "all net arrows"],
-            ["canonical", "all canonical paths"],
-            ["allpaths", "all paths"],
-          ].map(([mode, label]) => {
-            const active = unitFieldMode === mode;
-
-            return (
-              <button
-                key={mode}
-                type="button"
-                onClick={() => onUnitFieldModeChange(mode)}
-                style={{
-                  width: "100%",
-                  textAlign: "left",
-                  padding: "6px 8px",
-                  borderRadius: "5px",
-                  cursor: "pointer",
-                  color: "#e8dfc8",
-                  background: active ? "rgba(232, 223, 200, 0.18)" : "rgba(255,255,255,0.045)",
-                  border: active
-                    ? "1px solid rgba(232, 223, 200, 0.48)"
-                    : "1px solid rgba(232, 223, 200, 0.12)",
-                  fontFamily: PROSE_FONT,
-                  fontSize: "12px",
-                }}
-              >
-                {label}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+      {renderAllMovesSection()}
+      {renderCustomAddressSection()}
+      {orderedGroups.map(renderUnitGroup)}
     </div>
   );
 }
