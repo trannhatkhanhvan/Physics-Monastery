@@ -304,6 +304,132 @@ function formatViewerTypeDetailed(type) {
   return TYPE_AXES.map((axis) => `${axisDisplayLabel(axis.key)}:${type[axis.key] ?? 0}`).join(" ");
 }
 
+function unitTypeSignature(type = {}) {
+  return TYPE_AXES.map((axis) => type[axis.key] ?? 0).join(",");
+}
+
+const UNIT_KIND_BY_UNIT_ID = {
+  second: "time",
+  meter: "length",
+  coulomb: "electric charge",
+  kelvin: "thermodynamic temperature",
+  kilogram: "mass",
+  mole: "amount of substance",
+
+  hertz: "frequency",
+  velocity: "velocity",
+  acceleration: "acceleration",
+
+  noether: "momentum",
+  newton: "force",
+  joule: "energy",
+  watt: "power",
+  pascal: "pressure",
+
+  ampere: "electric current",
+  volt: "electric potential",
+  ohm: "electrical resistance",
+  siemens: "electrical conductance",
+  farad: "capacitance",
+  henry: "inductance",
+  tesla: "magnetic flux density",
+  weber: "magnetic flux",
+
+  joule_per_kelvin: "heat capacity",
+  coulomb_per_mole: "molar charge",
+  joule_per_mole: "molar energy",
+  joule_per_mole_kelvin: "molar heat capacity",
+  kilogram_per_mole: "molar mass",
+};
+
+const UNIT_KIND_BY_TYPE_SIGNATURE = {
+  "1,0,0,0,0,0": "time",
+  "0,1,0,0,0,0": "length",
+  "0,0,1,0,0,0": "electric charge",
+  "0,0,0,1,0,0": "thermodynamic temperature",
+  "0,0,0,0,1,0": "mass",
+  "0,0,0,0,0,1": "amount of substance",
+
+  "-1,0,0,0,0,0": "frequency",
+  "-1,1,0,0,0,0": "velocity",
+  "-2,1,0,0,0,0": "acceleration",
+  "0,-1,0,0,0,0": "wavenumber",
+  "0,-3,0,0,0,0": "inverse volume",
+  "0,2,0,0,0,0": "area",
+  "0,3,0,0,0,0": "volume",
+  "0,-3,0,0,1,0": "density",
+
+  "-1,1,0,0,1,0": "momentum",
+  "-2,1,0,0,1,0": "force",
+  "-2,2,0,0,1,0": "energy",
+  "-3,2,0,0,1,0": "power",
+  "-2,-1,0,0,1,0": "pressure",
+
+  "-1,0,1,0,0,0": "electric current",
+  "-2,2,-1,0,1,0": "electric potential",
+  "-1,2,-2,0,1,0": "electrical resistance",
+  "1,-2,2,0,-1,0": "electrical conductance",
+  "2,-2,2,0,-1,0": "electrical capacitance",
+  "0,2,-2,0,1,0": "electrical inductance",
+  "-1,2,-1,0,1,0": "magnetic flux",
+  "-1,0,-1,0,1,0": "magnetic flux density",
+
+  "-2,2,0,-1,1,0": "heat capacity",
+  "0,0,1,0,0,-1": "molar charge",
+  "-2,2,0,0,1,-1": "molar energy",
+  "-2,2,0,-1,1,-1": "molar heat capacity",
+  "0,0,0,0,1,-1": "molar mass",
+
+  "-1,2,0,0,1,0": "action",
+};
+
+function unitIdKey(transform) {
+  return String(transform?.id ?? "").replace(/^unit_/, "");
+}
+
+function unitKindFromName(transform) {
+  const name = String(transform?.name ?? "").trim();
+  const lowerName = name.toLowerCase();
+
+  if (!name || name === "custom address") return null;
+
+  const specificNames = {
+    "inverse cubic meter": "inverse volume",
+    "square meter per second": "diffusivity",
+
+    "newtonian gravitation unit": "gravitational constant",
+    "newtonian constant of gravitation unit": "gravitational constant",
+
+    "electric polarizability unit": "electric polarizability",
+    "first hyperpolarizability unit": "first hyperpolarizability",
+    "second hyperpolarizability unit": "second hyperpolarizability",
+    "magnetizability unit": "magnetizability",
+    "permittivity unit": "permittivity",
+
+    "electric dipole moment unit": "electric dipole moment",
+    "electric quadrupole moment unit": "electric quadrupole moment",
+    "magnetic dipole moment unit": "magnetic dipole moment",
+  };
+
+  return (
+    specificNames[lowerName]
+    ?? name
+      .replace(/\s+type$/i, "")
+      .replace(/\s+unit$/i, "")
+  );
+}
+
+function unitKindLabel(transform) {
+  const idKind = UNIT_KIND_BY_UNIT_ID[unitIdKey(transform)];
+  const nameKind = unitKindFromName(transform);
+  const typeKind = UNIT_KIND_BY_TYPE_SIGNATURE[unitTypeSignature(transform?.targetType)];
+  const kind = idKind ?? nameKind ?? typeKind;
+
+  return kind ? `unit of ${kind}` : "unit";
+}
+
+
+
 
 const CUSTOM_ADDRESS_ID = "custom_six_axis_address";
 
@@ -699,7 +825,7 @@ function TransformSelector({
         {[
           ["white", "all net arrows"],
           ["canonical", "all canonical paths"],
-          ["allpaths", "all paths"],
+          ["allpaths", "full support grid"],
         ].map(([mode, label]) => {
           const active = unitFieldMode === mode;
 
@@ -768,7 +894,7 @@ function TransformSelector({
           fontFamily: MATH_FONT,
           fontSize: "18px",
           lineHeight: 1.18,
-          textAlign: "center",
+          textAlign: "left",
           whiteSpace: "nowrap",
           overflowX: "auto",
         }}
@@ -928,7 +1054,7 @@ function TransformSelector({
       style={{
         display: "grid",
         gap: "12px",
-        maxHeight: "calc(100vh - 20px)",
+        maxHeight: "calc(100vh + 240px)",
         overflowY: "auto",
         paddingRight: "4px",
       }}
@@ -1180,6 +1306,8 @@ function LatticeProjection({
   const [cycleStackCount, setCycleStackCount] = useState(1);
 
   const isUnitModel = isUnitModelTransform(transform);
+  const isCustomAddress = transform?.id?.startsWith(CUSTOM_ADDRESS_ID);
+  const isOriginGridState = isCustomAddress && unitFieldMode === "grid";
   const ordinaryLabel = formatBoundaryPathWord(transform.ordinaryLeg.boundaryWord);
   const inversionStructured = formatStructuredProduct(transform.ordinaryLeg.boundaryWord, BOX_WORD);
   const ordinaryLatex = formatBoundaryPathLatex(transform.ordinaryLeg.boundaryWord);
@@ -1269,18 +1397,24 @@ function LatticeProjection({
         >
           {isUnitModel ? (
             <>
-              <div style={{ fontSize: "16px", opacity: 0.76, whiteSpace: "nowrap" }}>
-                unit address:
+              <div style={{ fontSize: "18px", fontFamily: MATH_FONT, whiteSpace: "nowrap" }}>
+                {isOriginGridState ? (
+                  <span style={{ fontFamily: PROSE_FONT, opacity: 0.82 }}>origin grid</span>
+                ) : isCustomAddress ? (
+                  <MathText value={formatType(transform.targetType)} />
+                ) : (
+                  <UnitFormulaInline transform={transform} size="0.90em" displayStyle />
+                )}
               </div>
-              <div style={{ fontSize: "18px", fontFamily: MATH_FONT }}>
-                <UnitFormulaInline transform={transform} size="0.90em" displayStyle />
-              </div>
-
-              <div style={{ fontSize: "16px", opacity: 0.76, whiteSpace: "nowrap" }}>
-                unit monomial:
-              </div>
-              <div style={{ fontSize: "16px", fontFamily: MATH_FONT }}>
-                <LatexInline latex={ordinaryLatex} />
+              <div
+                style={{
+                  fontSize: "16px",
+                  opacity: 0.76,
+                  whiteSpace: "nowrap",
+                  alignSelf: "center",
+                }}
+              >
+                {isOriginGridState ? "viewer state" : isCustomAddress ? "custom address" : unitKindLabel(transform)}
               </div>
             </>
           ) : (
