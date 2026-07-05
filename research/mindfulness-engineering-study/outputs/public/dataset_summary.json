@@ -1,0 +1,21 @@
+{
+  "source_file_type": "cleaned_public_workbook",
+  "n_rows_cleaned": 128,
+  "n_complete_mindfulness": 128,
+  "n_any_grade": 128,
+  "n_duplicate_flagged_rows": 0,
+  "grade_counts": {
+    "statics_grade": 51,
+    "dynamics_grade": 38,
+    "mechanics_grade": 48,
+    "overall_grade": 128
+  },
+  "mindfulness_score_counts": {
+    "ffmq_observe": 128,
+    "ffmq_describe": 128,
+    "ffmq_act_aware": 128,
+    "ffmq_nonjudge": 128,
+    "ffmq_nonreact": 128,
+    "ffmq_total": 128
+  }
+}

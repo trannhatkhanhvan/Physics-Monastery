@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Total mindfulness is associated with overall grade",
+    "body": "Across n = 128 students, total mindfulness correlates with overall grade at r = 0.373 (p < .001).",
+    "kind": "correlation",
+    "outcome": "overall_grade",
+    "predictor": "ffmq_total",
+    "n": 128,
+    "value": 0.37340371938361566,
+    "p_value": 1.4168878943658275e-05
+  },
+  {
+    "title": "Acting with Awareness is the strongest individual facet",
+    "body": "Among the five mindfulness facets, Acting with Awareness has the largest association with overall grade: r = 0.356 (p < .001).",
+    "kind": "correlation",
+    "outcome": "overall_grade",
+    "predictor": "ffmq_act_aware",
+    "n": 128,
+    "value": 0.3562242640918578,
+    "p_value": 3.6768914776242275e-05
+  },
+  {
+    "title": "Dynamics shows the clearest course-specific mindfulness signal",
+    "body": "The strongest Dynamics association is with Nonjudging: r = 0.303 across n = 38. Because the course-specific sample is smaller, this should be treated as exploratory.",
+    "kind": "course_specific",
+    "outcome": "dynamics_grade",
+    "predictor": "ffmq_nonjudge",
+    "n": 38,
+    "value": 0.3032701014195886,
+    "p_value": 0.0641851787063117
+  },
+  {
+    "title": "GPA-controlled model is now available",
+    "body": "In the model Overall Grade ~ Total Mindfulness + GPA Category Midpoint, the model explains R\u00b2 = 0.124. The total-mindfulness coefficient is \u03b2 = 0.454 (p < .001).",
+    "kind": "regression",
+    "outcome": "overall_grade",
+    "predictor": "ffmq_total + gpa_midpoint",
+    "n": 119,
+    "value": 0.12436395863574567,
+    "p_value": 0.00013500253537435217
+  },
+  {
+    "title": "Interpretation caution",
+    "body": "These are associational results. They support the claim that mindfulness traits are related to performance in this sample; they do not by themselves establish that mindfulness causes higher grades.",
+    "kind": "caution",
+    "outcome": null,
+    "predictor": null,
+    "n": null,
+    "value": null,
+    "p_value": null
+  }
+]

@@ -1,0 +1,242 @@
+[
+  {
+    "outcome": "statics_grade",
+    "predictor": "ffmq_observe",
+    "n": 51,
+    "pearson_r": -0.046285005086935026,
+    "r_squared": 0.0021423016958976014,
+    "p_value": 0.7470591962485648,
+    "ci95_low": -0.3178148236361389,
+    "ci95_high": 0.23226124919093868
+  },
+  {
+    "outcome": "statics_grade",
+    "predictor": "ffmq_describe",
+    "n": 51,
+    "pearson_r": -0.00421226053512493,
+    "r_squared": 1.7743138815770964e-05,
+    "p_value": 0.976596687400017,
+    "ci95_low": -0.2794715126438319,
+    "ci95_high": 0.2716867927915515
+  },
+  {
+    "outcome": "statics_grade",
+    "predictor": "ffmq_act_aware",
+    "n": 51,
+    "pearson_r": 0.21753449123858104,
+    "r_squared": 0.04732125487842829,
+    "p_value": 0.12517191049740295,
+    "ci95_low": -0.06175109327903853,
+    "ci95_high": 0.4652282174642804
+  },
+  {
+    "outcome": "statics_grade",
+    "predictor": "ffmq_nonjudge",
+    "n": 51,
+    "pearson_r": 0.045759401059618655,
+    "r_squared": 0.002093922785335029,
+    "p_value": 0.7498378947934146,
+    "ci95_low": -0.23275949380245023,
+    "ci95_high": 0.3173412267291129
+  },
+  {
+    "outcome": "statics_grade",
+    "predictor": "ffmq_nonreact",
+    "n": 51,
+    "pearson_r": -0.007263252501080836,
+    "r_squared": 5.275483689445702e-05,
+    "p_value": 0.9596564449206635,
+    "ci95_low": -0.2822818986017487,
+    "ci95_high": 0.26885857499362287
+  },
+  {
+    "outcome": "statics_grade",
+    "predictor": "ffmq_total",
+    "n": 51,
+    "pearson_r": 0.060309584383186426,
+    "r_squared": 0.003637245968472684,
+    "p_value": 0.6741916969485817,
+    "ci95_low": -0.21891248591992934,
+    "ci95_high": 0.3304018652346298
+  },
+  {
+    "outcome": "dynamics_grade",
+    "predictor": "ffmq_observe",
+    "n": 38,
+    "pearson_r": 0.12943386484470637,
+    "r_squared": 0.016753125368637715,
+    "p_value": 0.4386369827347181,
+    "ci95_low": -0.1984613965894696,
+    "ci95_high": 0.43127210647773345
+  },
+  {
+    "outcome": "dynamics_grade",
+    "predictor": "ffmq_describe",
+    "n": 38,
+    "pearson_r": 0.20666230740257935,
+    "r_squared": 0.042709309300958204,
+    "p_value": 0.21317332346151643,
+    "ci95_low": -0.12101616193961472,
+    "ci95_high": 0.4937268571919227
+  },
+  {
+    "outcome": "dynamics_grade",
+    "predictor": "ffmq_act_aware",
+    "n": 38,
+    "pearson_r": 0.24016880778956454,
+    "r_squared": 0.0576810562350608,
+    "p_value": 0.14639061796286887,
+    "ci95_low": -0.0861272204871848,
+    "ci95_high": 0.5199327794148524
+  },
+  {
+    "outcome": "dynamics_grade",
+    "predictor": "ffmq_nonjudge",
+    "n": 38,
+    "pearson_r": 0.3032701014195886,
+    "r_squared": 0.09197275441504756,
+    "p_value": 0.0641851787063117,
+    "ci95_low": -0.01817536240270587,
+    "ci95_high": 0.5678957357792229
+  },
+  {
+    "outcome": "dynamics_grade",
+    "predictor": "ffmq_nonreact",
+    "n": 38,
+    "pearson_r": 0.07447309475079728,
+    "r_squared": 0.005546241841761229,
+    "p_value": 0.6567785294540112,
+    "ci95_low": -0.25119055710703075,
+    "ci95_high": 0.38499066569722773
+  },
+  {
+    "outcome": "dynamics_grade",
+    "predictor": "ffmq_total",
+    "n": 38,
+    "pearson_r": 0.2890393019633706,
+    "r_squared": 0.08354371807947251,
+    "p_value": 0.07840412448974772,
+    "ci95_low": -0.03376387033982921,
+    "ci95_high": 0.5572336780016796
+  },
+  {
+    "outcome": "mechanics_grade",
+    "predictor": "ffmq_observe",
+    "n": 48,
+    "pearson_r": -0.19289255773559655,
+    "r_squared": 0.03720753882978045,
+    "p_value": 0.18899867462576309,
+    "ci95_low": -0.4522410676918631,
+    "ci95_high": 0.09653286218251082
+  },
+  {
+    "outcome": "mechanics_grade",
+    "predictor": "ffmq_describe",
+    "n": 48,
+    "pearson_r": 0.07076374418049022,
+    "r_squared": 0.005007507490441864,
+    "p_value": 0.6326913053878334,
+    "ci95_low": -0.21774911231150026,
+    "ci95_high": 0.34790334623177915
+  },
+  {
+    "outcome": "mechanics_grade",
+    "predictor": "ffmq_act_aware",
+    "n": 48,
+    "pearson_r": 0.02201036398578258,
+    "r_squared": 0.0004844561227866348,
+    "p_value": 0.8819556647794872,
+    "ci95_low": -0.2637739521767916,
+    "ci95_high": 0.30424235832829627
+  },
+  {
+    "outcome": "mechanics_grade",
+    "predictor": "ffmq_nonjudge",
+    "n": 48,
+    "pearson_r": 0.19413486079249923,
+    "r_squared": 0.037688344174923054,
+    "p_value": 0.18611116090363533,
+    "ci95_low": -0.09525409611926292,
+    "ci95_high": 0.4532671394801009
+  },
+  {
+    "outcome": "mechanics_grade",
+    "predictor": "ffmq_nonreact",
+    "n": 48,
+    "pearson_r": 0.086825017381067,
+    "r_squared": 0.007538583643222587,
+    "p_value": 0.5573415240365125,
+    "ci95_low": -0.2023004324064301,
+    "ci95_high": 0.362028473014791
+  },
+  {
+    "outcome": "mechanics_grade",
+    "predictor": "ffmq_total",
+    "n": 48,
+    "pearson_r": 0.06985254931881431,
+    "r_squared": 0.004879378646337385,
+    "p_value": 0.6370889734426496,
+    "ci95_low": -0.21862124108027778,
+    "ci95_high": 0.3470982043491101
+  },
+  {
+    "outcome": "overall_grade",
+    "predictor": "ffmq_observe",
+    "n": 128,
+    "pearson_r": 0.1137007154349827,
+    "r_squared": 0.012927852690426912,
+    "p_value": 0.201282514001464,
+    "ci95_low": -0.06103403110612558,
+    "ci95_high": 0.2816736531527565
+  },
+  {
+    "outcome": "overall_grade",
+    "predictor": "ffmq_describe",
+    "n": 128,
+    "pearson_r": 0.24917845140441358,
+    "r_squared": 0.0620899006443017,
+    "p_value": 0.00456311111355146,
+    "ci95_low": 0.07906679265376096,
+    "ci95_high": 0.40518858299156624
+  },
+  {
+    "outcome": "overall_grade",
+    "predictor": "ffmq_act_aware",
+    "n": 128,
+    "pearson_r": 0.3562242640918578,
+    "r_squared": 0.12689572632778565,
+    "p_value": 3.6768914776242275e-05,
+    "ci95_low": 0.1947312138083735,
+    "ci95_high": 0.4989140174365891
+  },
+  {
+    "outcome": "overall_grade",
+    "predictor": "ffmq_nonjudge",
+    "n": 128,
+    "pearson_r": 0.28946995802590786,
+    "r_squared": 0.08379285659952086,
+    "p_value": 0.0009193842591593816,
+    "ci95_low": 0.12207131658850266,
+    "ci95_high": 0.44085547505443157
+  },
+  {
+    "outcome": "overall_grade",
+    "predictor": "ffmq_nonreact",
+    "n": 128,
+    "pearson_r": 0.2276149248440482,
+    "r_squared": 0.0518085540117617,
+    "p_value": 0.009768532712054646,
+    "ci95_low": 0.05630849333970755,
+    "ci95_high": 0.38590298866329337
+  },
+  {
+    "outcome": "overall_grade",
+    "predictor": "ffmq_total",
+    "n": 128,
+    "pearson_r": 0.37340371938361566,
+    "r_squared": 0.13943033764951798,
+    "p_value": 1.4168878943658275e-05,
+    "ci95_low": 0.21372172064689957,
+    "ci95_high": 0.5136512056972562
+  }
+]

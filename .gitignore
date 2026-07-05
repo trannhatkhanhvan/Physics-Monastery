@@ -62,3 +62,20 @@ next-env.d.ts
 
 # Local patch backups
 *.bak*
+
+# Mindfulness engineering study: private student data
+research/mindfulness-engineering-study/data/raw/*
+!research/mindfulness-engineering-study/data/raw/.gitkeep
+research/mindfulness-engineering-study/data/working/*
+!research/mindfulness-engineering-study/data/working/.gitkeep
+research/mindfulness-engineering-study/outputs/private/*
+!research/mindfulness-engineering-study/outputs/private/.gitkeep
+
+# Avoid accidental spreadsheet commits for this study
+research/mindfulness-engineering-study/**/*.xlsx
+research/mindfulness-engineering-study/**/*.xls\n\n# Mindfulness engineering study: keep row-level cleaned data private for now
+research/mindfulness-engineering-study/data/clean/*
+!research/mindfulness-engineering-study/data/clean/.gitkeep\n
+# Python cache files
+__pycache__/
+*.pyc
