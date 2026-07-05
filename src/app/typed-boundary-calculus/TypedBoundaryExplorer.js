@@ -1296,7 +1296,7 @@ function LatticeProjection({
 }) {
   const [viewMode, setViewMode] = useState("both");
   const [labelMode, setLabelMode] = useState("none");
-  const [gridRadius, setGridRadius] = useState(1);
+  const [gridRadius, setGridRadius] = useState("axis");
   const [expanded, setExpanded] = useState(false);
   const [boxWordExpanded, setBoxWordExpanded] = useState(false);
   const [pathMode, setPathMode] = useState("canonical");
@@ -1767,8 +1767,9 @@ function LatticeControlRow({
       <ToggleGroup
         label="grid"
         value={String(gridRadius)}
-        onChange={(value) => setGridRadius(Number(value))}
+        onChange={(value) => setGridRadius(value === "axis" ? "axis" : Number(value))}
         options={[
+          ["axis", "axis steps"],
           ["1", "±1"],
           ["2", "±2"],
         ]}
@@ -2708,16 +2709,40 @@ function Axis3DViewport({
         <tspan> lattice addresses</tspan>
       </text>
 
-      {gridDots.map((dot) => (
-        <circle
-          key={dot.key}
-          cx={dot.x}
-          cy={dot.y}
-          r={dot.visited ? (expanded ? 2.6 : 1.9) : (expanded ? 0.70 : 0.50)}
-          fill={dot.visited ? "rgba(255,247,223,0.72)" : "rgba(232,223,200,0.85)"}
-          opacity={dot.opacity}
-        />
-      ))}
+      {gridDots.map((dot) => {
+        const axisStepKey = axisStepKeyForType(dot.type);
+        const isAxisStepDot = Boolean(axisStepKey);
+        const isOriginDot = isOriginType(dot.type);
+
+        return (
+          <circle
+            key={dot.key}
+            cx={dot.x}
+            cy={dot.y}
+            r={
+              isOriginDot
+                ? (expanded ? 2.5 : 2.0)
+                : isAxisStepDot
+                  ? (expanded ? 3.0 :1.8)
+                  : dot.visited
+                    ? (expanded ? 2.6 : 1.9)
+                    : (expanded ? 0.70 : 0.50)
+            }
+            fill={
+              isAxisStepDot
+                ? axisStepColor(axisStepKey)
+                : isOriginDot
+                  ? "rgba(255,247,223,0.92)"
+                  : dot.visited
+                    ? "rgba(255,247,223,0.72)"
+                    : "rgba(232,223,200,0.85)"
+            }
+            stroke={isAxisStepDot || isOriginDot ? "rgba(0,0,0,0.62)" : "none"}
+            strokeWidth={isAxisStepDot || isOriginDot ? (expanded ? "1.4" : "1.0") : "0"}
+            opacity={isAxisStepDot || isOriginDot ? 0.96 : dot.opacity}
+          />
+        );
+      })}
 
       {axisSegments
         .filter((segment) => isAxisVisible(segment.axis.key))
@@ -3646,23 +3671,34 @@ function makeProjectedGridDots({ radius, traces, rotation, axisOrientation, zoom
   const visitedKeys = new Set();
 
   traces.flat().forEach((entry) => {
+    if (!entry?.type || !typeInsideGridRadius(entry.type, radius)) return;
+
     const key = typeKey(entry.type);
     visitedKeys.add(key);
     types.push(entry.type);
   });
 
-  const values = [];
-  for (let value = -radius; value <= radius; value += 1) {
-    values.push(value);
-  }
+  if (radius === "axis") {
+    types.push(makeZeroTypeAddress());
 
-  for (const t of values) {
-    for (const l of values) {
-      for (const q of values) {
-        for (const theta of values) {
-          for (const m of values) {
-            for (const n of values) {
-              types.push({ t, l, q, theta, m, n });
+    TYPE_AXES.forEach((axis) => {
+      types.push(axisType(axis.key, 1));
+      types.push(axisType(axis.key, -1));
+    });
+  } else {
+    const values = [];
+    for (let value = -radius; value <= radius; value += 1) {
+      values.push(value);
+    }
+
+    for (const t of values) {
+      for (const l of values) {
+        for (const q of values) {
+          for (const theta of values) {
+            for (const m of values) {
+              for (const n of values) {
+                types.push({ t, l, q, theta, m, n });
+              }
             }
           }
         }
@@ -3700,6 +3736,35 @@ function axisType(axisKey, amount) {
     m: axisKey === "m" ? amount : 0,
     n: axisKey === "n" ? amount : 0,
   };
+}
+
+function axisStepKeyForType(type) {
+  const nonzeroAxes = TYPE_AXES.filter((axis) => (type[axis.key] ?? 0) !== 0);
+
+  if (nonzeroAxes.length !== 1) return null;
+
+  const axis = nonzeroAxes[0];
+  const value = type[axis.key] ?? 0;
+
+  return Math.abs(value) === 1 ? axis.key : null;
+}
+
+function isOriginType(type) {
+  return TYPE_AXES.every((axis) => (type[axis.key] ?? 0) === 0);
+}
+
+function typeInsideGridRadius(type, radius) {
+  if (radius === "axis") {
+    return isOriginType(type) || Boolean(axisStepKeyForType(type));
+  }
+
+  const limit = Number(radius);
+  if (!Number.isFinite(limit)) return false;
+
+  return TYPE_AXES.every((axis) => {
+    const value = type[axis.key] ?? 0;
+    return Number.isFinite(value) && value >= -limit && value <= limit;
+  });
 }
 
 const AXIS_3D = {
