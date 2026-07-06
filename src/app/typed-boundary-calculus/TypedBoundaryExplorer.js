@@ -62,6 +62,7 @@ function axisStepColor(axisKey) {
   return AXIS_STEP_COLORS[axisKey] ?? "#fff7df";
 }
 
+
 const TOKEN_AXIS_KEYS = {
   t_p: "t",
   l_p: "l",
@@ -161,6 +162,22 @@ const ROUTE_CYCLE_PLAYBACK_MS = 950;
 const ROUTE_STACK_PLAYBACK_MS = 320;
 
 const DEFAULT_LATTICE_ROTATION = { yaw: 0, pitch: 0.42 };
+
+const VIEWPORT_ACTIVE_CENTER_OFFSET = {
+  normalX: -38,
+  expandedX: -90,
+};
+
+const GRID_DOT_RADIUS = {
+  origin: 2.0,
+  originExpanded: 2.5,
+  axisStep: 1.5,
+  axisStepExpanded: 2.0,
+  visited: 1.9,
+  visitedExpanded: 2.6,
+  background: 0.50,
+  backgroundExpanded: 0.70,
+};
 
 const IDENTITY_ORIENTATION = {
   i: { x: 1, y: 0, z: 0 },
@@ -1553,18 +1570,19 @@ function LatticeProjection({
             backgroundAttachment: "fixed",
             padding: "28px 20px",
             boxSizing: "border-box",
+            overflowY: "auto",
           }}
         >
           <div
             style={{
-              height: "100%",
+              minHeight: "100%",
               borderRadius: "5px",
               background: "rgba(0,0,0,0.54)",
               border: "1px solid rgba(232,223,200,0.24)",
               padding: "22px",
               boxSizing: "border-box",
               display: "grid",
-              gridTemplateRows: "auto minmax(0, 1fr) auto",
+              gridTemplateRows: "auto auto auto",
               gap: "14px",
             }}
           >
@@ -1607,6 +1625,10 @@ function LatticeProjection({
                 type="button"
                 onClick={() => setExpanded(false)}
                 style={{
+                  position: "fixed",
+                  top: "32px",
+                  right: "28px",
+                  zIndex: 1303,
                   border: "1px solid rgba(232,223,200,0.22)",
                   borderRadius: "5px",
                   padding: "8px 16px",
@@ -1621,24 +1643,32 @@ function LatticeProjection({
               </button>
             </div>
 
-            <Axis3DViewport
-              transform={transform}
-              isUnitModel={isUnitModel}
-              pathMode={pathMode}
-              selectedPathIndex={selectedPathIndex}
-              cyclePlaybackMode={cyclePlaybackMode}
-              setCyclePlaybackMode={setCyclePlaybackMode}
-              setCyclePlaybackActive={setCyclePlaybackActive}
-              setPathMode={setPathMode}
-              cycleStackCount={cycleStackCount}
-              showInversionBranch={!isUnitModel}
-              viewMode={viewMode}
-              labelMode={labelMode}
-              gridRadius={gridRadius}
-              unitFieldMode={isUnitModel ? unitFieldMode : "selected"}
-              onUnitFieldModeChange={onUnitFieldModeChange}
-              expanded
-            />
+            <div
+              style={{
+                width: "100%",
+                aspectRatio: "16 / 9",
+                minHeight: "720px",
+              }}
+            >
+              <Axis3DViewport
+                transform={transform}
+                isUnitModel={isUnitModel}
+                pathMode={pathMode}
+                selectedPathIndex={selectedPathIndex}
+                cyclePlaybackMode={cyclePlaybackMode}
+                setCyclePlaybackMode={setCyclePlaybackMode}
+                setCyclePlaybackActive={setCyclePlaybackActive}
+                setPathMode={setPathMode}
+                cycleStackCount={cycleStackCount}
+                showInversionBranch={!isUnitModel}
+                viewMode={viewMode}
+                labelMode={labelMode}
+                gridRadius={gridRadius}
+                unitFieldMode={isUnitModel ? unitFieldMode : "selected"}
+                onUnitFieldModeChange={onUnitFieldModeChange}
+                expanded
+              />
+            </div>
 
             <LatticeControlRow
               viewMode={viewMode}
@@ -1930,10 +1960,10 @@ function AxisRotationControls({
   return (
     <div
       style={{
-        position: "absolute",
-        top: expanded ? "58px" : "46px",
-        right: expanded ? "18px" : "12px",
-        zIndex: 8,
+        position: expanded ? "fixed" : "absolute",
+        top: expanded ? "210px" : "46px",
+        right: expanded ? "28px" : "12px",
+        zIndex: expanded ? 1302 : 8,
         display: "grid",
         gap: expanded ? "6px" : "4px",
         padding: expanded ? "8px" : "6px",
@@ -2612,6 +2642,9 @@ function Axis3DViewport({
   });
 
   const handlePointerDown = (event) => {
+    event.preventDefault();
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+
     setDrag({
       x: event.clientX,
       y: event.clientY,
@@ -2623,6 +2656,8 @@ function Axis3DViewport({
   const handlePointerMove = (event) => {
     if (!drag) return;
 
+    event.preventDefault();
+
     const dx = event.clientX - drag.x;
     const dy = event.clientY - drag.y;
 
@@ -2632,7 +2667,8 @@ function Axis3DViewport({
     });
   };
 
-  const handlePointerUp = () => {
+  const handlePointerUp = (event) => {
+    event.currentTarget.releasePointerCapture?.(event.pointerId);
     setDrag(null);
   };
 
@@ -2679,9 +2715,11 @@ function Axis3DViewport({
           display: "block",
           borderRadius: "7px",
           background: "rgba(0,0,0,0.18)",
-          border: "1px solid rgba(232, 223, 200, 0.14)",
+          border: expanded ? "none" : "1px solid rgba(232, 223, 200, 0.14)",
           cursor: drag ? "grabbing" : "grab",
           touchAction: "none",
+          userSelect: "none",
+          WebkitUserSelect: "none",
         }}
       >
       <defs>
@@ -2721,12 +2759,12 @@ function Axis3DViewport({
             cy={dot.y}
             r={
               isOriginDot
-                ? (expanded ? 2.5 : 2.0)
+                ? (expanded ? GRID_DOT_RADIUS.originExpanded : GRID_DOT_RADIUS.origin)
                 : isAxisStepDot
-                  ? (expanded ? 3.0 :1.8)
+                  ? (expanded ? GRID_DOT_RADIUS.axisStepExpanded : GRID_DOT_RADIUS.axisStep)
                   : dot.visited
-                    ? (expanded ? 2.6 : 1.9)
-                    : (expanded ? 0.70 : 0.50)
+                    ? (expanded ? GRID_DOT_RADIUS.visitedExpanded : GRID_DOT_RADIUS.visited)
+                    : (expanded ? GRID_DOT_RADIUS.backgroundExpanded : GRID_DOT_RADIUS.background)
             }
             fill={
               isAxisStepDot
@@ -3798,7 +3836,13 @@ function projectType3D(
   const rotated = rotate3D(raw, rotation);
   const depth = rotated.z;
   const zoom = (expanded ? 138 : 82) * zoomScale;
-  const center = expanded ? { x: 600, y: 390 } : { x: 380, y: 255 };
+  const centerOffsetX = expanded
+    ? VIEWPORT_ACTIVE_CENTER_OFFSET.expandedX
+    : VIEWPORT_ACTIVE_CENTER_OFFSET.normalX;
+
+  const center = expanded
+    ? { x: 600 + centerOffsetX, y: 390 }
+    : { x: 380 + centerOffsetX, y: 255 };
   const perspective = 1 / (1 + depth * 0.075);
 
   return {
