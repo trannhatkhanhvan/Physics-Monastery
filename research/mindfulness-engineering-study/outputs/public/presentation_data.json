@@ -1,0 +1,842 @@
+{
+  "page_title": "Mindfulness Traits and Engineering Problem Solving",
+  "page_subtitle": "A quantitative study of undergraduate engineering students exploring how mindfulness traits relate to academic performance, attention, self-regulation, and persistence through difficulty.",
+  "dataset_summary": {
+    "source_file_type": "cleaned_public_workbook",
+    "n_rows_cleaned": 128,
+    "n_complete_mindfulness": 128,
+    "n_any_grade": 128,
+    "n_duplicate_flagged_rows": 0,
+    "grade_counts": {
+      "statics_grade": 51,
+      "dynamics_grade": 38,
+      "mechanics_grade": 48,
+      "overall_grade": 128
+    },
+    "mindfulness_score_counts": {
+      "ffmq_observe": 128,
+      "ffmq_describe": 128,
+      "ffmq_act_aware": 128,
+      "ffmq_nonjudge": 128,
+      "ffmq_nonreact": 128,
+      "ffmq_total": 128
+    }
+  },
+  "top_findings": [
+    {
+      "title": "Total mindfulness is associated with overall grade",
+      "body": "Across n = 128 students, total mindfulness correlates with overall grade at r = 0.373 (p < .001).",
+      "kind": "correlation",
+      "outcome": "overall_grade",
+      "predictor": "ffmq_total",
+      "n": 128,
+      "value": 0.37340371938361566,
+      "p_value": 1.4168878943658275e-05
+    },
+    {
+      "title": "Acting with Awareness is the strongest individual facet",
+      "body": "Among the five mindfulness facets, Acting with Awareness has the largest association with overall grade: r = 0.356 (p < .001).",
+      "kind": "correlation",
+      "outcome": "overall_grade",
+      "predictor": "ffmq_act_aware",
+      "n": 128,
+      "value": 0.3562242640918578,
+      "p_value": 3.6768914776242275e-05
+    },
+    {
+      "title": "Dynamics shows the clearest course-specific mindfulness signal",
+      "body": "The strongest Dynamics association is with Nonjudging: r = 0.303 across n = 38. Because the course-specific sample is smaller, this should be treated as exploratory.",
+      "kind": "course_specific",
+      "outcome": "dynamics_grade",
+      "predictor": "ffmq_nonjudge",
+      "n": 38,
+      "value": 0.3032701014195886,
+      "p_value": 0.0641851787063117
+    },
+    {
+      "title": "GPA-controlled model is now available",
+      "body": "In the model Overall Grade ~ Total Mindfulness + GPA Category Midpoint, the model explains R\u00b2 = 0.124. The total-mindfulness coefficient is \u03b2 = 0.454 (p < .001).",
+      "kind": "regression",
+      "outcome": "overall_grade",
+      "predictor": "ffmq_total + gpa_midpoint",
+      "n": 119,
+      "value": 0.12436395863574567,
+      "p_value": 0.00013500253537435217
+    },
+    {
+      "title": "Interpretation caution",
+      "body": "These are associational results. They support the claim that mindfulness traits are related to performance in this sample; they do not by themselves establish that mindfulness causes higher grades.",
+      "kind": "caution",
+      "outcome": null,
+      "predictor": null,
+      "n": null,
+      "value": null,
+      "p_value": null
+    }
+  ],
+  "overall_facet_bars": [
+    {
+      "predictor": "ffmq_total",
+      "label": "Total Mindfulness",
+      "n": 128,
+      "r": 0.3734,
+      "r_squared": 0.1394,
+      "p_value": 1.417e-05,
+      "p_label": "p < .001",
+      "ci95_low": 0.2137,
+      "ci95_high": 0.5137
+    },
+    {
+      "predictor": "ffmq_act_aware",
+      "label": "Acting with Awareness",
+      "n": 128,
+      "r": 0.3562,
+      "r_squared": 0.1269,
+      "p_value": 3.677e-05,
+      "p_label": "p < .001",
+      "ci95_low": 0.1947,
+      "ci95_high": 0.4989
+    },
+    {
+      "predictor": "ffmq_nonjudge",
+      "label": "Nonjudging",
+      "n": 128,
+      "r": 0.2895,
+      "r_squared": 0.0838,
+      "p_value": 0.00091938,
+      "p_label": "p < .001",
+      "ci95_low": 0.1221,
+      "ci95_high": 0.4409
+    },
+    {
+      "predictor": "ffmq_describe",
+      "label": "Describe",
+      "n": 128,
+      "r": 0.2492,
+      "r_squared": 0.0621,
+      "p_value": 0.00456311,
+      "p_label": "p = 0.005",
+      "ci95_low": 0.0791,
+      "ci95_high": 0.4052
+    },
+    {
+      "predictor": "ffmq_nonreact",
+      "label": "Nonreactivity",
+      "n": 128,
+      "r": 0.2276,
+      "r_squared": 0.0518,
+      "p_value": 0.00976853,
+      "p_label": "p = 0.010",
+      "ci95_low": 0.0563,
+      "ci95_high": 0.3859
+    },
+    {
+      "predictor": "ffmq_observe",
+      "label": "Observe",
+      "n": 128,
+      "r": 0.1137,
+      "r_squared": 0.0129,
+      "p_value": 0.20128251,
+      "p_label": "p = 0.201",
+      "ci95_low": -0.061,
+      "ci95_high": 0.2817
+    }
+  ],
+  "course_correlation_matrix": [
+    {
+      "outcome": "statics_grade",
+      "outcome_label": "Statics",
+      "predictor": "ffmq_observe",
+      "predictor_label": "Observe",
+      "n": 51,
+      "r": -0.0463,
+      "p_value": 0.7470592,
+      "p_label": "p = 0.747"
+    },
+    {
+      "outcome": "statics_grade",
+      "outcome_label": "Statics",
+      "predictor": "ffmq_describe",
+      "predictor_label": "Describe",
+      "n": 51,
+      "r": -0.0042,
+      "p_value": 0.97659669,
+      "p_label": "p = 0.977"
+    },
+    {
+      "outcome": "statics_grade",
+      "outcome_label": "Statics",
+      "predictor": "ffmq_act_aware",
+      "predictor_label": "Acting with Awareness",
+      "n": 51,
+      "r": 0.2175,
+      "p_value": 0.12517191,
+      "p_label": "p = 0.125"
+    },
+    {
+      "outcome": "statics_grade",
+      "outcome_label": "Statics",
+      "predictor": "ffmq_nonjudge",
+      "predictor_label": "Nonjudging",
+      "n": 51,
+      "r": 0.0458,
+      "p_value": 0.74983789,
+      "p_label": "p = 0.750"
+    },
+    {
+      "outcome": "statics_grade",
+      "outcome_label": "Statics",
+      "predictor": "ffmq_nonreact",
+      "predictor_label": "Nonreactivity",
+      "n": 51,
+      "r": -0.0073,
+      "p_value": 0.95965644,
+      "p_label": "p = 0.960"
+    },
+    {
+      "outcome": "statics_grade",
+      "outcome_label": "Statics",
+      "predictor": "ffmq_total",
+      "predictor_label": "Total Mindfulness",
+      "n": 51,
+      "r": 0.0603,
+      "p_value": 0.6741917,
+      "p_label": "p = 0.674"
+    },
+    {
+      "outcome": "dynamics_grade",
+      "outcome_label": "Dynamics",
+      "predictor": "ffmq_observe",
+      "predictor_label": "Observe",
+      "n": 38,
+      "r": 0.1294,
+      "p_value": 0.43863698,
+      "p_label": "p = 0.439"
+    },
+    {
+      "outcome": "dynamics_grade",
+      "outcome_label": "Dynamics",
+      "predictor": "ffmq_describe",
+      "predictor_label": "Describe",
+      "n": 38,
+      "r": 0.2067,
+      "p_value": 0.21317332,
+      "p_label": "p = 0.213"
+    },
+    {
+      "outcome": "dynamics_grade",
+      "outcome_label": "Dynamics",
+      "predictor": "ffmq_act_aware",
+      "predictor_label": "Acting with Awareness",
+      "n": 38,
+      "r": 0.2402,
+      "p_value": 0.14639062,
+      "p_label": "p = 0.146"
+    },
+    {
+      "outcome": "dynamics_grade",
+      "outcome_label": "Dynamics",
+      "predictor": "ffmq_nonjudge",
+      "predictor_label": "Nonjudging",
+      "n": 38,
+      "r": 0.3033,
+      "p_value": 0.06418518,
+      "p_label": "p = 0.064"
+    },
+    {
+      "outcome": "dynamics_grade",
+      "outcome_label": "Dynamics",
+      "predictor": "ffmq_nonreact",
+      "predictor_label": "Nonreactivity",
+      "n": 38,
+      "r": 0.0745,
+      "p_value": 0.65677853,
+      "p_label": "p = 0.657"
+    },
+    {
+      "outcome": "dynamics_grade",
+      "outcome_label": "Dynamics",
+      "predictor": "ffmq_total",
+      "predictor_label": "Total Mindfulness",
+      "n": 38,
+      "r": 0.289,
+      "p_value": 0.07840412,
+      "p_label": "p = 0.078"
+    },
+    {
+      "outcome": "mechanics_grade",
+      "outcome_label": "Mechanics of Materials",
+      "predictor": "ffmq_observe",
+      "predictor_label": "Observe",
+      "n": 48,
+      "r": -0.1929,
+      "p_value": 0.18899867,
+      "p_label": "p = 0.189"
+    },
+    {
+      "outcome": "mechanics_grade",
+      "outcome_label": "Mechanics of Materials",
+      "predictor": "ffmq_describe",
+      "predictor_label": "Describe",
+      "n": 48,
+      "r": 0.0708,
+      "p_value": 0.63269131,
+      "p_label": "p = 0.633"
+    },
+    {
+      "outcome": "mechanics_grade",
+      "outcome_label": "Mechanics of Materials",
+      "predictor": "ffmq_act_aware",
+      "predictor_label": "Acting with Awareness",
+      "n": 48,
+      "r": 0.022,
+      "p_value": 0.88195566,
+      "p_label": "p = 0.882"
+    },
+    {
+      "outcome": "mechanics_grade",
+      "outcome_label": "Mechanics of Materials",
+      "predictor": "ffmq_nonjudge",
+      "predictor_label": "Nonjudging",
+      "n": 48,
+      "r": 0.1941,
+      "p_value": 0.18611116,
+      "p_label": "p = 0.186"
+    },
+    {
+      "outcome": "mechanics_grade",
+      "outcome_label": "Mechanics of Materials",
+      "predictor": "ffmq_nonreact",
+      "predictor_label": "Nonreactivity",
+      "n": 48,
+      "r": 0.0868,
+      "p_value": 0.55734152,
+      "p_label": "p = 0.557"
+    },
+    {
+      "outcome": "mechanics_grade",
+      "outcome_label": "Mechanics of Materials",
+      "predictor": "ffmq_total",
+      "predictor_label": "Total Mindfulness",
+      "n": 48,
+      "r": 0.0699,
+      "p_value": 0.63708897,
+      "p_label": "p = 0.637"
+    },
+    {
+      "outcome": "overall_grade",
+      "outcome_label": "Overall Grade",
+      "predictor": "ffmq_observe",
+      "predictor_label": "Observe",
+      "n": 128,
+      "r": 0.1137,
+      "p_value": 0.20128251,
+      "p_label": "p = 0.201"
+    },
+    {
+      "outcome": "overall_grade",
+      "outcome_label": "Overall Grade",
+      "predictor": "ffmq_describe",
+      "predictor_label": "Describe",
+      "n": 128,
+      "r": 0.2492,
+      "p_value": 0.00456311,
+      "p_label": "p = 0.005"
+    },
+    {
+      "outcome": "overall_grade",
+      "outcome_label": "Overall Grade",
+      "predictor": "ffmq_act_aware",
+      "predictor_label": "Acting with Awareness",
+      "n": 128,
+      "r": 0.3562,
+      "p_value": 3.677e-05,
+      "p_label": "p < .001"
+    },
+    {
+      "outcome": "overall_grade",
+      "outcome_label": "Overall Grade",
+      "predictor": "ffmq_nonjudge",
+      "predictor_label": "Nonjudging",
+      "n": 128,
+      "r": 0.2895,
+      "p_value": 0.00091938,
+      "p_label": "p < .001"
+    },
+    {
+      "outcome": "overall_grade",
+      "outcome_label": "Overall Grade",
+      "predictor": "ffmq_nonreact",
+      "predictor_label": "Nonreactivity",
+      "n": 128,
+      "r": 0.2276,
+      "p_value": 0.00976853,
+      "p_label": "p = 0.010"
+    },
+    {
+      "outcome": "overall_grade",
+      "outcome_label": "Overall Grade",
+      "predictor": "ffmq_total",
+      "predictor_label": "Total Mindfulness",
+      "n": 128,
+      "r": 0.3734,
+      "p_value": 1.417e-05,
+      "p_label": "p < .001"
+    }
+  ],
+  "reliability_summary": [
+    {
+      "scale": "ffmq_observe",
+      "label": "Observe",
+      "n_items": 8,
+      "n_complete": 128,
+      "alpha": 0.683,
+      "interpretation": "borderline"
+    },
+    {
+      "scale": "ffmq_describe",
+      "label": "Describe",
+      "n_items": 8,
+      "n_complete": 128,
+      "alpha": 0.888,
+      "interpretation": "strong"
+    },
+    {
+      "scale": "ffmq_act_aware",
+      "label": "Acting with Awareness",
+      "n_items": 8,
+      "n_complete": 128,
+      "alpha": 0.782,
+      "interpretation": "acceptable"
+    },
+    {
+      "scale": "ffmq_nonjudge",
+      "label": "Nonjudging",
+      "n_items": 8,
+      "n_complete": 128,
+      "alpha": 0.798,
+      "interpretation": "acceptable"
+    },
+    {
+      "scale": "ffmq_nonreact",
+      "label": "Nonreactivity",
+      "n_items": 7,
+      "n_complete": 128,
+      "alpha": 0.729,
+      "interpretation": "acceptable"
+    },
+    {
+      "scale": "ffmq_total_all_items",
+      "label": "Full 39-item scale",
+      "n_items": 39,
+      "n_complete": 128,
+      "alpha": 0.884,
+      "interpretation": "strong"
+    }
+  ],
+  "regression_summary": [
+    {
+      "model_name": "overall_total_only",
+      "label": "Overall Total Only",
+      "n": 128,
+      "r_squared": 0.139,
+      "adj_r_squared": 0.133,
+      "f_p_value": 1.417e-05,
+      "f_p_label": "p < .001",
+      "terms": [
+        {
+          "term": "ffmq_total",
+          "label": "Total Mindfulness",
+          "beta": 0.474,
+          "standardized_beta": 0.373,
+          "p_value": 1.417e-05,
+          "p_label": "p < .001"
+        }
+      ]
+    },
+    {
+      "model_name": "overall_act_aware_only",
+      "label": "Overall Act Aware Only",
+      "n": 128,
+      "r_squared": 0.127,
+      "adj_r_squared": 0.12,
+      "f_p_value": 3.677e-05,
+      "f_p_label": "p < .001",
+      "terms": [
+        {
+          "term": "ffmq_act_aware",
+          "label": "Acting with Awareness",
+          "beta": 0.313,
+          "standardized_beta": 0.356,
+          "p_value": 3.677e-05,
+          "p_label": "p < .001"
+        }
+      ]
+    },
+    {
+      "model_name": "overall_total_plus_gpa",
+      "label": "Overall Total Plus Gpa",
+      "n": 119,
+      "r_squared": 0.124,
+      "adj_r_squared": 0.109,
+      "f_p_value": 0.00045162,
+      "f_p_label": "p < .001",
+      "terms": [
+        {
+          "term": "ffmq_total",
+          "label": "Total Mindfulness",
+          "beta": 0.454,
+          "standardized_beta": 0.343,
+          "p_value": 0.000135,
+          "p_label": "p < .001"
+        },
+        {
+          "term": "gpa_midpoint",
+          "label": "GPA Category Midpoint",
+          "beta": 0.156,
+          "standardized_beta": 0.073,
+          "p_value": 0.40063582,
+          "p_label": "p = 0.401"
+        }
+      ]
+    },
+    {
+      "model_name": "overall_five_facets",
+      "label": "Overall Five Facets",
+      "n": 128,
+      "r_squared": 0.159,
+      "adj_r_squared": 0.124,
+      "f_p_value": 0.00069294,
+      "f_p_label": "p < .001",
+      "terms": [
+        {
+          "term": "ffmq_observe",
+          "label": "Observe",
+          "beta": 0.076,
+          "standardized_beta": 0.08,
+          "p_value": 0.35884575,
+          "p_label": "p = 0.359"
+        },
+        {
+          "term": "ffmq_describe",
+          "label": "Describe",
+          "beta": 0.024,
+          "standardized_beta": 0.034,
+          "p_value": 0.73867381,
+          "p_label": "p = 0.739"
+        },
+        {
+          "term": "ffmq_act_aware",
+          "label": "Acting with Awareness",
+          "beta": 0.221,
+          "standardized_beta": 0.251,
+          "p_value": 0.01240238,
+          "p_label": "p = 0.012"
+        },
+        {
+          "term": "ffmq_nonjudge",
+          "label": "Nonjudging",
+          "beta": 0.105,
+          "standardized_beta": 0.13,
+          "p_value": 0.22106802,
+          "p_label": "p = 0.221"
+        },
+        {
+          "term": "ffmq_nonreact",
+          "label": "Nonreactivity",
+          "beta": 0.062,
+          "standardized_beta": 0.062,
+          "p_value": 0.5200393,
+          "p_label": "p = 0.520"
+        }
+      ]
+    },
+    {
+      "model_name": "overall_five_facets_plus_gpa",
+      "label": "Overall Five Facets Plus Gpa",
+      "n": 119,
+      "r_squared": 0.151,
+      "adj_r_squared": 0.106,
+      "f_p_value": 0.0046678,
+      "f_p_label": "p = 0.005",
+      "terms": [
+        {
+          "term": "ffmq_observe",
+          "label": "Observe",
+          "beta": 0.115,
+          "standardized_beta": 0.118,
+          "p_value": 0.19792468,
+          "p_label": "p = 0.198"
+        },
+        {
+          "term": "ffmq_describe",
+          "label": "Describe",
+          "beta": -0.01,
+          "standardized_beta": -0.014,
+          "p_value": 0.89899039,
+          "p_label": "p = 0.899"
+        },
+        {
+          "term": "ffmq_act_aware",
+          "label": "Acting with Awareness",
+          "beta": 0.24,
+          "standardized_beta": 0.263,
+          "p_value": 0.01108526,
+          "p_label": "p = 0.011"
+        },
+        {
+          "term": "ffmq_nonjudge",
+          "label": "Nonjudging",
+          "beta": 0.095,
+          "standardized_beta": 0.117,
+          "p_value": 0.29178593,
+          "p_label": "p = 0.292"
+        },
+        {
+          "term": "ffmq_nonreact",
+          "label": "Nonreactivity",
+          "beta": 0.066,
+          "standardized_beta": 0.064,
+          "p_value": 0.52658973,
+          "p_label": "p = 0.527"
+        },
+        {
+          "term": "gpa_midpoint",
+          "label": "GPA Category Midpoint",
+          "beta": 0.203,
+          "standardized_beta": 0.095,
+          "p_value": 0.28540197,
+          "p_label": "p = 0.285"
+        }
+      ]
+    }
+  ],
+  "binned_relationships": [
+    {
+      "x": "ffmq_total",
+      "y": "overall_grade",
+      "x_label": "Total Mindfulness",
+      "y_label": "Overall Grade",
+      "n": 128,
+      "bins": [
+        {
+          "bin_label": "(2.085, 2.804]",
+          "n": 22,
+          "x_min": 2.0857,
+          "x_max": 2.8036,
+          "x_mean": 2.5685,
+          "y_mean": 3.0477,
+          "y_sd": 0.6439
+        },
+        {
+          "bin_label": "(2.804, 3.025]",
+          "n": 22,
+          "x_min": 2.8071,
+          "x_max": 3.025,
+          "x_mean": 2.9299,
+          "y_mean": 3.125,
+          "y_sd": 0.5307
+        },
+        {
+          "bin_label": "(3.025, 3.214]",
+          "n": 21,
+          "x_min": 3.0286,
+          "x_max": 3.2143,
+          "x_mean": 3.115,
+          "y_mean": 3.3452,
+          "y_sd": 0.496
+        },
+        {
+          "bin_label": "(3.214, 3.368]",
+          "n": 20,
+          "x_min": 3.2179,
+          "x_max": 3.3607,
+          "x_mean": 3.2902,
+          "y_mean": 3.46,
+          "y_sd": 0.4762
+        },
+        {
+          "bin_label": "(3.368, 3.658]",
+          "n": 21,
+          "x_min": 3.3714,
+          "x_max": 3.6429,
+          "x_mean": 3.4871,
+          "y_mean": 3.3032,
+          "y_sd": 0.5573
+        },
+        {
+          "bin_label": "(3.658, 4.379]",
+          "n": 22,
+          "x_min": 3.6607,
+          "x_max": 4.3786,
+          "x_mean": 3.8719,
+          "y_mean": 3.5973,
+          "y_sd": 0.4562
+        }
+      ],
+      "line": {
+        "slope": 0.4742,
+        "intercept": 1.7896,
+        "x_min": 2.0857,
+        "x_max": 4.3786,
+        "y_at_x_min": 2.7786,
+        "y_at_x_max": 3.8658
+      }
+    },
+    {
+      "x": "ffmq_act_aware",
+      "y": "overall_grade",
+      "x_label": "Acting with Awareness",
+      "y_label": "Overall Grade",
+      "n": 128,
+      "bins": [
+        {
+          "bin_label": "(1.124, 2.375]",
+          "n": 25,
+          "x_min": 1.125,
+          "x_max": 2.375,
+          "x_mean": 1.985,
+          "y_mean": 2.9533,
+          "y_sd": 0.5397
+        },
+        {
+          "bin_label": "(2.375, 2.625]",
+          "n": 19,
+          "x_min": 2.5,
+          "x_max": 2.625,
+          "x_mean": 2.5987,
+          "y_mean": 3.3491,
+          "y_sd": 0.6326
+        },
+        {
+          "bin_label": "(2.625, 2.938]",
+          "n": 20,
+          "x_min": 2.75,
+          "x_max": 2.875,
+          "x_mean": 2.7938,
+          "y_mean": 3.2675,
+          "y_sd": 0.5183
+        },
+        {
+          "bin_label": "(2.938, 3.25]",
+          "n": 34,
+          "x_min": 3.0,
+          "x_max": 3.25,
+          "x_mean": 3.1434,
+          "y_mean": 3.3721,
+          "y_sd": 0.5164
+        },
+        {
+          "bin_label": "(3.25, 3.375]",
+          "n": 9,
+          "x_min": 3.375,
+          "x_max": 3.375,
+          "x_mean": 3.375,
+          "y_mean": 3.4222,
+          "y_sd": 0.4711
+        },
+        {
+          "bin_label": "(3.375, 4.75]",
+          "n": 21,
+          "x_min": 3.5,
+          "x_max": 4.75,
+          "x_mean": 3.8095,
+          "y_mean": 3.5948,
+          "y_sd": 0.4428
+        }
+      ],
+      "line": {
+        "slope": 0.3134,
+        "intercept": 2.3996,
+        "x_min": 1.125,
+        "x_max": 4.75,
+        "y_at_x_min": 2.7521,
+        "y_at_x_max": 3.8881
+      }
+    },
+    {
+      "x": "ffmq_nonjudge",
+      "y": "overall_grade",
+      "x_label": "Nonjudging",
+      "y_label": "Overall Grade",
+      "n": 128,
+      "bins": [
+        {
+          "bin_label": "(1.374, 2.375]",
+          "n": 25,
+          "x_min": 1.375,
+          "x_max": 2.375,
+          "x_mean": 2.16,
+          "y_mean": 3.0733,
+          "y_sd": 0.6092
+        },
+        {
+          "bin_label": "(2.375, 2.75]",
+          "n": 23,
+          "x_min": 2.5,
+          "x_max": 2.75,
+          "x_mean": 2.6304,
+          "y_mean": 3.2196,
+          "y_sd": 0.507
+        },
+        {
+          "bin_label": "(2.75, 3.0]",
+          "n": 25,
+          "x_min": 2.875,
+          "x_max": 3.0,
+          "x_mean": 2.93,
+          "y_mean": 3.2467,
+          "y_sd": 0.4313
+        },
+        {
+          "bin_label": "(3.0, 3.375]",
+          "n": 17,
+          "x_min": 3.125,
+          "x_max": 3.375,
+          "x_mean": 3.2647,
+          "y_mean": 3.4451,
+          "y_sd": 0.55
+        },
+        {
+          "bin_label": "(3.375, 3.75]",
+          "n": 21,
+          "x_min": 3.5,
+          "x_max": 3.75,
+          "x_mean": 3.6429,
+          "y_mean": 3.4548,
+          "y_sd": 0.6233
+        },
+        {
+          "bin_label": "(3.75, 5.0]",
+          "n": 17,
+          "x_min": 3.875,
+          "x_max": 5.0,
+          "x_mean": 4.2206,
+          "y_mean": 3.5642,
+          "y_sd": 0.4883
+        }
+      ],
+      "line": {
+        "slope": 0.2326,
+        "intercept": 2.5991,
+        "x_min": 1.375,
+        "x_max": 5.0,
+        "y_at_x_min": 2.919,
+        "y_at_x_max": 3.7622
+      }
+    }
+  ],
+  "methods": {
+    "participants": "Undergraduate engineering students at Utah State University.",
+    "mindfulness_measure": "Five-facet mindfulness survey scores: Observe, Describe, Acting with Awareness, Nonjudging, and Nonreactivity.",
+    "performance_measures": "Statics, Dynamics, Mechanics of Materials, and overall grade/performance.",
+    "analysis": "Internal consistency checks, Pearson correlations, binned aggregate relationship plots, and exploratory linear regression models."
+  },
+  "limitations": [
+    "These results are associational and do not establish causation.",
+    "Course-specific samples are smaller than the overall-grade sample.",
+    "GPA category is a coarse control variable, not a complete measure of prior academic preparation.",
+    "The qualitative puzzle-solving phase should be used to interpret behavioral mechanisms behind the quantitative signal."
+  ],
+  "privacy_note": "This public presentation uses aggregate/de-identified summaries only. Raw student records, grade-upload metadata, comments, and private cleaning reports are excluded."
+}
