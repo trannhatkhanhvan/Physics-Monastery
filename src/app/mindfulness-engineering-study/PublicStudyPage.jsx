@@ -1,5 +1,31 @@
 "use client";
 
+function ResponsivePageCSS() {
+  return (
+    <style>{`
+      @media (max-width: 1200px) {
+        .mindfulness-public-page {
+          padding-top: 28px !important;
+        }
+
+        .mindfulness-public-page h1 {
+          font-size: clamp(1.8rem, 3vw, 3.05rem) !important;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .mindfulness-public-stat-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+
+        .mindfulness-public-design-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    `}</style>
+  );
+}
+
 function fmt(value, digits = 3) {
   const n = Number(value);
   if (!Number.isFinite(n)) return "—";
@@ -287,7 +313,7 @@ function ResearchDesignPanel({ data }) {
 
       <p style={styles.noteLarge}>{data.conceptual_model?.description}</p>
 
-      <div style={styles.designGrid}>
+      <div className="mindfulness-public-design-grid" style={styles.designGrid}>
         <div style={styles.designCard}>
           <h3 style={styles.modelTitle}>Research questions</h3>
           <ol style={styles.questionList}>
@@ -341,7 +367,8 @@ function RegressionSummary({ rows }) {
 export default function PublicStudyPage({ data }) {
   if (!data) {
     return (
-      <main style={styles.page}>
+      <main className="mindfulness-public-page" style={styles.page}>
+        <ResponsivePageCSS />
         <section style={styles.hero}>
           <h1 style={styles.title}>Mindfulness Engineering Study</h1>
           <p style={styles.lede}>
@@ -356,7 +383,8 @@ export default function PublicStudyPage({ data }) {
   const counts = summary.grade_counts || {};
 
   return (
-    <main style={styles.page}>
+    <main className="mindfulness-public-page" style={styles.page}>
+      <ResponsivePageCSS />
       <section style={styles.hero}>
         <div style={styles.kicker}>{data.study_design_label || "Mixed-methods research exhibit"}</div>
         <h1 style={styles.title}>{data.page_title}</h1>
@@ -376,7 +404,7 @@ export default function PublicStudyPage({ data }) {
         </div>
       </section>
 
-      <section style={styles.statGrid}>
+      <section className="mindfulness-public-stat-grid" style={styles.statGrid}>
         <StatCard label="Students" value={summary.n_rows_cleaned ?? "—"} sub="cleaned records" />
         <StatCard label="Mindfulness facets" value="5" sub="trait mindfulness dimensions" />
         <StatCard label="Overall grades" value={counts.overall_grade ?? "—"} sub="available outcomes" />
@@ -492,7 +520,7 @@ export default function PublicStudyPage({ data }) {
 const styles = {
   page: {
     minHeight: "100vh",
-    padding: "52px max(28px, 6vw)",
+    padding: "34px max(22px, 5vw)",
     background:
       "radial-gradient(circle at top left, rgba(201,165,106,0.20), transparent 32rem), #101112",
     color: "#eee8dc",
@@ -506,19 +534,19 @@ const styles = {
     color: "#c9a56a",
     letterSpacing: "0.13em",
     textTransform: "uppercase",
-    fontSize: "0.82rem",
+    fontSize: "0.76rem",
     marginBottom: "10px",
   },
   title: {
     margin: 0,
-    fontSize: "clamp(2.4rem, 5vw, 5rem)",
-    lineHeight: 0.96,
-    maxWidth: "1000px",
+    fontSize: "clamp(2.0rem, 2.5vw, 3.0rem)",
+    lineHeight: 1.02,
+    maxWidth: "920px",
   },
   lede: {
-    maxWidth: "900px",
-    fontSize: "1.22rem",
-    lineHeight: 1.55,
+    maxWidth: "840px",
+    fontSize: "1.02rem",
+    lineHeight: 1.42,
     color: "#d8d0c0",
   },
   heroEquation: {
@@ -526,13 +554,13 @@ const styles = {
     flexWrap: "wrap",
     gap: "12px",
     alignItems: "center",
-    marginTop: "24px",
-    padding: "16px 18px",
+    marginTop: "18px",
+    padding: "12px 14px",
     border: "1px solid rgba(201,165,106,0.28)",
     borderRadius: "18px",
     background: "rgba(255,255,255,0.045)",
     color: "#fff3dd",
-    fontSize: "1.08rem",
+    fontSize: "0.96rem",
     width: "fit-content",
   },
   heroEquationItem: {
@@ -546,44 +574,46 @@ const styles = {
   statGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
-    gap: "14px",
-    marginBottom: "30px",
+    gap: "12px",
+    marginBottom: "22px",
+    maxWidth: "1120px",
   },
   statCard: {
     background: "rgba(255,255,255,0.06)",
     border: "1px solid rgba(255,255,255,0.12)",
-    borderRadius: "18px",
-    padding: "18px",
+    borderRadius: "16px",
+    padding: "14px",
+    minHeight: "132px",
   },
   statLabel: {
     color: "#c8bda9",
-    fontSize: "0.95rem",
+    fontSize: "0.88rem",
     marginBottom: "8px",
   },
   statValue: {
     color: "#fff6e8",
-    fontSize: "2.3rem",
+    fontSize: "1.85rem",
     lineHeight: 1,
   },
   statSub: {
     color: "#a99f90",
     marginTop: "8px",
-    fontSize: "0.9rem",
+    fontSize: "0.84rem",
   },
   section: {
-    marginTop: "28px",
-    padding: "24px",
+    marginTop: "22px",
+    padding: "18px",
     background: "rgba(255,255,255,0.045)",
     border: "1px solid rgba(255,255,255,0.12)",
-    borderRadius: "20px",
+    borderRadius: "18px",
   },
   sectionIntro: {
-    maxWidth: "900px",
+    maxWidth: "840px",
     marginBottom: "16px",
   },
   h2: {
     margin: "0 0 8px",
-    fontSize: "1.8rem",
+    fontSize: "1.42rem",
     lineHeight: 1.1,
   },
   note: {
@@ -594,7 +624,7 @@ const styles = {
   noteLarge: {
     color: "#d8d0c0",
     lineHeight: 1.55,
-    fontSize: "1.12rem",
+    fontSize: "1rem",
     maxWidth: "920px",
   },
   pathwayBox: {
@@ -613,7 +643,7 @@ const styles = {
     alignItems: "center",
     gap: "10px",
     color: "#fff3dd",
-    fontSize: "1.08rem",
+    fontSize: "0.96rem",
     fontWeight: 700,
   },
   pathwayArrow: {
@@ -665,13 +695,13 @@ const styles = {
   findingGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-    gap: "14px",
+    gap: "12px",
   },
   findingCard: {
     background: "rgba(201,165,106,0.075)",
     border: "1px solid rgba(201,165,106,0.24)",
-    borderRadius: "18px",
-    padding: "18px",
+    borderRadius: "16px",
+    padding: "14px",
   },
   findingKind: {
     color: "#c9a56a",
@@ -683,7 +713,7 @@ const styles = {
   findingTitle: {
     margin: "0 0 10px",
     color: "#fff3dd",
-    fontSize: "1.24rem",
+    fontSize: "1.08rem",
     lineHeight: 1.15,
   },
   findingBody: {
@@ -709,7 +739,7 @@ const styles = {
   chartTitle: {
     margin: "0 0 6px",
     color: "#fff3dd",
-    fontSize: "1.25rem",
+    fontSize: "1.08rem",
   },
   chartNote: {
     margin: 0,
@@ -723,7 +753,7 @@ const styles = {
   },
   chartFooter: {
     color: "#bfb4a3",
-    fontSize: "0.92rem",
+    fontSize: "0.84rem",
     marginTop: "8px",
   },
   barList: {
@@ -733,7 +763,7 @@ const styles = {
   barRow: {
     display: "grid",
     gridTemplateColumns: "210px minmax(120px, 1fr) 180px",
-    gap: "14px",
+    gap: "12px",
     alignItems: "center",
   },
   barLabel: {
@@ -761,7 +791,7 @@ const styles = {
     borderRadius: "999px",
     background: "rgba(201,165,106,0.15)",
     color: "#ead7a4",
-    fontSize: "0.82rem",
+    fontSize: "0.76rem",
   },
   tableWrap: {
     overflowX: "auto",
@@ -772,7 +802,7 @@ const styles = {
     width: "100%",
     borderCollapse: "collapse",
     minWidth: "760px",
-    fontSize: "0.95rem",
+    fontSize: "0.88rem",
   },
   th: {
     textAlign: "left",
@@ -798,7 +828,7 @@ const styles = {
   regressionGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
-    gap: "14px",
+    gap: "12px",
   },
   modelCard: {
     background: "rgba(0,0,0,0.18)",
@@ -809,7 +839,7 @@ const styles = {
   modelTitle: {
     margin: "0 0 8px",
     color: "#fff3dd",
-    fontSize: "1.1rem",
+    fontSize: "1rem",
   },
   modelMeta: {
     color: "#c9a56a",
@@ -861,7 +891,7 @@ const styles = {
     marginBottom: "10px",
   },
   closing: {
-    marginTop: "28px",
+    marginTop: "22px",
     padding: "28px",
     border: "1px solid rgba(201,165,106,0.28)",
     background: "rgba(201,165,106,0.07)",
