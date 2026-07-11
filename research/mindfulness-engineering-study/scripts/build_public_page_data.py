@@ -67,6 +67,31 @@ def read_json(path: Path, fallback):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def filter_public_top_findings(findings: list[dict]) -> list[dict]:
+    """Remove outdated or deprecated public-facing finding cards."""
+    blocked_phrases = [
+        "gpa-controlled model is now available",
+        "gpa category midpoint",
+        "total mindfulness + gpa",
+        "overall grade ~ total mindfulness + gpa",
+    ]
+
+    filtered = []
+    for finding in findings:
+        combined = " ".join([
+            str(finding.get("title", "")),
+            str(finding.get("body", "")),
+            str(finding.get("kind", "")),
+        ]).lower()
+
+        if any(phrase in combined for phrase in blocked_phrases):
+            continue
+
+        filtered.append(finding)
+
+    return filtered
+
+
 def round_or_none(value, digits=4):
     if value is None or pd.isna(value):
         return None
@@ -249,7 +274,6 @@ def build_regression_summary(model_df: pd.DataFrame, coef_df: pd.DataFrame) -> l
     model_names = [
         "overall_total_only",
         "overall_act_aware_only",
-        "overall_total_plus_gpa",
         "overall_five_facets",
         "overall_five_facets_plus_gpa",
     ]
@@ -299,7 +323,9 @@ def main() -> None:
     clean = pd.read_csv(clean_path)
 
     dataset_summary = read_json(public_dir / "dataset_summary.json", {})
-    top_findings = read_json(public_dir / "top_findings.json", [])
+    top_findings = filter_public_top_findings(
+        read_json(public_dir / "top_findings.json", [])
+    )
 
     corr_df = pd.read_csv(private_dir / "grade_facet_correlations_with_inference.csv")
     reliability_df = pd.read_csv(private_dir / "reliability_report.csv")

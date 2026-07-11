@@ -30,16 +30,6 @@
     "p_value": 0.0641851787063117
   },
   {
-    "title": "GPA-controlled model is now available",
-    "body": "In the model Overall Grade ~ Total Mindfulness + GPA Category Midpoint, the model explains R\u00b2 = 0.124. The total-mindfulness coefficient is \u03b2 = 0.454 (p < .001).",
-    "kind": "regression",
-    "outcome": "overall_grade",
-    "predictor": "ffmq_total + gpa_midpoint",
-    "n": 119,
-    "value": 0.12436395863574567,
-    "p_value": 0.00013500253537435217
-  },
-  {
     "title": "Interpretation caution",
     "body": "These are associational results. They support the claim that mindfulness traits are related to performance in this sample; they do not by themselves establish that mindfulness causes higher grades.",
     "kind": "caution",
