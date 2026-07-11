@@ -347,10 +347,15 @@ def main() -> None:
             "the relationship among engineering students’ mindfulness traits and "
             "problem-solving performance."
         ),
+        "hero_pathway": [
+            "Mindfulness traits",
+            "Emotion regulation",
+            "Problem-solving performance"
+        ],
         "research_questions": [
-            "What are the relationships between mindfulness traits and problem-solving performance among undergraduate engineering students?",
-            "How do undergraduate engineering students with differing mindfulness traits regulate their emotions during problem-solving activities?",
-            "How do differences in emotion regulation help explain the relationship between mindfulness traits and problem solving among undergraduate engineering students?"
+            "What is the relationship between mindfulness traits and problem-solving performance among undergraduate engineering students?",
+            "How do undergraduate engineering students with differing levels of mindfulness regulate their emotions during problem-solving activities?",
+            "How do differences in emotion regulation help explain the relationship between mindfulness traits and problem-solving performance?"
         ],
         "conceptual_model": {
             "pathway": [

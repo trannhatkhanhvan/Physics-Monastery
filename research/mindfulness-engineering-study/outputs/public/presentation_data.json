@@ -1,6 +1,7 @@
 {
-  "page_title": "Mindfulness Traits and Engineering Problem Solving",
-  "page_subtitle": "An explanatory sequential mixed-methods study of undergraduate engineering students exploring the role of emotion regulation in the relationship between mindfulness traits and problem-solving performance.",
+  "page_title": "The Role of Emotion Regulation in Mindfulness and Engineering Problem Solving",
+  "page_subtitle": "An explanatory sequential mixed-methods study investigating how emotion regulation helps explain the relationship between mindfulness traits and problem-solving performance in undergraduate engineering students.",
+  "study_design_label": "Explanatory sequential mixed-methods study",
   "dataset_summary": {
     "source_file_type": "cleaned_public_workbook",
     "n_rows_cleaned": 128,
@@ -62,6 +63,43 @@
       "n": null,
       "value": null,
       "p_value": null
+    }
+  ],
+  "research_purpose": "The purpose of this study is to explore the role of emotion regulation in the relationship among engineering students\u2019 mindfulness traits and problem-solving performance.",
+  "hero_pathway": [
+    "Mindfulness traits",
+    "Emotion regulation",
+    "Problem-solving performance"
+  ],
+  "research_questions": [
+    "What is the relationship between mindfulness traits and problem-solving performance among undergraduate engineering students?",
+    "How do undergraduate engineering students with differing levels of mindfulness regulate their emotions during problem-solving activities?",
+    "How do differences in emotion regulation help explain the relationship between mindfulness traits and problem-solving performance?"
+  ],
+  "conceptual_model": {
+    "pathway": [
+      "Mindfulness traits",
+      "Emotion regulation",
+      "Problem-solving behavior",
+      "Problem-solving performance"
+    ],
+    "description": "Mindfulness traits may support problem solving by shaping how students notice, interpret, and regulate achievement emotions such as frustration, anxiety, confusion, curiosity, and persistence during difficult tasks."
+  },
+  "mixed_methods_phases": [
+    {
+      "phase": "Phase 1: Quantitative",
+      "label": "Relationship mapping",
+      "description": "Trait mindfulness is measured with the Five Facet Mindfulness Questionnaire. Problem-solving performance is represented by structured engineering course performance measures. This phase establishes whether statistical relationships exist."
+    },
+    {
+      "phase": "Phase 2: Qualitative",
+      "label": "Mechanism explanation",
+      "description": "A purposeful subset of students completes a puzzle-based problem-solving task using a think-aloud protocol. These data examine emotional tone, regulation strategies, self-talk, cognitive flexibility, and persistence."
+    },
+    {
+      "phase": "Integration",
+      "label": "Emotion regulation as the bridge",
+      "description": "Qualitative findings are interpreted in relation to quantitative patterns to explain how emotion regulation may clarify the mindfulness\u2013performance relationship."
     }
   ],
   "overall_facet_bars": [
@@ -790,16 +828,32 @@
     }
   ],
   "methods": {
+    "methodology": "Pragmatic research paradigm, using multiple forms of evidence to understand a complex engineering education problem.",
+    "design": "Explanatory sequential mixed-methods design: quantitative analysis first, followed by qualitative explanation.",
     "participants": "Undergraduate engineering students at Utah State University.",
-    "mindfulness_measure": "Five-facet mindfulness survey scores: Observe, Describe, Acting with Awareness, Nonjudging, and Nonreactivity.",
-    "performance_measures": "Statics, Dynamics, Mechanics of Materials, and overall grade/performance.",
-    "analysis": "Internal consistency checks, Pearson correlations, binned aggregate relationship plots, and exploratory linear regression models."
+    "quantitative_phase": "FFMQ mindfulness trait scores are analyzed alongside structured engineering course performance measures.",
+    "qualitative_phase": "Selected students from high- and low-mindfulness groups complete a puzzle-based problem-solving task using a think-aloud protocol.",
+    "integration": "Qualitative evidence about emotion regulation is used to explain the quantitative relationship between mindfulness traits and problem-solving performance."
+  },
+  "qualitative_phase": {
+    "title": "Qualitative phase: emotion regulation during problem solving",
+    "description": "The qualitative phase examines how students with differing mindfulness traits regulate their emotions while solving a puzzle-based task. The goal is to observe the process-level mechanisms behind the quantitative signal.",
+    "observed_dimensions": [
+      "emotional tone",
+      "emotion regulation strategies",
+      "self-talk",
+      "cognitive flexibility",
+      "task persistence",
+      "frustration recovery",
+      "problem-solving approach"
+    ]
   },
   "limitations": [
-    "These results are associational and do not establish causation.",
+    "The quantitative results are associational and do not establish causation.",
+    "The mixed-methods claim depends on integrating the forthcoming qualitative evidence, not on correlations alone.",
     "Course-specific samples are smaller than the overall-grade sample.",
     "GPA category is a coarse control variable, not a complete measure of prior academic preparation.",
-    "The qualitative puzzle-solving phase should be used to interpret behavioral mechanisms behind the quantitative signal."
+    "The qualitative puzzle-solving phase is needed to interpret emotion-regulation mechanisms behind the quantitative signal."
   ],
-  "privacy_note": "This public presentation uses aggregate/de-identified summaries only. Raw student records, grade-upload metadata, comments, and private cleaning reports are excluded."
+  "privacy_note": "This public presentation uses aggregate/de-identified summaries only. Raw student records, grade-upload metadata, comments, qualitative transcripts, and private cleaning reports are excluded."
 }

@@ -335,9 +335,53 @@ function CourseCorrelationMatrix({ rows }) {
 
 
 function ResearchDesignPanel({ data }) {
-  const phases = data.mixed_methods_phases || [];
-  const questions = data.research_questions || [];
-  const pathway = data.conceptual_model?.pathway || [];
+  const fallbackQuestions = [
+    "What is the relationship between mindfulness traits and problem-solving performance among undergraduate engineering students?",
+    "How do undergraduate engineering students with differing levels of mindfulness regulate their emotions during problem-solving activities?",
+    "How do differences in emotion regulation help explain the relationship between mindfulness traits and problem-solving performance?",
+  ];
+
+  const fallbackPhases = [
+    {
+      phase: "Phase 1: Quantitative",
+      label: "Relationship mapping",
+      description:
+        "Trait mindfulness scores are analyzed alongside engineering problem-solving performance measures.",
+    },
+    {
+      phase: "Phase 2: Qualitative",
+      label: "Emotion-regulation explanation",
+      description:
+        "Selected students complete a puzzle-based problem-solving task while their emotional regulation, self-talk, persistence, and strategy shifts are examined.",
+    },
+    {
+      phase: "Integration",
+      label: "Mixed-method interpretation",
+      description:
+        "The qualitative findings are used to explain how emotion regulation helps account for the quantitative mindfulness–performance relationship.",
+    },
+  ];
+
+  const fallbackPathway = [
+    "Mindfulness traits",
+    "Emotion regulation",
+    "Problem-solving performance",
+  ];
+
+  const phases =
+    Array.isArray(data.mixed_methods_phases) && data.mixed_methods_phases.length
+      ? data.mixed_methods_phases
+      : fallbackPhases;
+
+  const questions =
+    Array.isArray(data.research_questions) && data.research_questions.length
+      ? data.research_questions
+      : fallbackQuestions;
+
+  const pathway =
+    Array.isArray(data.conceptual_model?.pathway) && data.conceptual_model.pathway.length
+      ? data.conceptual_model.pathway
+      : fallbackPathway;
 
   return (
     <section style={styles.section}>
@@ -789,7 +833,7 @@ const styles = {
   statCard: {
     background: "rgba(255,255,255,0.06)",
     border: "1px solid rgba(255,255,255,0.12)",
-    borderRadius: "16px",
+    borderRadius: "8px",
     padding: "14px",
     minHeight: "132px",
   },
@@ -813,14 +857,14 @@ const styles = {
     padding: "20px",
     background: "rgba(201,165,106,0.065)",
     border: "1px solid rgba(201,165,106,0.22)",
-    borderRadius: "18px",
+    borderRadius: "8px",
   },
   section: {
     marginTop: "22px",
     padding: "18px",
     background: "rgba(255,255,255,0.045)",
     border: "1px solid rgba(255,255,255,0.12)",
-    borderRadius: "18px",
+    borderRadius: "8px",
   },
   sectionIntro: {
     maxWidth: "840px",
@@ -856,7 +900,7 @@ const styles = {
     alignItems: "center",
     margin: "18px 0",
     padding: "16px",
-    borderRadius: "16px",
+    borderRadius: "8px",
     background: "rgba(201,165,106,0.075)",
     border: "1px solid rgba(201,165,106,0.22)",
   },
@@ -880,7 +924,7 @@ const styles = {
   designCard: {
     background: "rgba(0,0,0,0.18)",
     border: "1px solid rgba(255,255,255,0.12)",
-    borderRadius: "16px",
+    borderRadius: "8px",
     padding: "16px",
   },
   questionList: {
@@ -954,7 +998,7 @@ const styles = {
   conceptualStep: {
     background: "rgba(0,0,0,0.18)",
     border: "1px solid rgba(255,255,255,0.12)",
-    borderRadius: "16px",
+    borderRadius: "8px",
     padding: "14px",
   },
   stepNumber: {
@@ -976,7 +1020,7 @@ const styles = {
   phaseCard: {
     background: "rgba(0,0,0,0.18)",
     border: "1px solid rgba(255,255,255,0.12)",
-    borderRadius: "16px",
+    borderRadius: "8px",
     padding: "15px",
   },
   methodsStatGrid: {
@@ -998,7 +1042,7 @@ const styles = {
   findingCard: {
     background: "rgba(201,165,106,0.075)",
     border: "1px solid rgba(201,165,106,0.24)",
-    borderRadius: "16px",
+    borderRadius: "8px",
     padding: "14px",
   },
   findingKind: {
@@ -1027,7 +1071,7 @@ const styles = {
   chartCard: {
     background: "rgba(0,0,0,0.18)",
     border: "1px solid rgba(255,255,255,0.12)",
-    borderRadius: "16px",
+    borderRadius: "8px",
     padding: "16px",
     overflow: "hidden",
   },
@@ -1071,13 +1115,13 @@ const styles = {
   barTrack: {
     height: "12px",
     background: "rgba(255,255,255,0.11)",
-    borderRadius: "999px",
+    borderRadius: "8px",
     overflow: "hidden",
   },
   barFill: {
     height: "100%",
     background: "linear-gradient(90deg, #b58c4a, #ead7a4)",
-    borderRadius: "999px",
+    borderRadius: "8px",
   },
   barValue: {
     color: "#d8d0c0",
@@ -1086,7 +1130,7 @@ const styles = {
   pill: {
     marginLeft: "8px",
     padding: "2px 7px",
-    borderRadius: "999px",
+    borderRadius: "8px",
     background: "rgba(201,165,106,0.15)",
     color: "#ead7a4",
     fontSize: "0.76rem",
@@ -1094,7 +1138,7 @@ const styles = {
   tableWrap: {
     overflowX: "auto",
     border: "1px solid rgba(255,255,255,0.12)",
-    borderRadius: "14px",
+    borderRadius: "8px",
   },
   table: {
     width: "100%",
@@ -1131,7 +1175,7 @@ const styles = {
   modelCard: {
     background: "rgba(0,0,0,0.18)",
     border: "1px solid rgba(255,255,255,0.12)",
-    borderRadius: "16px",
+    borderRadius: "8px",
     padding: "16px",
   },
   modelTitle: {
@@ -1193,7 +1237,7 @@ const styles = {
     padding: "28px",
     border: "1px solid rgba(201,165,106,0.28)",
     background: "rgba(201,165,106,0.07)",
-    borderRadius: "22px",
+    borderRadius: "8px",
   },
   qualGrid: {
     display: "flex",
@@ -1203,7 +1247,7 @@ const styles = {
   },
   qualPill: {
     padding: "7px 11px",
-    borderRadius: "999px",
+    borderRadius: "8px",
     background: "rgba(255,255,255,0.08)",
     border: "1px solid rgba(255,255,255,0.12)",
     color: "#fff3dd",
