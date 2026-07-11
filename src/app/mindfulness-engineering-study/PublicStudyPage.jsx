@@ -118,6 +118,8 @@ function FindingCards({ findings }) {
 
 
 function CorrelationMatrixGraph({ rows }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   const outcomes = [
     "overall_grade",
     "statics_grade",
@@ -153,48 +155,64 @@ function CorrelationMatrixGraph({ rows }) {
 
   return (
     <div style={styles.matrixCard}>
-      <div style={styles.chartHeader}>
-        <h3 style={styles.chartTitle}>Correlation matrix: grades × mindfulness traits</h3>
-        <p style={styles.chartNote}>
-          Pearson correlations computed from all available complete pairs. Each cell reports r and n.
-        </p>
-      </div>
-
-      <div style={styles.matrixWrap}>
-        <div style={styles.matrixGrid}>
-          <div style={styles.matrixCorner} />
-
-          {predictors.map((predictor) => {
-            const label = rows.find((row) => row.predictor === predictor)?.predictor_label || labelFromKey(predictor);
-            return (
-              <div key={predictor} style={styles.matrixHeaderCell}>
-                {label}
-              </div>
-            );
-          })}
-
-          {outcomes.map((outcome) => {
-            const outcomeLabel = rows.find((row) => row.outcome === outcome)?.outcome_label || labelFromKey(outcome);
-
-            return (
-              <div key={outcome} style={{ display: "contents" }}>
-                <div style={styles.matrixOutcomeCell}>{outcomeLabel}</div>
-
-                {predictors.map((predictor) => {
-                  const row = lookup.get(`${outcome}-${predictor}`);
-
-                  return (
-                    <div key={`${outcome}-${predictor}`} style={cellStyle(row?.r)}>
-                      <strong>{row ? fmt(row.r, 3) : "—"}</strong>
-                      <span>n = {row?.n ?? "—"}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            );
-          })}
+      <div style={styles.matrixHeaderRow}>
+        <div>
+          <h3 style={styles.chartTitle}>Correlation matrix: grades × mindfulness traits</h3>
+          <p style={styles.chartNote}>
+            Pearson correlations computed from all available complete pairs. Each cell reports r and n.
+          </p>
         </div>
+
+        <button
+          type="button"
+          style={styles.matrixToggleButton}
+          onClick={() => setIsOpen((current) => !current)}
+        >
+          {isOpen ? "Hide matrix" : "Show matrix"}
+        </button>
       </div>
+
+      {isOpen ? (
+        <div style={styles.matrixWrap}>
+          <div style={styles.matrixGrid}>
+            <div style={styles.matrixCorner} />
+
+            {predictors.map((predictor) => {
+              const label = rows.find((row) => row.predictor === predictor)?.predictor_label || labelFromKey(predictor);
+              return (
+                <div key={predictor} style={styles.matrixHeaderCell}>
+                  {label}
+                </div>
+              );
+            })}
+
+            {outcomes.map((outcome) => {
+              const outcomeLabel = rows.find((row) => row.outcome === outcome)?.outcome_label || labelFromKey(outcome);
+
+              return (
+                <div key={outcome} style={{ display: "contents" }}>
+                  <div style={styles.matrixOutcomeCell}>{outcomeLabel}</div>
+
+                  {predictors.map((predictor) => {
+                    const row = lookup.get(`${outcome}-${predictor}`);
+
+                    return (
+                      <div key={`${outcome}-${predictor}`} style={cellStyle(row?.r)}>
+                        <strong>{row ? fmt(row.r, 3) : "—"}</strong>
+                        <span>n = {row?.n ?? "—"}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ) : (
+        <div style={styles.matrixCollapsedNote}>
+          Matrix hidden. Open it to inspect the full grade × mindfulness correlation table.
+        </div>
+      )}
     </div>
   );
 }
@@ -246,6 +264,25 @@ const MINDFULNESS_FACETS = [
   { key: "ffmq_nonjudge", label: "Nonjudging", color: "#43a047" },
   { key: "ffmq_nonreact", label: "Nonreactivity", color: "#1e88e5" },
 ];
+
+
+const GRADE_OUTCOMES = [
+  { key: "statics_grade", label: "Statics" },
+  { key: "dynamics_grade", label: "Dynamics" },
+  { key: "mechanics_grade", label: "Mechanics of Materials" },
+];
+
+function gradeCompositeLabel(selectedGradeKeys) {
+  if (selectedGradeKeys.length === GRADE_OUTCOMES.length) {
+    return "Overall Grade";
+  }
+
+  if (selectedGradeKeys.length === 1) {
+    return GRADE_OUTCOMES.find((grade) => grade.key === selectedGradeKeys[0])?.label || "Selected Grade";
+  }
+
+  return "Selected Grade Composite";
+}
 
 function hexToRgb(hex) {
   const clean = hex.replace("#", "");
@@ -337,14 +374,35 @@ function InteractiveMindfulnessPlot({ points }) {
     MINDFULNESS_FACETS.map((facet) => facet.key)
   );
 
+  const [selectedGradeKeys, setSelectedGradeKeys] = useState(
+    GRADE_OUTCOMES.map((grade) => grade.key)
+  );
+
   const allEnabled = enabled.length === MINDFULNESS_FACETS.length;
+  const allGradeOutcomesEnabled = selectedGradeKeys.length === GRADE_OUTCOMES.length;
+  const gradeLabel = gradeCompositeLabel(selectedGradeKeys);
 
   const plottedPoints = (points || [])
     .map((point) => {
       const values = point.values || {};
-      const y = Number(values.overall_grade);
 
-      if (!Number.isFinite(y)) return null;
+      let y;
+
+      if (allGradeOutcomesEnabled) {
+        y = Number(values.overall_grade);
+      } else {
+        const selectedGradeValues = selectedGradeKeys
+          .map((key) => Number(values[key]))
+          .filter((value) => Number.isFinite(value) && value > 0);
+
+        // Course-specific zeros mean the student was not associated with that
+        // course outcome, so those records must not be plotted or included in r/n.
+        if (selectedGradeValues.length === 0) return null;
+
+        y = selectedGradeValues.reduce((sum, value) => sum + value, 0) / selectedGradeValues.length;
+      }
+
+      if (!Number.isFinite(y) || y <= 0) return null;
 
       let x;
 
@@ -411,13 +469,11 @@ function InteractiveMindfulnessPlot({ points }) {
   };
 
   const xTicks = [xMinRaw, (xMinRaw + xMaxRaw) / 2, xMaxRaw];
-  const title = allEnabled
-    ? "Total Mindfulness vs. Overall Grade"
-    : "Selected Mindfulness Composite vs. Overall Grade";
-
   const xLabel = allEnabled
     ? "Total Mindfulness"
     : "Selected mindfulness composite";
+
+  const title = `${xLabel} vs. ${gradeLabel}`;
 
   const activeFacets = MINDFULNESS_FACETS.filter((facet) =>
     enabled.includes(facet.key)
@@ -430,6 +486,21 @@ function InteractiveMindfulnessPlot({ points }) {
 
   function toggleFacet(key) {
     setEnabled((current) => {
+      if (current.includes(key)) {
+        if (current.length === 1) return current;
+        return current.filter((item) => item !== key);
+      }
+
+      return [...current, key];
+    });
+  }
+
+  function resetGradeOutcomes() {
+    setSelectedGradeKeys(GRADE_OUTCOMES.map((grade) => grade.key));
+  }
+
+  function toggleGradeOutcome(key) {
+    setSelectedGradeKeys((current) => {
       if (current.includes(key)) {
         if (current.length === 1) return current;
         return current.filter((item) => item !== key);
@@ -508,7 +579,7 @@ function InteractiveMindfulnessPlot({ points }) {
                 stroke="rgba(255,255,255,0.42)"
                 strokeWidth="0.55"
               >
-                <title>{`${point.point_id}: ${xLabel} = ${fmt(point.x, 3)}, Overall Grade = ${fmt(point.y, 3)}`}</title>
+                <title>{`${point.point_id}: ${xLabel} = ${fmt(point.x, 3)}, ${gradeLabel} = ${fmt(point.y, 3)}`}</title>
               </circle>
             ))}
 
@@ -516,7 +587,7 @@ function InteractiveMindfulnessPlot({ points }) {
               {xLabel}
             </text>
             <text x={18} y={height / 2} textAnchor="middle" fill="#d8d0c0" fontSize="15" transform={`rotate(-90 18 ${height / 2})`}>
-              Overall Grade
+              {gradeLabel}
             </text>
           </svg>
 
@@ -541,6 +612,45 @@ function InteractiveMindfulnessPlot({ points }) {
                   title={active ? `${facet.label} included` : `${facet.label} excluded`}
                 >
                   {facet.label}
+                </button>
+              );
+            })}
+
+            <div style={styles.controlDivider} />
+
+            <button
+              type="button"
+              onClick={resetGradeOutcomes}
+              style={{
+                ...styles.outcomeChip,
+                background: allGradeOutcomesEnabled ? "rgba(255,255,255,0.88)" : "rgba(160,160,160,0.13)",
+                borderColor: allGradeOutcomesEnabled ? "rgba(255,255,255,0.95)" : "rgba(180,180,180,0.22)",
+                color: allGradeOutcomesEnabled ? "#101112" : "rgba(210,210,210,0.42)",
+                opacity: allGradeOutcomesEnabled ? 1 : 0.62,
+              }}
+            >
+              Overall Grade
+            </button>
+
+            {GRADE_OUTCOMES.map((grade) => {
+              const active = selectedGradeKeys.includes(grade.key);
+              const disabled = active && selectedGradeKeys.length === 1;
+
+              return (
+                <button
+                  key={grade.key}
+                  type="button"
+                  disabled={disabled}
+                  onClick={() => toggleGradeOutcome(grade.key)}
+                  style={{
+                    ...styles.outcomeChip,
+                    background: active ? "rgba(234,215,164,0.82)" : "rgba(160,160,160,0.13)",
+                    borderColor: active ? "rgba(234,215,164,0.95)" : "rgba(180,180,180,0.22)",
+                    color: active ? "#101112" : "rgba(210,210,210,0.42)",
+                    opacity: active ? 1 : 0.62,
+                  }}
+                >
+                  {grade.label}
                 </button>
               );
             })}
@@ -1633,6 +1743,33 @@ const styles = {
     padding: "16px",
     marginBottom: "16px",
   },
+  matrixHeaderRow: {
+    display: "flex",
+    justifyContent: "space-between",
+    gap: "16px",
+    alignItems: "start",
+    marginBottom: "10px",
+  },
+  matrixToggleButton: {
+    appearance: "none",
+    border: "1px solid rgba(201,165,106,0.34)",
+    background: "rgba(201,165,106,0.10)",
+    color: "#ead7a4",
+    borderRadius: "7px",
+    padding: "7px 10px",
+    fontFamily: "Times New Roman, Times, serif",
+    fontSize: "0.78rem",
+    fontWeight: 700,
+    cursor: "pointer",
+    whiteSpace: "nowrap",
+  },
+  matrixCollapsedNote: {
+    color: "#bfb4a3",
+    fontSize: "0.88rem",
+    lineHeight: 1.35,
+    borderTop: "1px solid rgba(255,255,255,0.08)",
+    paddingTop: "10px",
+  },
   matrixWrap: {
     overflowX: "auto",
   },
@@ -1722,6 +1859,25 @@ const styles = {
     textAlign: "left",
     cursor: "pointer",
     transition: "background 140ms ease, color 140ms ease, opacity 140ms ease, border-color 140ms ease, transform 140ms ease",
+  },
+  controlDivider: {
+    height: "1px",
+    background: "rgba(255,255,255,0.16)",
+    margin: "2px 0 1px",
+  },
+  outcomeChip: {
+    appearance: "none",
+    width: "100%",
+    padding: "4px 6px",
+    borderRadius: "6px",
+    border: "1px solid rgba(255,255,255,0.18)",
+    fontFamily: "Times New Roman, Times, serif",
+    fontSize: "0.68rem",
+    fontWeight: 800,
+    lineHeight: 1.05,
+    textAlign: "left",
+    cursor: "pointer",
+    transition: "background 140ms ease, color 140ms ease, opacity 140ms ease, border-color 140ms ease",
   },
   chartGrid: {
     display: "grid",
