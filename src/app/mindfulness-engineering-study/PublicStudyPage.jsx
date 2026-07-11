@@ -247,6 +247,34 @@ const MINDFULNESS_FACETS = [
   { key: "ffmq_nonreact", label: "Nonreactivity", color: "#1e88e5" },
 ];
 
+function hexToRgb(hex) {
+  const clean = hex.replace("#", "");
+  const normalized =
+    clean.length === 3
+      ? clean.split("").map((ch) => ch + ch).join("")
+      : clean;
+
+  const value = parseInt(normalized, 16);
+
+  return {
+    r: (value >> 16) & 255,
+    g: (value >> 8) & 255,
+    b: value & 255,
+  };
+}
+
+function blendHexColors(colors) {
+  if (!colors || colors.length === 0) return "#b58c4a";
+  if (colors.length === 1) return colors[0];
+
+  const rgbs = colors.map(hexToRgb);
+  const r = Math.round(rgbs.reduce((sum, c) => sum + c.r, 0) / rgbs.length);
+  const g = Math.round(rgbs.reduce((sum, c) => sum + c.g, 0) / rgbs.length);
+  const b = Math.round(rgbs.reduce((sum, c) => sum + c.b, 0) / rgbs.length);
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
 function regressionLine(points) {
   const n = points.length;
   if (n < 2) return null;
@@ -391,6 +419,15 @@ function InteractiveMindfulnessPlot({ points }) {
     ? "Total Mindfulness"
     : "Selected mindfulness composite";
 
+  const activeFacets = MINDFULNESS_FACETS.filter((facet) =>
+    enabled.includes(facet.key)
+  );
+
+  const fitLineColor =
+    activeFacets.length === 1 ? activeFacets[0].color : "#ffffff";
+
+  const pointColor = "rgba(255,246,232,0.62)";
+
   function toggleFacet(key) {
     setEnabled((current) => {
       if (current.includes(key)) {
@@ -453,7 +490,7 @@ function InteractiveMindfulnessPlot({ points }) {
                 y1={yScale(Number(line.y_at_x_min))}
                 x2={xScale(Number(line.x_max))}
                 y2={yScale(Number(line.y_at_x_max))}
-                stroke="#ead7a4"
+                stroke={fitLineColor}
                 strokeWidth="2.6"
                 opacity="0.84"
               />
@@ -465,10 +502,11 @@ function InteractiveMindfulnessPlot({ points }) {
                 data-point-id={point.point_id}
                 cx={xScale(point.x)}
                 cy={yScale(point.y)}
-                r="3.4"
-                fill="rgba(181,140,74,0.72)"
-                stroke="rgba(255,246,232,0.55)"
-                strokeWidth="0.8"
+                r="2.15"
+                fill={pointColor}
+                fillOpacity="0.82"
+                stroke="rgba(255,255,255,0.42)"
+                strokeWidth="0.55"
               >
                 <title>{`${point.point_id}: ${xLabel} = ${fmt(point.x, 3)}, Overall Grade = ${fmt(point.y, 3)}`}</title>
               </circle>
