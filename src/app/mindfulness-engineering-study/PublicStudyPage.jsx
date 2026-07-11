@@ -15,7 +15,7 @@ function ResponsivePageCSS() {
         }
       }
 
-      @media (max-width: 900px) {
+      @media (max-width: 1180px) {
         .mindfulness-plot-stage {
           padding-right: 0 !important;
         }
@@ -24,6 +24,33 @@ function ResponsivePageCSS() {
           position: static !important;
           width: auto !important;
           margin-top: 10px !important;
+          display: flex !important;
+          flex-wrap: wrap !important;
+          align-items: center !important;
+          gap: 7px !important;
+          padding: 8px !important;
+        }
+
+        .mindfulness-trait-chip,
+        .mindfulness-outcome-chip {
+          width: auto !important;
+          min-width: max-content !important;
+          flex: 0 0 auto !important;
+          white-space: nowrap !important;
+          padding-left: 9px !important;
+          padding-right: 9px !important;
+        }
+
+        .mindfulness-control-divider {
+          width: 100% !important;
+          flex-basis: 100% !important;
+        }
+
+        .mindfulness-control-stats {
+          width: 100% !important;
+          flex-basis: 100% !important;
+          grid-template-columns: repeat(2, max-content) !important;
+          column-gap: 22px !important;
         }
       }
     `}</style>
@@ -599,6 +626,7 @@ function InteractiveMindfulnessPlot({ points }) {
               return (
                 <button
                   key={facet.key}
+                  className="mindfulness-trait-chip"
                   type="button"
                   disabled={disabled}
                   onClick={() => toggleFacet(facet.key)}
@@ -616,9 +644,10 @@ function InteractiveMindfulnessPlot({ points }) {
               );
             })}
 
-            <div style={styles.controlDivider} />
+            <div className="mindfulness-control-divider" style={styles.controlDivider} />
 
             <button
+              className="mindfulness-outcome-chip"
               type="button"
               onClick={resetGradeOutcomes}
               style={{
@@ -639,6 +668,7 @@ function InteractiveMindfulnessPlot({ points }) {
               return (
                 <button
                   key={grade.key}
+                  className="mindfulness-outcome-chip"
                   type="button"
                   disabled={disabled}
                   onClick={() => toggleGradeOutcome(grade.key)}
@@ -655,7 +685,7 @@ function InteractiveMindfulnessPlot({ points }) {
               );
             })}
 
-            <div style={styles.controlStats}>
+            <div className="mindfulness-control-stats" style={styles.controlStats}>
               <div style={styles.controlStatLine}>
                 <span style={styles.controlStatVar}>r</span>
                 <span style={styles.controlStatEquals}>=</span>
