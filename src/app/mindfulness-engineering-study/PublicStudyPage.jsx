@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+
 function ResponsivePageCSS() {
   return (
     <style>{`
@@ -8,21 +10,63 @@ function ResponsivePageCSS() {
           padding-top: 28px !important;
         }
 
-        .mindfulness-public-page h1 {
-          font-size: clamp(1.8rem, 3vw, 3.05rem) !important;
-        }
-      }
-
-      @media (max-width: 900px) {
-        .mindfulness-public-stat-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        }
-
         .mindfulness-public-design-grid {
           grid-template-columns: 1fr !important;
         }
       }
     `}</style>
+  );
+}
+
+function FitTitle({ children }) {
+  const wrapRef = useRef(null);
+  const titleRef = useRef(null);
+  const [fontSize, setFontSize] = useState(38);
+
+  useEffect(() => {
+    function fit() {
+      const wrap = wrapRef.current;
+      const title = titleRef.current;
+      if (!wrap || !title) return;
+
+      const maxSize = 48;
+      const minSize = 24;
+      let low = minSize;
+      let high = maxSize;
+      let best = minSize;
+
+      title.style.whiteSpace = "nowrap";
+
+      while (low <= high) {
+        const mid = Math.floor((low + high) / 2);
+        title.style.fontSize = `${mid}px`;
+
+        if (title.scrollWidth <= wrap.clientWidth) {
+          best = mid;
+          low = mid + 1;
+        } else {
+          high = mid - 1;
+        }
+      }
+
+      setFontSize(best);
+    }
+
+    fit();
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, [children]);
+
+  return (
+    <div ref={wrapRef} style={styles.titleFitWrap}>
+      <h1
+        ref={titleRef}
+        className="mindfulness-page-title"
+        style={{ ...styles.title, fontSize: `${fontSize}px` }}
+      >
+        {children}
+      </h1>
+    </div>
   );
 }
 
@@ -340,6 +384,226 @@ function ResearchDesignPanel({ data }) {
   );
 }
 
+
+function fallbackResearchQuestions() {
+  return [
+    "What is the relationship between mindfulness traits and problem-solving performance among undergraduate engineering students?",
+    "How do undergraduate engineering students with differing levels of mindfulness regulate their emotions during problem-solving activities?",
+    "How do differences in emotion regulation help explain the relationship between mindfulness traits and problem-solving performance?",
+  ];
+}
+
+function ResearchQuestionsSection({ data }) {
+  const questions =
+    Array.isArray(data.research_questions) && data.research_questions.length
+      ? data.research_questions
+      : fallbackResearchQuestions();
+
+  return (
+    <section style={styles.prioritySection}>
+      <div style={styles.sectionIntro}>
+        <div style={styles.sectionKicker}>Central study question</div>
+        <h2 style={styles.h2}>What is this study trying to understand?</h2>
+        <p style={styles.noteLarge}>
+          The study asks whether mindfulness traits are related to engineering problem-solving
+          performance, and whether emotion regulation helps explain that relationship.
+        </p>
+      </div>
+
+      <div style={styles.questionListLarge}>
+        {questions.map((question, index) => (
+          <div key={question} style={styles.questionItemLarge}>
+            <span style={styles.questionNumber}>{index + 1}</span>
+            <span>{question}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function WhyEmotionRegulationMatters() {
+  return (
+    <section style={styles.section}>
+      <div style={styles.sectionIntro}>
+        <div style={styles.sectionKicker}>Why it matters</div>
+        <h2 style={styles.h2}>Engineering problem solving is cognitive and emotional</h2>
+      </div>
+
+      <div style={styles.whyGrid}>
+        <p style={styles.noteLarge}>
+          Engineering students are often trained to treat problem solving as a rational procedure.
+          But difficult problems also produce achievement emotions: frustration, anxiety,
+          confusion, curiosity, confidence, and persistence.
+        </p>
+
+        <p style={styles.noteLarge}>
+          The study examines whether mindfulness traits help students notice and regulate those
+          emotions in ways that support sustained attention, flexible strategy use, and better
+          problem-solving performance.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function ConceptualModelSection({ data }) {
+  const modelSteps = [
+    {
+      label: "Mindfulness traits",
+      body: "Students differ in their tendency to notice, describe, accept, and respond deliberately to present-moment experience.",
+    },
+    {
+      label: "Emotion regulation",
+      body: "Those traits may shape reappraisal, nonreactivity, reduced rumination, frustration recovery, and emotional clarity.",
+    },
+    {
+      label: "Problem-solving process",
+      body: "Regulation may influence self-talk, persistence, strategy shifts, cognitive flexibility, and willingness to continue through uncertainty.",
+    },
+    {
+      label: "Problem-solving performance",
+      body: "The study then examines how these processes relate to structured engineering performance outcomes.",
+    },
+  ];
+
+  return (
+    <section style={styles.section}>
+      <div style={styles.sectionIntro}>
+        <div style={styles.sectionKicker}>Conceptual model</div>
+        <h2 style={styles.h2}>Emotion regulation is the proposed bridge</h2>
+        <p style={styles.noteLarge}>
+          {data.conceptual_model?.description ||
+            "Mindfulness traits may support problem solving by shaping how students notice, interpret, and regulate achievement emotions during difficult tasks."}
+        </p>
+      </div>
+
+      <div style={styles.conceptualGrid}>
+        {modelSteps.map((step, index) => (
+          <article key={step.label} style={styles.conceptualStep}>
+            <div style={styles.stepNumber}>{index + 1}</div>
+            <h3 style={styles.modelTitle}>{step.label}</h3>
+            <p style={styles.findingBody}>{step.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function MixedMethodsDesignSection({ data }) {
+  const fallbackPhases = [
+    {
+      phase: "Phase 1: Quantitative",
+      label: "Relationship mapping",
+      description:
+        "Trait mindfulness scores are analyzed alongside engineering problem-solving performance measures to identify statistical relationships.",
+    },
+    {
+      phase: "Phase 2: Qualitative",
+      label: "Mechanism explanation",
+      description:
+        "Selected students complete a puzzle-based problem-solving task while their emotional regulation, self-talk, persistence, and strategy shifts are examined.",
+    },
+    {
+      phase: "Integration",
+      label: "Mixed-method interpretation",
+      description:
+        "Qualitative findings are used to explain how emotion regulation may account for the quantitative mindfulness–performance relationship.",
+    },
+  ];
+
+  const phases =
+    Array.isArray(data.mixed_methods_phases) && data.mixed_methods_phases.length
+      ? data.mixed_methods_phases
+      : fallbackPhases;
+
+  return (
+    <section style={styles.section}>
+      <div style={styles.sectionIntro}>
+        <div style={styles.sectionKicker}>Research design</div>
+        <h2 style={styles.h2}>Explanatory sequential mixed-methods design</h2>
+        <p style={styles.noteLarge}>
+          The quantitative phase identifies relationships. The qualitative phase explains how
+          students regulate emotions during problem solving. Integration connects the two.
+        </p>
+      </div>
+
+      <div style={styles.phaseCards}>
+        {phases.map((phase) => (
+          <article key={phase.phase} style={styles.phaseCard}>
+            <div style={styles.phaseName}>{phase.phase}</div>
+            <h3 style={styles.modelTitle}>{phase.label}</h3>
+            <p style={styles.phaseDescription}>{phase.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function QualitativePhaseSection({ data }) {
+  const observed = data.qualitative_phase?.observed_dimensions || [
+    "emotional tone",
+    "emotion regulation strategies",
+    "self-talk",
+    "cognitive flexibility",
+    "task persistence",
+    "frustration recovery",
+    "problem-solving approach",
+  ];
+
+  return (
+    <section style={styles.prioritySection}>
+      <div style={styles.sectionIntro}>
+        <div style={styles.sectionKicker}>Phase 2 preview</div>
+        <h2 style={styles.h2}>
+          {data.qualitative_phase?.title || "Qualitative phase: emotion regulation during problem solving"}
+        </h2>
+        <p style={styles.noteLarge}>
+          {data.qualitative_phase?.description ||
+            "The qualitative phase examines how students with differing mindfulness traits regulate their emotions while solving a puzzle-based task."}
+        </p>
+      </div>
+
+      <div style={styles.qualGrid}>
+        {observed.map((item) => (
+          <span key={item} style={styles.qualPill}>{item}</span>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function MethodsMeasuresSection({ data, summary, counts }) {
+  const methods = data.methods || {};
+
+  return (
+    <section style={styles.section}>
+      <div style={styles.sectionIntro}>
+        <div style={styles.sectionKicker}>Methods and measures</div>
+        <h2 style={styles.h2}>How the study is being measured</h2>
+      </div>
+
+      <div style={styles.methodsStatGrid}>
+        <StatCard label="Students" value={summary.n_rows_cleaned ?? "—"} sub="cleaned quantitative records" />
+        <StatCard label="Mindfulness facets" value="5" sub="FFMQ trait dimensions" />
+        <StatCard label="Overall grades" value={counts.overall_grade ?? "—"} sub="available quantitative outcomes" />
+        <StatCard label="Qualitative phase" value="Next" sub="think-aloud problem solving" />
+      </div>
+
+      <dl style={styles.dl}>
+        {Object.entries(methods).map(([key, value]) => (
+          <div key={key} style={styles.dlRow}>
+            <dt style={styles.dt}>{labelFromKey(key)}</dt>
+            <dd style={styles.dd}>{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  );
+}
+
 function RegressionSummary({ rows }) {
   return (
     <div style={styles.regressionGrid}>
@@ -370,7 +634,7 @@ export default function PublicStudyPage({ data }) {
       <main className="mindfulness-public-page" style={styles.page}>
         <ResponsivePageCSS />
         <section style={styles.hero}>
-          <h1 style={styles.title}>Mindfulness Engineering Study</h1>
+          <h1 className="mindfulness-page-title" style={styles.title}>Mindfulness Engineering Study</h1>
           <p style={styles.lede}>
             Presentation data not found. Run <code>python3 scripts/build_public_page_data.py</code>.
           </p>
@@ -387,11 +651,11 @@ export default function PublicStudyPage({ data }) {
       <ResponsivePageCSS />
       <section style={styles.hero}>
         <div style={styles.kicker}>{data.study_design_label || "Mixed-methods research exhibit"}</div>
-        <h1 style={styles.title}>{data.page_title}</h1>
+        <FitTitle>{data.page_title}</FitTitle>
         <p style={styles.lede}>{data.page_subtitle}</p>
 
         <div style={styles.heroEquation}>
-          {(data.conceptual_model?.pathway || [
+          {(data.hero_pathway || [
             "Mindfulness traits",
             "Emotion regulation",
             "Problem-solving performance",
@@ -404,30 +668,35 @@ export default function PublicStudyPage({ data }) {
         </div>
       </section>
 
-      <section className="mindfulness-public-stat-grid" style={styles.statGrid}>
-        <StatCard label="Students" value={summary.n_rows_cleaned ?? "—"} sub="cleaned records" />
-        <StatCard label="Mindfulness facets" value="5" sub="trait mindfulness dimensions" />
-        <StatCard label="Overall grades" value={counts.overall_grade ?? "—"} sub="available outcomes" />
-        <StatCard label="Qualitative phase" value="Next" sub="emotion regulation mechanisms" />
-      </section>
+      <ResearchQuestionsSection data={data} />
 
-      <ResearchDesignPanel data={data} />
+      <WhyEmotionRegulationMatters />
+
+      <ConceptualModelSection data={data} />
+
+      <MixedMethodsDesignSection data={data} />
 
       <section style={styles.section}>
         <div style={styles.sectionIntro}>
-          <h2 style={styles.h2}>Top findings</h2>
+          <div style={styles.sectionKicker}>Phase 1 findings</div>
+          <h2 style={styles.h2}>Quantitative findings so far</h2>
           <p style={styles.note}>
-            The current quantitative phase maps the mindfulness–performance relationship that the qualitative phase will later explain through emotion regulation.
+            These aggregate findings identify relationships that the qualitative phase will later explain through emotion regulation.
           </p>
         </div>
         <FindingCards findings={data.top_findings || []} />
       </section>
 
+      <QualitativePhaseSection data={data} />
+
+      <MethodsMeasuresSection data={data} summary={summary} counts={counts} />
+
       <section style={styles.section}>
         <div style={styles.sectionIntro}>
-          <h2 style={styles.h2}>Quantitative relationship: mindfulness traits and performance</h2>
+          <div style={styles.sectionKicker}>Analysis details</div>
+          <h2 style={styles.h2}>Quantitative phase details</h2>
           <p style={styles.note}>
-            These charts use binned aggregates rather than row-level points, preserving the visible trend without publishing individual records.
+            These charts and tables support the public interpretation, but the page’s central claim remains mixed-methods: quantitative relationships need qualitative explanation.
           </p>
         </div>
 
@@ -436,83 +705,26 @@ export default function PublicStudyPage({ data }) {
             <BinnedRelationshipChart key={`${chart.x}-${chart.y}`} chart={chart} />
           ))}
         </div>
-      </section>
 
-      <section style={styles.section}>
-        <div style={styles.sectionIntro}>
-          <h2 style={styles.h2}>Which mindfulness traits matter most?</h2>
-          <p style={styles.note}>
-            Overall grade is most strongly associated with total mindfulness and acting with awareness.
-          </p>
-        </div>
-        <FacetBarChart rows={data.overall_facet_bars || []} />
-      </section>
-
-      <section style={styles.section}>
-        <div style={styles.sectionIntro}>
-          <h2 style={styles.h2}>Course-specific signals</h2>
-          <p style={styles.note}>
-            Course-level samples are smaller, so these patterns should be treated as exploratory.
-          </p>
-        </div>
-        <CourseCorrelationMatrix rows={data.course_correlation_matrix || []} />
-      </section>
-
-      <section style={styles.section}>
-        <div style={styles.sectionIntro}>
-          <h2 style={styles.h2}>Regression models</h2>
-          <p style={styles.note}>
-            Exploratory linear models summarize the quantitative phase. The mixed-methods interpretation will depend on the qualitative emotion-regulation evidence.
-          </p>
-        </div>
-        <RegressionSummary rows={data.regression_summary || []} />
-      </section>
-
-      <section style={styles.section}>
-        <div style={styles.sectionIntro}>
-          <h2 style={styles.h2}>Measure reliability</h2>
-          <p style={styles.note}>
-            The mindfulness scales show generally acceptable to strong internal consistency in this sample.
-          </p>
-        </div>
-        <ReliabilityTable rows={data.reliability_summary || []} />
-      </section>
-
-      <section style={styles.twoColumn}>
-        <div style={styles.section}>
-          <h2 style={styles.h2}>Methods</h2>
-          <dl style={styles.dl}>
-            {Object.entries(data.methods || {}).map(([key, value]) => (
-              <div key={key} style={styles.dlRow}>
-                <dt style={styles.dt}>{labelFromKey(key)}</dt>
-                <dd style={styles.dd}>{value}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-
-        <div style={styles.section}>
-          <h2 style={styles.h2}>Limitations</h2>
-          <ul style={styles.limitList}>
-            {(data.limitations || []).map((item) => (
-              <li key={item} style={styles.limitItem}>{item}</li>
-            ))}
-          </ul>
+        <div style={styles.detailStack}>
+          <FacetBarChart rows={data.overall_facet_bars || []} />
+          <CourseCorrelationMatrix rows={data.course_correlation_matrix || []} />
+          <RegressionSummary rows={data.regression_summary || []} />
+          <ReliabilityTable rows={data.reliability_summary || []} />
         </div>
       </section>
 
       <section style={styles.closing}>
-        <h2 style={styles.h2}>{data.qualitative_phase?.title || "Qualitative phase: emotion regulation during problem solving"}</h2>
-        <p style={styles.noteLarge}>
-          {data.qualitative_phase?.description}
-        </p>
-        <div style={styles.qualGrid}>
-          {(data.qualitative_phase?.observed_dimensions || []).map((item) => (
-            <span key={item} style={styles.qualPill}>{item}</span>
+        <div style={styles.sectionKicker}>Interpretation boundaries</div>
+        <h2 style={styles.h2}>Limitations and privacy</h2>
+        <ul style={styles.limitList}>
+          {(data.limitations || []).map((item) => (
+            <li key={item} style={styles.limitItem}>{item}</li>
           ))}
-        </div>
+        </ul>
         <p style={styles.privacy}>{data.privacy_note}</p>
       </section>
+
     </main>
   );
 }
@@ -527,8 +739,8 @@ const styles = {
     fontFamily: "Times New Roman, Times, serif",
   },
   hero: {
-    maxWidth: "1120px",
-    marginBottom: "28px",
+    maxWidth: "none",
+    marginBottom: "24px",
   },
   kicker: {
     color: "#c9a56a",
@@ -537,31 +749,27 @@ const styles = {
     fontSize: "0.76rem",
     marginBottom: "10px",
   },
+  titleFitWrap: {
+    width: "100%",
+    maxWidth: "100%",
+    overflow: "visible",
+  },
   title: {
     margin: 0,
-    fontSize: "clamp(2.0rem, 2.5vw, 3.0rem)",
     lineHeight: 1.02,
-    maxWidth: "920px",
+    maxWidth: "100%",
+    whiteSpace: "nowrap",
+    letterSpacing: "-0.028em",
   },
   lede: {
     maxWidth: "840px",
     fontSize: "1.02rem",
     lineHeight: 1.42,
     color: "#d8d0c0",
+    margin: "10px 0 0",
   },
   heroEquation: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "12px",
-    alignItems: "center",
-    marginTop: "18px",
-    padding: "12px 14px",
-    border: "1px solid rgba(201,165,106,0.28)",
-    borderRadius: "18px",
-    background: "rgba(255,255,255,0.045)",
-    color: "#fff3dd",
-    fontSize: "0.96rem",
-    width: "fit-content",
+    display: "none",
   },
   heroEquationItem: {
     display: "inline-flex",
@@ -600,6 +808,13 @@ const styles = {
     marginTop: "8px",
     fontSize: "0.84rem",
   },
+  prioritySection: {
+    marginTop: "22px",
+    padding: "20px",
+    background: "rgba(201,165,106,0.065)",
+    border: "1px solid rgba(201,165,106,0.22)",
+    borderRadius: "18px",
+  },
   section: {
     marginTop: "22px",
     padding: "18px",
@@ -610,6 +825,13 @@ const styles = {
   sectionIntro: {
     maxWidth: "840px",
     marginBottom: "16px",
+  },
+  sectionKicker: {
+    color: "#c9a56a",
+    letterSpacing: "0.11em",
+    textTransform: "uppercase",
+    fontSize: "0.68rem",
+    marginBottom: "7px",
   },
   h2: {
     margin: "0 0 8px",
@@ -691,6 +913,82 @@ const styles = {
     color: "#d8d0c0",
     lineHeight: 1.45,
     margin: "6px 0 0",
+  },
+  questionListLarge: {
+    display: "grid",
+    gap: "10px",
+    marginTop: "14px",
+  },
+  questionItemLarge: {
+    display: "grid",
+    gridTemplateColumns: "32px 1fr",
+    gap: "10px",
+    alignItems: "start",
+    color: "#eee8dc",
+    lineHeight: 1.42,
+    fontSize: "0.98rem",
+  },
+  questionNumber: {
+    width: "24px",
+    height: "24px",
+    borderRadius: "50%",
+    display: "grid",
+    placeItems: "center",
+    background: "rgba(201,165,106,0.18)",
+    border: "1px solid rgba(201,165,106,0.35)",
+    color: "#ead7a4",
+    fontSize: "0.82rem",
+    fontWeight: 700,
+    lineHeight: 1,
+  },
+  whyGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+    gap: "18px",
+  },
+  conceptualGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+    gap: "12px",
+  },
+  conceptualStep: {
+    background: "rgba(0,0,0,0.18)",
+    border: "1px solid rgba(255,255,255,0.12)",
+    borderRadius: "16px",
+    padding: "14px",
+  },
+  stepNumber: {
+    width: "28px",
+    height: "28px",
+    borderRadius: "50%",
+    display: "grid",
+    placeItems: "center",
+    background: "rgba(201,165,106,0.18)",
+    color: "#ead7a4",
+    fontWeight: 700,
+    marginBottom: "10px",
+  },
+  phaseCards: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+    gap: "14px",
+  },
+  phaseCard: {
+    background: "rgba(0,0,0,0.18)",
+    border: "1px solid rgba(255,255,255,0.12)",
+    borderRadius: "16px",
+    padding: "15px",
+  },
+  methodsStatGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+    gap: "12px",
+    marginBottom: "18px",
+  },
+  detailStack: {
+    display: "grid",
+    gap: "16px",
+    marginTop: "16px",
   },
   findingGrid: {
     display: "grid",
