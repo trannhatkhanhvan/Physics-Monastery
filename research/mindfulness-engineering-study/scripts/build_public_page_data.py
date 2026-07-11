@@ -185,6 +185,77 @@ def binned_scatter(df: pd.DataFrame, x_col: str, y_col: str, n_bins: int = 6) ->
     return result
 
 
+
+
+def exact_scatter(df: pd.DataFrame, x_col: str, y_col: str) -> dict:
+    """
+    Return exact row-level scatter data.
+
+    Each point is one cleaned student record with a stable anonymous point_id.
+    Rows are excluded only when the x or y value needed for this specific plot is missing.
+    """
+    points = []
+
+    for index, row in df.reset_index(drop=True).iterrows():
+        x = row.get(x_col)
+        y = row.get(y_col)
+
+        if pd.isna(x) or pd.isna(y):
+            continue
+
+        points.append({
+            "point_id": f"S{index + 1:03d}",
+            "x": round_or_none(x),
+            "y": round_or_none(y),
+        })
+
+    return {
+        "type": "exact_scatter",
+        "x": x_col,
+        "y": y_col,
+        "x_label": FACET_LABELS.get(x_col, x_col),
+        "y_label": GRADE_LABELS.get(y_col, y_col),
+        "n": len(points),
+        "points": points,
+        "line": simple_regression_line(df, x_col, y_col),
+    }
+
+
+def build_visualization_points(df: pd.DataFrame) -> list[dict]:
+    """
+    Return exact cleaned point data for future graph animation and highlighting.
+
+    This contains only the cleaned numeric variables used for visualization.
+    """
+    columns = [
+        "ffmq_observe",
+        "ffmq_describe",
+        "ffmq_act_aware",
+        "ffmq_nonjudge",
+        "ffmq_nonreact",
+        "ffmq_total",
+        "statics_grade",
+        "dynamics_grade",
+        "mechanics_grade",
+        "overall_grade",
+    ]
+
+    points = []
+
+    for index, row in df.reset_index(drop=True).iterrows():
+        values = {}
+        for col in columns:
+            value = row.get(col)
+            values[col] = None if pd.isna(value) else round_or_none(value)
+
+        points.append({
+            "point_id": f"S{index + 1:03d}",
+            "values": values,
+        })
+
+    return points
+
+
 def build_overall_facet_bars(corr_df: pd.DataFrame) -> list[dict]:
     rows = corr_df[corr_df["outcome"] == "overall_grade"].copy()
     rows = rows[rows["predictor"].isin(PRIMARY_FACETS)]
@@ -402,11 +473,12 @@ def main() -> None:
         "course_correlation_matrix": build_course_matrix(corr_df),
         "reliability_summary": build_reliability_summary(reliability_df),
         "regression_summary": build_regression_summary(model_df, coef_df),
-        "binned_relationships": [
-            binned_scatter(clean, "ffmq_total", "overall_grade", n_bins=6),
-            binned_scatter(clean, "ffmq_act_aware", "overall_grade", n_bins=6),
-            binned_scatter(clean, "ffmq_nonjudge", "overall_grade", n_bins=6),
+        "scatter_relationships": [
+            exact_scatter(clean, "ffmq_total", "overall_grade"),
+            exact_scatter(clean, "ffmq_act_aware", "overall_grade"),
+            exact_scatter(clean, "ffmq_nonjudge", "overall_grade"),
         ],
+        "visualization_points": build_visualization_points(clean),
         "methods": {
             "methodology": "Pragmatic research paradigm, using multiple forms of evidence to understand a complex engineering education problem.",
             "design": "Explanatory sequential mixed-methods design: quantitative analysis first, followed by qualitative explanation.",
