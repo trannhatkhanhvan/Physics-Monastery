@@ -15,7 +15,261 @@ function ResponsivePageCSS() {
         }
       }
 
+      @keyframes participantWanderGender {
+        0% {
+          left: var(--wander-final-left);
+          top: var(--wander-final-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+        16% {
+          left: var(--wander-loop-one-left);
+          top: var(--wander-loop-one-top);
+          transform: translate(-50%, -50%) rotate(18deg) scale(1.08);
+        }
+        31% {
+          left: var(--wander-loop-two-left);
+          top: var(--wander-loop-two-top);
+          transform: translate(-50%, -50%) rotate(-22deg) scale(1.08);
+        }
+        49% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(-50%, -50%) rotate(12deg) scale(1.05);
+        }
+        60% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1.04);
+        }
+        65% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% - 5px), -50%) rotate(-8deg) scale(1.04);
+        }
+        70% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% + 5px), -50%) rotate(8deg) scale(1.04);
+        }
+        75% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% - 3px), -50%) rotate(-5deg) scale(1.04);
+        }
+        88% {
+          left: var(--wander-catch-left);
+          top: var(--wander-catch-top);
+          transform: translate(-50%, -50%) rotate(10deg) scale(1.07);
+        }
+        100% {
+          left: var(--wander-final-left);
+          top: var(--wander-final-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+      }
+
+      @keyframes participantWanderRace {
+        0% {
+          left: var(--wander-final-left);
+          top: var(--wander-final-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+        15% {
+          left: var(--wander-loop-two-left);
+          top: var(--wander-loop-one-top);
+          transform: translate(-50%, -50%) rotate(-18deg) scale(1.08);
+        }
+        31% {
+          left: var(--wander-loop-one-left);
+          top: var(--wander-loop-two-top);
+          transform: translate(-50%, -50%) rotate(24deg) scale(1.08);
+        }
+        49% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(-50%, -50%) rotate(-12deg) scale(1.05);
+        }
+        60% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1.04);
+        }
+        65% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% + 5px), -50%) rotate(8deg) scale(1.04);
+        }
+        70% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% - 5px), -50%) rotate(-8deg) scale(1.04);
+        }
+        75% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% + 3px), -50%) rotate(5deg) scale(1.04);
+        }
+        88% {
+          left: var(--wander-catch-left);
+          top: var(--wander-catch-top);
+          transform: translate(-50%, -50%) rotate(-10deg) scale(1.07);
+        }
+        100% {
+          left: var(--wander-final-left);
+          top: var(--wander-final-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+      }
+
+      @keyframes participantWanderLevel {
+        0% {
+          left: var(--wander-final-left);
+          top: var(--wander-final-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+        16% {
+          left: var(--wander-loop-one-left);
+          top: var(--wander-loop-two-top);
+          transform: translate(-50%, -50%) rotate(20deg) scale(1.08);
+        }
+        32% {
+          left: var(--wander-loop-two-left);
+          top: var(--wander-loop-one-top);
+          transform: translate(-50%, -50%) rotate(-26deg) scale(1.08);
+        }
+        50% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(-50%, -50%) rotate(14deg) scale(1.05);
+        }
+        60% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1.04);
+        }
+        65% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% - 5px), -50%) rotate(-8deg) scale(1.04);
+        }
+        70% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% + 5px), -50%) rotate(8deg) scale(1.04);
+        }
+        75% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% - 3px), -50%) rotate(-5deg) scale(1.04);
+        }
+        88% {
+          left: var(--wander-catch-left);
+          top: var(--wander-catch-top);
+          transform: translate(-50%, -50%) rotate(10deg) scale(1.07);
+        }
+        100% {
+          left: var(--wander-final-left);
+          top: var(--wander-final-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+      }
+
+      @keyframes participantWanderMajor {
+        0% {
+          left: var(--wander-final-left);
+          top: var(--wander-final-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+        14% {
+          left: var(--wander-loop-two-left);
+          top: var(--wander-loop-one-top);
+          transform: translate(-50%, -50%) rotate(-20deg) scale(1.08);
+        }
+        30% {
+          left: var(--wander-loop-one-left);
+          top: var(--wander-loop-two-top);
+          transform: translate(-50%, -50%) rotate(25deg) scale(1.08);
+        }
+        50% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(-50%, -50%) rotate(-14deg) scale(1.05);
+        }
+        60% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1.04);
+        }
+        65% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% + 5px), -50%) rotate(8deg) scale(1.04);
+        }
+        70% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% - 5px), -50%) rotate(-8deg) scale(1.04);
+        }
+        75% {
+          left: var(--wander-wrong-left);
+          top: var(--wander-wrong-top);
+          transform: translate(calc(-50% + 3px), -50%) rotate(5deg) scale(1.04);
+        }
+        88% {
+          left: var(--wander-catch-left);
+          top: var(--wander-catch-top);
+          transform: translate(-50%, -50%) rotate(-10deg) scale(1.07);
+        }
+        100% {
+          left: var(--wander-final-left);
+          top: var(--wander-final-top);
+          transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .participant-person-marker,
+        .participant-wanderer {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+
       @media (max-width: 1180px) {
+        .participant-demo-bottom-controls {
+          grid-template-columns: 1fr !important;
+        }
+
+        .participant-demo-control-panel {
+          justify-content: flex-start !important;
+        }
+
+        .participant-demo-chip {
+          width: auto !important;
+          min-width: max-content !important;
+          flex: 0 0 auto !important;
+          white-space: nowrap !important;
+        }
+
+
+        .participant-demo-pie-control-grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        .participant-demo-inline-stats {
+          max-width: none !important;
+        }
+
+        .participant-demo-control-panel {
+          position: static !important;
+          width: auto !important;
+          display: flex !important;
+          flex-wrap: wrap !important;
+          align-items: center !important;
+          gap: 7px !important;
+        }
+
+
         .mindfulness-plot-stage {
           padding-right: 0 !important;
         }
@@ -143,6 +397,125 @@ function FindingCards({ findings }) {
   );
 }
 
+
+
+function WhyItMattersDiagram() {
+  const [expandedStage, setExpandedStage] = useState(null);
+
+  return (
+    <div style={styles.whyMattersDiagram}>
+      <div style={styles.whyMattersFlowScroller}>
+        <div style={styles.whyMattersFlowWrap}>
+          <div style={styles.whyMattersFeedbackArrow} aria-hidden="true">
+            <svg
+              viewBox="0 0 100 42"
+              preserveAspectRatio="none"
+              style={styles.whyMattersFeedbackSvg}
+            >
+              <path
+                d="M 72 32 L 72 7 L 15 7 L 15 26"
+                fill="none"
+                stroke="#d84a2d"
+                strokeWidth="1.25"
+                vectorEffect="non-scaling-stroke"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M 12.8 22.8 L 15 26 L 17.2 22.8"
+                fill="none"
+                stroke="#d84a2d"
+                strokeWidth="1.25"
+                vectorEffect="non-scaling-stroke"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+
+          <div style={styles.whyMattersFlow}>
+            {WHY_MATTERS_STAGES.map((stage, index) => (
+              <div key={stage.key} style={styles.whyMattersFlowItem}>
+                <div style={styles.whyMattersStageBox}>{stage.title}</div>
+                {index < WHY_MATTERS_STAGES.length - 1 ? (
+                  <div style={styles.whyMattersArrow} aria-hidden="true">
+                    →
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div style={styles.whyMattersImageGrid}>
+        {WHY_MATTERS_STAGES.map((stage) => (
+          <figure key={stage.key} style={styles.whyMattersFigure}>
+            <button
+              type="button"
+              style={styles.whyMattersImageButton}
+              onClick={() => setExpandedStage(stage)}
+              aria-label={`Expand ${stage.title} illustration`}
+            >
+              <div style={styles.whyMattersImageFrame}>
+                <div style={styles.whyMattersImageFallback}>{stage.fallback}</div>
+                <img
+                  src={stage.image}
+                  alt={stage.alt}
+                  style={styles.whyMattersImage}
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+              </div>
+            </button>
+            <figcaption style={styles.whyMattersCaption}>
+              {stage.caption}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      {expandedStage ? (
+        <div
+          style={styles.imageLightbox}
+          onClick={() => setExpandedStage(null)}
+          role="presentation"
+        >
+          <div
+            style={styles.imageLightboxCard}
+            onClick={(event) => event.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${expandedStage.title} illustration`}
+          >
+            <button
+              type="button"
+              style={styles.imageLightboxClose}
+              onClick={() => setExpandedStage(null)}
+              aria-label="Close expanded image"
+            >
+              ×
+            </button>
+
+            <div style={styles.imageLightboxImageWrap}>
+              <img
+                src={expandedStage.image}
+                alt={expandedStage.alt}
+                style={styles.imageLightboxImage}
+              />
+            </div>
+
+            <div style={styles.imageLightboxCaption}>
+              <strong>{expandedStage.title}</strong>
+              <span>{expandedStage.caption}</span>
+            </div>
+          </div>
+        </div>
+      ) : null}
+    </div>
+  );
+}
 
 function CorrelationMatrixGraph({ rows }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -298,6 +671,42 @@ const GRADE_OUTCOMES = [
   { key: "dynamics_grade", label: "Dynamics" },
   { key: "mechanics_grade", label: "Mechanics of Materials" },
 ];
+
+const WHY_MATTERS_STAGES = [
+  {
+    key: "problem_solving_performance",
+    title: "Problem–Solving Performance",
+    caption: "Performance on difficult engineering problem-solving tasks.",
+    image: "/images/mindfulness-study/why-it-matters-problem-solving.png",
+    alt: "Illustration representing problem-solving performance in engineering students.",
+    fallback: "Problem–Solving Performance",
+  },
+  {
+    key: "academic_performance",
+    title: "Academic Performance",
+    caption: "Course grades and academic success may be shaped by problem-solving performance.",
+    image: "/images/mindfulness-study/why-it-matters-academic-performance.png",
+    alt: "Image representing academic performance, such as a graded exam.",
+    fallback: "Academic Performance",
+  },
+  {
+    key: "well_being",
+    title: "Well-Being",
+    caption: "Academic experiences may affect stress, confidence, and emotional well-being.",
+    image: "/images/mindfulness-study/why-it-matters-well-being.png",
+    alt: "Image representing student well-being or emotional strain.",
+    fallback: "Well-Being",
+  },
+  {
+    key: "retention",
+    title: "Retention",
+    caption: "These patterns may ultimately influence persistence and retention in engineering.",
+    image: "/images/mindfulness-study/why-it-matters-retention.png",
+    alt: "Image representing student retention or persistence in school.",
+    fallback: "Retention",
+  },
+];
+
 
 function gradeCompositeLabel(selectedGradeKeys) {
   if (selectedGradeKeys.length === GRADE_OUTCOMES.length) {
@@ -1144,7 +1553,7 @@ function ResearchQuestionsSection({ data }) {
   return (
     <section style={styles.prioritySection}>
       <div style={styles.sectionIntro}>
-        <div style={styles.sectionKicker}>Central study question</div>
+        <div style={styles.sectionKicker}>Research questions</div>
         <h2 style={styles.h2}>What is this study trying to understand?</h2>
         <p style={styles.noteLarge}>
           The study asks whether mindfulness traits are related to engineering problem-solving
@@ -1185,7 +1594,9 @@ function WhyEmotionRegulationMatters() {
           problem-solving performance.
         </p>
       </div>
-    </section>
+    
+        <WhyItMattersDiagram />
+</section>
   );
 }
 
@@ -1317,34 +1728,478 @@ function QualitativePhaseSection({ data }) {
   );
 }
 
-function MethodsMeasuresSection({ data, summary, counts }) {
-  const methods = data.methods || {};
+const PARTICIPANT_DEMOGRAPHICS = [
+  {
+    key: "gender",
+    label: "Gender",
+    n: 128,
+    items: [
+      { label: "Man", count: 88 },
+      { label: "Woman", count: 30 },
+      { label: "Prefer not to answer", count: 10 },
+    ],
+  },
+  {
+    key: "race_ethnicity",
+    label: "Race / ethnicity",
+    n: 128,
+    items: [
+      { label: "White", count: 108 },
+      { label: "Hispanic or Latino", count: 7 },
+      { label: "Asian", count: 1 },
+      { label: "Prefer not to answer", count: 2 },
+      { label: "Other / unclear", count: 10 },
+    ],
+  },
+  {
+    key: "academic_level",
+    label: "Academic level",
+    n: 128,
+    items: [
+      { label: "Second-year", count: 83 },
+      { label: "Third-year", count: 27 },
+      { label: "First-year", count: 5 },
+      { label: "Fourth-year", count: 3 },
+      { label: "Other", count: 10 },
+    ],
+  },
+  {
+    key: "major",
+    label: "Major",
+    n: 128,
+    items: [
+      { label: "Mechanical Engineering", count: 87 },
+      { label: "Civil Engineering", count: 19 },
+      { label: "Biological Engineering", count: 11 },
+      { label: "Other", count: 11 },
+    ],
+  },
+];
+
+const DEMO_PIE_COLORS = [
+  "#f2382f",
+  "#ff9800",
+  "#f7d233",
+  "#43a844",
+  "#2f86df",
+];
+
+function sortedDemographicItems(demographic) {
+  return [...demographic.items].sort((a, b) => b.count - a.count);
+}
+
+function participantWanderAnimationName(activeKey) {
+  const names = {
+    gender: "participantWanderGender",
+    race_ethnicity: "participantWanderRace",
+    academic_level: "participantWanderLevel",
+    major: "participantWanderMajor",
+  };
+
+  return names[activeKey] || "participantWanderGender";
+}
+
+const WANDERING_PERSON_CATEGORY_INDEX_BY_KEY = {
+  gender: 0,
+  race_ethnicity: 1,
+  academic_level: 2,
+  major: 3,
+};
+
+function participantWrongGroupPosition(person, categoryCount) {
+  const centers = participantPileCenters(categoryCount);
+  const wrongIndex = (person.categoryIndex + 1) % categoryCount;
+  return centers[wrongIndex] || centers[0] || { x: 50, y: 50 };
+}
+
+function clampPercent(value, min = 8, max = 92) {
+  return Math.max(min, Math.min(max, value));
+}
+
+function participantPileCenters(count) {
+  if (count === 3) {
+    return [
+      { x: 22, y: 52 },
+      { x: 50, y: 52 },
+      { x: 78, y: 52 },
+    ];
+  }
+
+  if (count === 4) {
+    return [
+      { x: 20, y: 38 },
+      { x: 50, y: 38 },
+      { x: 80, y: 38 },
+      { x: 50, y: 74 },
+    ];
+  }
+
+  return [
+    { x: 16, y: 36 },
+    { x: 38, y: 36 },
+    { x: 60, y: 36 },
+    { x: 28, y: 74 },
+    { x: 52, y: 74 },
+  ];
+}
+
+function participantPersonPosition(person, categoryCount) {
+  const centers = participantPileCenters(categoryCount);
+  const center = centers[person.categoryIndex] || { x: 50, y: 50 };
+  const cols = Math.ceil(Math.sqrt(person.categorySize * 1.35));
+  const rows = Math.ceil(person.categorySize / cols);
+  const col = person.categoryOffset % cols;
+  const row = Math.floor(person.categoryOffset / cols);
+
+  const maxWidth = categoryCount <= 3 ? 25 : 21;
+  const maxHeight = categoryCount <= 3 ? 34 : 30;
+  const stepX = cols > 1 ? Math.min(2.35, maxWidth / (cols - 1)) : 0;
+  const stepY = rows > 1 ? Math.min(3.35, maxHeight / (rows - 1)) : 0;
+
+  return {
+    x: center.x + (col - (cols - 1) / 2) * stepX,
+    y: center.y + (row - (rows - 1) / 2) * stepY,
+  };
+}
+
+function buildParticipantPeople(demographic, activeKey) {
+  const people = [];
+  const items = sortedDemographicItems(demographic);
+  const requestedWanderCategory =
+    WANDERING_PERSON_CATEGORY_INDEX_BY_KEY[activeKey] ?? 0;
+  const wanderCategoryIndex = Math.min(
+    requestedWanderCategory,
+    Math.max(0, items.length - 1)
+  );
+
+  items.forEach((item, categoryIndex) => {
+    for (let i = 0; i < item.count; i += 1) {
+      people.push({
+        id: `P${String(people.length + 1).padStart(3, "0")}`,
+        categoryIndex,
+        categoryOffset: i,
+        categorySize: item.count,
+        categoryLabel: item.label,
+        color: DEMO_PIE_COLORS[categoryIndex % DEMO_PIE_COLORS.length],
+        isWanderer: categoryIndex === wanderCategoryIndex && i === 0,
+      });
+    }
+  });
+
+  return people.slice(0, 128);
+}
+
+
+function ParticipantPersonGlyph({ person, categoryCount, activeKey }) {
+  const position = participantPersonPosition(person, categoryCount);
+  const wrongPosition = participantWrongGroupPosition(person, categoryCount);
+  const wanderAnimation = participantWanderAnimationName(activeKey);
+
+  const loopOne = {
+    x: clampPercent((position.x + wrongPosition.x) / 2 + 11),
+    y: clampPercent(Math.min(position.y, wrongPosition.y) - 24, 8, 84),
+  };
+
+  const loopTwo = {
+    x: clampPercent((position.x + wrongPosition.x) / 2 - 14),
+    y: clampPercent(Math.min(position.y, wrongPosition.y) - 36, 8, 84),
+  };
+
+  const catchUp = {
+    x: clampPercent(position.x * 0.74 + wrongPosition.x * 0.26),
+    y: clampPercent(position.y * 0.74 + wrongPosition.y * 0.26),
+  };
+
+  return (
+    <div
+      className={person.isWanderer ? "participant-person-marker participant-wanderer" : "participant-person-marker"}
+      style={{
+        ...styles.participantPersonMarker,
+        left: `${position.x}%`,
+        top: `${position.y}%`,
+        color: person.color,
+        ...(person.isWanderer
+          ? {
+              "--wander-final-left": `${position.x}%`,
+              "--wander-final-top": `${position.y}%`,
+              "--wander-loop-one-left": `${loopOne.x}%`,
+              "--wander-loop-one-top": `${loopOne.y}%`,
+              "--wander-loop-two-left": `${loopTwo.x}%`,
+              "--wander-loop-two-top": `${loopTwo.y}%`,
+              "--wander-wrong-left": `${wrongPosition.x}%`,
+              "--wander-wrong-top": `${wrongPosition.y}%`,
+              "--wander-catch-left": `${catchUp.x}%`,
+              "--wander-catch-top": `${catchUp.y}%`,
+              zIndex: 4,
+              transition: "none",
+              animation: `${wanderAnimation} 2300ms cubic-bezier(0.22, 1, 0.36, 1) both`,
+              animationDelay: "60ms",
+              filter:
+                "drop-shadow(0 0 5px rgba(234,215,164,0.55)) drop-shadow(0 1px 1px rgba(0,0,0,0.45))",
+            }
+          : {}),
+      }}
+      title={`${person.id}: ${person.categoryLabel}${person.isWanderer ? " — wandering participant" : ""}`}
+    >
+      <svg
+        viewBox="0 0 14 18"
+        aria-hidden="true"
+        style={styles.participantPersonSvg}
+      >
+        <circle cx="7" cy="3.8" r="3" fill="currentColor" />
+        <path
+          d="M 3.1 17 C 3.35 11.2, 4.7 8.3, 7 8.3 C 9.3 8.3, 10.65 11.2, 10.9 17 Z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+  );
+}
+
+
+function ParticipantPeopleField({ demographic, activeKey }) {
+  const people = buildParticipantPeople(demographic, activeKey);
+
+  return (
+    <div style={styles.participantPeopleCard}>
+      <div style={styles.participantPeopleHeader}>
+        <h3 style={styles.chartTitle}>128 participant units</h3>
+        <p style={styles.chartNote}>
+          Each icon represents one cleaned record. Icons regroup by the selected demographic variable.
+        </p>
+      </div>
+
+      <div style={styles.participantPeopleField}>
+        {people.map((person) => (
+          <ParticipantPersonGlyph
+            key={person.id}
+            person={person}
+            categoryCount={demographic.items.length}
+            activeKey={activeKey}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
+function ParticipantDemographicChart({ demographic }) {
+  const total = demographic.items.reduce((sum, item) => sum + item.count, 0);
+
+  function polarToCartesian(cx, cy, r, angleDegrees) {
+    const angleRadians = ((angleDegrees - 90) * Math.PI) / 180;
+
+    return {
+      x: cx + r * Math.cos(angleRadians),
+      y: cy + r * Math.sin(angleRadians),
+    };
+  }
+
+  function describeSlice(cx, cy, r, startAngle, endAngle) {
+    const start = polarToCartesian(cx, cy, r, endAngle);
+    const end = polarToCartesian(cx, cy, r, startAngle);
+    const largeArcFlag = endAngle - startAngle > 180 ? "1" : "0";
+
+    return [
+      `M ${cx} ${cy}`,
+      `L ${start.x} ${start.y}`,
+      `A ${r} ${r} 0 ${largeArcFlag} 0 ${end.x} ${end.y}`,
+      "Z",
+    ].join(" ");
+  }
+
+  let currentAngle = 0;
+
+  const slices = sortedDemographicItems(demographic).map((item, index) => {
+    const angle = total > 0 ? (item.count / total) * 360 : 0;
+    const startAngle = currentAngle;
+    const endAngle = currentAngle + angle;
+    currentAngle = endAngle;
+
+    return {
+      ...item,
+      color: DEMO_PIE_COLORS[index % DEMO_PIE_COLORS.length],
+      percent: total > 0 ? (item.count / total) * 100 : 0,
+      path: describeSlice(50, 50, 39, startAngle, endAngle),
+    };
+  });
+
+  return (
+    <div style={styles.participantDemoChartCard}>
+      <div style={styles.participantDemoChartHeader}>
+        <h3 style={styles.chartTitle}>{demographic.label}</h3>
+      </div>
+
+      <div style={styles.participantDemoPieLayout}>
+        <div style={styles.participantDemoPieSvgWrap}>
+          <svg
+            viewBox="0 0 100 100"
+            role="img"
+            aria-label={`${demographic.label} pie chart`}
+            style={styles.participantDemoPieSvg}
+          >
+            {slices.map((slice) => (
+              <path
+                key={slice.label}
+                d={slice.path}
+                fill={slice.color}
+                stroke="rgba(16,17,18,0.95)"
+                strokeWidth="1.4"
+              >
+                <title>{`${slice.label}: ${slice.count} (${fmt(slice.percent, 1)}%)`}</title>
+              </path>
+            ))}
+
+            <circle
+              cx="50"
+              cy="50"
+              r="20"
+              fill="rgba(16,17,18,0.92)"
+              stroke="rgba(255,255,255,0.10)"
+              strokeWidth="1"
+            />
+          </svg>
+        </div>
+
+        <div style={styles.participantDemoPieLegend}>
+          {slices.map((slice) => (
+            <div key={slice.label} style={styles.participantDemoPieLegendRow}>
+              <span
+                style={{
+                  ...styles.participantDemoPieSwatch,
+                  background: slice.color,
+                }}
+              />
+              <span style={styles.participantDemoPieLegendLabel}>{slice.label}</span>
+              <span style={styles.participantDemoPieLegendValue}>
+                {slice.count} <span style={styles.participantDemoBarPercent}>({fmt(slice.percent, 1)}%)</span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+function ParticipantDemographicsViewer() {
+  const [activeKey, setActiveKey] = useState("gender");
+
+  const activeDemographic =
+    PARTICIPANT_DEMOGRAPHICS.find((item) => item.key === activeKey) ||
+    PARTICIPANT_DEMOGRAPHICS[0];
+
+  return (
+    <div style={styles.participantDemoWindow}>
+      <div style={styles.participantDemoMain}>
+        <div style={styles.chartHeader}>
+          <h3 style={styles.chartTitle}>Participant demographic profile</h3>
+          <p style={styles.chartNote}>
+            Select a demographic variable. The pie chart and participant icons regroup to represent that distribution.
+          </p>
+        </div>
+
+        <div style={styles.participantDemoSingleDisplay}>
+          <ParticipantDemographicChart demographic={activeDemographic} />
+          <ParticipantPeopleField demographic={activeDemographic} activeKey={activeKey} />
+
+          <div
+            className="participant-demo-bottom-controls"
+            style={styles.participantDemoBottomControls}
+          >
+            <div
+              className="participant-demo-inline-stats"
+              style={styles.participantDemoInlineStats}
+            >
+              <div style={styles.participantDemoInlineStatNumber}>
+                <span style={styles.controlStatVar}>n</span>
+                <span style={styles.controlStatEquals}> = </span>
+                <span style={styles.controlStatValue}>128</span>
+              </div>
+              <div style={styles.participantDemoControlNote}>
+                Blank demographic responses are included in the appropriate not reported / other category.
+              </div>
+            </div>
+
+            <div
+              className="participant-demo-control-panel"
+              style={styles.participantDemoControlPanel}
+            >
+              {PARTICIPANT_DEMOGRAPHICS.map((item) => {
+                const active = item.key === activeKey;
+
+                return (
+                  <button
+                    key={item.key}
+                    className="participant-demo-chip"
+                    type="button"
+                    onClick={() => setActiveKey(item.key)}
+                    style={{
+                      ...styles.participantDemoChip,
+                      background: active ? "rgba(234,215,164,0.86)" : "rgba(160,160,160,0.13)",
+                      borderColor: active ? "rgba(234,215,164,0.95)" : "rgba(180,180,180,0.22)",
+                      color: active ? "#101112" : "rgba(210,210,210,0.42)",
+                      opacity: active ? 1 : 0.62,
+                    }}
+                  >
+                    {item.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+function MethodsMeasuresSection({ data }) {
+  const totalStudents = data?.dataset_summary?.n_rows_cleaned || 128;
 
   return (
     <section style={styles.section}>
-      <div style={styles.sectionIntro}>
-        <div style={styles.sectionKicker}>Methods and measures</div>
-        <h2 style={styles.h2}>How the study is being measured</h2>
+      <div style={styles.sectionKicker}>Participants</div>
+      <h2 style={styles.sectionTitle}>Who participated in the study</h2>
+
+      <p style={styles.sectionText}>
+        The cleaned quantitative dataset includes {totalStudents} undergraduate engineering student records. All 128 cleaned records are included below; blank demographic responses are counted in the appropriate not reported / other category.
+      </p>
+
+      <div style={styles.participantOverviewGrid}>
+        <div style={styles.participantOverviewCard}>
+          <div style={styles.statLabel}>Students</div>
+          <div style={styles.statValue}>{totalStudents}</div>
+          <div style={styles.statNote}>cleaned quantitative records</div>
+        </div>
+
+        <div style={styles.participantOverviewCard}>
+          <div style={styles.statLabel}>Demographic records</div>
+          <div style={styles.statValue}>128</div>
+          <div style={styles.statNote}>blank responses counted as not reported / other</div>
+        </div>
+
+        <div style={styles.participantOverviewCard}>
+          <div style={styles.statLabel}>Majors represented</div>
+          <div style={styles.statValue}>4</div>
+          <div style={styles.statNote}>including mechanical, civil, biological, and other</div>
+        </div>
+
+        <div style={styles.participantOverviewCard}>
+          <div style={styles.statLabel}>Course context</div>
+          <div style={styles.statValue}>3</div>
+          <div style={styles.statNote}>Statics, Dynamics, and Mechanics of Materials</div>
+        </div>
       </div>
 
-      <div style={styles.methodsStatGrid}>
-        <StatCard label="Students" value={summary.n_rows_cleaned ?? "—"} sub="cleaned quantitative records" />
-        <StatCard label="Mindfulness facets" value="5" sub="FFMQ trait dimensions" />
-        <StatCard label="Overall grades" value={counts.overall_grade ?? "—"} sub="available quantitative outcomes" />
-        <StatCard label="Qualitative phase" value="Next" sub="think-aloud problem solving" />
-      </div>
-
-      <dl style={styles.dl}>
-        {Object.entries(methods).map(([key, value]) => (
-          <div key={key} style={styles.dlRow}>
-            <dt style={styles.dt}>{labelFromKey(key)}</dt>
-            <dd style={styles.dd}>{value}</dd>
-          </div>
-        ))}
-      </dl>
+      <ParticipantDemographicsViewer />
     </section>
   );
 }
+
 
 function RegressionSummary({ rows }) {
   return (
@@ -1765,6 +2620,452 @@ const styles = {
     margin: 0,
     color: "#d8d0c0",
     lineHeight: 1.45,
+  },
+
+  whyMattersDiagram: {
+    display: "grid",
+    gap: "22px",
+    marginTop: "18px",
+  },
+  whyMattersFlowScroller: {
+    overflowX: "auto",
+    paddingBottom: "4px",
+  },
+  whyMattersFlowWrap: {
+    position: "relative",
+    width: "100%",
+    minWidth: "0",
+    paddingTop: "28px",
+  },
+  whyMattersFeedbackArrow: {
+    position: "absolute",
+    top: "0",
+    left: "2.5%",
+    width: "73%",
+    height: "36px",
+    pointerEvents: "none",
+    opacity: 0.98,
+  },
+  whyMattersFeedbackSvg: {
+    display: "block",
+    width: "100%",
+    height: "100%",
+    overflow: "visible",
+  },
+  whyMattersFlow: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: "clamp(6px, 1.2vw, 18px)",
+    width: "100%",
+    minWidth: "0",
+  },
+  whyMattersFlowItem: {
+    display: "flex",
+    alignItems: "center",
+    gap: "clamp(6px, 1vw, 18px)",
+    minWidth: 0,
+    flex: "1 1 0",
+  },
+  whyMattersStageBox: {
+    flex: "1 1 auto",
+    minWidth: "0",
+    minHeight: "clamp(46px, 5.2vw, 62px)",
+    padding: "clamp(8px, 1.1vw, 12px) clamp(10px, 1.6vw, 18px)",
+    display: "grid",
+    placeItems: "center",
+    boxSizing: "border-box",
+    borderRadius: "7px",
+    border: "1px solid rgba(201,165,106,0.42)",
+    background: "rgba(0,0,0,0.18)",
+    color: "#fff3dd",
+    fontSize: "clamp(0.78rem, 1.35vw, 1.08rem)",
+    fontWeight: 700,
+    lineHeight: 1.12,
+    textAlign: "center",
+    boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.02)",
+  },
+  whyMattersArrow: {
+    color: "#d84a2d",
+    fontSize: "clamp(1rem, 1.8vw, 1.7rem)",
+    fontWeight: 700,
+    lineHeight: 1,
+    flex: "0 0 auto",
+  },
+  whyMattersImageGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+    gap: "20px",
+  },
+  whyMattersFigure: {
+    margin: 0,
+    display: "grid",
+    gridTemplateRows: "auto 1fr",
+    gap: "10px",
+    alignItems: "start",
+  },
+  whyMattersImageButton: {
+    appearance: "none",
+    border: "none",
+    padding: 0,
+    margin: 0,
+    width: "100%",
+    display: "block",
+    alignSelf: "start",
+    background: "transparent",
+    cursor: "zoom-in",
+    fontFamily: "Times New Roman, Times, serif",
+  },
+  whyMattersImageFrame: {
+    position: "relative",
+    aspectRatio: "4 / 3",
+    borderRadius: "8px",
+    overflow: "hidden",
+    border: "1px solid rgba(255,255,255,0.12)",
+    background: "rgba(255,255,255,0.03)",
+  },
+  whyMattersImageFallback: {
+    position: "absolute",
+    inset: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "18px",
+    textAlign: "center",
+    color: "#d8d0c0",
+    fontSize: "1rem",
+    lineHeight: 1.2,
+    background:
+      "linear-gradient(135deg, rgba(201,165,106,0.10), rgba(255,255,255,0.04))",
+  },
+  whyMattersImage: {
+    position: "absolute",
+    inset: 0,
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+  },
+  whyMattersCaption: {
+    alignSelf: "start",
+    minHeight: "4.2em",
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "center",
+    color: "#bfb4a3",
+    fontSize: "0.95rem",
+    lineHeight: 1.35,
+    textAlign: "center",
+  },
+  imageLightbox: {
+    position: "fixed",
+    inset: 0,
+    zIndex: 1000,
+    display: "grid",
+    placeItems: "center",
+    padding: "28px",
+    background: "rgba(0,0,0,0.78)",
+    backdropFilter: "blur(5px)",
+  },
+  imageLightboxCard: {
+    position: "relative",
+    width: "min(1040px, 94vw)",
+    maxHeight: "92vh",
+    display: "grid",
+    gap: "12px",
+    padding: "14px",
+    borderRadius: "10px",
+    border: "1px solid rgba(201,165,106,0.34)",
+    background: "rgba(16,17,18,0.96)",
+    boxShadow: "0 24px 70px rgba(0,0,0,0.62)",
+  },
+  imageLightboxClose: {
+    position: "absolute",
+    top: "8px",
+    right: "10px",
+    zIndex: 2,
+    width: "32px",
+    height: "32px",
+    borderRadius: "50%",
+    border: "1px solid rgba(255,255,255,0.22)",
+    background: "rgba(0,0,0,0.48)",
+    color: "#fff3dd",
+    fontSize: "1.45rem",
+    lineHeight: 1,
+    cursor: "pointer",
+  },
+  imageLightboxImageWrap: {
+    width: "100%",
+    maxHeight: "76vh",
+    borderRadius: "8px",
+    overflow: "hidden",
+    background: "rgba(255,255,255,0.03)",
+  },
+  imageLightboxImage: {
+    display: "block",
+    width: "100%",
+    maxHeight: "76vh",
+    objectFit: "contain",
+  },
+  imageLightboxCaption: {
+    display: "grid",
+    gap: "4px",
+    color: "#d8d0c0",
+    fontSize: "1rem",
+    lineHeight: 1.35,
+    textAlign: "center",
+  },
+  participantOverviewGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))",
+    gap: "12px",
+    margin: "18px 0 18px",
+  },
+  participantOverviewCard: {
+    padding: "16px",
+    borderRadius: "8px",
+    border: "1px solid rgba(255,255,255,0.12)",
+    background: "rgba(255,255,255,0.045)",
+  },
+  participantDemoWindow: {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    gap: "16px",
+    alignItems: "start",
+    marginTop: "18px",
+    padding: "16px",
+    borderRadius: "8px",
+    border: "1px solid rgba(255,255,255,0.12)",
+    background: "rgba(0,0,0,0.18)",
+    overflow: "hidden",
+  },
+  participantDemoMain: {
+    minWidth: 0,
+  },
+  participantDemoSingleDisplay: {
+    display: "grid",
+    gap: "14px",
+    marginTop: "14px",
+  },
+  participantDemoChartGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+    gap: "12px",
+    marginTop: "14px",
+  },
+  participantDemoChartCard: {
+    padding: "14px",
+    borderRadius: "8px",
+    border: "1px solid rgba(255,255,255,0.10)",
+    background: "rgba(255,255,255,0.035)",
+  },
+  participantDemoChartHeader: {
+    display: "flex",
+    justifyContent: "flex-start",
+    gap: "12px",
+    alignItems: "baseline",
+    marginBottom: "10px",
+  },
+  participantDemoChartN: {
+    color: "#c9a56a",
+    fontSize: "0.9rem",
+    whiteSpace: "nowrap",
+  },
+  participantDemoPieControlGrid: {
+    display: "grid",
+    gridTemplateColumns: "minmax(0, 1fr) minmax(145px, 180px) 180px",
+    gap: "14px",
+    alignItems: "center",
+  },
+  participantDemoInlineStats: {
+    display: "grid",
+    gap: "4px",
+    padding: "2px 4px",
+    color: "#fff3dd",
+    fontFamily: "Times New Roman, Times, serif",
+  },
+  participantDemoInlineStatNumber: {
+    fontSize: "1.1rem",
+    lineHeight: 1.2,
+  },
+  participantDemoPieLayout: {
+    display: "grid",
+    gridTemplateColumns: "minmax(180px, 240px) 1fr",
+    gap: "18px",
+    alignItems: "center",
+  },
+  participantDemoPieSvgWrap: {
+    display: "grid",
+    placeItems: "center",
+    minWidth: 0,
+  },
+  participantDemoPieSvg: {
+    width: "220px",
+    maxWidth: "100%",
+    height: "220px",
+    display: "block",
+  },
+  participantDemoPieCenterLabel: {
+    fill: "#bfb4a3",
+    fontFamily: "Times New Roman, Times, serif",
+    fontSize: "8px",
+    fontStyle: "italic",
+  },
+  participantDemoPieCenterValue: {
+    fill: "#fff3dd",
+    fontFamily: "Times New Roman, Times, serif",
+    fontSize: "11px",
+    fontWeight: 700,
+  },
+  participantDemoPieLegend: {
+    display: "grid",
+    gap: "7px",
+    minWidth: 0,
+  },
+  participantDemoPieLegendRow: {
+    display: "grid",
+    gridTemplateColumns: "10px 1fr max-content",
+    gap: "7px",
+    alignItems: "center",
+    minWidth: 0,
+  },
+  participantDemoPieSwatch: {
+    width: "10px",
+    height: "10px",
+    borderRadius: "50%",
+    boxShadow: "0 0 0 1px rgba(255,255,255,0.18)",
+  },
+  participantDemoPieLegendLabel: {
+    color: "#fff3dd",
+    fontSize: "0.86rem",
+    lineHeight: 1.15,
+    minWidth: 0,
+  },
+  participantDemoPieLegendValue: {
+    color: "#d8d0c0",
+    fontSize: "0.82rem",
+    whiteSpace: "nowrap",
+  },
+  participantDemoBars: {
+    display: "grid",
+    gap: "10px",
+  },
+  participantDemoBarRow: {
+    display: "grid",
+    gap: "4px",
+  },
+  participantDemoBarTopLine: {
+    display: "flex",
+    justifyContent: "space-between",
+    gap: "12px",
+    alignItems: "baseline",
+  },
+  participantDemoBarLabel: {
+    color: "#fff3dd",
+    fontSize: "0.92rem",
+    lineHeight: 1.15,
+  },
+  participantDemoBarValue: {
+    color: "#d8d0c0",
+    fontSize: "0.88rem",
+    whiteSpace: "nowrap",
+  },
+  participantDemoBarPercent: {
+    color: "#a99d8c",
+  },
+  participantDemoBarTrack: {
+    height: "9px",
+    borderRadius: "999px",
+    overflow: "hidden",
+    background: "rgba(255,255,255,0.08)",
+  },
+  participantDemoBarFill: {
+    height: "100%",
+    borderRadius: "999px",
+    background: "linear-gradient(90deg, rgba(201,165,106,0.82), rgba(234,215,164,0.96))",
+  },
+  participantPeopleCard: {
+    padding: "14px",
+    borderRadius: "8px",
+    border: "1px solid rgba(255,255,255,0.10)",
+    background: "rgba(255,255,255,0.035)",
+  },
+  participantPeopleHeader: {
+    marginBottom: "10px",
+  },
+  participantPeopleField: {
+    position: "relative",
+    height: "310px",
+    borderRadius: "8px",
+    overflow: "hidden",
+    border: "1px solid rgba(255,255,255,0.08)",
+    background:
+      "radial-gradient(circle at 50% 50%, rgba(234,215,164,0.055), rgba(0,0,0,0.08) 58%, rgba(0,0,0,0.16))",
+  },
+  participantPersonMarker: {
+    position: "absolute",
+    width: "13px",
+    height: "17px",
+    transform: "translate(-50%, -50%)",
+    transition:
+      "left 760ms cubic-bezier(0.22, 1, 0.36, 1), top 760ms cubic-bezier(0.22, 1, 0.36, 1), color 240ms ease, opacity 240ms ease",
+    opacity: 0.92,
+    filter: "drop-shadow(0 1px 1px rgba(0,0,0,0.40))",
+  },
+  participantPersonSvg: {
+    display: "block",
+    width: "100%",
+    height: "100%",
+  },
+  participantDemoBottomControls: {
+    display: "grid",
+    gridTemplateColumns: "minmax(220px, 310px) 1fr",
+    gap: "12px",
+    alignItems: "center",
+    padding: "10px",
+    borderRadius: "8px",
+    border: "1px solid rgba(255,255,255,0.10)",
+    background: "rgba(0,0,0,0.14)",
+  },
+  participantDemoControlPanel: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    gap: "7px",
+    padding: 0,
+    border: "none",
+    background: "transparent",
+    boxShadow: "none",
+  },
+  participantDemoChip: {
+    appearance: "none",
+    width: "auto",
+    minWidth: "max-content",
+    padding: "7px 12px",
+    borderRadius: "6px",
+    border: "1px solid rgba(255,255,255,0.18)",
+    fontFamily: "Times New Roman, Times, serif",
+    fontSize: "0.78rem",
+    fontWeight: 800,
+    lineHeight: 1.05,
+    textAlign: "left",
+    cursor: "pointer",
+    whiteSpace: "nowrap",
+    transition: "background 140ms ease, color 140ms ease, opacity 140ms ease, border-color 140ms ease",
+  },
+  participantDemoControlStats: {
+    marginTop: "3px",
+    paddingTop: "9px",
+    borderTop: "1px solid rgba(255,255,255,0.14)",
+    color: "#fff3dd",
+    fontFamily: "Times New Roman, Times, serif",
+    fontSize: "1rem",
+  },
+  participantDemoControlNote: {
+    marginTop: "5px",
+    color: "#bfb4a3",
+    fontSize: "0.78rem",
+    lineHeight: 1.25,
   },
   matrixCard: {
     background: "rgba(0,0,0,0.18)",
