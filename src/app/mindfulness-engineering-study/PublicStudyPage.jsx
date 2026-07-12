@@ -236,6 +236,11 @@ function ResponsivePageCSS() {
       }
 
       @media (max-width: 1180px) {
+        .participant-demo-upper-display {
+          grid-template-columns: 1fr !important;
+        }
+
+
         .participant-demo-bottom-controls {
           grid-template-columns: 1fr !important;
         }
@@ -1987,6 +1992,10 @@ function ParticipantPeopleField({ demographic, activeKey }) {
 function ParticipantDemographicChart({ demographic }) {
   const total = demographic.items.reduce((sum, item) => sum + item.count, 0);
 
+  function svgNum(value) {
+    return Number(value).toFixed(4);
+  }
+
   function polarToCartesian(cx, cy, r, angleDegrees) {
     const angleRadians = ((angleDegrees - 90) * Math.PI) / 180;
 
@@ -2002,9 +2011,9 @@ function ParticipantDemographicChart({ demographic }) {
     const largeArcFlag = endAngle - startAngle > 180 ? "1" : "0";
 
     return [
-      `M ${cx} ${cy}`,
-      `L ${start.x} ${start.y}`,
-      `A ${r} ${r} 0 ${largeArcFlag} 0 ${end.x} ${end.y}`,
+      `M ${svgNum(cx)} ${svgNum(cy)}`,
+      `L ${svgNum(start.x)} ${svgNum(start.y)}`,
+      `A ${svgNum(r)} ${svgNum(r)} 0 ${largeArcFlag} 0 ${svgNum(end.x)} ${svgNum(end.y)}`,
       "Z",
     ].join(" ");
   }
@@ -2102,8 +2111,13 @@ function ParticipantDemographicsViewer() {
         </div>
 
         <div style={styles.participantDemoSingleDisplay}>
-          <ParticipantDemographicChart demographic={activeDemographic} />
-          <ParticipantPeopleField demographic={activeDemographic} activeKey={activeKey} />
+          <div
+            className="participant-demo-upper-display"
+            style={styles.participantDemoUpperDisplay}
+          >
+            <ParticipantDemographicChart demographic={activeDemographic} />
+            <ParticipantPeopleField demographic={activeDemographic} activeKey={activeKey} />
+          </div>
 
           <div
             className="participant-demo-bottom-controls"
@@ -2694,15 +2708,17 @@ const styles = {
   },
   whyMattersImageGrid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-    gap: "20px",
+    gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+    gap: "clamp(6px, 1.8vw, 20px)",
+    alignItems: "start",
   },
   whyMattersFigure: {
     margin: 0,
     display: "grid",
     gridTemplateRows: "auto 1fr",
-    gap: "10px",
+    gap: "clamp(5px, 1.2vw, 10px)",
     alignItems: "start",
+    minWidth: 0,
   },
   whyMattersImageButton: {
     appearance: "none",
@@ -2710,6 +2726,7 @@ const styles = {
     padding: 0,
     margin: 0,
     width: "100%",
+    minWidth: 0,
     display: "block",
     alignSelf: "start",
     background: "transparent",
@@ -2719,7 +2736,9 @@ const styles = {
   whyMattersImageFrame: {
     position: "relative",
     aspectRatio: "4 / 3",
-    borderRadius: "8px",
+    width: "100%",
+    minWidth: 0,
+    borderRadius: "clamp(5px, 1.2vw, 8px)",
     overflow: "hidden",
     border: "1px solid rgba(255,255,255,0.12)",
     background: "rgba(255,255,255,0.03)",
@@ -2747,14 +2766,15 @@ const styles = {
   },
   whyMattersCaption: {
     alignSelf: "start",
-    minHeight: "4.2em",
+    minHeight: "clamp(3.2em, 8vw, 4.2em)",
     display: "flex",
     alignItems: "flex-start",
     justifyContent: "center",
     color: "#bfb4a3",
-    fontSize: "0.95rem",
-    lineHeight: 1.35,
+    fontSize: "clamp(0.54rem, 2.05vw, 0.95rem)",
+    lineHeight: 1.22,
     textAlign: "center",
+    textWrap: "balance",
   },
   imageLightbox: {
     position: "fixed",
@@ -2846,6 +2866,12 @@ const styles = {
     gap: "14px",
     marginTop: "14px",
   },
+  participantDemoUpperDisplay: {
+    display: "grid",
+    gridTemplateColumns: "minmax(280px, 0.72fr) minmax(430px, 1.28fr)",
+    gap: "14px",
+    alignItems: "stretch",
+  },
   participantDemoChartGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
@@ -2857,6 +2883,8 @@ const styles = {
     borderRadius: "8px",
     border: "1px solid rgba(255,255,255,0.10)",
     background: "rgba(255,255,255,0.035)",
+    minWidth: 0,
+    height: "100%",
   },
   participantDemoChartHeader: {
     display: "flex",
@@ -2889,19 +2917,22 @@ const styles = {
   },
   participantDemoPieLayout: {
     display: "grid",
-    gridTemplateColumns: "minmax(180px, 240px) 1fr",
-    gap: "18px",
+    gridTemplateColumns: "1fr",
+    gap: "14px",
     alignItems: "center",
+    justifyItems: "center",
   },
   participantDemoPieSvgWrap: {
     display: "grid",
     placeItems: "center",
+    width: "100%",
     minWidth: 0,
   },
   participantDemoPieSvg: {
-    width: "220px",
+    width: "min(240px, 82%)",
     maxWidth: "100%",
-    height: "220px",
+    height: "auto",
+    aspectRatio: "1 / 1",
     display: "block",
   },
   participantDemoPieCenterLabel: {
@@ -2919,11 +2950,13 @@ const styles = {
   participantDemoPieLegend: {
     display: "grid",
     gap: "7px",
+    width: "100%",
+    maxWidth: "430px",
     minWidth: 0,
   },
   participantDemoPieLegendRow: {
     display: "grid",
-    gridTemplateColumns: "10px 1fr max-content",
+    gridTemplateColumns: "10px minmax(0, 1fr) max-content",
     gap: "7px",
     alignItems: "center",
     minWidth: 0,
@@ -2988,13 +3021,15 @@ const styles = {
     borderRadius: "8px",
     border: "1px solid rgba(255,255,255,0.10)",
     background: "rgba(255,255,255,0.035)",
+    minWidth: 0,
+    height: "100%",
   },
   participantPeopleHeader: {
     marginBottom: "10px",
   },
   participantPeopleField: {
     position: "relative",
-    height: "310px",
+    height: "360px",
     borderRadius: "8px",
     overflow: "hidden",
     border: "1px solid rgba(255,255,255,0.08)",
