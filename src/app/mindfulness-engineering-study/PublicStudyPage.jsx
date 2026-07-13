@@ -17,8 +17,8 @@ function ResponsivePageCSS() {
 
       @keyframes participantWanderGender {
         0% {
-          left: var(--wander-final-left);
-          top: var(--wander-final-top);
+          left: var(--wander-start-left);
+          top: var(--wander-start-top);
           transform: translate(-50%, -50%) rotate(0deg) scale(1);
         }
         16% {
@@ -70,8 +70,8 @@ function ResponsivePageCSS() {
 
       @keyframes participantWanderRace {
         0% {
-          left: var(--wander-final-left);
-          top: var(--wander-final-top);
+          left: var(--wander-start-left);
+          top: var(--wander-start-top);
           transform: translate(-50%, -50%) rotate(0deg) scale(1);
         }
         15% {
@@ -123,8 +123,8 @@ function ResponsivePageCSS() {
 
       @keyframes participantWanderLevel {
         0% {
-          left: var(--wander-final-left);
-          top: var(--wander-final-top);
+          left: var(--wander-start-left);
+          top: var(--wander-start-top);
           transform: translate(-50%, -50%) rotate(0deg) scale(1);
         }
         16% {
@@ -176,8 +176,8 @@ function ResponsivePageCSS() {
 
       @keyframes participantWanderMajor {
         0% {
-          left: var(--wander-final-left);
-          top: var(--wander-final-top);
+          left: var(--wander-start-left);
+          top: var(--wander-start-top);
           transform: translate(-50%, -50%) rotate(0deg) scale(1);
         }
         14% {
@@ -1821,6 +1821,28 @@ function clampPercent(value, min = 8, max = 92) {
   return Math.max(min, Math.min(max, value));
 }
 
+function seededUnit(seedText) {
+  let hash = 2166136261;
+
+  for (let i = 0; i < seedText.length; i += 1) {
+    hash ^= seedText.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+
+  hash += hash << 13;
+  hash ^= hash >>> 7;
+  hash += hash << 3;
+  hash ^= hash >>> 17;
+  hash += hash << 5;
+
+  return ((hash >>> 0) % 1000000) / 1000000;
+}
+
+function seededIndex(seedText, count) {
+  if (!count || count <= 1) return 0;
+  return Math.floor(seededUnit(seedText) * count);
+}
+
 function participantPileCenters(categoryInfo) {
   const categorySizes = Array.isArray(categoryInfo)
     ? categoryInfo
@@ -1917,7 +1939,7 @@ function participantPersonPosition(person, categoryCount) {
 }
 
 
-function buildParticipantPeople(demographic, activeKey) {
+function buildParticipantPeople(demographic, activeKey, wanderSeed = 0) {
   const people = [];
   const items = sortedDemographicItems(demographic);
   const categorySizes = items.map((item) => item.count);
@@ -1928,9 +1950,27 @@ function buildParticipantPeople(demographic, activeKey) {
     Math.max(0, items.length - 1)
   );
 
+  const wanderCategorySize = items[wanderCategoryIndex]?.count || 1;
+  const wanderStartOffset = seededIndex(
+    `${activeKey}-${wanderSeed}-wander-start`,
+    wanderCategorySize
+  );
+  let wanderEndOffset = seededIndex(
+    `${activeKey}-${wanderSeed}-wander-end`,
+    wanderCategorySize
+  );
+
+  if (wanderCategorySize > 1 && wanderEndOffset === wanderStartOffset) {
+    wanderEndOffset =
+      (wanderEndOffset + Math.max(1, Math.floor(wanderCategorySize / 3))) %
+      wanderCategorySize;
+  }
+
+  let wanderer = null;
+
   items.forEach((item, categoryIndex) => {
     for (let i = 0; i < item.count; i += 1) {
-      people.push({
+      const basePerson = {
         id: `P${String(people.length + 1).padStart(3, "0")}`,
         categoryIndex,
         categoryOffset: i,
@@ -1938,28 +1978,54 @@ function buildParticipantPeople(demographic, activeKey) {
         categorySizes,
         categoryLabel: item.label,
         color: DEMO_PIE_COLORS[categoryIndex % DEMO_PIE_COLORS.length],
-        isWanderer: categoryIndex === wanderCategoryIndex && i === 0,
+      };
+
+      const isReservedLandingSlot =
+        categoryIndex === wanderCategoryIndex && i === wanderEndOffset;
+
+      if (isReservedLandingSlot) {
+        wanderer = {
+          ...basePerson,
+          id: `WANDER-${activeKey}-${wanderSeed}`,
+          isWanderer: true,
+          wanderStartOffset,
+        };
+        continue;
+      }
+
+      people.push({
+        ...basePerson,
+        isWanderer: false,
+        wanderStartOffset: null,
       });
     }
   });
 
-  return people.slice(0, 128);
+  return wanderer ? [...people, wanderer] : people.slice(0, 128);
 }
 
 
 function ParticipantPersonGlyph({ person, categoryCount, activeKey }) {
   const position = participantPersonPosition(person, categoryCount);
+  const startPerson =
+    person.isWanderer && Number.isFinite(person.wanderStartOffset)
+      ? {
+          ...person,
+          categoryOffset: person.wanderStartOffset,
+        }
+      : person;
+  const startPosition = participantPersonPosition(startPerson, categoryCount);
   const wrongPosition = participantWrongGroupPosition(person, categoryCount);
   const wanderAnimation = participantWanderAnimationName(activeKey);
 
   const loopOne = {
-    x: clampPercent((position.x + wrongPosition.x) / 2 + 11),
-    y: clampPercent(Math.min(position.y, wrongPosition.y) - 24, 8, 84),
+    x: clampPercent((startPosition.x + wrongPosition.x) / 2 + 11),
+    y: clampPercent(Math.min(startPosition.y, wrongPosition.y) - 24, 8, 84),
   };
 
   const loopTwo = {
-    x: clampPercent((position.x + wrongPosition.x) / 2 - 14),
-    y: clampPercent(Math.min(position.y, wrongPosition.y) - 36, 8, 84),
+    x: clampPercent((startPosition.x + wrongPosition.x) / 2 - 14),
+    y: clampPercent(Math.min(startPosition.y, wrongPosition.y) - 36, 8, 84),
   };
 
   const catchUp = {
@@ -1977,6 +2043,8 @@ function ParticipantPersonGlyph({ person, categoryCount, activeKey }) {
         color: person.color,
         ...(person.isWanderer
           ? {
+              "--wander-start-left": `${startPosition.x}%`,
+              "--wander-start-top": `${startPosition.y}%`,
               "--wander-final-left": `${position.x}%`,
               "--wander-final-top": `${position.y}%`,
               "--wander-loop-one-left": `${loopOne.x}%`,
@@ -2014,8 +2082,12 @@ function ParticipantPersonGlyph({ person, categoryCount, activeKey }) {
 }
 
 
-function ParticipantPeopleField({ demographic, activeKey }) {
-  const people = buildParticipantPeople(demographic, activeKey);
+function ParticipantPeopleField({ demographic, activeKey, wanderSeed }) {
+  const people = buildParticipantPeople(demographic, activeKey, wanderSeed);
+  const wanderer = people.find((person) => person.isWanderer);
+  const landingPosition = wanderer
+    ? participantPersonPosition(wanderer, demographic.items.length)
+    : null;
 
   return (
     <div style={styles.participantPeopleCard}>
@@ -2027,6 +2099,18 @@ function ParticipantPeopleField({ demographic, activeKey }) {
       </div>
 
       <div style={styles.participantPeopleField}>
+        {wanderer && landingPosition ? (
+          <div
+            style={{
+              ...styles.participantLandingSpot,
+              left: `${landingPosition.x}%`,
+              top: `${landingPosition.y}%`,
+              color: wanderer.color,
+            }}
+            aria-hidden="true"
+          />
+        ) : null}
+
         {people.map((person) => (
           <ParticipantPersonGlyph
             key={person.id}
@@ -2147,10 +2231,16 @@ function ParticipantDemographicChart({ demographic }) {
 
 function ParticipantDemographicsViewer() {
   const [activeKey, setActiveKey] = useState("gender");
+  const [wanderSeed, setWanderSeed] = useState(0);
 
   const activeDemographic =
     PARTICIPANT_DEMOGRAPHICS.find((item) => item.key === activeKey) ||
     PARTICIPANT_DEMOGRAPHICS[0];
+
+  function chooseDemographic(key) {
+    setActiveKey(key);
+    setWanderSeed((current) => current + 1);
+  }
 
   return (
     <div style={styles.participantDemoWindow}>
@@ -2168,7 +2258,11 @@ function ParticipantDemographicsViewer() {
             style={styles.participantDemoUpperDisplay}
           >
             <ParticipantDemographicChart demographic={activeDemographic} />
-            <ParticipantPeopleField demographic={activeDemographic} activeKey={activeKey} />
+            <ParticipantPeopleField
+              demographic={activeDemographic}
+              activeKey={activeKey}
+              wanderSeed={wanderSeed}
+            />
           </div>
 
           <div
@@ -2201,7 +2295,7 @@ function ParticipantDemographicsViewer() {
                     key={item.key}
                     className="participant-demo-chip"
                     type="button"
-                    onClick={() => setActiveKey(item.key)}
+                    onClick={() => chooseDemographic(item.key)}
                     style={{
                       ...styles.participantDemoChip,
                       background: active ? "rgba(234,215,164,0.86)" : "rgba(160,160,160,0.13)",
@@ -3087,6 +3181,17 @@ const styles = {
     border: "1px solid rgba(255,255,255,0.08)",
     background:
       "radial-gradient(circle at 50% 50%, rgba(234,215,164,0.055), rgba(0,0,0,0.08) 58%, rgba(0,0,0,0.16))",
+  },
+  participantLandingSpot: {
+    position: "absolute",
+    width: "13px",
+    height: "17px",
+    transform: "translate(-50%, -50%)",
+    border: "1px dashed currentColor",
+    borderRadius: "999px 999px 4px 4px",
+    opacity: 0.38,
+    boxShadow: "0 0 8px currentColor",
+    pointerEvents: "none",
   },
   participantPersonMarker: {
     position: "absolute",
