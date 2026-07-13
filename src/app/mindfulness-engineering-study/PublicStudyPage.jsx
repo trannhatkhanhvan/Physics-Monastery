@@ -1812,7 +1812,7 @@ const WANDERING_PERSON_CATEGORY_INDEX_BY_KEY = {
 };
 
 function participantWrongGroupPosition(person, categoryCount) {
-  const centers = participantPileCenters(categoryCount);
+  const centers = participantPileCenters(person.categorySizes || categoryCount);
   const wrongIndex = (person.categoryIndex + 1) % categoryCount;
   return centers[wrongIndex] || centers[0] || { x: 50, y: 50 };
 }
@@ -1821,55 +1821,106 @@ function clampPercent(value, min = 8, max = 92) {
   return Math.max(min, Math.min(max, value));
 }
 
-function participantPileCenters(count) {
-  if (count === 3) {
-    return [
-      { x: 22, y: 52 },
-      { x: 50, y: 52 },
-      { x: 78, y: 52 },
-    ];
-  }
+function participantPileCenters(categoryInfo) {
+  const categorySizes = Array.isArray(categoryInfo)
+    ? categoryInfo
+    : Array.from({ length: categoryInfo }, () => 1);
 
-  if (count === 4) {
-    return [
-      { x: 20, y: 38 },
-      { x: 50, y: 38 },
-      { x: 80, y: 38 },
-      { x: 50, y: 74 },
-    ];
-  }
+  const count = categorySizes.length;
 
-  return [
-    { x: 16, y: 36 },
-    { x: 38, y: 36 },
-    { x: 60, y: 36 },
-    { x: 28, y: 74 },
-    { x: 52, y: 74 },
-  ];
+  const rows =
+    count <= 4
+      ? [categorySizes.map((_, index) => index)]
+      : [
+          categorySizes.map((_, index) => index).slice(0, 3),
+          categorySizes.map((_, index) => index).slice(3),
+        ];
+
+  const yByRow =
+    rows.length === 1
+      ? [52]
+      : [38, 76];
+
+  const edgePadding = 12;
+  const rowGap = 7;
+  const availableWidth = 100 - edgePadding * 2;
+
+  const layouts = categorySizes.map(() => ({
+    x: 50,
+    y: 50,
+    slotWidth: 20,
+    maxWidth: 18,
+    maxHeight: 40,
+  }));
+
+  rows.forEach((rowIndexes, rowIndex) => {
+    const weights = rowIndexes.map((categoryIndex) =>
+      Math.sqrt(Math.max(categorySizes[categoryIndex], 1))
+    );
+
+    const gapTotal = rowGap * Math.max(0, rowIndexes.length - 1);
+    const availableForSlots = availableWidth - gapTotal;
+    const totalWeight = weights.reduce((sum, value) => sum + value, 0) || 1;
+
+    let slots = weights.map((weight) =>
+      Math.max(12, (availableForSlots * weight) / totalWeight)
+    );
+
+    const slotTotalBeforeScale = slots.reduce((sum, value) => sum + value, 0);
+
+    if (slotTotalBeforeScale + gapTotal > availableWidth) {
+      const scale = availableForSlots / slotTotalBeforeScale;
+      slots = slots.map((slot) => slot * scale);
+    }
+
+    const slotTotal = slots.reduce((sum, value) => sum + value, 0);
+    let cursor = edgePadding + (availableWidth - gapTotal - slotTotal) / 2;
+
+    rowIndexes.forEach((categoryIndex, indexInRow) => {
+      const slotWidth = slots[indexInRow];
+
+      layouts[categoryIndex] = {
+        x: cursor + slotWidth / 2,
+        y: yByRow[rowIndex] ?? 52,
+        slotWidth,
+        maxWidth: Math.max(13, Math.min(slotWidth * 0.9, 38)),
+        maxHeight: rows.length === 1 ? 54 : 43,
+      };
+
+      cursor += slotWidth + rowGap;
+    });
+  });
+
+  return layouts;
 }
 
+
 function participantPersonPosition(person, categoryCount) {
-  const centers = participantPileCenters(categoryCount);
-  const center = centers[person.categoryIndex] || { x: 50, y: 50 };
-  const cols = Math.ceil(Math.sqrt(person.categorySize * 1.35));
+  const layouts = participantPileCenters(person.categorySizes || categoryCount);
+  const layout = layouts[person.categoryIndex] || { x: 50, y: 50, maxWidth: 26, maxHeight: 42 };
+
+  // Dense participant piles need enough row spacing for the full person glyph
+  // to remain visible. A slightly wider grid plus taller vertical spread keeps
+  // icons from visually merging into blobs.
+  const cols = Math.ceil(Math.sqrt(person.categorySize * 1.65));
   const rows = Math.ceil(person.categorySize / cols);
   const col = person.categoryOffset % cols;
   const row = Math.floor(person.categoryOffset / cols);
 
-  const maxWidth = categoryCount <= 3 ? 25 : 21;
-  const maxHeight = categoryCount <= 3 ? 34 : 30;
-  const stepX = cols > 1 ? Math.min(2.35, maxWidth / (cols - 1)) : 0;
-  const stepY = rows > 1 ? Math.min(3.35, maxHeight / (rows - 1)) : 0;
+  const stepX = cols > 1 ? Math.min(2.65, layout.maxWidth / (cols - 1)) : 0;
+  const stepY = rows > 1 ? Math.min(4.25, layout.maxHeight / (rows - 1)) : 0;
 
   return {
-    x: center.x + (col - (cols - 1) / 2) * stepX,
-    y: center.y + (row - (rows - 1) / 2) * stepY,
+    x: layout.x + (col - (cols - 1) / 2) * stepX,
+    y: layout.y + (row - (rows - 1) / 2) * stepY,
   };
 }
+
 
 function buildParticipantPeople(demographic, activeKey) {
   const people = [];
   const items = sortedDemographicItems(demographic);
+  const categorySizes = items.map((item) => item.count);
   const requestedWanderCategory =
     WANDERING_PERSON_CATEGORY_INDEX_BY_KEY[activeKey] ?? 0;
   const wanderCategoryIndex = Math.min(
@@ -1884,6 +1935,7 @@ function buildParticipantPeople(demographic, activeKey) {
         categoryIndex,
         categoryOffset: i,
         categorySize: item.count,
+        categorySizes,
         categoryLabel: item.label,
         color: DEMO_PIE_COLORS[categoryIndex % DEMO_PIE_COLORS.length],
         isWanderer: categoryIndex === wanderCategoryIndex && i === 0,
@@ -3029,7 +3081,7 @@ const styles = {
   },
   participantPeopleField: {
     position: "relative",
-    height: "360px",
+    height: "430px",
     borderRadius: "8px",
     overflow: "hidden",
     border: "1px solid rgba(255,255,255,0.08)",
@@ -3038,12 +3090,12 @@ const styles = {
   },
   participantPersonMarker: {
     position: "absolute",
-    width: "13px",
-    height: "17px",
+    width: "11px",
+    height: "15px",
     transform: "translate(-50%, -50%)",
     transition:
       "left 760ms cubic-bezier(0.22, 1, 0.36, 1), top 760ms cubic-bezier(0.22, 1, 0.36, 1), color 240ms ease, opacity 240ms ease",
-    opacity: 0.92,
+    opacity: 0.94,
     filter: "drop-shadow(0 1px 1px rgba(0,0,0,0.40))",
   },
   participantPersonSvg: {
