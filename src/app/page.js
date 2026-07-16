@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import LayoutWrapper from '@/components/LayoutWrapper';
 
@@ -9,6 +9,25 @@ export default function HomePage() {
   const [showMessage, setShowMessage] = useState(false);
   const [hideMessage, setHideMessage] = useState(false);
   const [foxHovered, setFoxHovered] = useState(false);
+
+  const foxClickTimerRef = useRef(null);
+
+  function handleFoxClick(event) {
+    event.preventDefault();
+
+    if (foxClickTimerRef.current) {
+      window.clearTimeout(foxClickTimerRef.current);
+      foxClickTimerRef.current = null;
+      window.location.href = "/typed-boundary-calculus/phase-1";
+      return;
+    }
+
+    foxClickTimerRef.current = window.setTimeout(() => {
+      foxClickTimerRef.current = null;
+      window.location.href = "/typed-boundary-calculus";
+    }, 240);
+  }
+
 
   useEffect(() => {
     const paragraphTimer = setTimeout(() => setShowParagraph(true), 2000);
@@ -191,6 +210,7 @@ export default function HomePage() {
             href="/typed-boundary-calculus"
             aria-label="Open Typed Boundary Calculus"
             title=""
+            onClick={handleFoxClick}
             onMouseEnter={() => setFoxHovered(true)}
             onMouseLeave={() => setFoxHovered(false)}
             onFocus={() => setFoxHovered(true)}
