@@ -1,3 +1,4 @@
+import "katex/dist/katex.min.css";
 // src/app/layout.js
 import './globals.css';
 

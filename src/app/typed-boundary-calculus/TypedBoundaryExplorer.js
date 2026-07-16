@@ -539,7 +539,14 @@ function makeCustomAddressTransform(address) {
   };
 }
 
-export default function TypedBoundaryExplorer() {
+export default function TypedBoundaryExplorer({
+  showSelector = true,
+  showExpand3D = true,
+  showInspectorDetails = true,
+  showMoveSpaceStepper = false,
+  moveSpaceGridMode = false,
+  primitiveGridOnly = false,
+} = {}) {
   const [selectedId, setSelectedId] = useState(null);
   const [unitFieldMode, setUnitFieldMode] = useState("grid");
   const [unitFieldModeChangeKey, setUnitFieldModeChangeKey] = useState(0);
@@ -577,6 +584,22 @@ export default function TypedBoundaryExplorer() {
 
     setSelectedId(CUSTOM_ADDRESS_ID);
     handleUnitFieldModeChange("selected");
+  };
+
+  const handleMoveSpaceStep = (axisKey, delta) => {
+    setCustomAddress((previous) => ({
+      ...previous,
+      [axisKey]: (previous[axisKey] ?? 0) + delta,
+    }));
+
+    setSelectedId(CUSTOM_ADDRESS_ID);
+    handleUnitFieldModeChange("selected");
+  };
+
+  const handleMoveSpaceReset = () => {
+    setCustomAddress(CUSTOM_ADDRESS_INITIAL);
+    setSelectedId(CUSTOM_ADDRESS_ID);
+    handleUnitFieldModeChange("grid");
   };
 
   return (
@@ -639,12 +662,15 @@ export default function TypedBoundaryExplorer() {
           style={{
             marginTop: "32px",
             display: "grid",
-            gridTemplateColumns: "minmax(250px, 0.32fr) minmax(720px, 1.68fr)",
-            gap: "20px",
+            gridTemplateColumns: showSelector
+              ? "minmax(250px, 0.32fr) minmax(720px, 1.68fr)"
+              : "minmax(0, 1fr)",
+            gap: showSelector ? "20px" : "0",
             width: "100%",
             boxSizing: "border-box",
           }}
         >
+          {showSelector && (
           <Panel title="Unit Selector">
             <TransformSelector
               transforms={UNIT_TRANSFORMS}
@@ -661,6 +687,7 @@ export default function TypedBoundaryExplorer() {
               onCustomAddressChange={handleCustomAddressChange}
             />
           </Panel>
+          )}
 
           <Panel
             title={
@@ -669,16 +696,28 @@ export default function TypedBoundaryExplorer() {
               </>
             }
           >
+            {showMoveSpaceStepper && (
+              <MoveSpaceStepper
+                address={customAddress}
+                onStep={handleMoveSpaceStep}
+                onReset={handleMoveSpaceReset}
+              />
+            )}
+
             <LatticeProjection
               transform={selectedTransform}
               unitFieldMode={unitFieldMode}
               unitFieldModeChangeKey={unitFieldModeChangeKey}
               onUnitFieldModeChange={handleUnitFieldModeChange}
+              showExpand3D={showExpand3D}
+              primitiveGridOnly={primitiveGridOnly}
             />
           </Panel>
 
         </div>
 
+        {showInspectorDetails && (
+          <>
         <div style={{ marginTop: "20px" }}>
           <Panel title={isUnitModelTransform(selectedTransform) ? "Unit Inspector" : "Transform Inspector"}>
             <TransformInspectorDashboard transform={selectedTransform} checks={selectedChecks} />
@@ -710,8 +749,178 @@ export default function TypedBoundaryExplorer() {
             )}
           </Panel>
         </div>
+
+          </>
+        )}
       </section>
     </main>
+  );
+}
+
+function MoveSpaceStepper({ address, onStep, onReset }) {
+  const axisCardStyle = (axisKey) => ({
+    display: "grid",
+    gap: "6px",
+    padding: "8px",
+    borderRadius: "8px",
+    border: "1px solid rgba(232,223,200,0.14)",
+    background: "rgba(255,255,255,0.045)",
+    minWidth: 0,
+    boxSizing: "border-box",
+    borderTop: `2px solid ${axisStepColor(axisKey)}`,
+  });
+
+  const stepButtonStyle = (axisKey) => ({
+    border: "1px solid rgba(232,223,200,0.16)",
+    borderRadius: "6px",
+    padding: "6px 8px",
+    cursor: "pointer",
+    color: axisStepColor(axisKey),
+    background: "rgba(0,0,0,0.22)",
+    fontFamily: MATH_FONT,
+    fontSize: "15px",
+    lineHeight: 1,
+  });
+
+  return (
+    <div
+      style={{
+        display: "grid",
+        gap: "10px",
+        margin: "0 0 14px",
+        padding: "10px",
+        borderRadius: "8px",
+        border: "1px solid rgba(232,223,200,0.16)",
+        background: "rgba(0,0,0,0.20)",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "10px",
+        }}
+      >
+        <div>
+          <div
+            style={{
+              fontSize: "12px",
+              opacity: 0.68,
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              marginBottom: "3px",
+            }}
+          >
+            Stage 1 · primitive single-axis stepping
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "baseline",
+              gap: "8px",
+              fontSize: "15px",
+            }}
+          >
+            <span style={{ opacity: 0.72 }}>current address:</span>
+            <span style={{ fontFamily: MATH_FONT, fontSize: "17px" }}>
+              <MathText value={formatType(address)} />
+            </span>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={onReset}
+          style={{
+            border: "1px solid rgba(232,223,200,0.18)",
+            borderRadius: "7px",
+            padding: "7px 11px",
+            cursor: "pointer",
+            color: "#e8dfc8",
+            background: "rgba(0,0,0,0.24)",
+            fontFamily: PROSE_FONT,
+            fontSize: "13px",
+          }}
+        >
+          reset to origin
+        </button>
+      </div>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(92px, 1fr))",
+          gap: "8px",
+        }}
+      >
+        {TYPE_AXES.map((axis) => {
+          const symbol = AXIS_SYMBOL_LABELS[axis.key] ?? axis.key;
+          const value = address[axis.key] ?? 0;
+
+          return (
+            <div key={`move-stepper-${axis.key}`} style={axisCardStyle(axis.key)}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "baseline",
+                  gap: "8px",
+                }}
+              >
+                <span
+                  style={{
+                    color: axisStepColor(axis.key),
+                    fontFamily: MATH_FONT,
+                    fontSize: "17px",
+                  }}
+                >
+                  <LatexInline latex={symbol} />
+                </span>
+                <span
+                  title={AXIS_WORD_LABELS[axis.key] ?? axis.key}
+                  style={{
+                    color: "#e8dfc8",
+                    opacity: 0.72,
+                    fontFamily: MATH_FONT,
+                    fontSize: "14px",
+                  }}
+                >
+                  {value}
+                </span>
+              </div>
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "6px",
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => onStep(axis.key, -1)}
+                  style={stepButtonStyle(axis.key)}
+                  title={`step -${AXIS_WORD_LABELS[axis.key] ?? axis.key}`}
+                >
+                  <LatexInline latex={"-" + symbol} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onStep(axis.key, 1)}
+                  style={stepButtonStyle(axis.key)}
+                  title={`step +${AXIS_WORD_LABELS[axis.key] ?? axis.key}`}
+                >
+                  <LatexInline latex={"+" + symbol} />
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -1310,6 +1519,9 @@ function LatticeProjection({
   unitFieldMode = "selected",
   unitFieldModeChangeKey = 0,
   onUnitFieldModeChange = () => {},
+  showExpand3D = true,
+  primitiveGridOnly = false,
+  moveSpaceGridMode = false,
 }) {
   const [viewMode, setViewMode] = useState("both");
   const [labelMode, setLabelMode] = useState("none");
@@ -1494,6 +1706,7 @@ function LatticeProjection({
           </div>
         </div>
 
+        {showExpand3D && (
         <button
           type="button"
           onClick={() => setExpanded(true)}
@@ -1512,6 +1725,7 @@ function LatticeProjection({
         >
           Expand 3D
         </button>
+        )}
       </div>
 
       <Axis3DViewport
@@ -1530,6 +1744,8 @@ function LatticeProjection({
         gridRadius={gridRadius}
         unitFieldMode={isUnitModel ? unitFieldMode : "selected"}
         onUnitFieldModeChange={onUnitFieldModeChange}
+        moveSpaceGridMode={moveSpaceGridMode}
+        primitiveGridOnly={primitiveGridOnly}
         expanded={false}
       />
 
@@ -1554,7 +1770,7 @@ function LatticeProjection({
         setCycleStackCount={setCycleStackCount}
       />
 
-      {expanded && (
+      {showExpand3D && expanded && (
         <div
           style={{
             position: "fixed",
@@ -1666,6 +1882,7 @@ function LatticeProjection({
                 gridRadius={gridRadius}
                 unitFieldMode={isUnitModel ? unitFieldMode : "selected"}
                 onUnitFieldModeChange={onUnitFieldModeChange}
+        moveSpaceGridMode={moveSpaceGridMode}
                 expanded
               />
             </div>
@@ -2108,6 +2325,45 @@ function AxisRotationControls({
 }
 
 
+function makeMoveSpacePositiveStepGrid(gridRadius) {
+  const origin = makeZeroTypeAddress();
+
+  if (gridRadius === "axis") {
+    return [origin];
+  }
+
+  const stepCount = Number.parseInt(String(gridRadius), 10);
+
+  if (!Number.isFinite(stepCount) || stepCount <= 0) {
+    return [origin];
+  }
+
+  const types = [origin];
+  let frontier = [origin];
+
+  for (let step = 0; step < stepCount; step += 1) {
+    const nextFrontier = [];
+
+    frontier.forEach((type) => {
+      TYPE_AXES.forEach((axis) => {
+        nextFrontier.push({
+          ...type,
+          [axis.key]: (type[axis.key] ?? 0) + 1,
+        });
+      });
+    });
+
+    types.push(...nextFrontier);
+    frontier = nextFrontier;
+  }
+
+  return types;
+}
+
+function projectMoveSpaceGridDot(type, rotation, expanded, axisOrientation, zoomScale) {
+  return projectType3D(type, rotation, expanded, axisOrientation, zoomScale);
+}
+
 function Axis3DViewport({
   transform,
   isUnitModel = false,
@@ -2125,6 +2381,8 @@ function Axis3DViewport({
   unitFieldMode = "selected",
   onUnitFieldModeChange = () => {},
   expanded,
+  primitiveGridOnly = false,
+  moveSpaceGridMode = false,
 }) {
   const [rotation, setRotation] = useState(DEFAULT_LATTICE_ROTATION);
   const [drag, setDrag] = useState(null);
@@ -2605,6 +2863,7 @@ function Axis3DViewport({
         axisOrientation,
         zoomScale,
         expanded,
+        primitiveGridOnly,
       }),
     [
       gridRadius,
@@ -2625,8 +2884,29 @@ function Axis3DViewport({
       allUnitFieldTraces,
       supportGraph,
       supportGraphModeActive,
+      primitiveGridOnly,
     ]
   );
+
+  const moveSpaceGridDots = useMemo(() => {
+    if (!moveSpaceGridMode) return [];
+
+    return makeMoveSpacePositiveStepGrid(gridRadius).map((type, index) => {
+      const point = projectMoveSpaceGridDot(
+        type,
+        rotation,
+        expanded,
+        axisOrientation,
+        zoomScale
+      );
+
+      return {
+        key: `move-space-grid-${index}-${typeKey(type)}`,
+        type,
+        ...point,
+      };
+    });
+  }, [moveSpaceGridMode, gridRadius, rotation, expanded, axisOrientation, zoomScale]);
 
   const axisSegments = TYPE_AXES.map((axis) => {
     const positiveType = axisType(axis.key, 2);
@@ -2747,7 +3027,7 @@ function Axis3DViewport({
         <tspan> lattice addresses</tspan>
       </text>
 
-      {gridDots.map((dot) => {
+      {!moveSpaceGridMode && gridDots.map((dot) => {
         const axisStepKey = axisStepKeyForType(dot.type);
         const isAxisStepDot = Boolean(axisStepKey);
         const isOriginDot = isOriginType(dot.type);
@@ -2776,7 +3056,7 @@ function Axis3DViewport({
                     : "rgba(232,223,200,0.85)"
             }
             stroke={isAxisStepDot || isOriginDot ? "rgba(0,0,0,0.62)" : "none"}
-            strokeWidth={isAxisStepDot || isOriginDot ? (expanded ? "1.4" : "1.0") : "0"}
+            strokeWidth={isAxisStepDot || isOriginDot ? (expanded ? "0.9" : "0.55") : "0"}
             opacity={isAxisStepDot || isOriginDot ? 0.96 : dot.opacity}
           />
         );
@@ -2813,6 +3093,25 @@ function Axis3DViewport({
           />
         </g>
       ))}
+
+      {moveSpaceGridMode &&
+        moveSpaceGridDots.map((dot) => {
+          const axisStepKey = axisStepKeyForType(dot.type);
+          const isOriginDot = isOriginType(dot.type);
+
+          return (
+            <circle
+              key={dot.key}
+              cx={dot.x}
+              cy={dot.y}
+              r={isOriginDot ? (expanded ? 1.55 : 1.15) : (expanded ? 1.35 : 1.0)}
+              fill={axisStepKey ? axisStepColor(axisStepKey) : "rgba(255,247,223,0.94)"}
+              stroke="rgba(0,0,0,0.72)"
+              strokeWidth={expanded ? "0.65" : "0.45"}
+              opacity="0.98"
+            />
+          );
+        })}
 
       {showAllWhiteUnitArrows &&
         allUnitMoveArrows.map((arrow) => (
@@ -3704,7 +4003,7 @@ function mergeSupportGraphs(sourceType, transforms) {
   };
 }
 
-function makeProjectedGridDots({ radius, traces, rotation, axisOrientation, zoomScale, expanded }) {
+function makeProjectedGridDots({ radius, traces, rotation, axisOrientation, zoomScale, expanded, primitiveGridOnly = false }) {
   const types = [];
   const visitedKeys = new Set();
 
