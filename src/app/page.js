@@ -5,7 +5,6 @@ import Link from 'next/link';
 import LayoutWrapper from '@/components/LayoutWrapper';
 
 export default function HomePage() {
-  const [showParagraph, setShowParagraph] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [hideMessage, setHideMessage] = useState(false);
   const [foxHovered, setFoxHovered] = useState(false);
@@ -30,11 +29,9 @@ export default function HomePage() {
 
 
   useEffect(() => {
-    const paragraphTimer = setTimeout(() => setShowParagraph(true), 2000);
     const showTimer = setTimeout(() => setShowMessage(true), 3000);
     const hideTimer = setTimeout(() => setHideMessage(true), 24000);
     return () => {
-      clearTimeout(paragraphTimer);
       clearTimeout(showTimer);
       clearTimeout(hideTimer);
     };
@@ -57,7 +54,7 @@ export default function HomePage() {
       <div
         className="partition-content"
         style={{
-          minHeight: '100vh',
+          minHeight: '74vh',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
@@ -66,28 +63,13 @@ export default function HomePage() {
           paddingTop: '2rem',
         }}
       >
-        <div className="legend-title">Welcome to the Physics Monastery</div>
-
-        {/* Reserved scroll prompt space below the title */}
-<div
-  style={{
-    height: '2rem', // Reserve space to prevent layout shift
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: '-1.5rem',
-  }}
->
+        <div className="landing-hero-title">
+  <div className="legend-title">Physics Monastery</div>
   <div
-    style={{
-      fontSize: '1.2rem',
-      color: 'white',
-      opacity: showMessage && !hideMessage ? 1 : 0,
-      transition: 'opacity 2s ease-in-out',
-    }}
+    className="legend-subtitle"
+    style={{ transform: 'translateY(-1.0rem)' }}
   >
-    Explore the menu to the left, or scroll down for related videos.
-
+    Constructing a geometric theory of the constants of Nature
   </div>
 </div>
 
@@ -95,7 +77,7 @@ export default function HomePage() {
         <div
           style={{
             position: 'absolute',
-            top: '30%',
+            top: '40%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
             width: '100%',
@@ -106,62 +88,54 @@ export default function HomePage() {
           }}
         >
           <div
-            style={{
-              backgroundColor: 'rgba(0, 0, 0, 0.65)',
-              padding: '1.1rem 1.3rem',
-              borderRadius: '1rem',
-              color: 'white',
-              lineHeight: '1.6',
-              fontSize: '1.00rem',
-            }}
-          >
-            Central Thesis: A Universe that persists must instantiate a geometry capable of persistence. The simplest such geometry is the hyperbolic figure-eight knot complement. Its 288 transformational degrees of freedom appear in physics as the constants of Nature.
-          </div>
-        </div>
-
-
-        {/* Paragraph and overlay container */}
-        {showParagraph && (
-          <div
   style={{
-    position: 'absolute',
-    bottom: '1.5rem',                 // ⬅️ Bottom padding restored
-    left: '1.5rem',                   // ⬅️ from left edge
-    right: '1.5rem',                  // ⬅️ from right edge
-    margin: '0 auto',
     backgroundColor: 'rgba(0, 0, 0, 0.65)',
-    padding: '1.0rem',
+    padding: '1.1rem 1.3rem',
     borderRadius: '1rem',
-    maxWidth: '52rem',              // ⬅️ Still caps max width
-    transition: 'opacity 2s ease-in-out',
-    opacity: showParagraph ? 1 : 0,
+    color: 'white',
+    lineHeight: '1.6',
+    fontSize: '1.00rem',
   }}
 >
+  <div style={{ fontWeight: 550, marginBottom: '0.45rem' }}>
+    Research Question: What geometry organizes all 288 constants of Nature?
+  </div>
 
-            <p
-              style={{
-                fontSize: '1.0rem',
-                color: 'white',
-                textAlign: 'justify',
-                margin: 0,
-              }}
-            >
-              Unveiling the hidden structure of reality by systematically decoding the precise relationships embedded in the physical constants of Nature. Our goal is to understand why the Universe is the way it is by specifying the rules underlying atomic logic and the coherent geometric foundation from which all 288 physical constants arise.
-            </p>
-          </div>
-        )}
+  <div>
+    The constants of Nature fix the dimensional relationships that are responsible for atomic structure, scales, and transformational logic. We investigate those relationships seeking the finite geometric grammar beneath them.
+  </div>
+</div>
+        </div>
       </div>
 
       {/* Scroll section with related YouTube videos */}
       <div
         style={{
           position: 'relative',
-          padding: '4rem 2rem 6rem',
+          padding: '2rem 2rem 6rem',
           color: '#fff',
           textAlign: 'center',
           backgroundColor: 'transparent',
         }}
       >
+        <div
+          className="relatedVideosPrompt"
+          style={{
+            minHeight: '2rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: '1.25rem',
+            fontSize: '1.2rem',
+            color: 'white',
+            opacity: showMessage && !hideMessage ? 1 : 0,
+            transition: 'opacity 2s ease-in-out',
+            textAlign: 'center',
+          }}
+        >
+          Explore the menu to the left, or scroll down for related videos.
+        </div>
+
         <h2 style={{ fontSize: '1.8rem', marginBottom: '2rem' }}>Related Videos</h2>
 
         <div
