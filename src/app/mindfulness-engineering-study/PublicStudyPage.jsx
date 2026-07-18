@@ -5,6 +5,26 @@ import { useEffect, useRef, useState } from "react";
 function ResponsivePageCSS() {
   return (
     <style>{`
+      .mindfulness-public-page {
+        padding-left: calc(max(22px, 5vw) + var(--study-section-nav-width, 56px) + 12px) !important;
+        transition: padding-left 220ms ease;
+      }
+
+
+      @media (max-width: 760px) {
+        .mindfulness-public-page {
+          padding-left: calc(var(--study-section-nav-width, 56px) + 12px) !important;
+        }
+
+        .study-section-nav {
+          width: 52px !important;
+        }
+
+        .study-section-nav[data-open="true"] {
+          width: min(134px, 82vw) !important;
+        }
+      }
+
       @media (max-width: 1200px) {
         .mindfulness-public-page {
           padding-top: 28px !important;
@@ -1556,7 +1576,7 @@ function ResearchQuestionsSection({ data }) {
       : fallbackResearchQuestions();
 
   return (
-    <section style={styles.prioritySection}>
+    <section id="research-questions" style={styles.prioritySection}>
       <div style={styles.sectionIntro}>
         <div style={styles.sectionKicker}>Research questions</div>
         <h2 style={styles.h2}>What is this study trying to understand?</h2>
@@ -1580,7 +1600,7 @@ function ResearchQuestionsSection({ data }) {
 
 function WhyEmotionRegulationMatters() {
   return (
-    <section style={styles.section}>
+    <section id="why-it-matters" style={styles.section}>
       <div style={styles.sectionIntro}>
         <div style={styles.sectionKicker}>Why it matters</div>
         <h2 style={styles.h2}>Engineering problem solving is cognitive and emotional</h2>
@@ -1626,9 +1646,9 @@ function ConceptualModelSection({ data }) {
   ];
 
   return (
-    <section style={styles.section}>
+    <section id="conceptual-framework" style={styles.section}>
       <div style={styles.sectionIntro}>
-        <div style={styles.sectionKicker}>Conceptual model</div>
+        <div style={styles.sectionKicker}>Conceptual framework</div>
         <h2 style={styles.h2}>Emotion regulation is the proposed bridge</h2>
         <p style={styles.noteLarge}>
           {data.conceptual_model?.description ||
@@ -1636,7 +1656,7 @@ function ConceptualModelSection({ data }) {
         </p>
       </div>
 
-      <div style={styles.conceptualGrid}>
+            <div style={styles.conceptualGrid}>
         {modelSteps.map((step, index) => (
           <article key={step.label} style={styles.conceptualStep}>
             <div style={styles.stepNumber}>{index + 1}</div>
@@ -1645,7 +1665,27 @@ function ConceptualModelSection({ data }) {
           </article>
         ))}
       </div>
+
+      <ConceptualModelFigure />
     </section>
+  );
+}
+
+function ConceptualModelFigure() {
+  return (
+    <div style={{ ...styles.methodFigureCard, marginTop: "28px" }}>
+      <figure style={styles.methodFigure}>
+        <img
+          src="/images/mindfulness-study/conceptual-model-framework.png"
+          alt="Conceptual framework linking mindfulness traits, emotion regulation, emotions, problem-solving activity, and problem-solving performance."
+          style={styles.methodFigureImage}
+        />
+        <figcaption style={styles.methodFigureCaption}>
+          Conceptual framework linking mindfulness traits, emotion regulation,
+          emotions during problem-solving, and problem-solving performance.
+        </figcaption>
+      </figure>
+    </div>
   );
 }
 
@@ -1677,10 +1717,9 @@ function MixedMethodsDesignSection({ data }) {
       : fallbackPhases;
 
   return (
-    <section style={styles.section}>
+    <section id="research-design" style={styles.section}>
       <div style={styles.sectionIntro}>
         <div style={styles.sectionKicker}>Research design</div>
-        <h2 style={styles.h2}>Explanatory sequential mixed-methods design</h2>
         <p style={styles.noteLarge}>
           The quantitative phase identifies relationships. The qualitative phase explains how
           students regulate emotions during problem solving. Integration connects the two.
@@ -1696,6 +1735,8 @@ function MixedMethodsDesignSection({ data }) {
           </article>
         ))}
       </div>
+
+      <ResearchDesignMethodFigure />
     </section>
   );
 }
@@ -1712,9 +1753,9 @@ function QualitativePhaseSection({ data }) {
   ];
 
   return (
-    <section style={styles.prioritySection}>
+    <section id="phase-2" style={styles.prioritySection}>
       <div style={styles.sectionIntro}>
-        <div style={styles.sectionKicker}>Phase 2 preview</div>
+        <div style={styles.sectionKicker}>Phase 2</div>
         <h2 style={styles.h2}>
           {data.qualitative_phase?.title || "Qualitative phase: emotion regulation during problem solving"}
         </h2>
@@ -2321,7 +2362,7 @@ function MethodsMeasuresSection({ data }) {
   const totalStudents = data?.dataset_summary?.n_rows_cleaned || 128;
 
   return (
-    <section style={styles.section}>
+    <section id="participants" style={styles.section}>
       <div style={styles.sectionKicker}>Participants</div>
       <h2 style={styles.sectionTitle}>Who participated in the study</h2>
 
@@ -2380,15 +2421,220 @@ function RegressionSummary({ rows }) {
             ))}
           </div>
         </div>
-      ))}
+      
+            ))}
     </div>
+  );
+}
+
+
+
+const STUDY_SECTION_NAV_ITEMS = [
+  {
+    id: "top",
+    label: "Top",
+    matchers: [],
+  },
+  {
+    id: "research-questions",
+    label: "Research questions",
+    matchers: ["What is this study trying to understand?"],
+  },
+  {
+    id: "why-it-matters",
+    label: "Why it matters",
+    matchers: ["Engineering problem solving is cognitive and emotional"],
+  },
+  {
+    id: "conceptual-framework",
+    label: "Conceptual framework",
+    matchers: ["Emotion regulation is the proposed bridge"],
+  },
+  {
+    id: "research-design",
+    label: "Research design",
+    matchers: ["Phase 1: Quantitative", "Phase 2: Qualitative", "Integration"],
+  },
+  {
+    id: "participants",
+    label: "Participants",
+    matchers: ["Who participated in the study", "Participant demographic profile"],
+  },
+  {
+    id: "data-analysis",
+    label: "Data Analysis",
+    matchers: ["Quantitative phase details"],
+  },
+  {
+    id: "findings",
+    label: "Findings",
+    matchers: [
+      "These findings identify the quantitative relationships that the qualitative phase will later explain through emotion regulation.",
+      "Total Mindfulness vs. Overall Grade",
+      "Quantitative findings",
+    ],
+  },
+  {
+    id: "phase-2",
+    label: "Phase 2",
+    matchers: [
+      "The qualitative phase examines how students with differing mindfulness traits regulate their emotions while solving a puzzle-based task.",
+      "problem-solving approach",
+      "Qualitative phase",
+    ],
+  },
+  {
+    id: "limitations",
+    label: "Limitations",
+    matchers: ["Limitations and privacy", "Interpretation boundaries"],
+  },
+];
+
+
+function StudyLotusIcon({ isOpen }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      aria-hidden="true"
+      focusable="false"
+      style={styles.sectionNavToggleIcon}
+    >
+      <circle
+        cx="32"
+        cy="32"
+        r="29"
+        fill="rgba(10,14,18,0.72)"
+        stroke="#d8bf78"
+        strokeWidth="1.15"
+      />
+
+      {isOpen ? (
+        <g
+          transform="translate(32 32) scale(0.82) translate(-32 -32)"
+          fill="none"
+          stroke="#f3ddb0"
+          strokeWidth="1.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M32 43 C25 35 25 23 32 15 C39 23 39 35 32 43 Z" />
+          <path d="M32 43 C22 42 17 35 18 27 C26 28 31 35 32 43 Z" />
+          <path d="M32 43 C42 42 47 35 46 27 C38 28 33 35 32 43 Z" />
+          <path d="M25 43 C18 42 13 38 12 32 C20 32 25 36 29 42" />
+          <path d="M39 43 C46 42 51 38 52 32 C44 32 39 36 35 42" />
+        </g>
+      ) : (
+        <g
+          transform="translate(32 32) scale(0.80) translate(-32 -32)"
+          fill="none"
+          stroke="#f3ddb0"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M32 44 C25 36 25 24 32 16 C39 24 39 36 32 44 Z" />
+          <path d="M31 44 C24 39 22 30 25 23 C31 28 34 36 31 44 Z" />
+          <path d="M33 44 C40 39 42 30 39 23 C33 28 30 36 33 44 Z" />
+          <path d="M24 42 C19 39 18 31 21 27 C26 32 28 38 27 43" />
+          <path d="M40 42 C45 39 46 31 43 27 C38 32 36 38 37 43" />
+        </g>
+      )}
+    </svg>
+  );
+}
+
+function StudySectionMenu() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--study-section-nav-width",
+      isOpen ? "134px" : "56px"
+    );
+
+    return () => {
+      document.documentElement.style.removeProperty("--study-section-nav-width");
+    };
+  }, [isOpen]);
+
+  function normalizeText(value) {
+    return String(value || "").replace(/\s+/g, " ").trim().toLowerCase();
+  }
+
+  function findSection(item) {
+    if (item.id === "top") {
+      return document.querySelector(".mindfulness-public-page");
+    }
+
+    const explicitTarget = document.getElementById(item.id);
+    if (explicitTarget) return explicitTarget;
+
+    const sections = Array.from(document.querySelectorAll("section"));
+    const matchers = item.matchers.map(normalizeText);
+
+    return sections.find((section) => {
+      const sectionText = normalizeText(section.textContent);
+      return matchers.some((matcher) => sectionText.includes(matcher));
+    });
+  }
+
+  function scrollToSection(item) {
+    if (item.id === "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const target = findSection(item);
+    if (!target) return;
+
+    const top = target.getBoundingClientRect().top + window.scrollY - 18;
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  }
+
+  return (
+    <nav
+      className="study-section-nav"
+      data-open={isOpen ? "true" : "false"}
+      style={{
+        ...styles.sectionNavShell,
+        width: isOpen ? "145px" : "56px",
+      }}
+      aria-label="Page sections"
+    >
+      <button
+        type="button"
+        style={styles.sectionNavToggle}
+        onClick={() => setIsOpen((current) => !current)}
+        aria-expanded={isOpen}
+        aria-label={isOpen ? "Close section menu" : "Open section menu"}
+      >
+        <StudyLotusIcon isOpen={isOpen} />
+      </button>
+
+      {isOpen ? (
+        <div style={styles.sectionNavPanel}>
+          <div style={styles.sectionNavButtonStack}>
+            {STUDY_SECTION_NAV_ITEMS.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                style={styles.sectionNavButton}
+                onClick={() => scrollToSection(item)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : null}
+    </nav>
   );
 }
 
 export default function PublicStudyPage({ data }) {
   if (!data) {
     return (
-      <main className="mindfulness-public-page" style={styles.page}>
+      <main id="top" className="mindfulness-public-page" style={styles.page}>
         <ResponsivePageCSS />
         <section style={styles.hero}>
           <h1 className="mindfulness-page-title" style={styles.title}>Mindfulness Engineering Study</h1>
@@ -2404,8 +2650,9 @@ export default function PublicStudyPage({ data }) {
   const counts = summary.grade_counts || {};
 
   return (
-    <main className="mindfulness-public-page" style={styles.page}>
+    <main id="top" className="mindfulness-public-page" style={styles.page}>
       <ResponsivePageCSS />
+      <StudySectionMenu />
       <section style={styles.hero}>
         <div style={styles.kicker}>{data.study_design_label || "Mixed-methods research exhibit"}</div>
         <FitTitle>{data.page_title}</FitTitle>
@@ -2433,10 +2680,29 @@ export default function PublicStudyPage({ data }) {
 
       <MixedMethodsDesignSection data={data} />
 
-      <section style={styles.section}>
+      <MethodsMeasuresSection data={data} summary={summary} counts={counts} />
+
+      <section id="data-analysis" style={styles.section}>
         <div style={styles.sectionIntro}>
-          <div style={styles.sectionKicker}>Phase 1 findings</div>
-          <h2 style={styles.h2}>Quantitative findings so far</h2>
+          <div style={styles.sectionKicker}>Data Analysis</div>
+          <h2 style={styles.h2}>Quantitative phase details</h2>
+          <p style={styles.note}>
+            These supporting tables and models provide additional detail for the Phase 1 quantitative analysis.
+          </p>
+        </div>
+
+        <div style={styles.detailStack}>
+          <FacetBarChart rows={data.overall_facet_bars || []} />
+          <CourseCorrelationMatrix rows={data.course_correlation_matrix || []} />
+          <RegressionSummary rows={data.regression_summary || []} />
+          <ReliabilityTable rows={data.reliability_summary || []} />
+        </div>
+      </section>
+
+      <section id="findings" style={styles.section}>
+        <div style={styles.sectionIntro}>
+          <div style={styles.sectionKicker}>Findings</div>
+          <h2 style={styles.h2}>Quantitative findings</h2>
           <p style={styles.note}>
             These findings identify the quantitative relationships that the qualitative phase will later explain through emotion regulation.
           </p>
@@ -2452,26 +2718,7 @@ export default function PublicStudyPage({ data }) {
 
       <QualitativePhaseSection data={data} />
 
-      <MethodsMeasuresSection data={data} summary={summary} counts={counts} />
-
-      <section style={styles.section}>
-        <div style={styles.sectionIntro}>
-          <div style={styles.sectionKicker}>Analysis details</div>
-          <h2 style={styles.h2}>Quantitative phase details</h2>
-          <p style={styles.note}>
-            These supporting tables and models provide additional detail for the Phase 1 quantitative analysis.
-          </p>
-        </div>
-
-        <div style={styles.detailStack}>
-          <FacetBarChart rows={data.overall_facet_bars || []} />
-          <CourseCorrelationMatrix rows={data.course_correlation_matrix || []} />
-          <RegressionSummary rows={data.regression_summary || []} />
-          <ReliabilityTable rows={data.reliability_summary || []} />
-        </div>
-      </section>
-
-      <section style={styles.closing}>
+      <section id="limitations" style={styles.closing}>
         <div style={styles.sectionKicker}>Interpretation boundaries</div>
         <h2 style={styles.h2}>Limitations and privacy</h2>
         <ul style={styles.limitList}>
@@ -2486,14 +2733,186 @@ export default function PublicStudyPage({ data }) {
   );
 }
 
+function ResearchDesignMethodFigure() {
+  return (
+    <div style={styles.methodFigureCard}>
+      <div style={styles.methodFigureIntro}>
+        <p style={styles.methodFigureKicker}>Method</p>
+      </div>
+
+      <figure style={styles.methodFigure}>
+        <img
+          src="/images/mindfulness-study/research-design-method-flowchart.png"
+          alt="Flowchart showing the quantitative phase, qualitative phase, and RQ3 integration pathway for the mindfulness and engineering problem-solving study."
+          style={styles.methodFigureImage}
+        />
+        <figcaption style={styles.methodFigureCaption}>
+          Method flow from Phase 1 quantitative analysis to Phase 2 qualitative
+          follow-up and final mixed-methods integration.
+        </figcaption>
+      </figure>
+    </div>
+  );
+}
+
+
 const styles = {
+  sectionNavShell: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    zIndex: 260,
+    display: "grid",
+    gridTemplateRows: "auto 1fr",
+    gap: "8px",
+    padding: "12px 7px",
+    borderRight: "1px solid rgba(255,255,255,0.12)",
+    background:
+      "linear-gradient(180deg, rgba(18,19,21,0.98), rgba(13,14,15,0.96))",
+    boxShadow: "10px 0 30px rgba(0,0,0,0.26)",
+    backdropFilter: "blur(14px)",
+    transition: "width 220ms ease",
+    overflow: "hidden",
+    fontFamily: "Times New Roman, Times, serif",
+  },
+  sectionNavToggleIcon: {
+    width: "40px",
+    height: "40px",
+    display: "block",
+    pointerEvents: "none",
+  },
+  sectionNavToggle: {
+    width: "40px",
+    height: "40px",
+    display: "grid",
+    placeItems: "center",
+    borderRadius: "999px",
+    border: "none",
+    background: "transparent",
+    color: "#ead7a4",
+    cursor: "pointer",
+    padding: 0,
+    outline: "none",
+    fontFamily: "Times New Roman, Times, serif",
+    lineHeight: 1,
+    filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.38))",
+  },
+  sectionNavPanel: {
+    width: "100%",
+    minWidth: 0,
+    maxWidth: "100%",
+    display: "grid",
+    alignContent: "start",
+    gap: "8px",
+    padding: "2px 0 8px",
+    boxSizing: "border-box",
+  },
+  sectionNavHeader: {
+    color: "#c9a451",
+    fontSize: "0.76rem",
+    fontWeight: 800,
+    letterSpacing: "0.16em",
+    textTransform: "uppercase",
+    padding: "6px 6px 2px",
+  },
+  sectionNavButtonStack: {
+    width: "100%",
+    minWidth: 0,
+    display: "grid",
+    gap: "6px",
+    boxSizing: "border-box",
+  },
+  sectionNavButton: {
+    width: "100%",
+    minWidth: 0,
+    boxSizing: "border-box",
+    padding: "7px 6px",
+    borderRadius: "8px",
+    border: "1px solid rgba(255,255,255,0.10)",
+    background: "rgba(255,255,255,0.045)",
+    color: "#eee8dc",
+    cursor: "pointer",
+    fontFamily: "Times New Roman, Times, serif",
+    fontSize: "0.76rem",
+    lineHeight: 1.08,
+    textAlign: "left",
+    whiteSpace: "normal",
+    overflowWrap: "break-word",
+  },
+  sectionNavHint: {
+    marginTop: "3px",
+    padding: "0 2px",
+    color: "#9f9484",
+    fontSize: "0.68rem",
+    lineHeight: 1.18,
+    overflowWrap: "break-word",
+  },
   page: {
     minHeight: "100vh",
-    padding: "34px max(22px, 5vw)",
+    padding: "34px max(22px, 5vw) 34px max(70px, 5vw)",
     background:
       "radial-gradient(circle at top left, rgba(201,165,106,0.20), transparent 32rem), #101112",
     color: "#eee8dc",
     fontFamily: "Times New Roman, Times, serif",
+  },
+  methodFigureCard: {
+    marginTop: "22px",
+    marginBottom: "24px",
+    padding: "18px",
+    borderRadius: "10px",
+    border: "1px solid rgba(255,255,255,0.12)",
+    background:
+      "linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.025))",
+    boxShadow: "0 18px 50px rgba(0,0,0,0.22)",
+  },
+  methodFigureIntro: {
+    display: "grid",
+    gap: "6px",
+    marginBottom: "14px",
+  },
+  methodFigureKicker: {
+    margin: 0,
+    color: "#c9a451",
+    fontSize: "0.78rem",
+    letterSpacing: "0.16em",
+    textTransform: "uppercase",
+    fontWeight: 700,
+  },
+  methodFigureTitle: {
+    margin: 0,
+    color: "#f3ead7",
+    fontFamily: "Times New Roman, Times, serif",
+    fontSize: "clamp(1.25rem, 2.4vw, 1.75rem)",
+    lineHeight: 1.12,
+  },
+  methodFigureCopy: {
+    margin: 0,
+    maxWidth: "78ch",
+    color: "#cfc4b3",
+    fontFamily: "Times New Roman, Times, serif",
+    fontSize: "clamp(0.98rem, 1.35vw, 1.1rem)",
+    lineHeight: 1.45,
+  },
+  methodFigure: {
+    margin: 0,
+    display: "grid",
+    gap: "10px",
+  },
+  methodFigureImage: {
+    width: "100%",
+    height: "auto",
+    display: "block",
+    borderRadius: "8px",
+    border: "1px solid rgba(255,255,255,0.12)",
+    background: "#020916",
+  },
+  methodFigureCaption: {
+    color: "#a99d8d",
+    fontFamily: "Times New Roman, Times, serif",
+    fontSize: "0.92rem",
+    lineHeight: 1.35,
+    textAlign: "center",
   },
   hero: {
     maxWidth: "none",
@@ -2552,7 +2971,7 @@ const styles = {
   },
   statLabel: {
     color: "#c8bda9",
-    fontSize: "0.88rem",
+    fontSize: "0.84rem",
     marginBottom: "8px",
   },
   statValue: {
@@ -3145,7 +3564,7 @@ const styles = {
   },
   participantDemoBarValue: {
     color: "#d8d0c0",
-    fontSize: "0.88rem",
+    fontSize: "0.84rem",
     whiteSpace: "nowrap",
   },
   participantDemoBarPercent: {
@@ -3288,7 +3707,7 @@ const styles = {
   },
   matrixCollapsedNote: {
     color: "#bfb4a3",
-    fontSize: "0.88rem",
+    fontSize: "0.84rem",
     lineHeight: 1.35,
     borderTop: "1px solid rgba(255,255,255,0.08)",
     paddingTop: "10px",
@@ -3515,7 +3934,7 @@ const styles = {
     width: "100%",
     borderCollapse: "collapse",
     minWidth: "760px",
-    fontSize: "0.88rem",
+    fontSize: "0.84rem",
   },
   th: {
     textAlign: "left",
