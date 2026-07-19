@@ -200,15 +200,15 @@ const GROUP_SPACER_HEIGHT = '35px';
         112: "muon magnetic moment",
         113: "electron magnetic moment anomaly",
         114: "muon magnetic moment anomaly",
-        115: "muon g factor",
-        116: "muon magnetic moment to Bohr magneton ratio",
-        117: "muon magnetic moment to nuclear magneton ratio",
+        115: "muon magnetic moment to Bohr magneton ratio",
+        116: "muon magnetic moment to nuclear magneton ratio",
+        117: "muon g factor",
         118: "molar gas constant",
         119: "molar volume of ideal gas_0",
         120: "molar volume of ideal gas_1",
-        121: "electron g factor",
-        122: "electron magnetic moment to Bohr magneton ratio",
-        123: "electron magnetic moment to nuclear magneton ratio",
+        121: "electron magnetic moment to Bohr magneton ratio",
+        122: "electron magnetic moment to nuclear magneton ratio",
+        123: "electron g factor",
         124: "electron magnetic moment",
         125: "electron gyromagnetic ratio",
         126: "electron gyromagnetic ratio in MHz/T",
@@ -26743,37 +26743,48 @@ J ⋮ kg{" "}
                     = the muon mass,{" "}
 
                     <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
+                        src="/equations/liouville_s_constant.svg"
+                        alt="L_Li"
                         style={{
-                            height: "0.5em",
-                            verticalAlign: "-0.0em",
+                            height: "1.00em",
+                            verticalAlign: "-0.27em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the arc length of the unit lemniscate,{" "}
+                    = Liouville&apos;s constant,{" "}
 
                     <img
-                        src="/equations/pi.svg"
-                        alt="pi"
+                        src="/equations/g_gi.svg"
+                        alt="G_Gi"
                         style={{
-                            height: "0.56em",
-                            verticalAlign: "-0.0em",
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = Archimedes&apos; constant,{" "}
+                    = Gieseking&apos;s constant,{" "}
 
                     <img
-                        src="/equations/zhe_r.svg"
-                        alt="zhe_r"
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
                         style={{
                             height: "0.75em",
                             verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the hyperbolic radius constant, and{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
 
                     <img
                         src="/equations/hyperbolic_inversion_boundary.svg"
@@ -27377,251 +27388,11 @@ J ⋮ kg{" "}
 
 
 
+        
+
+
 
 115: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "-25px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    muon g factor
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-end"}}
->
-                    <img
-                        src="/equations/muon_g_factor.svg"
-                        alt="muon g factor equation"
-                        className="popup-equation"
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "22px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "14px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the universal parabolic constant,{" "}
-
-                    <img
-                        src="/equations/zeta_function.svg"
-                        alt="zeta(x)"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Riemann zeta function,{" "}
-
-                    <img
-                        src="/equations/domino_tiling_constant.svg"
-                        alt="C_d"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the domino tiling constant,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/g_mu.svg"
-      alt="g_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
-  />{" "}
-      = – 2.00233184172840...
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/g_mu.svg"
-      alt="g_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
-  />{" "}
-      = – 2.00233184123(82)
-
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?gmum|search_for=muon"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = − 0.61"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/g_mu.svg"
-      alt="g_mu"
-      style={{
-          height: "0.85em",
-          verticalAlign: "-0.25em",
-          display: "inline",
-      }}
-  />{" "}
-      = – 2.0023318418(13)
-
-  </span>
-                    <span>
-    CODATA 2018, σ = − 0.06
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-
-
-
-        
-        
-        
-
-
-
-116: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -27906,7 +27677,7 @@ J ⋮ kg{" "}
 
 
 
-117: (
+116: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -28184,6 +27955,249 @@ J ⋮ kg{" "}
 
             </div>
         ),
+
+
+
+
+
+
+117: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "-25px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    muon g factor
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
+                    <img
+                        src="/equations/muon_g_factor.svg"
+                        alt="muon g factor equation"
+                        className="popup-equation"
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "22px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "14px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/zhe_1.svg"
+                        alt="zhe_1"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_2.svg"
+                        alt="zhe_2"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/universal_parabolic_constant.svg"
+                        alt="P_up"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the universal parabolic constant,{" "}
+
+                    <img
+                        src="/equations/zeta_function.svg"
+                        alt="zeta(x)"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the Riemann zeta function,{" "}
+
+                    <img
+                        src="/equations/domino_tiling_constant.svg"
+                        alt="C_d"
+                        style={{
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the domino tiling constant,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/g_mu.svg"
+      alt="g_mu"
+      style={{
+          height: "0.85em",
+          verticalAlign: "-0.25em",
+          display: "inline",
+      }}
+  />{" "}
+      = – 2.00233184172840...
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/g_mu.svg"
+      alt="g_mu"
+      style={{
+          height: "0.85em",
+          verticalAlign: "-0.25em",
+          display: "inline",
+      }}
+  />{" "}
+      = – 2.00233184123(82)
+
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?gmum|search_for=muon"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = − 0.61"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/g_mu.svg"
+      alt="g_mu"
+      style={{
+          height: "0.85em",
+          verticalAlign: "-0.25em",
+          display: "inline",
+      }}
+  />{" "}
+      = – 2.0023318418(13)
+
+  </span>
+                    <span>
+    CODATA 2018, σ = − 0.06
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
 
 
 
@@ -29086,242 +29100,10 @@ J ⋮ kg{" "}
 
 
 
+
+
+
 121: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "-25px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    electron g factor
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-end"}}
->
-                    <img
-                        src="/equations/electron_g_factor.svg"
-                        alt="electron g factor equation"
-                        className="popup-equation"
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "14px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/zhe_1.svg"
-                        alt="zhe_1"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_2.svg"
-                        alt="zhe_2"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
-                        style={{
-                            height: "1em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the universal parabolic constant,{" "}
-
-                    <img
-                        src="/equations/c_cfp.svg"
-                        alt="C_CFP"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the fixed point of the hyperbolic cotangent,{" "}
-
-                    <img
-                        src="/equations/d_d.svg"
-                        alt="D_d"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the dimer constant,{" "}
-
-                    <img
-                        src="/equations/zhe_3.svg"
-                        alt="zhe_3"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
-
-                    <img
-                        src="/equations/zhe_4.svg"
-                        alt="zhe_4"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/electron_g_factor_symbol.svg"
-      alt="g_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "} = – 2.00231930436065...
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/electron_g_factor_symbol.svg"
-      alt="g_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "} = – 2.00231930436092(36)
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?gem|search_for=g"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = + 0.74"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/electron_g_factor_symbol.svg"
-      alt="g_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />{" "} = – 2.00231930436256(35)
-</span>
-                    <span>
-    CODATA 2018, σ = − 5.46
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-
-
-
-
-
-
-122: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -29581,7 +29363,7 @@ J ⋮ kg{" "}
 
 
 
-123: (
+122: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -29857,6 +29639,243 @@ J ⋮ kg{" "}
 
             </div>
         ),
+
+
+
+
+
+ 
+ 
+
+123: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "-25px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    electron g factor
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "18px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
+                    <img
+                        src="/equations/electron_g_factor.svg"
+                        alt="electron g factor equation"
+                        className="popup-equation"
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "14px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/zhe_1.svg"
+                        alt="zhe_1"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 1<sup>st</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_2.svg"
+                        alt="zhe_2"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/universal_parabolic_constant.svg"
+                        alt="P_up"
+                        style={{
+                            height: "1em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the universal parabolic constant,{" "}
+
+                    <img
+                        src="/equations/c_cfp.svg"
+                        alt="C_CFP"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the fixed point of the hyperbolic cotangent,{" "}
+
+                    <img
+                        src="/equations/d_d.svg"
+                        alt="D_d"
+                        style={{
+                            height: "0.95em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the dimer constant,{" "}
+
+                    <img
+                        src="/equations/zhe_3.svg"
+                        alt="zhe_3"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 3<sup>rd</sup> hyperbolic partition constant,{" "}
+
+                    <img
+                        src="/equations/zhe_4.svg"
+                        alt="zhe_4"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 4<sup>th</sup> hyperbolic partition constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.9em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/electron_g_factor_symbol.svg"
+      alt="g_e"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "} = – 2.00231930436065...
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/electron_g_factor_symbol.svg"
+      alt="g_e"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "} = – 2.00231930436092(36)
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?gem|search_for=g"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = + 0.74"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/electron_g_factor_symbol.svg"
+      alt="g_e"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />{" "} = – 2.00231930436256(35)
+</span>
+                    <span>
+    CODATA 2018, σ = − 5.46
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
 
 
 
@@ -34796,17 +34815,6 @@ J ⋮ kg{" "}
                     = the 2<sup>nd</sup> hyperbolic partition constant,{" "}
 
                     <img
-                        src="/equations/pi.svg"
-                        alt="pi"
-                        style={{
-                            height: "0.56em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
                         src="/equations/zhe_3.svg"
                         alt="zhe_3"
                         style={{
@@ -35347,15 +35355,15 @@ J ⋮ kg{" "}
                     = the electron mass,{" "}
                     
                     <img
-                        src="/equations/d_d.svg"
-                        alt="D_d"
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
                         style={{
-                            height: "0.90em",
-                            verticalAlign: "-0.2em",
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the dimer constant,{" "}
+                    = Catalan&apos;s constant,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -70680,15 +70688,15 @@ J ⋮ kg{" "}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     eqNumber === 112 ? "/equations/muon_magnetic_moment.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         eqNumber === 113 ? "/equations/electron_magnetic_moment_anomaly.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             eqNumber === 114 ? "/equations/muon_magnetic_moment_anomaly.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 115 ? "/equations/muon_g_factor.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 116 ? "/equations/muon_magnetic_moment_to_bohr_magneton_ratio.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 117 ? "/equations/muon_magnetic_moment_to_nuclear_magneton_ratio.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 115 ? "/equations/muon_magnetic_moment_to_bohr_magneton_ratio.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    eqNumber === 116 ? "/equations/muon_magnetic_moment_to_nuclear_magneton_ratio.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 117 ? "/equations/muon_g_factor.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             eqNumber === 118 ? "/equations/molar_gas_constant.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 eqNumber === 119 ? "/equations/molar_volume_of_ideal_gas_0.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     eqNumber === 120 ? "/equations/molar_volume_of_ideal_gas_1.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 121 ? "/equations/electron_g_factor.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 122 ? "/equations/electron_magnetic_moment_to_bohr_magneton_ratio.svg" :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 123 ? "/equations/electron_magnetic_moment_to_nuclear_magneton_ratio.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        eqNumber === 121 ? "/equations/electron_magnetic_moment_to_bohr_magneton_ratio.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            eqNumber === 122 ? "/equations/electron_magnetic_moment_to_nuclear_magneton_ratio.svg" :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                eqNumber === 123 ? "/equations/electron_g_factor.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     eqNumber === 124 ? "/equations/electron_magnetic_moment.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         eqNumber === 125 ? "/equations/electron_gyromagnetic_ratio.svg" :
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             eqNumber === 126 ? "/equations/electron_gyromagnetic_ratio_in_mhz_per_t.svg" :
