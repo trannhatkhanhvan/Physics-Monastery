@@ -1722,6 +1722,8 @@ const THEORY_FOUNDATIONS = [
     key: "control-value",
     name: "Control-Value Theory",
     shortName: "Control-Value",
+    image: "/images/mindfulness-study/control-value-theory.png",
+    alt: "Control-Value Theory diagram showing environment, appraisal, emotion, and learning plus achievement factors, with instructional conditions, control, values, achievement emotions, cognitive resources, motivation, learning strategies, self-regulation, achievement, and regulatory supports.",
     premise:
       "Achievement emotions depend strongly on how much control students believe they have and how much value they assign to the task.",
     studyUse:
