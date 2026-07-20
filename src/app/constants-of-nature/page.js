@@ -34545,26 +34545,26 @@ J ⋮ kg{" "}
                     = the proton mass,{" "}
 
                     <img
-                        src="/equations/omega_1_constant.svg"
-                        alt="omega_1"
+                        src="/equations/g_gi.svg"
+                        alt="G_Gi"
                         style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.25em",
+                            height: "0.9em",
+                            verticalAlign: "-0.2em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the omega_1 constant,{" "}
+                    = Gieseking&apos;s constant,{" "}
 
                     <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
+                        src="/equations/pi.svg"
+                        alt="pi"
                         style={{
-                            height: "0.5em",
+                            height: "0.56em",
                             verticalAlign: "-0.0em",
                             display: "inline",
                         }}
                     />{" "}
-                    = the arc length of the unit lemniscate,{" "}
+                    = Archimedes&apos; constant,{" "}
 
                     <img
                         src="/equations/zhe_3.svg"
@@ -34624,7 +34624,7 @@ J ⋮ kg{" "}
           display: "inline",
       }}
   />{" "}
-      = 1.41060679716311... &times; 10<sup>&minus;26</sup> J/T
+      = 1.41060679344096... &times; 10<sup>&minus;26</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -34664,7 +34664,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 2.86"}
+                        {", σ = − 3.35"}
   </span>
                 </div>
 
@@ -34690,7 +34690,7 @@ J ⋮ kg{" "}
       = 1.41060679736(60) &times; 10<sup>&minus;26</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 0.32
+    CODATA 2018, σ = − 6.70
   </span>
                 </div>
 
