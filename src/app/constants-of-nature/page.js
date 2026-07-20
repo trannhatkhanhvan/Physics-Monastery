@@ -70430,7 +70430,7 @@ J ⋮ kg{" "}
   style={{
     position: "fixed",          // ← fixed so transforms/parents can't affect it
     top: "50%",
-    left: "calc(var(--sidebar-width, 142px) + 33px)",
+    left: "calc(var(--sidebar-width, 142px) + 10px)",
     transform: "translateY(-50%)",
     zIndex: 2000,               // ← above everything
     pointerEvents: "auto",
