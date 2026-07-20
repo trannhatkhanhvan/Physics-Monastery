@@ -255,6 +255,13 @@ function ResponsivePageCSS() {
         }
       }
 
+
+      @media (max-width: 860px) {
+        .mindfulness-theory-fix {
+          display: block !important;
+        }
+      }
+
       @media (max-width: 1180px) {
         .participant-demo-upper-display {
           grid-template-columns: 1fr !important;
@@ -1667,6 +1674,8 @@ function ConceptualModelSection({ data }) {
       </div>
 
       <ConceptualModelFigure />
+
+      <TheoryFoundationsTabs />
     </section>
   );
 }
@@ -1686,6 +1695,164 @@ function ConceptualModelFigure() {
         </figcaption>
       </figure>
     </div>
+  );
+}
+
+const THEORY_FOUNDATIONS = [
+  {
+    key: "mindfulness-to-meaning",
+    name: "Mindfulness-to-Meaning Theory",
+    shortName: "Mindfulness-to-Meaning",
+    image: "/images/mindfulness-study/mindfulness-to-meaning-theory.png",
+    alt: "Mindfulness-to-Meaning Theory diagram showing stress appraisal, state of mindfulness, decentering, attention to positive contextual features, positive reappraisal, savoring positive emotion, and the upward spiral of trait mindfulness and positive affectivity.",
+    premise:
+      "Mindfulness supports meaning-making by helping students decenter from immediate stress, broaden attention, and reappraise difficulty in more adaptive ways.",
+    studyUse:
+      "In this study, the theory helps explain how mindful awareness may transform frustration during problem solving into curiosity, persistence, and constructive engagement.",
+    stages: [
+      "Mindful attention",
+      "Decentering",
+      "Positive reappraisal",
+      "Meaning and persistence",
+    ],
+    studyBridge:
+      "Mindfulness may help a student step back from the feeling of failure and reinterpret the task as a learning opportunity.",
+  },
+  {
+    key: "control-value",
+    name: "Control-Value Theory",
+    shortName: "Control-Value",
+    premise:
+      "Achievement emotions depend strongly on how much control students believe they have and how much value they assign to the task.",
+    studyUse:
+      "In this study, the theory helps connect students’ emotional experience during engineering problem solving to perceived competence, task importance, and performance.",
+    stages: [
+      "Perceived control",
+      "Task value",
+      "Achievement emotion",
+      "Problem-solving performance",
+    ],
+    studyBridge:
+      "A student who believes the task matters and feels some control over it is more likely to experience activating emotions that support effort.",
+  },
+  {
+    key: "process-model",
+    name: "Process Model of Emotion Regulation",
+    shortName: "Process Model",
+    premise:
+      "Emotions can be regulated at different points in the emotion-generative process. The first four points are antecedent-focused; the fifth is response-focused.",
+    studyUse:
+      "In this study, the model clarifies the difference between reappraisal, which happens before the emotional response fully unfolds, and suppression, which happens after the response is already underway.",
+    stages: [
+      "Situation selection",
+      "Situation modification",
+      "Attentional deployment",
+      "Cognitive change",
+      "Response modulation",
+    ],
+    studyBridge:
+      "Reappraisal occurs during cognitive change. Suppression occurs during response modulation.",
+  },
+  {
+    key: "cognitive-appraisal",
+    name: "Cognitive Appraisal Theory",
+    shortName: "Cognitive Appraisal",
+    premise:
+      "Emotion is shaped by how a person interprets a situation, including whether it is appraised as threatening, manageable, meaningful, frustrating, or challenging.",
+    studyUse:
+      "In this study, the theory helps explain why the same engineering task can produce different emotions in different students.",
+    stages: [
+      "Problem situation",
+      "Student appraisal",
+      "Emotional response",
+      "Behavioral strategy",
+    ],
+    studyBridge:
+      "A puzzle can be appraised as evidence of failure or as a challenge worth solving. That appraisal changes the emotional response.",
+  },
+];
+
+function TheoryFoundationsTabs() {
+  const [activeKey, setActiveKey] = useState("process-model");
+  const activeTheory =
+    THEORY_FOUNDATIONS.find((theory) => theory.key === activeKey) ||
+    THEORY_FOUNDATIONS[2];
+
+  return (
+    <div style={styles.theoryTabsCard}>
+      <div style={styles.theorySingleFigureFrame}>
+        {activeTheory.key === "process-model" ? (
+          <ProcessModelTheoryChart />
+        ) : (
+          <GeneralTheoryChart theory={activeTheory} />
+        )}
+      </div>
+
+      <div style={styles.theoryTabButtonRow} role="tablist" aria-label="Theoretical foundations">
+        {THEORY_FOUNDATIONS.map((theory) => {
+          const isActive = theory.key === activeKey;
+
+          return (
+            <button
+              key={theory.key}
+              type="button"
+              role="tab"
+              aria-selected={isActive}
+              onClick={() => setActiveKey(theory.key)}
+              style={{
+                ...styles.theoryTabButton,
+                ...(isActive ? styles.theoryTabButtonActive : null),
+              }}
+            >
+              {theory.name}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function GeneralTheoryChart({ theory }) {
+  if (theory.image) {
+    return (
+      <figure style={styles.theoryImageFigure}>
+        <img
+          src={theory.image}
+          alt={theory.alt || theory.name}
+          style={styles.theoryImage}
+        />
+      </figure>
+    );
+  }
+
+  return (
+    <div style={styles.generalTheoryChart}>
+      {theory.stages.map((stage, index) => (
+        <div key={stage} style={styles.generalTheoryStepWrap}>
+          <div style={styles.generalTheoryStep}>
+            <span style={styles.generalTheoryStepNumber}>{index + 1}</span>
+            <span>{stage}</span>
+          </div>
+
+          {index < theory.stages.length - 1 ? (
+            <div style={styles.generalTheoryArrow} aria-hidden="true">→</div>
+          ) : null}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ProcessModelTheoryChart() {
+  return (
+    <figure style={styles.theoryImageFigure}>
+      <img
+        src="/images/mindfulness-study/process-model-emotion-regulation.png"
+        alt="Process Model of Emotion Regulation showing situations, aspects, meanings, emotion response tendencies, experiential responses, behavioral responses, physiological responses, reappraisal, suppression, antecedent-focused emotion regulation, and response-focused emotion regulation."
+        style={styles.theoryImage}
+      />
+    </figure>
   );
 }
 
@@ -2757,6 +2924,277 @@ function ResearchDesignMethodFigure() {
 
 
 const styles = {
+  theoryImageFigure: {
+    margin: 0,
+    width: "100%",
+  },
+  theoryImage: {
+    width: "100%",
+    display: "block",
+    borderRadius: "14px",
+    border: "1px solid rgba(234,215,164,0.18)",
+    boxShadow: "0 20px 70px rgba(0,0,0,0.30)",
+  },
+  theoryTabsCard: {
+    marginTop: "28px",
+    padding: "0",
+    borderRadius: "20px",
+    border: "1px solid rgba(201,165,106,0.24)",
+    background:
+      "linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015))",
+    boxShadow: "0 24px 80px rgba(0,0,0,0.28)",
+    overflow: "hidden",
+  },
+  theorySingleFigureFrame: {
+    padding: "18px",
+    background:
+      "radial-gradient(circle at top left, rgba(201,165,106,0.10), transparent 26rem), rgba(7,10,14,0.52)",
+  },
+  theoryTabsIntro: {
+    maxWidth: "980px",
+    marginBottom: "18px",
+  },
+  theoryTabsTitle: {
+    margin: "6px 0 8px",
+    color: "#fff7e8",
+    fontSize: "clamp(1.45rem, 2.2vw, 2.15rem)",
+    lineHeight: 1.08,
+    fontWeight: 700,
+  },
+  theoryTabButtonRow: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "8px",
+    margin: "0",
+    padding: "14px 16px 16px",
+    borderTop: "1px solid rgba(234,215,164,0.16)",
+    background: "rgba(0,0,0,0.22)",
+  },
+  theoryTabButton: {
+    border: "1px solid rgba(234,215,164,0.28)",
+    borderRadius: "999px",
+    background: "rgba(255,255,255,0.04)",
+    color: "rgba(238,232,220,0.76)",
+    padding: "8px 12px",
+    fontFamily: "Times New Roman, Times, serif",
+    fontSize: "0.92rem",
+    lineHeight: 1,
+    cursor: "pointer",
+    transition: "border-color 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease",
+  },
+  theoryTabButtonActive: {
+    border: "1px solid rgba(234,215,164,0.95)",
+    background: "rgba(201,165,106,0.20)",
+    color: "#fff6df",
+    boxShadow: "0 0 0 1px rgba(234,215,164,0.16), 0 10px 26px rgba(0,0,0,0.24)",
+  },
+  theoryFeaturePanel: {
+    borderRadius: "18px",
+    border: "1px solid rgba(255,255,255,0.10)",
+    background:
+      "radial-gradient(circle at top left, rgba(201,165,106,0.13), transparent 22rem), rgba(7,10,14,0.58)",
+    padding: "20px",
+  },
+  theoryFeatureHeader: {
+    maxWidth: "980px",
+    marginBottom: "18px",
+  },
+  theoryFeatureEyebrow: {
+    color: "#c9a56a",
+    textTransform: "uppercase",
+    letterSpacing: "0.12em",
+    fontSize: "0.76rem",
+    fontWeight: 700,
+  },
+  theoryFeatureTitle: {
+    margin: "6px 0 8px",
+    color: "#fff6df",
+    fontSize: "clamp(1.35rem, 2vw, 1.9rem)",
+    lineHeight: 1.1,
+  },
+  theoryFeaturePremise: {
+    margin: 0,
+    color: "rgba(238,232,220,0.84)",
+    fontSize: "1.02rem",
+    lineHeight: 1.55,
+  },
+  theoryExplanationGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+    gap: "12px",
+    marginTop: "16px",
+  },
+  theoryExplanationBox: {
+    borderRadius: "14px",
+    border: "1px solid rgba(234,215,164,0.18)",
+    background: "rgba(255,255,255,0.04)",
+    padding: "14px",
+    color: "rgba(238,232,220,0.84)",
+    fontSize: "0.98rem",
+    lineHeight: 1.45,
+  },
+  generalTheoryChart: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+    gap: "10px",
+    alignItems: "center",
+    margin: "18px 0 8px",
+  },
+  generalTheoryStepWrap: {
+    display: "grid",
+    gridTemplateColumns: "1fr auto",
+    alignItems: "center",
+    gap: "10px",
+  },
+  generalTheoryStep: {
+    minHeight: "96px",
+    borderRadius: "16px",
+    border: "1px solid rgba(234,215,164,0.36)",
+    background:
+      "linear-gradient(145deg, rgba(201,165,106,0.15), rgba(255,255,255,0.035))",
+    display: "grid",
+    alignContent: "center",
+    justifyItems: "center",
+    gap: "8px",
+    padding: "14px",
+    color: "#fff6df",
+    textAlign: "center",
+    fontSize: "1rem",
+    lineHeight: 1.18,
+  },
+  generalTheoryStepNumber: {
+    width: "28px",
+    height: "28px",
+    display: "grid",
+    placeItems: "center",
+    borderRadius: "999px",
+    border: "1px solid rgba(234,215,164,0.72)",
+    color: "#eac978",
+    fontWeight: 700,
+  },
+  generalTheoryArrow: {
+    color: "#eac978",
+    fontSize: "1.6rem",
+    fontWeight: 700,
+  },
+  processTheoryChart: {
+    overflowX: "auto",
+    padding: "20px 10px 10px",
+    borderRadius: "16px",
+    border: "1px solid rgba(234,215,164,0.18)",
+    background: "rgba(0,0,0,0.20)",
+  },
+  processTheoryTopLabels: {
+    minWidth: "980px",
+    display: "grid",
+    gridTemplateColumns: "1fr 1.2fr 1fr 1.4fr",
+    color: "#f0d38d",
+    fontSize: "1.35rem",
+    fontWeight: 700,
+    textAlign: "center",
+    marginBottom: "16px",
+  },
+  processTheoryPath: {
+    minWidth: "980px",
+    display: "grid",
+    gridTemplateColumns: "0.72fr 42px 0.86fr 42px 0.88fr 42px 0.70fr 42px 0.92fr 42px 0.26fr 1.32fr",
+    alignItems: "center",
+    gap: "6px",
+  },
+  processTheoryChoiceColumn: {
+    display: "grid",
+    justifyContent: "center",
+    gap: "7px",
+    fontSize: "1.08rem",
+    lineHeight: 1,
+  },
+  processTheoryChoiceActive: {
+    color: "#fff6df",
+    fontWeight: 700,
+    textShadow: "0 0 16px rgba(234,215,164,0.35)",
+  },
+  processTheoryChoiceMuted: {
+    color: "rgba(238,232,220,0.52)",
+  },
+  processTheoryArrow: {
+    color: "#eac978",
+    fontSize: "2rem",
+    fontWeight: 700,
+    textAlign: "center",
+  },
+  processTheoryResponseBox: {
+    borderRadius: "14px",
+    border: "1px solid rgba(234,215,164,0.62)",
+    color: "#fff6df",
+    padding: "18px 10px",
+    textAlign: "center",
+    lineHeight: 1.22,
+    fontSize: "1.02rem",
+    boxShadow: "0 0 24px rgba(201,165,106,0.12)",
+  },
+  processTheoryBrace: {
+    color: "#f0d38d",
+    fontSize: "6.6rem",
+    lineHeight: 0.75,
+    transform: "scaleX(0.82)",
+  },
+  processTheoryResponses: {
+    display: "grid",
+    gap: "12px",
+    color: "#fff6df",
+    fontSize: "1.05rem",
+  },
+  processTheorySign: {
+    color: "#eac978",
+    marginRight: "10px",
+    marginLeft: "10px",
+    fontWeight: 700,
+  },
+  processTheoryStageRow: {
+    minWidth: "980px",
+    display: "grid",
+    gridTemplateColumns: "repeat(5, 1fr)",
+    gap: "12px",
+    marginTop: "28px",
+    color: "#fff6df",
+    textAlign: "center",
+    fontSize: "1.02rem",
+    lineHeight: 1.15,
+  },
+  processTheoryStrategyRow: {
+    minWidth: "980px",
+    display: "grid",
+    gridTemplateColumns: "2fr auto 1fr auto",
+    alignItems: "center",
+    gap: "14px",
+    marginTop: "18px",
+  },
+  processTheoryRegulationBand: {
+    borderTop: "1px solid rgba(234,215,164,0.66)",
+    color: "#eac978",
+    textAlign: "center",
+    paddingTop: "12px",
+    fontSize: "1.05rem",
+    fontWeight: 700,
+  },
+  processTheoryRegulationBandRight: {
+    borderTop: "1px solid rgba(234,215,164,0.66)",
+    color: "#eac978",
+    textAlign: "center",
+    paddingTop: "12px",
+    fontSize: "1.05rem",
+    fontWeight: 700,
+  },
+  processTheoryStrategy: {
+    border: "1px solid rgba(234,215,164,0.70)",
+    borderRadius: "12px",
+    color: "#fff6df",
+    padding: "8px 18px",
+    fontStyle: "italic",
+    fontWeight: 700,
+    boxShadow: "0 0 20px rgba(201,165,106,0.14)",
+  },
   sectionNavShell: {
     position: "fixed",
     top: 0,
