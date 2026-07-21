@@ -42848,17 +42848,6 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck length,{" "}
-                    
-                    <img
-                        src="/equations/meter.svg"
-                        alt="m"
-                        style={{
-                            height: "0.50em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the meter,{" "}
 
                     <img
                         src="/equations/planck_mass.svg"
@@ -42881,6 +42870,17 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the Planck time,{" "}
+
+                    <img
+                        src="/equations/meter.svg"
+                        alt="m"
+                        style={{
+                            height: "0.50em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the meter,{" "}
 
                     <img
                         src="/equations/del_f.svg"
@@ -67165,7 +67165,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", 9.13-digit match"}
+                        {", 9-digit match"}
   </span>
                 </div>
 
@@ -67191,7 +67191,7 @@ J ⋮ kg{" "}
       = 6.02214076 &times; 10<sup>23</sup> 1/mol
   </span>
                     <span>
-    CODATA 2018, 9.13-digit match
+    CODATA 2018, 9-digit match
   </span>
                 </div>
 
