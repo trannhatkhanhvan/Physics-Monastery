@@ -88,9 +88,10 @@ export default function ConstantEnginePage() {
         .filter(Boolean)
         .slice(1)
         .map((line) => {
-            const [token, value, dimension] = line.split(",");
+            const [token, name, value, dimension] = line.split(",");
             return {
                 token: token || "",
+                name: name || "",
                 value: formatInputParameterValue(value || ""),
                 rawValue: value || "",
                 dimension: dimension || "",
@@ -214,7 +215,8 @@ export default function ConstantEnginePage() {
                         <p>
                             These are the numerical symbols used by the Constant
                             Engine. Each row gives the token used in the code,
-                            its assigned value, and its dimensional type.
+                            its name or meaning, its assigned value, and its
+                            dimensional type.
                         </p>
 
                         <div style={tableWrapStyle}>
@@ -222,6 +224,7 @@ export default function ConstantEnginePage() {
                                 <thead>
                                     <tr>
                                         <th style={thStyle}>Token</th>
+                                        <th style={thStyle}>Name / meaning</th>
                                         <th style={thStyle}>Value</th>
                                         <th style={thStyle}>Dimension</th>
                                     </tr>
@@ -231,6 +234,7 @@ export default function ConstantEnginePage() {
                                     {symbolRows.map((row, index) => (
                                         <tr key={`${row.token}-${index}`}>
                                             <td style={tdTokenStyle}>{row.token}</td>
+                                            <td style={tdNameStyle}>{row.name}</td>
                                             <td style={tdValueStyle} title={row.rawValue}>{row.value}</td>
                                             <td style={tdStyle}>{row.dimension}</td>
                                         </tr>
@@ -383,6 +387,11 @@ const tdStyle = {
 const tdTokenStyle = {
     ...tdStyle,
     whiteSpace: "nowrap",
+};
+
+const tdNameStyle = {
+    ...tdStyle,
+    minWidth: "220px",
 };
 
 const tdValueStyle = {
