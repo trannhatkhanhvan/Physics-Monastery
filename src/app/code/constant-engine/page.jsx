@@ -53,6 +53,16 @@ export default function ConstantEnginePage() {
         "public/code/constant-engine/build_all.py"
     );
 
+    const evaluatorPath = path.join(
+        process.cwd(),
+        "public/code/constant-engine/evaluator.py"
+    );
+
+    const recipesPath = path.join(
+        process.cwd(),
+        "public/code/constant-engine/constants.yaml"
+    );
+
     const symbolsPath = path.join(
         process.cwd(),
         "public/code/constant-engine/symbols.csv"
@@ -64,6 +74,8 @@ export default function ConstantEnginePage() {
     );
 
     const code = fs.readFileSync(codePath, "utf8");
+    const evaluatorCode = fs.readFileSync(evaluatorPath, "utf8");
+    const recipesYaml = fs.readFileSync(recipesPath, "utf8");
     const symbolsCsv = fs.readFileSync(symbolsPath, "utf8");
 
     const latestOutput = fs.existsSync(outputPath)
@@ -130,6 +142,22 @@ export default function ConstantEnginePage() {
                     </a>
 
                     <a
+                        href="/code/constant-engine/evaluator.py"
+                        download
+                        style={buttonStyle}
+                    >
+                        Download Evaluator
+                    </a>
+
+                    <a
+                        href="/code/constant-engine/constants.yaml"
+                        download
+                        style={buttonStyle}
+                    >
+                        Download 288 Recipes
+                    </a>
+
+                    <a
                         href="/code/constant-engine/symbols.csv"
                         download
                         style={buttonStyle}
@@ -156,10 +184,26 @@ export default function ConstantEnginePage() {
                 </div>
 
                 <details style={panelStyle}>
-                    <summary style={summaryStyle}>View Code</summary>
+                    <summary style={summaryStyle}>Build Script</summary>
 
                     <pre style={codeBoxStyle}>
                         <code>{code}</code>
+                    </pre>
+                </details>
+
+                <details style={panelStyle}>
+                    <summary style={summaryStyle}>Evaluator</summary>
+
+                    <pre style={codeBoxStyle}>
+                        <code>{evaluatorCode}</code>
+                    </pre>
+                </details>
+
+                <details style={panelStyle}>
+                    <summary style={summaryStyle}>288 Constant Recipes</summary>
+
+                    <pre style={codeBoxStyle}>
+                        <code>{recipesYaml}</code>
                     </pre>
                 </details>
 
