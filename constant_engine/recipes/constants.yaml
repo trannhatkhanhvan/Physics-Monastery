@@ -441,7 +441,7 @@ constants:
 
 
   - { recipe_number: 73, constant_id: E_p ̇, display_name: "Planck mass energy equivalent in GeV", column: "3", island: "1", dimension: "GeV",
-      external_geometry: { numerator: [ "GeV" ], denominator: [ "joulr" ] }, external_boundary: { numerator: [ "l_p^2", "m_p" ], denominator: [ "t_p^2" ] },
+      external_geometry: { numerator: [ ], denominator: [ "GeV" ] }, external_boundary: { numerator: [ "l_p^2", "m_p" ], denominator: [ "t_p^2" ] },
       inversion_geometry: { numerator: [ "-1", "Re(ipt)" ], denominator: [ "2" ] }, root_transform: { id: "zhe_3*zhe_4" },
       expected_kind: measured, expected_value: 1.220890(14)e19, expected_digits: "1220890", expected_digits_label: "SI measured" }
 
@@ -488,142 +488,142 @@ constants:
       expected_kind: measured, expected_value: 2.73092453446(85)e-22, expected_digits: "273092453446", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 81, constant_id: eV⋮kg, display_name: "electron volt-kilogram relationship", column: "3", island: "3", dimension: "kg",
+  - { recipe_number: 81, constant_id: N_mom ̇, display_name: "natural unit of momentum in MeV/c", column: "3", island: "3", dimension: "MeV/c",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "second", "l_p^2", "m_e" ], denominator: [ "MeV", "meter", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 5.1099895069(16)e-1, expected_digits: "51099895069", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 82, constant_id: E_A_mass ̇, display_name: "atomic mass constant energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "A_mass", "l_p^2" ], denominator: [ "MeV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 9.3149410372(29)e2, expected_digits: "93149410372", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 83, constant_id: E_e ̇, display_name: "natural unit of energy in MeV", column: "3", island: "3", dimension: "MeV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_e" ], denominator: [ "MeV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 5.1099895069(16)E-1, expected_digits: "51099895069", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 84, constant_id: E_μ ̇, display_name: "muon mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_μ" ], denominator: [ "MeV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 1.056583755(23)e2, expected_digits: "1056583755", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 85, constant_id: E_+ ̇, display_name: "proton mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_+" ], denominator: [ "MeV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 9.3827208943(29)e2, expected_digits: "93827208943", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 86, constant_id: E_n ̇, display_name: "neutron mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_n" ], denominator: [ "MeV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 9.3956542194(48)e2, expected_digits: "93956542194", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 87, constant_id: E_∆ ̇, display_name: "neutron-proton mass difference energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "(m_n - m_+)", "l_p^2" ], denominator: [ "MeV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 1.29333251(38), expected_digits: "129333251", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 88, constant_id: E_τ ̇, display_name: "tau energy equivalent", column: "3", island: "3", dimension: "MeV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_τ" ], denominator: [ "MeV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 1.77686(12)e3, expected_digits: "177686", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 89, constant_id: E_de ̇, display_name: "deuteron mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_de" ], denominator: [ "MeV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 1.87561294500(58)e3, expected_digits: "187561294500", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 90, constant_id: E_he ̇, display_name: "helion mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_he" ], denominator: [ "MeV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 2.80839161112(88)e3, expected_digits: "280839161112", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 91, constant_id: E_tri ̇, display_name: "triton mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_tri" ], denominator: [ "MeV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 2.80892113668(88)e3, expected_digits: "280892113668", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 92, constant_id: E_α ̇, display_name: "alpha particle mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_α" ], denominator: [ "MeV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 3.7273794118(12)e3, expected_digits: "37273794118", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 93, constant_id: kg⋮eV, display_name: "kilogram-electron volt relationship", column: "3", island: "3", dimension: "eV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "kilogram", "l_p^2" ], denominator: [ "eV", "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: exact, expected_value: 5.609588603E35, expected_digits: "5609588603", expected_digits_label: "SI exact (defined)" }
+
+
+  - { recipe_number: 94, constant_id: eV⋮kg, display_name: "electron volt-kilogram relationship", column: "3", island: "3", dimension: "kg",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "eV", "t_p^2" ], denominator: [ "l_p^2" ] },
       inversion_geometry: { numerator: [ "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
       expected_kind: exact, expected_value: 1.782661921E-36, expected_digits: "1782661921", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 82, constant_id: J⋮kg, display_name: "joule-kilogram relationship", column: "3", island: "3", dimension: "kg",
+  - { recipe_number: 95, constant_id: J⋮kg, display_name: "joule-kilogram relationship", column: "3", island: "3", dimension: "kg",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "joule", "t_p^2" ], denominator: [ "l_p^2" ] },
       inversion_geometry: { numerator: [ "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
       expected_kind: exact, expected_value: 1.112650056e-17, expected_digits: "1112650056", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 83, constant_id: J⋮A_mass, display_name: "joule-atomic mass unit relationship", column: "3", island: "3", dimension: "u",
+  - { recipe_number: 96, constant_id: J⋮A_mass, display_name: "joule-atomic mass unit relationship", column: "3", island: "3", dimension: "u",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "joule", "t_p^2" ], denominator: [ "A_mass", "l_p^2" ] },
       inversion_geometry: { numerator: [ "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
       expected_kind: measured, expected_value: 6.7005352471(21)e9, expected_digits: "67005352471", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 84, constant_id: A_mass⋮J, display_name: "atomic mass unit-joule relationship", column: "3", island: "3", dimension: "J",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "A_mass", "l_p^2" ], denominator: [ "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 1.49241808768(46)e-10, expected_digits: "149241808768", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 85, constant_id: N_mom ̇, display_name: "natural unit of momentum in MeV/c", column: "3", island: "3", dimension: "MeV/c",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "second", "l_p^2", "m_e" ], denominator: [ "joule", "meter", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 5.1099895069(16)e-1, expected_digits: "51099895069", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 86, constant_id: E_A_mass ̇, display_name: "atomic mass constant energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "A_mass", "l_p^2" ], denominator: [ "joule", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 9.3149410372(29)e2, expected_digits: "93149410372", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 87, constant_id: kg⋮J, display_name: "kilogram-joule relationship", column: "3", island: "3", dimension: "J",
+  - { recipe_number: 97, constant_id: kg⋮J, display_name: "kilogram-joule relationship", column: "3", island: "3", dimension: "J",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "kilogram", "l_p^2" ], denominator: [ "t_p^2" ] },
       inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
       expected_kind: exact, expected_value: 8.987551787E16, expected_digits: "8987551787", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 88, constant_id: kg⋮eV, display_name: "kilogram-electron volt relationship", column: "3", island: "3", dimension: "eV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "eV", "kilogram", "l_p^2" ], denominator: [ "joule", "t_p^2" ] },
+  - { recipe_number: 98, constant_id: A_mass⋮J, display_name: "atomic mass unit-joule relationship", column: "3", island: "3", dimension: "J",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "A_mass", "l_p^2" ], denominator: [ "t_p^2" ] },
       inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: exact, expected_value: 5.609588603E35, expected_digits: "5609588603", expected_digits_label: "SI exact (defined)" }
+      expected_kind: measured, expected_value: 1.49241808768(46)e-10, expected_digits: "149241808768", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 89, constant_id: E_∆, display_name: "neutron-proton mass difference energy equivalent", column: "3", island: "3", dimension: "J",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "(m_n - m_+)", "l_p^2" ], denominator: [ "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 2.07214712(60)e-13, expected_digits: "207214712", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 90, constant_id: E_∆ ̇, display_name: "neutron-proton mass difference energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "(m_n - m_+)", "l_p^2" ], denominator: [ "joule", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 1.29333251(38), expected_digits: "129333251", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 91, constant_id: E_e ̇, display_name: "natural unit of energy in MeV", column: "3", island: "3", dimension: "MeV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "l_p^2", "m_e" ], denominator: [ "joule", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 5.1099895069(16)E-1, expected_digits: "51099895069", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 92, constant_id: E_μ ̇, display_name: "muon mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "l_p^2", "m_μ" ], denominator: [ "joule", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 1.056583755(23)e2, expected_digits: "1056583755", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 93, constant_id: E_+ ̇, display_name: "proton mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "l_p^2", "m_+" ], denominator: [ "joule", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 9.3827208943(29)e2, expected_digits: "93827208943", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 94, constant_id: E_n ̇, display_name: "neutron mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "l_p^2", "m_n" ], denominator: [ "joule", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 9.3956542194(48)e2, expected_digits: "93956542194", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 95, constant_id: E_τ ̇, display_name: "tau energy equivalent", column: "3", island: "3", dimension: "MeV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "l_p^2", "m_τ" ], denominator: [ "joule", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 1.77686(12)e3, expected_digits: "177686", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 96, constant_id: E_de ̇, display_name: "deuteron mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "l_p^2", "m_de" ], denominator: [ "joule", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 1.87561294500(58)e3, expected_digits: "187561294500", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 97, constant_id: E_he ̇, display_name: "helion mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "l_p^2", "m_he" ], denominator: [ "joule", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 2.80839161112(88)e3, expected_digits: "280839161112", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 98, constant_id: E_tri ̇, display_name: "triton mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "l_p^2", "m_tri" ], denominator: [ "joule", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 2.80892113668(88)e3, expected_digits: "280892113668", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 99, constant_id: E_α ̇, display_name: "alpha particle mass energy equivalent in MeV", column: "3", island: "3", dimension: "MeV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "MeV", "l_p^2", "m_α" ], denominator: [ "joule", "t_p^2" ] },
-      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
-      expected_kind: measured, expected_value: 3.7273794118(12)e3, expected_digits: "37273794118", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 100, constant_id: E_e, display_name: "electron mass energy equivalent", column: "3", island: "3", dimension: "J",
+  - { recipe_number: 99, constant_id: E_e, display_name: "electron mass energy equivalent", column: "3", island: "3", dimension: "J",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_e" ], denominator: [ "t_p^2" ] },
       inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
       expected_kind: measured, expected_value: 8.1871057880(26)e-14, expected_digits: "81871057880", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 101, constant_id: E_μ, display_name: "muon mass energy equivalent", column: "3", island: "3", dimension: "J",
+  - { recipe_number: 100, constant_id: E_μ, display_name: "muon mass energy equivalent", column: "3", island: "3", dimension: "J",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_μ" ], denominator: [ "t_p^2" ] },
       inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
       expected_kind: measured, expected_value: 1.692833804(38)e-11, expected_digits: "1692833804", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 102, constant_id: E_+, display_name: "proton mass energy equivalent", column: "3", island: "3", dimension: "J",
+  - { recipe_number: 101, constant_id: E_+, display_name: "proton mass energy equivalent", column: "3", island: "3", dimension: "J",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_+" ], denominator: [ "t_p^2" ] },
       inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
       expected_kind: measured, expected_value: 1.50327761802(47)e-10, expected_digits: "150327761802", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 103, constant_id: E_n, display_name: "neutron mass energy equivalent", column: "3", island: "3", dimension: "J",
+  - { recipe_number: 102, constant_id: E_n, display_name: "neutron mass energy equivalent", column: "3", island: "3", dimension: "J",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_n" ], denominator: [ "t_p^2" ] },
       inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
       expected_kind: measured, expected_value: 1.50534976514(76)e-10, expected_digits: "150534976514", expected_digits_label: "SI measured" }
+
+
+  - { recipe_number: 103, constant_id: E_∆, display_name: "neutron-proton mass difference energy equivalent", column: "3", island: "3", dimension: "J",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "(m_n - m_+)", "l_p^2" ], denominator: [ "t_p^2" ] },
+      inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
+      expected_kind: measured, expected_value: 2.07214712(60)e-13, expected_digits: "207214712", expected_digits_label: "SI measured" }
 
 
   - { recipe_number: 104, constant_id: E_τ, display_name: "tau mass energy equivalent", column: "3", island: "3", dimension: "J",
@@ -654,7 +654,6 @@ constants:
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_α" ], denominator: [ "t_p^2" ] },
       inversion_geometry: { numerator: [ "-1", "Im(ipt)" ], denominator: [ ] }, root_transform: { id: "zhe_3*zhe_4" },
       expected_kind: measured, expected_value: 5.9719201997(19)e-10, expected_digits: "59719201997", expected_digits_label: "SI measured" }
-
 
 
 
@@ -1039,22 +1038,22 @@ constants:
       expected_kind: measured, expected_value: 9.3149410372(29)e8, expected_digits: "93149410372", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 172, constant_id: J⋮1/m, display_name: "joule-inverse meter relationship", column: "5", island: "5", dimension: "cycles/m",
-      external_geometry: { numerator: [ "joule" ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ "t_p^2" ], denominator: [ "l_p^3", "m_p" ] },
-      inversion_geometry: { numerator: [ "2" ], denominator: [ "δ_F" ] }, root_transform: { id: "zhe_1 - zhe_2" },
-      expected_kind: exact, expected_value: 5.034116567e24, expected_digits: "5034116567", expected_digits_label: "SI exact (defined)" }
+  - { recipe_number: 172, constant_id: ℏc ̇, display_name: "reduced Planck constant times c in MeV fm", column: "5", island: "5", dimension: "MeV fm",
+      external_geometry: { numerator: [ ], denominator: [ "MeV" ] }, external_boundary: { numerator: [ "l_p^3", "m_p" ], denominator: [ "t_p^2", "fm" ] },
+      inversion_geometry: { numerator: [ "-2" ], denominator: [ "δ_F" ] }, root_transform: { id: "zhe_1 - zhe_2" },
+      expected_kind: exact, expected_value: 1.973269804e2, expected_digits: "1973269804", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 173, constant_id: eV⋮1/m, display_name: "electron volt-inverse meter relationship", column: "5", island: "5", dimension: "cycles/m",
+  - { recipe_number: 173, constant_id: 1/m⋮eV, display_name: "inverse meter-electron volt relationship", column: "5", island: "5", dimension: "eV",
+      external_geometry: { numerator: [ "2", "pi" ], denominator: [ "eV" ] }, external_boundary: { numerator: [ "l_p^3", "m_p" ], denominator: [ "t_p^2", "meter" ] },
+      inversion_geometry: { numerator: [ "-2" ], denominator: [ "δ_F" ] }, root_transform: { id: "zhe_1 - zhe_2" },
+      expected_kind: exact, expected_value: 1.239841984E-6, expected_digits: "1239841984", expected_digits_label: "SI exact (defined)" }
+
+
+  - { recipe_number: 174, constant_id: eV⋮1/m, display_name: "electron volt-inverse meter relationship", column: "5", island: "5", dimension: "cycles/m",
       external_geometry: { numerator: [ "eV" ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ "t_p^2" ], denominator: [ "l_p^3", "m_p" ] },
       inversion_geometry: { numerator: [ "2" ], denominator: [ "δ_F" ] }, root_transform: { id: "zhe_1 - zhe_2" },
       expected_kind: exact, expected_value: 8.065543937e5, expected_digits: "8065543937", expected_digits_label: "SI exact (defined)" }
-
-
-  - { recipe_number: 174, constant_id: 1/m⋮eV, display_name: "inverse meter-electron volt relationship", column: "5", island: "5", dimension: "eV",
-      external_geometry: { numerator: [ "eV", "2", "pi" ], denominator: [ "joule" ] }, external_boundary: { numerator: [ "l_p^3", "m_p" ], denominator: [ "t_p^2", "meter" ] },
-      inversion_geometry: { numerator: [ "-2" ], denominator: [ "δ_F" ] }, root_transform: { id: "zhe_1 - zhe_2" },
-      expected_kind: exact, expected_value: 1.239841984E-6, expected_digits: "1239841984", expected_digits_label: "SI exact (defined)" }
 
 
   - { recipe_number: 175, constant_id: 1/m⋮J, display_name: "inverse meter-joule relationship", column: "5", island: "5", dimension: "J",
@@ -1063,10 +1062,10 @@ constants:
       expected_kind: exact, expected_value: 1.986445857E-25, expected_digits: "1986445857", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 176, constant_id: ℏc ̇, display_name: "reduced Planck constant times c in MeV fm", column: "5", island: "5", dimension: "MeV fm",
-      external_geometry: { numerator: [ "MeV", "fm" ], denominator: [ "joule" ] }, external_boundary: { numerator: [ "l_p^3", "m_p" ], denominator: [ "t_p^2", "meter" ] },
-      inversion_geometry: { numerator: [ "-2" ], denominator: [ "δ_F" ] }, root_transform: { id: "zhe_1 - zhe_2" },
-      expected_kind: exact, expected_value: 1.973269804e2, expected_digits: "1973269804", expected_digits_label: "SI exact (defined)" }
+  - { recipe_number: 176, constant_id: J⋮1/m, display_name: "joule-inverse meter relationship", column: "5", island: "5", dimension: "cycles/m",
+      external_geometry: { numerator: [ "joule" ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ "t_p^2" ], denominator: [ "l_p^3", "m_p" ] },
+      inversion_geometry: { numerator: [ "2" ], denominator: [ "δ_F" ] }, root_transform: { id: "zhe_1 - zhe_2" },
+      expected_kind: exact, expected_value: 5.034116567e24, expected_digits: "5034116567", expected_digits_label: "SI exact (defined)" }
 
 
   - { recipe_number: 177, constant_id: A_e_pot, display_name: "atomic unit of electric potential", column: "5", island: "6", dimension: "V",
@@ -1113,200 +1112,200 @@ constants:
       expected_kind: exact, expected_value: 1.00000001779, expected_digits: "100000001779", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 184, constant_id: m_∆, display_name: "neutron-proton mass difference", column: "6", island: "4", dimension: "kg",
+  - { recipe_number: 184, constant_id: m_∆, display_name: "neutron-proton mass difference", column: "6", island: "1", dimension: "kg",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "(m_n - m_+)" ], denominator: [ ] },
       inversion_geometry: { numerator: [ "-35", "C_d" ], denominator: [ "6" ] }, root_transform: { id: "zhe_1 + zhe_3 + zhe_4" },
       expected_kind: measured, expected_value: 2.30557461(67)e-30, expected_digits: "230557461", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 185, constant_id: σ_he, display_name: "helion shielding shift", column: "6", island: "3", dimension: "-", combine: "-",
+  - { recipe_number: 185, constant_id: σ_he, display_name: "helion shielding shift", column: "6", island: "2", dimension: "-", combine: "-",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ ], denominator: [ ] },
       inversion_geometry: { numerator: [ "-1", "7^0.5", "(s^4)^0.5" ], denominator: [ "((P*)^8)^0.5", "(2^3)^0.5", "(pi^3)^0.5" ] }, root_transform: { id: "zhe_1 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: 5.9967029(23)e-5, expected_digits: "59967029", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 186, constant_id: σ_tp, display_name: "shielding difference of t and p in HT", column: "6", island: "6", dimension: "-", combine: "-",
+  - { recipe_number: 186, constant_id: σ_tp, display_name: "shielding difference of t and p in HT", column: "6", island: "2", dimension: "-", combine: "-",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ ], denominator: [ ] },
       inversion_geometry: { numerator: [ "(s^4)^0.5" ], denominator: [ "-7", "(2^4)^0.5", "(2^3)^0.5", "(pi^3)^0.5" ] }, root_transform: { id: "zhe_1 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: 2.39450(20)e-8, expected_digits: "239450", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 187, constant_id: σ_dp, display_name: "shielding difference of d and p in HD", column: "6", island: "6", dimension: "-", combine: "-",
+  - { recipe_number: 187, constant_id: σ_dp, display_name: "shielding difference of d and p in HD", column: "6", island: "2", dimension: "-", combine: "-",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ ], denominator: [ ] },
       inversion_geometry: { numerator: [ "5^0.5", "(s^4)^0.5" ], denominator: [ "-3", "(2^4)^0.5", "(2^5)^0.5", "(pi^5)^0.5" ] }, root_transform: { id: "zhe_1 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: 1.98770(10)e-8, expected_digits: "198770", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 188, constant_id: σ_+', display_name: "proton magnetic shielding correction", column: "6", island: "3", dimension: "-", combine: "-",
+  - { recipe_number: 188, constant_id: σ_+', display_name: "proton magnetic shielding correction", column: "6", island: "2", dimension: "-", combine: "-",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ ], denominator: [ ] },
       inversion_geometry: { numerator: [ "-35", "(s^8)^0.5" ], denominator: [ "(4^2)^0.5", "(2^5)^0.5", "(pi^5)^0.5" ] }, root_transform: { id: "zhe_1 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: 2.56715(41)e-5, expected_digits: "256715", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 189, constant_id: A_ep, display_name: "atomic unit of electric polarizability", column: "6", island: "7", dimension: "m^2*C^2/J",
+  - { recipe_number: 189, constant_id: A_ep, display_name: "atomic unit of electric polarizability", column: "6", island: "3", dimension: "m^2*C^2/J",
       external_geometry: { numerator: [ ], denominator: [ "zhe_1^6" ] }, external_boundary: { numerator: [ "t_p^2", "q_p^2", "m_p^2" ], denominator: [ "m_e^3" ] },
-      inversion_geometry: { numerator: [ "-18", "s^(9/2)" ], denominator: [ "(2^11)^0.5", "2^(5/2)", "pi^(5/2)" ] }, root_transform: { id: "zhe_1 +zhe_3 + zhe_4" },
+      inversion_geometry: { numerator: [ "-18", "s^(9/2)" ], denominator: [ "(2^11)^0.5", "2^(5/2)", "pi^(5/2)" ] }, root_transform: { id: "zhe_1 + zhe_3 + zhe_4" },
       expected_kind: measured, expected_value: 1.64877727212(51)e-41, expected_digits: "164877727212", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 190, constant_id: A_ef, display_name: "atomic unit of electric field", column: "6", island: "4", dimension: "V/m",
+  - { recipe_number: 190, constant_id: A_ef, display_name: "atomic unit of electric field", column: "6", island: "3", dimension: "V/m",
       external_geometry: { numerator: [ "zhe_1^5" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_e^2" ], denominator: [ "t_p^2", "q_p", "m_p" ] },
       inversion_geometry: { numerator: [ "18", "(s^8)^0.5" ], denominator: [ "24^0.5", "(2^7)^0.5", "(pi^7)^0.5" ] }, root_transform: { id: "zhe_1 + zhe_3 + zhe_4" },
       expected_kind: measured, expected_value: 5.14220675112(80)e11, expected_digits: "514220675112", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 191, constant_id: A_force, display_name: "atomic unit of force", column: "6", island: "4", dimension: "N",
+  - { recipe_number: 191, constant_id: A_force, display_name: "atomic unit of force", column: "6", island: "3", dimension: "N",
       external_geometry: { numerator: [ "zhe_1^6" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_e^2" ], denominator: [ "t_p^2", "m_p" ] },
       inversion_geometry: { numerator: [ "18", "((s^8)^0.5)" ], denominator: [ "4^(0.5)", "((2^8)^0.5)", "((pi^8)^0.5)" ] }, root_transform: { id: "zhe_1 + zhe_3 + zhe_4" },
       expected_kind: measured, expected_value: 8.2387235038(13)e-8, expected_digits: "82387235038", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 192, constant_id: A_cd, display_name: "atomic unit of charge density", column: "6", island: "4", dimension: "C/m^3",
+  - { recipe_number: 192, constant_id: A_cd, display_name: "atomic unit of charge density", column: "6", island: "3", dimension: "C/m^3",
       external_geometry: { numerator: [ "zhe_1^7" ], denominator: [ ] }, external_boundary: { numerator: [ "q_p", "m_e^3" ], denominator: [ "l_p^3", "m_p^3" ] },
       inversion_geometry: { numerator: [ "18", "((s^9)^0.5)" ], denominator: [ "8^(0.5)", "((2^8)^0.5)", "((pi^8)^0.5)" ] }, root_transform: { id: "zhe_1 + zhe_3 + zhe_4" },
       expected_kind: measured, expected_value: 1.08120238677(51)e12, expected_digits: "108120238677", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 193, constant_id: μ_n, display_name: "neutron magnetic moment", column: "6", island: "5", dimension: "J/T",
+  - { recipe_number: 193, constant_id: μ_n, display_name: "neutron magnetic moment", column: "6", island: "4", dimension: "J/T",
       external_geometry: { numerator: [ "-1", "zhe_1^2", "zhe_2^2" ], denominator: [ "C_CFP" ] }, external_boundary: { numerator: [ "l_p^2", "q_p", "m_p" ], denominator: [ "t_p", "m_n" ] },
       inversion_geometry: { numerator: [ "18", "2", "pi" ], denominator: [ ] }, root_transform: { id: "zhe_1 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: -9.6623653(23)e-27, expected_digits: "96623653", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 194, constant_id: γ_n ̇, display_name: "neutron gyromagnetic ratio in MHz/T", column: "6", island: "5", dimension: "MHz/T",
+  - { recipe_number: 194, constant_id: γ_n ̇, display_name: "neutron gyromagnetic ratio in MHz/T", column: "6", island: "4", dimension: "MHz/T",
       external_geometry: { numerator: [ "zhe_1^2", "zhe_2^2" ], denominator: [ "pi", "C_CFP" ] }, external_boundary: { numerator: [ "q_p" ], denominator: [ "MHz", "second", "m_n" ] },
       inversion_geometry: { numerator: [ "18", "2", "pi" ], denominator: [ ] }, root_transform: { id: "zhe_1 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: 2.91646935(69)e1, expected_digits: "291646935", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 195, constant_id: γ_n, display_name: "neutron gyromagnetic ratio", column: "6", island: "5", dimension: "1/(s*T)",
+  - { recipe_number: 195, constant_id: γ_n, display_name: "neutron gyromagnetic ratio", column: "6", island: "4", dimension: "1/(s*T)",
       external_geometry: { numerator: [ "2", "zhe_1^2", "zhe_2^2" ], denominator: [ "C_CFP" ] }, external_boundary: { numerator: [ "q_p" ], denominator: [ "m_n" ] },
       inversion_geometry: { numerator: [ "18", "2", "pi" ], denominator: [ ] }, root_transform: { id: "zhe_1 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: 1.83247174(43)e8, expected_digits: "183247174", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 196, constant_id: μ_n/μ_B, display_name: "neutron magnetic moment to Bohr magneton ratio", column: "6", island: "5", dimension: "-",
+  - { recipe_number: 196, constant_id: μ_n/μ_B, display_name: "neutron magnetic moment to Bohr magneton ratio", column: "6", island: "4", dimension: "-",
       external_geometry: { numerator: [ "-2", "zhe_1", "zhe_2^2" ], denominator: [ "C_CFP" ] }, external_boundary: { numerator: [ "m_e" ], denominator: [ "m_n" ] },
       inversion_geometry: { numerator: [ "18", "2", "pi" ], denominator: [ ] }, root_transform: { id: "zhe_1 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: -1.04187565(25)e-3, expected_digits: "104187565", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 197, constant_id: μ_n/μ_N, display_name: "neutron magnetic moment to nuclear magneton ratio", column: "6", island: "5", dimension: "-",
+  - { recipe_number: 197, constant_id: μ_n/μ_N, display_name: "neutron magnetic moment to nuclear magneton ratio", column: "6", island: "4", dimension: "-",
       external_geometry: { numerator: [ "-2", "zhe_1", "zhe_2^2" ], denominator: [ "C_CFP" ] }, external_boundary: { numerator: [ "m_+" ], denominator: [ "m_n" ] },
       inversion_geometry: { numerator: [ "18", "2", "pi" ], denominator: [ ] }, root_transform: { id: "zhe_1 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: -1.91304276(45), expected_digits: "191304276", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 198, constant_id: g_n, display_name: "neutron g factor", column: "6", island: "5", dimension: "-",
+  - { recipe_number: 198, constant_id: g_n, display_name: "neutron g factor", column: "6", island: "4", dimension: "-",
       external_geometry: { numerator: [ "-4", "zhe_1", "zhe_2^2" ], denominator: [ "C_CFP" ] }, external_boundary: { numerator: [ "m_+" ], denominator: [ "m_n" ] },
       inversion_geometry: { numerator: [ "18", "2", "pi" ], denominator: [ ] }, root_transform: { id: "zhe_1 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: -3.82608552(90), expected_digits: "382608552", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 199, constant_id: Hz⋮kg, display_name: "hertz-kilogram relationship", column: "6", island: "6", dimension: "kg",
+  - { recipe_number: 199, constant_id: Hz⋮kg, display_name: "hertz-kilogram relationship", column: "6", island: "5", dimension: "kg",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "t_p", "m_p" ], denominator: [ "second" ] },
       inversion_geometry: { numerator: [ "2" ], denominator: [ "C_CFP" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: exact, expected_value: 7.372497323e-51, expected_digits: "7372497323", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 200, constant_id: Hz⋮A_mass, display_name: "hertz-atomic mass unit relationship", column: "6", island: "6", dimension: "u",
+  - { recipe_number: 200, constant_id: Hz⋮A_mass, display_name: "hertz-atomic mass unit relationship", column: "6", island: "5", dimension: "u",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "t_p", "m_p" ], denominator: [ "second", "A_mass" ] },
       inversion_geometry: { numerator: [ "2" ], denominator: [ "C_CFP" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: 4.4398216590(14)e-24, expected_digits: "44398216590", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 201, constant_id: N_time, display_name: "natural unit of time", column: "6", island: "6", dimension: "s",
+  - { recipe_number: 201, constant_id: N_time, display_name: "natural unit of time", column: "6", island: "5", dimension: "s",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "t_p", "m_p" ], denominator: [ "m_e" ] },
       inversion_geometry: { numerator: [ "2" ], denominator: [ "C_CFP" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: 1.28808866644(40)e-21, expected_digits: "128808866644", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 202, constant_id: A_mass⋮Hz, display_name: "atomic mass unit-hertz relationship", column: "6", island: "6", dimension: "Hz",
+  - { recipe_number: 202, constant_id: A_mass⋮Hz, display_name: "atomic mass unit-hertz relationship", column: "6", island: "5", dimension: "Hz",
       external_geometry: { numerator: [ ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ "A_mass" ], denominator: [ "t_p", "m_p" ] },
       inversion_geometry: { numerator: [ "-2" ], denominator: [ "C_CFP" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: 2.25234272185(70)e23, expected_digits: "225234272185", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 203, constant_id: kg⋮Hz, display_name: "kilogram-hertz relationship", column: "6", island: "6", dimension: "Hz",
+  - { recipe_number: 203, constant_id: kg⋮Hz, display_name: "kilogram-hertz relationship", column: "6", island: "5", dimension: "Hz",
       external_geometry: { numerator: [ ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ "kilogram" ], denominator: [ "t_p", "m_p" ] },
       inversion_geometry: { numerator: [ "-2" ], denominator: [ "C_CFP" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: exact, expected_value: 1.356392489E50, expected_digits: "1356392489", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 204, constant_id: k_B, display_name: "Boltzmann constant", column: "6", island: "8", dimension: "J/K",
+  - { recipe_number: 204, constant_id: k_B, display_name: "Boltzmann constant", column: "6", island: "6", dimension: "J/K",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_p" ], denominator: [ "t_p^2", "T_p" ] },
       inversion_geometry: { numerator: [ "s", "2", "pi" ], denominator: [ "2^0.5", "4", "K" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: exact, expected_value: 1.380649e-23, expected_digits: "1380649", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 205, constant_id: k_B ⃛, display_name: "Boltzmann constant in eV/K", column: "6", island: "8", dimension: "eV/K",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "joule", "l_p^2", "m_p" ], denominator: [ "eV", "t_p^2", "T_p" ] },
+  - { recipe_number: 205, constant_id: k_B ⃛, display_name: "Boltzmann constant in eV/K", column: "6", island: "6", dimension: "eV/K",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_p" ], denominator: [ "eV", "t_p^2", "T_p" ] },
       inversion_geometry: { numerator: [ "s", "2", "pi" ], denominator: [ "2^0.5", "4", "K" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: exact, expected_value: 8.617333262e-5, expected_digits: "8617333262", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 206, constant_id: K⋮J, display_name: "kelvin-joule relationship", column: "6", island: "8", dimension: "J",
+  - { recipe_number: 206, constant_id: K⋮eV, display_name: "kelvin-electron volt relationship", column: "6", island: "6", dimension: "eV",
+      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_p", "kelvin" ], denominator: [ "eV", "t_p^2", "T_p" ] },
+      inversion_geometry: { numerator: [ "s", "2", "pi" ], denominator: [ "2^0.5", "4", "K" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
+      expected_kind: exact, expected_value: 8.617333262e-5, expected_digits: "8617333262", expected_digits_label: "SI exact (defined)" }
+
+
+  - { recipe_number: 207, constant_id: K⋮J, display_name: "kelvin-joule relationship", column: "6", island: "6", dimension: "J",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "kelvin", "l_p^2", "m_p" ], denominator: [ "t_p^2", "T_p" ] },
       inversion_geometry: { numerator: [ "s", "2", "pi" ], denominator: [ "2^0.5", "4", "K" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: exact, expected_value: 1.380649e-23, expected_digits: "1380649", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 207, constant_id: K⋮eV, display_name: "kelvin-electron volt relationship", column: "6", island: "8", dimension: "eV",
-      external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "kelvin", "joule", "l_p^2", "m_p" ], denominator: [ "eV", "t_p^2", "T_p" ] },
-      inversion_geometry: { numerator: [ "s", "2", "pi" ], denominator: [ "2^0.5", "4", "K" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
-      expected_kind: exact, expected_value: 8.617333262e-5, expected_digits: "8617333262", expected_digits_label: "SI exact (defined)" }
-
-
-  - { recipe_number: 208, constant_id: eV⋮K, display_name: "electron volt-kelvin relationship", column: "6", island: "8", dimension: "K",
+  - { recipe_number: 208, constant_id: eV⋮K, display_name: "electron volt-kelvin relationship", column: "6", island: "6", dimension: "K",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "eV", "t_p^2", "T_p" ], denominator: [ "l_p^2", "m_p" ] },
       inversion_geometry: { numerator: [ "s", "-2", "pi" ], denominator: [ "2^0.5", "4", "K" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: exact, expected_value: 1.160451812e4, expected_digits: "1160451812", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 209, constant_id: J⋮K, display_name: "joule-kelvin relationship", column: "6", island: "8", dimension: "K",
+  - { recipe_number: 209, constant_id: J⋮K, display_name: "joule-kelvin relationship", column: "6", island: "6", dimension: "K",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "joule", "t_p^2", "T_p" ], denominator: [ "l_p^2", "m_p" ] },
       inversion_geometry: { numerator: [ "s", "-2", "pi" ], denominator: [ "2^0.5", "4", "K" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: exact, expected_value: 7.242970516e22, expected_digits: "7242970516", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 210, constant_id: n_0, display_name: "Loschmidt constant (273.15 K, 100 kPa)", column: "6", island: "8", dimension: "1/m^3",
+  - { recipe_number: 210, constant_id: n_0, display_name: "Loschmidt constant (273.15 K, 100 kPa)", column: "6", island: "6", dimension: "1/m^3",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "p_0", "t_p^2", "T_p" ], denominator: [ "T_0", "l_p^2", "m_p" ] },
       inversion_geometry: { numerator: [ "s", "-2", "pi" ], denominator: [ "2^0.5", "4", "K" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: exact, expected_value: 2.651645804e25, expected_digits: "2651645804", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 211, constant_id: n_1, display_name: "Loschmidt constant (273.15 K, 101.325 kPa)", column: "6", island: "8", dimension: "1/m^3",
+  - { recipe_number: 211, constant_id: n_1, display_name: "Loschmidt constant (273.15 K, 101.325 kPa)", column: "6", island: "6", dimension: "1/m^3",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "p_1", "t_p^2", "T_p" ], denominator: [ "T_0", "l_p^2", "m_p" ] },
       inversion_geometry: { numerator: [ "s", "-2", "pi" ], denominator: [ "2^0.5", "4", "K" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: exact, expected_value: 2.686780111e25, expected_digits: "2686780111", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 212, constant_id: μ_B/k_B, display_name: "Bohr magneton in K/T", column: "6", island: "9", dimension: "K/T",
+  - { recipe_number: 212, constant_id: μ_B/k_B, display_name: "Bohr magneton in K/T", column: "6", island: "7", dimension: "K/T",
       external_geometry: { numerator: [ "zhe_1" ], denominator: [ "2" ] }, external_boundary: { numerator: [ "t_p", "q_p", "T_p" ], denominator: [ "m_e" ] },
       inversion_geometry: { numerator: [ "-1", "32^0.5" ], denominator: [ "G_Gi^0.5" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: 6.7171381472(21)e-1, expected_digits: "67171381472", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 213, constant_id: μ_N/k_B, display_name: "nuclear magneton in K/T", column: "6", island: "9", dimension: "K/T",
+  - { recipe_number: 213, constant_id: μ_N/k_B, display_name: "nuclear magneton in K/T", column: "6", island: "7", dimension: "K/T",
       external_geometry: { numerator: [ "zhe_1" ], denominator: [ "2" ] }, external_boundary: { numerator: [ "t_p", "q_p", "T_p" ], denominator: [ "m_+" ] },
       inversion_geometry: { numerator: [ "-1", "32^0.5" ], denominator: [ "G_Gi^0.5" ] }, root_transform: { id: "zhe_2 - zhe_3 - zhe_4" },
       expected_kind: measured, expected_value: 3.6582677706(11)e-4, expected_digits: "36582677706", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 214, constant_id: R_∞hc ̈, display_name: "Rydberg constant times hc in J", column: "6", island: "7", dimension: "J",
+  - { recipe_number: 214, constant_id: R_∞hc ̈, display_name: "Rydberg constant times hc in J", column: "6", island: "8", dimension: "J",
       external_geometry: { numerator: [ "zhe_1^4" ], denominator: [ "2" ] }, external_boundary: { numerator: [ "l_p^2", "m_e" ], denominator: [ "t_p^2" ] },
       inversion_geometry: { numerator: [ "35^0.5", "8", "D_d" ], denominator: [ ] }, root_transform: { id: "zhe_2 + zhe_3 + zhe_4" },
       expected_kind: measured, expected_value: 2.1798723611030(24)e-18, expected_digits: "21798723611030", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 215, constant_id: E_h, display_name: "Hartree energy", column: "6", island: "7", dimension: "J",
+  - { recipe_number: 215, constant_id: E_h, display_name: "Hartree energy", column: "6", island: "8", dimension: "J",
       external_geometry: { numerator: [ "zhe_1^4" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^2", "m_e" ], denominator: [ "t_p^2" ] },
       inversion_geometry: { numerator: [ "35^0.5", "8", "D_d" ], denominator: [ ] }, root_transform: { id: "zhe_2 + zhe_3 + zhe_4" },
       expected_kind: measured, expected_value: 4.3597447222060(48)e-18, expected_digits: "43597447222060", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 216, constant_id: J⋮E_h, display_name: "joule-hartree relationship", column: "6", island: "7", dimension: "E_h",
-      external_geometry: { numerator: [ ], denominator: [ "zhe_1^4" ] }, external_boundary: { numerator: [ "t_p^2" ], denominator: [ "l_p^2", "m_e" ] },
+  - { recipe_number: 216, constant_id: J⋮E_h, display_name: "joule-hartree relationship", column: "6", island: "8", dimension: "E_h",
+      external_geometry: { numerator: [ ], denominator: [ "zhe_1^4" ] }, external_boundary: { numerator: [ "joule", "t_p^2" ], denominator: [ "l_p^2", "m_e" ] },
       inversion_geometry: { numerator: [ "35^0.5", "-8", "D_d" ], denominator: [ ] }, root_transform: { id: "zhe_2 + zhe_3 + zhe_4" },
       expected_kind: measured, expected_value: 2.2937122783969(25)e17, expected_digits: "22937122783969", expected_digits_label: "SI measured" }
 
@@ -1331,369 +1330,369 @@ constants:
       expected_kind: exact, expected_value: 2.067833848e-15, expected_digits: "2067833848", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 220, constant_id: ℏ/e, display_name: "reduced Planck constant in eV s", column: "7", island: "1", dimension: "eV*s",
+  - { recipe_number: 220, constant_id: ℏ¨, display_name: "reduced Planck constant in eV s", column: "7", island: "1", dimension: "eV*s",
       external_geometry: { numerator: [ ], denominator: [ "zhe_1" ] }, external_boundary: { numerator: [ "coulomb", "l_p^2", "m_p" ], denominator: [ "t_p", "q_p" ] },
       inversion_geometry: { numerator: [ "7", "8^2" ], denominator: [ "8", "4^2", "pi^2" ] }, root_transform: { id: "zhe_1^2 + zhe_2^2" },
       expected_kind: exact, expected_value: 6.582119569e-16, expected_digits: "6582119569", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 221, constant_id: h/e, display_name: "Planck constant in eV/Hz", column: "7", island: "1", dimension: "eV/Hz",
+  - { recipe_number: 221, constant_id: h˙, display_name: "Planck constant in eV/Hz", column: "7", island: "1", dimension: "eV/Hz",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ "zhe_1" ] }, external_boundary: { numerator: [ "coulomb", "l_p^2", "m_p" ], denominator: [ "t_p", "q_p" ] },
       inversion_geometry: { numerator: [ "7", "8^2" ], denominator: [ "8", "4^2", "pi^2" ] }, root_transform: { id: "zhe_1^2 + zhe_2^2" },
       expected_kind: exact, expected_value: 4.135667696e-15, expected_digits: "4135667696", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 222, constant_id: c_1, display_name: "first radiation constant", column: "7", island: "1", dimension: "W*m^2",
+  - { recipe_number: 222, constant_id: c_1, display_name: "first radiation constant", column: "7", island: "2", dimension: "W*m^2",
       external_geometry: { numerator: [ "2^2", "pi^2" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^4", "m_p" ], denominator: [ "t_p^3" ] },
       inversion_geometry: { numerator: [ "-1", "4^2", "pi^2" ], denominator: [ "32^2" ] }, root_transform: { id: "zhe_1^2 + zhe_2^2" },
       expected_kind: exact, expected_value: 3.741771852e-16, expected_digits: "3741771852", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 223, constant_id: c_1L, display_name: "first radiation constant for spectral radiance", column: "7", island: "1", dimension: "W*m^2/sr",
+  - { recipe_number: 223, constant_id: c_1L, display_name: "first radiation constant for spectral radiance", column: "7", island: "2", dimension: "W*m^2/sr",
       external_geometry: { numerator: [ "4", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p^4", "m_p" ], denominator: [ "t_p^3" ] },
       inversion_geometry: { numerator: [ "-1", "4^2", "pi^2" ], denominator: [ "32^2" ] }, root_transform: { id: "zhe_1^2 + zhe_2^2" },
       expected_kind: exact, expected_value: 1.191042972e-16, expected_digits: "1191042972", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 224, constant_id: γ_he', display_name: "shielded helion gyromagnetic ratio", column: "7", island: "2", dimension: "1/s*T",
+  - { recipe_number: 224, constant_id: γ_he', display_name: "shielded helion gyromagnetic ratio", column: "7", island: "3", dimension: "1/(s*T)",
       external_geometry: { numerator: [ "C_CFP^2" ], denominator: [ "7^0.5" ] }, external_boundary: { numerator: [ "q_p" ], denominator: [ "m_he" ] },
       inversion_geometry: { numerator: [ "-1", "C_d" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_2^2" },
       expected_kind: measured, expected_value: 2.0378946078(18)e8, expected_digits: "20378946078", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 225, constant_id: γ_he ̇', display_name: "shielded helion gyromagnetic ratio in MHz/T", column: "7", island: "2", dimension: "MHz/T",
+  - { recipe_number: 225, constant_id: γ_he ̇', display_name: "shielded helion gyromagnetic ratio in MHz/T", column: "7", island: "3", dimension: "MHz/T",
       external_geometry: { numerator: [ "C_CFP^2" ], denominator: [ "2", "pi", "7^0.5" ] }, external_boundary: { numerator: [ "q_p" ], denominator: [ "MHz", "second", "m_he" ] },
       inversion_geometry: { numerator: [ "-1", "C_d" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_2^2" },
       expected_kind: measured, expected_value: 3.2434100033(28)e1, expected_digits: "32434100033", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 226, constant_id: μ_he, display_name: "helion magnetic moment", column: "7", island: "2", dimension: "J/T",
+  - { recipe_number: 226, constant_id: μ_he, display_name: "helion magnetic moment", column: "7", island: "3", dimension: "J/T",
       external_geometry: { numerator: [ "C_CFP^2" ], denominator: [ "-2", "7^0.5" ] }, external_boundary: { numerator: [ "l_p^2", "q_p", "m_p" ], denominator: [ "t_p", "m_he" ] },
       inversion_geometry: { numerator: [ "5", "16" ], denominator: [ "D_d" ] }, root_transform: { id: "zhe_1^2 + zhe_2^2" },
       expected_kind: measured, expected_value: -1.07461755198(93)e-26, expected_digits: "107461755198", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 227, constant_id: μ_he', display_name: "shielded helion magnetic moment", column: "7", island: "2", dimension: "J/T",
+  - { recipe_number: 227, constant_id: μ_he', display_name: "shielded helion magnetic moment", column: "7", island: "3", dimension: "J/T",
       external_geometry: { numerator: [ "C_CFP^2" ], denominator: [ "-2", "7^0.5" ] }, external_boundary: { numerator: [ "l_p^2", "q_p", "m_p" ], denominator: [ "t_p", "m_he" ] },
       inversion_geometry: { numerator: [ "8" ], denominator: [ "7", "4", "pi" ] }, root_transform: { id: "zhe_1^2 + zhe_2^2" },
       expected_kind: measured, expected_value: -1.07455311035(93)e-26, expected_digits: "107455311035", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 228, constant_id: μ_he'/μ_+, display_name: "shielded helion to proton magnetic moment ratio", column: "7", island: "2", dimension: "-",
+  - { recipe_number: 228, constant_id: μ_he'/μ_+, display_name: "shielded helion to proton magnetic moment ratio", column: "7", island: "3", dimension: "-",
       external_geometry: { numerator: [ "C_CFP^2", "S" ], denominator: [ "-2", "7^0.5", "zhe_1^2", "zhe_2^2" ] }, external_boundary: { numerator: [ "m_+" ], denominator: [ "m_he" ] },
       inversion_geometry: { numerator: [ "-1", "12^0.5", "L^2" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 - zhe_2^2" },
       expected_kind: measured, expected_value: -7.6176657721(66)e-1, expected_digits: "76176657721", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 229, constant_id: μ_he'/μ_+', display_name: "shielded helion to shielded proton magnetic moment ratio", column: "7", island: "2", dimension: "-",
+  - { recipe_number: 229, constant_id: μ_he'/μ_+', display_name: "shielded helion to shielded proton magnetic moment ratio", column: "7", island: "3", dimension: "-",
       external_geometry: { numerator: [ "C_CFP^2", "S" ], denominator: [ "-2", "7^0.5", "zhe_1^2", "zhe_2^2" ] }, external_boundary: { numerator: [ "m_+" ], denominator: [ "m_he" ] },
       inversion_geometry: { numerator: [ "pi", "L^4" ], denominator: [ "12^0.5"] }, root_transform: { id: "zhe_1^2 + zhe_2^2" },
       expected_kind: measured, expected_value: -7.617861334(31)e-1, expected_digits: "7617861334", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 230, constant_id: μ_e/μ_he', display_name: "electron to shielded helion magnetic moment ratio", column: "7", island: "2", dimension: "-",
+  - { recipe_number: 230, constant_id: μ_e/μ_he', display_name: "electron to shielded helion magnetic moment ratio", column: "7", island: "3", dimension: "-",
       external_geometry: { numerator: [ "2", "7^0.5", "zhe_1^2", "zhe_2^2" ], denominator: [ "C_CFP^2", "P_up" ] }, external_boundary: { numerator: [ "m_he" ], denominator: [ "m_e" ] },
       inversion_geometry: { numerator: [ "2", "e^γ", "L^4" ], denominator: [ "12^0.5" ] }, root_transform: { id: "zhe_1^2 + zhe_2^2" },
       expected_kind: measured, expected_value: 8.6405823986(70)e2, expected_digits: "86405823986", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 231, constant_id: A_mass⋮E_h, display_name: "atomic mass unit-hartree relationship", column: "7", island: "3", dimension: "E_h",
+  - { recipe_number: 231, constant_id: A_mass⋮E_h, display_name: "atomic mass unit-hartree relationship", column: "7", island: "4", dimension: "E_h",
       external_geometry: { numerator: [ "18^0.5", "P_up^0.5" ], denominator: [ "32^0.5", "(zhe_1^14)^0.5" ] }, external_boundary: { numerator: [ ], denominator: [ ] },
       inversion_geometry: { numerator: [ "zeta(3)" ], denominator: [ "12" ] }, root_transform: { id: "zhe_1^2 - zhe_2^2" },
       expected_kind: measured, expected_value: 3.4231776922(11)e7, expected_digits: "34231776922", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 232, constant_id: E_h⋮A_mass, display_name: "hartree-atomic mass unit relationship", column: "7", island: "3", dimension: "u",
+  - { recipe_number: 232, constant_id: E_h⋮A_mass, display_name: "hartree-atomic mass unit relationship", column: "7", island: "4", dimension: "u",
       external_geometry: { numerator: [ "32^0.5", "(zhe_1^14)^0.5" ], denominator: [ "18^0.5", "P_up^0.5" ] }, external_boundary: { numerator: [ ], denominator: [ ] },
       inversion_geometry: { numerator: [ "zeta(3)" ], denominator: [ "-12" ] }, root_transform: { id: "zhe_1^2 - zhe_2^2" },
       expected_kind: measured, expected_value: 2.92126231797(91)e-8, expected_digits: "292126231797", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 233, constant_id: kg⋮E_h, display_name: "kilogram-hartree relationship", column: "7", island: "3", dimension: "E_h",
+  - { recipe_number: 233, constant_id: kg⋮E_h, display_name: "kilogram-hartree relationship", column: "7", island: "4", dimension: "E_h",
       external_geometry: { numerator: [ "18^0.5", "P_up^0.5" ], denominator: [ "32^0.5", "(zhe_1^14)^0.5" ] }, external_boundary: { numerator: [ "kilogram" ], denominator: [ "A_mass" ] },
       inversion_geometry: { numerator: [ "zeta(3)" ], denominator: [ "12" ] }, root_transform: { id: "zhe_1^2 - zhe_2^2" },
       expected_kind: measured, expected_value: 2.0614857887415(22)e34, expected_digits: "20614857887415", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 234, constant_id: E_h⋮kg, display_name: "hartree-kilogram relationship", column: "7", island: "3", dimension: "kg",
+  - { recipe_number: 234, constant_id: E_h⋮kg, display_name: "hartree-kilogram relationship", column: "7", island: "4", dimension: "kg",
       external_geometry: { numerator: [ "32^0.5", "(zhe_1^14)^0.5" ], denominator: [ "18^0.5", "P_up^0.5" ] }, external_boundary: { numerator: [ "A_mass" ], denominator: [ ] },
       inversion_geometry: { numerator: [ "zeta(3)" ], denominator: [ "-12" ] }, root_transform: { id: "zhe_1^2 - zhe_2^2" },
       expected_kind: measured, expected_value: 4.8508702095419(53)e-35, expected_digits: "48508702095419", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 235, constant_id: K⋮kg, display_name: "kelvin-kilogram relationship", column: "4", island: "2", dimension: "kg",
+  - { recipe_number: 235, constant_id: K⋮kg, display_name: "kelvin-kilogram relationship", column: "7", island: "5", dimension: "kg",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "kelvin", "m_p" ], denominator: [ "T_p" ] },
-      inversion_geometry: { numerator: [ "-1", "L_2", "6^0.5", "V_fe^0.5" ], denominator: [ ] }, root_transform: { id: "zhe_3^2+zhe_4^2" },
+      inversion_geometry: { numerator: [ "-1", "L_2", "6^0.5", "V_fe^0.5" ], denominator: [ ] }, root_transform: { id: "zhe_3^2 + zhe_4^2" },
       expected_kind: exact, expected_value: 1.536179187e-40, expected_digits: "1536179187", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 236, constant_id: kg⋮K, display_name: "kilogram-kelvin relationship", column: "4", island: "2", dimension: "K",
+  - { recipe_number: 236, constant_id: kg⋮K, display_name: "kilogram-kelvin relationship", column: "7", island: "5", dimension: "K",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "kilogram", "T_p" ], denominator: [ "m_p" ] },
-      inversion_geometry: { numerator: [ "L_2", "6^0.5", "V_fe^0.5" ], denominator: [ ] }, root_transform: { id: "zhe_3^2+zhe_4^2" },
+      inversion_geometry: { numerator: [ "L_2", "6^0.5", "V_fe^0.5" ], denominator: [ ] }, root_transform: { id: "zhe_3^2 + zhe_4^2" },
       expected_kind: exact, expected_value: 6.509657260e39, expected_digits: "6509657260", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 237, constant_id: K⋮A_mass, display_name: "kelvin-atomic mass unit relationship", column: "4", island: "2", dimension: "u",
+  - { recipe_number: 237, constant_id: K⋮A_mass, display_name: "kelvin-atomic mass unit relationship", column: "7", island: "5", dimension: "u",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "kelvin", "m_p" ], denominator: [ "A_mass", "T_p" ] },
-      inversion_geometry: { numerator: [ "-1", "L_2", "6^0.5", "V_fe^0.5" ], denominator: [ ] }, root_transform: { id: "zhe_3^2+zhe_4^2" },
+      inversion_geometry: { numerator: [ "-1", "L_2", "6^0.5", "V_fe^0.5" ], denominator: [ ] }, root_transform: { id: "zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 9.2510872884(29)e-14, expected_digits: "92510872884", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 238, constant_id: A_mass⋮K, display_name: "atomic mass unit-kelvin relationship", column: "4", island: "2", dimension: "K",
+  - { recipe_number: 238, constant_id: A_mass⋮K, display_name: "atomic mass unit-kelvin relationship", column: "7", island: "5", dimension: "K",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "A_mass", "T_p" ], denominator: [ "m_p" ] },
-      inversion_geometry: { numerator: [ "L_2", "6^0.5", "V_fe^0.5" ], denominator: [ ] }, root_transform: { id: "zhe_3^2+zhe_4^2" },
+      inversion_geometry: { numerator: [ "L_2", "6^0.5", "V_fe^0.5" ], denominator: [ ] }, root_transform: { id: "zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 1.08095402067(34)e13, expected_digits: "108095402067", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 239, constant_id: kg⋮1/m, display_name: "kilogram-inverse meter relationship", column: "7", island: "5", dimension: "cycles/m",
+  - { recipe_number: 239, constant_id: kg⋮1/m, display_name: "kilogram-inverse meter relationship", column: "7", island: "6", dimension: "cycles/m",
       external_geometry: { numerator: [ ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ "kilogram" ], denominator: [ "l_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "-8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "-8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: exact, expected_value: 4.524438335e41, expected_digits: "4524438335", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 240, constant_id: A_mass⋮1/m, display_name: "atomic mass unit-inverse meter relationship", column: "7", island: "5", dimension: "cycles/m",
+  - { recipe_number: 240, constant_id: A_mass⋮1/m, display_name: "atomic mass unit-inverse meter relationship", column: "7", island: "6", dimension: "cycles/m",
       external_geometry: { numerator: [ ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ "A_mass" ], denominator: [ "l_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "-8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "-8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 7.5130066209(23)e14, expected_digits: "75130066209", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 241, constant_id: 1/m⋮kg, display_name: "inverse meter-kilogram relationship", column: "7", island: "5", dimension: "kg",
+  - { recipe_number: 241, constant_id: 1/m⋮kg, display_name: "inverse meter-kilogram relationship", column: "7", island: "6", dimension: "kg",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "meter" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: exact, expected_value: 2.210219094e-42, expected_digits: "2210219094", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 242, constant_id: 1/m⋮A_mass, display_name: "inverse meter-atomic mass unit relationship", column: "7", island: "5", dimension: "u",
+  - { recipe_number: 242, constant_id: 1/m⋮A_mass, display_name: "inverse meter-atomic mass unit relationship", column: "7", island: "6", dimension: "u",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "meter", "A_mass" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 1.33102504824(41)e-15, expected_digits: "133102504824", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 243, constant_id: λ_C, display_name: "Compton wavelength", column: "7", island: "5", dimension: "m/cycle",
+  - { recipe_number: 243, constant_id: λ_C, display_name: "Compton wavelength", column: "7", island: "6", dimension: "m/cycle",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "m_e" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 2.42631023538(76)e-12, expected_digits: "242631023538", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 244, constant_id: λ_μ, display_name: "muon Compton wavelength", column: "7", island: "5", dimension: "m/cycle",
+  - { recipe_number: 244, constant_id: λ_μ, display_name: "muon Compton wavelength", column: "7", island: "6", dimension: "m/cycle",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "m_μ" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 1.173444110(26)e-14, expected_digits: "1173444110", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 245, constant_id: λ_+, display_name: "proton Compton wavelength", column: "7", island: "5", dimension: "m/cycle",
+  - { recipe_number: 245, constant_id: λ_+, display_name: "proton Compton wavelength", column: "7", island: "6", dimension: "m/cycle",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "m_+" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 1.32140985360(41)e-15, expected_digits: "132140985360", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 246, constant_id: λ_n, display_name: "neutron Compton wavelength", column: "7", island: "5", dimension: "m/cycle",
+  - { recipe_number: 246, constant_id: λ_n, display_name: "neutron Compton wavelength", column: "7", island: "6", dimension: "m/cycle",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "m_n" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 1.31959090382(67)e-15, expected_digits: "131959090382", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 247, constant_id: λ_τ, display_name: "tau Compton wavelength", column: "7", island: "5", dimension: "m/cycle",
+  - { recipe_number: 247, constant_id: λ_τ, display_name: "tau Compton wavelength", column: "7", island: "6", dimension: "m/cycle",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "m_τ" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 6.97771(47)e-16, expected_digits: "697771", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 248, constant_id: λ_-, display_name: "reduced Compton wavelength", column: "7", island: "5", dimension: "m/cycle",
+  - { recipe_number: 248, constant_id: λ_-, display_name: "reduced Compton wavelength", column: "7", island: "6", dimension: "m/cycle",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "m_e" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 3.8615926744(12)e-13, expected_digits: "38615926744", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 249, constant_id: λ_μ_-, display_name: "reduced muon Compton wavelength", column: "7", island: "5", dimension: "m/cycle",
+  - { recipe_number: 249, constant_id: λ_μ_-, display_name: "reduced muon Compton wavelength", column: "7", island: "6", dimension: "m/cycle",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "m_μ" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 1.867594306(42)e-15, expected_digits: "1867594306", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 250, constant_id: λ_+_-, display_name: "reduced proton Compton wavelength", column: "7", island: "5", dimension: "m/cycle",
+  - { recipe_number: 250, constant_id: λ_+_-, display_name: "reduced proton Compton wavelength", column: "7", island: "6", dimension: "m/cycle",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "m_+" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 2.10308910051(66)e-16, expected_digits: "210308910051", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 251, constant_id: λ_n_-, display_name: "reduced neutron Compton wavelength", column: "7", island: "5", dimension: "m/cycle",
+  - { recipe_number: 251, constant_id: λ_n_-, display_name: "reduced neutron Compton wavelength", column: "7", island: "6", dimension: "m/cycle",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "m_n" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 2.1001941520(11)e-16, expected_digits: "21001941520", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 252, constant_id: λ_τ_-, display_name: "reduced tau Compton wavelength", column: "7", island: "5", dimension: "m/cycle",
+  - { recipe_number: 252, constant_id: λ_τ_-, display_name: "reduced tau Compton wavelength", column: "7", island: "6", dimension: "m/cycle",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "m_p" ], denominator: [ "m_τ" ] },
-      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "P_up", "i" ], denominator: [ "8" ] }, root_transform: { id: "zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 1.110538(75)e-16, expected_digits: "1110538", expected_digits_label: "SI measured" }
 
 
 
 
-  - { recipe_number: 253, constant_id: b', display_name: "Wien frequency displacement law constant", column: "8", island: "2", dimension: "Hz/K",
+  - { recipe_number: 253, constant_id: b', display_name: "Wien frequency displacement law constant", column: "8", island: "1", dimension: "Hz/K",
       external_geometry: { numerator: [ ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ "nu_peak" ], denominator: [ "t_p", "T_p" ] },
-      inversion_geometry: { numerator: [ "18", "2^2", "pi^2" ], denominator: [ "4^2", "s^2" ] }, root_transform: { id: "zhe_1^2-zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "18", "2^2", "pi^2" ], denominator: [ "4^2", "s^2" ] }, root_transform: { id: "zhe_1^2 - zhe_3^2 - zhe_4^2" },
       expected_kind: exact, expected_value: 5.878925757E10, expected_digits: "5878925757", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 254, constant_id: k_B ̈, display_name: "Boltzmann constant in Hz/K", column: "8", island: "2", dimension: "Hz/K",
+  - { recipe_number: 254, constant_id: k_B ̈, display_name: "Boltzmann constant in Hz/K", column: "8", island: "1", dimension: "Hz/K",
       external_geometry: { numerator: [ ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ ], denominator: [ "t_p", "T_p" ] },
-      inversion_geometry: { numerator: [ "18", "2^2", "pi^2" ], denominator: [ "4^2", "s^2" ] }, root_transform: { id: "zhe_1^2-zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "18", "2^2", "pi^2" ], denominator: [ "4^2", "s^2" ] }, root_transform: { id: "zhe_1^2 - zhe_3^2 - zhe_4^2" },
       expected_kind: exact, expected_value: 2.083661912e10, expected_digits: "2083661912", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 255, constant_id: K⋮Hz, display_name: "kelvin-hertz relationship", column: "8", island: "2", dimension: "Hz",
+  - { recipe_number: 255, constant_id: K⋮Hz, display_name: "kelvin-hertz relationship", column: "8", island: "1", dimension: "Hz",
       external_geometry: { numerator: [ ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ "kelvin" ], denominator: [ "t_p", "T_p" ] },
-      inversion_geometry: { numerator: [ "18", "2^2", "pi^2" ], denominator: [ "4^2", "s^2" ] }, root_transform: { id: "zhe_1^2-zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "18", "2^2", "pi^2" ], denominator: [ "4^2", "s^2" ] }, root_transform: { id: "zhe_1^2 - zhe_3^2 - zhe_4^2" },
       expected_kind: exact, expected_value: 2.083661912e10, expected_digits: "2083661912", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 256, constant_id: Hz⋮K, display_name: "hertz-kelvin relationship", column: "8", island: "2", dimension: "K",
+  - { recipe_number: 256, constant_id: Hz⋮K, display_name: "hertz-kelvin relationship", column: "8", island: "1", dimension: "K",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "t_p", "T_p" ], denominator: [ "second" ] },
-      inversion_geometry: { numerator: [ "-18", "2^2", "pi^2" ], denominator: [ "4^2", "s^2" ] }, root_transform: { id: "zhe_1^2-zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "-18", "2^2", "pi^2" ], denominator: [ "4^2", "s^2" ] }, root_transform: { id: "zhe_1^2 - zhe_3^2 - zhe_4^2" },
       expected_kind: exact, expected_value: 4.799243073e-11, expected_digits: "4799243073", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 257, constant_id: b, display_name: "Wien wavelength displacement law constant", column: "8", island: "3", dimension: "m*K/cycle",
+  - { recipe_number: 257, constant_id: b, display_name: "Wien wavelength displacement law constant", column: "8", island: "2", dimension: "m*K/cycle",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "T_p" ], denominator: [ "lambda_peak" ] },
-      inversion_geometry: { numerator: [ "P^2" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      inversion_geometry: { numerator: [ "P^2" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: exact, expected_value: 2.897771955e-3, expected_digits: "2897771955", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 258, constant_id: c_2, display_name: "second radiation constant", column: "8", island: "3", dimension: "m*K",
+  - { recipe_number: 258, constant_id: c_2, display_name: "second radiation constant", column: "8", island: "2", dimension: "m*K",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "T_p" ], denominator: [ ] },
-      inversion_geometry: { numerator: [ "P^2" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      inversion_geometry: { numerator: [ "P^2" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: exact, expected_value: 1.438776877e-2, expected_digits: "1438776877", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 259, constant_id: 1/m⋮K, display_name: "inverse meter-kelvin relationship", column: "8", island: "3", dimension: "cycles/m",
+  - { recipe_number: 259, constant_id: 1/m⋮K, display_name: "inverse meter-kelvin relationship", column: "8", island: "2", dimension: "K",
       external_geometry: { numerator: [ "2", "pi" ], denominator: [ ] }, external_boundary: { numerator: [ "l_p", "T_p" ], denominator: [ "meter" ] },
-      inversion_geometry: { numerator: [ "P^2" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      inversion_geometry: { numerator: [ "P^2" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: exact, expected_value: 1.438776877e-2, expected_digits: "1438776877", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 260, constant_id: K⋮1/m, display_name: "kelvin-inverse meter relationship", column: "8", island: "3", dimension: "cycles/m",
+  - { recipe_number: 260, constant_id: K⋮1/m, display_name: "kelvin-inverse meter relationship", column: "8", island: "2", dimension: "cycles/m",
       external_geometry: { numerator: [ ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ "kelvin" ], denominator: [ "l_p", "T_p" ] },
-      inversion_geometry: { numerator: [ "-1", "P^2" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      inversion_geometry: { numerator: [ "-1", "P^2" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: exact, expected_value: 6.950348004e1, expected_digits: "6950348004", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 261, constant_id: k_B ̇, display_name: "Boltzmann constant in inverse meter per kelvin", column: "8", island: "3", dimension: "cycles/m*K",
-      external_geometry: { numerator: [ ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ "kelvin" ], denominator: [ "l_p", "T_p" ] },
-      inversion_geometry: { numerator: [ "-1", "P^2" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+  - { recipe_number: 261, constant_id: k_B ̇, display_name: "Boltzmann constant in inverse meter per kelvin", column: "8", island: "2", dimension: "cycles/(m*K)",
+      external_geometry: { numerator: [ ], denominator: [ "2", "pi" ] }, external_boundary: { numerator: [ ], denominator: [ "l_p", "T_p" ] },
+      inversion_geometry: { numerator: [ "-1", "P^2" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: exact, expected_value: 6.950348004e1, expected_digits: "6950348004", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 262, constant_id: E_h⋮K, display_name: "Hartree-kelvin relationship", column: "1", island: "1", dimension: "K",
+  - { recipe_number: 262, constant_id: E_h⋮K, display_name: "Hartree-kelvin relationship", column: "8", island: "3", dimension: "K",
       external_geometry: { numerator: [ "zhe_1^4" ], denominator: [ ] }, external_boundary: { numerator: [ "T_p","m_e" ], denominator: [ "m_p" ] },
       inversion_geometry: { numerator: [ "s" ], denominator: [ "2^0.5", "pi^0.5" ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 3.1577502480398(34)e5, expected_digits: "31577502480398", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 263, constant_id: K⋮E_h, display_name: "kelvin-hartree relationship", column: "1", island: "1", combine: inversion, dimension: "E_h",
+  - { recipe_number: 263, constant_id: K⋮E_h, display_name: "kelvin-hartree relationship", column: "8", island: "3", combine: inversion, dimension: "E_h",
       external_geometry: { numerator: [ ], denominator: [ "zhe_1^4" ] }, external_boundary: { numerator: [ "kelvin","m_p" ], denominator: [ "T_p","m_e" ] },
       inversion_geometry: { numerator:[ "s" ], denominator: [ "2^0.5", "pi^0.5" ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 3.1668115634564(34)e-6, expected_digits: "31668115634564", expected_digits_label: "SI measured" }
 
 
   - { recipe_number: 264, constant_id: M_e, display_name: "electron molar mass", column: "8", island: "4", dimension: "kg/mol",
-      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "m_e" ], denominator: [ "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "coulomb", "kilogram", "m_e" ], denominator: [ "q_p", "m_p" ] },
+      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 5.4857990962(17)e-7, expected_digits: "54857990962", expected_digits_label: "SI measured" }
 
 
   - { recipe_number: 265, constant_id: M_μ, display_name: "muon molar mass", column: "8", island: "4", dimension: "kg/mol",
-    external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "m_μ" ], denominator: [ "q_p", "m_p" ] },
-    inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+    external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "coulomb", "kilogram", "m_μ" ], denominator: [ "q_p", "m_p" ] },
+    inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
     expected_kind: measured, expected_value: 1.134289258(25)e-4, expected_digits: "1134289258", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 266, constant_id: M_A_mass, display_name: "molar mass constant", column: "8", island: "4", dimension: "kg/mol",
-      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "A_mass" ], denominator: [ "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
-      expected_kind: measured, expected_value: 1.00000000105(31)e-3, expected_digits: "100000000105", expected_digits_label: "SI measured" }
-
-
-  - { recipe_number: 267, constant_id: M_+, display_name: "proton molar mass", column: "8", island: "4", dimension: "kg/mol",
-      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "m_+" ], denominator: [ "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+  - { recipe_number: 266, constant_id: M_+, display_name: "proton molar mass", column: "8", island: "4", dimension: "kg/mol",
+      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "coulomb", "kilogram", "m_+" ], denominator: [ "q_p", "m_p" ] },
+      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 1.00727646764(31)e-3, expected_digits: "100727646764", expected_digits_label: "SI measured" }
 
 
+  - { recipe_number: 267, constant_id: M_A_mass, display_name: "molar mass constant", column: "8", island: "4", dimension: "kg/mol",
+      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "coulomb", "kilogram", "A_mass" ], denominator: [ "q_p", "m_p" ] },
+      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
+      expected_kind: measured, expected_value: 1.00000000105(31)e-3, expected_digits: "100000000105", expected_digits_label: "SI measured" }
+
+
   - { recipe_number: 268, constant_id: M_n, display_name: "neutron molar mass", column: "8", island: "4", dimension: "kg/mol",
-      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "m_n" ], denominator: [ "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "coulomb", "kilogram", "m_n" ], denominator: [ "q_p", "m_p" ] },
+      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 1.00866491712(51)e-3, expected_digits: "100866491712", expected_digits_label: "SI measured" }
 
 
   - { recipe_number: 269, constant_id: M_τ, display_name: "tau molar mass", column: "8", island: "4", dimension: "kg/mol",
-      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "m_τ" ], denominator: [ "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "coulomb", "kilogram", "m_τ" ], denominator: [ "q_p", "m_p" ] },
+      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 1.90754(13)e-3, expected_digits: "190754", expected_digits_label: "SI measured" }
 
 
   - { recipe_number: 270, constant_id: M_de, display_name: "deuteron molar mass", column: "8", island: "4", dimension: "kg/mol",
-      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "m_de" ], denominator: [ "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "coulomb", "kilogram", "m_de" ], denominator: [ "q_p", "m_p" ] },
+      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 2.01355321466(63)e-3, expected_digits: "201355321466", expected_digits_label: "SI measured" }
 
 
   - { recipe_number: 271, constant_id: M_he, display_name: "helion molar mass", column: "8", island: "4", dimension: "kg/mol",
-      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "m_he" ], denominator: [ "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "coulomb", "kilogram", "m_he" ], denominator: [ "q_p", "m_p" ] },
+      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 3.01493225010(94)e-3, expected_digits: "301493225010", expected_digits_label: "SI measured" }
 
 
   - { recipe_number: 272, constant_id: M_tri, display_name: "triton molar mass", column: "8", island: "4", dimension: "kg/mol",
-      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "m_tri" ], denominator: [ "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "coulomb", "kilogram", "m_tri" ], denominator: [ "q_p", "m_p" ] },
+      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 3.01550071913(94)e-3, expected_digits: "301550071913", expected_digits_label: "SI measured" }
 
 
   - { recipe_number: 273, constant_id: M_α, display_name: "alpha particle molar mass", column: "8", island: "4", dimension: "kg/mol",
-      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "m_α" ], denominator: [ "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "coulomb", "kilogram", "m_α" ], denominator: [ "q_p", "m_p" ] },
+      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 4.0015061833(12)e-3, expected_digits: "40015061833", expected_digits_label: "SI measured" }
 
 
   - { recipe_number: 274, constant_id: M_12_C, display_name: "molar mass of carbon-12", column: "8", island: "4", dimension: "kg/mol",
-      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "12", "A_mass" ], denominator: [ "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "12", "coulomb", "kilogram", "A_mass" ], denominator: [ "q_p", "m_p" ] },
+      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 1.20000000126(36)e-2, expected_digits: "120000000126", expected_digits_label: "SI measured" }
 
 
   - { recipe_number: 275, constant_id: N_A, display_name: "Avogadro constant", column: "8", island: "4", dimension: "1/mol",
-      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ ], denominator: [ "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2+zhe_3^2+zhe_4^2" },
+      external_geometry: { numerator: [ "6", "zhe_1^2" ], denominator: [ "e^γ" ] }, external_boundary: { numerator: [ "coulomb", "kilogram" ], denominator: [ "q_p", "m_p" ] },
+      inversion_geometry: { numerator: [ "18", "C_Q" ], denominator: [ ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: exact, expected_value: 6.02214076e23, expected_digits: "602214076", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 276, constant_id: ST_0, display_name: "Sackur-Tetrode constant (1K, 100 kPa)", column: "6", island: "2", dimension: "-", combine: "+",
+  - { recipe_number: 276, constant_id: ST_0, display_name: "Sackur-Tetrode constant (1K, 100 kPa)", column: "8", island: "5", dimension: "-", combine: "+",
       external_geometry: { numerator: [ "(5/2)" ], denominator: [ ] }, external_boundary: { numerator: [ "(log( (((1/(2*pi))*(kelvin*A_mass)/(l_p^2*T_p*m_p))^(3/2)) * (kelvin*l_p^2*m_p/(t_p^2*T_p*p_0)) ))" ], denominator: [ ] },
       inversion_geometry: { numerator: [ "j_01", "2", "pi" ], denominator: [ "14" ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: -1.15170753496(47), expected_digits: "115170753496", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 277, constant_id: ST_1, display_name: "Sackur-Tetrode constant (1K, 101.325 kPa)", column: "6", island: "2", dimension: "-", combine: "+",
+  - { recipe_number: 277, constant_id: ST_1, display_name: "Sackur-Tetrode constant (1K, 101.325 kPa)", column: "8", island: "5", dimension: "-", combine: "+",
       external_geometry: { numerator: [ "(5/2)" ], denominator: [ ] }, external_boundary: { numerator: [ "(log( (((1/(2*pi))*(kelvin*A_mass)/(l_p^2*T_p*m_p))^(3/2)) * (kelvin*l_p^2*m_p/(t_p^2*T_p*p_1)) ))" ], denominator: [ ] },
       inversion_geometry: { numerator: [ "4", "pi" ], denominator: [ "G_Ga", "14" ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: -1.16487052149(47), expected_digits: "116487052149", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 278, constant_id: σ, display_name: "Stefan-Boltzmann constant", column: "6", island: "2", dimension: "W/m^2*K^4",
+  - { recipe_number: 278, constant_id: σ, display_name: "Stefan-Boltzmann constant", column: "8", island: "5", dimension: "W/(m^2*K^4)",
       external_geometry: { numerator: [ "3", "4^2","pi^2" ], denominator: [ "5", "Γ(5)^2" ] }, external_boundary: { numerator: [ "m_p" ], denominator: [ "t_p^3","T_p^4" ] },
-      inversion_geometry: { numerator: [ "53", "2", "K" ], denominator: [ "14" ] }, root_transform: { id: "zhe_1^2 - zhe_3^2 - zhe_4^2" },
+      inversion_geometry: { numerator: [ "(18+35)", "2", "K" ], denominator: [ "14" ] }, root_transform: { id: "zhe_1^2 - zhe_3^2 - zhe_4^2" },
       expected_kind: exact, expected_value: 5.670374419e-8, expected_digits: "5670374419", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 279, constant_id: V_90, display_name: "conventional value of volt-90", column: "8", island: "5", dimension: "V",
+  - { recipe_number: 279, constant_id: V_90, display_name: "conventional value of volt-90", column: "8", island: "6", dimension: "V",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "volt" ], denominator: [ ] },
-      inversion_geometry: { numerator: [ "L_1" ], denominator: [ "32" ] }, root_transform: { id: "zhe_1^2-zhe_3^2-zhe_4^2" },
+      inversion_geometry: { numerator: [ "L_1" ], denominator: [ "32" ] }, root_transform: { id: "zhe_1^2 - zhe_3^2 - zhe_4^2" },
       expected_kind: exact, expected_value: 1.00000010666, expected_digits: "100000010666", expected_digits_label: "SI exact (defined)" }
 
 
-  - { recipe_number: 280, constant_id: W_90, display_name: "conventional value of watt-90", column: "8", island: "5", dimension: "W",
+  - { recipe_number: 280, constant_id: W_90, display_name: "conventional value of watt-90", column: "8", island: "6", dimension: "W",
       external_geometry: { numerator: [ ], denominator: [ ] }, external_boundary: { numerator: [ "watt" ], denominator: [ ] },
       inversion_geometry: { numerator: [ "j_01" ], denominator: [ "-32" ] }, root_transform: { id: "zhe_1^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: exact, expected_value: 1.00000019553, expected_digits: "100000019553", expected_digits_label: "SI exact (defined)" }
@@ -1705,43 +1704,43 @@ constants:
       expected_kind: measured, expected_value: 9.7173624424(30)e21, expected_digits: "97173624424", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 282, constant_id: A_current, display_name: "atomic unit of current", column: "6", island: "4", dimension: "A",
+  - { recipe_number: 282, constant_id: A_current, display_name: "atomic unit of current", column: "8", island: "7", dimension: "A",
       external_geometry: { numerator: [ "zhe_1^5" ], denominator: [ ] }, external_boundary: { numerator: [ "q_p", "m_e" ], denominator: [ "t_p", "m_p" ] },
       inversion_geometry: { numerator: [ "C_CFP", "V_fe" ], denominator: [ "-8" ] }, root_transform: { id: "zhe_2^2 - zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 6.6236182375082(72)e-3, expected_digits: "66236182375082", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 283, constant_id: A_mfd, display_name: "atomic unit of magnetic flux density", column: "8", island: "7", dimension: "T",
+  - { recipe_number: 283, constant_id: A_mfd, display_name: "atomic unit of magnetic flux density", column: "8", island: "8", dimension: "T",
       external_geometry: { numerator: [ "zhe_1^3" ], denominator: [ ] }, external_boundary: { numerator: [ "m_e^2" ], denominator: [ "t_p", "q_p", "m_p" ] },
-      inversion_geometry: { numerator: [ "16" ], denominator: [ "2^0.5", "pi^0.5", "2", "pi" ] }, root_transform: { id: "zhe_2^2+zhe_3^2+zhe_4^2" },
+      inversion_geometry: { numerator: [ "8^0.5", "4", "pi" ], denominator: [ "35" ] }, root_transform: { id: "zhe_2^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 2.35051757077(73)e5, expected_digits: "235051757077", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 284, constant_id: A_edm, display_name: "atomic unit of electric dipole moment", column: "8", island: "7", dimension: "m*C",
+  - { recipe_number: 284, constant_id: A_edm, display_name: "atomic unit of electric dipole moment", column: "8", island: "8", dimension: "m*C",
       external_geometry: { numerator: [ ], denominator: [ "zhe_1" ] }, external_boundary: { numerator: [ "l_p", "q_p", "m_p" ], denominator: [ "m_e" ] },
       inversion_geometry: { numerator: [ "P", "4", "pi" ], denominator: [ "L_2", "120" ] }, root_transform: { id: "zhe_2^2 - zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 8.4783536198(13)e-30, expected_digits: "84783536198", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 285, constant_id: A_mag, display_name: "atomic unit of magnetizability", column: "8", island: "7", dimension: "J/T^2",
+  - { recipe_number: 285, constant_id: A_mag, display_name: "atomic unit of magnetizability", column: "8", island: "8", dimension: "J/T^2",
       external_geometry: { numerator: [ ], denominator: [ "zhe_1^2" ] }, external_boundary: { numerator: [ "l_p^2", "q_p^2", "m_p^2" ], denominator: [ "m_e^3" ] },
       inversion_geometry: { numerator: [ "L_LL", "4", "pi" ], denominator: [ "18" ] }, root_transform: { id: "zhe_2^2 - zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 7.8910365794(49)e-29, expected_digits: "78910365794", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 286, constant_id: A_eqm, display_name: "atomic unit of electric quadrupole moment", column: "8", island: "7", dimension: "m*C",
+  - { recipe_number: 286, constant_id: A_eqm, display_name: "atomic unit of electric quadrupole moment", column: "8", island: "8", dimension: "m^2*C",
       external_geometry: { numerator: [ ], denominator: [ "zhe_1^3" ] }, external_boundary: { numerator: [ "l_p^2", "q_p", "m_p^2" ], denominator: [ "m_e^2" ] },
-      inversion_geometry: { numerator: [ "γ", "4", "pi" ], denominator: [ "2", "8" ] }, root_transform: { id: "zhe_2^2 - zhe_3^2 - zhe_4^2" },
+      inversion_geometry: { numerator: [ "2", "4", "pi" ], denominator: [ "3^0.5", "32" ] }, root_transform: { id: "zhe_2^2 - zhe_3^2 - zhe_4^2" },
       expected_kind: measured, expected_value: 4.4865515185(14)e-40, expected_digits: "44865515185", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 287, constant_id: A_1^st_hp, display_name: "atomic unit of 1st hyperpolarizability", column: "8", island: "7", dimension: "m^3*C^3/J^2",
+  - { recipe_number: 287, constant_id: A_1^st_hp, display_name: "atomic unit of 1st hyperpolarizability", column: "8", island: "8", dimension: "m^3*C^3/J^2",
       external_geometry: { numerator: [ ], denominator: [ "zhe_1^11" ] }, external_boundary: { numerator: [ "t_p^4", "q_p^3", "m_p^3" ], denominator: [ "l_p", "m_e^5"  ] },
       inversion_geometry: { numerator: [ "-3", "4", "pi" ], denominator: [ "2^0.5", "8" ] }, root_transform: { id: "zhe_2^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 3.2063612996(15)e-53, expected_digits: "32063612996", expected_digits_label: "SI measured" }
 
 
-  - { recipe_number: 288, constant_id: A_2^nd_hp, display_name: "atomic unit of 2nd hyperpolarizability", column: "8", island: "7", dimension: "m^4*C^4/J^3",
+  - { recipe_number: 288, constant_id: A_2^nd_hp, display_name: "atomic unit of 2nd hyperpolarizability", column: "8", island: "8", dimension: "m^4*C^4/J^3",
       external_geometry: { numerator: [ ], denominator: [ "zhe_1^16" ] }, external_boundary: { numerator: [ "t_p^6", "q_p^4", "m_p^4" ], denominator: [ "l_p^2", "m_e^7" ] },
       inversion_geometry: { numerator: [ "-12", "4", "pi" ], denominator: [ "D_Do", "44" ] }, root_transform: { id: "zhe_2^2 + zhe_3^2 + zhe_4^2" },
       expected_kind: measured, expected_value: 6.2353799735(39)e-65, expected_digits: "62353799735", expected_digits_label: "SI measured" }

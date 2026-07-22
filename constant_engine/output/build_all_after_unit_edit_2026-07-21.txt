@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/thadroberts/physics-monastery-site/constant_engine/src/build_all.py", line 1026, in <module>
+    main()
+  File "/Users/thadroberts/physics-monastery-site/constant_engine/src/build_all.py", line 863, in main
+    base_symbols = load_symbols(SYMBOLS_CSV)
+  File "/Users/thadroberts/physics-monastery-site/constant_engine/src/build_all.py", line 788, in load_symbols
+    v = _parse_csv_number_to_mp(value)
+  File "/Users/thadroberts/physics-monastery-site/constant_engine/src/build_all.py", line 761, in _parse_csv_number_to_mp
+    return mp.mpf(s)
+  File "/Users/thadroberts/manim-venv/lib/python3.10/site-packages/mpmath/ctx_mp_python.py", line 79, in __new__
+    v._mpf_ = mpf_pos(cls.mpf_convert_arg(val, prec, rounding), prec, rounding)
+  File "/Users/thadroberts/manim-venv/lib/python3.10/site-packages/mpmath/ctx_mp_python.py", line 86, in mpf_convert_arg
+    if isinstance(x, basestring): return from_str(x, prec, rounding)
+  File "/Users/thadroberts/manim-venv/lib/python3.10/site-packages/mpmath/libmp/libmpf.py", line 1331, in from_str
+    man, exp = str_to_man_exp(x, base=10)
+  File "/Users/thadroberts/manim-venv/lib/python3.10/site-packages/mpmath/libmp/libmpf.py", line 1294, in str_to_man_exp
+    float(x)
+ValueError: could not convert string to float: '1 mev'
