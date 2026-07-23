@@ -28,25 +28,25 @@ expected: 2.41798924200000 × 10^¹⁴ Hz   (SI exact (defined))
 digits:   full match (10/10)
 
 003. J⋮Hz  —  joule-hertz relationship   [built on pass 1]
-deps: l_p, t_p, m_p, pi, zeta(2), zhe_theta, IB
+deps: l_p, t_p, m_p, joule, pi, zeta(2), zhe_theta, IB
 computed: 1.50919017971269e+33 Hz
 expected: 1.50919017900000 × 10^³³ Hz   (SI exact (defined))
 digits:   full match (10/10)
 
 004. Hz⋮J  —  hertz-joule relationship   [built on pass 1]
-deps: l_p, t_p, m_p, pi, zeta(2), zhe_theta, IB
+deps: l_p, t_p, m_p, pi, second, zeta(2), zhe_theta, IB
 computed: 6.62607014968854e-34 J
 expected: 6.62607015000000 × 10^⁻³⁴ J   (SI exact (defined))
 digits:   full match (8/9)
 
 005. Hz⋮eV  —  hertz-electron volt relationship   [built on pass 2]
-deps: l_p, t_p, m_p, eV, joule, pi, second, zeta(2), zhe_theta, IB
+deps: l_p, t_p, m_p, eV, pi, second, zeta(2), zhe_theta, IB
 computed: 4.13566769616115e-15 eV
 expected: 4.13566769600000 × 10^⁻¹⁵ eV   (SI exact (defined))
 digits:   full match (10/10)
 
 006. ℏ̇  —  natural unit of action in eV s   [built on pass 2]
-deps: l_p, t_p, m_p, eV, joule, zeta(2), zhe_theta, IB
+deps: l_p, t_p, m_p, eV, zeta(2), zhe_theta, IB
 computed: 6.58211956829518e-16 eV s
 expected: 6.58211956900000 × 10^⁻¹⁶ eV s   (SI exact (defined))
 digits:   full match (9/10)
@@ -108,13 +108,13 @@ expected: 7.74809172900000 × 10^⁻⁵ S   (SI exact (defined))
 digits:   full match (10/10)
 
 015. eV  —  electron volt   [built on pass 1]
-deps: q_p, coulomb, e, zhe_1, zhe_theta, γ, IB
+deps: q_p, coulomb, e, joule, zhe_1, zhe_theta, γ, IB
 computed: 1.60217663422017e-19 J
 expected: 1.60217663400000 × 10^⁻¹⁹ J   (SI exact (defined))
 digits:   full match (10/10)
 
 016. J⋮eV  —  joule-electron volt relationship   [built on pass 1]
-deps: q_p, coulomb, e, joule, zhe_1, zhe_theta, γ, IB
+deps: q_p, coulomb, e, zhe_1, zhe_theta, γ, IB
 computed: 6.24150907360306e+18 eV
 expected: 6.24150907400000 × 10^¹⁸ eV   (SI exact (defined))
 digits:   full match (9/10)
@@ -228,7 +228,7 @@ sigma:    -4.39
 within 5.2σ: yes
 
 031. Hz⋮E_h  —  hertz-hartree relationship   [built on pass 2]
-deps: t_p, m_p, C_U, C_d, m_e, pi, watt, zhe_1, zhe_theta, IB
+deps: t_p, m_p, C_U, C_d, m_e, pi, second, zhe_1, zhe_theta, IB
 computed: 1.51982984605029e-16 E_h
 expected: 1.5198298460574(17) × 10^⁻¹⁶ E_h   (SI measured)
 abs err:  0.000000000007105 × 10^⁻¹⁶ E_h
@@ -276,7 +276,7 @@ sigma:    -4.83
 within 5.2σ: yes
 
 037. μ_n/μ_+  —  neutron-proton magnetic moment ratio   [built on pass 2]
-deps: C_CFP, K, S, m_+, m_n, pi, zhe_r, IB
+deps: !5, C_CFP, K, S, m_+, m_n, pi, zhe_r, IB
 computed: -0.684979091085623 -
 expected: -6.8497935(16) × 10^⁻¹ -   (SI measured)
 abs err:  0.000002589143774 × 10^⁻¹ -
@@ -284,7 +284,7 @@ sigma:    +1.62
 within 5.2σ: yes
 
 038. μ_+/μ_n  —  proton-neutron magnetic moment ratio   [built on pass 2]
-deps: C_CFP, K, S, m_+, m_n, pi, zhe_r, IB
+deps: !5, C_CFP, K, S, m_+, m_n, pi, zhe_r, IB
 computed: -1.45989857648808 -
 expected: -1.45989802(34) × 10^⁰ -   (SI measured)
 abs err:  0.000000556488081 × 10^⁰ -
@@ -444,7 +444,7 @@ sigma:    +3.26
 within 5.2σ: yes
 
 058. μ_de/μ_+  —  deuteron-proton magnetic moment ratio   [built on pass 2]
-deps: S, m_+, m_de, pi, s, zhe_r, φ, IB
+deps: !5, S, m_+, m_de, pi, s, zhe_r, φ, IB
 computed: 0.307012209390825 -
 expected: 3.0701220930(79) × 10^⁻¹ -   (SI measured)
 abs err:  0.000000000908247 × 10^⁻¹ -
@@ -878,7 +878,7 @@ sigma:    -1.16
 within 5.2σ: yes
 
 114. a_μ  —  muon magnetic moment anomaly   [built on pass 1]
-deps: K, L_Li, P_up, zhe_1, zhe_2, zhe_3, zhe_4, IB
+deps: !5, K, L_Li, P_up, zhe_1, zhe_2, zhe_3, zhe_4, IB
 computed: 0.00116592060110470 -
 expected: 1.16592062(41) × 10^⁻³ -   (SI measured)
 abs err:  0.000000018895301 × 10^⁻³ -
@@ -2140,7 +2140,7 @@ sigma:    -2.65
 within 5.2σ: yes
 
 284. A_edm  —  atomic unit of electric dipole moment   [built on pass 1]
-deps: l_p, q_p, m_p, L_2, P, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+deps: l_p, q_p, m_p, 5!, L_2, P, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
 computed: 8.47835362016677e-30 m*C
 expected: 8.4783536198(13) × 10^⁻³⁰ m*C   (SI measured)
 abs err:  0.000000000366767 × 10^⁻³⁰ m*C
@@ -2172,7 +2172,7 @@ sigma:    -2.62
 within 5.2σ: yes
 
 288. A_2^nd_hp  —  atomic unit of 2nd hyperpolarizability   [built on pass 1]
-deps: l_p, t_p, q_p, m_p, D_Do, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+deps: l_p, t_p, q_p, m_p, !5, D_Do, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
 computed: 6.23537998029124e-65 m^4*C^4/J^3
 expected: 6.2353799735(39) × 10^⁻⁶⁵ m^4*C^4/J^3   (SI measured)
 abs err:  0.000000006791237 × 10^⁻⁶⁵ m^4*C^4/J^3

@@ -228,6 +228,7 @@ _CODATA_RE = re.compile(
 
 _SUBFACT_CALL_RE = re.compile(r"^\s*subfact\(\s*(\d+)\s*\)\s*$")
 _BANG_SUBFACT_RE = re.compile(r"^\s*!\s*(\d+)\s*$")
+_POSTFIX_FACTORIAL_RE = re.compile(r"^\s*(\d+)\s*!\s*$")
 _ZETA_CALL_RE = re.compile(r"^\s*zeta\(\s*[+-]?\d+\s*\)\s*$")
 _GAMMA_CALL_RE = re.compile(r"^\s*(?:gamma|Γ)\(\s*(.+?)\s*\)\s*$")
 _EXPR_PAREN_RE = re.compile(r"^\s*\(.+\)\s*$")
@@ -488,6 +489,7 @@ def collect_dependencies(recipe: Dict[str, Any]) -> Tuple[List[str], List[str]]:
                         _ZETA_CALL_RE.match(base_tok)
                         or _SUBFACT_CALL_RE.match(base_tok)
                         or _BANG_SUBFACT_RE.match(base_tok)
+                        or _POSTFIX_FACTORIAL_RE.match(base_tok)
                         or _GAMMA_CALL_RE.match(base_tok)
                 ):
                     # function tokens are display-only; they are not symbols loaded from CSV

@@ -47,6 +47,147 @@ function formatInputParameterValue(value, digitLimit = INPUT_PARAMETER_DISPLAY_D
     });
 }
 
+
+function renderLatestOutput(text) {
+    const source = String(text);
+
+    /*
+     * Highlight only:
+     *
+     *   within 5.2σ: yes
+     *   within 5.2σ: no
+     *   full match (a/b)
+     *   almost-full match (a/b)
+     *
+     * Ordinary uses of the words "yes" and "no" remain unchanged.
+     */
+    const tokenPattern =
+        /within 5\.2σ:\s*(?:yes|no)|(?:almost-)?full match \(\d+\/\d+\)/gi;
+
+    const rendered = [];
+    let cursor = 0;
+    let match;
+    let keyIndex = 0;
+
+    while ((match = tokenPattern.exec(source)) !== null) {
+        if (match.index > cursor) {
+            rendered.push(
+                source.slice(cursor, match.index)
+            );
+        }
+
+        const token = match[0];
+
+        /*
+         * Color only the verdict word following
+         * "within 5.2σ:".
+         */
+        const verdictMatch = token.match(
+            /^(within 5\.2σ:\s*)(yes|no)$/i
+        );
+
+        if (verdictMatch) {
+            const label = verdictMatch[1];
+            const verdict = verdictMatch[2];
+            const isYes =
+                verdict.toLowerCase() === "yes";
+
+            rendered.push(label);
+
+            rendered.push(
+                <span
+                    key={`verdict-${keyIndex}`}
+                    style={
+                        isYes
+                            ? successOutputStyle
+                            : failureOutputStyle
+                    }
+                >
+                    {verdict}
+                </span>
+            );
+
+            keyIndex += 1;
+            cursor = tokenPattern.lastIndex;
+            continue;
+        }
+
+        /*
+         * Color digit-match phrases according to
+         * how many digits are missing.
+         */
+        const ratioMatch = token.match(
+            /\((\d+)\/(\d+)\)$/
+        );
+
+        if (ratioMatch) {
+            const matchedDigits =
+                Number(ratioMatch[1]);
+            const totalDigits =
+                Number(ratioMatch[2]);
+            const missingDigits =
+                totalDigits - matchedDigits;
+
+            if (
+                missingDigits === 0 ||
+                missingDigits === 1
+            ) {
+                rendered.push(
+                    <span
+                        key={`match-${keyIndex}`}
+                        style={successOutputStyle}
+                    >
+                        {token}
+                    </span>
+                );
+
+                keyIndex += 1;
+                cursor = tokenPattern.lastIndex;
+                continue;
+            }
+
+            if (missingDigits === 2) {
+                rendered.push(
+                    <span
+                        key={`match-${keyIndex}`}
+                        style={warningOutputStyle}
+                    >
+                        {token}
+                    </span>
+                );
+
+                keyIndex += 1;
+                cursor = tokenPattern.lastIndex;
+                continue;
+            }
+
+            if (missingDigits === 3) {
+                rendered.push(
+                    <span
+                        key={`match-${keyIndex}`}
+                        style={orangeOutputStyle}
+                    >
+                        {token}
+                    </span>
+                );
+
+                keyIndex += 1;
+                cursor = tokenPattern.lastIndex;
+                continue;
+            }
+        }
+
+        rendered.push(token);
+        cursor = tokenPattern.lastIndex;
+    }
+
+    if (cursor < source.length) {
+        rendered.push(source.slice(cursor));
+    }
+
+    return rendered;
+}
+
 export default function ConstantEnginePage() {
     const codePath = path.join(
         process.cwd(),
@@ -252,7 +393,7 @@ export default function ConstantEnginePage() {
                         </p>
 
                         <pre style={codeBoxStyle}>
-                            <code>{latestOutput}</code>
+                            <code>{renderLatestOutput(latestOutput)}</code>
                         </pre>
                     </div>
                 </details>
@@ -325,6 +466,27 @@ const innerPanelStyle = {
     fontFamily: '"Times New Roman", Times, serif',
     fontSize: "16px",
     lineHeight: "1.6",
+};
+
+
+const successOutputStyle = {
+    color: "#00ff00",
+    fontWeight: "700",
+};
+
+const warningOutputStyle = {
+    color: "#ffff00",
+    fontWeight: "700",
+};
+
+const orangeOutputStyle = {
+    color: "#ff8c00",
+    fontWeight: "700",
+};
+
+const failureOutputStyle = {
+    color: "#ff0000",
+    fontWeight: "700",
 };
 
 const codeBoxStyle = {

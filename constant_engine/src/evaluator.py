@@ -833,6 +833,7 @@ def eval_quantity_expr(expr: str, symbols: Dict[str, Quantity]) -> Quantity:
 _ZETA_CALL_RE = re.compile(r"^\s*zeta\(\s*([+-]?\d+)\s*\)\s*$")
 _SUBFACT_CALL_RE = re.compile(r"^\s*subfact\(\s*(\d+)\s*\)\s*$")
 _BANG_SUBFACT_RE = re.compile(r"^\s*!\s*(\d+)\s*$")
+_POSTFIX_FACTORIAL_RE = re.compile(r"^\s*(\d+)\s*!\s*$")
 _GAMMA_CALL_RE = re.compile(r"^\s*(?:gamma|Γ)\(\s*(.+?)\s*\)\s*$")
 
 
@@ -964,6 +965,11 @@ def _resolve_token_to_quantity(token: FactorToken, symbols: Dict[str, Quantity])
     if m3:
         n = int(m3.group(1))
         return Quantity(mp.mpf(str(_subfactorial_int(n))), {})
+
+    mf = _POSTFIX_FACTORIAL_RE.match(tok)
+    if mf:
+        n = int(mf.group(1))
+        return Quantity(mp.factorial(n), {})
 
     mg = _GAMMA_CALL_RE.match(tok)
     if mg:
