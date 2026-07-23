@@ -119,10 +119,7 @@ export default function ConstantEnginePage() {
                 <div className="legend-title">constant engine</div>
 
                 <p className="equation-description">
-                    The Constant Engine is the reproducible computation system
-                    used to evaluate the constants of Nature in the Transform Dictionary. It computes proposed
-                    closed-form expressions, compares them to CODATA 2022 values and their error bars, and reports the numerical structure used
-                    throughout this project.
+                    The Constant Engine is a reproducible computational implementation of the Transform Dictionary. It combines a finite set of geometric and algebraic inputs according to two constructive rules—the hyperbolic partition equation and the binomial constructor—to produce and evaluate proposed closed-form expressions for all 288 constants of Nature. Each result is compared directly with the corresponding CODATA 2022 value. It therefore provides a direct computational test of the central claim of this project: that all 288 constants of Nature can be constructed as a coherent, mutually constrained system within a common geometric framework.
                 </p>
 
                 <div style={{ height: "1.5rem" }} />
