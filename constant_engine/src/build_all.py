@@ -5,6 +5,7 @@ import math
 import re
 import yaml
 import sys
+import os
 from decimal import Decimal, ROUND_FLOOR, getcontext
 from pathlib import Path
 from typing import Dict, Any, List, Tuple
@@ -91,9 +92,17 @@ RECIPES_YAML = ENGINE_ROOT / "recipes" / "constants.yaml"
 # ------------------------------------------------------------
 # Terminal colors
 # ------------------------------------------------------------
-USE_COLOR = sys.stdout.isatty()
+FORCE_COLOR = os.environ.get("FORCE_COLOR", "").lower() in {
+    "1",
+    "true",
+    "yes",
+}
+NO_COLOR = "NO_COLOR" in os.environ
+
+USE_COLOR = (sys.stdout.isatty() or FORCE_COLOR) and not NO_COLOR
 
 GREEN = "\033[92m" if USE_COLOR else ""
+YELLOW = "\033[93m" if USE_COLOR else ""
 ORANGE = "\033[38;5;214m" if USE_COLOR else ""
 RED = "\033[91m" if USE_COLOR else ""
 RESET = "\033[0m" if USE_COLOR else ""
@@ -158,26 +167,67 @@ def sci_pretty(x: object, sig: int = 15) -> str:
 
 def sci_precise(x: Any, sig: int = PRINT_DIGITS) -> str:
     """
-    High-precision numeric formatter.
-    Unlike sci_pretty(), this does not convert through float.
+    Format every real value in normalized scientific notation:
+
+        mantissa × 10^exponent
+
+    This stays in mpmath precision and never converts through float.
     """
+
+    def format_real(value: Any) -> str:
+        if isinstance(value, mp.mpf):
+            v = value
+        else:
+            v = mp.mpf(str(value))
+
+        if not mp.isfinite(v):
+            return mp.nstr(v, n=sig)
+
+        if v == 0:
+            return f"0 × 10^{str(0).translate(_SUPERS)}"
+
+        exp10 = int(mp.floor(mp.log10(abs(v))))
+        mantissa = v / mp.power(10, exp10)
+
+        mantissa_str = mp.nstr(
+            mantissa,
+            n=sig,
+            strip_zeros=False,
+        )
+
+        # Rounding can occasionally turn 9.999... into 10.000...
+        # Renormalize in that case.
+        if abs(mp.mpf(mantissa_str)) >= 10:
+            exp10 += 1
+            mantissa /= 10
+            mantissa_str = mp.nstr(
+                mantissa,
+                n=sig,
+                strip_zeros=False,
+            )
+
+        exponent_str = str(exp10).translate(_SUPERS)
+        return f"{mantissa_str} × 10^{exponent_str}"
+
     if isinstance(x, mp.mpc):
         if x.imag == 0:
-            return mp.nstr(x.real, n=sig, strip_zeros=False)
+            return format_real(x.real)
 
-        real = mp.nstr(x.real, n=sig, strip_zeros=False)
-        imag = mp.nstr(abs(x.imag), n=sig, strip_zeros=False)
+        real = format_real(x.real)
+        imag = format_real(abs(x.imag))
         sign = "+" if x.imag >= 0 else "-"
-        return f"({real}{sign}{imag}j)"
-
-    if isinstance(x, mp.mpf):
-        return mp.nstr(x, n=sig, strip_zeros=False)
+        return f"({real} {sign} {imag}j)"
 
     if isinstance(x, complex):
-        return sci_precise(mp.mpc(x.real, x.imag), sig=sig)
+        return sci_precise(
+            mp.mpc(
+                mp.mpf(str(x.real)),
+                mp.mpf(str(x.imag)),
+            ),
+            sig=sig,
+        )
 
-    return mp.nstr(mp.mpf(x), n=sig, strip_zeros=False)
-
+    return format_real(x)
 
 def sci_csv(x: Any, sig: int = 60) -> str:
     """
@@ -624,11 +674,30 @@ def verify_and_format(recipe: Dict[str, Any], computed: Quantity) -> List[str]:
             match_n = digits_match_count(comp_digits, ref_digits)
 
             if label2 == "full":
-                lines.append(f"digits:   {GREEN}full match{RESET} ({match_n}/{sig})")
+                match_label = "full match"
             elif label2 == "almost":
-                lines.append(f"digits:   {ORANGE}almost-full match{RESET} ({match_n}/{sig})")
+                match_label = "almost-full match"
             else:
-                lines.append(f"digits:   {RED}not a match{RESET} ({match_n}/{sig})")
+                match_label = "not a match"
+
+            missing_digits = max(0, sig - match_n)
+
+            if missing_digits <= 1:
+                match_color = GREEN
+            elif missing_digits == 2:
+                match_color = YELLOW
+            elif missing_digits == 3:
+                match_color = ORANGE
+            else:
+                match_color = ""
+
+            match_reset = RESET if match_color else ""
+
+            lines.append(
+                f"digits:   {match_color}"
+                f"{match_label} ({match_n}/{sig})"
+                f"{match_reset}"
+            )
         else:
             if ev is not None:
                 cv_f = float(computed.value.real) if isinstance(computed.value, mp.mpc) else float(computed.value)
@@ -640,19 +709,26 @@ def verify_and_format(recipe: Dict[str, Any], computed: Quantity) -> List[str]:
 
     # measured
     codata_label = recipe.get("expected_digits_label", "measured")
-    ev, sigma, ev_pretty, _, _, exp = parse_measured_value(expected_value)
+    ev, sigma, ev_pretty, mant, _, exp = parse_measured_value(expected_value)
     lines.append(f"expected: {ev_pretty} {dim}   ({codata_label})")
 
     cv = as_display_real(cid, computed.value)
 
-    cv_f = float(cv)  # reporting
-    signed_err = cv_f - float(ev)
-    abs_err = abs(signed_err)
-    scaled_err = abs_err / (10 ** exp)
+    # Preserve mpmath precision when calculating the displayed error.
+    cv_mp = cv if isinstance(cv, mp.mpf) else mp.mpf(str(cv))
 
-    ABS_ERR_DECIMALS = 15
-    mantissa_str = f"{scaled_err:.{ABS_ERR_DECIMALS}f}"
-    lines.append(f"abs err:  {mantissa_str} × 10^{str(exp).translate(_SUPERS)} {dim}")
+    if mant is not None and exp is not None:
+        ev_mp = mp.mpf(str(mant)) * mp.power(10, exp)
+    else:
+        ev_mp = mp.mpf(str(ev))
+
+    signed_err_mp = cv_mp - ev_mp
+    signed_err = float(signed_err_mp)
+    abs_err_mp = abs(signed_err_mp)
+
+    lines.append(
+        f"abs err:  {sci_precise(abs_err_mp, PRINT_DIGITS)} {dim}"
+    )
 
     if sigma is not None and sigma > 0:
         z = signed_err / sigma

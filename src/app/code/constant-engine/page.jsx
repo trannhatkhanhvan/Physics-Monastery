@@ -58,11 +58,12 @@ function renderLatestOutput(text) {
      *   within 5.2σ: no
      *   full match (a/b)
      *   almost-full match (a/b)
+     *   not a match (a/b)
      *
      * Ordinary uses of the words "yes" and "no" remain unchanged.
      */
     const tokenPattern =
-        /within 5\.2σ:\s*(?:yes|no)|(?:almost-)?full match \(\d+\/\d+\)/gi;
+        /within 5\.2σ:\s*(?:yes|no)|(?:full match|almost-full match|not a match) \(\d+\/\d+\)/gi;
 
     const rendered = [];
     let cursor = 0;
