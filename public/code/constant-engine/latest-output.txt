@@ -411,23 +411,7 @@ abs err:  6.98352259189495 × 10^⁻³⁷ kg
 sigma:    -1.34
 within 5.2σ: yes
 
-054. m_de  —  deuteron mass   [built on pass 2]
-deps: A_mass, K_-6, pi, s, zhe_r, IB
-computed: 3.34358377540376 × 10^⁻²⁷ kg
-expected: 3.3435837768(10) × 10^⁻²⁷ kg   (SI measured)
-abs err:  1.39624168889586 × 10^⁻³⁶ kg
-sigma:    -1.40
-within 5.2σ: yes
-
-055. m_μ  —  muon mass   [built on pass 2]
-deps: A_mass, K_-6, pi, s, zhe_r, IB
-computed: 1.88353161502363 × 10^⁻²⁸ kg
-expected: 1.883531627(42) × 10^⁻²⁸ kg   (SI measured)
-abs err:  1.19763698141403 × 10^⁻³⁶ kg
-sigma:    -0.29
-within 5.2σ: yes
-
-056. μ_de/μ_e  —  deuteron-electron magnetic moment ratio   [built on pass 2]
+054. μ_de/μ_e  —  deuteron-electron magnetic moment ratio   [built on pass 3]
 deps: L_1, P_up, m_de, m_e, pi, s, zhe_r, IB
 computed: -4.66434558966557 × 10^⁻⁴ -
 expected: -4.664345550(12) × 10^⁻⁴ -   (SI measured)
@@ -435,12 +419,28 @@ abs err:  3.96655700401982 × 10^⁻¹² -
 sigma:    -3.31
 within 5.2σ: yes
 
-057. μ_e/μ_de  —  electron-deuteron magnetic moment ratio   [built on pass 2]
+055. μ_e/μ_de  —  electron-deuteron magnetic moment ratio   [built on pass 3]
 deps: L_1, P_up, m_de, m_e, pi, s, zhe_r, IB
 computed: -2.14392347388586 × 10^³ -
 expected: -2.1439234921(56) × 10^³ -   (SI measured)
 abs err:  1.82141397884307 × 10^⁻⁵ -
 sigma:    +3.25
+within 5.2σ: yes
+
+056. m_μ  —  muon mass   [built on pass 2]
+deps: A_mass, K_-6, pi, s, zhe_r, IB
+computed: 1.88353161502363 × 10^⁻²⁸ kg
+expected: 1.883531627(42) × 10^⁻²⁸ kg   (SI measured)
+abs err:  1.19763698141403 × 10^⁻³⁶ kg
+sigma:    -0.29
+within 5.2σ: yes
+
+057. m_de  —  deuteron mass   [built on pass 2]
+deps: A_mass, K_-6, pi, s, zhe_r, IB
+computed: 3.34358377540376 × 10^⁻²⁷ kg
+expected: 3.3435837768(10) × 10^⁻²⁷ kg   (SI measured)
+abs err:  1.39624168889586 × 10^⁻³⁶ kg
+sigma:    -1.40
 within 5.2σ: yes
 
 058. μ_de/μ_+  —  deuteron-proton magnetic moment ratio   [built on pass 2]
