@@ -54,6 +54,275 @@ const AXES = [
 ];
 
 const ZERO = [0, 0, 0, 0, 0, 0];
+const ZERO_POINT = { x: 0, y: 0, z: 0 };
+
+const PLANCK_TIME_SECONDS = 5.39125836832313e-44;
+const F1_HZ = 5.4e14;
+const MHZ_HZ = 1e6;
+
+const TIME_SCALES = [
+  {
+    id: "planck-time",
+    controlLabel: "tₚ",
+    wordLabel: "tₚ",
+    axisLabel: "tₚ",
+    seconds: PLANCK_TIME_SECONDS,
+  },
+  {
+    id: "f1-period",
+    controlLabel: "1/f₁",
+    wordLabel: "1/f₁",
+    axisLabel: "1/f₁",
+    seconds: 1 / F1_HZ,
+  },
+  {
+    id: "mhz-period",
+    controlLabel: "1/MHz",
+    wordLabel: "1/MHz",
+    axisLabel: "1/MHz",
+    seconds: 1 / MHZ_HZ,
+  },
+  {
+    id: "second",
+    controlLabel: "1 s",
+    wordLabel: "s",
+    axisLabel: "1 s",
+    seconds: 1,
+  },
+].map((scale) => ({
+  ...scale,
+  planckCount: scale.seconds / PLANCK_TIME_SECONDS,
+  hybridCoordinate:
+    1 + Math.log10(scale.seconds / PLANCK_TIME_SECONDS),
+}));
+
+const TIME_SCALE_BY_ID = new Map(
+  TIME_SCALES.map((scale) => [scale.id, scale])
+);
+
+const DEFAULT_TIME_SCALE_ID = "second";
+
+
+const PLANCK_LENGTH_METERS = 1.6162591817564534e-35;
+const FEMTOMETER_METERS = 1e-15;
+
+const LENGTH_SCALES = [
+  {
+    id: "planck-length",
+    controlLabel: "lₚ",
+    wordLabel: "lₚ",
+    axisLabel: "lₚ",
+    meters: PLANCK_LENGTH_METERS,
+  },
+  {
+    id: "femtometer",
+    controlLabel: "fm",
+    wordLabel: "fm",
+    axisLabel: "fm",
+    meters: FEMTOMETER_METERS,
+  },
+  {
+    id: "meter",
+    controlLabel: "m",
+    wordLabel: "m",
+    axisLabel: "m",
+    meters: 1,
+  },
+].map((scale) => ({
+  ...scale,
+  planckCount: scale.meters / PLANCK_LENGTH_METERS,
+  hybridCoordinate:
+    1 + Math.log10(scale.meters / PLANCK_LENGTH_METERS),
+}));
+
+const LENGTH_SCALE_BY_ID = new Map(
+  LENGTH_SCALES.map((scale) => [scale.id, scale])
+);
+
+const DEFAULT_LENGTH_SCALE_ID = "meter";
+
+
+const PLANCK_CHARGE_COULOMBS = 1.875546037776847e-18;
+
+const CHARGE_SCALES = [
+  {
+    id: "planck-charge",
+    controlLabel: "qₚ",
+    wordLabel: "qₚ",
+    axisLabel: "qₚ",
+    coulombs: PLANCK_CHARGE_COULOMBS,
+  },
+  {
+    id: "coulomb",
+    controlLabel: "C",
+    wordLabel: "C",
+    axisLabel: "C",
+    coulombs: 1,
+  },
+].map((scale) => ({
+  ...scale,
+  planckCount: scale.coulombs / PLANCK_CHARGE_COULOMBS,
+  hybridCoordinate:
+    1 + Math.log10(scale.coulombs / PLANCK_CHARGE_COULOMBS),
+}));
+
+const CHARGE_SCALE_BY_ID = new Map(
+  CHARGE_SCALES.map((scale) => [scale.id, scale])
+);
+
+const DEFAULT_CHARGE_SCALE_ID = "coulomb";
+
+
+const PLANCK_TEMPERATURE_KELVINS = 1.4167869859079463e32;
+const KELVIN_UNIT = 1;
+
+const TEMPERATURE_SCALES = [
+  {
+    id: "kelvin",
+    controlLabel: "K",
+    wordLabel: "K",
+    axisLabel: "K",
+    kelvins: KELVIN_UNIT,
+  },
+  {
+    id: "planck-temperature",
+    controlLabel: "Tₚ",
+    wordLabel: "Tₚ",
+    axisLabel: "Tₚ",
+    kelvins: PLANCK_TEMPERATURE_KELVINS,
+  },
+].map((scale) => ({
+  ...scale,
+  kelvinRatio: scale.kelvins / KELVIN_UNIT,
+  hybridCoordinate:
+    1 + Math.log10(scale.kelvins / KELVIN_UNIT),
+}));
+
+const TEMPERATURE_SCALE_BY_ID = new Map(
+  TEMPERATURE_SCALES.map((scale) => [scale.id, scale])
+);
+
+const DEFAULT_TEMPERATURE_SCALE_ID = "kelvin";
+
+
+const PLANCK_MASS_KILOGRAMS =
+  2.1764268381757881245184989320757924e-8;
+const ELECTRON_MASS_KILOGRAMS = 9.1093837139e-31;
+
+const MASS_SCALES = [
+  {
+    id: "electron-mass",
+    controlLabel: "mₑ",
+    wordLabel: "mₑ",
+    axisLabel: "mₑ",
+    kilograms: ELECTRON_MASS_KILOGRAMS,
+  },
+  {
+    id: "muon-mass",
+    controlLabel: "m_μ",
+    wordLabel: "m_μ",
+    axisLabel: "m_μ",
+    kilograms: 1.883531627e-28,
+  },
+  {
+    id: "atomic-mass-constant",
+    controlLabel: "A_mass",
+    wordLabel: "A_mass",
+    axisLabel: "A_mass",
+    kilograms: 1.66053906892e-27,
+  },
+  {
+    id: "proton-mass",
+    controlLabel: "m₊",
+    wordLabel: "m₊",
+    axisLabel: "m₊",
+    kilograms: 1.67262192595e-27,
+  },
+  {
+    id: "neutron-mass",
+    controlLabel: "mₙ",
+    wordLabel: "mₙ",
+    axisLabel: "mₙ",
+    kilograms: 1.67492750056e-27,
+  },
+  {
+    id: "tau-mass",
+    controlLabel: "m_τ",
+    wordLabel: "m_τ",
+    axisLabel: "m_τ",
+    kilograms: 3.16754e-27,
+  },
+  {
+    id: "deuteron-mass",
+    controlLabel: "m_de",
+    wordLabel: "m_de",
+    axisLabel: "m_de",
+    kilograms: 3.3435837768e-27,
+  },
+  {
+    id: "helion-mass",
+    controlLabel: "m_he",
+    wordLabel: "m_he",
+    axisLabel: "m_he",
+    kilograms: 5.0064127862e-27,
+  },
+  {
+    id: "triton-mass",
+    controlLabel: "m_tri",
+    wordLabel: "m_tri",
+    axisLabel: "m_tri",
+    kilograms: 5.0073567512e-27,
+  },
+  {
+    id: "alpha-particle-mass",
+    controlLabel: "m_α",
+    wordLabel: "m_α",
+    axisLabel: "m_α",
+    kilograms: 6.6446573450e-27,
+  },
+  {
+    id: "planck-mass",
+    controlLabel: "mₚ",
+    wordLabel: "mₚ",
+    axisLabel: "mₚ",
+    kilograms: PLANCK_MASS_KILOGRAMS,
+  },
+  {
+    id: "kilogram",
+    controlLabel: "kg",
+    wordLabel: "kg",
+    axisLabel: "kg",
+    kilograms: 1,
+  },
+].map((scale) => ({
+  ...scale,
+  electronMassRatio: scale.kilograms / ELECTRON_MASS_KILOGRAMS,
+  hybridCoordinate:
+    1 + Math.log10(scale.kilograms / ELECTRON_MASS_KILOGRAMS),
+}));
+
+const MASS_SCALE_BY_ID = new Map(
+  MASS_SCALES.map((scale) => [scale.id, scale])
+);
+
+const DEFAULT_MASS_SCALE_ID = "kilogram";
+
+
+const AMOUNT_SCALES = [
+  {
+    id: "mole",
+    controlLabel: "mol",
+    wordLabel: "mol",
+    axisLabel: "mol",
+    moles: 1,
+  },
+];
+
+const AMOUNT_SCALE_BY_ID = new Map(
+  AMOUNT_SCALES.map((scale) => [scale.id, scale])
+);
+
+const DEFAULT_AMOUNT_SCALE_ID = "mole";
 
 const COMPOSITE_DIMENSIONS = [
   { id: "frequency", name: "Frequency", unit: "Hz", address: [-1, 0, 0, 0, 0, 0] },
@@ -89,6 +358,12 @@ const VIEWBOX = {
   cy: 280,
   unit: 58,
   axisHalfLength: 5.1,
+  timeAxisHalfLength: 5.1,
+  lengthAxisHalfLength: 5.1,
+  chargeAxisHalfLength: 5.1,
+  temperatureAxisHalfLength: 5.1,
+  massAxisHalfLength: 5.1,
+  amountAxisHalfLength: 5.1,
 };
 
 const DEFAULT_CENTER = {
@@ -286,6 +561,37 @@ function vectorKey(vector) {
   return vector.join(",");
 }
 
+function pointKey(point) {
+  return [point.x, point.y, point.z]
+    .map((value) => Number(value).toFixed(10))
+    .join(",");
+}
+
+function addPoint3D(a, b) {
+  return {
+    x: a.x + b.x,
+    y: a.y + b.y,
+    z: a.z + b.z,
+  };
+}
+
+function multiplyPoint3D(point, factor) {
+  return {
+    x: point.x * factor,
+    y: point.y * factor,
+    z: point.z * factor,
+  };
+}
+
+function makeOriginVertex() {
+  return {
+    id: 0,
+    vector: [...ZERO],
+    modelPoint: { ...ZERO_POINT },
+    move: null,
+  };
+}
+
 function formatAddress(vector) {
   return `(${vector.join(", ")})`;
 }
@@ -296,26 +602,556 @@ function addStep(vector, axisIndex, sign) {
   return next;
 }
 
+function normalizeMove(move) {
+  return {
+    axisIndex: move.axisIndex,
+    sign: move.sign > 0 ? 1 : -1,
+    scaleId:
+      move.axisIndex === 0
+        ? move.scaleId || DEFAULT_TIME_SCALE_ID
+        : move.axisIndex === 1
+          ? move.scaleId || DEFAULT_LENGTH_SCALE_ID
+          : move.axisIndex === 2
+            ? move.scaleId || DEFAULT_CHARGE_SCALE_ID
+            : move.axisIndex === 3
+              ? move.scaleId || DEFAULT_TEMPERATURE_SCALE_ID
+              : move.axisIndex === 4
+                ? move.scaleId || DEFAULT_MASS_SCALE_ID
+                : move.axisIndex === 5
+                  ? move.scaleId || DEFAULT_AMOUNT_SCALE_ID
+                  : null,
+  };
+}
+
+function unitAnchoredScaleDistance({
+  scales,
+  scaleById,
+  scaleId,
+  defaultScaleId,
+  valueKey,
+  axisHalfLength,
+}) {
+  const scale = scaleById.get(scaleId || defaultScaleId);
+  const unitScale = scaleById.get(defaultScaleId);
+
+  const value = scale[valueKey];
+  const unitValue = unitScale[valueKey];
+
+  const values = scales.map((item) => item[valueKey]);
+  const minimumValue = Math.min(...values);
+  const maximumValue = Math.max(...values);
+
+  const logRatio = Math.log10(value / unitValue);
+
+  /*
+   * The ordinary SI unit is the fixed model-distance anchor:
+   *
+   *   1 s = 1 m = 1 C = 1 K = 1 kg = 1 mol = 1.
+   *
+   * Available values below the SI unit are logarithmically compressed
+   * into the interval [1 / axisHalfLength, 1].
+   *
+   * Available values above the SI unit are logarithmically compressed
+   * into the interval [1, axisHalfLength].
+   */
+  if (Math.abs(logRatio) < 1e-12) {
+    return 1;
+  }
+
+  if (logRatio < 0) {
+    const minimumLogRatio = Math.log10(minimumValue / unitValue);
+
+    if (minimumLogRatio >= 0) {
+      return 1;
+    }
+
+    const interpolation =
+      (logRatio - minimumLogRatio) / -minimumLogRatio;
+
+    const minimumDistance = 1 / axisHalfLength;
+
+    return (
+      minimumDistance +
+      interpolation * (1 - minimumDistance)
+    );
+  }
+
+  const maximumLogRatio = Math.log10(maximumValue / unitValue);
+
+  if (maximumLogRatio <= 0) {
+    return 1;
+  }
+
+  const interpolation = logRatio / maximumLogRatio;
+
+  return (
+    1 +
+    interpolation * (axisHalfLength - 1)
+  );
+}
+
+function timeScaleModelDistance(scaleId) {
+  return unitAnchoredScaleDistance({
+    scales: TIME_SCALES,
+    scaleById: TIME_SCALE_BY_ID,
+    scaleId,
+    defaultScaleId: DEFAULT_TIME_SCALE_ID,
+    valueKey: "seconds",
+    axisHalfLength: VIEWBOX.timeAxisHalfLength,
+  });
+}
+
+function lengthScaleModelDistance(scaleId) {
+  return unitAnchoredScaleDistance({
+    scales: LENGTH_SCALES,
+    scaleById: LENGTH_SCALE_BY_ID,
+    scaleId,
+    defaultScaleId: DEFAULT_LENGTH_SCALE_ID,
+    valueKey: "meters",
+    axisHalfLength: VIEWBOX.lengthAxisHalfLength,
+  });
+}
+
+function chargeScaleModelDistance(scaleId) {
+  return unitAnchoredScaleDistance({
+    scales: CHARGE_SCALES,
+    scaleById: CHARGE_SCALE_BY_ID,
+    scaleId,
+    defaultScaleId: DEFAULT_CHARGE_SCALE_ID,
+    valueKey: "coulombs",
+    axisHalfLength: VIEWBOX.chargeAxisHalfLength,
+  });
+}
+
+function temperatureScaleModelDistance(scaleId) {
+  return unitAnchoredScaleDistance({
+    scales: TEMPERATURE_SCALES,
+    scaleById: TEMPERATURE_SCALE_BY_ID,
+    scaleId,
+    defaultScaleId: DEFAULT_TEMPERATURE_SCALE_ID,
+    valueKey: "kelvins",
+    axisHalfLength: VIEWBOX.temperatureAxisHalfLength,
+  });
+}
+
+function massScaleModelDistance(scaleId) {
+  return unitAnchoredScaleDistance({
+    scales: MASS_SCALES,
+    scaleById: MASS_SCALE_BY_ID,
+    scaleId,
+    defaultScaleId: DEFAULT_MASS_SCALE_ID,
+    valueKey: "kilograms",
+    axisHalfLength: VIEWBOX.massAxisHalfLength,
+  });
+}
+
+function amountScaleModelDistance() {
+  return 1;
+}
+
+function moveModelDistance(moveInput) {
+  const move = normalizeMove(moveInput);
+
+  if (move.axisIndex === 0) {
+    return timeScaleModelDistance(move.scaleId);
+  }
+
+  if (move.axisIndex === 1) {
+    return lengthScaleModelDistance(move.scaleId);
+  }
+
+  if (move.axisIndex === 2) {
+    return chargeScaleModelDistance(move.scaleId);
+  }
+
+  if (move.axisIndex === 3) {
+    return temperatureScaleModelDistance(move.scaleId);
+  }
+
+  if (move.axisIndex === 4) {
+    return massScaleModelDistance(move.scaleId);
+  }
+
+  if (move.axisIndex === 5) {
+    return amountScaleModelDistance();
+  }
+
+  return 1;
+}
+
+function moveDeltaPoint3D(moveInput) {
+  const move = normalizeMove(moveInput);
+
+  return scaled3D(
+    AXES[move.axisIndex].vector,
+    move.sign * moveModelDistance(move)
+  );
+}
+
+function moveTokenLabel(moveInput) {
+  const move = normalizeMove(moveInput);
+
+  if (move.axisIndex === 0) {
+    return TIME_SCALE_BY_ID.get(move.scaleId).wordLabel;
+  }
+
+  if (move.axisIndex === 1) {
+    return LENGTH_SCALE_BY_ID.get(move.scaleId).wordLabel;
+  }
+
+  if (move.axisIndex === 2) {
+    return CHARGE_SCALE_BY_ID.get(move.scaleId).wordLabel;
+  }
+
+  if (move.axisIndex === 3) {
+    return TEMPERATURE_SCALE_BY_ID.get(move.scaleId).wordLabel;
+  }
+
+  if (move.axisIndex === 4) {
+    return MASS_SCALE_BY_ID.get(move.scaleId).wordLabel;
+  }
+
+  if (move.axisIndex === 5) {
+    return AMOUNT_SCALE_BY_ID.get(move.scaleId).wordLabel;
+  }
+
+  return AXES[move.axisIndex].label;
+}
+
+function scaleLabelParts(axisIndex, scaleId) {
+  if (axisIndex === 0) {
+    switch (scaleId) {
+      case "planck-time":
+        return [
+          { text: "t", className: "axisSymbol" },
+          { text: "p", className: "axisSymbol", subscript: true },
+        ];
+      case "f1-period":
+        return [
+          { text: "1/" },
+          { text: "f", className: "axisSymbol" },
+          { text: "1", subscript: true },
+        ];
+      case "mhz-period":
+        return [
+          { text: "1/" },
+          { text: "MHz", className: "timeScaleRoman" },
+        ];
+      case "second":
+      default:
+        return [
+          { text: "1 " },
+          { text: "s", className: "timeScaleRoman" },
+        ];
+    }
+  }
+
+  if (axisIndex === 1) {
+    switch (scaleId) {
+      case "planck-length":
+        return [
+          { text: "l", className: "axisSymbol" },
+          { text: "p", className: "axisSymbol", subscript: true },
+        ];
+      case "femtometer":
+        return [{ text: "fm", className: "timeScaleRoman" }];
+      case "meter":
+      default:
+        return [{ text: "m", className: "timeScaleRoman" }];
+    }
+  }
+
+  if (axisIndex === 2) {
+    switch (scaleId) {
+      case "planck-charge":
+        return [
+          { text: "q", className: "axisSymbol" },
+          { text: "p", className: "axisSymbol", subscript: true },
+        ];
+      case "coulomb":
+      default:
+        return [{ text: "C", className: "timeScaleRoman" }];
+    }
+  }
+
+  if (axisIndex === 3) {
+    switch (scaleId) {
+      case "planck-temperature":
+        return [
+          { text: "T", className: "axisSymbol" },
+          { text: "p", className: "axisSymbol", subscript: true },
+        ];
+      case "kelvin":
+      default:
+        return [{ text: "K", className: "timeScaleRoman" }];
+    }
+  }
+
+  if (axisIndex === 5) {
+    return [{ text: "mol", className: "timeScaleRoman" }];
+  }
+
+  switch (scaleId) {
+    case "electron-mass":
+      return [
+        { text: "m", className: "axisSymbol" },
+        { text: "e", className: "axisSymbol", subscript: true },
+      ];
+    case "muon-mass":
+      return [
+        { text: "m", className: "axisSymbol" },
+        { text: "μ", className: "axisSymbol", subscript: true },
+      ];
+    case "atomic-mass-constant":
+      return [
+        { text: "A", className: "axisSymbol" },
+        { text: "mass", className: "timeScaleRoman", subscript: true },
+      ];
+    case "proton-mass":
+      return [
+        { text: "m", className: "axisSymbol" },
+        { text: "+", subscript: true },
+      ];
+    case "neutron-mass":
+      return [
+        { text: "m", className: "axisSymbol" },
+        { text: "n", className: "axisSymbol", subscript: true },
+      ];
+    case "tau-mass":
+      return [
+        { text: "m", className: "axisSymbol" },
+        { text: "τ", className: "axisSymbol", subscript: true },
+      ];
+    case "deuteron-mass":
+      return [
+        { text: "m", className: "axisSymbol" },
+        { text: "de", className: "timeScaleRoman", subscript: true },
+      ];
+    case "helion-mass":
+      return [
+        { text: "m", className: "axisSymbol" },
+        { text: "he", className: "timeScaleRoman", subscript: true },
+      ];
+    case "triton-mass":
+      return [
+        { text: "m", className: "axisSymbol" },
+        { text: "tri", className: "timeScaleRoman", subscript: true },
+      ];
+    case "alpha-particle-mass":
+      return [
+        { text: "m", className: "axisSymbol" },
+        { text: "α", className: "axisSymbol", subscript: true },
+      ];
+    case "planck-mass":
+      return [
+        { text: "m", className: "axisSymbol" },
+        { text: "p", className: "axisSymbol", subscript: true },
+      ];
+    case "kilogram":
+    default:
+      return [{ text: "kg", className: "timeScaleRoman" }];
+  }
+}
+
 function wordFromAddress(address) {
   return address.flatMap((value, axisIndex) => {
     const sign = value >= 0 ? 1 : -1;
 
-    return Array.from({ length: Math.abs(value) }, () => ({
-      axisIndex,
-      sign,
-    }));
+    return Array.from({ length: Math.abs(value) }, () =>
+      normalizeMove({
+        axisIndex,
+        sign,
+        scaleId:
+          axisIndex === 0
+            ? DEFAULT_TIME_SCALE_ID
+            : axisIndex === 1
+              ? DEFAULT_LENGTH_SCALE_ID
+              : axisIndex === 2
+                ? DEFAULT_CHARGE_SCALE_ID
+                : axisIndex === 3
+                  ? DEFAULT_TEMPERATURE_SCALE_ID
+                  : axisIndex === 4
+                    ? DEFAULT_MASS_SCALE_ID
+                    : axisIndex === 5
+                      ? DEFAULT_AMOUNT_SCALE_ID
+                      : null,
+      })
+    );
   });
 }
 
-function moveCode(move) {
-  return move.axisIndex * 2 + (move.sign > 0 ? 1 : 0);
+function moveCode(moveInput) {
+  const move = normalizeMove(moveInput);
+  const signOffset = move.sign > 0 ? 1 : 0;
+  const timeCodeCount = TIME_SCALES.length * 2;
+  const lengthCodeCount = LENGTH_SCALES.length * 2;
+  const chargeCodeCount = CHARGE_SCALES.length * 2;
+  const temperatureCodeCount = TEMPERATURE_SCALES.length * 2;
+  const massCodeCount = MASS_SCALES.length * 2;
+
+  if (move.axisIndex === 0) {
+    const scaleIndex = Math.max(
+      0,
+      TIME_SCALES.findIndex((scale) => scale.id === move.scaleId)
+    );
+
+    return scaleIndex * 2 + signOffset;
+  }
+
+  if (move.axisIndex === 1) {
+    const scaleIndex = Math.max(
+      0,
+      LENGTH_SCALES.findIndex((scale) => scale.id === move.scaleId)
+    );
+
+    return timeCodeCount + scaleIndex * 2 + signOffset;
+  }
+
+  if (move.axisIndex === 2) {
+    const scaleIndex = Math.max(
+      0,
+      CHARGE_SCALES.findIndex((scale) => scale.id === move.scaleId)
+    );
+
+    return timeCodeCount + lengthCodeCount + scaleIndex * 2 + signOffset;
+  }
+
+  if (move.axisIndex === 3) {
+    const scaleIndex = Math.max(
+      0,
+      TEMPERATURE_SCALES.findIndex(
+        (scale) => scale.id === move.scaleId
+      )
+    );
+
+    return (
+      timeCodeCount +
+      lengthCodeCount +
+      chargeCodeCount +
+      scaleIndex * 2 +
+      signOffset
+    );
+  }
+
+  if (move.axisIndex === 4) {
+    const scaleIndex = Math.max(
+      0,
+      MASS_SCALES.findIndex((scale) => scale.id === move.scaleId)
+    );
+
+    return (
+      timeCodeCount +
+      lengthCodeCount +
+      chargeCodeCount +
+      temperatureCodeCount +
+      scaleIndex * 2 +
+      signOffset
+    );
+  }
+
+  return (
+    timeCodeCount +
+    lengthCodeCount +
+    chargeCodeCount +
+    temperatureCodeCount +
+    massCodeCount +
+    (move.axisIndex - 5) * 2 +
+    signOffset
+  );
 }
 
 function moveFromCode(code) {
-  return {
-    axisIndex: Math.floor(code / 2),
-    sign: code % 2 === 1 ? 1 : -1,
-  };
+  const timeCodeCount = TIME_SCALES.length * 2;
+  const lengthCodeCount = LENGTH_SCALES.length * 2;
+  const chargeCodeCount = CHARGE_SCALES.length * 2;
+  const temperatureCodeCount = TEMPERATURE_SCALES.length * 2;
+  const massCodeCount = MASS_SCALES.length * 2;
+
+  if (code < timeCodeCount) {
+    const scaleIndex = Math.floor(code / 2);
+
+    return normalizeMove({
+      axisIndex: 0,
+      sign: code % 2 === 1 ? 1 : -1,
+      scaleId: TIME_SCALES[scaleIndex].id,
+    });
+  }
+
+  if (code < timeCodeCount + lengthCodeCount) {
+    const shiftedCode = code - timeCodeCount;
+    const scaleIndex = Math.floor(shiftedCode / 2);
+
+    return normalizeMove({
+      axisIndex: 1,
+      sign: shiftedCode % 2 === 1 ? 1 : -1,
+      scaleId: LENGTH_SCALES[scaleIndex].id,
+    });
+  }
+
+  if (code < timeCodeCount + lengthCodeCount + chargeCodeCount) {
+    const shiftedCode = code - timeCodeCount - lengthCodeCount;
+    const scaleIndex = Math.floor(shiftedCode / 2);
+
+    return normalizeMove({
+      axisIndex: 2,
+      sign: shiftedCode % 2 === 1 ? 1 : -1,
+      scaleId: CHARGE_SCALES[scaleIndex].id,
+    });
+  }
+
+  if (
+    code <
+    timeCodeCount +
+      lengthCodeCount +
+      chargeCodeCount +
+      temperatureCodeCount
+  ) {
+    const shiftedCode =
+      code - timeCodeCount - lengthCodeCount - chargeCodeCount;
+    const scaleIndex = Math.floor(shiftedCode / 2);
+
+    return normalizeMove({
+      axisIndex: 3,
+      sign: shiftedCode % 2 === 1 ? 1 : -1,
+      scaleId: TEMPERATURE_SCALES[scaleIndex].id,
+    });
+  }
+
+  if (
+    code <
+    timeCodeCount +
+      lengthCodeCount +
+      chargeCodeCount +
+      temperatureCodeCount +
+      massCodeCount
+  ) {
+    const shiftedCode =
+      code -
+      timeCodeCount -
+      lengthCodeCount -
+      chargeCodeCount -
+      temperatureCodeCount;
+    const scaleIndex = Math.floor(shiftedCode / 2);
+
+    return normalizeMove({
+      axisIndex: 4,
+      sign: shiftedCode % 2 === 1 ? 1 : -1,
+      scaleId: MASS_SCALES[scaleIndex].id,
+    });
+  }
+
+  const shiftedCode =
+    code -
+    timeCodeCount -
+    lengthCodeCount -
+    chargeCodeCount -
+    temperatureCodeCount -
+    massCodeCount;
+
+  return normalizeMove({
+    axisIndex: Math.floor(shiftedCode / 2) + 5,
+    sign: shiftedCode % 2 === 1 ? 1 : -1,
+  });
 }
 
 function nextMoveWordOrdering(word) {
@@ -601,6 +1437,46 @@ function distance2D(a, b) {
   return Math.hypot(a.x - b.x, a.y - b.y);
 }
 
+function makeArrowheadGeometry(start, end) {
+  const dx = end.x - start.x;
+  const dy = end.y - start.y;
+  const length = Math.hypot(dx, dy);
+
+  if (length < 0.01) return null;
+
+  const unitX = dx / length;
+  const unitY = dy / length;
+  const perpendicularX = -unitY;
+  const perpendicularY = unitX;
+
+  const headLength = Math.min(
+    7,
+    Math.max(0.72, length * 0.42),
+    length * 0.72
+  );
+
+  const halfWidth = Math.min(
+    4.2,
+    Math.max(0.45, headLength * 0.62),
+    length * 0.45
+  );
+
+  const baseX = end.x - unitX * headLength;
+  const baseY = end.y - unitY * headLength;
+
+  return {
+    tip: { x: end.x, y: end.y },
+    left: {
+      x: baseX + perpendicularX * halfWidth,
+      y: baseY + perpendicularY * halfWidth,
+    },
+    right: {
+      x: baseX - perpendicularX * halfWidth,
+      y: baseY - perpendicularY * halfWidth,
+    },
+  };
+}
+
 function lerp(a, b, t) {
   return a + (b - a) * t;
 }
@@ -626,7 +1502,18 @@ function rotatePointAround(point, center, angle) {
 
 function makeSwapVisual(segment, progress) {
   const center = midpoint(segment.start, segment.end);
-  const radius = distance2D(segment.start, segment.end) / 2;
+  const segmentLength = distance2D(segment.start, segment.end);
+  const radius = segmentLength / 2;
+
+  const dotRadius = Math.min(
+    4.4,
+    Math.max(0.8, segmentLength * 0.22)
+  );
+
+  const centerRadius = Math.min(
+    2.2,
+    Math.max(0.6, segmentLength * 0.12)
+  );
 
   if (progress.phase === "draw") {
     const head = lerpPoint(segment.start, segment.end, progress.t);
@@ -635,6 +1522,8 @@ function makeSwapVisual(segment, progress) {
       phase: "draw",
       center,
       radius,
+      dotRadius,
+      centerRadius,
       lineStart: segment.start,
       lineEnd: head,
       sourceDot: segment.start,
@@ -650,6 +1539,8 @@ function makeSwapVisual(segment, progress) {
     phase: "rotate",
     center,
     radius,
+    dotRadius,
+    centerRadius,
     lineStart: rotatePointAround(segment.start, center, angle),
     lineEnd: rotatePointAround(segment.end, center, angle),
     sourceDot: rotatePointAround(segment.start, center, angle),
@@ -668,8 +1559,9 @@ function buildSegments(vertices, view) {
       endVector: vertex.vector,
       axisIndex: vertex.move.axisIndex,
       sign: vertex.move.sign,
-      start: projectVector(previous.vector, view),
-      end: projectVector(vertex.vector, view),
+      scaleId: vertex.move.scaleId,
+      start: projectPoint3D(previous.modelPoint, view),
+      end: projectPoint3D(vertex.modelPoint, view),
     };
   });
 }
@@ -678,30 +1570,44 @@ function uniqueVisitedVertices(vertices, view) {
   const map = new Map();
 
   vertices.forEach((vertex) => {
-    map.set(vectorKey(vertex.vector), vertex.vector);
+    map.set(pointKey(vertex.modelPoint), vertex);
   });
 
-  return Array.from(map.entries()).map(([key, vector]) => ({
+  return Array.from(map.entries()).map(([key, vertex]) => ({
     key,
-    vector,
-    point: projectVector(vector, view),
+    vector: vertex.vector,
+    point: projectPoint3D(vertex.modelPoint, view),
   }));
 }
 
 function lastMoveLabel(segment) {
   if (!segment) return "none";
-  const axis = AXES[segment.axisIndex];
-  return `${segment.sign > 0 ? "+" : "−"}${axis.label}`;
+  return `${segment.sign > 0 ? "+" : "−"}${moveTokenLabel(segment)}`;
 }
 
 export default function MoveSpaceViewer() {
-  const [vertices, setVertices] = useState([{ id: 0, vector: ZERO, move: null }]);
+  const [vertices, setVertices] = useState([makeOriginVertex()]);
   const [view, setView] = useState({
     ...DEFAULT_VIEW,
     center: DEFAULT_CENTER,
     orientation: makeOrientationAligningAxisRight(AXES[0].vector),
   });
   const [selectedAxisIndex, setSelectedAxisIndex] = useState(0);
+  const [selectedTimeScaleId, setSelectedTimeScaleId] = useState(
+    DEFAULT_TIME_SCALE_ID
+  );
+  const [selectedLengthScaleId, setSelectedLengthScaleId] = useState(
+    DEFAULT_LENGTH_SCALE_ID
+  );
+  const [selectedChargeScaleId, setSelectedChargeScaleId] = useState(
+    DEFAULT_CHARGE_SCALE_ID
+  );
+  const [selectedTemperatureScaleId, setSelectedTemperatureScaleId] = useState(
+    DEFAULT_TEMPERATURE_SCALE_ID
+  );
+  const [selectedMassScaleId, setSelectedMassScaleId] = useState(
+    DEFAULT_MASS_SCALE_ID
+  );
   const [axisVisibility, setAxisVisibility] = useState(() =>
     AXES.reduce((visibility, axis) => ({ ...visibility, [axis.key]: true }), {})
   );
@@ -720,6 +1626,38 @@ export default function MoveSpaceViewer() {
   const dragRef = useRef(null);
   const svgRef = useRef(null);
   const controllerRef = useRef(null);
+  const timeScaleMenuRef = useRef(null);
+  const lengthScaleMenuRef = useRef(null);
+  const chargeScaleMenuRef = useRef(null);
+  const temperatureScaleMenuRef = useRef(null);
+  const massScaleMenuRef = useRef(null);
+
+  useEffect(() => {
+    function closeScaleMenus(event) {
+      if (event.type === "keydown" && event.key !== "Escape") return;
+
+      [
+        timeScaleMenuRef.current,
+        lengthScaleMenuRef.current,
+        chargeScaleMenuRef.current,
+        temperatureScaleMenuRef.current,
+        massScaleMenuRef.current,
+      ].forEach((menu) => {
+        if (!menu?.open) return;
+        if (event.type === "pointerdown" && menu.contains(event.target)) return;
+
+        menu.removeAttribute("open");
+      });
+    }
+
+    document.addEventListener("pointerdown", closeScaleMenus);
+    document.addEventListener("keydown", closeScaleMenus);
+
+    return () => {
+      document.removeEventListener("pointerdown", closeScaleMenus);
+      document.removeEventListener("keydown", closeScaleMenus);
+    };
+  }, []);
 
   useEffect(() => {
     function updateProjectionCenter() {
@@ -783,6 +1721,7 @@ export default function MoveSpaceViewer() {
 
   const currentVertex = vertices[vertices.length - 1];
   const currentAddress = currentVertex.vector;
+  const currentModelPoint = currentVertex.modelPoint;
 
   const netVector = useMemo(
     () => currentAddress.map((value, index) => value - vertices[0].vector[index]),
@@ -795,16 +1734,13 @@ export default function MoveSpaceViewer() {
         .slice(1)
         .map((vertex) => vertex.move)
         .filter(Boolean)
-        .map((move) => ({
-          axisIndex: move.axisIndex,
-          sign: move.sign,
-        })),
+        .map((move) => normalizeMove(move)),
     [vertices]
   );
 
   const activeMoveWord = useMemo(() => {
     const pendingMove = pendingSwap
-      ? [{ axisIndex: pendingSwap.axisIndex, sign: pendingSwap.sign }]
+      ? [normalizeMove(pendingSwap)]
       : [];
 
     return [...moveWord, ...pendingMove, ...repeatQueue];
@@ -871,8 +1807,9 @@ export default function MoveSpaceViewer() {
         endVector: pendingSwap.endVector,
         axisIndex: pendingSwap.axisIndex,
         sign: pendingSwap.sign,
-        start: projectVector(pendingSwap.startVector, view),
-        end: projectVector(pendingSwap.endVector, view),
+        scaleId: pendingSwap.scaleId,
+        start: projectPoint3D(pendingSwap.startModelPoint, view),
+        end: projectPoint3D(pendingSwap.endModelPoint, view),
       }
     : null;
 
@@ -882,16 +1819,35 @@ export default function MoveSpaceViewer() {
     if (!showNetArrow) return null;
     if (vertices.length <= 1) return null;
 
-    const startVector = vertices[0].vector;
-    const endVector = netArrowHold ? netArrowHold.baseEndVector : currentAddress;
+    if (netArrowHold) {
+      const startVector = vertices[0].vector;
+      const endVector = netArrowHold.baseEndVector;
 
-    if (vectorKey(startVector) === vectorKey(endVector)) return null;
+      if (vectorKey(startVector) === vectorKey(endVector)) return null;
+
+      return {
+        start: projectVector(startVector, view),
+        end: projectVector(endVector, view),
+      };
+    }
+
+    const startPoint = vertices[0].modelPoint;
+
+    if (pointKey(startPoint) === pointKey(currentModelPoint)) return null;
 
     return {
-      start: projectVector(startVector, view),
-      end: projectVector(endVector, view),
+      start: projectPoint3D(startPoint, view),
+      end: projectPoint3D(currentModelPoint, view),
     };
-  }, [showNetArrow, vertices, currentAddress, view, netArrowHold]);
+  }, [showNetArrow, vertices, currentModelPoint, view, netArrowHold]);
+
+  const netArrowHeadGeometry = useMemo(
+    () =>
+      netArrow
+        ? makeArrowheadGeometry(netArrow.start, netArrow.end)
+        : null,
+    [netArrow]
+  );
 
   const netArrowExtensionVisual = useMemo(() => {
     if (!showNetArrow) return null;
@@ -903,6 +1859,17 @@ export default function MoveSpaceViewer() {
       end: projectVector(netArrowExtension.endVector, view),
     };
   }, [showNetArrow, netArrowExtension, view]);
+
+  const netArrowExtensionHeadGeometry = useMemo(
+    () =>
+      netArrowExtensionVisual
+        ? makeArrowheadGeometry(
+            netArrowExtensionVisual.start,
+            netArrowExtensionVisual.end
+          )
+        : null,
+    [netArrowExtensionVisual]
+  );
 
   const supportGraph = useMemo(() => {
     if (!showSupportGraph) {
@@ -967,10 +1934,8 @@ export default function MoveSpaceViewer() {
         {
           id: current.length,
           vector: pendingSwap.endVector,
-          move: {
-            axisIndex: pendingSwap.axisIndex,
-            sign: pendingSwap.sign,
-          },
+          modelPoint: pendingSwap.endModelPoint,
+          move: normalizeMove(pendingSwap),
         },
       ]);
 
@@ -996,25 +1961,32 @@ export default function MoveSpaceViewer() {
     const [nextMove, ...remainingMoves] = repeatQueue;
 
     setRepeatQueue(remainingMoves);
-    beginPendingStep(nextMove.axisIndex, nextMove.sign);
-  }, [repeatQueue, pendingSwap, currentAddress]);
+    beginPendingStep(nextMove.axisIndex, nextMove.sign, nextMove.scaleId);
+  }, [repeatQueue, pendingSwap, currentAddress, currentModelPoint]);
 
-  function beginPendingStep(axisIndex, sign) {
+  function beginPendingStep(axisIndex, sign, scaleId = null) {
+    const move = normalizeMove({ axisIndex, sign, scaleId });
     const startVector = [...currentAddress];
-    const endVector = addStep(startVector, axisIndex, sign);
+    const endVector = addStep(startVector, move.axisIndex, move.sign);
+    const startModelPoint = { ...currentModelPoint };
+    const endModelPoint = addPoint3D(
+      startModelPoint,
+      moveDeltaPoint3D(move)
+    );
 
     setPendingSwap({
       id: `${Date.now()}-${animationRun + 1}`,
-      axisIndex,
-      sign,
+      ...move,
       startVector,
       endVector,
+      startModelPoint,
+      endModelPoint,
     });
 
     setAnimationRun((run) => run + 1);
   }
 
-  function step(axisIndex, sign) {
+  function step(axisIndex, sign, scaleId = null) {
     if (pendingSwap) return;
 
     setSelectedCompositeId(null);
@@ -1022,7 +1994,7 @@ export default function MoveSpaceViewer() {
     setRepeatQueue([]);
     setNetArrowHold(null);
     setNetArrowExtension(null);
-    beginPendingStep(axisIndex, sign);
+    beginPendingStep(axisIndex, sign, scaleId);
   }
 
   useEffect(() => {
@@ -1060,7 +2032,7 @@ export default function MoveSpaceViewer() {
     setNetArrowExtension(null);
     setPendingSwap(null);
     setShowNetArrow(true);
-    setVertices([{ id: 0, vector: ZERO, move: null }]);
+    setVertices([makeOriginVertex()]);
     setAnimationRun((run) => run + 1);
 
     if (lockNetArrowView) {
@@ -1151,7 +2123,7 @@ export default function MoveSpaceViewer() {
     setNetArrowHold(null);
     setNetArrowExtension(null);
     setPendingSwap(null);
-    setVertices([{ id: 0, vector: ZERO, move: null }]);
+    setVertices([makeOriginVertex()]);
     setAnimationRun((run) => run + 1);
   }
 
@@ -1303,35 +2275,277 @@ export default function MoveSpaceViewer() {
           <div className="addressReadout">
             <span>current address</span>
             <strong>{formatAddress(currentAddress)}</strong>
-            <small>{Math.max(0, vertices.length - 1)} adjacent unit swaps</small>
+            <small>{Math.max(0, vertices.length - 1)} typed vertex swaps</small>
             <small>last move: {lastMoveLabel(pendingSegment || segments[segments.length - 1] || null)}</small>
           </div>
         </header>
 
-        <section className="stepController" aria-label="unit step controls">
-          <div className="stepControllerTitle">
-            <strong>Stage 1 · adjacent unit swaps</strong>
-            <span>each button swaps the current vertex with one adjacent vertex</span>
-          </div>
-
+        <section className="stepController" aria-label="typed vertex-swap controls">
           <div className="axisStepButtons">
-            {AXES.map((axis, axisIndex) => (
-              <div className="axisStepCard" key={axis.key} style={{ "--axis-color": axis.color }}>
-                <div className="axisStepLabel">
-                  <b className="axisSymbol">{axis.label}</b>
-                  <span>{axis.name}</span>
-                </div>
+            {AXES.map((axis, axisIndex) => {
+              const isTimeAxis = axisIndex === 0;
+              const isLengthAxis = axisIndex === 1;
+              const isChargeAxis = axisIndex === 2;
+              const isTemperatureAxis = axisIndex === 3;
+              const isMassAxis = axisIndex === 4;
+              const isAmountAxis = axisIndex === 5;
+              const hasScaleSelector =
+                isTimeAxis ||
+                isLengthAxis ||
+                isChargeAxis ||
+                isTemperatureAxis ||
+                isMassAxis;
+              const hasScaleDisplay = hasScaleSelector || isAmountAxis;
+              const scales = isTimeAxis
+                ? TIME_SCALES
+                : isLengthAxis
+                  ? LENGTH_SCALES
+                  : isChargeAxis
+                    ? CHARGE_SCALES
+                    : isTemperatureAxis
+                      ? TEMPERATURE_SCALES
+                      : isMassAxis
+                        ? MASS_SCALES
+                        : isAmountAxis
+                          ? AMOUNT_SCALES
+                          : null;
+              const scaleById = isTimeAxis
+                ? TIME_SCALE_BY_ID
+                : isLengthAxis
+                  ? LENGTH_SCALE_BY_ID
+                  : isChargeAxis
+                    ? CHARGE_SCALE_BY_ID
+                    : isTemperatureAxis
+                      ? TEMPERATURE_SCALE_BY_ID
+                      : isMassAxis
+                        ? MASS_SCALE_BY_ID
+                        : isAmountAxis
+                          ? AMOUNT_SCALE_BY_ID
+                          : null;
+              const selectedScaleId = isTimeAxis
+                ? selectedTimeScaleId
+                : isLengthAxis
+                  ? selectedLengthScaleId
+                  : isChargeAxis
+                    ? selectedChargeScaleId
+                    : isTemperatureAxis
+                      ? selectedTemperatureScaleId
+                      : isMassAxis
+                        ? selectedMassScaleId
+                        : isAmountAxis
+                          ? DEFAULT_AMOUNT_SCALE_ID
+                          : null;
+              const setSelectedScaleId = isTimeAxis
+                ? setSelectedTimeScaleId
+                : isLengthAxis
+                  ? setSelectedLengthScaleId
+                  : isChargeAxis
+                    ? setSelectedChargeScaleId
+                    : isTemperatureAxis
+                      ? setSelectedTemperatureScaleId
+                      : isMassAxis
+                        ? setSelectedMassScaleId
+                        : null;
+              const scaleMenuRef = isTimeAxis
+                ? timeScaleMenuRef
+                : isLengthAxis
+                  ? lengthScaleMenuRef
+                  : isChargeAxis
+                    ? chargeScaleMenuRef
+                    : isTemperatureAxis
+                      ? temperatureScaleMenuRef
+                      : isMassAxis
+                        ? massScaleMenuRef
+                        : null;
 
-                <div className="axisStepPair">
-                  <button type="button" onClick={() => step(axisIndex, -1)} disabled={Boolean(pendingSwap)}>
-                    <span className="axisSign">−</span><span className="axisSymbol">{axis.label}</span>
-                  </button>
-                  <button type="button" onClick={() => step(axisIndex, 1)} disabled={Boolean(pendingSwap)}>
-                    <span className="axisSign">+</span><span className="axisSymbol">{axis.label}</span>
-                  </button>
+              return (
+                <div
+                  className={
+                    hasScaleDisplay
+                      ? "axisStepCard timeScaleStepCard"
+                      : "axisStepCard"
+                  }
+                  key={axis.key}
+                  style={{ "--axis-color": axis.color }}
+                >
+                  <div className="axisStepLabel">
+                    <b className="axisSymbol">{axis.label}</b>
+
+                    {hasScaleSelector ? (
+                      <details
+                        ref={scaleMenuRef}
+                        className={
+                          pendingSwap
+                            ? "timeScaleDropdown disabled"
+                            : "timeScaleDropdown"
+                        }
+                      >
+                        <summary
+                          aria-label={`${axis.name} scale: ${
+                            scaleById.get(selectedScaleId).controlLabel
+                          }`}
+                          onClick={(event) => {
+                            if (pendingSwap) event.preventDefault();
+                          }}
+                        >
+                          <span className="timeScaleMathLabel">
+                            {scaleLabelParts(axisIndex, selectedScaleId).map(
+                              (part, partIndex) =>
+                                part.subscript ? (
+                                  <sub
+                                    className={`timeScaleSubscript ${
+                                      part.className || ""
+                                    }`}
+                                    key={`${selectedScaleId}-${partIndex}`}
+                                  >
+                                    {part.text}
+                                  </sub>
+                                ) : (
+                                  <span
+                                    className={part.className || undefined}
+                                    key={`${selectedScaleId}-${partIndex}`}
+                                  >
+                                    {part.text}
+                                  </span>
+                                )
+                            )}
+                          </span>
+                          <span
+                            className="timeScaleChevron"
+                            aria-hidden="true"
+                          />
+                        </summary>
+
+                        <div
+                          className="timeScaleMenu"
+                          role="listbox"
+                          aria-label={`${axis.name} scale`}
+                        >
+                          {scales.map((scale) => {
+                            const selected = scale.id === selectedScaleId;
+
+                            return (
+                              <button
+                                type="button"
+                                className={
+                                  selected
+                                    ? "timeScaleMenuOption selected"
+                                    : "timeScaleMenuOption"
+                                }
+                                key={scale.id}
+                                role="option"
+                                aria-selected={selected}
+                                onClick={() => {
+                                  setSelectedScaleId(scale.id);
+                                  scaleMenuRef.current?.removeAttribute("open");
+                                }}
+                              >
+                                <span className="timeScaleMathLabel">
+                                  {scaleLabelParts(axisIndex, scale.id).map(
+                                    (part, partIndex) =>
+                                      part.subscript ? (
+                                        <sub
+                                          className={`timeScaleSubscript ${
+                                            part.className || ""
+                                          }`}
+                                          key={`${scale.id}-${partIndex}`}
+                                        >
+                                          {part.text}
+                                        </sub>
+                                      ) : (
+                                        <span
+                                          className={
+                                            part.className || undefined
+                                          }
+                                          key={`${scale.id}-${partIndex}`}
+                                        >
+                                          {part.text}
+                                        </span>
+                                      )
+                                  )}
+                                </span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </details>
+                    ) : isAmountAxis ? (
+                      <div
+                        className="singleScaleDisplay"
+                        aria-label="amount scale: mol"
+                      >
+                        <span className="timeScaleMathLabel">
+                          {scaleLabelParts(
+                            axisIndex,
+                            DEFAULT_AMOUNT_SCALE_ID
+                          ).map((part, partIndex) => (
+                            <span
+                              className={part.className || undefined}
+                              key={`amount-scale-${partIndex}`}
+                            >
+                              {part.text}
+                            </span>
+                          ))}
+                        </span>
+                      </div>
+                    ) : (
+                      <span>{axis.name}</span>
+                    )}
+                  </div>
+
+                  {hasScaleDisplay ? (
+                    <div className="axisStepPair">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          step(axisIndex, -1, selectedScaleId)
+                        }
+                        disabled={Boolean(pendingSwap)}
+                        aria-label={`negative ${
+                          scaleById.get(selectedScaleId).controlLabel
+                        } ${axis.name} swap`}
+                      >
+                        <span className="axisSign">−</span>
+                        <span className="axisSymbol">{axis.label}</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() =>
+                          step(axisIndex, 1, selectedScaleId)
+                        }
+                        disabled={Boolean(pendingSwap)}
+                        aria-label={`positive ${
+                          scaleById.get(selectedScaleId).controlLabel
+                        } ${axis.name} swap`}
+                      >
+                        <span className="axisSign">+</span>
+                        <span className="axisSymbol">{axis.label}</span>
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="axisStepPair">
+                      <button
+                        type="button"
+                        onClick={() => step(axisIndex, -1)}
+                        disabled={Boolean(pendingSwap)}
+                      >
+                        <span className="axisSign">−</span>
+                        <span className="axisSymbol">{axis.label}</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => step(axisIndex, 1)}
+                        disabled={Boolean(pendingSwap)}
+                      >
+                        <span className="axisSign">+</span>
+                        <span className="axisSymbol">{axis.label}</span>
+                      </button>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
@@ -1504,17 +2718,6 @@ export default function MoveSpaceViewer() {
                 </feMerge>
               </filter>
 
-              <marker
-                id="netArrowHead"
-                markerWidth="9"
-                markerHeight="9"
-                refX="7.2"
-                refY="4.5"
-                orient="auto"
-                markerUnits="strokeWidth"
-              >
-                <path d="M 0 0 L 9 4.5 L 0 9 z" fill="#ffe1ac" />
-              </marker>
             </defs>
 
             {AXES.map((axis, axisIndex) => {
@@ -1602,33 +2805,21 @@ export default function MoveSpaceViewer() {
                 />
               ))}
 
-            {netArrow && (
-              <line
-                className="netArrow"
-                x1={netArrow.start.x}
-                y1={netArrow.start.y}
-                x2={netArrow.end.x}
-                y2={netArrow.end.y}
-                markerEnd="url(#netArrowHead)"
-              />
-            )}
-
-            {netArrowExtensionVisual && (
-              <line
-                key={`net-extension-${netArrowExtensionVisual.id}`}
-                className="netArrow netArrowExtension"
-                x1={netArrowExtensionVisual.start.x}
-                y1={netArrowExtensionVisual.start.y}
-                x2={netArrowExtensionVisual.end.x}
-                y2={netArrowExtensionVisual.end.y}
-                markerEnd="url(#netArrowHead)"
-                pathLength="1"
-              />
-            )}
-
             {visitedVertices.map((vertex) => {
-              const isCurrent = vectorKey(vertex.vector) === vectorKey(currentAddress);
-              const isOrigin = vectorKey(vertex.vector) === vectorKey(ZERO);
+              const isCurrent =
+                vertex.key === pointKey(currentModelPoint);
+              const isOrigin =
+                vertex.key === pointKey(ZERO_POINT);
+              const isNetArrowEndpoint =
+                Boolean(netArrow) &&
+                distance2D(vertex.point, netArrow.end) < 0.01;
+              const isNetArrowExtensionEndpoint =
+                Boolean(netArrowExtensionVisual) &&
+                distance2D(vertex.point, netArrowExtensionVisual.end) < 0.01;
+
+              if (isNetArrowEndpoint || isNetArrowExtensionEndpoint) {
+                return null;
+              }
 
               return (
                 <circle
@@ -1640,6 +2831,48 @@ export default function MoveSpaceViewer() {
                 />
               );
             })}
+
+            {netArrow && (
+              <g className="netArrowLayer">
+                <line
+                  className="netArrow"
+                  x1={netArrow.start.x}
+                  y1={netArrow.start.y}
+                  x2={netArrow.end.x}
+                  y2={netArrow.end.y}
+                />
+
+                {netArrowHeadGeometry && (
+                  <polyline
+                    className="netArrowHead"
+                    points={`${netArrowHeadGeometry.left.x},${netArrowHeadGeometry.left.y} ${netArrowHeadGeometry.tip.x},${netArrowHeadGeometry.tip.y} ${netArrowHeadGeometry.right.x},${netArrowHeadGeometry.right.y}`}
+                  />
+                )}
+              </g>
+            )}
+
+            {netArrowExtensionVisual && (
+              <g
+                key={`net-extension-${netArrowExtensionVisual.id}`}
+                className="netArrowLayer"
+              >
+                <line
+                  className="netArrow netArrowExtension"
+                  x1={netArrowExtensionVisual.start.x}
+                  y1={netArrowExtensionVisual.start.y}
+                  x2={netArrowExtensionVisual.end.x}
+                  y2={netArrowExtensionVisual.end.y}
+                  pathLength="1"
+                />
+
+                {netArrowExtensionHeadGeometry && (
+                  <polyline
+                    className="netArrowHead"
+                    points={`${netArrowExtensionHeadGeometry.left.x},${netArrowExtensionHeadGeometry.left.y} ${netArrowExtensionHeadGeometry.tip.x},${netArrowExtensionHeadGeometry.tip.y} ${netArrowExtensionHeadGeometry.right.x},${netArrowExtensionHeadGeometry.right.y}`}
+                  />
+                )}
+              </g>
+            )}
 
             {swapVisual && pendingSegment && (
               <g
@@ -1661,7 +2894,7 @@ export default function MoveSpaceViewer() {
                     className="swapCenter"
                     cx={swapVisual.center.x}
                     cy={swapVisual.center.y}
-                    r="2.2"
+                    r={swapVisual.centerRadius}
                   />
                 )}
 
@@ -1677,14 +2910,14 @@ export default function MoveSpaceViewer() {
                     className="swapSourceDot"
                     cx={swapVisual.sourceDot.x}
                     cy={swapVisual.sourceDot.y}
-                    r="4.4"
+                    r={swapVisual.dotRadius}
                   />
 
                   <circle
                     className="swapTargetDot"
                     cx={swapVisual.targetDot.x}
                     cy={swapVisual.targetDot.y}
-                    r="4.4"
+                    r={swapVisual.dotRadius}
                   />
                 </g>
               </g>
@@ -1701,15 +2934,49 @@ export default function MoveSpaceViewer() {
               ) : (
                 moveWord.map((move, index) => {
                   const axis = AXES[move.axisIndex];
+                  const isScaledMove =
+                    move.axisIndex === 0 ||
+                    move.axisIndex === 1 ||
+                    move.axisIndex === 2 ||
+                    move.axisIndex === 3 ||
+                    move.axisIndex === 4 ||
+                    move.axisIndex === 5;
 
                   return (
                     <span
                       className="wordToken"
-                      key={`word-${index}-${axis.key}-${move.sign}`}
+                      key={`word-${index}-${axis.key}-${move.sign}-${move.scaleId || "unit"}`}
                       style={{ "--axis-color": axis.color }}
                     >
                       <span className="axisSign">{move.sign > 0 ? "+" : "−"}</span>
-                      <span className="axisSymbol">{axis.label}</span>
+                      {isScaledMove ? (
+                        <span className="timeScaleMathLabel wordScaleLabel">
+                          {scaleLabelParts(move.axisIndex, move.scaleId).map(
+                            (part, partIndex) =>
+                              part.subscript ? (
+                                <sub
+                                  className={`timeScaleSubscript ${
+                                    part.className || ""
+                                  }`}
+                                  key={`word-scale-${index}-${partIndex}`}
+                                >
+                                  {part.text}
+                                </sub>
+                              ) : (
+                                <span
+                                  className={part.className || undefined}
+                                  key={`word-scale-${index}-${partIndex}`}
+                                >
+                                  {part.text}
+                                </span>
+                              )
+                          )}
+                        </span>
+                      ) : (
+                        <span className="axisSymbol">
+                          {moveTokenLabel(move)}
+                        </span>
+                      )}
                     </span>
                   );
                 })
@@ -1864,23 +3131,6 @@ export default function MoveSpaceViewer() {
           border-radius: 8px;
         }
 
-        .stepControllerTitle {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          gap: 8px;
-          align-items: baseline;
-        }
-
-        .stepControllerTitle strong {
-          color: #ffe1ac;
-        }
-
-        .stepControllerTitle span {
-          opacity: 0.68;
-          font-size: 13px;
-        }
-
         .axisStepButtons {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
@@ -1898,6 +3148,140 @@ export default function MoveSpaceViewer() {
           background: rgba(255, 255, 255, 0.045);
         }
 
+        .timeScaleDropdown {
+          position: relative;
+          z-index: 20;
+          width: 82px;
+          min-width: 0;
+          flex: 0 0 82px;
+          color: var(--axis-color);
+        }
+
+        .timeScaleDropdown > summary {
+          display: flex;
+          width: 100%;
+          min-height: 30px;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          box-sizing: border-box;
+          border: 1px solid rgba(232, 223, 200, 0.18);
+          border-radius: 5px;
+          padding: 4px 9px;
+          background: rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+          list-style: none;
+        }
+
+        .singleScaleDisplay {
+          display: flex;
+          width: 82px;
+          min-width: 0;
+          min-height: 30px;
+          flex: 0 0 82px;
+          align-items: center;
+          justify-content: flex-start;
+          box-sizing: border-box;
+          border: 1px solid rgba(232, 223, 200, 0.18);
+          border-radius: 5px;
+          padding: 4px 9px;
+          color: var(--axis-color);
+          background: rgba(0, 0, 0, 0.3);
+        }
+
+        .timeScaleDropdown > summary::-webkit-details-marker {
+          display: none;
+        }
+
+        .timeScaleDropdown.disabled > summary {
+          cursor: not-allowed;
+          opacity: 0.42;
+        }
+
+        .timeScaleMathLabel {
+          display: inline-flex;
+          align-items: baseline;
+          color: inherit;
+          font-family: "KaTeX_Main", "Latin Modern Math", "STIX Two Math", "Cambria Math", "Times New Roman", serif;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1;
+          white-space: nowrap;
+        }
+
+        .timeScaleMathLabel .axisSymbol {
+          font-family: "KaTeX_Math", "KaTeX_Main", "Latin Modern Math", "STIX Two Math", "Cambria Math", "Times New Roman", serif;
+          font-style: italic;
+        }
+
+        .timeScaleRoman {
+          font-family: "KaTeX_Main", "Latin Modern Math", "STIX Two Math", "Cambria Math", "Times New Roman", serif;
+          font-style: normal;
+        }
+
+        .timeScaleSubscript {
+          position: relative;
+          bottom: -0.22em;
+          margin-left: 0.02em;
+          font-size: 0.68em;
+          line-height: 0;
+        }
+
+        .timeScaleChevron {
+          width: 7px;
+          height: 7px;
+          flex: 0 0 auto;
+          border-right: 1.5px solid currentColor;
+          border-bottom: 1.5px solid currentColor;
+          transform: rotate(45deg) translateY(-2px);
+          transform-origin: center;
+          transition: transform 120ms ease;
+        }
+
+        .timeScaleDropdown[open] .timeScaleChevron {
+          transform: rotate(225deg) translateY(-1px);
+        }
+
+        .timeScaleMenu {
+          position: absolute;
+          top: calc(100% + 5px);
+          right: 0;
+          z-index: 30;
+          display: grid;
+          width: 100%;
+          min-width: 0;
+          box-sizing: border-box;
+          max-height: min(420px, 65vh);
+          overflow-y: auto;
+          overscroll-behavior: contain;
+          gap: 2px;
+          padding: 4px;
+          border: 1px solid rgba(232, 223, 200, 0.24);
+          border-radius: 6px;
+          background: #1a1a1a;
+          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.48);
+        }
+
+        .timeScaleMenuOption {
+          display: flex;
+          width: 100%;
+          min-height: 31px;
+          align-items: center;
+          justify-content: flex-start;
+          border-color: transparent;
+          padding: 6px 9px;
+          color: var(--axis-color);
+          background: transparent;
+          text-align: left;
+        }
+
+        .timeScaleMenuOption:hover,
+        .timeScaleMenuOption.selected {
+          border-color: var(--axis-color);
+          background: rgba(255, 255, 255, 0.07);
+        }
+
         .axisStepLabel {
           display: flex;
           justify-content: space-between;
@@ -1907,7 +3291,6 @@ export default function MoveSpaceViewer() {
 
         .axisStepLabel b {
           color: var(--axis-color);
-          font-family: "Cambria Math", "STIX Two Math", "DejaVu Serif", "Times New Roman", serif;
           font-size: 18px;
         }
 
@@ -1921,7 +3304,7 @@ export default function MoveSpaceViewer() {
           font-style: normal;
         }
 
-        .axisStepLabel span {
+        .axisStepLabel > span {
           opacity: 0.68;
           font-size: 12px;
         }
@@ -2013,6 +3396,10 @@ export default function MoveSpaceViewer() {
         .wordToken {
           color: var(--axis-color);
           white-space: nowrap;
+        }
+
+        .wordScaleLabel {
+          font-size: inherit;
         }
 
         .emptyWord {
@@ -2442,6 +3829,16 @@ export default function MoveSpaceViewer() {
           vector-effect: non-scaling-stroke;
           opacity: 0.88;
           filter: drop-shadow(0 0 5px rgba(255, 225, 172, 0.5));
+        }
+
+        .netArrowHead {
+          fill: none;
+          stroke: #ffe1ac;
+          stroke-width: 1.8;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          vector-effect: non-scaling-stroke;
+          filter: drop-shadow(0 0 3px rgba(255, 225, 172, 0.68));
         }
 
         .netArrowExtension {
