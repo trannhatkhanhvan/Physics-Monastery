@@ -1254,8 +1254,17 @@ function applyMoveWord(vector, word) {
 function supportGraphFromWord(word) {
   const typeMap = new Map();
 
-  word.forEach((move) => {
-    const key = `${move.axisIndex}:${move.sign}`;
+  word.forEach((moveInput) => {
+    const move = normalizeMove(moveInput);
+
+    /*
+     * Scale identity is part of the move type.
+     *
+     * For example, K and Tₚ share the same typed direction,
+     * sign, and address increment, while producing different
+     * model-space displacements.
+     */
+    const key = String(moveCode(move));
     const existing = typeMap.get(key);
 
     if (existing) {
@@ -1265,86 +1274,140 @@ function supportGraphFromWord(word) {
         key,
         axisIndex: move.axisIndex,
         sign: move.sign,
+        scaleId: move.scaleId,
         count: 1,
       });
     }
   });
 
-  const moveTypes = Array.from(typeMap.values()).sort((a, b) => {
-    if (a.axisIndex !== b.axisIndex) return a.axisIndex - b.axisIndex;
-    return a.sign - b.sign;
-  });
+  const moveTypes = Array.from(typeMap.values()).sort(
+    (a, b) => moveCode(a) - moveCode(b)
+  );
 
   const combos = [];
   const vertices = new Map();
 
-  function addressFromUsage(usage) {
+  /*
+   * A support state carries both:
+   *
+   *   address    — its integer point in Z^6
+   *   modelPoint — its accumulated scaled geometric position
+   */
+  function stateFromUsage(usage) {
     const address = [...ZERO];
+    let modelPoint = { ...ZERO_POINT };
 
     usage.forEach((usedCount, index) => {
+      if (usedCount === 0) return;
+
       const moveType = moveTypes[index];
-      address[moveType.axisIndex] += moveType.sign * usedCount;
+
+      address[moveType.axisIndex] +=
+        moveType.sign * usedCount;
+
+      modelPoint = addPoint3D(
+        modelPoint,
+        multiplyPoint3D(
+          moveDeltaPoint3D(moveType),
+          usedCount
+        )
+      );
     });
 
-    return address;
+    return {
+      address,
+      modelPoint,
+    };
   }
 
   function walk(index, usage) {
     if (index === moveTypes.length) {
-      const address = addressFromUsage(usage);
-      const key = vectorKey(address);
+      const state = stateFromUsage(usage);
 
-      combos.push({
+      /*
+       * The usage vector identifies the partial multiset.
+       * Typed addresses alone cannot distinguish different
+       * scales on the same axis.
+       */
+      const key = usage.join("|");
+
+      const combo = {
         usage: [...usage],
-        address,
+        address: state.address,
+        modelPoint: state.modelPoint,
         key,
+      };
+
+      combos.push(combo);
+
+      vertices.set(key, {
+        key,
+        vector: state.address,
+        modelPoint: state.modelPoint,
       });
 
-      vertices.set(key, address);
       return;
     }
 
-    for (let count = 0; count <= moveTypes[index].count; count += 1) {
+    for (
+      let count = 0;
+      count <= moveTypes[index].count;
+      count += 1
+    ) {
       usage[index] = count;
       walk(index + 1, usage);
     }
   }
 
-  walk(0, Array.from({ length: moveTypes.length }, () => 0));
+  walk(
+    0,
+    Array.from({ length: moveTypes.length }, () => 0)
+  );
 
   const comboByUsage = new Map(
-    combos.map((combo) => [combo.usage.join("|"), combo])
+    combos.map((combo) => [
+      combo.usage.join("|"),
+      combo,
+    ])
   );
 
   const edges = new Map();
 
   combos.forEach((combo) => {
     moveTypes.forEach((moveType, moveTypeIndex) => {
-      if (combo.usage[moveTypeIndex] >= moveType.count) return;
+      if (
+        combo.usage[moveTypeIndex] >= moveType.count
+      ) {
+        return;
+      }
 
       const nextUsage = [...combo.usage];
       nextUsage[moveTypeIndex] += 1;
 
-      const nextCombo = comboByUsage.get(nextUsage.join("|"));
+      const nextCombo = comboByUsage.get(
+        nextUsage.join("|")
+      );
+
       if (!nextCombo) return;
 
-      const edgeKey = `${combo.key}->${nextCombo.key}:${moveType.key}`;
+      const edgeKey =
+        `${combo.key}->${nextCombo.key}:${moveType.key}`;
 
       edges.set(edgeKey, {
         key: edgeKey,
         axisIndex: moveType.axisIndex,
         sign: moveType.sign,
+        scaleId: moveType.scaleId,
         startVector: combo.address,
         endVector: nextCombo.address,
+        startModelPoint: combo.modelPoint,
+        endModelPoint: nextCombo.modelPoint,
       });
     });
   });
 
   return {
-    vertices: Array.from(vertices.entries()).map(([key, vector]) => ({
-      key,
-      vector,
-    })),
+    vertices: Array.from(vertices.values()),
     edges: Array.from(edges.values()),
   };
 }
@@ -1880,17 +1943,29 @@ export default function MoveSpaceViewer() {
       return { vertices: [], edges: [] };
     }
 
-    const graph = supportGraphFromWord(orderableMoveWord);
+    const graph = supportGraphFromWord(
+      orderableMoveWord
+    );
 
     return {
       vertices: graph.vertices.map((vertex) => ({
         ...vertex,
-        point: projectVector(vertex.vector, view),
+        point: projectPoint3D(
+          vertex.modelPoint,
+          view
+        ),
       })),
+
       edges: graph.edges.map((edge) => ({
         ...edge,
-        start: projectVector(edge.startVector, view),
-        end: projectVector(edge.endVector, view),
+        start: projectPoint3D(
+          edge.startModelPoint,
+          view
+        ),
+        end: projectPoint3D(
+          edge.endModelPoint,
+          view
+        ),
       })),
     };
   }, [showSupportGraph, orderableMoveWord, view]);
