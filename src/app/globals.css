@@ -511,7 +511,7 @@ body {
 .simplest-manifold-viewer-lock {
   position: relative;
   width: 100%;
-  height: 165vh;
+  height: calc(100vh - 36px);
 }
 
 .simplest-manifold-viewer-sticky {

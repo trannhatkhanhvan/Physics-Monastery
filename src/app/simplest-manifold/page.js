@@ -326,7 +326,7 @@ export default function SimplestManifold() {
         style={{
           position: 'relative',
           width: '100%',
-          height: '165vh',
+          height: 'calc(100vh - 36px)',
         }}
       >
         <div
@@ -341,8 +341,6 @@ export default function SimplestManifold() {
           <ClosedManifoldViewer embedded />
         </div>
       </section>
-
-      <div style={{ height: '10rem' }} />
 
            {modalVideoId && (
   <div
