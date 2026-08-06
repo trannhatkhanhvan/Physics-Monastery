@@ -1,0 +1,213 @@
+.page {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 96px;
+  color: #f5eedf;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.header {
+  max-width: 900px;
+  margin-bottom: 28px;
+}
+
+.header h1,
+.copy h2,
+.preview h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.header h1 {
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 0.98;
+}
+
+.header > p:last-child,
+.copy > p:not(.eyebrow),
+.preview > p:not(.eyebrow) {
+  color: rgba(245, 238, 223, 0.76);
+  font-size: 1.08rem;
+  line-height: 1.62;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #d6bd85;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lesson {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.35fr);
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.copy,
+.visual,
+.preview {
+  border: 1px solid rgba(232, 223, 200, 0.16);
+  border-radius: 18px;
+  background: rgba(7, 9, 14, 0.72);
+}
+
+.copy,
+.preview {
+  padding: 25px;
+}
+
+.copy h2,
+.preview h2 {
+  font-size: clamp(1.85rem, 3vw, 2.7rem);
+  line-height: 1.05;
+}
+
+.visual {
+  min-height: 480px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(214, 189, 133, 0.09),
+      transparent 47%
+    ),
+    rgba(4, 6, 10, 0.84);
+}
+
+.visual svg {
+  display: block;
+  width: 100%;
+  min-height: 480px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.controls button {
+  padding: 10px 14px;
+  color: #100e0a;
+  font: inherit;
+  background: #e8dfc8;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.controls button:disabled {
+  opacity: 0.42;
+  cursor: default;
+}
+
+.controls .secondary {
+  color: #f5eedf;
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(232, 223, 200, 0.2);
+}
+
+.controls .orangeButton {
+  background: #d88a3d;
+}
+
+.controls .blueButton {
+  background: #4d9fd6;
+}
+
+.mainLine,
+.orangeSeam,
+.blueSeam,
+.orangeGuide,
+.blueGuide {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.mainLine {
+  stroke: rgba(245, 238, 223, 0.92);
+}
+
+.orangeSeam,
+.orangeGuide,
+.orangeStroke {
+  stroke: #d88a3d;
+}
+
+.blueSeam,
+.blueGuide,
+.blueStroke {
+  stroke: #4d9fd6;
+}
+
+.endpoint {
+  fill: #d6bd85;
+  stroke: rgba(0, 0, 0, 0.72);
+  stroke-width: 2;
+}
+
+.svgText {
+  fill: rgba(245, 238, 223, 0.82);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px;
+}
+
+.surface {
+  fill: rgba(214, 189, 133, 0.08);
+  stroke: rgba(245, 238, 223, 0.36);
+  stroke-width: 2;
+}
+
+.sideLine {
+  stroke: rgba(245, 238, 223, 0.38);
+  stroke-width: 2;
+}
+
+.torusBody {
+  fill: rgba(214, 189, 133, 0.19);
+  stroke: rgba(245, 238, 223, 0.45);
+  stroke-width: 2;
+}
+
+.torusHole {
+  fill: rgba(4, 6, 10, 0.98);
+  stroke: rgba(245, 238, 223, 0.35);
+  stroke-width: 2;
+}
+
+.preview {
+  margin-top: 20px;
+}
+
+@media (max-width: 880px) {
+  .lesson {
+    grid-template-columns: 1fr;
+  }
+
+  .visual,
+  .visual svg {
+    min-height: 410px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    width: calc(100% - 20px);
+    padding-top: 30px;
+  }
+
+  .copy,
+  .preview {
+    padding: 20px;
+  }
+
+  .visual,
+  .visual svg {
+    min-height: 330px;
+  }
+}
