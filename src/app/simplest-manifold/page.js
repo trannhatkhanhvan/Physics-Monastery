@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import LayoutWrapper from '@/components/LayoutWrapper';
+import ClosedManifoldViewer from '../figure-eight-complement/ClosedManifoldViewer';
 import '../globals.css';
 
 export default function SimplestManifold() {
@@ -317,9 +318,12 @@ export default function SimplestManifold() {
           >
             the proton rms charge radius
           </a>.</p>
-        <div style={{ height: '10rem' }} />
-
+        <div style={{ height: '4rem' }} />
       </div>
+
+      <ClosedManifoldViewer embedded />
+
+      <div style={{ height: '10rem' }} />
 
            {modalVideoId && (
   <div
