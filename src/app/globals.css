@@ -508,6 +508,19 @@ body {
   font-style: normal;
 }
 
+.simplest-manifold-viewer-lock {
+  position: relative;
+  width: 100%;
+  height: 165vh;
+}
+
+.simplest-manifold-viewer-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
 .combinatorics-page {
   background-image: url('/physics_monastery_background.jpg');
   background-size: cover;

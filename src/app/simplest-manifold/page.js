@@ -321,7 +321,26 @@ export default function SimplestManifold() {
         <div style={{ height: '4rem' }} />
       </div>
 
-      <ClosedManifoldViewer embedded />
+      <section
+        className="simplest-manifold-viewer-lock"
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '165vh',
+        }}
+      >
+        <div
+          className="simplest-manifold-viewer-sticky"
+          style={{
+            position: 'sticky',
+            top: 36,
+            zIndex: 1,
+            width: '100%',
+          }}
+        >
+          <ClosedManifoldViewer embedded />
+        </div>
+      </section>
 
       <div style={{ height: '10rem' }} />
 
