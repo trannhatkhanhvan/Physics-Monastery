@@ -228,6 +228,13 @@ const CUSP_COLLAR_ROUTE_DEPARTURE = 420;
 const CUSP_COLLAR_ROUTE_APPROACH = 560;
 const CUSP_COLLAR_ROUTE_LANE_SPACING = 70;
 const CUSP_COLLAR_SHAPE_MORPH_START = 0.62;
+const CUSP_RELAXATION_DURATION_MS = 1800;
+const CUSP_RELAXATION_ITERATIONS = 220;
+const CUSP_RELAXATION_BEND_STIFFNESS = 0.55;
+const CUSP_RELAXATION_COMPRESSION_BARRIER = 1.6;
+const CUSP_RELAXATION_MIN_EDGE_RATIO = 0.28;
+const CUSP_RELAXATION_STEP = 0.08;
+const CUSP_RELAXATION_MAX_VERTEX_STEP = 18;
 const CUSP_BOUNDARY_WORLD_SCALE = 12;
 const CUSP_BOUNDARY_OVERVIEW_ZOOM = 0.15;
 const DEFAULT_PERSPECTIVE_DISTANCE = 950;
@@ -3092,6 +3099,410 @@ function cubicBezierPoint(
       )
     )
   );
+}
+
+function relaxCuspCollarSurface(
+  initialRings,
+  springLog10
+) {
+  const ringCount =
+    initialRings.length;
+
+  const perimeterCount =
+    initialRings[0]?.length ?? 0;
+
+  if (
+    ringCount < 3 ||
+    perimeterCount < 3 ||
+    initialRings.some(
+      (ring) =>
+        ring.length !== perimeterCount
+    )
+  ) {
+    return initialRings.map(
+      (ring) =>
+        ring.map(
+          (point) => ({ ...point })
+        )
+    );
+  }
+
+  const springStiffness = Math.pow(
+    10,
+    Math.max(
+      -8,
+      Math.min(4, springLog10)
+    )
+  );
+
+  /*
+   * Stretch and bending compete. At large k the routed
+   * surface strongly preserves its original edge lengths.
+   * At small k its interior vertices are free to seek a
+   * smoother embedded sheet, subject only to a local
+   * anti-collapse barrier.
+   */
+  const normalization =
+    1 + springStiffness;
+
+  const stretchWeight =
+    springStiffness / normalization;
+
+  const bendWeight =
+    CUSP_RELAXATION_BEND_STIFFNESS /
+    normalization;
+
+  const previousPerimeterIndex =
+    (index) =>
+      (
+        index -
+        1 +
+        perimeterCount
+      ) %
+      perimeterCount;
+
+  const nextPerimeterIndex =
+    (index) =>
+      (
+        index + 1
+      ) %
+      perimeterCount;
+
+  const longitudinalRestLengths =
+    Array.from(
+      { length: ringCount - 1 },
+      (_, ringIndex) =>
+        Array.from(
+          { length: perimeterCount },
+          (_, perimeterIndex) =>
+            pointDistance(
+              initialRings[
+                ringIndex
+              ][perimeterIndex],
+              initialRings[
+                ringIndex + 1
+              ][perimeterIndex]
+            )
+        )
+    );
+
+  const circumferentialRestLengths =
+    Array.from(
+      { length: ringCount },
+      (_, ringIndex) =>
+        Array.from(
+          { length: perimeterCount },
+          (_, perimeterIndex) =>
+            pointDistance(
+              initialRings[
+                ringIndex
+              ][perimeterIndex],
+              initialRings[
+                ringIndex
+              ][
+                nextPerimeterIndex(
+                  perimeterIndex
+                )
+              ]
+            )
+        )
+    );
+
+  /*
+   * One diagonal per surface cell turns the rectangular
+   * ring grid into a triangulated elastic mesh. This gives
+   * each free vertex genuine shear and twist degrees of
+   * freedom rather than forcing the complete cross-section
+   * to follow one centerline.
+   */
+  const diagonalRestLengths =
+    Array.from(
+      { length: ringCount - 1 },
+      (_, ringIndex) =>
+        Array.from(
+          { length: perimeterCount },
+          (_, perimeterIndex) =>
+            pointDistance(
+              initialRings[
+                ringIndex
+              ][perimeterIndex],
+              initialRings[
+                ringIndex + 1
+              ][
+                nextPerimeterIndex(
+                  perimeterIndex
+                )
+              ]
+            )
+        )
+    );
+
+  let rings =
+    initialRings.map(
+      (ring) =>
+        ring.map(
+          (point) => ({ ...point })
+        )
+    );
+
+  for (
+    let iteration = 0;
+    iteration <
+    CUSP_RELAXATION_ITERATIONS;
+    iteration += 1
+  ) {
+    const nextRings =
+      rings.map(
+        (ring) =>
+          ring.map(
+            (point) => ({ ...point })
+          )
+      );
+
+    /*
+     * Rings 0 and ringCount - 1 are Dirichlet boundaries:
+     * the inner collar attachment and torus attachment stay
+     * exactly fixed. Every vertex between them moves
+     * independently in R^3.
+     */
+    for (
+      let ringIndex = 1;
+      ringIndex < ringCount - 1;
+      ringIndex += 1
+    ) {
+      for (
+        let perimeterIndex = 0;
+        perimeterIndex <
+        perimeterCount;
+        perimeterIndex += 1
+      ) {
+        const current =
+          rings[
+            ringIndex
+          ][perimeterIndex];
+
+        let force = {
+          x: 0,
+          y: 0,
+          z: 0,
+        };
+
+        function addElasticConnection(
+          neighbor,
+          restLength
+        ) {
+          const delta =
+            subtractPoint(
+              neighbor,
+              current
+            );
+
+          const length =
+            Math.hypot(
+              delta.x,
+              delta.y,
+              delta.z
+            );
+
+          if (length < 1e-8) {
+            return;
+          }
+
+          let coefficient =
+            stretchWeight *
+            (
+              length -
+              restLength
+            );
+
+          /*
+           * The barrier has no preferred rest length. It
+           * activates only when an edge becomes dangerously
+           * compressed, preventing local mesh collapse while
+           * leaving expansion, shear, and twist available.
+           */
+          const minimumLength =
+            restLength *
+            CUSP_RELAXATION_MIN_EDGE_RATIO;
+
+          if (
+            length <
+            minimumLength
+          ) {
+            coefficient +=
+              CUSP_RELAXATION_COMPRESSION_BARRIER *
+              (
+                length -
+                minimumLength
+              );
+          }
+
+          force = addPoint(
+            force,
+            multiplyPoint(
+              delta,
+              coefficient / length
+            )
+          );
+        }
+
+        const previousIndex =
+          previousPerimeterIndex(
+            perimeterIndex
+          );
+
+        const nextIndex =
+          nextPerimeterIndex(
+            perimeterIndex
+          );
+
+        addElasticConnection(
+          rings[
+            ringIndex - 1
+          ][perimeterIndex],
+          longitudinalRestLengths[
+            ringIndex - 1
+          ][perimeterIndex]
+        );
+
+        addElasticConnection(
+          rings[
+            ringIndex + 1
+          ][perimeterIndex],
+          longitudinalRestLengths[
+            ringIndex
+          ][perimeterIndex]
+        );
+
+        addElasticConnection(
+          rings[
+            ringIndex
+          ][previousIndex],
+          circumferentialRestLengths[
+            ringIndex
+          ][previousIndex]
+        );
+
+        addElasticConnection(
+          rings[
+            ringIndex
+          ][nextIndex],
+          circumferentialRestLengths[
+            ringIndex
+          ][perimeterIndex]
+        );
+
+        addElasticConnection(
+          rings[
+            ringIndex - 1
+          ][previousIndex],
+          diagonalRestLengths[
+            ringIndex - 1
+          ][previousIndex]
+        );
+
+        addElasticConnection(
+          rings[
+            ringIndex + 1
+          ][nextIndex],
+          diagonalRestLengths[
+            ringIndex
+          ][perimeterIndex]
+        );
+
+        /*
+         * Discrete curvature smoothing acts independently
+         * along the route and around the triangular perimeter.
+         * It can therefore bend, shear, twist, widen, narrow,
+         * and redistribute curvature across the surface.
+         */
+        const longitudinalCurvature =
+          addPoint(
+            subtractPoint(
+              rings[
+                ringIndex - 1
+              ][perimeterIndex],
+              current
+            ),
+            subtractPoint(
+              rings[
+                ringIndex + 1
+              ][perimeterIndex],
+              current
+            )
+          );
+
+        const perimeterCurvature =
+          addPoint(
+            subtractPoint(
+              rings[
+                ringIndex
+              ][previousIndex],
+              current
+            ),
+            subtractPoint(
+              rings[
+                ringIndex
+              ][nextIndex],
+              current
+            )
+          );
+
+        force = addPoint(
+          force,
+          multiplyPoint(
+            longitudinalCurvature,
+            bendWeight
+          )
+        );
+
+        force = addPoint(
+          force,
+          multiplyPoint(
+            perimeterCurvature,
+            bendWeight * 0.28
+          )
+        );
+
+        let displacement =
+          multiplyPoint(
+            force,
+            CUSP_RELAXATION_STEP
+          );
+
+        const displacementLength =
+          Math.hypot(
+            displacement.x,
+            displacement.y,
+            displacement.z
+          );
+
+        if (
+          displacementLength >
+          CUSP_RELAXATION_MAX_VERTEX_STEP
+        ) {
+          displacement =
+            multiplyPoint(
+              displacement,
+              CUSP_RELAXATION_MAX_VERTEX_STEP /
+                displacementLength
+            );
+        }
+
+        nextRings[
+          ringIndex
+        ][perimeterIndex] =
+          addPoint(
+            current,
+            displacement
+          );
+      }
+    }
+
+    rings = nextRings;
+  }
+
+  return rings;
 }
 
 function faceWorldPointsForPair(
@@ -12711,6 +13122,8 @@ export default function TruncatedTetrahedraViewer({
   showCuspTriangles,
   assembleCusp,
   cuspWrapOrder,
+  cuspRelaxationActive = false,
+  cuspSpringLog10 = 0,
   truncationFraction =
     DEFAULT_TRUNCATION_FRACTION,
   tetrahedronSeparation =
@@ -12729,19 +13142,18 @@ export default function TruncatedTetrahedraViewer({
       : null;
 
   /*
-   * Undefined preserves compatibility with callers that
-   * predate explicit seam state. Null deliberately means
-   * that every selected pairing is shown cut open.
+   * Face-pair construction is symmetric. Every selected
+   * identification begins as an exposed bridge; collapsing
+   * a bridge is an independent, explicit display choice.
    */
   const resolvedActiveSeamPairId =
-    activeSeamPairId === undefined
-      ? facePairSequence[0] ?? null
-      : activeSeamPairId !== null &&
-          facePairSequence.includes(
-            activeSeamPairId
-          )
-        ? activeSeamPairId
-        : null;
+    activeSeamPairId !== undefined &&
+    activeSeamPairId !== null &&
+    facePairSequence.includes(
+      activeSeamPairId
+    )
+      ? activeSeamPairId
+      : null;
 
   const truncatedGeometry =
     useMemo(
@@ -12981,21 +13393,8 @@ export default function TruncatedTetrahedraViewer({
         : null
     );
 
-  const firstPairAssembling =
-    seamPairId !== null &&
-    facePairSequence.length === 1 &&
-    facePairSequence[0] === seamPairId &&
-    (
-      facePairStrengths[
-        seamPairId
-      ] ?? 0
-    ) <
-      FACE_VALIDITY_FULL_STRENGTH;
-
   const effectiveSeamStrength =
-    firstPairAssembling
-      ? 1
-      : animatedSeamStrength;
+    animatedSeamStrength;
 
   /*
    * This flag becomes true on the same render that the
@@ -13005,15 +13404,12 @@ export default function TruncatedTetrahedraViewer({
    * first requestAnimationFrame of the transition.
    */
   const seamTransitionInProgress =
-    !showCuspTriangles &&
-    (
-      resolvedActiveSeamPairId !== null
-        ? animatedSeamStrength <
-          1 - FACE_CONSTRAINT_EPSILON
-        : seamPairId !== null &&
-          animatedSeamStrength >
-            FACE_CONSTRAINT_EPSILON
-    );
+    resolvedActiveSeamPairId !== null
+      ? animatedSeamStrength <
+        1 - FACE_CONSTRAINT_EPSILON
+      : seamPairId !== null &&
+        animatedSeamStrength >
+          FACE_CONSTRAINT_EPSILON;
 
   const animatedFacePairMappings =
     useAnimatedCyclicFaceMappings(
@@ -13149,6 +13545,15 @@ export default function TruncatedTetrahedraViewer({
     Math.max(
       shortWrapProgress,
       longWrapProgress
+    );
+
+  const cuspRelaxationProgress =
+    useAnimatedAssembly(
+      showCuspTriangles &&
+      assembleCusp &&
+      cuspWrapOrder.length === 2 &&
+      cuspRelaxationActive,
+      CUSP_RELAXATION_DURATION_MS
     );
 
   /*
@@ -13319,13 +13724,10 @@ export default function TruncatedTetrahedraViewer({
         : seamPairId;
 
     /*
-     * Every selected face pairing now owns one bridge-state
-     * definition. The active physical seam is represented as
-     * the same bridge at zero exposure; all other pairings are
-     * exposed and rendered as solid bridges.
-     *
-     * This separates quotient pairing order from the chosen
-     * Euclidean seam without changing the current appearance.
+     * Every selected face pairing owns the same bridge-state
+     * definition. Identifications always enter as exposed
+     * bridges. Any one of them may later be collapsed into the
+     * physical seam, independently of construction order.
      */
     const pairingBridgeDefinitions =
       effectiveConstraintOrder.map(
@@ -14384,6 +14786,94 @@ export default function TruncatedTetrahedraViewer({
           );
         }
 
+        /*
+         * Build one shared perimeter ring for each longitudinal
+         * route section. Three edge ribbons later read from this
+         * common ring, so the corners remain welded while every
+         * interior surface vertex has its own 3D position.
+         */
+        const cuspRoutePerimeterWeights =
+          [
+            [0, 1],
+            [1, 2],
+            [2, 0],
+          ].flatMap(
+            ([firstIndex, secondIndex]) =>
+              Array.from(
+                {
+                  length:
+                    CUSP_MESH_DIVISIONS,
+                },
+                (_, acrossIndex) =>
+                  cuspRouteWeightsForEdge(
+                    firstIndex,
+                    secondIndex,
+                    acrossIndex /
+                      CUSP_MESH_DIVISIONS
+                  )
+              )
+          );
+
+        const cuspRoutePerimeterCount =
+          cuspRoutePerimeterWeights.length;
+
+        const initialCuspRouteRings =
+          Array.from(
+            {
+              length:
+                CUSP_COLLAR_ROUTE_SEGMENTS +
+                1,
+            },
+            (_, segmentIndex) =>
+              cuspRoutePerimeterWeights.map(
+                (weights) =>
+                  activeRoutedCuspModelPoint(
+                    weights,
+                    segmentIndex /
+                      CUSP_COLLAR_ROUTE_SEGMENTS
+                  )
+              )
+          );
+
+        const relaxedCuspRouteRings =
+          cuspRelaxationProgress >
+          FACE_CONSTRAINT_EPSILON
+            ? relaxCuspCollarSurface(
+                initialCuspRouteRings,
+                cuspSpringLog10
+              )
+            : initialCuspRouteRings;
+
+        function relaxedCuspRouteModelPoint(
+          edgeIndex,
+          acrossIndex,
+          segmentIndex
+        ) {
+          const perimeterIndex =
+            (
+              edgeIndex *
+                CUSP_MESH_DIVISIONS +
+              acrossIndex
+            ) %
+            cuspRoutePerimeterCount;
+
+          const initialPoint =
+            initialCuspRouteRings[
+              segmentIndex
+            ][perimeterIndex];
+
+          const relaxedPoint =
+            relaxedCuspRouteRings[
+              segmentIndex
+            ][perimeterIndex];
+
+          return lerpPoint(
+            initialPoint,
+            relaxedPoint,
+            cuspRelaxationProgress
+          );
+        }
+
         if (showCuspTriangles) {
           /*
            * Keep the original truncation triangle attached.
@@ -14501,7 +14991,7 @@ export default function TruncatedTetrahedraViewer({
 
                 const routeGrid =
                   acrossWeights.map(
-                    (weights) =>
+                    (_, acrossIndex) =>
                       Array.from(
                         {
                           length:
@@ -14509,10 +14999,10 @@ export default function TruncatedTetrahedraViewer({
                             1,
                         },
                         (_, segmentIndex) =>
-                          activeRoutedCuspModelPoint(
-                            weights,
-                            segmentIndex /
-                              CUSP_COLLAR_ROUTE_SEGMENTS
+                          relaxedCuspRouteModelPoint(
+                            edgeIndex,
+                            acrossIndex,
+                            segmentIndex
                           )
                       )
                   );
@@ -15316,18 +15806,33 @@ export default function TruncatedTetrahedraViewer({
             definitionIndex
           ];
 
-        if (
+        const continuityRouteSpec =
+          animatedBridgeRouteSpecs[
+            definition.pairId
+          ] ??
+          bridgeRouteCandidateSpecsForType(
+            definition.bridgeType
+          )[0] ??
+          DEFAULT_BRIDGE_ROUTE_SPEC;
+
+        /*
+         * Route validity controls rerouting, never bridge
+         * existence. If the global audit temporarily has no
+         * complete collision-free assignment while a vertex map
+         * changes, retain the route already on screen. A newly
+         * exposed bridge with no remembered route uses its
+         * canonical route until the planner supplies a better one.
+         */
+        nextBridgeRouteTargetSpecs[
+          definition.pairId
+        ] =
           routeSelection
             .candidateDiagnostics.valid &&
           routeSelection
             .selectedRouteSpec !== null
-        ) {
-          nextBridgeRouteTargetSpecs[
-            definition.pairId
-          ] =
-            routeSelection
-              .selectedRouteSpec;
-        }
+            ? routeSelection
+                .selectedRouteSpec
+            : continuityRouteSpec;
       }
     );
 
@@ -15372,38 +15877,46 @@ export default function TruncatedTetrahedraViewer({
               definition.pairId
             ] ?? selectedRouteSpec;
 
+          const continuityRouteSpec =
+            bridgeRouteCandidateSpecsForType(
+              definition.bridgeType
+            )[0] ??
+            DEFAULT_BRIDGE_ROUTE_SPEC;
+
+          const stableDisplayRouteSpec =
+            displayRouteSpec ??
+            continuityRouteSpec;
+
           const bridgeModel =
             seamTransitionInProgress
               ? routedBridgeModel
-              : (
-                  candidateValid ||
-                  renderSeamTransition
-                ) &&
-                displayRouteSpec !== null
-                ? makeFaceIdentificationBridgeModel({
-                    positions:
-                      solvedWorldPositions,
-                    pairing:
-                      definition.pairing,
-                    progress:
-                      definition.progress,
-                    bridgeSpanScale:
-                      definition.bridgeSpanScale,
-                    bridgeIndex:
-                      definition.bridgeIndex,
-                    routeLane:
-                      displayRouteSpec.lane,
-                    routeSpec:
-                      displayRouteSpec,
-                    mappingTurn:
-                      definition.mappingTurn,
-                    sceneCenter,
-                  })
-                : routedBridgeModel;
+              : makeFaceIdentificationBridgeModel({
+                  positions:
+                    solvedWorldPositions,
+                  pairing:
+                    definition.pairing,
+                  progress:
+                    definition.progress,
+                  bridgeSpanScale:
+                    definition.bridgeSpanScale,
+                  bridgeIndex:
+                    definition.bridgeIndex,
+                  routeLane:
+                    stableDisplayRouteSpec.lane,
+                  routeSpec:
+                    stableDisplayRouteSpec,
+                  mappingTurn:
+                    definition.mappingTurn,
+                  sceneCenter,
+                });
 
-          const bridgeRenderable =
-            candidateValid ||
-            renderSeamTransition;
+          /*
+           * An identified, exposed bridge is always renderable.
+           * Candidate validity is diagnostic/planning state; it
+           * must never delete the geometric representative of an
+           * identification while a mapping transition is underway.
+           */
+          const bridgeRenderable = true;
 
           const renderedFaces =
             bridgeRenderable
@@ -15937,6 +16450,9 @@ export default function TruncatedTetrahedraViewer({
     shortWrapProgress,
     longWrapProgress,
     cuspWrapProgress,
+    cuspRelaxationActive,
+    cuspRelaxationProgress,
+    cuspSpringLog10,
   ]);
 
   const nextBridgeRouteTargetKey =
@@ -16263,7 +16779,9 @@ export default function TruncatedTetrahedraViewer({
       aria-label={
         showCuspTriangles
           ? cuspWrapOrder.length === 2
-            ? "Two truncated tetrahedra with eight attached cusp collars whose outer triangles assemble into the cusp torus"
+            ? cuspRelaxationActive
+              ? "Two truncated tetrahedra with a fixed cusp torus and elastically relaxed internal cusp collars"
+              : "Two truncated tetrahedra with eight attached cusp collars whose outer triangles assemble into the cusp torus"
             : cuspWrapOrder.length === 1
               ? "Two truncated tetrahedra with eight attached cusp collars whose outer triangles form the first cusp cylinder"
               : assembleCusp

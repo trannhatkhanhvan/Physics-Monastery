@@ -1290,6 +1290,14 @@ export default function ClosedManifoldViewer({
   const [cuspWrapOrder, setCuspWrapOrder] =
     useState([]);
   const [
+    cuspRelaxationActive,
+    setCuspRelaxationActive,
+  ] = useState(false);
+  const [
+    cuspSpringLog10,
+    setCuspSpringLog10,
+  ] = useState(0);
+  const [
     truncationFraction,
     setTruncationFraction,
   ] = useState(
@@ -1430,9 +1438,11 @@ export default function ClosedManifoldViewer({
   }
 
   function interactWithFacePair(pairId) {
-    setShowCuspTriangles(false);
-    setAssembleCusp(false);
-    setCuspWrapOrder([]);
+    /*
+     * Face-pair controls remain live at every later viewing
+     * stage. Opening or adding a bridge must not tear down the
+     * cusp collars, cylinder, torus, or relaxation state.
+     */
     setActiveMappingPairId(
       (currentPairId) =>
         currentPairId === pairId
@@ -1446,10 +1456,10 @@ export default function ClosedManifoldViewer({
       );
 
     if (!isInSequence) {
-      if (facePairSequence.length === 0) {
-        setActiveSeamPairId(pairId);
-      }
-
+      /*
+       * Every identification is born as an exposed bridge.
+       * Collapse is always a separate explicit action.
+       */
       setFacePairSequence(
         (currentSequence) => [
           ...currentSequence,
@@ -1509,6 +1519,7 @@ export default function ClosedManifoldViewer({
      * the rendering state remains coherent.
      */
     setAssembleCusp(true);
+    setCuspRelaxationActive(false);
 
     setCuspWrapOrder((currentOrder) =>
       currentOrder.includes(boundary)
@@ -1788,6 +1799,8 @@ export default function ClosedManifoldViewer({
       setShowCuspTriangles(false);
       setAssembleCusp(false);
       setCuspWrapOrder([]);
+      setCuspRelaxationActive(false);
+      setCuspSpringLog10(0);
       setFaceConstructionState(null);
       setTruncationFraction(
         DEFAULT_TRUNCATION_FRACTION
@@ -1828,7 +1841,9 @@ export default function ClosedManifoldViewer({
 
       setSeamTransitioning(false);
 
-      if (cuspWrapOrder.length > 0) {
+      if (cuspRelaxationActive) {
+        setCuspRelaxationActive(false);
+      } else if (cuspWrapOrder.length > 0) {
         setCuspWrapOrder((currentOrder) =>
           currentOrder.slice(0, -1)
         );
@@ -1892,7 +1907,9 @@ export default function ClosedManifoldViewer({
             : "Torus: both edge pairs identified"
         : showCuspTriangles
           ? cuspWrapOrder.length === 2
-            ? "Cusp torus: meridian and longitude identified"
+            ? cuspRelaxationActive
+              ? `Cusp torus: internal collars relaxed at spring k = 10^${cuspSpringLog10.toFixed(1)}`
+              : "Cusp torus: meridian and longitude identified"
             : cuspWrapOrder.length === 1
               ? cuspWrapOrder[0] === "long"
                 ? "Cusp cylinder: meridian identified"
@@ -1901,7 +1918,7 @@ export default function ClosedManifoldViewer({
                 ? "Cusp fundamental domain: eight triangles assembled into one parallelogram"
                 : "Cusp boundary: eight truncation triangles with twelve induced edge identifications"
           : facePairSequence.length === 0
-            ? "Two truncated tetrahedra: choose the first face identification"
+            ? "Two truncated tetrahedra: choose a face identification"
             : faceIdentificationComplete
               ? `Face identifications complete 4/4: ${facePairSequenceLabel}. Extract the cusp triangles next.`
               : `Face-identification sequence ${facePairSequence.length}/4: ${facePairSequenceLabel}`;
@@ -1947,8 +1964,7 @@ export default function ClosedManifoldViewer({
   useLayoutEffect(() => {
     if (
       dimension !== "3D" ||
-      activeMappingPairId === null ||
-      showCuspTriangles
+      activeMappingPairId === null
     ) {
       setMappingPopoverPosition(null);
       return undefined;
@@ -2030,7 +2046,6 @@ export default function ClosedManifoldViewer({
   }, [
     dimension,
     activeMappingPairId,
-    showCuspTriangles,
     facePairSequence.length,
   ]);
 
@@ -2181,7 +2196,7 @@ export default function ClosedManifoldViewer({
                         }
                         title={
                           !isInSequence
-                            ? `${pair.description}. Click to add this identification${facePairSequence.length === 0 ? " as the first collapsed seam" : " as a bridge"} and open its controls.`
+                            ? `${pair.description}. Click to add this identification as a bridge and open its controls.`
                             : `Step ${sequenceIndex + 1}: ${pair.description}. Click to ${isActiveMappingPair ? "close" : "open"} its vertex-map and bridge-state controls.`
                         }
                         style={{
@@ -2233,6 +2248,7 @@ export default function ClosedManifoldViewer({
                   setActiveMappingPairId(null);
                   setAssembleCusp(false);
                   setCuspWrapOrder([]);
+                  setCuspRelaxationActive(false);
                 }}
                 aria-pressed={showCuspTriangles}
                 title={
@@ -2260,6 +2276,8 @@ export default function ClosedManifoldViewer({
                   if (!next) {
                     setCuspWrapOrder([]);
                   }
+
+                  setCuspRelaxationActive(false);
                 }}
                 disabled={!showCuspTriangles}
                 aria-pressed={assembleCusp}
@@ -2327,8 +2345,103 @@ export default function ClosedManifoldViewer({
               >
                 Longitude
               </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  setCuspRelaxationActive(
+                    (current) => !current
+                  )
+                }
+                disabled={
+                  !showCuspTriangles ||
+                  cuspWrapOrder.length !== 2
+                }
+                aria-pressed={
+                  cuspRelaxationActive
+                }
+                title={
+                  cuspRelaxationActive
+                    ? "Return the internal cusp collars to their routed construction"
+                    : "Relax only the internal cusp-collar routes while keeping the cusp torus and attachments fixed"
+                }
+                style={{
+                  borderColor:
+                    "rgba(232, 223, 200, 0.72)",
+                  color:
+                    "rgba(232, 223, 200, 0.92)",
+                }}
+              >
+                Relax
+              </button>
             </>
           )}
+
+          {dimension === "3D" &&
+            showCuspTriangles &&
+            cuspWrapOrder.length === 2 && (
+              <div
+                className={
+                  styles.truncationControl
+                }
+              >
+                <div
+                  className={
+                    styles.truncationHeader
+                  }
+                >
+                  <label
+                    htmlFor="cusp-spring-stiffness"
+                    className={
+                      styles.truncationLabel
+                    }
+                  >
+                    Spring k
+                  </label>
+
+                  <output
+                    htmlFor="cusp-spring-stiffness"
+                    className={
+                      styles.truncationValue
+                    }
+                  >
+                    {`10^${cuspSpringLog10.toFixed(1)}`}
+                  </output>
+                </div>
+
+                <input
+                  id="cusp-spring-stiffness"
+                  type="range"
+                  min="-8"
+                  max="4"
+                  step="0.1"
+                  value={cuspSpringLog10}
+                  onChange={(event) =>
+                    setCuspSpringLog10(
+                      clamp(
+                        Number(
+                          event.target.value
+                        ),
+                        -8,
+                        4
+                      )
+                    )
+                  }
+                  aria-label="Logarithm base ten of cusp-collar spring stiffness"
+                  aria-valuetext={`Spring stiffness 10 to the ${cuspSpringLog10.toFixed(1)}`}
+                />
+
+                <div
+                  className={
+                    styles.truncationScale
+                  }
+                  aria-hidden="true"
+                >
+                  <span>10^-8</span>
+                  <span>10^4</span>
+                </div>
+              </div>
+            )}
 
           {dimension === "3D" && (
             <div
@@ -2576,7 +2689,6 @@ export default function ClosedManifoldViewer({
 
         {dimension === "3D" &&
           activeMappingPair &&
-          !showCuspTriangles &&
           mappingPopoverPosition && (
             <div
               id="face-pair-mapping-popover"
@@ -2758,6 +2870,12 @@ export default function ClosedManifoldViewer({
                 showCuspTriangles={showCuspTriangles}
                 assembleCusp={assembleCusp}
                 cuspWrapOrder={cuspWrapOrder}
+                cuspRelaxationActive={
+                  cuspRelaxationActive
+                }
+                cuspSpringLog10={
+                  cuspSpringLog10
+                }
                 truncationFraction={
                   truncationFraction
                 }
