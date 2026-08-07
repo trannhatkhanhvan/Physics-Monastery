@@ -221,6 +221,10 @@ const CUSP_MESH_DIVISIONS = 8;
 const CUSP_EDGE_SAMPLES = 24;
 const CUSP_CENTER_SAMPLES = 24;
 const CUSP_HEIGHT = Math.sqrt(3) / 2;
+const CUSP_COLLAR_LENGTH = 177;
+const CUSP_BOUNDARY_WORLD_SCALE = 12;
+const CUSP_BOUNDARY_OVERVIEW_ZOOM = 0.15;
+const DEFAULT_PERSPECTIVE_DISTANCE = 950;
 
 /*
  * A connected planar development of all eight cusp
@@ -6680,10 +6684,22 @@ function selectCollisionFreeBridgeRouteSet({
           definition.bridgeType
         );
 
+      /*
+       * A bridge's first exposure has no remembered route yet,
+       * while every later exposure does. Seed that first route
+       * with the canonical candidate for its bridge class so the
+       * first Bridge action and every later Bridge action enter
+       * the global planner with the same route preference.
+       * Backtracking may still choose another lane when the
+       * canonical route is blocked.
+       */
+      const canonicalRouteId =
+        routeSpecs[0]?.id ?? null;
+
       const preferredRouteId =
         preferredRouteIdsByPairId?.[
           definition.pairId
-        ] ?? null;
+        ] ?? canonicalRouteId;
 
       const startRouteSpec =
         sweepStartRouteSpecsByPairId?.[
@@ -11450,8 +11466,16 @@ function projectPoint(point, view) {
     view.rotation
   );
 
+  const perspectiveDistance =
+    view.perspectiveDistance ??
+    DEFAULT_PERSPECTIVE_DISTANCE;
+
   const perspective =
-    1 / (1 + rotated.z / 950);
+    1 /
+    (
+      1 +
+      rotated.z / perspectiveDistance
+    );
 
   const scale =
     perspective * view.zoom;
@@ -12399,7 +12423,7 @@ function sameVertexSet(first, second) {
   );
 }
 
-function cuspTriangleEdgeColor(
+function cuspTriangleEdgePair(
   tetrahedronId,
   vertexIndex,
   firstNeighbor,
@@ -12411,24 +12435,39 @@ function cuspTriangleEdgeColor(
     secondNeighbor,
   ];
 
-  const pair =
+  return (
     FIGURE_EIGHT_FACE_PAIRS.find(
       (candidate) =>
         sameVertexSet(
           candidate[tetrahedronId],
           containingFace
         )
-    );
+    ) ?? null
+  );
+}
 
+function cuspTriangleEdgeColor(
+  tetrahedronId,
+  vertexIndex,
+  firstNeighbor,
+  secondNeighbor
+) {
   return (
-    pair?.color ||
+    cuspTriangleEdgePair(
+      tetrahedronId,
+      vertexIndex,
+      firstNeighbor,
+      secondNeighbor
+    )?.color ||
     "rgba(250, 244, 225, 0.96)"
   );
 }
 
 function cuspSegmentForFace(
   face,
-  localVertexIndex
+  localVertexIndex,
+  truncationFraction =
+    DEFAULT_TRUNCATION_FRACTION
 ) {
   const vertexIndex =
     face[localVertexIndex];
@@ -12447,11 +12486,13 @@ function cuspSegmentForFace(
   return [
     edgePoint(
       vertexIndex,
-      firstNeighbor
+      firstNeighbor,
+      truncationFraction
     ),
     edgePoint(
       vertexIndex,
-      secondNeighbor
+      secondNeighbor,
+      truncationFraction
     ),
   ];
 }
@@ -13105,30 +13146,113 @@ export default function TruncatedTetrahedraViewer({
     const cuspMeshFaces = [];
     const cuspTriangleOutlines = [];
 
-    const cuspCenterOffset =
-      showCuspTriangles
-        ? cuspScreenCenterOffset(
-            view,
+    /*
+     * Once either peripheral identification begins, move the
+     * outer ends of the eight attached cusp collars into the
+     * intrinsic cusp development. The first identification rolls
+     * that development into a cylinder; the second bends the
+     * cylinder closed into the torus. The original eight bases
+     * remain fixed on the tetrahedra throughout.
+     */
+    const cuspBoundaryStage =
+      smoothStep(shortWrapProgress) +
+      smoothStep(longWrapProgress);
+
+    const cuspBoundaryAssemblyProgress =
+      clampUnit(cuspBoundaryStage);
+
+    const cuspOverviewProgress =
+      smoothStep(
+        cuspBoundaryAssemblyProgress
+      );
+
+    /*
+     * The intrinsic cusp torus is much larger than the compact
+     * bridge construction in this combined view. Grow the cusp
+     * target by a fixed world-space factor while pulling the
+     * camera back by the reciprocal visual scale. This keeps the
+     * complete torus on screen and leaves the face bridges as a
+     * small central construction inside it.
+     */
+    const displayView =
+      cuspOverviewProgress >
+      FACE_CONSTRAINT_EPSILON
+        ? {
+            ...view,
+            zoom:
+              view.zoom *
+              (
+                1 +
+                (
+                  CUSP_BOUNDARY_OVERVIEW_ZOOM -
+                  1
+                ) *
+                  cuspOverviewProgress
+              ),
+            perspectiveDistance:
+              DEFAULT_PERSPECTIVE_DISTANCE *
+              (
+                1 +
+                (
+                  CUSP_BOUNDARY_WORLD_SCALE -
+                  1
+                ) *
+                  cuspOverviewProgress
+              ),
+          }
+        : view;
+
+    const cuspAssemblyRawVertices =
+      Object.values(CUSP_FLAT_LAYOUT)
+        .flatMap((triangle) =>
+          Object.values(triangle)
+        );
+
+    const cuspAssemblyTargetCenter =
+      cuspBoundaryStage >
+      FACE_CONSTRAINT_EPSILON
+        ? boundingCenter(
+            cuspAssemblyRawVertices.map(
+              (rawPoint) =>
+                cuspModelPointFromRaw(
+                  rawPoint,
+                  cuspFirstBoundary,
+                  shortWrapProgress,
+                  longWrapProgress
+                )
+            )
+          )
+        : { x: 0, y: 0, z: 0 };
+
+    function attachedCuspTargetPoint(
+      rawPoint
+    ) {
+      return multiplyPoint(
+        subtractPoint(
+          cuspModelPointFromRaw(
+            rawPoint,
             cuspFirstBoundary,
             shortWrapProgress,
             longWrapProgress
-          )
-        : { x: 0, y: 0 };
+          ),
+          cuspAssemblyTargetCenter
+        ),
+        CUSP_BOUNDARY_WORLD_SCALE
+      );
+    }
 
+    /*
+     * The cusp is an attached boundary of this same
+     * face-pairing construction. Revealing it must not
+     * discard the manifold identifications underneath it.
+     */
     const effectivePairStrengths =
-      showCuspTriangles
-        ? FIGURE_EIGHT_FACE_PAIRS.map(
-            () => 0
-          )
-        : facePairStrengths;
+      facePairStrengths;
 
     const effectiveConstraintOrder =
-      showCuspTriangles
-        ? []
-        : facePairConstraintOrder;
+      facePairConstraintOrder;
 
     const physicalSeamPairId =
-      showCuspTriangles ||
       seamPairId === null ||
       !effectiveConstraintOrder.includes(
         seamPairId
@@ -13707,6 +13831,106 @@ export default function TruncatedTetrahedraViewer({
       );
     }
 
+    /*
+     * The three cusp triangles on each side of the physical
+     * seam occur in three A/B pairs. Give each pair one common
+     * extension direction in the shared face plane, so the two
+     * triangular prisms genuinely share one rectangular wall.
+     * The two cusp triangles opposite the seam remain independent.
+     */
+    const sharedCuspCollarDirectionByBaseId =
+      new Map();
+
+    const settledPhysicalSeamMapping =
+      physicalSeamPairId === null
+        ? null
+        : settledCyclicMappingIndex(
+            animatedFacePairMappings[
+              physicalSeamPairId
+            ] ?? 0
+          );
+
+    const sharedCuspSeamPairId =
+      settledPhysicalSeamMapping === null
+        ? null
+        : physicalSeamPairId;
+
+    if (sharedCuspSeamPairId !== null) {
+      const seamPair =
+        FIGURE_EIGHT_FACE_PAIRS[
+          sharedCuspSeamPairId
+        ];
+
+      const seamFaceA =
+        faceWorldPointsForPair(
+          solvedWorldPositions,
+          "A",
+          sharedCuspSeamPairId
+        ).map((point) =>
+          subtractPoint(
+            point,
+            sceneCenter
+          )
+        );
+
+      const seamFaceCenter =
+        averageWorldPoint(seamFaceA);
+
+      const vertexPermutation =
+        CYCLIC_FACE_MAPPING_CHOICES[
+          settledPhysicalSeamMapping
+        ].vertexPermutation;
+
+      seamPair.A.forEach(
+        (vertexA, localVertexIndex) => {
+          const sharedEdge =
+            cuspSegmentForFace(
+              seamPair.A,
+              localVertexIndex,
+              truncatedGeometry
+                .truncationFraction
+            ).map((point) =>
+              centeredWorldPoint(
+                point,
+                sceneTetrahedra[0]
+              )
+            );
+
+          const sharedEdgeCenter =
+            averageWorldPoint(
+              sharedEdge
+            );
+
+          const direction =
+            normalizePoint(
+              subtractPoint(
+                sharedEdgeCenter,
+                seamFaceCenter
+              )
+            );
+
+          const vertexB =
+            seamPair.B[
+              vertexPermutation[
+                localVertexIndex
+              ]
+            ];
+
+          sharedCuspCollarDirectionByBaseId
+            .set(
+              `A${vertexA}`,
+              direction
+            );
+
+          sharedCuspCollarDirectionByBaseId
+            .set(
+              `B${vertexB}`,
+              direction
+            );
+        }
+      );
+    }
+
     sceneTetrahedra.forEach((tetrahedron) => {
       const mesh =
         truncatedGeometry.meshes[
@@ -13734,7 +13958,7 @@ export default function TruncatedTetrahedraViewer({
               .map((point) =>
                 projectPoint(
                   point,
-                  view
+                  displayView
                 )
               );
 
@@ -13753,6 +13977,16 @@ export default function TruncatedTetrahedraViewer({
           });
         }
       );
+
+      const tetrahedronBodyCenter =
+        averageWorldPoint(
+          mesh.vertices.map((vertex) =>
+            centeredWorldPoint(
+              vertex.point,
+              tetrahedron
+            )
+          )
+        );
 
       VERTICES.forEach((_, vertexIndex) => {
         const neighbors =
@@ -13778,7 +14012,38 @@ export default function TruncatedTetrahedraViewer({
 
         const projectedInSpace =
           modelPoints.map((point) =>
-            projectPoint(point, view)
+            projectPoint(
+              point,
+              displayView
+            )
+          );
+
+        const cuspBaseCenter =
+          averageWorldPoint(modelPoints);
+
+        const outwardNormal =
+          outwardFaceNormal(
+            modelPoints,
+            tetrahedronBodyCenter
+          );
+
+        const cuspBaseId =
+          `${tetrahedron.id}${vertexIndex}`;
+
+        const collarDirection =
+          sharedCuspCollarDirectionByBaseId
+            .get(cuspBaseId) ??
+          outwardNormal;
+
+        const outerModelPoints =
+          modelPoints.map((point) =>
+            addPoint(
+              point,
+              multiplyPoint(
+                collarDirection,
+                CUSP_COLLAR_LENGTH
+              )
+            )
           );
 
         const rawFlatPoints =
@@ -13790,16 +14055,27 @@ export default function TruncatedTetrahedraViewer({
             )
           );
 
+        const assembledOuterModelPoints =
+          outerModelPoints.map(
+            (point, pointIndex) =>
+              lerpPoint(
+                point,
+                attachedCuspTargetPoint(
+                  rawFlatPoints[
+                    pointIndex
+                  ]
+                ),
+                cuspBoundaryAssemblyProgress
+              )
+          );
+
         const projectedTarget =
-          rawFlatPoints.map((rawPoint) =>
-            cuspSurfacePointFromRaw(
-              rawPoint,
-              view,
-              cuspFirstBoundary,
-              shortWrapProgress,
-              longWrapProgress,
-              cuspCenterOffset
-            )
+          assembledOuterModelPoints.map(
+            (point) =>
+              projectPoint(
+                point,
+                displayView
+              )
           );
 
         const projected =
@@ -13817,14 +14093,113 @@ export default function TruncatedTetrahedraViewer({
             : projectedInSpace;
 
         if (showCuspTriangles) {
+          /*
+           * Keep the original truncation triangle attached.
+           * A second copy moves outward and the three side
+           * walls form a triangular cusp collar between them.
+           */
+          faces.push({
+            key:
+              `${tetrahedron.id}-cusp-base-` +
+              `${vertexIndex}`,
+            pair: null,
+            cuspBase: true,
+            cuspBaseId,
+            cuspBaseCenter,
+            outwardNormal,
+            collarDirection,
+            projected: projectedInSpace,
+            depth:
+              projectedInSpace.reduce(
+                (sum, point) =>
+                  sum + (point.depth || 0),
+                0
+              ) / projectedInSpace.length,
+          });
+
+          if (
+            cuspAssemblyProgress >
+            FACE_CONSTRAINT_EPSILON
+          ) {
+            [
+              [0, 1],
+              [1, 2],
+              [2, 0],
+            ].forEach(
+              ([firstIndex, secondIndex], edgeIndex) => {
+                const firstNeighbor =
+                  neighbors[firstIndex];
+
+                const secondNeighbor =
+                  neighbors[secondIndex];
+
+                const edgePair =
+                  cuspTriangleEdgePair(
+                    tetrahedron.id,
+                    vertexIndex,
+                    firstNeighbor,
+                    secondNeighbor
+                  );
+
+                const sharedWithPhysicalSeam =
+                  sharedCuspSeamPairId !== null &&
+                  edgePair?.id ===
+                    sharedCuspSeamPairId;
+
+                /*
+                 * The A and B copies of a shared seam wall
+                 * coincide. Draw that wall once so its color
+                 * and opacity are not doubled.
+                 */
+                if (
+                  sharedWithPhysicalSeam &&
+                  tetrahedron.id === "B"
+                ) {
+                  return;
+                }
+
+                const collarProjected = [
+                  projectedInSpace[firstIndex],
+                  projectedInSpace[secondIndex],
+                  projected[secondIndex],
+                  projected[firstIndex],
+                ];
+
+                faces.push({
+                  key:
+                    `${tetrahedron.id}-cusp-collar-` +
+                    `${vertexIndex}-${edgeIndex}`,
+                  pair: null,
+                  cuspCollar: true,
+                  cuspBaseId,
+                  cuspCollarColor:
+                    edgePair?.color ||
+                    "rgba(250, 244, 225, 0.96)",
+                  cuspCollarSharedFace:
+                    sharedWithPhysicalSeam,
+                  projected: collarProjected,
+                  depth:
+                    collarProjected.reduce(
+                      (sum, point) =>
+                        sum + (point.depth || 0),
+                      0
+                    ) / collarProjected.length,
+                });
+              }
+            );
+          }
+
           function projectCuspWeights(weights) {
-            const sourcePoint =
-              projectPoint(
-                blendTrianglePoint(
-                  modelPoints,
-                  weights
-                ),
-                view
+            const sourceModelPoint =
+              blendTrianglePoint(
+                modelPoints,
+                weights
+              );
+
+            const extendedModelPoint =
+              blendTrianglePoint(
+                outerModelPoints,
+                weights
               );
 
             const rawPoint =
@@ -13833,14 +14208,25 @@ export default function TruncatedTetrahedraViewer({
                 weights
               );
 
+            const assembledModelPoint =
+              lerpPoint(
+                extendedModelPoint,
+                attachedCuspTargetPoint(
+                  rawPoint
+                ),
+                cuspBoundaryAssemblyProgress
+              );
+
+            const sourcePoint =
+              projectPoint(
+                sourceModelPoint,
+                displayView
+              );
+
             const targetPoint =
-              cuspSurfacePointFromRaw(
-                rawPoint,
-                view,
-                cuspFirstBoundary,
-                shortWrapProgress,
-                longWrapProgress,
-                cuspCenterOffset
+              projectPoint(
+                assembledModelPoint,
+                displayView
               );
 
             return lerpProjectedPoint(
@@ -13850,21 +14236,19 @@ export default function TruncatedTetrahedraViewer({
             );
           }
 
-          const tileNumber =
-            (tetrahedron.id === "A"
-              ? 0
-              : 4) +
-            vertexIndex;
-
           /*
-           * The alternating neutral fills distinguish
-           * neighboring original triangles. Their
-           * colored boundaries carry the topology.
+           * The moving cap stays neutral white. The three
+           * side walls retain the colors of the large faces
+           * meeting the corresponding cusp edges.
            */
           const tileFill =
-            tileNumber % 2 === 0
-              ? "rgba(232, 223, 200, 0.16)"
-              : "rgba(176, 184, 186, 0.13)";
+            `rgba(246, 242, 228, ${
+              0.18 *
+              (
+                1 -
+                cuspBoundaryAssemblyProgress
+              )
+            })`;
 
           CUSP_MESH_CELLS.forEach(
             (cell, cellIndex) => {
@@ -13980,27 +14364,17 @@ export default function TruncatedTetrahedraViewer({
           });
         }
 
-        labels.push({
-          key: `${tetrahedron.id}-${vertexIndex}`,
-          text: showCuspTriangles
-            ? `${tetrahedron.id}${vertexIndex + 1}`
-            : String(vertexIndex + 1),
-          point: showCuspTriangles
-            ? averageScreenPoint(projected)
-            : projectPoint(
-                averagePoint(modelPoints),
-                view
-              ),
-          opacity:
-            showCuspTriangles
-              ? Math.max(
-                  0,
-                  1 -
-                    cuspWrapProgress *
-                      1.4
-                )
-              : 1,
-        });
+        if (!showCuspTriangles) {
+          labels.push({
+            key: `${tetrahedron.id}-${vertexIndex}`,
+            text: String(vertexIndex + 1),
+            point: projectPoint(
+              averagePoint(modelPoints),
+              displayView
+            ),
+            opacity: 1,
+          });
+        }
       });
 
       /*
@@ -14018,7 +14392,10 @@ export default function TruncatedTetrahedraViewer({
             )
           )
           .map((point) =>
-            projectPoint(point, view)
+            projectPoint(
+              point,
+              displayView
+            )
           );
 
       callouts.push({
@@ -14070,7 +14447,9 @@ export default function TruncatedTetrahedraViewer({
               const segmentAInSpace =
                 cuspSegmentForFace(
                   pair.A,
-                  localVertexIndex
+                  localVertexIndex,
+                  truncatedGeometry
+                    .truncationFraction
                 )
                   .map((point) =>
                     centeredWorldPoint(
@@ -14081,14 +14460,16 @@ export default function TruncatedTetrahedraViewer({
                   .map((point) =>
                     projectPoint(
                       point,
-                      view
+                      displayView
                     )
                   );
 
               const segmentBInSpace =
                 cuspSegmentForFace(
                   pair.B,
-                  localVertexIndex
+                  localVertexIndex,
+                  truncatedGeometry
+                    .truncationFraction
                 )
                   .map((point) =>
                     centeredWorldPoint(
@@ -14099,63 +14480,20 @@ export default function TruncatedTetrahedraViewer({
                   .map((point) =>
                     projectPoint(
                       point,
-                      view
+                      displayView
                     )
                   );
 
-              const segmentAFlat =
-                neighborPositions.map(
-                  (position) =>
-                    cuspSurfacePoint(
-                      "A",
-                      vertexA,
-                      pair.A[position],
-                      view,
-                      cuspFirstBoundary,
-                      shortWrapProgress,
-                      longWrapProgress,
-                      cuspCenterOffset
-                    )
-                );
-
-              const segmentBFlat =
-                neighborPositions.map(
-                  (position) =>
-                    cuspSurfacePoint(
-                      "B",
-                      vertexB,
-                      pair.B[position],
-                      view,
-                      cuspFirstBoundary,
-                      shortWrapProgress,
-                      longWrapProgress,
-                      cuspCenterOffset
-                    )
-                );
-
+              /*
+               * These colored/ticked edges belong to the
+               * attached cusp bases, so they do not travel
+               * with the moving outer collar triangles.
+               */
               const segmentA =
-                segmentAInSpace.map(
-                  (point, pointIndex) =>
-                    lerpProjectedPoint(
-                      point,
-                      segmentAFlat[
-                        pointIndex
-                      ],
-                      cuspAssemblyProgress
-                    )
-                );
+                segmentAInSpace;
 
               const segmentB =
-                segmentBInSpace.map(
-                  (point, pointIndex) =>
-                    lerpProjectedPoint(
-                      point,
-                      segmentBFlat[
-                        pointIndex
-                      ],
-                      cuspAssemblyProgress
-                    )
-                );
+                segmentBInSpace;
 
               cuspEdgeMatches.push({
                 key:
@@ -14189,16 +14527,9 @@ export default function TruncatedTetrahedraViewer({
      * faces of the current complex.
      */
     const centeringPoints =
-      showCuspTriangles &&
-      cuspMeshFaces.length > 0
-        ? cuspMeshFaces.flatMap(
-            (meshFace) =>
-              meshFace.projected
-          )
-        : faces.flatMap(
-            (face) =>
-              face.projected
-          );
+      faces.flatMap(
+        (face) => face.projected
+      );
 
     const visibleSceneCenter =
       projectedBoundsCenter(
@@ -14657,7 +14988,7 @@ export default function TruncatedTetrahedraViewer({
                         .map((point) =>
                           projectPoint(
                             point,
-                            view
+                            displayView
                           )
                         )
                         .map(shiftPoint);
@@ -15058,45 +15389,18 @@ export default function TruncatedTetrahedraViewer({
       (a, b) => b.depth - a.depth
     );
 
-    const cuspDomainOpacity =
-      showCuspTriangles
-        ? Math.max(
-            0,
-            Math.min(
-              1,
-              (cuspAssemblyProgress -
-                0.72) /
-                0.28
-            )
-          ) *
-          Math.max(
-            0,
-            1 -
-              cuspWrapProgress *
-                1.35
-          )
-        : 0;
+    /*
+     * The old detached planar-domain presentation is suppressed.
+     * The next stage will join the eight moving outer triangles
+     * into the torus while these base collars remain attached.
+     */
+    const cuspDomainOpacity = 0;
 
     const cuspEdgeOpacity =
-      showCuspTriangles
-        ? Math.max(
-            0,
-            1 -
-              cuspWrapProgress *
-                1.2
-          )
-        : 0;
+      showCuspTriangles ? 1 : 0;
 
-    /*
-     * Keep the fine grid as a deformation guide.
-     * It becomes slightly fainter on the completed
-     * torus but remains visible.
-     */
     const cuspGridOpacity =
-      showCuspTriangles
-        ? 0.24 -
-          0.1 * cuspWrapProgress
-        : 0;
+      showCuspTriangles ? 0.24 : 0;
 
     const solidBridgeClassCounts =
       solidBridges.reduce(
@@ -15527,14 +15831,12 @@ export default function TruncatedTetrahedraViewer({
       aria-label={
         showCuspTriangles
           ? cuspWrapOrder.length === 2
-            ? "Eight truncation triangles with both boundary identifications forming the cusp torus"
+            ? "Two truncated tetrahedra with eight attached cusp collars whose outer triangles assemble into the cusp torus"
             : cuspWrapOrder.length === 1
-              ? cuspWrapOrder[0] === "short"
-                ? "Eight truncation triangles with the short sides identified to form a cylinder"
-                : "Eight truncation triangles with the long boundary paths identified to form a cylinder"
+              ? "Two truncated tetrahedra with eight attached cusp collars whose outer triangles form the first cusp cylinder"
               : assembleCusp
-                ? "Eight truncation triangles assembled into a fundamental parallelogram of the cusp torus"
-                : "Eight truncation triangles with the twelve induced edge identifications of the cusp boundary"
+                ? "Two truncated tetrahedra with their face identifications and eight attached cusp collars extending outward"
+                : "Two truncated tetrahedra with their face identifications and eight attached cusp-base triangles highlighted"
           : rendered.solidBridgeActive
             ? rendered.physicalSeamCount > 0
               ? "Two truncated tetrahedra with one face pair seamed and the remaining selected pairs connected by solid bridges"
@@ -15568,44 +15870,48 @@ export default function TruncatedTetrahedraViewer({
                 : face.pair
                   ? face.pair.color
                   : showCuspTriangles
-                    ? "rgba(232, 223, 200, 0.3)"
+                    ? face.cuspCollar
+                      ? face.cuspCollarColor
+                      : "rgba(244, 240, 226, 0.34)"
                     : "none"
             }
             fillOpacity={
               face.bridge
                 ? face.fillOpacity
-                : showCuspTriangles
-                  ? face.pair
-                    ? 0.035 *
-                      (1 -
-                        cuspAssemblyProgress)
-                    : 1
-                  : face.pair
-                    ? focused
-                      ? quotientUnresolved
-                        ? 0.2
-                        : 0.48
-                      : 0.12
+                : face.pair
+                  ? focused
+                    ? quotientUnresolved
+                      ? 0.2
+                      : 0.48
+                    : 0.12
+                  : showCuspTriangles
+                    ? face.cuspBase
+                      ? 0.72
+                      : face.cuspCollar
+                        ? face.cuspCollarSharedFace
+                          ? 0.34
+                          : 0.28
+                        : 1
                     : 1
             }
             stroke={
               face.pair
                 ? face.pair.color
-                : "rgba(232, 223, 200, 0.82)"
+                : face.cuspCollar
+                  ? face.cuspCollarColor
+                  : "rgba(244, 240, 226, 0.92)"
             }
             strokeOpacity={
               face.bridge
                 ? face.strokeOpacity
-                : showCuspTriangles
-                  ? face.pair
-                    ? 0.12 *
-                      (1 -
-                        cuspAssemblyProgress)
-                    : 0.95
-                  : focused
+                : face.pair
+                  ? focused
                     ? quotientUnresolved
                       ? 0.62
                       : 0.95
+                    : 0.2
+                  : showCuspTriangles
+                    ? 0.95
                     : 0.2
             }
             strokeWidth={
@@ -15614,14 +15920,16 @@ export default function TruncatedTetrahedraViewer({
                     "solid-bridge-front"
                   ? 1.7
                   : 1.05
-                : showCuspTriangles
-                  ? face.pair
-                    ? 0.8
-                    : 1.8
-                  : focused
+                : face.pair
+                  ? focused
                     ? quotientUnresolved
                       ? 1.7
                       : 2.2
+                    : 1
+                  : showCuspTriangles
+                    ? face.cuspCollarSharedFace
+                      ? 1.9
+                      : 1.55
                     : 1
             }
             strokeDasharray={
