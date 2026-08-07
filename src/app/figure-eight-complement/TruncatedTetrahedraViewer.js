@@ -12188,10 +12188,41 @@ function cuspModelPointFromRaw(
     );
   }
 
-  return cuspBentTorusPoint(
-    raw,
-    resolvedFirstBoundary,
-    stagedProgress - 1
+  const torusProgress =
+    stagedProgress - 1;
+
+  const firstOrderTorusPoint =
+    cuspBentTorusPoint(
+      raw,
+      resolvedFirstBoundary,
+      torusProgress
+    );
+
+  /*
+   * Meridian-first ("long") is the canonical completed
+   * cusp embedding. Longitude-first is allowed to build its
+   * own cylinder, but during the second identification its
+   * torus embedding converges to the same canonical target.
+   * Thus the intermediate cylinder records construction order
+   * while the completed torus does not.
+   */
+  if (resolvedFirstBoundary === "long") {
+    return firstOrderTorusPoint;
+  }
+
+  const canonicalTorusPoint =
+    cuspBentTorusPoint(
+      raw,
+      "long",
+      1
+    );
+
+  return lerpPoint(
+    firstOrderTorusPoint,
+    canonicalTorusPoint,
+    smootherUnitInterval(
+      torusProgress
+    )
   );
 }
 
@@ -13208,17 +13239,36 @@ export default function TruncatedTetrahedraViewer({
           }
         : view;
 
-    const cuspAssemblyRawVertices =
-      Object.values(CUSP_FLAT_LAYOUT)
-        .flatMap((triangle) =>
-          Object.values(triangle)
-        );
+    /*
+     * Center the cusp from a uniform sample of the complete
+     * intrinsic domain, rather than from only the eight
+     * triangles' corner vertices. In the longitude-first
+     * parameterization those corner vertices all land on a
+     * single torus cross-section at completion, so their
+     * bounding center is displaced by one major radius.
+     * Sampling the full domain makes the final torus center
+     * independent of which peripheral identification was
+     * performed first.
+     */
+    const cuspAssemblyCenterSamples =
+      Array.from(
+        { length: CUSP_CENTER_SAMPLES + 1 },
+        (_, uIndex) =>
+          Array.from(
+            { length: CUSP_CENTER_SAMPLES + 1 },
+            (_, vIndex) =>
+              cuspRawPointFromCoordinates(
+                uIndex / CUSP_CENTER_SAMPLES,
+                vIndex / CUSP_CENTER_SAMPLES
+              )
+          )
+      ).flat();
 
     const cuspAssemblyTargetCenter =
       cuspBoundaryStage >
       FACE_CONSTRAINT_EPSILON
         ? boundingCenter(
-            cuspAssemblyRawVertices.map(
+            cuspAssemblyCenterSamples.map(
               (rawPoint) =>
                 cuspModelPointFromRaw(
                   rawPoint,
