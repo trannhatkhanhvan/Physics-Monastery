@@ -222,6 +222,12 @@ const CUSP_EDGE_SAMPLES = 24;
 const CUSP_CENTER_SAMPLES = 24;
 const CUSP_HEIGHT = Math.sqrt(3) / 2;
 const CUSP_COLLAR_LENGTH = 177;
+const CUSP_COLLAR_LOCAL_SEGMENTS = 3;
+const CUSP_COLLAR_ROUTE_SEGMENTS = 20;
+const CUSP_COLLAR_ROUTE_DEPARTURE = 420;
+const CUSP_COLLAR_ROUTE_APPROACH = 560;
+const CUSP_COLLAR_ROUTE_LANE_SPACING = 70;
+const CUSP_COLLAR_SHAPE_MORPH_START = 0.62;
 const CUSP_BOUNDARY_WORLD_SCALE = 12;
 const CUSP_BOUNDARY_OVERVIEW_ZOOM = 0.15;
 const DEFAULT_PERSPECTIVE_DISTANCE = 950;
@@ -14092,6 +14098,242 @@ export default function TruncatedTetrahedraViewer({
               )
             : projectedInSpace;
 
+        /*
+         * A cusp collar has two geometric parts:
+         *
+         * 1. the original straight 177-unit triangular prism;
+         * 2. a routed triangular tube from that prism to the
+         *    corresponding curved triangle on the cusp torus.
+         *
+         * Keep the cross-section compact along most of the route,
+         * then morph it into the torus triangle only near arrival.
+         * This prevents the colored side walls from becoming
+         * enormous membranes spanning the complete construction.
+         */
+        const cuspRouteStartCenter =
+          averageWorldPoint(
+            outerModelPoints
+          );
+
+        const cuspRouteTargetCenter =
+          attachedCuspTargetPoint(
+            blendTrianglePoint(
+              rawFlatPoints,
+              [1 / 3, 1 / 3, 1 / 3]
+            )
+          );
+
+        const cuspRouteTargetRadial =
+          normalizePoint(
+            cuspRouteTargetCenter
+          );
+
+        const primaryRouteTangent =
+          crossPoint(
+            cuspRouteTargetRadial,
+            { x: 0, y: 1, z: 0 }
+          );
+
+        const cuspRouteTangent =
+          normalizePoint(
+            Math.hypot(
+              primaryRouteTangent.x,
+              primaryRouteTangent.y,
+              primaryRouteTangent.z
+            ) >
+              1e-6
+              ? primaryRouteTangent
+              : crossPoint(
+                  cuspRouteTargetRadial,
+                  { x: 1, y: 0, z: 0 }
+                )
+          );
+
+        const cuspRouteIndex =
+          (
+            tetrahedron.id === "A"
+              ? 0
+              : 4
+          ) +
+          vertexIndex;
+
+        const cuspRouteLane =
+          cuspRouteIndex - 3.5;
+
+        const cuspRouteLaneOffset =
+          multiplyPoint(
+            cuspRouteTangent,
+            cuspRouteLane *
+              CUSP_COLLAR_ROUTE_LANE_SPACING
+          );
+
+        const cuspRouteFirstControl =
+          addPoint(
+            addPoint(
+              cuspRouteStartCenter,
+              multiplyPoint(
+                collarDirection,
+                CUSP_COLLAR_ROUTE_DEPARTURE
+              )
+            ),
+            multiplyPoint(
+              cuspRouteLaneOffset,
+              0.35
+            )
+          );
+
+        const cuspRouteSecondControl =
+          addPoint(
+            subtractPoint(
+              cuspRouteTargetCenter,
+              multiplyPoint(
+                cuspRouteTargetRadial,
+                CUSP_COLLAR_ROUTE_APPROACH
+              )
+            ),
+            cuspRouteLaneOffset
+          );
+
+        function cuspRouteWeightsForEdge(
+          firstIndex,
+          secondIndex,
+          acrossAmount
+        ) {
+          const weights = [0, 0, 0];
+
+          weights[firstIndex] =
+            1 - acrossAmount;
+
+          weights[secondIndex] =
+            acrossAmount;
+
+          return weights;
+        }
+
+        function routedCuspModelPoint(
+          weights,
+          routeAmount
+        ) {
+          const amount =
+            clampUnit(routeAmount);
+
+          const startPoint =
+            blendTrianglePoint(
+              outerModelPoints,
+              weights
+            );
+
+          const targetPoint =
+            attachedCuspTargetPoint(
+              blendTrianglePoint(
+                rawFlatPoints,
+                weights
+              )
+            );
+
+          const routeCenter =
+            cubicBezierPoint(
+              cuspRouteStartCenter,
+              cuspRouteFirstControl,
+              cuspRouteSecondControl,
+              cuspRouteTargetCenter,
+              amount
+            );
+
+          const startOffset =
+            subtractPoint(
+              startPoint,
+              cuspRouteStartCenter
+            );
+
+          const targetOffset =
+            subtractPoint(
+              targetPoint,
+              cuspRouteTargetCenter
+            );
+
+          const shapeAmount =
+            smootherUnitInterval(
+              (
+                amount -
+                CUSP_COLLAR_SHAPE_MORPH_START
+              ) /
+              (
+                1 -
+                CUSP_COLLAR_SHAPE_MORPH_START
+              )
+            );
+
+          const routedPoint =
+            addPoint(
+              routeCenter,
+              lerpPoint(
+                startOffset,
+                targetOffset,
+                shapeAmount
+              )
+            );
+
+          return lerpPoint(
+            startPoint,
+            routedPoint,
+            cuspBoundaryAssemblyProgress
+          );
+        }
+
+        function localCollarModelPoint(
+          weights,
+          localAmount
+        ) {
+          const basePoint =
+            blendTrianglePoint(
+              modelPoints,
+              weights
+            );
+
+          const outerPoint =
+            blendTrianglePoint(
+              outerModelPoints,
+              weights
+            );
+
+          const localPoint =
+            lerpPoint(
+              basePoint,
+              outerPoint,
+              clampUnit(localAmount)
+            );
+
+          return lerpPoint(
+            basePoint,
+            localPoint,
+            cuspAssemblyProgress
+          );
+        }
+
+        function activeRoutedCuspModelPoint(
+          weights,
+          routeAmount
+        ) {
+          const basePoint =
+            blendTrianglePoint(
+              modelPoints,
+              weights
+            );
+
+          const routedPoint =
+            routedCuspModelPoint(
+              weights,
+              routeAmount
+            );
+
+          return lerpPoint(
+            basePoint,
+            routedPoint,
+            cuspAssemblyProgress
+          );
+        }
+
         if (showCuspTriangles) {
           /*
            * Keep the original truncation triangle attached.
@@ -14158,33 +14400,173 @@ export default function TruncatedTetrahedraViewer({
                   return;
                 }
 
-                const collarProjected = [
-                  projectedInSpace[firstIndex],
-                  projectedInSpace[secondIndex],
-                  projected[secondIndex],
-                  projected[firstIndex],
-                ];
+                /*
+                 * Build each colored wall as a sequence of
+                 * triangular cross-sections rather than one
+                 * direct sheet.
+                 *
+                 * The first few sections are the unchanged
+                 * straight cusp prism. The routed sections then
+                 * carry the same compact edge cross-section along
+                 * a 3D centerline and fit it to the curved torus
+                 * edge only near the end.
+                 */
+                const collarColor =
+                  edgePair?.color ||
+                  "rgba(250, 244, 225, 0.96)";
 
-                faces.push({
-                  key:
-                    `${tetrahedron.id}-cusp-collar-` +
-                    `${vertexIndex}-${edgeIndex}`,
-                  pair: null,
-                  cuspCollar: true,
-                  cuspBaseId,
-                  cuspCollarColor:
-                    edgePair?.color ||
-                    "rgba(250, 244, 225, 0.96)",
-                  cuspCollarSharedFace:
-                    sharedWithPhysicalSeam,
-                  projected: collarProjected,
-                  depth:
-                    collarProjected.reduce(
-                      (sum, point) =>
-                        sum + (point.depth || 0),
-                      0
-                    ) / collarProjected.length,
-                });
+                const acrossWeights =
+                  Array.from(
+                    {
+                      length:
+                        CUSP_MESH_DIVISIONS +
+                        1,
+                    },
+                    (_, acrossIndex) =>
+                      cuspRouteWeightsForEdge(
+                        firstIndex,
+                        secondIndex,
+                        acrossIndex /
+                          CUSP_MESH_DIVISIONS
+                      )
+                  );
+
+                const localGrid =
+                  acrossWeights.map(
+                    (weights) =>
+                      Array.from(
+                        {
+                          length:
+                            CUSP_COLLAR_LOCAL_SEGMENTS +
+                            1,
+                        },
+                        (_, segmentIndex) =>
+                          localCollarModelPoint(
+                            weights,
+                            segmentIndex /
+                              CUSP_COLLAR_LOCAL_SEGMENTS
+                          )
+                      )
+                  );
+
+                const routeGrid =
+                  acrossWeights.map(
+                    (weights) =>
+                      Array.from(
+                        {
+                          length:
+                            CUSP_COLLAR_ROUTE_SEGMENTS +
+                            1,
+                        },
+                        (_, segmentIndex) =>
+                          activeRoutedCuspModelPoint(
+                            weights,
+                            segmentIndex /
+                              CUSP_COLLAR_ROUTE_SEGMENTS
+                          )
+                      )
+                  );
+
+                function pushCollarGridCells(
+                  grid,
+                  segmentCount,
+                  segmentKind
+                ) {
+                  for (
+                    let acrossIndex = 0;
+                    acrossIndex <
+                    CUSP_MESH_DIVISIONS;
+                    acrossIndex += 1
+                  ) {
+                    for (
+                      let segmentIndex = 0;
+                      segmentIndex <
+                      segmentCount;
+                      segmentIndex += 1
+                    ) {
+                      const collarModelPoints = [
+                        grid[
+                          acrossIndex
+                        ][segmentIndex],
+                        grid[
+                          acrossIndex + 1
+                        ][segmentIndex],
+                        grid[
+                          acrossIndex + 1
+                        ][segmentIndex + 1],
+                        grid[
+                          acrossIndex
+                        ][segmentIndex + 1],
+                      ];
+
+                      const collarProjected =
+                        collarModelPoints.map(
+                          (point) =>
+                            projectPoint(
+                              point,
+                              displayView
+                            )
+                        );
+
+                      faces.push({
+                        key:
+                          `${tetrahedron.id}-cusp-collar-` +
+                          `${vertexIndex}-${edgeIndex}-` +
+                          `${segmentKind}-` +
+                          `${acrossIndex}-${segmentIndex}`,
+                        pair: null,
+                        cuspCollar: true,
+                        cuspBaseId,
+                        cuspCollarEdgeIndex:
+                          edgeIndex,
+                        cuspCollarAcrossIndex:
+                          acrossIndex,
+                        cuspCollarSegmentIndex:
+                          segmentIndex,
+                        cuspCollarSegmentKind:
+                          segmentKind,
+                        cuspCollarAcrossDivisions:
+                          CUSP_MESH_DIVISIONS,
+                        cuspCollarSegmentCount:
+                          segmentCount,
+                        cuspCollarColor:
+                          collarColor,
+                        cuspCollarSharedFace:
+                          sharedWithPhysicalSeam,
+                        cuspCollarModelPoints:
+                          collarModelPoints,
+                        projected: collarProjected,
+                        depth:
+                          collarProjected.reduce(
+                            (sum, point) =>
+                              sum +
+                              (point.depth || 0),
+                            0
+                          ) /
+                          collarProjected.length,
+                      });
+                    }
+                  }
+                }
+
+                pushCollarGridCells(
+                  localGrid,
+                  CUSP_COLLAR_LOCAL_SEGMENTS,
+                  "local"
+                );
+
+                /*
+                 * Before Meridian/Longitude begins, every routed
+                 * section is collapsed onto the local outer
+                 * triangle. It therefore contributes zero area.
+                 * As the peripheral identification progresses,
+                 * these sections open along the routed centerline.
+                 */
+                pushCollarGridCells(
+                  routeGrid,
+                  CUSP_COLLAR_ROUTE_SEGMENTS,
+                  "route"
+                );
               }
             );
           }
