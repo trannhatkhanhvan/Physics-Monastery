@@ -1263,9 +1263,9 @@ export default function ClosedManifoldViewer({
   const [facePairSequence, setFacePairSequence] =
     useState([]);
   const [
-    activeSeamPairId,
-    setActiveSeamPairId,
-  ] = useState(null);
+    collapsedBridgePairIds,
+    setCollapsedBridgePairIds,
+  ] = useState([]);
   const [
     seamTransitioning,
     setSeamTransitioning,
@@ -1413,8 +1413,9 @@ export default function ClosedManifoldViewer({
     );
   }
 
-  function beginSeamTransition(
-    nextSeamPairId
+  function beginBridgeCollapseTransition(
+    pairId,
+    shouldCollapse
   ) {
     if (
       seamTransitionTimerRef.current !== null
@@ -1424,8 +1425,24 @@ export default function ClosedManifoldViewer({
       );
     }
 
-    setActiveSeamPairId(
-      nextSeamPairId
+    setCollapsedBridgePairIds(
+      (currentPairIds) => {
+        if (shouldCollapse) {
+          return currentPairIds.includes(
+            pairId
+          )
+            ? currentPairIds
+            : [
+                ...currentPairIds,
+                pairId,
+              ];
+        }
+
+        return currentPairIds.filter(
+          (currentPairId) =>
+            currentPairId !== pairId
+        );
+      }
     );
 
     setSeamTransitioning(true);
@@ -1480,9 +1497,17 @@ export default function ClosedManifoldViewer({
       return;
     }
 
+    const isCollapsed =
+      collapsedBridgePairIds.includes(
+        pairId
+      );
+
     if (nextState === "bridge") {
-      if (activeSeamPairId === pairId) {
-        beginSeamTransition(null);
+      if (isCollapsed) {
+        beginBridgeCollapseTransition(
+          pairId,
+          false
+        );
       }
 
       return;
@@ -1490,9 +1515,12 @@ export default function ClosedManifoldViewer({
 
     if (
       nextState === "collapsed" &&
-      activeSeamPairId === null
+      !isCollapsed
     ) {
-      beginSeamTransition(pairId);
+      beginBridgeCollapseTransition(
+        pairId,
+        true
+      );
     }
   }
 
@@ -1789,7 +1817,7 @@ export default function ClosedManifoldViewer({
 
       setSeamTransitioning(false);
       setFacePairSequence([]);
-      setActiveSeamPairId(null);
+      setCollapsedBridgePairIds([]);
       setActiveMappingPairId(null);
       setFacePairMappingIndices(
         FIGURE_EIGHT_FACE_PAIRS.map(
@@ -1862,14 +1890,14 @@ export default function ClosedManifoldViewer({
           nextSequence
         );
 
-        setActiveSeamPairId(
-          (currentSeamPairId) =>
-            currentSeamPairId !== null &&
-            nextSequence.includes(
-              currentSeamPairId
+        setCollapsedBridgePairIds(
+          (currentPairIds) =>
+            currentPairIds.filter(
+              (pairId) =>
+                nextSequence.includes(
+                  pairId
+                )
             )
-              ? currentSeamPairId
-              : null
         );
 
         setActiveMappingPairId(null);
@@ -1945,17 +1973,13 @@ export default function ClosedManifoldViewer({
 
   const activeMappingPairIsCollapsed =
     activeMappingPairId !== null &&
-    activeSeamPairId ===
-      activeMappingPairId;
+    collapsedBridgePairIds.includes(
+      activeMappingPairId
+    );
 
   const activeMappingPairCollapseBlocked =
     !activeMappingPairInSequence ||
-    seamTransitioning ||
-    (
-      activeSeamPairId !== null &&
-      activeSeamPairId !==
-        activeMappingPairId
-    );
+    seamTransitioning;
 
   const activeMappingPairBridgeBlocked =
     !activeMappingPairInSequence ||
@@ -2144,9 +2168,10 @@ export default function ClosedManifoldViewer({
                     activeMappingPairId ===
                     pair.id;
 
-                  const isPhysicalSeam =
-                    activeSeamPairId ===
-                    pair.id;
+                  const isCollapsedBridge =
+                    collapsedBridgePairIds.includes(
+                      pair.id
+                    );
 
                   const mappingIndex =
                     facePairMappingIndices[
@@ -2175,7 +2200,7 @@ export default function ClosedManifoldViewer({
                           isActiveMappingPair
                             ? styles.activeFacePairButton
                             : "",
-                          isPhysicalSeam
+                          isCollapsedBridge
                             ? styles.seamedFacePairButton
                             : "",
                         ]
@@ -2772,10 +2797,8 @@ export default function ClosedManifoldViewer({
                   }
                   title={
                     activeMappingPairIsCollapsed
-                      ? "This face pair is the collapsed physical seam"
-                      : activeSeamPairId === null
-                        ? "Collapse this bridge into the physical seam"
-                        : "Expand the current seam before collapsing this bridge"
+                      ? "This face pair is collapsed"
+                      : "Collapse this bridge while preserving the other face identifications"
                   }
                 >
                   Collapsed
@@ -2804,7 +2827,7 @@ export default function ClosedManifoldViewer({
                   }
                   title={
                     activeMappingPairIsCollapsed
-                      ? "Expand this collapsed seam into a bridge"
+                      ? "Expand only this collapsed face identification back into a bridge"
                       : "This face pair is displayed as a bridge"
                   }
                 >
@@ -2858,8 +2881,8 @@ export default function ClosedManifoldViewer({
                 key={`tetrahedra-${resetSceneVersion}`}
                 view={viewTransform}
                 facePairSequence={facePairSequence}
-                activeSeamPairId={
-                  activeSeamPairId
+                collapsedBridgePairIds={
+                  collapsedBridgePairIds
                 }
                 onPairInteraction={
                   interactWithFacePair
