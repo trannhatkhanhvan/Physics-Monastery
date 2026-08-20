@@ -208,13 +208,11 @@ export default function Supporters() {
                 <li>bspidel</li>
                 <li>beads</li>
                 <li>Jim</li>
-                <li>Dan Girshovich</li>
                 <li>lmcc</li>
                 <li>Sarah-Stisnt</li>
               </ul>
 
               <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
-                <li>Volunteer</li>
                 <li>Volunteer</li>
                 <li>Volunteer</li>
                 <li>Volunteer</li>
