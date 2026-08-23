@@ -1656,6 +1656,7 @@ function TorusViewer({ order, view }) {
 export default function ClosedManifoldViewer({
   embedded = false,
   initialDimension = null,
+  titleHref = null,
 }) {
   const [dimension, setDimension] = useState(
     isClosedManifoldDimension(initialDimension)
@@ -4444,15 +4445,43 @@ export default function ClosedManifoldViewer({
     >
       <div
         style={{
+          position: "relative",
+          zIndex: 20,
           width: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           gap: "18px",
+          pointerEvents: "auto",
         }}
       >
         <h1>
-          Closed manifold identifications
+          {titleHref ? (
+            <a
+              href={titleHref}
+              title="Open Closed manifold identifications"
+              onClick={(event) => {
+                event.preventDefault();
+
+                window.location.assign(
+                  titleHref
+                );
+              }}
+              style={{
+                position: "relative",
+                zIndex: 21,
+                display: "inline-block",
+                color: "inherit",
+                textDecoration: "none",
+                cursor: "pointer",
+                pointerEvents: "auto",
+              }}
+            >
+              Closed manifold identifications
+            </a>
+          ) : (
+            "Closed manifold identifications"
+          )}
         </h1>
 
         {dimension === "3D" && (

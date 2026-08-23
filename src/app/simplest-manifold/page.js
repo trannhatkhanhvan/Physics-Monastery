@@ -354,7 +354,10 @@ export default function SimplestManifold() {
             width: '100%',
           }}
         >
-          <ClosedManifoldViewer embedded />
+          <ClosedManifoldViewer
+            embedded
+            titleHref="/figure-eight-complement"
+          />
         </div>
       </section>
 
