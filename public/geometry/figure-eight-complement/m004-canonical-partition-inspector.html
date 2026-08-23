@@ -1,0 +1,1645 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<title>
+  m004 canonical A/B partition inspector
+</title>
+
+<style>
+:root {
+  color-scheme: dark;
+  font-family:
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  background:
+    #0b0d12;
+
+  color:
+    #eee8d7;
+}
+
+* {
+  box-sizing:
+    border-box;
+}
+
+body {
+  margin:
+    0;
+
+  padding:
+    18px;
+
+  background:
+    #0b0d12;
+}
+
+.shell {
+  width:
+    min(
+      1180px,
+      100%
+    );
+
+  margin:
+    auto;
+}
+
+.head {
+  display:
+    flex;
+
+  gap:
+    12px;
+
+  align-items:
+    baseline;
+
+  flex-wrap:
+    wrap;
+
+  margin-bottom:
+    10px;
+}
+
+h1 {
+  font-size:
+    26px;
+
+  font-weight:
+    400;
+
+  margin:
+    0;
+}
+
+.badge {
+  border:
+    1px solid
+    #697181;
+
+  border-radius:
+    999px;
+
+  padding:
+    3px 9px;
+
+  font-size:
+    13px;
+
+  color:
+    #c9c4b6;
+}
+
+.layout {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    310px;
+
+  gap:
+    14px;
+}
+
+.viewer,
+.panel {
+  border:
+    1px solid
+    #424957;
+
+  background:
+    #090c11;
+}
+
+.viewer {
+  position:
+    relative;
+
+  min-height:
+    620px;
+}
+
+canvas {
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    620px;
+
+  touch-action:
+    none;
+
+  cursor:
+    grab;
+}
+
+.note {
+  position:
+    absolute;
+
+  left:
+    12px;
+
+  bottom:
+    10px;
+
+  background:
+    #0009;
+
+  padding:
+    5px 7px;
+
+  font-size:
+    13px;
+
+  color:
+    #c8c1b2;
+}
+
+.panel {
+  padding:
+    14px;
+}
+
+.panel h2 {
+  font-size:
+    19px;
+
+  font-weight:
+    400;
+
+  margin:
+    0 0 10px;
+}
+
+.legend {
+  display:
+    grid;
+
+  grid-template-columns:
+    18px 1fr;
+
+  gap:
+    7px 8px;
+
+  align-items:
+    center;
+
+  font-size:
+    14px;
+
+  margin-bottom:
+    12px;
+}
+
+.sw {
+  width:
+    16px;
+
+  height:
+    16px;
+
+  border:
+    1px solid
+    #fff9;
+}
+
+.a {
+  background:
+    #69b9ffa8;
+}
+
+.b {
+  background:
+    #cf9affa8;
+}
+
+.i {
+  background:
+    #ffba46cc;
+}
+
+.p {
+  background:
+    #eee5;
+}
+
+.controls {
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    8px;
+}
+
+button {
+  min-height:
+    38px;
+
+  font:
+    inherit;
+
+  color:
+    #eee8d7;
+
+  background:
+    #171b23;
+
+  border:
+    1px solid
+    #626a79;
+
+  border-radius:
+    5px;
+}
+
+input[type="range"] {
+  width:
+    100%;
+}
+
+.slider {
+  margin:
+    12px 0;
+}
+
+.readout {
+  font:
+    12px/1.55
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
+
+  white-space:
+    pre-wrap;
+
+  border-top:
+    1px solid
+    #353b47;
+
+  padding-top:
+    10px;
+}
+
+.warning {
+  margin-top:
+    12px;
+
+  padding:
+    9px;
+
+  border-left:
+    3px solid
+    #d6a84c;
+
+  background:
+    #d6a84c14;
+
+  font-size:
+    13px;
+
+  line-height:
+    1.35;
+}
+
+@media (
+  max-width:
+    850px
+) {
+  .layout {
+    grid-template-columns:
+      1fr;
+  }
+
+  .viewer {
+    min-height:
+      500px;
+  }
+
+  canvas {
+    height:
+      500px;
+  }
+}
+</style>
+
+<div class="shell">
+
+  <div class="head">
+
+    <h1>
+      Canonical A/B material partition —
+      final 3↔2 carrier
+    </h1>
+
+    <span
+      class="badge"
+      id="badge"
+    >
+      loading…
+    </span>
+
+  </div>
+
+  <div class="layout">
+
+    <div class="viewer">
+
+      <canvas
+        id="view"
+      ></canvas>
+
+      <div class="note">
+        Drag to rotate ·
+        wheel to zoom ·
+        A/B material stays fixed
+      </div>
+
+    </div>
+
+    <aside class="panel">
+
+      <h2>
+        Reverse step 6850
+      </h2>
+
+      <div class="legend">
+
+        <span class="sw a"></span>
+        <span>
+          material region A
+        </span>
+
+        <span class="sw b"></span>
+        <span>
+          material region B
+        </span>
+
+        <span class="sw i"></span>
+        <span>
+          A/B material interface
+        </span>
+
+        <span class="sw p"></span>
+        <span>
+          predecessor triangulation
+        </span>
+
+      </div>
+
+      <div class="controls">
+
+        <button id="play">
+          Play reverse
+        </button>
+
+        <button id="pause">
+          Pause
+        </button>
+
+        <button id="restart">
+          Restart
+        </button>
+
+        <button id="end">
+          Jump to 3-tet
+        </button>
+
+      </div>
+
+      <div class="slider">
+
+        <label for="progress">
+          replay progress
+        </label>
+
+        <input
+          id="progress"
+          type="range"
+          min="0"
+          max="1"
+          step="0.001"
+          value="0"
+        >
+
+      </div>
+
+      <div
+        class="readout"
+        id="readout"
+      >
+        loading asset…
+      </div>
+
+      <div class="warning">
+        Exact certified topology;
+        deterministic local PL carrier.
+        These five display coordinates are
+        not claimed to be ambient
+        knot-exterior coordinates.
+      </div>
+
+    </aside>
+
+  </div>
+
+</div>
+
+<script>
+(() => {
+  "use strict";
+
+  const canvas =
+    document
+      .getElementById(
+        "view"
+      );
+
+  const ctx =
+    canvas
+      .getContext(
+        "2d"
+      );
+
+  const slider =
+    document
+      .getElementById(
+        "progress"
+      );
+
+  const readout =
+    document
+      .getElementById(
+        "readout"
+      );
+
+  const badge =
+    document
+      .getElementById(
+        "badge"
+      );
+
+  let stage =
+    null;
+
+  let p =
+    0;
+
+  let yaw =
+    -0.72;
+
+  let pitch =
+    0.48;
+
+  let zoom =
+    1;
+
+  let drag =
+    false;
+
+  let lastX =
+    0;
+
+  let lastY =
+    0;
+
+  let raf =
+    null;
+
+  let t0 =
+    null;
+
+  let p0 =
+    0;
+
+  const duration =
+    4200;
+
+  const clamp =
+    (
+      value,
+      minimum,
+      maximum
+    ) =>
+      Math.max(
+        minimum,
+        Math.min(
+          maximum,
+          value
+        )
+      );
+
+
+  function resize() {
+    const rect =
+      canvas
+        .getBoundingClientRect();
+
+    const dpr =
+      Math.max(
+        1,
+        Math.min(
+          2,
+          devicePixelRatio ||
+          1
+        )
+      );
+
+    canvas.width =
+      Math.round(
+        rect.width *
+        dpr
+      );
+
+    canvas.height =
+      Math.round(
+        rect.height *
+        dpr
+      );
+
+    ctx.setTransform(
+      dpr,
+      0,
+      0,
+      dpr,
+      0,
+      0
+    );
+
+    draw();
+  }
+
+
+  function rotate(
+    vertex
+  ) {
+    const cy =
+      Math.cos(
+        yaw
+      );
+
+    const sy =
+      Math.sin(
+        yaw
+      );
+
+    const cp =
+      Math.cos(
+        pitch
+      );
+
+    const sp =
+      Math.sin(
+        pitch
+      );
+
+    const x =
+      cy *
+        vertex[0] +
+      sy *
+        vertex[2];
+
+    const z =
+      -sy *
+        vertex[0] +
+      cy *
+        vertex[2];
+
+    return [
+      x,
+
+      cp *
+        vertex[1] -
+      sp *
+        z,
+
+      sp *
+        vertex[1] +
+      cp *
+        z,
+    ];
+  }
+
+
+  function project(
+    vertex
+  ) {
+    const rotated =
+      rotate(
+        vertex
+      );
+
+    const rect =
+      canvas
+        .getBoundingClientRect();
+
+    const perspective =
+      5 /
+      Math.max(
+        1.2,
+        5 -
+          rotated[2]
+      );
+
+    const scale =
+      Math.min(
+        rect.width,
+        rect.height
+      ) *
+      0.27 *
+      zoom;
+
+    return {
+      x:
+        rect.width /
+          2 +
+        rotated[0] *
+          scale *
+          perspective,
+
+      y:
+        rect.height /
+          2 -
+        rotated[1] *
+          scale *
+          perspective,
+
+      z:
+        rotated[2],
+    };
+  }
+
+
+  function vertex(
+    name
+  ) {
+    return (
+      stage
+        .carrier
+        .vertices[
+          name
+        ]
+    );
+  }
+
+
+  function tetrahedronFaces(
+    tetrahedron
+  ) {
+    return [
+      [
+        tetrahedron[0],
+        tetrahedron[1],
+        tetrahedron[2],
+      ],
+
+      [
+        tetrahedron[0],
+        tetrahedron[3],
+        tetrahedron[1],
+      ],
+
+      [
+        tetrahedron[1],
+        tetrahedron[3],
+        tetrahedron[2],
+      ],
+
+      [
+        tetrahedron[2],
+        tetrahedron[3],
+        tetrahedron[0],
+      ],
+    ];
+  }
+
+
+  function polygon(
+    names,
+    fill,
+    stroke,
+    alpha,
+    width = 1
+  ) {
+    const points =
+      names.map(
+        (name) =>
+          project(
+            vertex(
+              name
+            )
+          )
+      );
+
+    return {
+      points,
+      fill,
+      stroke,
+      alpha,
+      width,
+
+      depth:
+        points.reduce(
+          (
+            sum,
+            point
+          ) =>
+            sum +
+            point.z,
+          0
+        ) /
+        points.length,
+    };
+  }
+
+
+  function paint(
+    record
+  ) {
+    const points =
+      record.points;
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+      points[0].x,
+      points[0].y
+    );
+
+    points
+      .slice(1)
+      .forEach(
+        (point) => {
+          ctx.lineTo(
+            point.x,
+            point.y
+          );
+        }
+      );
+
+    ctx.closePath();
+
+    if (
+      record.fill
+    ) {
+      ctx.globalAlpha =
+        record.alpha;
+
+      ctx.fillStyle =
+        record.fill;
+
+      ctx.fill();
+    }
+
+    if (
+      record.stroke
+    ) {
+      ctx.globalAlpha =
+        Math.min(
+          1,
+          record.alpha +
+            0.2
+        );
+
+      ctx.strokeStyle =
+        record.stroke;
+
+      ctx.lineWidth =
+        record.width;
+
+      ctx.stroke();
+    }
+
+    ctx.globalAlpha =
+      1;
+  }
+
+
+  function line(
+    firstName,
+    secondName,
+    color,
+    alpha,
+    width = 1
+  ) {
+    const first =
+      project(
+        vertex(
+          firstName
+        )
+      );
+
+    const second =
+      project(
+        vertex(
+          secondName
+        )
+      );
+
+    ctx.save();
+
+    ctx.globalAlpha =
+      alpha;
+
+    ctx.strokeStyle =
+      color;
+
+    ctx.lineWidth =
+      width;
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+      first.x,
+      first.y
+    );
+
+    ctx.lineTo(
+      second.x,
+      second.y
+    );
+
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+
+  function centroid(
+    names
+  ) {
+    const points =
+      names.map(
+        vertex
+      );
+
+    return [
+      0,
+      1,
+      2,
+    ].map(
+      (axis) =>
+        points.reduce(
+          (
+            sum,
+            point
+          ) =>
+            sum +
+            point[axis],
+          0
+        ) /
+        points.length
+    );
+  }
+
+
+  function text3d(
+    text,
+    position,
+    color,
+    alpha,
+    size
+  ) {
+    const projected =
+      project(
+        position
+      );
+
+    ctx.save();
+
+    ctx.globalAlpha =
+      alpha;
+
+    ctx.fillStyle =
+      color;
+
+    ctx.font =
+      `${size}px ` +
+      `"Times New Roman", serif`;
+
+    ctx.textAlign =
+      "center";
+
+    ctx.textBaseline =
+      "middle";
+
+    ctx.fillText(
+      text,
+      projected.x,
+      projected.y
+    );
+
+    ctx.restore();
+  }
+
+
+  function draw() {
+    const rect =
+      canvas
+        .getBoundingClientRect();
+
+    ctx.clearRect(
+      0,
+      0,
+      rect.width,
+      rect.height
+    );
+
+    if (
+      !stage
+    ) {
+      return;
+    }
+
+    const A =
+      stage
+        .materialPartition
+        .A
+        .tetrahedron;
+
+    const B =
+      stage
+        .materialPartition
+        .B
+        .tetrahedron;
+
+    const materialFaces = [
+      ...tetrahedronFaces(
+        A
+      ).map(
+        (face) =>
+          polygon(
+            face,
+            "#69b9ff",
+            "#bfe4ff",
+            0.16,
+            0.8
+          )
+      ),
+
+      ...tetrahedronFaces(
+        B
+      ).map(
+        (face) =>
+          polygon(
+            face,
+            "#cf9aff",
+            "#ead2ff",
+            0.16,
+            0.8
+          )
+      ),
+    ];
+
+    materialFaces
+      .sort(
+        (
+          first,
+          second
+        ) =>
+          first.depth -
+          second.depth
+      )
+      .forEach(
+        paint
+      );
+
+    /*
+     * THIS NEVER MOVES.
+     *
+     * It is the A/B material
+     * boundary.
+     */
+    paint(
+      polygon(
+        stage
+          .materialPartition
+          .interface,
+
+        "#ffba46",
+        "#fff0b8",
+        0.46,
+        2.1
+      )
+    );
+
+    /*
+     * At p=0 this material
+     * boundary is also a face
+     * of the canonical
+     * two-tet triangulation.
+     */
+    if (
+      1 - p >
+      0.001
+    ) {
+      paint(
+        polygon(
+          stage
+            .triangulations
+            .canonicalInternalFace,
+
+          null,
+          "#ffffff",
+
+          0.2 +
+          0.8 *
+            (1 - p),
+
+          2.6
+        )
+      );
+    }
+
+    /*
+     * At p=1 we instead see
+     * the three predecessor
+     * tetrahedra around their
+     * shared interior edge.
+     *
+     * These three walls are
+     * triangulation walls,
+     * NOT A/B material walls.
+     */
+    const walls = [
+      [
+        "top",
+        "bottom",
+        "q0",
+      ],
+
+      [
+        "top",
+        "bottom",
+        "q1",
+      ],
+
+      [
+        "top",
+        "bottom",
+        "q2",
+      ],
+    ];
+
+    walls
+      .map(
+        (face) =>
+          polygon(
+            face,
+            "#eeeeee",
+            "#ffffff",
+
+            (
+              0.025 +
+              0.11 *
+                p
+            ) *
+            p,
+
+            1.2
+          )
+      )
+      .sort(
+        (
+          first,
+          second
+        ) =>
+          first.depth -
+          second.depth
+      )
+      .forEach(
+        (record) => {
+          if (
+            p >
+            0.001
+          ) {
+            paint(
+              record
+            );
+          }
+        }
+      );
+
+    if (
+      p >
+      0.001
+    ) {
+      line(
+        "top",
+        "bottom",
+        "#ffffff",
+        p,
+        3.2
+      );
+    }
+
+    /*
+     * Outer carrier edges.
+     */
+    const edges =
+      new Set();
+
+    stage
+      .carrier
+      .outerFaces
+      .forEach(
+        (face) => {
+          [
+            [
+              face[0],
+              face[1],
+            ],
+
+            [
+              face[1],
+              face[2],
+            ],
+
+            [
+              face[2],
+              face[0],
+            ],
+          ].forEach(
+            (edge) => {
+              edges.add(
+                edge
+                  .slice()
+                  .sort()
+                  .join("|")
+              );
+            }
+          );
+        }
+      );
+
+    edges.forEach(
+      (key) => {
+        const [
+          first,
+          second,
+        ] =
+          key.split("|");
+
+        line(
+          first,
+          second,
+          "#d8dde6",
+          0.72,
+          1.2
+        );
+      }
+    );
+
+    text3d(
+      "A",
+      centroid(
+        A
+      ),
+      "#d8efff",
+      0.95,
+      28
+    );
+
+    text3d(
+      "B",
+      centroid(
+        B
+      ),
+      "#f1ddff",
+      0.95,
+      28
+    );
+
+    if (
+      p >
+      0.28
+    ) {
+      stage
+        .triangulations
+        .predecessorThree
+        .forEach(
+          (tetrahedron) => {
+            const center =
+              centroid(
+                tetrahedron
+                  .vertices
+              );
+
+            center[2] *=
+              0.22;
+
+            text3d(
+              tetrahedron
+                .cellName,
+
+              center,
+
+              "#f0f0f0",
+
+              Math.min(
+                0.9,
+                p
+              ),
+
+              13
+            );
+          }
+        );
+    }
+
+    let phase;
+
+    if (
+      p <
+      0.03
+    ) {
+      phase =
+        "FINAL: 2 canonical tetrahedra; " +
+        "triangulation face = A/B boundary";
+    } else if (
+      p >
+      0.97
+    ) {
+      phase =
+        "REVERSED: 3 predecessor tetrahedra; " +
+        "SAME A/B boundary now cuts through them";
+    } else {
+      phase =
+        "REVERSING TRIANGULATION: " +
+        "material A/B partition remains fixed";
+    }
+
+    readout.textContent =
+      `${phase}\n\n` +
+
+      `progress: ${p.toFixed(3)}\n` +
+
+      `canonical: ` +
+      `${stage.topology.canonicalCellNames.join(" , ")}\n` +
+
+      `predecessors:\n  ` +
+      `${stage.topology.predecessorCellNames.join("\n  ")}\n\n` +
+
+      `fixed interface: ` +
+      `${stage.materialPartition.interface.join(" - ")}\n` +
+
+      `predecessor interior edge: ` +
+      `${stage.triangulations.predecessorInternalEdge.join(" - ")}`;
+  }
+
+
+  function setProgress(
+    value
+  ) {
+    p =
+      clamp(
+        Number(value) ||
+          0,
+        0,
+        1
+      );
+
+    slider.value =
+      String(
+        p
+      );
+
+    draw();
+  }
+
+
+  function stop() {
+    if (
+      raf !==
+      null
+    ) {
+      cancelAnimationFrame(
+        raf
+      );
+    }
+
+    raf =
+      null;
+
+    t0 =
+      null;
+  }
+
+
+  function tick(
+    now
+  ) {
+    if (
+      t0 ===
+      null
+    ) {
+      t0 =
+        now;
+    }
+
+    const raw =
+      clamp(
+        (
+          now -
+          t0
+        ) /
+        duration,
+
+        0,
+        1
+      );
+
+    const eased =
+      raw *
+      raw *
+      (
+        3 -
+        2 *
+          raw
+      );
+
+    setProgress(
+      p0 +
+      (
+        1 -
+        p0
+      ) *
+      eased
+    );
+
+    if (
+      raw <
+      1
+    ) {
+      raf =
+        requestAnimationFrame(
+          tick
+        );
+    } else {
+      raf =
+        null;
+
+      t0 =
+        null;
+    }
+  }
+
+
+  document
+    .getElementById(
+      "play"
+    )
+    .onclick =
+      () => {
+        stop();
+
+        if (
+          p >=
+          0.999
+        ) {
+          setProgress(
+            0
+          );
+        }
+
+        p0 =
+          p;
+
+        raf =
+          requestAnimationFrame(
+            tick
+          );
+      };
+
+
+  document
+    .getElementById(
+      "pause"
+    )
+    .onclick =
+      stop;
+
+
+  document
+    .getElementById(
+      "restart"
+    )
+    .onclick =
+      () => {
+        stop();
+
+        setProgress(
+          0
+        );
+      };
+
+
+  document
+    .getElementById(
+      "end"
+    )
+    .onclick =
+      () => {
+        stop();
+
+        setProgress(
+          1
+        );
+      };
+
+
+  slider.oninput =
+    () => {
+      stop();
+
+      setProgress(
+        slider.value
+      );
+    };
+
+
+  canvas.onpointerdown =
+    (event) => {
+      drag =
+        true;
+
+      lastX =
+        event.clientX;
+
+      lastY =
+        event.clientY;
+
+      canvas.setPointerCapture(
+        event.pointerId
+      );
+    };
+
+
+  canvas.onpointermove =
+    (event) => {
+      if (
+        !drag
+      ) {
+        return;
+      }
+
+      const dx =
+        event.clientX -
+        lastX;
+
+      const dy =
+        event.clientY -
+        lastY;
+
+      lastX =
+        event.clientX;
+
+      lastY =
+        event.clientY;
+
+      yaw +=
+        dx *
+        0.008;
+
+      pitch =
+        clamp(
+          pitch +
+          dy *
+            0.008,
+
+          -1.35,
+          1.35
+        );
+
+      draw();
+    };
+
+
+  canvas.onpointerup =
+    (event) => {
+      drag =
+        false;
+
+      if (
+        canvas.hasPointerCapture(
+          event.pointerId
+        )
+      ) {
+        canvas.releasePointerCapture(
+          event.pointerId
+        );
+      }
+    };
+
+
+  canvas.addEventListener(
+    "wheel",
+
+    (event) => {
+      event.preventDefault();
+
+      zoom =
+        clamp(
+          zoom *
+          Math.exp(
+            -event.deltaY *
+            0.001
+          ),
+
+          0.55,
+          2.2
+        );
+
+      draw();
+    },
+
+    {
+      passive:
+        false,
+    }
+  );
+
+
+  addEventListener(
+    "resize",
+    resize
+  );
+
+
+  fetch(
+    "./m004-canonical-cell-partition.json",
+
+    {
+      cache:
+        "no-store",
+    }
+  )
+    .then(
+      (response) => {
+        if (
+          !response.ok
+        ) {
+          throw new Error(
+            `asset returned HTTP ` +
+            `${response.status}`
+          );
+        }
+
+        return (
+          response.json()
+        );
+      }
+    )
+    .then(
+      (asset) => {
+        if (
+          asset.schema !==
+            "m004-canonical-cell-partition-v1" ||
+          asset.certifiedTopology !==
+            true ||
+          !asset.stages?.length
+        ) {
+          throw new Error(
+            "asset validation failed"
+          );
+        }
+
+        stage =
+          asset.stages[0];
+
+        badge.textContent =
+          asset.schema;
+
+        resize();
+      }
+    )
+    .catch(
+      (error) => {
+        badge.textContent =
+          "LOAD FAILED";
+
+        readout.textContent =
+          error.stack ||
+          String(
+            error
+          );
+
+        draw();
+      }
+    );
+
+
+  resize();
+})();
+</script>

@@ -492,7 +492,17 @@ body {
   font-style: normal;
 }
 
-.simplest-manifold-page {
+/*
+ * Simplest Manifold background.
+ *
+ * The :has() selector supplies the same background from the
+ * server-rendered page contents before LayoutWrapper has
+ * hydrated and added .simplest-manifold-page.
+ *
+ * This prevents the gray pre-hydration flash on reload.
+ */
+.simplest-manifold-page,
+.main-content:has(.simplest-manifold-viewer-lock) {
   background-image: url('/physics_monastery_background.jpg');
   background-size: cover;
   background-position: center;

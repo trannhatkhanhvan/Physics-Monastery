@@ -1,8 +1,15 @@
 "use client";
 
-import { useState } from 'react';
+import {
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+
+const SIDEBAR_COLLAPSED_STORAGE_KEY =
+  "physics-monastery:sidebar-collapsed";
 
 function CrescentIcon() {
   const outerR = 11;       // size of the full moon
@@ -55,30 +62,70 @@ function FullMoonIcon() {
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
+  const [
+    hydratedPathname,
+    setHydratedPathname,
+  ] = useState('');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const sidebarWidth = sidebarCollapsed ? 32 : 142;
 
+  /*
+   * Keep the server render and the browser's first render identical.
+   * Next.js can report a different pathname on the client after a
+   * rewrite or route resolution, so pathname-dependent classes are
+   * applied only after hydration.
+   */
+  useEffect(() => {
+    setHydratedPathname(pathname ?? '');
+  }, [pathname]);
+
+  /*
+   * Restore the visitor's last left-menu state before the
+   * hydrated layout is painted. This prevents the expanded
+   * menu from visibly flashing before a stored collapsed
+   * state is applied.
+   */
+  useLayoutEffect(() => {
+    try {
+      const stored =
+        window.localStorage.getItem(
+          SIDEBAR_COLLAPSED_STORAGE_KEY
+        );
+
+      if (stored === "true") {
+        setSidebarCollapsed(true);
+      } else if (stored === "false") {
+        setSidebarCollapsed(false);
+      }
+    } catch {
+      /*
+       * If storage is unavailable, retain the normal
+       * expanded default.
+       */
+    }
+  }, []);
+
   const pageClass =
-    pathname === '/' ? 'home-page' :
-    pathname === '/constants-of-nature' ? 'constants-of-nature-page' :
-    pathname === '/symbol-legend' ? 'symbol-legend-page' :
-    pathname === '/288' ? 'combinatorics-page' :
-    pathname === '/hyperbolic-partition-eq' ? 'hyperbolic-partition-page' :
-    pathname === '/binomial-constructor' ? 'binomial-constructor-page' :
-    pathname === '/transform-space' ? 'external-transform-page' :
-    pathname === '/typed-boundary-calculus' ? 'external-transform-page typed-boundary-calculus-page' :
-    pathname === '/planck-constants' ? 'planck-constants-page' :
-    pathname === '/coherent-units' ? 'coherent-units-page' :
-    pathname === '/simplest-manifold' ? 'simplest-manifold-page' :
-    pathname === '/combinatorics' ? 'combinatorics-page' :
-    pathname === '/number-walls' ? 'number-walls-wrapper-page' :
-    pathname === '/animated-math' ? 'animated-math-page' :
-    pathname === '/books' ? 'books-page' :
-    pathname === '/the-logic-of-persistence' ? 'books-page' :
-    pathname === '/monastery-events' ? 'monastery-events-page' :
-    pathname === '/supporters' ? 'supporters-page' :
-    pathname === '/contact-us' ? 'contact-us-page' :
-    pathname === '/forum' ? 'forum-page' :
+    hydratedPathname === '/' ? 'home-page' :
+    hydratedPathname === '/constants-of-nature' ? 'constants-of-nature-page' :
+    hydratedPathname === '/symbol-legend' ? 'symbol-legend-page' :
+    hydratedPathname === '/288' ? 'combinatorics-page' :
+    hydratedPathname === '/hyperbolic-partition-eq' ? 'hyperbolic-partition-page' :
+    hydratedPathname === '/binomial-constructor' ? 'binomial-constructor-page' :
+    hydratedPathname === '/transform-space' ? 'external-transform-page' :
+    hydratedPathname === '/typed-boundary-calculus' ? 'external-transform-page typed-boundary-calculus-page' :
+    hydratedPathname === '/planck-constants' ? 'planck-constants-page' :
+    hydratedPathname === '/coherent-units' ? 'coherent-units-page' :
+    hydratedPathname === '/simplest-manifold' ? 'simplest-manifold-page' :
+    hydratedPathname === '/combinatorics' ? 'combinatorics-page' :
+    hydratedPathname === '/number-walls' ? 'number-walls-wrapper-page' :
+    hydratedPathname === '/animated-math' ? 'animated-math-page' :
+    hydratedPathname === '/books' ? 'books-page' :
+    hydratedPathname === '/the-logic-of-persistence' ? 'books-page' :
+    hydratedPathname === '/monastery-events' ? 'monastery-events-page' :
+    hydratedPathname === '/supporters' ? 'supporters-page' :
+    hydratedPathname === '/contact-us' ? 'contact-us-page' :
+    hydratedPathname === '/forum' ? 'forum-page' :
     '';
 
   return (
@@ -93,7 +140,41 @@ export default function LayoutWrapper({ children }) {
             <button
   type="button"
   className="sidebar-toggle"
-  onClick={() => setSidebarCollapsed((value) => !value)}
+  onClick={() =>
+    setSidebarCollapsed((value) => {
+      const nextValue = !value;
+
+      try {
+        window.localStorage.setItem(
+          SIDEBAR_COLLAPSED_STORAGE_KEY,
+          String(nextValue)
+        );
+      } catch {
+        /*
+         * The menu still toggles normally if browser
+         * storage is unavailable.
+         */
+      }
+
+      /*
+       * Keep the pre-paint document state synchronized with
+       * the live React state. Otherwise the CSS used during
+       * reload could continue forcing an old collapsed state.
+       */
+      if (nextValue) {
+        document.documentElement.setAttribute(
+          "data-sidebar-collapsed",
+          "true"
+        );
+      } else {
+        document.documentElement.removeAttribute(
+          "data-sidebar-collapsed"
+        );
+      }
+
+      return nextValue;
+    })
+  }
   aria-label={sidebarCollapsed ? "Expand menu" : "Collapse menu"}
   title={sidebarCollapsed ? "Expand menu" : "Collapse menu"}
   style={{

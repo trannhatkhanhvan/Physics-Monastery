@@ -1,0 +1,87 @@
+{
+  "certified": true,
+  "manifold": "m004",
+  "canonicalIsoSig": "cPcbbbiht",
+  "counts": {
+    "constructiveCompactTetrahedra": 16284,
+    "constructiveFiniteVertices": 4608,
+    "idealTetrahedra": 25500,
+    "idealVertices": 4609,
+    "edgeCollapses": 4608,
+    "oneVertexTetrahedra": 2953,
+    "localMoves": 2242,
+    "totalMoves": 6850,
+    "cellProvenanceNodes": 28187,
+    "vertexLineageNodes": 9217,
+    "canonicalTetrahedra": 2
+  },
+  "canonicalRelabelling": {
+    "M:6850:0": {
+      "canonicalTetIndex": 0,
+      "vertexPermutation": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "M:6850:1": {
+      "canonicalTetIndex": 1,
+      "vertexPermutation": [
+        0,
+        3,
+        1,
+        2
+      ]
+    }
+  },
+  "sourceGeometry": {
+    "constructiveR3": {
+      "path": "public/geometry/figure-eight-complement/m004-constructive-tetmesh-r3.json",
+      "bytes": 648980,
+      "sha256": "fc6261eed249b234e916a61192988688433bfb890338d8b150babc15a075b74c"
+    },
+    "constructiveS3": {
+      "path": "public/geometry/figure-eight-complement/m004-constructive-tetmesh-s3.json",
+      "bytes": 1024918,
+      "sha256": "4db7b2d8942e7cdf791ba4548adda538662623e62771d47223dc2f9450348aaa"
+    }
+  },
+  "certifiedArtifacts": {
+    "constructiveIdealStart": {
+      "path": "data/figure-eight-complement/m004-certified-provenance/m004-constructive-ideal-25500.tight",
+      "bytes": 243641,
+      "sha256": "8f19d6bd92b5e62d1089fc44eaaff72a8abd75e030b7a5f3d062bb239d52c8c4"
+    },
+    "masterTrace": {
+      "path": "data/figure-eight-complement/m004-certified-provenance/m004-complete-25500-to-2-trace.json",
+      "bytes": 1978764,
+      "sha256": "8a1e1f559774d726d963a4793bdaa8db9e6911ef2d21e12a61ea32223d4fa2a9"
+    },
+    "canonicalFinal": {
+      "path": "data/figure-eight-complement/m004-certified-provenance/m004-complete-25500-to-2-final.tight",
+      "bytes": 9,
+      "sha256": "1b9c0c37d6b820bb549a7eac5e86f754ca0383b1d6010c6a939142767b3c0ab8"
+    },
+    "idealizationProvenance": {
+      "path": "data/figure-eight-complement/m004-certified-provenance/m004-idealization-provenance.json",
+      "bytes": 10528954,
+      "sha256": "fcf96d0dc774ab313635eb870b808936db39c7a315e4257bf9354eb5a785ad6a"
+    },
+    "cellProvenance": {
+      "path": "data/figure-eight-complement/m004-certified-provenance/m004-complete-cell-provenance.json",
+      "bytes": 51536910,
+      "sha256": "23abc333198b6ca316e2868a4271ff9b12dafe24b6ec775a641912a08746c25a"
+    },
+    "vertexMergeTree": {
+      "path": "data/figure-eight-complement/m004-certified-provenance/m004-complete-vertex-merge-tree.json",
+      "bytes": 5519860,
+      "sha256": "35f5d1b62d13c6afced9efe025e06090e4682168e9101c6a51a4c8a4db66de73"
+    },
+    "canonicalTwoTetMap": {
+      "path": "data/figure-eight-complement/m004-certified-provenance/m004-canonical-two-tet-map.json",
+      "bytes": 1356,
+      "sha256": "ff83011f5b4075276c3ad75c0c371be1d251cfe1eb26888d96ddff1dc4f69170"
+    }
+  }
+}

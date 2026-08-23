@@ -1,0 +1,794 @@
+.lab {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: min(1460px, calc(100vw - 40px));
+  margin: 0 auto;
+  padding: 24px 0 0;
+  overflow: hidden;
+  font-family: "Times New Roman", Times, serif;
+  color: rgba(238, 234, 222, 0.96);
+}
+
+.heading {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: baseline;
+  gap: 16px;
+  min-width: 0;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.heading h1 {
+  flex: 0 0 auto;
+  margin: 0;
+  font-size: clamp(24px, 2.2vw, 34px);
+  font-weight: 400;
+}
+
+.heading p {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: 1.2;
+  color: rgba(238, 234, 222, 0.72);
+}
+
+.workspace {
+  display: grid;
+  flex: 1 1 auto;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.workspacePortaled {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+.viewer {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(232, 223, 200, 0.28);
+  border-radius: 8px;
+  background: transparent;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.canvas:active {
+  cursor: grabbing;
+}
+
+.viewerHint,
+.status {
+  position: absolute;
+  z-index: 2;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background: rgba(20, 20, 22, 0.66);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.viewerHint {
+  left: 10px;
+  bottom: 10px;
+}
+
+.status {
+  right: 10px;
+  bottom: 10px;
+  cursor: help;
+  user-select: none;
+}
+
+.status[data-state="verified"] {
+  background:
+    rgba(20, 20, 22, 0.66);
+  color:
+    rgba(255, 255, 255, 0.88);
+}
+
+.status[data-state="warning"] {
+  background:
+    rgba(112, 47, 30, 0.82);
+  color:
+    rgba(255, 245, 238, 0.98);
+}
+
+/*
+ * Full mathematical certification is available on demand
+ * without permanently occupying the viewer.
+ */
+.status[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 7px);
+  z-index: 20;
+
+  width: 390px;
+  max-width:
+    calc(100vw - 100px);
+
+  box-sizing: border-box;
+  padding: 7px 9px;
+
+  border:
+    1px solid rgba(232, 223, 200, 0.34);
+  border-radius: 5px;
+
+  background:
+    rgba(12, 12, 14, 0.94);
+
+  color:
+    rgba(245, 242, 233, 0.97);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.28;
+  text-align: left;
+  white-space: normal;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform:
+    translateY(4px);
+
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease,
+    visibility 120ms ease;
+
+  box-shadow:
+    0 4px 14px
+    rgba(0, 0, 0, 0.34);
+}
+
+.status[data-tooltip]:hover::after,
+.status[data-tooltip]:focus::after {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateY(0);
+}
+
+.status:focus {
+  outline: none;
+}
+
+.controls {
+  position: relative;
+  z-index: 20;
+  box-sizing: border-box;
+  height: 100%;
+  max-height: 100%;
+  overflow: visible;
+  padding: 10px;
+  border: 1px solid rgba(232, 223, 200, 0.30);
+  border-radius: 8px;
+  background: rgba(18, 18, 20, 0.42);
+}
+
+.portaledControls {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.sectionTitle {
+  margin: 9px 0 6px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(232, 223, 200, 0.22);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/*
+ * ----------------------------------------------------------
+ * Explanatory hover tooltips
+ * ----------------------------------------------------------
+ *
+ * They open toward the viewer rather than widening the
+ * controller. Keyboard focus shows the same explanation.
+ */
+.tooltipAnchor {
+  position: relative;
+  cursor: help;
+}
+
+.tooltipAnchor::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  z-index: 100;
+  right: calc(100% + 9px);
+  top: 50%;
+  width: 245px;
+  box-sizing: border-box;
+  padding: 7px 9px;
+  border:
+    1px solid rgba(232, 223, 200, 0.34);
+  border-radius: 5px;
+  background:
+    rgba(12, 12, 14, 0.94);
+  color:
+    rgba(245, 242, 233, 0.97);
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.28;
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: none;
+  white-space: normal;
+  pointer-events: none;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    translateY(-50%)
+    translateX(4px);
+
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease,
+    visibility 120ms ease;
+
+  box-shadow:
+    0 4px 14px
+    rgba(0, 0, 0, 0.34);
+}
+
+.tooltipAnchor::before {
+  content: "";
+  position: absolute;
+  z-index: 101;
+  right: calc(100% + 4px);
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-top:
+    1px solid rgba(232, 223, 200, 0.34);
+  border-right:
+    1px solid rgba(232, 223, 200, 0.34);
+  background:
+    rgba(12, 12, 14, 0.94);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    translateY(-50%)
+    rotate(45deg);
+
+  transition:
+    opacity 120ms ease,
+    visibility 120ms ease;
+}
+
+.tooltipAnchor:hover::after,
+.tooltipAnchor:focus::after {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateY(-50%)
+    translateX(0);
+}
+
+.tooltipAnchor:hover::before,
+.tooltipAnchor:focus::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltipAnchor:focus {
+  outline: none;
+}
+
+.sectionTitle:first-child {
+  margin-top: 0;
+}
+
+.controls button {
+  min-height: 26px;
+  padding: 2px 6px;
+  border: 1px solid rgba(232, 223, 200, 0.34);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.045);
+  color: rgba(238, 234, 222, 0.94);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+  line-height: 1.1;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.presetFraction {
+  display: inline-grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-items: center;
+  margin-right: 5px;
+  vertical-align: middle;
+  font-family:
+    "STIX Two Math",
+    "Cambria Math",
+    "Times New Roman",
+    serif;
+  font-size: 0.86em;
+  line-height: 0.88;
+}
+
+.presetFractionTop {
+  min-width: 1.05em;
+  padding: 0 2px 1px;
+  border-bottom: 1px solid currentColor;
+  text-align: center;
+  font-style: italic;
+}
+
+.presetFractionBottom {
+  padding-top: 1px;
+  text-align: center;
+}
+
+.presetOffsetWord {
+  vertical-align: middle;
+}
+
+.projectionPresets {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 4px;
+}
+
+
+.compactSliderGroup {
+  display: grid;
+  gap: 3px;
+  margin-top: 6px;
+}
+
+.projectionSliderRow {
+  display: grid;
+  grid-template-columns:
+    30px minmax(0, 1fr) 36px 43px;
+  align-items: center;
+  gap: 4px;
+  min-height: 34px;
+}
+
+.projectionRangeWrap {
+  position: relative;
+  min-width: 0;
+  height: 34px;
+  margin-left: 0;
+  width: 100%;
+}
+
+/*
+ * Put the slider track directly on the vertical centerline
+ * of the angle indicator and evolve button.
+ *
+ * The range control is 14px tall, so top: 10px places its
+ * center at y = 17px in this 34px row.
+ */
+.projectionRangeWrap input[type="range"] {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 100%;
+  min-width: 0;
+}
+
+/*
+ * Hash marks remain underneath the centered slider without
+ * pushing the slider itself upward.
+ */
+.projectionTicks {
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 10px;
+  margin: 0;
+  color: rgba(232, 223, 200, 0.60);
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+  font-size: 8px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.projectionTicks span {
+  position: relative;
+  width: 0;
+  overflow: visible;
+  white-space: nowrap;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.projectionTicks span::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  width: 1px;
+  height: 4px;
+  background:
+    rgba(232, 223, 200, 0.58);
+}
+
+.projectionAngleIndicator {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  justify-self: center;
+}
+
+.projectionAngleIndicator svg {
+  display: block;
+  width: 34px;
+  height: 34px;
+  overflow: visible;
+}
+
+.angleGuideCircle {
+  fill: none;
+  stroke: rgba(232, 223, 200, 0.12);
+  stroke-width: 0.8;
+}
+
+.angleReferenceArrow {
+  stroke: rgba(232, 223, 200, 0.25);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.angleReferenceArrow polygon {
+  stroke: none;
+  fill: rgba(232, 223, 200, 0.25);
+}
+
+.angleCurrentArrow {
+  stroke: rgba(255, 255, 255, 0.96);
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.angleCurrentArrow polygon {
+  stroke: none;
+  fill: rgba(255, 255, 255, 0.96);
+}
+
+.angleOrigin {
+  fill: rgba(255, 255, 255, 0.88);
+}
+
+.geometrySliderRow {
+  display: grid;
+  grid-template-columns:
+    16px minmax(0, 1fr) 36px 43px;
+  align-items: center;
+  gap: 4px;
+  min-height: 27px;
+}
+
+.cuspMapButtons {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.cuspMapSliderRow {
+  display: grid;
+  grid-template-columns:
+    30px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 4px;
+  min-height: 27px;
+  margin-top: 4px;
+}
+
+.cuspMapSliderRow input[type="range"] {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.displaySliderRow {
+  display: grid;
+  grid-template-columns:
+    34px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 4px;
+  min-height: 28px;
+}
+
+.projectionSliderRow input[type="range"],
+.geometrySliderRow input[type="range"],
+.displaySliderRow input[type="range"] {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.compactLabel {
+  white-space: nowrap;
+  font-size: 0.83em;
+}
+
+.geometryLabel {
+  white-space: nowrap;
+  font-style: italic;
+}
+
+.piValue,
+.meshValue {
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: rgba(232, 223, 200, 0.72);
+}
+
+.piValue {
+  font-size: 12px;
+}
+
+.meshValue {
+  font-size: 12px;
+}
+
+.evolveButton,
+.evolveButtonActive {
+  min-height: 23px !important;
+  padding: 1px 3px !important;
+  font-size: 11px !important;
+}
+
+/* Idle evolve button = neutral */
+.evolveButton {
+  background:
+    rgba(255, 255, 255, 0.045) !important;
+  border-color:
+    rgba(232, 223, 200, 0.34) !important;
+  color:
+    rgba(238, 234, 222, 0.94) !important;
+}
+
+.evolveButton:hover {
+  background:
+    rgba(255, 255, 255, 0.10) !important;
+}
+
+/* Running / stop button = red */
+.evolveButtonActive {
+  background:
+    rgba(164, 43, 43, 0.72) !important;
+  border-color:
+    rgba(239, 103, 103, 0.88) !important;
+  color:
+    rgba(255, 247, 247, 1) !important;
+}
+
+.evolveButtonActive:hover {
+  background:
+    rgba(190, 48, 48, 0.84) !important;
+}
+
+/* Other active toggles keep their existing neutral style. */
+.toggleActive {
+  background:
+    rgba(255, 255, 255, 0.16) !important;
+  border-color:
+    rgba(232, 223, 200, 0.62) !important;
+  color:
+    rgba(255, 255, 255, 1) !important;
+}
+
+.geometryValueInput {
+  box-sizing: border-box;
+  width: 36px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color:
+    rgba(238, 234, 222, 0.94);
+  font-family:
+    "Times New Roman", Times, serif;
+  font-size: 12px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  position: relative;
+  left: 10px;
+}
+
+.displayButtons {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.resetViewButton {
+  width: 100%;
+  margin-top: 4px;
+}
+
+
+.pathRow strong {
+  font-weight: 400;
+}
+
+
+.pathRow button {
+  min-height: 23px;
+  padding: 1px 3px;
+  font-size: 11px;
+}
+
+
+@media (max-width: 900px) {
+  .lab {
+    width:
+      min(100% - 20px, 900px);
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .canvas {
+    height: 100%;
+  }
+}
+
+
+/* --- Precision slider styling --- */
+
+.controls input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Chrome / Safari / Edge */
+.controls input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  border-radius: 0;
+  background: rgba(232, 223, 200, 0.42);
+}
+
+.controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 7px;
+  height: 12px;
+  margin-top: -5px;
+  border: 1px solid rgba(232, 223, 200, 0.82);
+  border-radius: 1px;
+  background: rgba(205, 201, 191, 0.96);
+  box-shadow: none;
+}
+
+/* Firefox */
+.controls input[type="range"]::-moz-range-track {
+  height: 2px;
+  border: none;
+  border-radius: 0;
+  background: rgba(232, 223, 200, 0.42);
+}
+
+.controls input[type="range"]::-moz-range-thumb {
+  width: 7px;
+  height: 12px;
+  border: 1px solid rgba(232, 223, 200, 0.82);
+  border-radius: 1px;
+  background: rgba(205, 201, 191, 0.96);
+  box-shadow: none;
+}
+
+/* Keep keyboard focus visible without making the control bulky. */
+.controls input[type="range"]:focus-visible::-webkit-slider-thumb {
+  outline: 1px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 2px;
+}
+
+.controls input[type="range"]:focus-visible::-moz-range-thumb {
+  outline: 1px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 2px;
+}
+
+.workspacePortaled .canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+ * In embedded Cusp / Boundary mode, ClosedManifoldViewer owns
+ * the one true viewer frame. The Projection Lab contributes
+ * only its canvas; it must not draw a second nested viewer box.
+ */
+.workspacePortaled {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.workspacePortaled .viewer {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.workspacePortaled .canvas {
+  width: 100%;
+  height: 100%;
+}

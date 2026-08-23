@@ -1,0 +1,83 @@
+{
+  "certified": true,
+  "reginaVersion": "7.4",
+  "canonicalIsoSig": "cPcbbbiht",
+  "provenanceFinalTetIds": [
+    "M:6850:0",
+    "M:6850:1"
+  ],
+  "provenanceToCanonical": [
+    {
+      "provenanceTetId": "M:6850:0",
+      "sourceTetIndex": 0,
+      "canonicalTetIndex": 0,
+      "facetPermutation": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "vertexPermutation": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "provenanceTetId": "M:6850:1",
+      "sourceTetIndex": 1,
+      "canonicalTetIndex": 1,
+      "facetPermutation": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "vertexPermutation": [
+        0,
+        3,
+        1,
+        2
+      ]
+    }
+  ],
+  "canonicalToProvenance": [
+    {
+      "canonicalTetIndex": 0,
+      "sourceTetIndex": 0,
+      "provenanceTetId": "M:6850:0",
+      "facetPermutation": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "vertexPermutation": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "canonicalTetIndex": 1,
+      "sourceTetIndex": 1,
+      "provenanceTetId": "M:6850:1",
+      "facetPermutation": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "vertexPermutation": [
+        0,
+        2,
+        3,
+        1
+      ]
+    }
+  ],
+  "isomorphismTightEncoding": "$\"#!%",
+  "exactReferenceEncoding": true
+}

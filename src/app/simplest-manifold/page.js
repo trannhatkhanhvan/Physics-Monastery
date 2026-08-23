@@ -26,6 +26,22 @@ export default function SimplestManifold() {
   return (
     <LayoutWrapper>
       <div
+        className="simplest-manifold-initial-surface"
+        style={{
+          position: 'relative',
+          width: '100%',
+          minHeight: '100vh',
+          fontFamily:
+            '"Times New Roman", Times, serif',
+          backgroundImage:
+            "url('/physics_monastery_background.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+      <div
   className="symbol-overlay"
   style={{
     left: 0,
@@ -384,7 +400,7 @@ export default function SimplestManifold() {
 )}
 
 
-
+      </div>
     </LayoutWrapper>
   );
 }
