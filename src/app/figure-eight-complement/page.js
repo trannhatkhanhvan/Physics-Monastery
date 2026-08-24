@@ -1,17 +1,5 @@
-import { cookies } from "next/headers";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import ClosedManifoldViewer from "./ClosedManifoldViewer";
-
-const CLOSED_MANIFOLD_DIMENSION_COOKIE_KEY =
-  "physics_monastery_closed_manifold_dimension";
-
-function isClosedManifoldDimension(value) {
-  return (
-    value === "1D" ||
-    value === "2D" ||
-    value === "3D"
-  );
-}
 
 export const metadata = {
   title: "Closed Manifold Identifications | Physics Monastery",
@@ -19,20 +7,29 @@ export const metadata = {
     "An interactive viewer for constructing closed spaces through geometric identification rules.",
 };
 
-export default async function FigureEightComplementPage() {
-  const cookieStore = await cookies();
+function validDimension(value) {
+  return (
+    value === "1D" ||
+    value === "2D" ||
+    value === "3D"
+  );
+}
 
-  const storedDimension =
-    cookieStore.get(
-      CLOSED_MANIFOLD_DIMENSION_COOKIE_KEY
-    )?.value ?? null;
+export default async function FigureEightComplementPage({
+  searchParams,
+}) {
+  const params =
+    await searchParams;
+
+  const requestedDimension =
+    params?.dimension;
 
   const initialDimension =
-    isClosedManifoldDimension(
-      storedDimension
+    validDimension(
+      requestedDimension
     )
-      ? storedDimension
-      : null;
+      ? requestedDimension
+      : "1D";
 
   return (
     <LayoutWrapper>
@@ -54,7 +51,9 @@ export default async function FigureEightComplementPage() {
         }}
       >
         <ClosedManifoldViewer
-          initialDimension={initialDimension}
+          initialDimension={
+            initialDimension
+          }
         />
       </div>
     </LayoutWrapper>

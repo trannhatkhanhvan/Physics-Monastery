@@ -4683,6 +4683,36 @@ export default function ClosedManifoldViewer({
                   "cells"
                 );
 
+                /*
+                 * Standalone page:
+                 *
+                 * The bare URL is always the canonical 1D entry.
+                 * An explicit dimension selection is carried in
+                 * the URL so a reload can preserve that selection
+                 * without making it the next visit's default.
+                 */
+                if (!embedded) {
+                  const url =
+                    new URL(
+                      window.location.href
+                    );
+
+                  url.searchParams.set(
+                    "dimension",
+                    option
+                  );
+
+                  window.location.assign(
+                    url.toString()
+                  );
+
+                  return;
+                }
+
+                /*
+                 * Embedded viewer keeps its existing persistence
+                 * behavior because it lives inside another page.
+                 */
                 try {
                   window.localStorage.setItem(
                     CLOSED_MANIFOLD_DIMENSION_STORAGE_KEY,

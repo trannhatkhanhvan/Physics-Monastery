@@ -59,6 +59,393 @@ const STANDARD_PROJECTION =
 const SYMMETRIC_PROJECTION =
   FIGURE_EIGHT_S3_SYMMETRIC_PROJECTION;
 
+
+/*
+ * User-selected complete Projection Lab views.
+ *
+ * Unlike Symmetric / Standard / π/4 offset, these restore the
+ * complete visible configuration:
+ *
+ *   S³ projection
+ *   intrinsic geometry
+ *   ordinary 3D camera
+ *   layers
+ *   cusp/boundary endpoint
+ *   rendering resolution
+ */
+const SAVED_PROJECTION_PRESETS_STORAGE_KEY =
+  "physics-monastery:figure-eight-projection-presets-v1";
+
+const DEFAULT_SAVED_PROJECTION_PRESETS =
+  Object.freeze({
+    /*
+     * The original three buttons are now COMPLETE presets too.
+     *
+     * They no longer inherit the viewer's current camera
+     * orientation.
+     */
+    symmetric: Object.freeze({
+      manifoldId: "m004",
+
+      projection: Object.freeze({
+        ...SYMMETRIC_PROJECTION,
+      }),
+
+      geometry: Object.freeze({
+        ...DEFAULT_GEOMETRY,
+      }),
+
+      view: Object.freeze({
+        yaw: -0.55,
+        pitch: 0.42,
+        zoom: 1.2544,
+      }),
+
+      layers: Object.freeze({
+        colorMode: "triangles",
+        triangles: true,
+        meridian: false,
+        longitude: false,
+        labels: false,
+        edgePairs: false,
+        wireframe: false,
+      }),
+
+      cuspMorph: 1,
+
+      mesh: Object.freeze({
+        level: 6,
+        nu: 288,
+        nv: 64,
+      }),
+    }),
+
+    standard: Object.freeze({
+      manifoldId: "m004",
+
+      projection: Object.freeze({
+        ...STANDARD_PROJECTION,
+      }),
+
+      geometry: Object.freeze({
+        ...DEFAULT_GEOMETRY,
+      }),
+
+      view: Object.freeze({
+        yaw: -0.55,
+        pitch: 0.42,
+        zoom: 1.2544,
+      }),
+
+      layers: Object.freeze({
+        colorMode: "triangles",
+        triangles: true,
+        meridian: false,
+        longitude: false,
+        labels: false,
+        edgePairs: false,
+        wireframe: false,
+      }),
+
+      cuspMorph: 1,
+
+      mesh: Object.freeze({
+        level: 6,
+        nu: 288,
+        nv: 64,
+      }),
+    }),
+
+    offset: Object.freeze({
+      manifoldId: "m004",
+
+      projection: Object.freeze({
+        xw: 0,
+        yw: 45,
+        zw: 90,
+      }),
+
+      geometry: Object.freeze({
+        ...DEFAULT_GEOMETRY,
+      }),
+
+      view: Object.freeze({
+        yaw: -0.55,
+        pitch: 0.42,
+        zoom: 1.2544,
+      }),
+
+      layers: Object.freeze({
+        colorMode: "triangles",
+        triangles: true,
+        meridian: false,
+        longitude: false,
+        labels: false,
+        edgePairs: false,
+        wireframe: false,
+      }),
+
+      cuspMorph: 1,
+
+      mesh: Object.freeze({
+        level: 6,
+        nu: 288,
+        nv: 64,
+      }),
+    }),
+
+
+    /*
+     * Exact user-selected publication views.
+     */
+
+    preset1: Object.freeze({
+      manifoldId: "m004",
+      projectionPreset: null,
+
+      projection: Object.freeze({
+        xw: 0,
+        yw: 88.5,
+        zw: 209.5,
+      }),
+
+      geometry: Object.freeze({
+        lambda: 0.22,
+        epsilon: 0.27,
+        rho: 0.21,
+      }),
+
+      view: Object.freeze({
+        yaw: -2.3402732543945315,
+        pitch: -0.7429368144657951,
+        zoom: 0.9119462583867255,
+      }),
+
+      layers: Object.freeze({
+        colorMode: "triangles",
+        triangles: true,
+        meridian: false,
+        longitude: false,
+        labels: false,
+        edgePairs: false,
+        wireframe: false,
+      }),
+
+      cuspMorph: 1,
+
+      mesh: Object.freeze({
+        level: 6,
+        nu: 288,
+        nv: 64,
+      }),
+    }),
+
+    preset2: Object.freeze({
+      manifoldId: "m004",
+      projectionPreset: null,
+
+      projection: Object.freeze({
+        xw: 360,
+        yw: 174.5,
+        zw: 259.5,
+      }),
+
+      geometry: Object.freeze({
+        lambda: 1,
+        epsilon: 0.5,
+        rho: 0.21,
+      }),
+
+      view: Object.freeze({
+        yaw: -6.285367004394532,
+        pitch: 0.19660696300002523,
+        zoom: 0.9119462583867255,
+      }),
+
+      layers: Object.freeze({
+        colorMode: "triangles",
+        triangles: true,
+        meridian: false,
+        longitude: false,
+        labels: false,
+        edgePairs: false,
+        wireframe: false,
+      }),
+
+      cuspMorph: 1,
+
+      mesh: Object.freeze({
+        level: 6,
+        nu: 288,
+        nv: 64,
+      }),
+    }),
+
+    preset3: Object.freeze({
+      manifoldId: "m004",
+      projectionPreset: null,
+
+      projection: Object.freeze({
+        xw: 320,
+        yw: 174.5,
+        zw: 201.5,
+      }),
+
+      geometry: Object.freeze({
+        lambda: 1,
+        epsilon: 0.5,
+        rho: 0.21,
+      }),
+
+      view: Object.freeze({
+        yaw: -12.441424133300782,
+        pitch: 0.09645394786330648,
+        zoom: 0.9444372295507798,
+      }),
+
+      layers: Object.freeze({
+        colorMode: "triangles",
+        triangles: true,
+        meridian: false,
+        longitude: false,
+        labels: false,
+        edgePairs: false,
+        wireframe: false,
+      }),
+
+      cuspMorph: 1,
+
+      mesh: Object.freeze({
+        level: 6,
+        nu: 288,
+        nv: 64,
+      }),
+    }),
+
+    preset4: Object.freeze({
+      manifoldId: "m004",
+      projectionPreset: null,
+
+      projection: Object.freeze({
+        xw: 94,
+        yw: 174.5,
+        zw: 183.5,
+      }),
+
+      geometry: Object.freeze({
+        lambda: 0.14,
+        epsilon: 0.21,
+        rho: 0.21,
+      }),
+
+      view: Object.freeze({
+        yaw: -7.210173034667967,
+        pitch: -0.07949435313674402,
+        zoom: 0.8520478864814157,
+      }),
+
+      layers: Object.freeze({
+        colorMode: "triangles",
+        triangles: true,
+        meridian: false,
+        longitude: false,
+        labels: false,
+        edgePairs: false,
+        wireframe: false,
+      }),
+
+      cuspMorph: 1,
+
+      mesh: Object.freeze({
+        level: 6,
+        nu: 288,
+        nv: 64,
+      }),
+    }),
+
+    preset5: Object.freeze({
+      manifoldId: "m004",
+      projectionPreset: null,
+
+      projection: Object.freeze({
+        xw: 94,
+        yw: 174.5,
+        zw: 114,
+      }),
+
+      geometry: Object.freeze({
+        lambda: 0.14,
+        epsilon: 0.16,
+        rho: 0.21,
+      }),
+
+      view: Object.freeze({
+        yaw: -7.210173034667967,
+        pitch: -0.07949435313674402,
+        zoom: 1.0104614815839275,
+      }),
+
+      layers: Object.freeze({
+        colorMode: "triangles",
+        triangles: true,
+        meridian: false,
+        longitude: false,
+        labels: false,
+        edgePairs: false,
+        wireframe: false,
+      }),
+
+      cuspMorph: 1,
+
+      mesh: Object.freeze({
+        level: 6,
+        nu: 288,
+        nv: 64,
+      }),
+    }),
+
+    preset6: Object.freeze({
+      manifoldId: "m004",
+      projectionPreset: null,
+
+      projection: Object.freeze({
+        xw: 0,
+        yw: 88.5,
+        zw: 209.5,
+      }),
+
+      geometry: Object.freeze({
+        lambda: 0.22,
+        epsilon: 0.27,
+        rho: 0.21,
+      }),
+
+      view: Object.freeze({
+        yaw: -3.472927978515625,
+        pitch: 1.3519635609004157,
+        zoom: 0.9516491476027195,
+      }),
+
+      layers: Object.freeze({
+        colorMode: "triangles",
+        triangles: true,
+        meridian: false,
+        longitude: false,
+        labels: false,
+        edgePairs: false,
+        wireframe: false,
+      }),
+
+      cuspMorph: 1,
+
+      mesh: Object.freeze({
+        level: 6,
+        nu: 288,
+        nv: 64,
+      }),
+    }),
+  });
+
 const EVOLVE_SPEED_DEGREES_PER_SECOND = 8.4;
 
 const GEOMETRY_RANGES = {
@@ -1246,6 +1633,29 @@ function shortestAngleDelta(
   );
 }
 
+function shortestRadianDelta(
+  start,
+  end
+) {
+  const fullTurn =
+    Math.PI * 2;
+
+  return (
+    (
+      (
+        end -
+        start +
+        Math.PI
+      ) %
+        fullTurn +
+      fullTurn
+    ) %
+      fullTurn -
+    Math.PI
+  );
+}
+
+
 function greatestCommonDivisor(a, b) {
   let x = Math.abs(a);
   let y = Math.abs(b);
@@ -1658,11 +2068,233 @@ export default function FigureEightProjectionLab({
       targetCuspMorph <= 0 ? 0 : 1
     );
 
+  const [
+    capturedPreset,
+    setCapturedPreset,
+  ] = useState(null);
+
+  const [
+    savedProjectionPresets,
+    setSavedProjectionPresets,
+  ] = useState(
+    () => ({
+      ...DEFAULT_SAVED_PROJECTION_PRESETS,
+    })
+  );
+
+  const [
+    selectedSavedPresetId,
+    setSelectedSavedPresetId,
+  ] = useState("symmetric");
+
+  /*
+   * Restore user-edited preset slots from this browser.
+   *
+   * Preset 1 falls back to the checked-in default above until the
+   * user explicitly replaces it with Set.
+   */
+  useEffect(() => {
+    try {
+      const raw =
+        window.localStorage.getItem(
+          SAVED_PROJECTION_PRESETS_STORAGE_KEY
+        );
+
+      if (!raw) {
+        return;
+      }
+
+      const stored =
+        JSON.parse(raw);
+
+      if (
+        !stored ||
+        typeof stored !== "object"
+      ) {
+        return;
+      }
+
+      setSavedProjectionPresets(
+        (current) => ({
+          ...current,
+
+          ...Object.fromEntries(
+            Object.keys(
+              DEFAULT_SAVED_PROJECTION_PRESETS
+            ).map(
+              (presetId) => [
+                presetId,
+                stored[presetId] ??
+                  current[presetId],
+              ]
+            )
+          ),
+        })
+      );
+    } catch {
+      /*
+       * If localStorage is unavailable or contains malformed old
+       * data, use the normal in-memory preset defaults.
+       */
+    }
+  }, []);
+
   const [labHeight, setLabHeight] =
     useState(null);
 
   const [resizeTick, setResizeTick] =
     useState(0);
+
+  function currentProjectionPresetSnapshot() {
+    return {
+      manifoldId,
+
+      projectionPreset:
+        activeProjectionPreset,
+
+      projection: {
+        xw: Number(projection.xw),
+        yw: Number(projection.yw),
+        zw: Number(projection.zw),
+      },
+
+      geometry: {
+        lambda: Number(geometry.lambda),
+        epsilon: Number(geometry.epsilon),
+        rho: Number(geometry.rho),
+      },
+
+      view: {
+        yaw: Number(viewYaw),
+        pitch: Number(viewPitch),
+        zoom: Number(zoom),
+      },
+
+      layers: {
+        colorMode,
+
+        triangles:
+          Boolean(
+            showCuspTriangulation
+          ),
+
+        meridian:
+          Boolean(
+            showMeridian
+          ),
+
+        longitude:
+          Boolean(
+            showLongitude
+          ),
+
+        labels:
+          Boolean(
+            showCuspLabels
+          ),
+
+        edgePairs:
+          Boolean(
+            showCuspEdgePairs
+          ),
+
+        wireframe:
+          Boolean(
+            wireframe
+          ),
+      },
+
+      cuspMorph:
+        Number(cuspMorph),
+
+      mesh: {
+        level:
+          meshLevel,
+
+        nu:
+          meshSpec.nu,
+
+        nv:
+          meshSpec.nv,
+      },
+    };
+  }
+
+
+  function freezePresetMotion() {
+    stopAnimation();
+    stopCuspMorphAnimation();
+
+    setEvolvingAxes({
+      xw: false,
+      yw: false,
+      zw: false,
+    });
+
+    setEvolvingGeometry({
+      lambda: false,
+      epsilon: false,
+      rho: false,
+    });
+  }
+
+
+  function captureCurrentPreset() {
+    freezePresetMotion();
+
+    setCapturedPreset(
+      currentProjectionPresetSnapshot()
+    );
+  }
+
+
+  function setSelectedProjectionPreset() {
+    if (!selectedSavedPresetId) {
+      return;
+    }
+
+    freezePresetMotion();
+
+    const snapshot =
+      currentProjectionPresetSnapshot();
+
+    const nextPresets = {
+      ...savedProjectionPresets,
+
+      [selectedSavedPresetId]:
+        snapshot,
+    };
+
+    setSavedProjectionPresets(
+      nextPresets
+    );
+
+    /*
+     * Keep the selected slot highlighted after Set.
+     */
+    setActiveProjectionPreset(
+      null
+    );
+
+    setCapturedPreset(
+      snapshot
+    );
+
+    try {
+      window.localStorage.setItem(
+        SAVED_PROJECTION_PRESETS_STORAGE_KEY,
+        JSON.stringify(
+          nextPresets
+        )
+      );
+    } catch {
+      /*
+       * The preset still works for this browser session even if
+       * persistent storage is unavailable.
+       */
+    }
+  }
+
 
   function stopAnimation() {
     if (
@@ -2252,9 +2884,62 @@ export default function FigureEightProjectionLab({
   }, []);
 
 
+  function applySavedProjectionPreset(
+    presetId
+  ) {
+    const preset =
+      savedProjectionPresets[
+        presetId
+      ];
+
+    if (
+      !preset ||
+      preset.manifoldId !==
+        manifoldId
+    ) {
+      return;
+    }
+
+    setActiveProjectionPreset(
+      null
+    );
+
+    animateCompleteProjectionPresetTo(
+      preset,
+      1800
+    );
+  }
+
+  function selectSavedProjectionPreset(
+    presetId
+  ) {
+    /*
+     * Selection is deliberately separate from ordinary projection
+     * preset state. This lets the slot remain highlighted while the
+     * user adjusts sliders, rotates the viewer, zooms, etc., before
+     * pressing Set.
+     */
+    setSelectedSavedPresetId(
+      presetId
+    );
+
+    setActiveProjectionPreset(
+      null
+    );
+
+    applySavedProjectionPreset(
+      presetId
+    );
+  }
+
+
   function resetView() {
     stopAnimation();
     stopEvolution();
+
+    setSelectedSavedPresetId(
+      "symmetric"
+    );
 
     setActiveProjectionPreset(
       "symmetric"
@@ -2285,6 +2970,294 @@ export default function FigureEightProjectionLab({
         null;
     };
   }, [controlApiRef]);
+
+
+  function animateCompleteProjectionPresetTo(
+    preset,
+    duration = 1800
+  ) {
+    stopAnimation();
+    stopEvolution();
+    stopCuspMorphAnimation();
+
+    setEvolvingAxes({
+      xw: false,
+      yw: false,
+      zw: false,
+    });
+
+    setEvolvingGeometry({
+      lambda: false,
+      epsilon: false,
+      rho: false,
+    });
+
+    const startProjection =
+      { ...projection };
+
+    const targetProjection =
+      { ...preset.projection };
+
+    const projectionDelta = {
+      xw:
+        shortestAngleDelta(
+          startProjection.xw,
+          targetProjection.xw
+        ),
+
+      yw:
+        shortestAngleDelta(
+          startProjection.yw,
+          targetProjection.yw
+        ),
+
+      zw:
+        shortestAngleDelta(
+          startProjection.zw,
+          targetProjection.zw
+        ),
+    };
+
+    const startGeometry =
+      { ...geometry };
+
+    const targetGeometry =
+      { ...preset.geometry };
+
+    const startYaw =
+      viewYaw;
+
+    const targetYaw =
+      preset.view.yaw;
+
+    const yawDelta =
+      shortestRadianDelta(
+        startYaw,
+        targetYaw
+      );
+
+    const startPitch =
+      viewPitch;
+
+    const targetPitch =
+      preset.view.pitch;
+
+    const startZoom =
+      zoom;
+
+    const targetZoom =
+      preset.view.zoom;
+
+    const startCuspMorph =
+      cuspMorph;
+
+    const targetCuspMorph =
+      preset.cuspMorph;
+
+
+    /*
+     * These states are categorical rather than continuous.
+     * Install them immediately while the geometric state moves.
+     */
+    setColorMode(
+      preset.layers.colorMode
+    );
+
+    setShowCuspTriangulation(
+      preset.layers.triangles
+    );
+
+    setShowMeridian(
+      preset.layers.meridian
+    );
+
+    setShowLongitude(
+      preset.layers.longitude
+    );
+
+    setShowCuspLabels(
+      preset.layers.labels
+    );
+
+    setShowCuspEdgePairs(
+      preset.layers.edgePairs
+    );
+
+    setWireframe(
+      preset.layers.wireframe
+    );
+
+    setMeshLevel(
+      preset.mesh.level
+    );
+
+
+    const startTime =
+      performance.now();
+
+
+    function frame(now) {
+      const u =
+        Math.min(
+          1,
+          Math.max(
+            0,
+            (
+              now -
+              startTime
+            ) /
+              duration
+          )
+        );
+
+      const eased =
+        u * u *
+        (3 - 2 * u);
+
+
+      /*
+       * S³ orientation.
+       */
+      setProjection({
+        xw:
+          startProjection.xw +
+          projectionDelta.xw *
+            eased,
+
+        yw:
+          startProjection.yw +
+          projectionDelta.yw *
+            eased,
+
+        zw:
+          startProjection.zw +
+          projectionDelta.zw *
+            eased,
+      });
+
+
+      /*
+       * Intrinsic tube geometry.
+       */
+      setGeometry({
+        lambda:
+          startGeometry.lambda +
+          (
+            targetGeometry.lambda -
+            startGeometry.lambda
+          ) *
+            eased,
+
+        epsilon:
+          startGeometry.epsilon +
+          (
+            targetGeometry.epsilon -
+            startGeometry.epsilon
+          ) *
+            eased,
+
+        rho:
+          startGeometry.rho +
+          (
+            targetGeometry.rho -
+            startGeometry.rho
+          ) *
+            eased,
+      });
+
+
+      /*
+       * Ordinary 3D camera.
+       *
+       * Yaw takes the shortest visually equivalent route.
+       */
+      setViewYaw(
+        startYaw +
+          yawDelta *
+            eased
+      );
+
+      setViewPitch(
+        startPitch +
+          (
+            targetPitch -
+            startPitch
+          ) *
+            eased
+      );
+
+      setZoom(
+        startZoom +
+          (
+            targetZoom -
+            startZoom
+          ) *
+            eased
+      );
+
+
+      /*
+       * Flat Cusp <-> Boundary coordinate.
+       */
+      setCuspMorph(
+        startCuspMorph +
+          (
+            targetCuspMorph -
+            startCuspMorph
+          ) *
+            eased
+      );
+
+
+      if (u < 1) {
+        animationRef.current =
+          requestAnimationFrame(
+            frame
+          );
+      } else {
+        /*
+         * Land on the LITERAL saved values.
+         *
+         * For yaw, the interpolated endpoint may differ from the
+         * stored number by an exact multiple of 2π. That is the same
+         * visible orientation. Storing the literal value here keeps
+         * the preset exactly reproducible.
+         */
+        setProjection(
+          targetProjection
+        );
+
+        setGeometry(
+          targetGeometry
+        );
+
+        setViewYaw(
+          targetYaw
+        );
+
+        setViewPitch(
+          targetPitch
+        );
+
+        setZoom(
+          targetZoom
+        );
+
+        setCuspMorph(
+          targetCuspMorph
+        );
+
+        animationRef.current =
+          null;
+      }
+    }
+
+
+    animationRef.current =
+      requestAnimationFrame(
+        frame
+      );
+  }
 
 
   function animateProjectionTo(
@@ -6178,12 +7151,27 @@ export default function FigureEightProjectionLab({
             <button
               type="button"
               className={
-                activeProjectionPreset ===
+                selectedSavedPresetId ===
                 "symmetric"
                   ? styles.toggleActive
                   : undefined
               }
               onClick={() => {
+                setSelectedSavedPresetId(
+                  "symmetric"
+                );
+
+                if (
+                  savedProjectionPresets
+                    .symmetric
+                ) {
+                  applySavedProjectionPreset(
+                    "symmetric"
+                  );
+
+                  return;
+                }
+
                 setActiveProjectionPreset(
                   "symmetric"
                 );
@@ -6200,12 +7188,27 @@ export default function FigureEightProjectionLab({
             <button
               type="button"
               className={
-                activeProjectionPreset ===
+                selectedSavedPresetId ===
                 "standard"
                   ? styles.toggleActive
                   : undefined
               }
               onClick={() => {
+                setSelectedSavedPresetId(
+                  "standard"
+                );
+
+                if (
+                  savedProjectionPresets
+                    .standard
+                ) {
+                  applySavedProjectionPreset(
+                    "standard"
+                  );
+
+                  return;
+                }
+
                 setActiveProjectionPreset(
                   "standard"
                 );
@@ -6222,12 +7225,27 @@ export default function FigureEightProjectionLab({
             <button
               type="button"
               className={
-                activeProjectionPreset ===
+                selectedSavedPresetId ===
                 "offset"
                   ? styles.toggleActive
                   : undefined
               }
               onClick={() => {
+                setSelectedSavedPresetId(
+                  "offset"
+                );
+
+                if (
+                  savedProjectionPresets
+                    .offset
+                ) {
+                  applySavedProjectionPreset(
+                    "offset"
+                  );
+
+                  return;
+                }
+
                 setActiveProjectionPreset(
                   "offset"
                 );
@@ -6248,6 +7266,56 @@ export default function FigureEightProjectionLab({
               </span>
               <span className={styles.presetOffsetWord}>offset</span>
             </button>
+
+            {Array.from(
+              { length: 6 },
+              (_, index) => {
+                const presetId =
+                  `preset${index + 1}`;
+
+                const preset =
+                  savedProjectionPresets[
+                    presetId
+                  ];
+
+                const selected =
+                  selectedSavedPresetId ===
+                    presetId;
+
+                const availableHere =
+                  !preset ||
+                  preset.manifoldId ===
+                    manifoldId;
+
+                return (
+                  <button
+                    key={
+                      presetId
+                    }
+                    type="button"
+                    className={
+                      selected
+                        ? styles.toggleActive
+                        : undefined
+                    }
+                    title={
+                      !preset
+                        ? `Select empty Preset ${index + 1} slot`
+                        : availableHere
+                          ? `Restore Preset ${index + 1}`
+                          : `Preset ${index + 1} belongs to the other manifold; select it and press Set to replace it`
+                    }
+                    onClick={() =>
+                      selectSavedProjectionPreset(
+                        presetId
+                      )
+                    }
+                  >
+                    Preset {index + 1}
+                  </button>
+                );
+              }
+            )}
           </div>
 
           <div className={styles.compactSliderGroup}>
