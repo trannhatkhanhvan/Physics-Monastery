@@ -2094,56 +2094,11 @@ export default function FigureEightProjectionLab({
   ] = useState("symmetric");
 
   /*
-   * Restore user-edited preset slots from this browser.
+   * Publication presets are defined in source above.
    *
-   * Preset 1 falls back to the checked-in default above until the
-   * user explicitly replaces it with Set.
+   * Do not restore browser-local preset overrides here:
+   * every visitor must receive the same nine coded views.
    */
-  useEffect(() => {
-    try {
-      const raw =
-        window.localStorage.getItem(
-          SAVED_PROJECTION_PRESETS_STORAGE_KEY
-        );
-
-      if (!raw) {
-        return;
-      }
-
-      const stored =
-        JSON.parse(raw);
-
-      if (
-        !stored ||
-        typeof stored !== "object"
-      ) {
-        return;
-      }
-
-      setSavedProjectionPresets(
-        (current) => ({
-          ...current,
-
-          ...Object.fromEntries(
-            Object.keys(
-              DEFAULT_SAVED_PROJECTION_PRESETS
-            ).map(
-              (presetId) => [
-                presetId,
-                stored[presetId] ??
-                  current[presetId],
-              ]
-            )
-          ),
-        })
-      );
-    } catch {
-      /*
-       * If localStorage is unavailable or contains malformed old
-       * data, use the normal in-memory preset defaults.
-       */
-    }
-  }, []);
 
   const [labHeight, setLabHeight] =
     useState(null);
