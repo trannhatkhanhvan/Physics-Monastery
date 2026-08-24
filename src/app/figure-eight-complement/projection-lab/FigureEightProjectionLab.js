@@ -86,18 +86,23 @@ const DEFAULT_SAVED_PROJECTION_PRESETS =
      */
     symmetric: Object.freeze({
       manifoldId: "m004",
+      projectionPreset: null,
 
       projection: Object.freeze({
-        ...SYMMETRIC_PROJECTION,
+        xw: 0,
+        yw: 90,
+        zw: 180,
       }),
 
       geometry: Object.freeze({
-        ...DEFAULT_GEOMETRY,
+        lambda: 0.14,
+        epsilon: 0.14,
+        rho: 0.14,
       }),
 
       view: Object.freeze({
-        yaw: -0.55,
-        pitch: 0.42,
+        yaw: 1.1413531799316403,
+        pitch: -1.2340274669316154,
         zoom: 1.2544,
       }),
 
@@ -410,7 +415,7 @@ const DEFAULT_SAVED_PROJECTION_PRESETS =
 
       projection: Object.freeze({
         xw: 0,
-        yw: 88.5,
+        yw: 95,
         zw: 209.5,
       }),
 
@@ -421,9 +426,9 @@ const DEFAULT_SAVED_PROJECTION_PRESETS =
       }),
 
       view: Object.freeze({
-        yaw: -3.472927978515625,
-        pitch: 1.3519635609004157,
-        zoom: 0.9516491476027195,
+        yaw: -5.117339599609375,
+        pitch: 0.10056997569533757,
+        zoom: 0.88699919384572,
       }),
 
       layers: Object.freeze({
@@ -444,6 +449,7 @@ const DEFAULT_SAVED_PROJECTION_PRESETS =
         nv: 64,
       }),
     }),
+
   });
 
 const EVOLVE_SPEED_DEGREES_PER_SECOND = 8.4;
