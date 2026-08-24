@@ -227,6 +227,23 @@ body {
 }
 
 
+/*
+ * Hyperbolic Partition Equation background.
+ *
+ * .hyperbolic-partition-content is present in the server-rendered
+ * HTML, before LayoutWrapper hydrates and assigns the page-specific
+ * class. Giving .main-content the background at that stage prevents
+ * the gray reload flash.
+ */
+.main-content:has(.hyperbolic-partition-content) {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+
 /* Legend and Partition Page Specifics */
 .legend-content,
 .partition-content,

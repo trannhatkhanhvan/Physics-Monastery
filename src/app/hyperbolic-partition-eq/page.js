@@ -21,6 +21,8 @@ export default function HyperbolicPartitionEq() {
     maxWidth: "none",
   }}
 >
+        <div style={{ height: '0.5rem' }} />
+
         <div className="legend-title">the hyperbolic partition equation</div>
 
         <div className="equation-line">
