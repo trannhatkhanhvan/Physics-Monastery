@@ -1,12 +1,27 @@
 'use client';
 export const dynamic = 'force-dynamic';
 
+import { useState } from 'react';
 import LayoutWrapper from '@/components/LayoutWrapper';
 import QuarticTetrahedronTransform
   from '../quartic-tetrahedron-transform/QuarticTetrahedronTransform';
 import '../globals.css';
 
 export default function HyperbolicPartitionEq() {
+  /*
+   * TEMPORARY LIVE CALIBRATION.
+   *
+   * leftShift:
+   *   positive values move the viewer's LEFT edge right.
+   *
+   * rightExpand:
+   *   positive values extend the viewer's RIGHT edge right.
+   */
+  const [quarticLeftShift, setQuarticLeftShift] =
+    useState(0);
+
+  const [quarticRightExpand, setQuarticRightExpand] =
+    useState(0);
 
   return (
     <LayoutWrapper>
@@ -823,10 +838,25 @@ export default function HyperbolicPartitionEq() {
         aria-label="Quartic to Ideal Tetrahedron interactive explorer"
         style={{
           position: 'relative',
+
+          /*
+           * TEMPORARY live calibration:
+           *
+           * move left edge independently,
+           * then extend right edge independently.
+           */
+          marginLeft:
+            `${quarticLeftShift}px`,
+
           width:
-            'calc(100vw - var(--sidebar-width))',
-          maxWidth:
-            'calc(100vw - var(--sidebar-width))',
+            `calc(
+              100vw
+              - var(--sidebar-width)
+              - ${quarticLeftShift}px
+              + ${quarticRightExpand}px
+            )`,
+
+          maxWidth: 'none',
           boxSizing: 'border-box',
           flex: '0 0 auto',
           height: 'calc(100vh + 180px)',
@@ -843,6 +873,107 @@ export default function HyperbolicPartitionEq() {
           }}
         >
           <QuarticTetrahedronTransform embedded />
+
+          {/*
+           * TEMPORARY LIVE EDGE CALIBRATION.
+           * Remove after the production values are chosen.
+           */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '72px',
+              right: '18px',
+              zIndex: 100,
+              width: '260px',
+              padding: '10px 12px',
+              boxSizing: 'border-box',
+              color: '#f5efe0',
+              fontFamily:
+                '"Times New Roman", Times, serif',
+              fontSize: '13px',
+              background:
+                'rgba(0, 0, 0, 0.82)',
+              border:
+                '1px solid rgba(245, 239, 224, 0.45)',
+              borderRadius: '6px',
+            }}
+          >
+            <div
+              style={{
+                marginBottom: '8px',
+                fontSize: '14px',
+              }}
+            >
+              LIVE VIEWER CALIBRATION
+            </div>
+
+            <label
+              style={{
+                display: 'block',
+                marginBottom: '10px',
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  marginBottom: '4px',
+                }}
+              >
+                <span>Left edge →</span>
+                <span>{quarticLeftShift}px</span>
+              </div>
+
+              <input
+                type="range"
+                min="0"
+                max="180"
+                step="1"
+                value={quarticLeftShift}
+                onChange={(event) =>
+                  setQuarticLeftShift(
+                    Number(event.target.value)
+                  )
+                }
+                style={{
+                  width: '100%',
+                }}
+              />
+            </label>
+
+            <label
+              style={{
+                display: 'block',
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  marginBottom: '4px',
+                }}
+              >
+                <span>Right edge →</span>
+                <span>{quarticRightExpand}px</span>
+              </div>
+
+              <input
+                type="range"
+                min="0"
+                max="220"
+                step="1"
+                value={quarticRightExpand}
+                onChange={(event) =>
+                  setQuarticRightExpand(
+                    Number(event.target.value)
+                  )
+                }
+                style={{
+                  width: '100%',
+                }}
+              />
+            </label>
+          </div>
 
           <a
             href="/quartic-tetrahedron-transform"
