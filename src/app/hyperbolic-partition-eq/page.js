@@ -2,20 +2,11 @@
 export const dynamic = 'force-dynamic';
 
 import LayoutWrapper from '@/components/LayoutWrapper';
+import QuarticTetrahedronTransform
+  from '../quartic-tetrahedron-transform/QuarticTetrahedronTransform';
 import '../globals.css';
 
 export default function HyperbolicPartitionEq() {
-  /*
-   * TEMPORARY CALIBRATION:
-   *
-   * expandedViewerLeftShiftPx changes ONLY the expanded-menu
-   * viewer's LEFT edge.
-   *
-   * Its width changes by the inverse amount at the same time,
-   * which keeps the RIGHT edge fixed.
-   */
-  const expandedViewerLeftShiftPx = 40;
-  const expandedViewerRightShiftPx = 55;
 
   return (
     <LayoutWrapper>
@@ -817,137 +808,55 @@ export default function HyperbolicPartitionEq() {
          * before the article itself starts moving upward.
          * ==========================================================
          */}
-        <section
-          className="quartic-explorer-embed"
-          aria-label="Quartic to Ideal Tetrahedron interactive explorer"
+              </div>
+
+      {/*
+       * Same architecture as /simplest-manifold:
+       *
+       * Render the actual viewer component directly.
+       * NO iframe.
+       * NO second browser viewport.
+       * NO sidebar compensation arithmetic.
+       */}
+      <section
+        className="quartic-explorer-embed"
+        aria-label="Quartic to Ideal Tetrahedron interactive explorer"
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: 'calc(100vh + 180px)',
+        }}
+      >
+        <div
           style={{
-            position: 'relative',
-
-            '--quartic-embed-left-shift':
-              `clamp(
-                0px,
-                calc(
-                  var(--sidebar-width)
-                  - var(--sidebar-collapsed-width)
-                ),
-                ${expandedViewerLeftShiftPx}px
-              )`,
-
-            '--quartic-embed-right-shift':
-              `clamp(
-                0px,
-                calc(
-                  var(--sidebar-width)
-                  - var(--sidebar-collapsed-width)
-                ),
-                ${expandedViewerRightShiftPx}px
-              )`,
-
-            /*
-             * Break the explorer out of the article's max-width
-             * text column, but respect the CURRENT collapsible
-             * sidebar width supplied by LayoutWrapper.
-             *
-             * Left edge:
-             *   current sidebar right edge
-             *
-             * Right edge:
-             *   20 px from the viewport right edge
-             *
-             * --sidebar-width changes automatically between the
-             * expanded and collapsed menu states.
-             */
-            /*
-             * LayoutWrapper already moves the page content to the
-             * right by the current sidebar width.
-             *
-             * Break only out of the centered article column:
-             *
-             *   left edge  = current sidebar edge
-             *   right edge = viewport right - 20px
-             *
-             * When the menu expands, the left edge moves from
-             * 32px to 142px and the viewer simply becomes narrower.
-             * The right edge does not move.
-             */
-            width:
-              `calc(
-                100vw
-                - var(--sidebar-width)
-                - 20px
-                - var(--quartic-embed-left-shift)
-                + var(--quartic-embed-right-shift)
-              )`,
-            marginLeft:
-              `calc(
-                50%
-                - 50vw
-                + var(--sidebar-collapsed-width)
-                + var(--quartic-embed-left-shift)
-              )`,
-
-            height: 'calc(100vh + 180px)',
+            position: 'sticky',
+            top: 0,
+            zIndex: 1,
+            width: '100%',
+            height: '100vh',
+            overflow: 'hidden',
           }}
         >
-          <div
-            style={{
-              position: 'sticky',
-              top: 0,
-              width: '100%',
-              height: '100vh',
-              overflow: 'hidden',
-            }}
-          >
-            {/*
-             * ?embedded=1 suppresses only the quartic page's own
-             * LayoutWrapper. The Hyperbolic Partitions page keeps
-             * its single site menu, and this iframe fills the full
-             * remaining content width without any crop or shift.
-             */}
-            <iframe
-              src="/quartic-tetrahedron-transform?embedded=1"
-              title="Quartic to Ideal Tetrahedron"
-              scrolling="no"
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 0,
-                background: 'transparent',
-              }}
-            />
+          <QuarticTetrahedronTransform embedded />
 
-            {/*
-             * The explorer itself remains untouched.
-             *
-             * This invisible link sits over its existing
-             * "Quartic → Ideal Tetrahedron" heading. Clicking that
-             * displayed heading therefore opens the dedicated route.
-             *
-             * We can fine-tune this hit-area after seeing it in the
-             * actual layout if necessary.
-             */}
-            <a
-              href="/quartic-tetrahedron-transform"
-              aria-label="Open Quartic to Ideal Tetrahedron as a standalone page"
-              title="Open standalone explorer"
-              style={{
-                position: 'absolute',
-                top: '10px',
-                left: '12px',
-                width: '390px',
-                height: '52px',
-                zIndex: 20,
-                display: 'block',
-                background: 'transparent',
-                cursor: 'pointer',
-              }}
-            />
-          </div>
-        </section>
-      </div>
+          <a
+            href="/quartic-tetrahedron-transform"
+            aria-label="Open Quartic to Ideal Tetrahedron as a standalone page"
+            title="Open standalone explorer"
+            style={{
+              position: 'absolute',
+              top: '10px',
+              left: '12px',
+              width: '390px',
+              height: '52px',
+              zIndex: 20,
+              display: 'block',
+              background: 'transparent',
+              cursor: 'pointer',
+            }}
+          />
+        </div>
+      </section>
     </LayoutWrapper>
   );
 }
