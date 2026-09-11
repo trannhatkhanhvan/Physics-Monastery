@@ -65,10 +65,17 @@ export default function HyperbolicPartitionEq() {
       const left =
         sidebarRight - hostRect.left;
 
+      /*
+       * Match the standalone Quartic route exactly.
+       *
+       * LayoutWrapper gives the standalone viewer a full
+       * viewport-width content box even though it begins
+       * after the sidebar. Do not subtract sidebarRight
+       * a second time here.
+       */
       const width =
         viewportRight -
-        rightGap -
-        sidebarRight;
+        rightGap;
 
       setQuarticFrame({
         left,
