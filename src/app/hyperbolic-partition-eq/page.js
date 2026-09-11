@@ -1,7 +1,6 @@
 'use client';
 export const dynamic = 'force-dynamic';
 
-import { useEffect, useState } from 'react';
 import LayoutWrapper from '@/components/LayoutWrapper';
 import '../globals.css';
 
@@ -18,55 +17,20 @@ export default function HyperbolicPartitionEq() {
   const expandedViewerLeftShiftPx = 40;
   const expandedViewerRightShiftPx = 55;
 
-  const [
-    sidebarIsCollapsed,
-    setSidebarIsCollapsed,
-  ] = useState(true);
-
-  useEffect(() => {
-    const layout =
-      document.querySelector('.layout-container');
-
-    if (!layout) {
-      return undefined;
-    }
-
-    const readSidebarState = () => {
-      setSidebarIsCollapsed(
-        layout.classList.contains(
-          'sidebar-is-collapsed'
-        )
-      );
-    };
-
-    readSidebarState();
-
-    const observer = new MutationObserver(
-      readSidebarState
-    );
-
-    observer.observe(layout, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  const activeExpandedShift =
-    sidebarIsCollapsed
-      ? 0
-      : expandedViewerLeftShiftPx;
-
-  const activeExpandedRightShift =
-    sidebarIsCollapsed
-      ? 0
-      : expandedViewerRightShiftPx;
-
   return (
     <LayoutWrapper>
+      <style jsx global>{`
+        .layout-container .quartic-explorer-embed {
+          --quartic-embed-left-shift: ${expandedViewerLeftShiftPx}px;
+          --quartic-embed-right-shift: ${expandedViewerRightShiftPx}px;
+        }
+
+        .layout-container.sidebar-is-collapsed .quartic-explorer-embed {
+          --quartic-embed-left-shift: 0px;
+          --quartic-embed-right-shift: 0px;
+        }
+      `}</style>
+
       <div
   className="symbol-overlay"
   style={{
@@ -903,15 +867,15 @@ export default function HyperbolicPartitionEq() {
                 100vw
                 - var(--sidebar-width)
                 - 20px
-                - ${activeExpandedShift}px
-                + ${activeExpandedRightShift}px
+                - var(--quartic-embed-left-shift)
+                + var(--quartic-embed-right-shift)
               )`,
             marginLeft:
               `calc(
                 50%
                 - 50vw
                 + var(--sidebar-collapsed-width)
-                + ${activeExpandedShift}px
+                + var(--quartic-embed-left-shift)
               )`,
 
             height: 'calc(100vh + 180px)',
