@@ -823,7 +823,12 @@ export default function HyperbolicPartitionEq() {
         aria-label="Quartic to Ideal Tetrahedron interactive explorer"
         style={{
           position: 'relative',
-          width: '100%',
+          width:
+            'calc(100vw - var(--sidebar-width))',
+          maxWidth:
+            'calc(100vw - var(--sidebar-width))',
+          boxSizing: 'border-box',
+          flex: '0 0 auto',
           height: 'calc(100vh + 180px)',
         }}
       >
