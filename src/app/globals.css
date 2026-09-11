@@ -196,6 +196,7 @@ body {
 .symbol-legend-page,
 .constants-of-nature-page,
 .hyperbolic-partition-page,
+.quartic-tetrahedron-transform-page,
 .forum-page {
   position: relative;
   min-height: 100vh;
@@ -207,6 +208,28 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+
+/*
+ * Quartic explorer embedded in Hyperbolic Partitions.
+ *
+ * Collapsed menu: use the existing inline geometry unchanged.
+ *
+ * Expanded menu only: the parent layout introduces the 110px
+ * difference between the 32px and 142px sidebar states. Remove
+ * exactly that displacement from the explorer's real layout
+ * position. Do not alter its width or its collapsed position.
+ */
+.layout-container:not(.sidebar-is-collapsed)
+  .hyperbolic-partition-page
+  .quartic-explorer-embed {
+  margin-left:
+    calc(
+      50% - 50vw
+      + var(--sidebar-width)
+      - 110px
+    ) !important;
+}
+
 
 /* Main Content Area */
 .main-content {
@@ -236,6 +259,14 @@ body {
  * the gray reload flash.
  */
 .main-content:has(.hyperbolic-partition-content) {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.main-content:has(.quartic-tetrahedron-transform-page) {
   background-image: url('/physics_monastery_background.jpg');
   background-size: cover;
   background-position: center;

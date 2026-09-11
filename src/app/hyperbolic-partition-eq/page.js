@@ -1,10 +1,87 @@
 'use client';
 export const dynamic = 'force-dynamic';
 
+import { useEffect, useState } from 'react';
 import LayoutWrapper from '@/components/LayoutWrapper';
 import '../globals.css';
 
 export default function HyperbolicPartitionEq() {
+  /*
+   * TEMPORARY CALIBRATION:
+   *
+   * expandedViewerLeftShiftPx changes ONLY the expanded-menu
+   * viewer's LEFT edge.
+   *
+   * Its width changes by the inverse amount at the same time,
+   * which keeps the RIGHT edge fixed.
+   */
+  const [
+    expandedViewerLeftShiftPx,
+    setExpandedViewerLeftShiftPx,
+  ] = useState(40);
+
+  /*
+   * TEMPORARY right-edge calibration.
+   *
+   * This changes WIDTH ONLY.
+   * It does not touch marginLeft, so the calibrated left edge
+   * remains fixed at +40 px.
+   *
+   * Positive = move right edge right.
+   * Negative = move right edge left.
+   */
+  const [
+    expandedViewerRightShiftPx,
+    setExpandedViewerRightShiftPx,
+  ] = useState(0);
+
+  const [
+    sidebarIsCollapsed,
+    setSidebarIsCollapsed,
+  ] = useState(true);
+
+  useEffect(() => {
+    const layout =
+      document.querySelector('.layout-container');
+
+    if (!layout) {
+      return undefined;
+    }
+
+    const readSidebarState = () => {
+      setSidebarIsCollapsed(
+        layout.classList.contains(
+          'sidebar-is-collapsed'
+        )
+      );
+    };
+
+    readSidebarState();
+
+    const observer = new MutationObserver(
+      readSidebarState
+    );
+
+    observer.observe(layout, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const activeExpandedShift =
+    sidebarIsCollapsed
+      ? 0
+      : expandedViewerLeftShiftPx;
+
+  const activeExpandedRightShift =
+    sidebarIsCollapsed
+      ? 0
+      : expandedViewerRightShiftPx;
+
   return (
     <LayoutWrapper>
       <div
@@ -780,8 +857,252 @@ export default function HyperbolicPartitionEq() {
 
 
         <div style={{ display: 'block', width: '100%' }} />
-        <div style={{ height: '2.0rem' }} />
-        <div style={{ height: '10.0rem' }} />
+
+        <div style={{ height: '4.0rem' }} />
+
+        {/*
+         * ==========================================================
+         * QUARTIC → IDEAL TETRAHEDRON
+         *
+         * The actual explorer remains entirely on its own route:
+         *
+         *   /quartic-tetrahedron-transform
+         *
+         * This page only embeds that route. Future edits to the
+         * explorer therefore require NO changes here.
+         *
+         * The outer section breaks out of the article's 1400px
+         * maximum width and uses the full space to the right of the
+         * site's 220px navigation column.
+         *
+         * The additional 180px of wrapper height acts as a small
+         * sticky-release runway. When reversing upward from the
+         * explorer, the viewer remains pinned while that runway is
+         * consumed, requiring a second deliberate upward scroll
+         * before the article itself starts moving upward.
+         * ==========================================================
+         */}
+        <section
+          className="quartic-explorer-embed"
+          aria-label="Quartic to Ideal Tetrahedron interactive explorer"
+          style={{
+            position: 'relative',
+
+            /*
+             * Break the explorer out of the article's max-width
+             * text column, but respect the CURRENT collapsible
+             * sidebar width supplied by LayoutWrapper.
+             *
+             * Left edge:
+             *   current sidebar right edge
+             *
+             * Right edge:
+             *   20 px from the viewport right edge
+             *
+             * --sidebar-width changes automatically between the
+             * expanded and collapsed menu states.
+             */
+            /*
+             * LayoutWrapper already moves the page content to the
+             * right by the current sidebar width.
+             *
+             * Break only out of the centered article column:
+             *
+             *   left edge  = current sidebar edge
+             *   right edge = viewport right - 20px
+             *
+             * When the menu expands, the left edge moves from
+             * 32px to 142px and the viewer simply becomes narrower.
+             * The right edge does not move.
+             */
+            width:
+              `calc(
+                100vw
+                - var(--sidebar-width)
+                - 20px
+                - ${activeExpandedShift}px
+                + ${activeExpandedRightShift}px
+              )`,
+            marginLeft:
+              `calc(
+                50%
+                - 50vw
+                + var(--sidebar-collapsed-width)
+                + ${activeExpandedShift}px
+              )`,
+
+            height: 'calc(100vh + 180px)',
+          }}
+        >
+          <div
+            style={{
+              position: 'sticky',
+              top: 0,
+              width: '100%',
+              height: '100vh',
+              overflow: 'hidden',
+            }}
+          >
+            {!sidebarIsCollapsed && (
+              <div
+                style={{
+                  position: 'fixed',
+                  left: '50vw',
+                  bottom: '14px',
+                  transform: 'translateX(-50%)',
+                  zIndex: 100,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  padding: '6px 10px',
+                  border:
+                    '1px solid rgba(255,255,255,0.45)',
+                  borderRadius: '6px',
+                  background: 'rgba(0,0,0,0.82)',
+                  color: 'white',
+                  fontFamily:
+                    '"Times New Roman", Times, serif',
+                  fontSize: '13px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                <span>
+                  Expanded viewer left edge
+                </span>
+
+                <input
+                  type="range"
+                  min="-300"
+                  max="100"
+                  step="1"
+                  value={
+                    expandedViewerLeftShiftPx
+                  }
+                  onChange={(event) => {
+                    setExpandedViewerLeftShiftPx(
+                      Number(event.target.value)
+                    );
+                  }}
+                  style={{
+                    width: '260px',
+                  }}
+                />
+
+                <span
+                  style={{
+                    minWidth: '58px',
+                    textAlign: 'right',
+                  }}
+                >
+                  {expandedViewerLeftShiftPx}px
+                </span>
+
+                <span
+                  style={{
+                    marginLeft: '10px',
+                  }}
+                >
+                  Right edge
+                </span>
+
+                <input
+                  type="range"
+                  min="-150"
+                  max="150"
+                  step="1"
+                  value={
+                    expandedViewerRightShiftPx
+                  }
+                  onChange={(event) => {
+                    setExpandedViewerRightShiftPx(
+                      Number(event.target.value)
+                    );
+                  }}
+                  style={{
+                    width: '360px',
+                  }}
+                />
+
+                <input
+                  type="number"
+                  min="-150"
+                  max="150"
+                  step="1"
+                  value={
+                    expandedViewerRightShiftPx
+                  }
+                  onChange={(event) => {
+                    setExpandedViewerRightShiftPx(
+                      Number(event.target.value)
+                    );
+                  }}
+                  style={{
+                    width: '64px',
+                    padding: '2px 4px',
+                    background: 'rgba(0,0,0,0.7)',
+                    color: 'white',
+                    border:
+                      '1px solid rgba(255,255,255,0.45)',
+                    borderRadius: '3px',
+                    fontFamily: 'inherit',
+                    fontSize: '13px',
+                    textAlign: 'right',
+                  }}
+                />
+
+                <span>px</span>
+              </div>
+            )}
+
+            {/*
+             * ?embedded=1 suppresses only the quartic page's own
+             * LayoutWrapper. The Hyperbolic Partitions page keeps
+             * its single site menu, and this iframe fills the full
+             * remaining content width without any crop or shift.
+             */}
+            <iframe
+              src="/quartic-tetrahedron-transform?embedded=1"
+              title="Quartic to Ideal Tetrahedron"
+              scrolling="no"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 0,
+                background: 'transparent',
+              }}
+            />
+
+            {/*
+             * The explorer itself remains untouched.
+             *
+             * This invisible link sits over its existing
+             * "Quartic → Ideal Tetrahedron" heading. Clicking that
+             * displayed heading therefore opens the dedicated route.
+             *
+             * We can fine-tune this hit-area after seeing it in the
+             * actual layout if necessary.
+             */}
+            <a
+              href="/quartic-tetrahedron-transform"
+              aria-label="Open Quartic to Ideal Tetrahedron as a standalone page"
+              title="Open standalone explorer"
+              style={{
+                position: 'absolute',
+                top: '10px',
+                left: '12px',
+                width: '390px',
+                height: '52px',
+                zIndex: 20,
+                display: 'block',
+                background: 'transparent',
+                cursor: 'pointer',
+              }}
+            />
+          </div>
+        </section>
       </div>
     </LayoutWrapper>
   );

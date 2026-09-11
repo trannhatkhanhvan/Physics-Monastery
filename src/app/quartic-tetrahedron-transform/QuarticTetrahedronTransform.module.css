@@ -1,0 +1,3585 @@
+.page {
+  position: relative;
+  z-index: 1;
+
+  height: 100dvh;
+  min-height: 0;
+  width: 100%;
+
+  box-sizing: border-box;
+  padding: 24px 14px 14px 14px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  color: #e8dfc8;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.title {
+  margin: 0 0 12px;
+
+  font-size: clamp(20px, 2.2vw, 25px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    clamp(460px, 32.5vw, 620px);
+
+  gap: 0;
+
+  flex: 1 1 auto;
+
+  width: 100%;
+  min-height: 0;
+  height: 0;
+
+  overflow: hidden;
+}
+
+.viewer,
+.controls {
+  border: 1px solid rgba(232, 223, 200, 0.18);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 244, 220, 0.07),
+      transparent 48%
+    ),
+    rgba(0, 0, 0, 0.18);
+}
+
+.viewer {
+  position: relative;
+
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.controls {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background:
+    rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 900px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    min-height: 180px;
+  }
+}
+
+.viewerReadout {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  right: 14px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+
+  pointer-events: none;
+}
+
+.viewerMode {
+  font-size: 17px;
+  letter-spacing: 0.025em;
+}
+
+.viewerA {
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(232, 223, 200, 0.78);
+}
+
+.controls {
+  box-sizing: border-box;
+  padding: 12px 10px;
+}
+
+.controlSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionTitle {
+  margin-bottom: 2px;
+
+  font-size: 15px;
+  letter-spacing: 0.035em;
+  color: rgba(250, 247, 238, 0.94);
+}
+
+.divider {
+  height: 1px;
+  margin: 12px 0;
+
+  background: rgba(232, 223, 200, 0.18);
+}
+
+.modeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.modeButton,
+.modeButtonActive,
+.resetButton {
+  min-height: 30px;
+
+  border: 1px solid rgba(232, 223, 200, 0.24);
+  border-radius: 4px;
+
+  background: rgba(0, 0, 0, 0.20);
+  color: #e8dfc8;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.modeButton:hover,
+.resetButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.modeButtonActive {
+  border-color: rgba(232, 223, 200, 0.52);
+  background: rgba(232, 223, 200, 0.12);
+}
+
+.aReadout {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.aSlider {
+  width: 100%;
+  margin: 2px 0 0;
+}
+
+.sliderEnds {
+  position: relative;
+
+  height: 24px;
+  margin-top: 1px;
+
+  font-size: 12px;
+  line-height: 1;
+
+  color: rgba(232, 223, 200, 0.72);
+}
+
+.sliderEnds span {
+  position: absolute;
+  top: 10px;
+
+  white-space: nowrap;
+}
+
+.sliderEnds span:nth-child(1) {
+  left: 0;
+  transform: translateX(0);
+}
+
+.sliderEnds span:nth-child(2) {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sliderEnds span:nth-child(3) {
+  right: 0;
+  transform: translateX(0);
+}
+
+.sliderEnds span::before {
+  content: "";
+
+  position: absolute;
+  top: -11px;
+
+  width: 1px;
+  height: 7px;
+
+  background:
+    rgba(243, 234, 210, 0.72);
+}
+
+.sliderEnds span:nth-child(1)::before {
+  left: 0;
+}
+
+.sliderEnds span:nth-child(2)::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sliderEnds span:nth-child(3)::before {
+  right: 0;
+}
+
+.inputLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin-top: 5px;
+
+  font-size: 12px;
+  color: rgba(232, 223, 200, 0.72);
+}
+
+.aInput {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: 30px;
+
+  border: 1px solid rgba(232, 223, 200, 0.24);
+  border-radius: 4px;
+
+  padding: 3px 6px;
+
+  background: rgba(0, 0, 0, 0.28);
+  color: #e8dfc8;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.resetButton {
+  margin-top: 2px;
+}
+
+.rootView {
+  position: absolute;
+  inset: 58px 28px 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 24px;
+}
+
+.rootEquation {
+  font-size: clamp(20px, 2vw, 28px);
+  letter-spacing: 0.01em;
+}
+
+.rootList {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  min-width: min(720px, 88%);
+}
+
+.rootRow {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  align-items: baseline;
+
+  padding: 8px 12px;
+
+  border-bottom:
+    1px solid
+    rgba(232, 223, 200, 0.12);
+}
+
+.rootLabel {
+  font-size: 20px;
+}
+
+.rootValue {
+  font-size: clamp(17px, 1.6vw, 22px);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.residual {
+  margin-top: 4px;
+
+  font-size: 13px;
+  color: rgba(232, 223, 200, 0.66);
+  font-variant-numeric: tabular-nums;
+}
+
+.polarReadout {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+  gap: 12px 28px;
+
+  padding: 8px 18px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.12);
+
+  border-bottom:
+    1px solid
+    rgba(232, 223, 200, 0.12);
+
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rootGeometry {
+  width: min(760px, 92%);
+}
+
+.rootSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  overflow: visible;
+}
+
+.axisLine {
+  stroke: rgba(232, 223, 200, 0.34);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.axisLabel {
+  fill: rgba(232, 223, 200, 0.62);
+  font-size: 13px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.zheVector {
+  stroke: rgba(232, 223, 200, 0.24);
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+}
+
+.angleArc {
+  fill: none;
+  stroke: rgba(232, 223, 200, 0.24);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.rootPoint {
+  fill: rgba(232, 223, 200, 0.78);
+  stroke: rgba(0, 0, 0, 0.65);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.rootPointPrimary {
+  fill: #f3ead2;
+  stroke: rgba(0, 0, 0, 0.8);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.rootPointLabel,
+.angleLabel {
+  fill: #e8dfc8;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+}
+
+.crossRatioView {
+  position: absolute;
+  inset: 58px 28px 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.crossRatioFormula {
+  font-size: 16px;
+
+  text-align: center;
+}
+
+.shapePlane {
+  width: min(630px, 90%);
+  min-height: 0;
+}
+
+.shapeSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.unitCircle {
+  fill: none;
+  stroke: rgba(232, 223, 200, 0.36);
+  stroke-width: 1.2;
+  stroke-dasharray: 5 5;
+  vector-effect: non-scaling-stroke;
+}
+
+.anharmonicGuide {
+  fill: none;
+  stroke: rgba(232, 223, 200, 0.16);
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+  vector-effect: non-scaling-stroke;
+}
+
+.anharmonicGuide {
+  fill: none;
+  stroke: rgba(232, 223, 200, 0.18);
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+  vector-effect: non-scaling-stroke;
+}
+
+.shapeRadius {
+  stroke: rgba(232, 223, 200, 0.58);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.shapePoint {
+  fill: #f3ead2;
+  stroke: rgba(0, 0, 0, 0.85);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.targetPoint {
+  fill: none;
+  stroke: rgba(232, 223, 200, 0.72);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.shapeLabel,
+.targetLabel,
+.shapePointLabel {
+  fill: #e8dfc8;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+}
+
+.targetLabel {
+  fill: rgba(232, 223, 200, 0.70);
+}
+
+.crossRatioReadouts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 8px 26px;
+
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.shapeTriplet {
+  width: min(640px, 92%);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+
+  margin-top: 2px;
+}
+
+.shapeTriplet > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 7px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.12);
+}
+
+.shapeTriplet span:first-child {
+  font-size: 16px;
+}
+
+.shapeTriplet span:last-child {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(232, 223, 200, 0.74);
+}
+
+.volumeView {
+  position: absolute;
+  inset: 62px 34px 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 24px;
+}
+
+.volumeEquation {
+  font-size: clamp(20px, 1.9vw, 27px);
+  text-align: center;
+}
+
+.volumeChain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  font-size: 14px;
+}
+
+.volumeChain > div:not(.chainArrow) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+
+  min-width: 100px;
+}
+
+.volumeChain span {
+  color: rgba(232, 223, 200, 0.66);
+}
+
+.volumeChain strong {
+  font-weight: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+.chainArrow {
+  color: rgba(232, 223, 200, 0.54);
+  font-size: 20px;
+}
+
+.volumeMeters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+
+  width: min(760px, 92%);
+}
+
+.volumeCard {
+  padding: 18px 18px 15px;
+
+  border:
+    1px solid
+    rgba(232, 223, 200, 0.16);
+
+  background:
+    rgba(0, 0, 0, 0.16);
+}
+
+.volumeCardTitle {
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  text-align: center;
+}
+
+.volumeNumber {
+  margin-bottom: 14px;
+
+  font-size: clamp(21px, 2vw, 28px);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.volumeBar {
+  position: relative;
+
+  height: 8px;
+  width: 100%;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(232, 223, 200, 0.20);
+
+  background:
+    rgba(0, 0, 0, 0.24);
+}
+
+.volumeBarFill {
+  height: 100%;
+
+  background:
+    rgba(232, 223, 200, 0.72);
+
+  transition:
+    width 90ms linear;
+}
+
+.volumeTargetRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-top: 6px;
+
+  font-size: 11px;
+  color: rgba(232, 223, 200, 0.65);
+}
+
+.volumeCaption {
+  margin-top: 11px;
+
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+
+  color: rgba(232, 223, 200, 0.72);
+}
+
+.angleTriplet {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(110px, 1fr));
+
+  width: min(600px, 86%);
+
+  gap: 10px;
+}
+
+.angleTriplet > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 8px 10px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.14);
+}
+
+.angleTriplet span {
+  font-size: 15px;
+}
+
+.angleTriplet strong {
+  font-size: 13px;
+  font-weight: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+.angleSum {
+  margin-top: -12px;
+
+  font-size: 12px;
+  color: rgba(232, 223, 200, 0.64);
+}
+
+.volumeLimit {
+  padding-top: 12px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.14);
+
+  font-size: 15px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .volumeMeters {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rootAnglesView {
+  position: absolute;
+  inset: 60px 28px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.rootAnglesEquation {
+  font-size: clamp(19px, 1.8vw, 25px);
+}
+
+.rootAnglesGraph {
+  width: min(800px, 94%);
+  min-height: 0;
+}
+
+.rootAnglesSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.graphAxis {
+  stroke: rgba(232, 223, 200, 0.38);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.referenceLine {
+  stroke: rgba(232, 223, 200, 0.18);
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+  vector-effect: non-scaling-stroke;
+}
+
+.rootAnglePath {
+  fill: none;
+  stroke: rgba(243, 234, 210, 0.92);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.currentGuide {
+  stroke: rgba(232, 223, 200, 0.34);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  vector-effect: non-scaling-stroke;
+}
+
+.currentGraphPoint {
+  fill: #f3ead2;
+  stroke: rgba(0, 0, 0, 0.9);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.graphLabel {
+  fill: rgba(232, 223, 200, 0.68);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+}
+
+.rootAngleReadout {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 8px 30px;
+
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rootAngleLimits {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 8px 26px;
+
+  padding-top: 10px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.14);
+
+  font-size: 13px;
+  color: rgba(232, 223, 200, 0.74);
+}
+
+.shapeSpaceView {
+  position: absolute;
+  inset: 58px 28px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.shapeSpaceEquation {
+  font-size: clamp(19px, 1.8vw, 25px);
+}
+
+.shapeSpaceGraph {
+  width: min(780px, 94%);
+  min-height: 0;
+}
+
+.shapeSpaceSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shapeSpacePath {
+  fill: none;
+  stroke: rgba(243, 234, 210, 0.92);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.degeneratePoint {
+  fill: rgba(232, 223, 200, 0.48);
+  stroke: rgba(0, 0, 0, 0.70);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.shapeSpaceReadout {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 8px 26px;
+
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.shapeSpaceLimit {
+  padding-top: 10px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.14);
+
+  font-size: 13px;
+  color: rgba(232, 223, 200, 0.74);
+}
+
+.convergenceView {
+  position: absolute;
+  inset: 58px 28px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.convergenceTitle {
+  font-size: clamp(20px, 1.9vw, 26px);
+}
+
+.convergenceTarget {
+  font-size: 16px;
+  color: rgba(232, 223, 200, 0.78);
+}
+
+.convergenceGraph {
+  width: min(820px, 95%);
+  min-height: 0;
+}
+
+.convergenceSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.convergenceShapePath,
+.convergenceCuspPath,
+.convergenceEdgePath {
+  fill: none;
+  stroke: rgba(243, 234, 210, 0.94);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.convergenceCuspPath {
+  stroke-dasharray: 8 4;
+  opacity: 0.78;
+}
+
+.convergenceEdgePath {
+  stroke-dasharray: 2 4;
+  opacity: 0.58;
+}
+
+.convergenceLegend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 8px 26px;
+
+  font-size: 13px;
+}
+
+.legendShape::before,
+.legendCusp::before,
+.legendEdge::before {
+  content: "";
+  display: inline-block;
+
+  width: 22px;
+  height: 0;
+
+  margin-right: 7px;
+  vertical-align: middle;
+
+  border-top:
+    2px solid
+    rgba(243, 234, 210, 0.94);
+}
+
+.legendCusp::before {
+  border-top-style: dashed;
+  opacity: 0.78;
+}
+
+.legendEdge::before {
+  border-top-style: dotted;
+  opacity: 0.58;
+}
+
+.convergenceReadouts {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(120px, 1fr));
+
+  width: min(760px, 94%);
+
+  gap: 8px;
+}
+
+.convergenceReadouts > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 7px 8px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.14);
+}
+
+.convergenceReadouts span {
+  font-size: 12px;
+  color: rgba(232, 223, 200, 0.66);
+}
+
+.convergenceReadouts strong {
+  font-size: 13px;
+  font-weight: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+.convergenceLimit {
+  padding-top: 9px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.14);
+
+  font-size: 13px;
+  color: rgba(232, 223, 200, 0.74);
+}
+
+@media (max-width: 900px) {
+  .convergenceReadouts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.tetrahedronView {
+  position: absolute;
+  inset: 58px 28px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.tetrahedronTitle {
+  font-size: clamp(20px, 1.9vw, 27px);
+}
+
+.tetrahedronSubtitle {
+  font-size: 14px;
+  color: rgba(232, 223, 200, 0.70);
+}
+
+.tetrahedronStage {
+  width: min(790px, 94%);
+  min-height: 0;
+}
+
+.tetrahedronSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.kleinBall {
+  fill: url(#kleinBallGlow);
+
+  stroke:
+    rgba(232, 223, 200, 0.38);
+
+  stroke-width: 1.3;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+.kleinEquator {
+  fill: none;
+
+  stroke:
+    rgba(232, 223, 200, 0.16);
+
+  stroke-width: 1;
+
+  stroke-dasharray: 5 5;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+.tetraEdge,
+.tetraEdgeBehind {
+  stroke:
+    rgba(243, 234, 210, 0.88);
+
+  stroke-width: 2;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+.tetraEdgeBehind {
+  stroke:
+    rgba(243, 234, 210, 0.30);
+
+  stroke-dasharray: 5 5;
+}
+
+.tetraVertex,
+.tetraVertexPrimary {
+  fill: #e8dfc8;
+
+  stroke:
+    rgba(0, 0, 0, 0.86);
+
+  stroke-width: 1.2;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+.tetraVertexPrimary {
+  fill: #fff6dc;
+
+  stroke:
+    rgba(0, 0, 0, 0.96);
+
+  stroke-width: 1.5;
+}
+
+.tetraVertexLabel {
+  fill: #e8dfc8;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 15px;
+}
+
+.kleinLabel {
+  fill:
+    rgba(232, 223, 200, 0.54);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 13px;
+}
+
+.tetrahedronReadout {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(150px, 1fr));
+
+  width: min(760px, 94%);
+
+  gap: 8px;
+}
+
+.tetrahedronReadout > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 7px 8px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.14);
+}
+
+.tetrahedronReadout span {
+  font-size: 12px;
+
+  color:
+    rgba(232, 223, 200, 0.62);
+}
+
+.tetrahedronReadout strong {
+  font-size: 13px;
+  font-weight: normal;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+.tetrahedronExplanation {
+  max-width: 720px;
+
+  padding-top: 8px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.14);
+
+  font-size: 13px;
+  line-height: 1.35;
+  text-align: center;
+
+  color:
+    rgba(232, 223, 200, 0.74);
+}
+
+@media (max-width: 900px) {
+  .tetrahedronReadout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rootToTetrahedronFlow {
+  display: grid;
+  grid-template-columns:
+    minmax(250px, 1fr)
+    120px
+    minmax(250px, 1fr);
+
+  align-items: center;
+
+  width: min(820px, 96%);
+
+  gap: 10px;
+}
+
+.flowPanel {
+  min-width: 0;
+
+  padding: 8px;
+
+  border:
+    1px solid
+    rgba(232, 223, 200, 0.13);
+
+  background:
+    rgba(0, 0, 0, 0.10);
+}
+
+.flowTitle {
+  margin-bottom: 3px;
+
+  font-size: 14px;
+  text-align: center;
+}
+
+.rootBoundaryDiagram,
+.normalizedDiagram {
+  width: 100%;
+}
+
+.flowSvg {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+.flowCaption {
+  margin-top: 2px;
+
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: center;
+
+  color:
+    rgba(232, 223, 200, 0.58);
+}
+
+.mobiusBridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 3px;
+}
+
+.mobiusArrow {
+  font-size: 31px;
+
+  color:
+    rgba(232, 223, 200, 0.64);
+}
+
+.mobiusLabel {
+  font-size: 13px;
+}
+
+.mobiusFormula {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 10px;
+  line-height: 1.05;
+
+  color:
+    rgba(232, 223, 200, 0.64);
+}
+
+.normalizationIdentity {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 8px 24px;
+
+  font-size: 13px;
+
+  color:
+    rgba(232, 223, 200, 0.72);
+}
+
+.tetrahedronStageCompact {
+  width: min(720px, 90%);
+
+  margin-top: -8px;
+}
+
+@media (max-width: 900px) {
+  .rootToTetrahedronFlow {
+    grid-template-columns: 1fr;
+  }
+
+  .mobiusBridge {
+    transform: none;
+  }
+}
+
+.rootSphereFlow {
+  display: grid;
+  grid-template-columns:
+    minmax(250px, 1fr)
+    110px
+    minmax(280px, 1.15fr);
+
+  align-items: center;
+
+  width: min(860px, 97%);
+  gap: 10px;
+}
+
+.projectionBridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+}
+
+.projectionArrow {
+  font-size: 34px;
+  color: rgba(232, 223, 200, 0.66);
+  line-height: 1;
+}
+
+.projectionLabel {
+  font-size: 12px;
+  color: rgba(232, 223, 200, 0.72);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.rootSphereIdentity {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 8px 18px;
+
+  font-size: 13px;
+  color: rgba(232, 223, 200, 0.74);
+}
+
+.spherePanel {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .rootSphereFlow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.combinedView {
+  position: absolute;
+  inset: 58px 24px 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.combinedHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px 13px;
+
+  font-size: clamp(16px, 1.5vw, 21px);
+}
+
+.combinedArrow {
+  color: rgba(232, 223, 200, 0.48);
+}
+
+.combinedGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  flex: 1;
+  min-height: 0;
+}
+
+.combinedPanel {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding: 9px 11px;
+
+  border:
+    1px solid
+    rgba(232, 223, 200, 0.14);
+
+  background:
+    rgba(0, 0, 0, 0.10);
+}
+
+.combinedPanelTitle {
+  font-size: 14px;
+  text-align: center;
+
+  color: rgba(250, 247, 238, 0.92);
+}
+
+.combinedPanelBody {
+  flex: 1;
+  min-height: 0;
+
+  display: grid;
+  place-items: center;
+}
+
+.combinedSvg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-height: 245px;
+}
+
+.combinedReadout {
+  min-height: 19px;
+
+  font-size: 12px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+
+  color: rgba(232, 223, 200, 0.72);
+}
+
+.angleComparison {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 26px;
+
+  padding: 18px 10px;
+}
+
+.angleComparisonRow {
+  display: grid;
+
+  grid-template-columns:
+    32px
+    1fr
+    88px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 13px;
+}
+
+.angleComparisonRow strong {
+  font-weight: normal;
+  text-align: right;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+.angleTrack {
+  height: 8px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(232, 223, 200, 0.20);
+
+  background:
+    rgba(0, 0, 0, 0.24);
+}
+
+.angleFill {
+  height: 100%;
+
+  background:
+    rgba(243, 234, 210, 0.78);
+}
+
+.combinedAsymptote {
+  font-size: 12px;
+  text-align: center;
+
+  color:
+    rgba(232, 223, 200, 0.66);
+}
+
+.combinedVolume {
+  flex: 1;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.combinedVolume > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 18px 8px;
+}
+
+.combinedVolume span {
+  font-size: 18px;
+}
+
+.combinedVolume strong {
+  font-size: clamp(19px, 1.8vw, 26px);
+  font-weight: normal;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+.combinedVolume small {
+  font-size: 11px;
+  text-align: center;
+
+  color:
+    rgba(232, 223, 200, 0.62);
+}
+
+.combinedFooter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 8px 24px;
+
+  padding-top: 9px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.14);
+
+  font-size: 13px;
+
+  color:
+    rgba(232, 223, 200, 0.76);
+}
+
+@media (max-width: 900px) {
+  .combinedGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .combinedVolume {
+    grid-template-columns: 1fr;
+  }
+}
+
+.zZeroGuide {
+  stroke: rgba(232, 223, 200, 0.42);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.zZeroPoint {
+  fill: rgba(243, 234, 210, 0.88);
+  stroke: rgba(0, 0, 0, 0.86);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.zZeroLabel {
+  fill: rgba(232, 223, 200, 0.78);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+}
+
+.shapeSpaceLimit {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+}
+
+.volumeGraph {
+  width: min(830px, 96%);
+  min-height: 0;
+}
+
+.volumeGraphSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.singleVolumePath,
+.doubledVolumePath {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.singleVolumePath {
+  stroke: rgba(243, 234, 210, 0.96);
+  stroke-width: 2.2;
+}
+
+.doubledVolumePath {
+  stroke: rgba(243, 234, 210, 0.56);
+  stroke-width: 1.8;
+  stroke-dasharray: 7 4;
+}
+
+.volumeReferenceLine {
+  stroke: rgba(232, 223, 200, 0.24);
+  stroke-width: 1;
+  stroke-dasharray: 4 5;
+  vector-effect: non-scaling-stroke;
+}
+
+.volumeGraphLabel {
+  fill: rgba(232, 223, 200, 0.66);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+}
+
+.currentDoublePoint {
+  fill: rgba(243, 234, 210, 0.52);
+  stroke: rgba(0, 0, 0, 0.85);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.volumeGraphLegend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 8px 30px;
+
+  margin-top: -8px;
+
+  font-size: 13px;
+}
+
+.singleVolumeLegend::before,
+.doubleVolumeLegend::before {
+  content: "";
+  display: inline-block;
+
+  width: 24px;
+  margin-right: 7px;
+  vertical-align: middle;
+
+  border-top:
+    2px solid
+    rgba(243, 234, 210, 0.96);
+}
+
+.doubleVolumeLegend::before {
+  border-top-style: dashed;
+  opacity: 0.60;
+}
+
+.sliderWrap {
+  position: relative;
+  width: 100%;
+}
+
+.sliderWrap .aSlider {
+  display: block;
+  width: 100%;
+}
+
+.branchSliderMark {
+  position: absolute;
+  top: 50%;
+
+  width: 1px;
+  height: 15px;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    rgba(243, 234, 210, 0.72);
+
+  pointer-events: none;
+}
+
+.branchSliderLabels {
+  position: relative;
+
+  height: 11px;
+
+  margin-bottom: -2px;
+
+  font-size: 10px;
+  line-height: 1;
+
+  color:
+    rgba(232, 223, 200, 0.68);
+}
+
+.branchSliderLabels span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.branchSliderLabels span:first-child {
+  left:
+    calc(
+      50% *
+      (
+        1 -
+        0.719
+      )
+    );
+}
+
+.branchSliderLabels span:last-child {
+  left:
+    calc(
+      50% *
+      (
+        1 +
+        0.719
+      )
+    );
+}
+
+.branchGraphLine {
+  stroke:
+    rgba(243, 234, 210, 0.36);
+
+  stroke-width: 1;
+
+  stroke-dasharray: 3 4;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+.branchGraphLabel {
+  fill:
+    rgba(232, 223, 200, 0.62);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11px;
+}
+
+.secondaryRootAnglePath {
+  fill: none;
+
+  stroke:
+    rgba(243, 234, 210, 0.48);
+
+  stroke-width: 1.8;
+
+  stroke-dasharray: 6 4;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+.specialAnglePoint {
+  fill:
+    rgba(243, 234, 210, 0.86);
+
+  stroke:
+    rgba(0, 0, 0, 0.90);
+
+  stroke-width: 1;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+.specialAngleLabel {
+  fill:
+    rgba(232, 223, 200, 0.76);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11px;
+}
+
+.specialAngleTable {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(110px, 1fr));
+
+  width: min(820px, 96%);
+
+  gap: 6px;
+}
+
+.specialAngleTable > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 3px;
+
+  padding: 6px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.12);
+}
+
+.specialAngleTable span {
+  font-size: 11px;
+
+  color:
+    rgba(232, 223, 200, 0.66);
+}
+
+.specialAngleTable strong {
+  font-size: 11px;
+  font-weight: normal;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+@media (max-width: 900px) {
+  .specialAngleTable {
+    grid-template-columns:
+      1fr 1fr;
+  }
+}
+
+.rootAnglesSvg {
+  display: block;
+  width: min(840px, 97%);
+  height: auto;
+}
+
+.rootAngleGrid {
+  stroke: rgba(232, 223, 200, 0.16);
+  stroke-width: 1;
+  stroke-dasharray: 4 5;
+  vector-effect: non-scaling-stroke;
+}
+
+.rootAngleTickLabel {
+  fill: rgba(232, 223, 200, 0.68);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+}
+
+.rootArgPath0,
+.rootArgPath1,
+.rootArgPath2,
+.rootArgPath3 {
+  fill: none;
+  stroke: rgba(243, 234, 210, 0.92);
+  vector-effect: non-scaling-stroke;
+}
+
+.rootArgPath0 {
+  stroke-width: 2.3;
+}
+
+.rootArgPath1 {
+  stroke-width: 2;
+  stroke-dasharray: 10 4;
+}
+
+.rootArgPath2 {
+  stroke-width: 2;
+  stroke-dasharray: 2 5;
+}
+
+.rootArgPath3 {
+  stroke-width: 2;
+  stroke-dasharray: 11 4 2 4;
+}
+
+.currentArgPoint {
+  fill: rgba(243, 234, 210, 0.94);
+  stroke: rgba(0, 0, 0, 0.88);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.rootArgsLegend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+
+  width: min(820px, 96%);
+
+  font-size: 13px;
+}
+
+.rootArgsLegendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legendSwatch {
+  display: inline-block;
+  width: 26px;
+  border-top: 2px solid rgba(243, 234, 210, 0.92);
+}
+
+.legendSwatch1 {
+  border-top-style: dashed;
+}
+
+.legendSwatch2 {
+  border-top-style: dotted;
+}
+
+.legendSwatch3 {
+  border-top-style: dashed;
+}
+
+.rootArgsReadout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  width: min(820px, 96%);
+  gap: 8px 18px;
+}
+
+.rootArgsReadout > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 6px 0;
+
+  border-top: 1px solid rgba(232, 223, 200, 0.12);
+}
+
+.rootArgsReadout span,
+.rootArgsReadout strong {
+  font-size: 13px;
+  font-weight: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+.rootArgsNote {
+  width: min(820px, 96%);
+
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.35;
+  color: rgba(232, 223, 200, 0.68);
+}
+
+@media (max-width: 900px) {
+  .rootArgsReadout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rootPointMathLabel {
+  overflow: visible;
+  pointer-events: none;
+}
+
+/*
+ * Quartic → Ideal Tetrahedron
+ * Mathematical typography normalization
+ *
+ * Canonical zhe SVG symbols are sized in em units, so they inherit
+ * the surrounding mathematical font size rather than establishing
+ * an independent visual hierarchy.
+ */
+
+.rootLabel {
+  display: inline-flex;
+  align-items: baseline;
+
+  font-size: inherit;
+  line-height: 1;
+}
+
+.polarReadout > div {
+  display: flex;
+  align-items: baseline;
+
+  gap: 0.18em;
+}
+
+.viewerA,
+.aReadout {
+  font-variant-numeric: normal;
+}
+
+.viewerA .katex,
+.aReadout .katex {
+  font-size: 1em;
+}
+
+.rootPointMathLabel {
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* ==========================================================
+   Legend-style mathematical equation rows
+   ========================================================== */
+
+.rootRow,
+.mathEquationRow {
+  display: flex;
+  align-items: center;
+
+  gap: 0.4em;
+
+  margin: 0;
+  padding: 0;
+
+  font-size:
+    var(--quartic-math-size, 18px);
+}
+
+.legendStyleZhe {
+  display: block;
+  flex: 0 0 auto;
+
+  height:
+    var(--quartic-symbol-size, 18px) !important;
+
+  width: auto;
+
+  margin: 0;
+  padding: 0;
+
+  vertical-align: middle !important;
+}
+
+.rootValueMath {
+  display: inline-flex;
+  align-items: center;
+
+  font-size:
+    var(--quartic-math-size, 18px);
+
+  line-height: 1;
+}
+
+.rootValueMath .katex {
+  font-size: 1em;
+}
+
+.polarReadout {
+  align-items: center;
+}
+
+/* Roots: align polar readouts with the root equations. */
+
+.polarReadout {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-self: stretch;
+  justify-items: start;
+
+  width: 100%;
+  row-gap: 8px;
+}
+
+.polarReadout .mathEquationRow {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+
+/* ==========================================================
+   Roots view: unified equation alignment
+   ========================================================== */
+
+.rootList,
+.polarReadout {
+  width: 100%;
+}
+
+.rootRow,
+.mathEquationRow {
+  justify-content: flex-start;
+  width: 100%;
+
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* No separators between the four roots. */
+.rootRow {
+  border-bottom: none !important;
+}
+
+/* One separator only between roots and polar readout. */
+.polarReadout {
+  margin-top: 18px;
+  padding-top: 18px;
+
+  border-top: none;
+}
+
+/* Keep both polar rows on the same left edge as the roots. */
+.polarReadout .mathEquationRow {
+  justify-self: stretch;
+  justify-content: flex-start;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ==========================================================
+   Roots final row alignment
+   ========================================================== */
+
+/* First four equations: no internal rules. */
+.rootList .rootRow {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/*
+ * Polar block begins at exactly the same x-position as rootList.
+ * One rule above it; absolutely no rule below it.
+ */
+.polarReadout {
+  box-sizing: border-box !important;
+
+  width: 100% !important;
+  max-width: none !important;
+
+  margin:
+    18px 0
+    0 0 !important;
+
+  padding:
+    18px 0
+    0 0 !important;
+
+  justify-items: start !important;
+  align-items: start !important;
+
+  border-top:
+    1px solid rgba(232, 223, 200, 0.18) !important;
+
+  border-right: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+}
+
+.polarReadout .mathEquationRow {
+  box-sizing: border-box !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  justify-self: start !important;
+  justify-content: flex-start !important;
+
+  border: none !important;
+}
+
+/* No inherited final divider beneath the polar section. */
+.polarReadout + *,
+.rootView .polarReadout:last-child {
+  border-bottom: none !important;
+}
+
+/* ==========================================================
+   Roots: compactified complex plane / infinity boundary
+   ========================================================== */
+
+.rootInfinityCircle {
+  fill: none;
+
+  stroke:
+    rgba(232, 223, 200, 0.42);
+
+  stroke-width: 1.4;
+
+  stroke-dasharray: 6 7;
+
+  vector-effect: non-scaling-stroke;
+}
+
+.infinityCircleLabel {
+  fill:
+    rgba(232, 223, 200, 0.72);
+
+  font-size: 12px;
+}
+
+.asymptoticTriangle {
+  fill:
+    rgba(232, 223, 200, 0.035);
+
+  stroke:
+    rgba(232, 223, 200, 0.72);
+
+  stroke-width: 1.5;
+
+  vector-effect: non-scaling-stroke;
+}
+
+.asymptoticAngleArc {
+  fill: none;
+
+  stroke:
+    rgba(232, 223, 200, 0.45);
+
+  stroke-width: 1.15;
+  stroke-linecap: round;
+
+  vector-effect: non-scaling-stroke;
+}
+
+.asymptoticAngleLabel {
+  fill:
+    rgba(232, 223, 200, 0.92);
+
+  font-size: 13px;
+}
+
+.rootOriginPoint {
+  fill:
+    rgba(232, 223, 200, 0.78);
+
+  pointer-events: none;
+}
+
+/* ==========================================================
+   Roots readouts — clean compact overlay
+   ========================================================== */
+
+/*
+ * This footer is an overlay only.
+ * It does not participate in layout and therefore cannot
+ * resize or move the root equation or diagram.
+ */
+.rootsFooter {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------
+   Left column: ж1–ж4
+   ---------------------------------------------------------- */
+
+.rootsFooter .rootList {
+  position: absolute !important;
+
+  left:
+    var(
+      --roots-left,
+      18px
+    );
+
+  bottom:
+    var(
+      --roots-bottom,
+      18px
+    );
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  width: max-content;
+  min-width: 0;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: none !important;
+}
+
+/*
+ * Compact equation rows.
+ * No border, no padding, no wrapping.
+ */
+.rootsFooter .rootRow {
+  display: flex !important;
+
+  align-items: center;
+
+  gap: 0.4em;
+
+  width: max-content;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+
+  white-space: nowrap;
+}
+
+/* ----------------------------------------------------------
+   Right column: жr, жtheta
+   ---------------------------------------------------------- */
+
+.rootsFooter .polarReadout {
+  position: absolute !important;
+
+  left:
+    var(
+      --polar-x,
+      18px
+    );
+
+  right: auto !important;
+
+  bottom:
+    var(
+      --polar-bottom,
+      18px
+    );
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  width: max-content;
+  min-width: 0;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+
+  transform: none !important;
+}
+
+.rootsFooter
+.polarReadout
+.mathEquationRow {
+  display: flex !important;
+
+  align-items: center;
+
+  gap: 0.4em;
+
+  width: max-content;
+
+  margin: 0;
+  padding: 0;
+
+  white-space: nowrap;
+}
+
+/*
+ * Same symbol slot width as the colored root symbols.
+ * This keeps the two right-column equals signs aligned.
+ */
+.polarMatchCell {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  width:
+    calc(
+      var(--quartic-symbol-size, 14px)
+      * 1.55
+    );
+
+  flex:
+    0 0
+    calc(
+      var(--quartic-symbol-size, 14px)
+      * 1.55
+    );
+
+  overflow: visible;
+}
+
+/* No separator in this layout. */
+.rootReadoutSeparator,
+.polarSymbolCell,
+.equationSymbolCell {
+  display: none !important;
+}
+
+/* ==========================================================
+   Temporary Roots placement controls
+   ========================================================== */
+
+.rootPlacementControls {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin-top: 14px;
+  padding-top: 12px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.18);
+}
+
+.rootPlacementTitle {
+  font-size: 13px;
+
+  color:
+    rgba(232, 223, 200, 0.78);
+}
+
+.rootPlacementRow {
+  display: grid;
+
+  grid-template-columns:
+    82px
+    minmax(0, 1fr)
+    28px;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 11px;
+
+  color:
+    rgba(232, 223, 200, 0.72);
+}
+
+.rootPlacementRow input {
+  width: 100%;
+  min-width: 0;
+}
+
+.rootPlacementRow strong {
+  font-weight: normal;
+  text-align: right;
+
+  color:
+    rgba(232, 223, 200, 0.92);
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+
+/* ==========================================================
+   Roots main scene — independent of bottom readouts
+   ========================================================== */
+
+.rootScene {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 24px;
+
+  transform:
+    translateY(
+      var(--root-scene-y, 0px)
+    )
+    scale(
+      var(--root-scene-scale, 1)
+    );
+
+  transform-origin: center center;
+
+  pointer-events: none;
+}
+
+/*
+ * The readout footer remains independently positioned.
+ * It has no effect on equation/diagram centering.
+ */
+.rootView > .rootsFooter {
+  flex: none;
+}
+
+/* ==========================================================
+   ROOT DIAGRAM: EXACT VIEWER CENTER
+   ========================================================== */
+
+/*
+ * Do not let the scene wrapper translate the diagram.
+ * The root diagram owns its position independently.
+ */
+.rootScene {
+  transform: none !important;
+}
+
+/*
+ * The center of this box is exactly the center of rootView.
+ * Since the SVG viewBox is 720 × 360, its mathematical center
+ * (360, 180) therefore lands exactly at the viewer center.
+ */
+.rootGeometry {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  width: min(760px, 92%) !important;
+
+  margin: 0 !important;
+
+  transform:
+    translate(-50%, -50%) !important;
+
+  transform-origin: center center !important;
+}
+
+/* Keep the SVG filling that centered box normally. */
+.rootGeometry .rootSvg {
+  display: block !important;
+
+  width: 100% !important;
+  height: auto !important;
+
+  margin: 0 !important;
+}
+
+/* ==========================================================
+   Roots scene: diagram centered, equation stays above
+   ========================================================== */
+
+.rootScene {
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  transform: none !important;
+}
+
+/* Equation: top-center, independent of diagram. */
+.rootEquation {
+  position: absolute !important;
+
+  top: 18px !important;
+  left: 50% !important;
+
+  margin: 0 !important;
+
+  transform:
+    translateX(-50%) !important;
+
+  white-space: nowrap;
+}
+
+/* Diagram: exact center of viewer. */
+.rootGeometry {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  margin: 0 !important;
+
+  transform:
+    translate(-50%, -50%) !important;
+
+  transform-origin:
+    center center !important;
+}
+
+/* ==========================================================
+   ROOTS — exact final scene placement
+   ========================================================== */
+
+/*
+ * .rootView is inset 58px from the top and 28px from the bottom.
+ * Therefore its midpoint is 15px BELOW the viewer midpoint.
+ *
+ * Correct that explicitly:
+ *
+ *     (58 - 28) / 2 = 15px
+ *
+ * Now the mathematical center of the root diagram is exactly
+ * the center of the viewer.
+ */
+.rootGeometry {
+  left: 50% !important;
+  top:
+    calc(
+      47% - 15px - 14px
+    ) !important;
+
+  transform:
+    translate(-50%, -50%) !important;
+}
+
+/*
+ * Equation belongs on the top line of the viewer,
+ * not inside the centered diagram region.
+ *
+ * rootView begins 58px below the viewer top.
+ * top: -38px therefore places the equation about
+ * 20px below the viewer's top edge.
+ */
+.rootEquation {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: -38px !important;
+
+  margin: 0 !important;
+
+  transform:
+    translateX(-50%) !important;
+
+  white-space: nowrap;
+}
+
+/* Remove KaTeX's own display margin from the positioning math. */
+.rootEquation .katex-display {
+  margin: 0 !important;
+}
+
+/* ==========================================================
+   ROOTS — quartic equation belongs on the top readout row
+   ========================================================== */
+
+.rootEquation {
+  position: absolute !important;
+
+  /*
+   * rootView begins 58px below the viewer top.
+   * -50px puts the equation 8px from the viewer top,
+   * on the same row as "Roots" and the a readout.
+   */
+  top: -50px !important;
+  left: 50% !important;
+
+  margin: 0 !important;
+
+  transform:
+    translateX(-50%) !important;
+
+  font-size:
+    clamp(18px, 1.55vw, 23px) !important;
+
+  line-height: 1 !important;
+
+  white-space: nowrap;
+
+  z-index: 2;
+}
+
+.rootEquation .katex-display {
+  margin: 0 !important;
+}
+
+.rootEquation .katex {
+  line-height: 1 !important;
+}
+
+/* ==========================================================
+   ROOTS — make Scene scale control the centered diagram
+   ========================================================== */
+
+/*
+ * The root diagram remains centered at the exact same point.
+ * Scene scale changes only its size around that center.
+ */
+.rootGeometry {
+  transform:
+    translate(-50%, -50%)
+    scale(
+      var(--root-scene-scale, 1)
+    ) !important;
+
+  transform-origin:
+    center center !important;
+}
+
+/*
+ * Do not scale or translate the wrapper itself.
+ * This keeps the equation and bottom readouts independent.
+ */
+.rootScene {
+  transform: none !important;
+}
+
+/* ==========================================================
+   Infinity-circle label
+   ========================================================== */
+
+.infinityCircleLabel {
+  fill:
+    rgba(232, 223, 200, 0.48) !important;
+
+  font-size:
+    11px !important;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  letter-spacing:
+    0.035em;
+
+  pointer-events:
+    none;
+}
+
+/* Infinity label: secondary annotation beside the dotted boundary. */
+.infinityCircleLabel {
+  fill:
+    rgba(232, 223, 200, 0.52) !important;
+
+  font-size:
+    11px !important;
+
+  letter-spacing:
+    0.02em;
+
+  pointer-events:
+    none;
+}
+
+
+/* QUARTIC PARAMETER SLIDER — THIN TRACK + PHYSICAL MARK */
+
+.aSlider {
+  -webkit-appearance: none;
+  appearance: none;
+
+  display: block;
+  width: 100%;
+  height: 18px;
+
+  margin: 2px 0 0;
+  padding: 0;
+
+  background: transparent;
+  cursor: pointer;
+}
+
+.aSlider::-webkit-slider-runnable-track {
+  height: 4px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      to right,
+      #1677ff 0,
+      #1677ff var(--quartic-slider-fill),
+      rgba(232, 223, 200, 0.72)
+        var(--quartic-slider-fill),
+      rgba(232, 223, 200, 0.72) 100%
+    );
+}
+
+.aSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 18px;
+  height: 18px;
+
+  margin-top: -7px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #1677ff;
+}
+
+.aSlider::-moz-range-track {
+  height: 4px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background:
+    rgba(232, 223, 200, 0.72);
+}
+
+.aSlider::-moz-range-progress {
+  height: 4px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #1677ff;
+}
+
+.aSlider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #1677ff;
+}
+
+.physicalSliderMark {
+  position: absolute;
+  top: 50%;
+
+  z-index: 4;
+
+  width: 0;
+  height: 0;
+
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom:
+    7px solid
+    rgba(255, 218, 160, 0.95);
+
+  transform:
+    translate(-50%, 8px);
+
+  pointer-events: none;
+}
+
+
+/* QUARTIC SLIDER FINAL CALIBRATION MARKS */
+
+/* Smaller slider thumb */
+.aSlider::-webkit-slider-thumb {
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+}
+
+.aSlider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+}
+
+/* Real marks for -infinity, 0, +infinity */
+.endSliderMark {
+  position: absolute;
+  top: 50%;
+
+  width: 1px;
+  height: 15px;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    rgba(243, 234, 210, 0.72);
+
+  pointer-events: none;
+}
+
+/* Keep endpoint marks visually inside the track bounds */
+.endSliderMark:first-of-type {
+  transform:
+    translate(-50%, -50%);
+}
+
+.endSliderMark:last-of-type {
+  transform:
+    translate(-50%, -50%);
+}
+
+/* Remove the old floating pseudo-hashes */
+.sliderEnds span::before {
+  display: none;
+}
+
+
+/* QUARTIC SLIDER UNIFIED SPECIAL LABELS */
+
+.sliderSpecialLabels {
+  position: relative;
+
+  width: 100%;
+  height: 18px;
+
+  margin-bottom: 2px;
+
+  font-size: 10px;
+  line-height: 1;
+
+  color:
+    rgba(232, 223, 200, 0.70);
+}
+
+.sliderSpecialLabels span {
+  position: absolute;
+  bottom: 0;
+
+  white-space: nowrap;
+
+  transform:
+    translateX(-50%);
+}
+
+.sliderSpecialLabels span:first-child {
+  transform:
+    translateX(-50%);
+}
+
+.sliderSpecialLabels span:last-child {
+  transform:
+    translateX(-50%);
+}
+
+
+/* CLICKABLE QUARTIC SLIDER HASH MARKS */
+
+.sliderWrap .sliderHashButton {
+  position: absolute;
+  top: 50%;
+
+  z-index: 5;
+
+  width: 22px;
+  height: 28px;
+
+  padding: 0;
+  border: 0;
+
+  transform:
+    translate(-50%, -50%);
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.sliderWrap .sliderHashButton::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 1px;
+  height: 15px;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    rgba(243, 234, 210, 0.72);
+
+  pointer-events: none;
+}
+
+.sliderWrap .sliderHashButton:hover::after {
+  background:
+    rgba(255, 246, 222, 0.96);
+}
+
+.sliderWrap .sliderHashButton:focus-visible {
+  outline:
+    1px solid
+    rgba(255, 218, 160, 0.90);
+
+  outline-offset: 1px;
+  border-radius: 3px;
+}
+
+/*
+ * The visible line is now supplied by ::after.
+ * Suppress the old 1px backgrounds on the mark classes.
+ */
+.sliderWrap .branchSliderMark.sliderHashButton,
+.sliderWrap .endSliderMark.sliderHashButton {
+  background: transparent;
+}
+
+
+/* CLICKABLE QUARTIC SPECIAL LABELS */
+
+.sliderSpecialLabelButton {
+  position: absolute;
+  bottom: 0;
+
+  padding: 0 3px;
+  border: 0;
+
+  background: transparent;
+  color: inherit;
+
+  font: inherit;
+  line-height: inherit;
+
+  white-space: nowrap;
+
+  transform:
+    translateX(-50%);
+
+  cursor: pointer;
+}
+
+.sliderSpecialLabelButton:hover {
+  color:
+    rgba(255, 246, 222, 0.98);
+}
+
+.sliderSpecialLabelButton:focus-visible {
+  outline:
+    1px solid
+    rgba(255, 218, 160, 0.90);
+
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+
+/* CROSS-RATIO — KATEX TYPESET EQUATION */
+
+.crossRatioTypesetEquation {
+  font-size:
+    clamp(32px, 3.15vw, 48px);
+
+  line-height: 1;
+
+  color:
+    rgba(243, 234, 210, 0.96);
+}
+
+.crossRatioTypesetEquation
+  :global(.katex-display) {
+  margin: 0;
+}
+
+.crossRatioTypesetEquation
+  :global(.katex) {
+  font-size: 1em;
+}
+
+/*
+ * These spans occupy exactly the mathematical slots that
+ * KaTeX used when sizing the fraction and its delimiters.
+ *
+ * KaTeX therefore remains responsible for:
+ *   - parentheses
+ *   - minus signs
+ *   - factor spacing
+ *   - numerator / denominator spacing
+ *   - fraction rule
+ *   - z =
+ *
+ * Only the root glyph itself is replaced visually.
+ */
+
+.crossRatioTypesetEquation
+  :global(.quarticCrossZhe) {
+  display: inline-block;
+
+  box-sizing: border-box;
+
+  width: 1.55em;
+  height: 1em;
+
+  vertical-align: -0.16em;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.crossRatioTypesetEquation
+  :global(.quarticCrossZhe1) {
+  background-color: #ffe600;
+
+  -webkit-mask-image:
+    url("/equations/zhe_1.svg");
+  mask-image:
+    url("/equations/zhe_1.svg");
+}
+
+.crossRatioTypesetEquation
+  :global(.quarticCrossZhe2) {
+  background-color: #2f8cff;
+
+  -webkit-mask-image:
+    url("/equations/zhe_2.svg");
+  mask-image:
+    url("/equations/zhe_2.svg");
+}
+
+.crossRatioTypesetEquation
+  :global(.quarticCrossZhe3) {
+  background-color: #47d16c;
+
+  -webkit-mask-image:
+    url("/equations/zhe_3.svg");
+  mask-image:
+    url("/equations/zhe_3.svg");
+}
+
+.crossRatioTypesetEquation
+  :global(.quarticCrossZhe4) {
+  background-color: #ff4040;
+
+  -webkit-mask-image:
+    url("/equations/zhe_4.svg");
+  mask-image:
+    url("/equations/zhe_4.svg");
+}
+
+
+/* ==========================================================
+   CROSS-RATIO — shared Roots footer + dedicated lambda panel
+   ========================================================== */
+
+.crossRatioView > .rootsFooter {
+  z-index: 4;
+}
+
+.crossRatioDataPanel {
+  position: absolute;
+  right: 0;
+  top: 245px;
+
+  z-index: 3;
+
+  width: min(285px, 29%);
+
+  box-sizing: border-box;
+  padding: 10px 12px;
+
+
+  background:
+    rgba(0, 0, 0, 0.10);
+}
+
+.crossRatioDataPanel .crossRatioReadouts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+
+  gap: 6px;
+
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.crossRatioDataPanel .shapeTriplet {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+
+  margin-top: 10px;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.14);
+}
+
+.crossRatioDataPanel .shapeTriplet > div {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: baseline;
+
+  gap: 8px;
+
+  padding: 6px 0 0;
+
+  border-top: 0;
+}
+
+.crossRatioDataPanel .shapeTriplet span:first-child {
+  font-size: 15px;
+  text-align: left;
+}
+
+.crossRatioDataPanel .shapeTriplet span:last-child {
+  font-size: 11px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+
+/* ==========================================================
+   CROSS-RATIO — final scene composition
+   ========================================================== */
+
+/*
+ * The SVG is 620 × 470 with its mathematical origin/circle
+ * center at (310,235), exactly the center of the SVG.
+ *
+ * Therefore centering .shapePlane centers the unit circle
+ * exactly in the viewer.  We then shift the entire scene
+ * 105px left to make room for the lambda data.
+ */
+.crossRatioView {
+  display: block;
+}
+
+/* Move the cross-ratio equation into the upper viewer band. */
+.crossRatioView .crossRatioFormula {
+  position: absolute;
+
+  top: -32px;
+  left: 50%;
+
+  width: max-content;
+  max-width:
+    calc(100% - 330px);
+
+  margin: 0;
+
+  transform:
+    translateX(-50%);
+
+  z-index: 5;
+
+  white-space: nowrap;
+}
+
+.crossRatioView
+.crossRatioFormula
+.katex-display {
+  margin: 0;
+}
+
+/*
+ * First center the circle exactly in the viewer,
+ * then move it left.
+ */
+.crossRatioView .shapePlane {
+  position: absolute;
+
+  left:
+    calc(50% - 105px);
+
+  top: 50%;
+
+  width:
+    min(630px, 62%);
+
+  margin: 0;
+
+  transform:
+    translate(-50%, -50%);
+
+  z-index: 1;
+}
+
+/*
+ * Cross-ratio-specific data now occupies a dedicated
+ * vertically centered region on the right.
+ */
+.crossRatioView .crossRatioDataPanel {
+  position: absolute;
+
+  right: 18px;
+  top: 50%;
+
+  width:
+    min(305px, 28%);
+
+  margin: 0;
+
+  padding:
+    12px 14px;
+
+  transform:
+    translateY(-50%);
+
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.12),
+      rgba(0, 0, 0, 0.04)
+    );
+
+  z-index: 3;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.crossRatioReadouts {
+  gap: 7px;
+
+  font-size: 13px;
+  line-height: 1.28;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.shapeTriplet {
+  margin-top: 12px;
+  padding-top: 4px;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.shapeTriplet > div {
+  grid-template-columns:
+    34px 1fr;
+
+  gap: 7px;
+
+  padding-top: 7px;
+}
+
+
+/* CROSS-RATIO — exact viewer-center vertical alignment */
+
+/*
+ * crossRatioView uses inset: 58px 28px 28px;
+ * so its midpoint is 15px below the full viewer midpoint.
+ * This corrects that exactly.
+ */
+.crossRatioView .shapePlane {
+  top: calc(50% - 15px);
+}
+
+
+/* ==========================================================
+   CROSS-RATIO — right data matches Roots footer typography
+   ========================================================== */
+
+.crossRatioView .crossRatioDataPanel,
+.crossRatioView .crossRatioDataPanel .crossRatioReadouts,
+.crossRatioView .crossRatioDataPanel .shapeTriplet,
+.crossRatioView .crossRatioDataPanel .shapeTriplet > div,
+.crossRatioView .crossRatioDataPanel .shapeTriplet span {
+  font-size:
+    var(--quartic-math-size, 14px) !important;
+
+  line-height: 1 !important;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.katex {
+  font-size: 1em !important;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.crossRatioReadouts {
+  gap: 8px !important;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.shapeTriplet {
+  row-gap: 8px !important;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.shapeTriplet > div {
+  align-items: center !important;
+}
+
+
+/* ==========================================================
+   CROSS-RATIO — composition cleanup 2026-09-06
+   ========================================================== */
+
+/*
+ * Move the graph into the larger open field:
+ * slightly right, and slightly upward.
+ */
+.crossRatioView .shapePlane {
+  left: calc(50% - 70px);
+  top: calc(50% - 35px);
+}
+
+/*
+ * Give the lambda-data area more room so values and
+ * transform formulas can breathe.
+ */
+.crossRatioView .crossRatioDataPanel {
+  right: 8px;
+
+  width:
+    min(340px, 31%);
+
+  padding:
+    14px 16px;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.crossRatioReadouts {
+  gap: 9px !important;
+}
+
+/*
+ * The transform formulas need a real math column.
+ * The prior 34px slot was forcing the fractions to look cramped.
+ */
+.crossRatioView
+.crossRatioDataPanel
+.shapeTriplet > div {
+  grid-template-columns:
+    92px minmax(0, 1fr) !important;
+
+  gap: 10px !important;
+
+  padding-top:
+    9px !important;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.shapeTriplet span:first-child {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+
+  white-space: nowrap;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.shapeTriplet span:last-child {
+  min-width: 0;
+
+  white-space: nowrap;
+}
+
+
+/* ==========================================================
+   CROSS-RATIO — clean complete KaTeX data rows
+   ========================================================== */
+
+.crossRatioView .crossRatioDataPanel {
+  right: 10px;
+
+  width:
+    min(370px, 34%);
+
+  padding:
+    14px 18px;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.crossRatioReadouts,
+.crossRatioView
+.crossRatioDataPanel
+.shapeTriplet {
+  display: flex !important;
+  flex-direction: column !important;
+
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+
+  width: 100% !important;
+
+  gap: 10px !important;
+}
+
+.crossRatioView
+.crossRatioDataPanel
+.shapeTriplet {
+  margin-top: 14px !important;
+
+  padding-top: 12px !important;
+
+  border-top:
+    1px solid
+    rgba(232, 223, 200, 0.16) !important;
+}
+
+.crossRatioView .crossRatioDataMath {
+  display: block;
+
+  width: max-content;
+  max-width: 100%;
+
+  font-size: 15px !important;
+  line-height: 1.2 !important;
+
+  white-space: nowrap;
+}
+
+.crossRatioView
+.crossRatioDataMath
+.katex {
+  font-size: 1em !important;
+}
+
+/*
+ * Nudge the graph slightly farther into the open central field.
+ */
+.crossRatioView .shapePlane {
+  left:
+    calc(50% - 60px);
+
+  top:
+    calc(50% - 38px);
+}

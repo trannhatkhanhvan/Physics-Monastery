@@ -99,6 +99,7 @@ export default function LayoutWrapper({ children }) {
     pathname === '/binomial-constructor' ? 'binomial-constructor-page' :
     pathname === '/transform-space' ? 'external-transform-page' :
     pathname === '/typed-boundary-calculus' ? 'external-transform-page typed-boundary-calculus-page' :
+    pathname === '/quaternionic-288-group' ? 'quaternionic-288-group-page' :
     pathname === '/planck-constants' ? 'planck-constants-page' :
     pathname === '/coherent-units' ? 'coherent-units-page' :
     pathname === '/simplest-manifold' ? 'simplest-manifold-page' :
@@ -206,6 +207,7 @@ export default function LayoutWrapper({ children }) {
           <a href="/hyperbolic-partition-eq" className="menu-text-link">Hyperbolic Partitions</a>
           <a href="/binomial-constructor" className="menu-text-link">Binomial Constructor</a>
           <a href="/simplest-manifold" className="menu-text-link">Simplest Manifold</a>
+          <a href="/quaternionic-288-group" className="menu-text-link">Quaternionic 288</a>
           <a href="/transform-space" className="menu-text-link">Transform Space</a>
 
 
