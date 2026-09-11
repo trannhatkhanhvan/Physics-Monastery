@@ -838,23 +838,8 @@ export default function HyperbolicPartitionEq() {
         aria-label="Quartic to Ideal Tetrahedron interactive explorer"
         style={{
           position: 'relative',
-
-          /*
-           * TEMPORARY live calibration.
-           *
-           * Left slider moves ONLY the left edge.
-           * Right slider moves ONLY the right edge.
-           */
-          marginLeft:
-            `${quarticLeftShift}px`,
-
           width:
-            `calc(
-              100vw
-              - var(--sidebar-width)
-              + ${quarticRightExpand}px
-            )`,
-
+            'calc(100vw - var(--sidebar-width))',
           maxWidth: 'none',
           boxSizing: 'border-box',
           flex: '0 0 auto',
@@ -868,10 +853,26 @@ export default function HyperbolicPartitionEq() {
             zIndex: 1,
             width: '100%',
             height: '100vh',
-            overflow: 'hidden',
+            overflow: 'visible',
           }}
         >
-          <QuarticTetrahedronTransform embedded />
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+
+              /*
+               * TRUE INDEPENDENT EDGE CONTROLS.
+               */
+              left: `${quarticLeftShift}px`,
+              right: `${-quarticRightExpand}px`,
+
+              overflow: 'hidden',
+            }}
+          >
+            <QuarticTetrahedronTransform embedded />
+          </div>
 
           {/*
            * TEMPORARY LIVE EDGE CALIBRATION.
