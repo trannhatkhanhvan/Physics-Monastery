@@ -19,18 +19,6 @@ export default function HyperbolicPartitionEq() {
 
   return (
     <LayoutWrapper>
-      <style jsx global>{`
-        .layout-container .quartic-explorer-embed {
-          --quartic-embed-left-shift: ${expandedViewerLeftShiftPx}px;
-          --quartic-embed-right-shift: ${expandedViewerRightShiftPx}px;
-        }
-
-        .layout-container.sidebar-is-collapsed .quartic-explorer-embed {
-          --quartic-embed-left-shift: 0px;
-          --quartic-embed-right-shift: 0px;
-        }
-      `}</style>
-
       <div
   className="symbol-overlay"
   style={{
@@ -834,6 +822,26 @@ export default function HyperbolicPartitionEq() {
           aria-label="Quartic to Ideal Tetrahedron interactive explorer"
           style={{
             position: 'relative',
+
+            '--quartic-embed-left-shift':
+              `clamp(
+                0px,
+                calc(
+                  var(--sidebar-width)
+                  - var(--sidebar-collapsed-width)
+                ),
+                ${expandedViewerLeftShiftPx}px
+              )`,
+
+            '--quartic-embed-right-shift':
+              `clamp(
+                0px,
+                calc(
+                  var(--sidebar-width)
+                  - var(--sidebar-collapsed-width)
+                ),
+                ${expandedViewerRightShiftPx}px
+              )`,
 
             /*
              * Break the explorer out of the article's max-width
