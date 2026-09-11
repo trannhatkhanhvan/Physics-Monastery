@@ -15,25 +15,8 @@ export default function HyperbolicPartitionEq() {
    * Its width changes by the inverse amount at the same time,
    * which keeps the RIGHT edge fixed.
    */
-  const [
-    expandedViewerLeftShiftPx,
-    setExpandedViewerLeftShiftPx,
-  ] = useState(40);
-
-  /*
-   * TEMPORARY right-edge calibration.
-   *
-   * This changes WIDTH ONLY.
-   * It does not touch marginLeft, so the calibrated left edge
-   * remains fixed at +40 px.
-   *
-   * Positive = move right edge right.
-   * Negative = move right edge left.
-   */
-  const [
-    expandedViewerRightShiftPx,
-    setExpandedViewerRightShiftPx,
-  ] = useState(0);
+  const expandedViewerLeftShiftPx = 40;
+  const expandedViewerRightShiftPx = 55;
 
   const [
     sidebarIsCollapsed,
@@ -943,117 +926,6 @@ export default function HyperbolicPartitionEq() {
               overflow: 'hidden',
             }}
           >
-            {!sidebarIsCollapsed && (
-              <div
-                style={{
-                  position: 'fixed',
-                  left: '50vw',
-                  bottom: '14px',
-                  transform: 'translateX(-50%)',
-                  zIndex: 100,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  padding: '6px 10px',
-                  border:
-                    '1px solid rgba(255,255,255,0.45)',
-                  borderRadius: '6px',
-                  background: 'rgba(0,0,0,0.82)',
-                  color: 'white',
-                  fontFamily:
-                    '"Times New Roman", Times, serif',
-                  fontSize: '13px',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                <span>
-                  Expanded viewer left edge
-                </span>
-
-                <input
-                  type="range"
-                  min="-300"
-                  max="100"
-                  step="1"
-                  value={
-                    expandedViewerLeftShiftPx
-                  }
-                  onChange={(event) => {
-                    setExpandedViewerLeftShiftPx(
-                      Number(event.target.value)
-                    );
-                  }}
-                  style={{
-                    width: '260px',
-                  }}
-                />
-
-                <span
-                  style={{
-                    minWidth: '58px',
-                    textAlign: 'right',
-                  }}
-                >
-                  {expandedViewerLeftShiftPx}px
-                </span>
-
-                <span
-                  style={{
-                    marginLeft: '10px',
-                  }}
-                >
-                  Right edge
-                </span>
-
-                <input
-                  type="range"
-                  min="-150"
-                  max="150"
-                  step="1"
-                  value={
-                    expandedViewerRightShiftPx
-                  }
-                  onChange={(event) => {
-                    setExpandedViewerRightShiftPx(
-                      Number(event.target.value)
-                    );
-                  }}
-                  style={{
-                    width: '360px',
-                  }}
-                />
-
-                <input
-                  type="number"
-                  min="-150"
-                  max="150"
-                  step="1"
-                  value={
-                    expandedViewerRightShiftPx
-                  }
-                  onChange={(event) => {
-                    setExpandedViewerRightShiftPx(
-                      Number(event.target.value)
-                    );
-                  }}
-                  style={{
-                    width: '64px',
-                    padding: '2px 4px',
-                    background: 'rgba(0,0,0,0.7)',
-                    color: 'white',
-                    border:
-                      '1px solid rgba(255,255,255,0.45)',
-                    borderRadius: '3px',
-                    fontFamily: 'inherit',
-                    fontSize: '13px',
-                    textAlign: 'right',
-                  }}
-                />
-
-                <span>px</span>
-              </div>
-            )}
-
             {/*
              * ?embedded=1 suppresses only the quartic page's own
              * LayoutWrapper. The Hyperbolic Partitions page keeps
