@@ -840,10 +840,10 @@ export default function HyperbolicPartitionEq() {
           position: 'relative',
 
           /*
-           * TEMPORARY live calibration:
+           * TEMPORARY live calibration.
            *
-           * move left edge independently,
-           * then extend right edge independently.
+           * Left slider moves ONLY the left edge.
+           * Right slider moves ONLY the right edge.
            */
           marginLeft:
             `${quarticLeftShift}px`,
@@ -852,7 +852,6 @@ export default function HyperbolicPartitionEq() {
             `calc(
               100vw
               - var(--sidebar-width)
-              - ${quarticLeftShift}px
               + ${quarticRightExpand}px
             )`,
 
