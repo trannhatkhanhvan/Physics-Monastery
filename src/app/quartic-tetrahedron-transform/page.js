@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 
 import {
   Fragment,
+  Suspense,
   useEffect,
   useMemo,
   useRef,
@@ -1235,7 +1236,7 @@ function aFromSlider(t) {
   );
 }
 
-export default function QuarticTetrahedronTransform() {
+function QuarticTetrahedronTransformContent() {
   const searchParams = useSearchParams();
 
   /*
@@ -14271,5 +14272,13 @@ const [sceneScale, setSceneScale] = useState(130);
         </main>
       </div>
     </PageShell>
+  );
+}
+
+export default function QuarticTetrahedronTransform() {
+  return (
+    <Suspense fallback={null}>
+      <QuarticTetrahedronTransformContent />
+    </Suspense>
   );
 }
