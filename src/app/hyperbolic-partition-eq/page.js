@@ -1,27 +1,114 @@
 'use client';
 export const dynamic = 'force-dynamic';
 
-import { useState } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import LayoutWrapper from '@/components/LayoutWrapper';
 import QuarticTetrahedronTransform
   from '../quartic-tetrahedron-transform/QuarticTetrahedronTransform';
 import '../globals.css';
 
 export default function HyperbolicPartitionEq() {
-  /*
-   * TEMPORARY LIVE CALIBRATION.
-   *
-   * leftShift:
-   *   positive values move the viewer's LEFT edge right.
-   *
-   * rightExpand:
-   *   positive values extend the viewer's RIGHT edge right.
-   */
-  const [quarticLeftShift, setQuarticLeftShift] =
-    useState(0);
+  const quarticHostRef = useRef(null);
 
-  const [quarticRightExpand, setQuarticRightExpand] =
-    useState(0);
+  const [quarticFrame, setQuarticFrame] =
+    useState({
+      left: 0,
+      width: 0,
+      ready: false,
+    });
+
+  useEffect(() => {
+    const host = quarticHostRef.current;
+    const sidebar =
+      document.querySelector('.sidebar');
+    const mainContent =
+      document.querySelector('.main-content');
+
+    if (!host) {
+      return undefined;
+    }
+
+    /*
+     * This page must not depend on inferred CSS width arithmetic
+     * for the embedded viewer.
+     *
+     * Measure the actual rendered sidebar edge and viewport edge,
+     * then convert those viewport coordinates into the host's
+     * local coordinate system.
+     */
+    const previousMainOverflowX =
+      mainContent?.style.overflowX ?? '';
+
+    if (mainContent) {
+      mainContent.style.overflowX = 'visible';
+    }
+
+    const measureQuarticFrame = () => {
+      const hostRect =
+        host.getBoundingClientRect();
+
+      const sidebarRect =
+        sidebar?.getBoundingClientRect();
+
+      const sidebarRight =
+        sidebarRect?.right ?? 0;
+
+      const viewportRight =
+        window.innerWidth;
+
+      const rightGap = 20;
+
+      const left =
+        sidebarRight - hostRect.left;
+
+      const width =
+        viewportRight -
+        rightGap -
+        sidebarRight;
+
+      setQuarticFrame({
+        left,
+        width: Math.max(0, width),
+        ready: true,
+      });
+    };
+
+    measureQuarticFrame();
+
+    const resizeObserver =
+      new ResizeObserver(
+        measureQuarticFrame
+      );
+
+    resizeObserver.observe(host);
+
+    if (sidebar) {
+      resizeObserver.observe(sidebar);
+    }
+
+    window.addEventListener(
+      'resize',
+      measureQuarticFrame
+    );
+
+    return () => {
+      resizeObserver.disconnect();
+
+      window.removeEventListener(
+        'resize',
+        measureQuarticFrame
+      );
+
+      if (mainContent) {
+        mainContent.style.overflowX =
+          previousMainOverflowX;
+      }
+    };
+  }, []);
 
   return (
     <LayoutWrapper>
@@ -834,16 +921,15 @@ export default function HyperbolicPartitionEq() {
        * NO sidebar compensation arithmetic.
        */}
       <section
+        ref={quarticHostRef}
         className="quartic-explorer-embed"
         aria-label="Quartic to Ideal Tetrahedron interactive explorer"
         style={{
           position: 'relative',
-          width:
-            'calc(100vw - var(--sidebar-width))',
+          width: '100%',
           maxWidth: 'none',
-          boxSizing: 'border-box',
-          flex: '0 0 auto',
           height: 'calc(100vh + 180px)',
+          overflow: 'visible',
         }}
       >
         <div
@@ -861,136 +947,34 @@ export default function HyperbolicPartitionEq() {
               position: 'absolute',
               top: 0,
               bottom: 0,
-
-              /*
-               * TRUE INDEPENDENT EDGE CONTROLS.
-               */
-              left: `${quarticLeftShift}px`,
-              right: `${-quarticRightExpand}px`,
-
+              left: `${quarticFrame.left}px`,
+              width: `${quarticFrame.width}px`,
               overflow: 'hidden',
+              visibility:
+                quarticFrame.ready
+                  ? 'visible'
+                  : 'hidden',
             }}
           >
             <QuarticTetrahedronTransform embedded />
-          </div>
 
-          {/*
-           * TEMPORARY LIVE EDGE CALIBRATION.
-           * Remove after the production values are chosen.
-           */}
-          <div
-            style={{
-              position: 'absolute',
-              top: '72px',
-              right: '18px',
-              zIndex: 100,
-              width: '260px',
-              padding: '10px 12px',
-              boxSizing: 'border-box',
-              color: '#f5efe0',
-              fontFamily:
-                '"Times New Roman", Times, serif',
-              fontSize: '13px',
-              background:
-                'rgba(0, 0, 0, 0.82)',
-              border:
-                '1px solid rgba(245, 239, 224, 0.45)',
-              borderRadius: '6px',
-            }}
-          >
-            <div
+            <a
+              href="/quartic-tetrahedron-transform"
+              aria-label="Open Quartic to Ideal Tetrahedron as a standalone page"
+              title="Open standalone explorer"
               style={{
-                marginBottom: '8px',
-                fontSize: '14px',
-              }}
-            >
-              LIVE VIEWER CALIBRATION
-            </div>
-
-            <label
-              style={{
+                position: 'absolute',
+                top: '10px',
+                left: '12px',
+                width: '390px',
+                height: '52px',
+                zIndex: 20,
                 display: 'block',
-                marginBottom: '10px',
+                background: 'transparent',
+                cursor: 'pointer',
               }}
-            >
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  marginBottom: '4px',
-                }}
-              >
-                <span>Left edge →</span>
-                <span>{quarticLeftShift}px</span>
-              </div>
-
-              <input
-                type="range"
-                min="0"
-                max="180"
-                step="1"
-                value={quarticLeftShift}
-                onChange={(event) =>
-                  setQuarticLeftShift(
-                    Number(event.target.value)
-                  )
-                }
-                style={{
-                  width: '100%',
-                }}
-              />
-            </label>
-
-            <label
-              style={{
-                display: 'block',
-              }}
-            >
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  marginBottom: '4px',
-                }}
-              >
-                <span>Right edge →</span>
-                <span>{quarticRightExpand}px</span>
-              </div>
-
-              <input
-                type="range"
-                min="0"
-                max="220"
-                step="1"
-                value={quarticRightExpand}
-                onChange={(event) =>
-                  setQuarticRightExpand(
-                    Number(event.target.value)
-                  )
-                }
-                style={{
-                  width: '100%',
-                }}
-              />
-            </label>
+            />
           </div>
-
-          <a
-            href="/quartic-tetrahedron-transform"
-            aria-label="Open Quartic to Ideal Tetrahedron as a standalone page"
-            title="Open standalone explorer"
-            style={{
-              position: 'absolute',
-              top: '10px',
-              left: '12px',
-              width: '390px',
-              height: '52px',
-              zIndex: 20,
-              display: 'block',
-              background: 'transparent',
-              cursor: 'pointer',
-            }}
-          />
         </div>
       </section>
     </LayoutWrapper>
