@@ -66,16 +66,19 @@ export default function HyperbolicPartitionEq() {
         sidebarRight - hostRect.left;
 
       /*
-       * Match the standalone Quartic route exactly.
+       * VISIBLE FRAME:
        *
-       * LayoutWrapper gives the standalone viewer a full
-       * viewport-width content box even though it begins
-       * after the sidebar. Do not subtract sidebarRight
-       * a second time here.
+       * Stop exactly at the viewport right edge.
+       * This prevents horizontal page scrolling.
+       *
+       * The Quartic component INSIDE this frame will still
+       * receive a full 100vw layout width so its internal
+       * geometry matches the standalone route.
        */
       const width =
         viewportRight -
-        rightGap;
+        rightGap -
+        sidebarRight;
 
       setQuarticFrame({
         left,
@@ -956,14 +959,36 @@ export default function HyperbolicPartitionEq() {
               bottom: 0,
               left: `${quarticFrame.left}px`,
               width: `${quarticFrame.width}px`,
+
+              /*
+               * The measured frame is the authoritative
+               * available window. Everything inside it
+               * flexes to that exact width.
+               */
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'stretch',
+              minWidth: 0,
+              boxSizing: 'border-box',
               overflow: 'hidden',
+
               visibility:
                 quarticFrame.ready
                   ? 'visible'
                   : 'hidden',
             }}
           >
-            <QuarticTetrahedronTransform embedded />
+            <div
+              style={{
+                flex: '1 1 0',
+                width: '100%',
+                minWidth: 0,
+                height: '100%',
+                overflow: 'hidden',
+              }}
+            >
+              <QuarticTetrahedronTransform embedded />
+            </div>
 
             <a
               href="/quartic-tetrahedron-transform"
