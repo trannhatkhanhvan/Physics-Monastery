@@ -58,9 +58,7 @@ export default function HyperbolicPartitionEq() {
         sidebarRect?.right ?? 0;
 
       const viewportRight =
-        window.innerWidth;
-
-      const rightGap = 20;
+        document.documentElement.clientWidth;
 
       const left =
         sidebarRight - hostRect.left;
@@ -77,7 +75,6 @@ export default function HyperbolicPartitionEq() {
        */
       const width =
         viewportRight -
-        rightGap -
         sidebarRight;
 
       setQuarticFrame({
