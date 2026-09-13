@@ -25,6 +25,7 @@ import {
   REGULAR_IDEAL_TETRAHEDRON_VOLUME,
   idealTetrahedronVolume,
 } from './math/idealTetrahedronVolume';
+import MonodromyStage from './MonodromyStage';
 import styles from './QuarticTetrahedronTransform.module.css';
 import '../globals.css';
 
@@ -1110,6 +1111,7 @@ const VIEW_MODES = [
   'Roots',
   'Möbius transform',
   'Cross-ratio',
+  'Monodromy',
 ];
 
 /*
@@ -1823,6 +1825,10 @@ const [sceneScale, setSceneScale] = useState(130);
    */
   useEffect(() => {
     const handlePlaybackSpace = (event) => {
+      if (mode === 'Monodromy') {
+        return;
+      }
+
       if (
         event.code !== 'Space' &&
         event.key !== ' '
@@ -6195,9 +6201,7 @@ const [sceneScale, setSceneScale] = useState(130);
           className={styles.rootList}
         >
         {(
-          mode === 'Möbius transform'
-            ? [3, 2, 1, 0]
-            : [0, 1, 2, 3]
+          [0, 1, 2, 3]
         ).map(
           (index) => {
             const root =
@@ -6792,9 +6796,16 @@ const [sceneScale, setSceneScale] = useState(130);
                   type="button"
                   role="tab"
                   aria-selected={active}
-                  onClick={() =>
-                    setMode(viewMode)
-                  }
+                  onClick={() => {
+                    if (
+                      viewMode ===
+                      'Monodromy'
+                    ) {
+                      setIsAPlaying(false);
+                    }
+
+                    setMode(viewMode);
+                  }}
                   style={{
                     position: 'relative',
                     flex: '0 0 auto',
@@ -6856,9 +6867,28 @@ const [sceneScale, setSceneScale] = useState(130);
           </nav>
 
           <div className={styles.workspace}>
+            {mode === 'Monodromy' && (
+              <div
+                style={{
+                  gridColumn: '1 / -1',
+                  minWidth: 0,
+                  minHeight: 0,
+                  display: 'flex',
+                }}
+              >
+                <MonodromyStage />
+              </div>
+            )}
+
             <section
               className={styles.viewer}
               aria-label="Quartic tetrahedron transform viewer"
+              style={{
+                display:
+                  mode === 'Monodromy'
+                    ? 'none'
+                    : undefined,
+              }}
             >
               <div className={styles.viewerReadout}>
                 <span className={styles.viewerMode}>
@@ -11300,6 +11330,10 @@ const [sceneScale, setSceneScale] = useState(130);
               aria-label="Quartic tetrahedron controls"
               style={{
                 position: 'relative',
+                display:
+                  mode === 'Monodromy'
+                    ? 'none'
+                    : undefined,
               }}
             >
 
