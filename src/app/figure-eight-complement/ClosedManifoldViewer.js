@@ -368,12 +368,18 @@ const DEFAULT_VIEW = {
   rotation: IDENTITY_ROTATION,
 
   /*
-   * Shared underlying camera zoom.
-   * Fine-tune the three dimensional views with the scale knobs
-   * immediately above.
+   * Shared underlying camera zoom for 1D / 2D.
    */
   zoom: 0.32,
 };
+
+/*
+ * Dedicated opening camera zoom for the 3D Cells viewer.
+ *
+ * Keep this separate so changing the 3D opening size does not
+ * alter the already-tuned 1D and 2D views.
+ */
+const DEFAULT_3D_VIEW_ZOOM = 1.00;
 
 
 function viewWithOpeningScale(
@@ -1990,6 +1996,17 @@ export default function ClosedManifoldViewer({
   const initial3DFrameResolvedRef =
     useRef(false);
 
+  /*
+   * Last real geometry-measured 3D camera zoom.
+   *
+   * The old first-frame guard hid DEFAULT_VIEW until Auto Fit
+   * had measured the opening tetrahedra. Embedded switching now
+   * keeps the scene visible, so preserve that measured zoom and
+   * reuse it immediately on later 3D entries / resets.
+   */
+  const lastFitted3DZoomRef =
+    useRef(null);
+
   const [
     initial3DFrameReady,
     setInitial3DFrameReady,
@@ -2024,6 +2041,7 @@ export default function ClosedManifoldViewer({
 
   const viewerRef = useRef(null);
   const canvasRef = useRef(null);
+
   const [
     resetSceneVersion,
     setResetSceneVersion,
@@ -2515,6 +2533,14 @@ export default function ClosedManifoldViewer({
             MIN_ZOOM,
             MAX_ZOOM
           );
+
+        /*
+         * This is the authoritative measured 3D opening scale.
+         * Reuse it when an embedded viewer is later remounted
+         * instead of briefly falling back to DEFAULT_VIEW.zoom.
+         */
+        lastFitted3DZoomRef.current =
+          target;
 
         /*
          * FIRST 3D FRAME
@@ -4176,18 +4202,128 @@ export default function ClosedManifoldViewer({
 
   function resetCurrent() {
     /*
-     * Reset means: return to exactly the same state produced by
-     * loading this page fresh.
-     *
-     * The selected dimensional viewer and global menu state are
-     * already persisted by the existing reload logic, while all
-     * transient construction state is naturally recreated from
-     * its current defaults.
-     *
-     * Keeping Reset identical to reload prevents these two entry
-     * states from drifting apart as the viewer evolves.
+     * Standalone page keeps its existing reload semantics.
      */
-    window.location.reload();
+    if (!embedded) {
+      window.location.reload();
+      return;
+    }
+
+    /*
+     * Embedded Simplest Manifold viewer:
+     *
+     * Reset ONLY the currently selected dimensional viewer.
+     * Do not reload the containing article, do not change its
+     * scroll position, and do not change 1D / 2D / 3D.
+     *
+     * This is the same clean-entry state used when switching
+     * dimensions in place.
+     */
+    rememberClosedManifoldScene(
+      "cells"
+    );
+
+    if (
+      seamTransitionTimerRef.current !== null
+    ) {
+      window.clearTimeout(
+        seamTransitionTimerRef.current
+      );
+
+      seamTransitionTimerRef.current = null;
+    }
+
+    if (
+      manifoldCorollarySwitchTimerRef.current !==
+      null
+    ) {
+      window.clearTimeout(
+        manifoldCorollarySwitchTimerRef.current
+      );
+
+      manifoldCorollarySwitchTimerRef.current =
+        null;
+    }
+
+    setAutoRotationDirection(0);
+
+    setIntervalIdentified(false);
+    setTorusOrder([]);
+
+    setActiveManifoldId("m004");
+
+    setFacePairSequence([]);
+    setCollapsedBridgePairIds([]);
+    setSeamTransitioning(false);
+    setActiveMappingPairId(null);
+
+    setFacePairMappingIndices(
+      (
+        MANIFOLD_SPECS.m004.facePairs ??
+        FIGURE_EIGHT_FACE_PAIRS
+      ).map(() => 0)
+    );
+
+    setShowInterior(false);
+
+    setConstructiveFinalDisplayActive(
+      false
+    );
+
+    setShowCuspTriangles(false);
+    setExtendCusp(false);
+    setAssembleCusp(false);
+    setCuspWrapOrder([]);
+
+    setProjectionActive(false);
+    setProjectionMode("boundary");
+
+    setTruncationFraction(
+      DEFAULT_TRUNCATION_FRACTION
+    );
+
+    setCuspMeshFaceCount(
+      DEFAULT_CUSP_MESH_FACE_COUNT
+    );
+
+    setMeshSliderPosition(
+      meshSliderPositionFromFaceCount(
+        DEFAULT_CUSP_MESH_FACE_COUNT
+      )
+    );
+
+    setViewTransform({
+      ...DEFAULT_VIEW,
+
+      zoom:
+        dimension === "3D"
+          ? DEFAULT_3D_VIEW_ZOOM
+          : DEFAULT_VIEW.zoom,
+    });
+
+    setAutoFit3D(true);
+
+    /*
+     * A fresh 3D child still gets to perform its normal
+     * measured Auto Fit. Keep it visible in the embedded
+     * viewer so we never reproduce the blank-screen state.
+     */
+    initial3DFrameResolvedRef.current =
+      false;
+
+    setInitial3DFrameReady(
+      dimension === "3D"
+    );
+
+    setCellsEntryHintVisible(false);
+    setFaceConstructionState(null);
+
+    /*
+     * Fresh child instance, same selected dimension.
+     */
+    setResetSceneVersion(
+      current => current + 1
+    );
   }
 
   function undoCurrent() {
@@ -4710,8 +4846,17 @@ export default function ClosedManifoldViewer({
                 }
 
                 /*
-                 * Embedded viewer keeps its existing persistence
-                 * behavior because it lives inside another page.
+                 * Embedded viewer:
+                 *
+                 * Change dimensions IN PLACE.
+                 *
+                 * Do not reload the containing Simplest Manifold
+                 * article, because doing so throws the reader back
+                 * to the top of that page.
+                 *
+                 * Reset the interactive viewer state directly so
+                 * each dimension still opens in the same clean
+                 * initial state that a reload previously produced.
                  */
                 try {
                   window.localStorage.setItem(
@@ -4736,7 +4881,98 @@ export default function ClosedManifoldViewer({
                    */
                 }
 
-                window.location.reload();
+                /*
+                 * Shared clean-entry state.
+                 */
+                setIntervalIdentified(false);
+                setTorusOrder([]);
+
+                setActiveManifoldId("m004");
+
+                setFacePairSequence([]);
+                setCollapsedBridgePairIds([]);
+                setSeamTransitioning(false);
+                setActiveMappingPairId(null);
+
+                setFacePairMappingIndices(
+                  (
+                    MANIFOLD_SPECS.m004.facePairs ??
+                    FIGURE_EIGHT_FACE_PAIRS
+                  ).map(() => 0)
+                );
+
+                setShowInterior(false);
+
+                setConstructiveFinalDisplayActive(
+                  false
+                );
+
+                setShowCuspTriangles(false);
+                setExtendCusp(false);
+                setAssembleCusp(false);
+                setCuspWrapOrder([]);
+
+                setProjectionActive(false);
+                setProjectionMode("boundary");
+
+                setTruncationFraction(
+                  DEFAULT_TRUNCATION_FRACTION
+                );
+
+                setCuspMeshFaceCount(
+                  DEFAULT_CUSP_MESH_FACE_COUNT
+                );
+
+                setMeshSliderPosition(
+                  meshSliderPositionFromFaceCount(
+                    DEFAULT_CUSP_MESH_FACE_COUNT
+                  )
+                );
+
+                setViewTransform({
+                  ...DEFAULT_VIEW,
+
+                  zoom:
+                    option === "3D"
+                      ? DEFAULT_3D_VIEW_ZOOM
+                      : DEFAULT_VIEW.zoom,
+                });
+
+                setAutoFit3D(true);
+
+                initial3DFrameResolvedRef.current =
+                  false;
+
+                /*
+                 * Full page entry hides the temporary DEFAULT_VIEW
+                 * until the first measured 3D auto-fit arrives.
+                 *
+                 * Embedded dimension switching is different: the
+                 * article and viewer are already mounted. Keeping
+                 * initial3DFrameReady false here hides the entire
+                 * newly-mounted tetrahedra scene while the child
+                 * schedules its auto-fit callback.
+                 *
+                 * Show the 3D geometry immediately. The unresolved
+                 * ref above remains false, so the first real
+                 * auto-fit measurement still installs the correct
+                 * opening zoom as soon as it arrives.
+                 */
+                setInitial3DFrameReady(
+                  option === "3D"
+                );
+
+                setCellsEntryHintVisible(false);
+
+                /*
+                 * Force dimension-specific child viewers to mount
+                 * fresh without disturbing the article scroll.
+                 */
+                setResetSceneVersion(
+                  current => current + 1
+                );
+
+                setDimension(option);
               }}
             >
               {option}
@@ -5533,10 +5769,7 @@ export default function ClosedManifoldViewer({
 
               <button
                 type="button"
-
-                onClick={() => {
-                  window.location.reload();
-                }}
+                onClick={resetCurrent}
               >
                 Reset
               </button>
@@ -5841,6 +6074,7 @@ export default function ClosedManifoldViewer({
               }`
             }
             style={
+              !embedded &&
               dimension === "3D" &&
               !projectionActive &&
               !initial3DFrameReady
@@ -6832,6 +7066,7 @@ export default function ClosedManifoldViewer({
           </div>
         )}
       </section>
+
     </RootElement>
   );
 }

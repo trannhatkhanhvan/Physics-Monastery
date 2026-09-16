@@ -341,7 +341,14 @@ export default function SimplestManifold() {
         className="simplest-manifold-viewer-lock"
         style={{
           position: 'relative',
-          width: '100%',
+
+          /*
+           * Match the Quartic explorer:
+           * keep the visible viewer 20px clear
+           * of the viewport-right edge.
+           */
+          width: 'calc(100% - 20px)',
+
           height: 'calc(100vh - 36px)',
         }}
       >
