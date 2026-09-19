@@ -1635,8 +1635,6 @@ const [sceneScale, setSceneScale] = useState(130);
    * The graph itself is responsive within the available
    * region above the fixed argument readouts.
    */
-  const rootAnglesSceneScale = 106;
-
   const rootAnglesLineWidth = 2.0;
 
   const rootAnglesCurrentPointRadius = 4.0;
@@ -7480,14 +7478,9 @@ const [sceneScale, setSceneScale] = useState(130);
                 <div
                   className={styles.rootAnglesView}
                   style={{
-                    position: 'absolute',
-                    inset: 0,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    transform:
-                      `scale(${rootAnglesSceneScale / 100})`,
-                    transformOrigin: 'center center',
                   }}
                 >
                   <div className={styles.rootAnglesGraph}>
@@ -8472,14 +8465,9 @@ const [sceneScale, setSceneScale] = useState(130);
                 <div
                   className={styles.rootAnglesView}
                   style={{
-                    position: 'absolute',
-                    inset: 0,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    transform:
-                      `scale(${rootAnglesSceneScale / 100})`,
-                    transformOrigin: 'center center',
                   }}
                 >
                   <div className={styles.rootAnglesGraph}>
