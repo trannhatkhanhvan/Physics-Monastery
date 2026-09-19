@@ -27,6 +27,12 @@ import { createPortal } from 'react-dom';
 import styles from
   './MonodromyStage.module.css';
 
+import MonodromyBraid3D from
+  './MonodromyBraid3D';
+
+import RiemannSurfaceViewer from
+  './RiemannSurfaceViewer';
+
 
 
 function MathInline({
@@ -50,6 +56,62 @@ function MathInline({
         __html: html,
       }}
     />
+  );
+}
+
+
+const BRANCH_EQUATION_FONT_SIZE =
+  18;
+
+
+function BranchEquationSvg({
+  src,
+  alt,
+  fontSize = BRANCH_EQUATION_FONT_SIZE,
+  translateY = 0,
+}) {
+  return (
+    <span
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+
+        fontSize:
+          `${fontSize}px`,
+
+        lineHeight: 1,
+
+        verticalAlign:
+          'middle',
+
+        transform:
+          `translateY(${translateY}px)`,
+
+        flex:
+          '0 0 auto',
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          display: 'block',
+
+          /*
+           * Typography-driven sizing:
+           * 1em means the SVG is controlled entirely by
+           * BRANCH_EQUATION_FONT_SIZE above.
+           */
+          height: '1em',
+          width: 'auto',
+
+          maxWidth: 'none',
+          maxHeight: 'none',
+
+          flex: '0 0 auto',
+        }}
+      />
+    </span>
   );
 }
 
@@ -232,6 +294,12 @@ const ROOT_LABELS = [
 const ROOT_READOUT_GAP_PX =
   8;
 
+const ROOT_VIEW_ZOOM_MIN_STEP =
+  -2;
+
+const ROOT_VIEW_ZOOM_MAX_STEP =
+  10;
+
 const SVG = {
   width: 700,
   height: 470,
@@ -278,7 +346,7 @@ const BRANCH_LABEL_FONT_SIZE = 12;
 
 const BRANCH_TOOLTIPS = {
   'plus-real': {
-    title: 'a₃',
+    title: 'a₁',
     lines: [
       'Positive real branch value',
       'Two roots coalesce here',
@@ -287,7 +355,7 @@ const BRANCH_TOOLTIPS = {
   },
 
   'minus-real': {
-    title: '−a₃',
+    title: '−a₁',
     lines: [
       'Negative real branch value',
       'Two roots coalesce here',
@@ -994,12 +1062,16 @@ function ParameterPlane({
         SVG.width,
 
       y:
+        SVG.top +
         (
           event.clientY -
           rectangle.top
         ) /
         rectangle.height *
-        SVG.height,
+        (
+          SVG.bottom -
+          SVG.top
+        ),
     };
   }
 
@@ -1065,9 +1137,10 @@ function ParameterPlane({
 
       y:
         Math.max(
-          PARAMETER_DRAG_EDGE_MARGIN,
+          SVG.top +
+            PARAMETER_DRAG_EDGE_MARGIN,
           Math.min(
-            SVG.height -
+            SVG.bottom -
               PARAMETER_DRAG_EDGE_MARGIN,
             pointer.y
           )
@@ -1105,7 +1178,7 @@ function ParameterPlane({
   return (
     <>
     <svg
-      viewBox="0 0 700 470"
+      viewBox={`0 ${SVG.top} ${SVG.width} ${SVG.bottom - SVG.top}`}
       className={styles.plot}
       aria-label="Complex parameter plane"
       onPointerDown={handlePointerDown}
@@ -1135,9 +1208,9 @@ function ParameterPlane({
     >
       <rect
         x="1"
-        y="1"
-        width="698"
-        height="468"
+        y={SVG.top}
+        width={SVG.width - 2}
+        height={SVG.bottom - SVG.top}
         rx="8"
         className={styles.plotBackground}
       />
@@ -1184,7 +1257,7 @@ function ParameterPlane({
             branch.id === 'minus-real'
               ? {
                   src:
-                    '/equations/negative_a_3.svg',
+                    '/equations/negative_a_1.svg',
 
                   x:
                     mapped.x - 88,
@@ -1201,7 +1274,7 @@ function ParameterPlane({
               : branch.id === 'plus-real'
                 ? {
                     src:
-                      '/equations/a_3.svg',
+                      '/equations/a_1.svg',
 
                     x:
                       mapped.x + 8,
@@ -1741,6 +1814,8 @@ function RootPlane({
 
 
 export default function MonodromyStage() {
+
+
   const [
     freeDragging,
     setFreeDragging,
@@ -1748,10 +1823,250 @@ export default function MonodromyStage() {
     useState(false);
 
   const [
+    returnTooltipPosition,
+    setReturnTooltipPosition,
+  ] =
+    useState(null);
+
+  const [
+    coordinatePopupPosition,
+    setCoordinatePopupPosition,
+  ] =
+    useState(null);
+
+  const [
     frameIndex,
     setFrameIndex,
   ] =
     useState(0);
+
+  const [
+    rootViewerMode,
+    setRootViewerMode,
+  ] =
+    useState('2D');
+
+  const [
+    root2DDisplayMode,
+    setRoot2DDisplayMode,
+  ] =
+    useState('trace');
+
+  const [
+    showRootDots,
+    setShowRootDots,
+  ] =
+    useState(true);
+
+  const [
+    rootZoomStep,
+    setRootZoomStep,
+  ] =
+    useState(0);
+
+  const [
+    root3DDisplayMode,
+    setRoot3DDisplayMode,
+  ] =
+    useState('strands');
+
+  const [
+    showCutGluings,
+    setShowCutGluings,
+  ] =
+    useState(false);
+
+  const [
+    root4DPoleXWAngle,
+    setRoot4DPoleXWAngle,
+  ] =
+    useState(0);
+
+  const [
+    root4DPoleYWAngle,
+    setRoot4DPoleYWAngle,
+  ] =
+    useState(0);
+
+  const [
+    root4DPoleZWAngle,
+    setRoot4DPoleZWAngle,
+  ] =
+    useState(0);
+
+  const [
+    root4DPolePlaying,
+    setRoot4DPolePlaying,
+  ] =
+    useState({
+      XW: false,
+      YW: false,
+      ZW: false,
+    });
+
+  const [
+    root4DSurfaceOpacity,
+    setRoot4DSurfaceOpacity,
+  ] =
+    useState(1);
+
+
+  /*
+   * Temporary visual-tuning controls.
+   * Once the preferred values are chosen we can bake them in
+   * and remove these sliders.
+   */
+  const [
+    rootCameraRollCommand,
+    setRootCameraRollCommand,
+  ] =
+    useState({
+      id: 0,
+      direction: 0,
+    });
+
+
+  /*
+   * Discrete reset command for the shared 3D Strands / Sheets
+   * camera. This resets camera rotation + zoom only.
+   */
+  const [
+    rootCameraResetCommand,
+    setRootCameraResetCommand,
+  ] =
+    useState({
+      id: 0,
+    });
+
+  const traceAnimationRef =
+    useRef(null);
+
+  const poleAnimationFrameRef =
+    useRef(null);
+
+  /*
+   * Each 4D pole control can animate independently.
+   *
+   * One complete -pi -> +pi sweep takes 20 seconds,
+   * matching the established pi-radians-per-10-seconds
+   * viewer rotation rate.
+   */
+  useEffect(
+    () => {
+      const playing =
+        root4DPolePlaying;
+
+      const anythingPlaying =
+        playing.XW ||
+        playing.YW ||
+        playing.ZW;
+
+      if (
+        rootViewerMode !== '4D' ||
+        !anythingPlaying
+      ) {
+        if (
+          poleAnimationFrameRef.current !==
+          null
+        ) {
+          window.cancelAnimationFrame(
+            poleAnimationFrameRef.current
+          );
+
+          poleAnimationFrameRef.current =
+            null;
+        }
+
+        return undefined;
+      }
+
+      let previousTime =
+        performance.now();
+
+      const radiansPerMillisecond =
+        2 * Math.PI / 20000;
+
+      const advanceAngle = (
+        setter,
+        elapsed
+      ) => {
+        setter(
+          current => {
+            let next =
+              current +
+              elapsed *
+                radiansPerMillisecond;
+
+            while (next > Math.PI) {
+              next -=
+                2 * Math.PI;
+            }
+
+            return next;
+          }
+        );
+      };
+
+      function animate(now) {
+        const elapsed =
+          now -
+          previousTime;
+
+        previousTime =
+          now;
+
+        if (playing.XW) {
+          advanceAngle(
+            setRoot4DPoleXWAngle,
+            elapsed
+          );
+        }
+
+        if (playing.YW) {
+          advanceAngle(
+            setRoot4DPoleYWAngle,
+            elapsed
+          );
+        }
+
+        if (playing.ZW) {
+          advanceAngle(
+            setRoot4DPoleZWAngle,
+            elapsed
+          );
+        }
+
+        poleAnimationFrameRef.current =
+          window.requestAnimationFrame(
+            animate
+          );
+      }
+
+      poleAnimationFrameRef.current =
+        window.requestAnimationFrame(
+          animate
+        );
+
+      return () => {
+        if (
+          poleAnimationFrameRef.current !==
+          null
+        ) {
+          window.cancelAnimationFrame(
+            poleAnimationFrameRef.current
+          );
+
+          poleAnimationFrameRef.current =
+            null;
+        }
+      };
+    },
+    [
+      root4DPolePlaying,
+      rootViewerMode,
+    ]
+  );
+
 
   const rootReadoutGridRef =
     useRef(null);
@@ -1917,6 +2232,25 @@ export default function MonodromyStage() {
     [freeFrames]
   );
 
+  useEffect(
+    () => (
+      () => {
+        if (
+          traceAnimationRef.current !==
+          null
+        ) {
+          window.cancelAnimationFrame(
+            traceAnimationRef.current
+          );
+
+          traceAnimationRef.current =
+            null;
+        }
+      }
+    ),
+    []
+  );
+
   const freeTrajectory =
     useMemo(
       () => {
@@ -2009,7 +2343,24 @@ export default function MonodromyStage() {
       safeFrameIndex
     ];
 
+  function stopTraceAnimation() {
+    if (
+      traceAnimationRef.current !==
+      null
+    ) {
+      window.cancelAnimationFrame(
+        traceAnimationRef.current
+      );
+
+      traceAnimationRef.current =
+        null;
+    }
+  }
+
+
   function reset() {
+    stopTraceAnimation();
+
     setFreeDragging(false);
 
     const resetFrame = {
@@ -2035,10 +2386,61 @@ export default function MonodromyStage() {
     );
 
     setFrameIndex(0);
+
+    /*
+     * Reset the current Monodromy mode in place.
+     *
+     * Preserve the selected dimension, Trace / Fill mode,
+     * and Roots toggle. Restore the canonical camera scale.
+     */
+    setRootZoomStep(0);
+
+    /*
+     * Reset the shared movable camera as part of the main
+     * Monodromy Reset:
+     *
+     *   rotation -> identity
+     *   zoom     -> 1
+     *
+     * Incrementing the command id is essential; assigning a
+     * fixed id would not reliably trigger the child effect.
+     */
+    setRootCameraResetCommand(
+      current => ({
+        id:
+          current.id + 1,
+      })
+    );
+
+    setShowCutGluings(
+      false
+    );
+
+    setRoot4DPoleXWAngle(0);
+    setRoot4DPoleYWAngle(0);
+    setRoot4DPoleZWAngle(0);
+
+    setRoot4DPolePlaying({
+      XW: false,
+      YW: false,
+      ZW: false,
+    });
+
+    setRoot4DSurfaceOpacity(
+      0.13
+    );
+
+    setRootCameraRollCommand({
+      id: 0,
+      direction: 0,
+    });
+
   }
 
 
   function beginFreeDrag() {
+    stopTraceAnimation();
+
     /*
      * If the timeline was scrubbed backward, drawing
      * from there creates a new continuation branch and
@@ -2140,11 +2542,662 @@ export default function MonodromyStage() {
 
 
   function returnFreePathToBasepoint() {
+    stopTraceAnimation();
+
     setFreeDragging(false);
 
     extendFreePath(
       MONODROMY_BASEPOINT
     );
+  }
+
+
+  function traceAxesAndBoundary() {
+    stopTraceAnimation();
+
+    setFreeDragging(false);
+
+    /*
+     * Reconstruct the exact visible free-parameter bounds
+     * used by ParameterPlane.
+     */
+    const centerRe =
+      (
+        FREE_PARAMETER_BOUNDS.minRe +
+        FREE_PARAMETER_BOUNDS.maxRe
+      ) / 2;
+
+    const centerIm =
+      (
+        FREE_PARAMETER_BOUNDS.minIm +
+        FREE_PARAMETER_BOUNDS.maxIm
+      ) / 2;
+
+    const halfRe =
+      (
+        FREE_PARAMETER_BOUNDS.maxRe -
+        FREE_PARAMETER_BOUNDS.minRe
+      ) /
+      (
+        2 *
+        PARAMETER_PLANE_SCALE
+      );
+
+    const halfIm =
+      (
+        FREE_PARAMETER_BOUNDS.maxIm -
+        FREE_PARAMETER_BOUNDS.minIm
+      ) /
+      (
+        2 *
+        PARAMETER_PLANE_SCALE
+      );
+
+    const traceBounds = {
+      minRe:
+        centerRe - halfRe,
+
+      maxRe:
+        centerRe + halfRe,
+
+      minIm:
+        centerIm - halfIm,
+
+      maxIm:
+        centerIm + halfIm,
+    };
+
+    const mappedBasepoint =
+      mapPoint(
+        MONODROMY_BASEPOINT,
+        traceBounds
+      );
+
+    const mappedZero =
+      mapPoint(
+        {
+          re: 0,
+          im: 0,
+        },
+        traceBounds
+      );
+
+    /*
+     * Trace the mathematical parameter-domain boundary,
+     * not the decorative outer SVG frame.
+     *
+     * These are the same mapped bounds used by the 4D sheet
+     * domain, so the continuation trace and sheet perimeter
+     * represent exactly the same parameter values.
+     */
+    const left =
+      SVG.left;
+
+    const right =
+      SVG.right;
+
+    const top =
+      SVG.top;
+
+    const bottom =
+      SVG.bottom;
+
+    const leftMid = {
+      x: left,
+      y: mappedZero.y,
+    };
+
+    const rightMid = {
+      x: right,
+      y: mappedZero.y,
+    };
+
+    const topMid = {
+      x: mappedZero.x,
+      y: top,
+    };
+
+    const bottomMid = {
+      x: mappedZero.x,
+      y: bottom,
+    };
+
+    const topLeft = {
+      x: left,
+      y: top,
+    };
+
+    const topRight = {
+      x: right,
+      y: top,
+    };
+
+    const bottomLeft = {
+      x: left,
+      y: bottom,
+    };
+
+    const bottomRight = {
+      x: right,
+      y: bottom,
+    };
+
+    const mappedMinusReal =
+      mapPoint(
+        {
+          re:
+            -MONODROMY_A_STAR,
+          im: 0,
+        },
+        traceBounds
+      );
+
+    const mappedPlusReal =
+      mapPoint(
+        {
+          re:
+            MONODROMY_A_STAR,
+          im: 0,
+        },
+        traceBounds
+      );
+
+    const mappedPlusImag =
+      mapPoint(
+        {
+          re: 0,
+          im:
+            MONODROMY_B_STAR,
+        },
+        traceBounds
+      );
+
+    const mappedMinusImag =
+      mapPoint(
+        {
+          re: 0,
+          im:
+            -MONODROMY_B_STAR,
+        },
+        traceBounds
+      );
+
+    const mappedAxisOrigin =
+      mapPoint(
+        {
+          re: 0,
+          im: 0,
+        },
+        traceBounds
+      );
+
+    /*
+     * Build the preset in SVG coordinates first.
+     *
+     * This makes "axes" and "boundary" mean exactly the
+     * lines the user sees on screen.
+     */
+    const screenPoints = [
+      {
+        x: mappedBasepoint.x,
+        y: mappedBasepoint.y,
+      },
+    ];
+
+    const lineTo = (
+      target,
+      spacing = 8
+    ) => {
+      const start =
+        screenPoints[
+          screenPoints.length - 1
+        ];
+
+      const length =
+        Math.hypot(
+          target.x - start.x,
+          target.y - start.y
+        );
+
+      const steps =
+        Math.max(
+          1,
+          Math.ceil(
+            length / spacing
+          )
+        );
+
+      for (
+        let step = 1;
+        step <= steps;
+        step += 1
+      ) {
+        const t =
+          step / steps;
+
+        screenPoints.push({
+          x:
+            start.x +
+            (
+              target.x -
+              start.x
+            ) * t,
+
+          y:
+            start.y +
+            (
+              target.y -
+              start.y
+            ) * t,
+        });
+      }
+    };
+
+
+    /*
+     * Numerically avoid the exact discriminant points while
+     * keeping the displayed trace visually on the axes.
+     *
+     * The 1 px transverse offset lies inside the visible
+     * branch-point dot, so the bypass is effectively hidden.
+     */
+    const collisionWindowPx =
+      4;
+
+    const collisionOffsetPx =
+      1;
+
+
+    const bypassRealBranch = (
+      mappedBranch,
+      offsetSign
+    ) => {
+      const bypassY =
+        mappedZero.y +
+        offsetSign *
+        collisionOffsetPx;
+
+      lineTo({
+        x:
+          mappedBranch.x +
+          collisionWindowPx,
+
+        y:
+          mappedZero.y,
+      });
+
+      lineTo(
+        {
+          x:
+            mappedBranch.x +
+            collisionWindowPx,
+
+          y:
+            bypassY,
+        },
+        1
+      );
+
+      lineTo(
+        {
+          x:
+            mappedBranch.x -
+            collisionWindowPx,
+
+          y:
+            bypassY,
+        },
+        1
+      );
+
+      lineTo(
+        {
+          x:
+            mappedBranch.x -
+            collisionWindowPx,
+
+          y:
+            mappedZero.y,
+        },
+        1
+      );
+    };
+
+
+    const bypassImagBranch = (
+      mappedBranch,
+      offsetSign
+    ) => {
+      const bypassX =
+        mappedZero.x +
+        offsetSign *
+        collisionOffsetPx;
+
+      lineTo({
+        x:
+          mappedZero.x,
+
+        y:
+          mappedBranch.y -
+          collisionWindowPx,
+      });
+
+      lineTo(
+        {
+          x:
+            bypassX,
+
+          y:
+            mappedBranch.y -
+            collisionWindowPx,
+        },
+        1
+      );
+
+      lineTo(
+        {
+          x:
+            bypassX,
+
+          y:
+            mappedBranch.y +
+            collisionWindowPx,
+        },
+        1
+      );
+
+      lineTo(
+        {
+          x:
+            mappedZero.x,
+
+          y:
+            mappedBranch.y +
+            collisionWindowPx,
+        },
+        1
+      );
+    };
+
+
+    /*
+     * 1. Start at physical a and move to the right edge.
+     */
+    lineTo(rightMid);
+
+
+    /*
+     * 2. Trace the complete visible boundary clockwise.
+     */
+    lineTo(topRight);
+    lineTo(topLeft);
+    lineTo(bottomLeft);
+    lineTo(bottomRight);
+    lineTo(rightMid);
+
+
+    /*
+     * 3. Trace the real axis from right to left.
+     *
+     * Stay visually on the axis, but miss the two exact
+     * double-root points by 1 screen pixel.
+     */
+    bypassRealBranch(
+      mappedPlusReal,
+      -1
+    );
+
+    lineTo(mappedAxisOrigin);
+
+    bypassRealBranch(
+      mappedMinusReal,
+      1
+    );
+
+    lineTo(leftMid);
+
+
+    /*
+     * 4. Use already-traced boundary segments to reach the
+     *    top of the imaginary axis.
+     */
+    lineTo(topLeft);
+    lineTo(topMid);
+
+
+    /*
+     * 5. Trace the imaginary axis from top to bottom.
+     *
+     * Stay visually on the axis, but miss the two exact
+     * double-root points by 1 screen pixel.
+     */
+    bypassImagBranch(
+      mappedPlusImag,
+      1
+    );
+
+    lineTo(mappedAxisOrigin);
+
+    bypassImagBranch(
+      mappedMinusImag,
+      -1
+    );
+
+    lineTo(bottomMid);
+
+
+    /*
+     * 6. Follow already-traced boundary segments back to the
+     *    right side, then return exactly to physical a.
+     */
+    lineTo(bottomRight);
+    lineTo(rightMid);
+    lineTo(mappedBasepoint);
+
+
+    /*
+     * Convert the visible screen path back into complex
+     * parameter values and analytically continue the roots.
+     */
+    const nextFrames = [
+      {
+        ...initialFreeFrame,
+
+        segmentMaximumRootStep: 0,
+
+        segmentMinimumRootSeparation:
+          minimumRootSeparation(
+            initialFreeFrame.roots
+          ),
+      },
+    ];
+
+    let previous =
+      nextFrames[0];
+
+    screenPoints
+      .slice(1)
+      .forEach(
+        screenPoint => {
+          const targetA =
+            unmapPoint(
+              screenPoint,
+              traceBounds
+            );
+
+          if (
+            distance(
+              previous.a,
+              targetA
+            ) < 1e-10
+          ) {
+            return;
+          }
+
+          const transported =
+            transportRootsAlongSegment({
+              fromA:
+                previous.a,
+
+              roots:
+                previous.roots,
+
+              toA:
+                targetA,
+
+              maxParameterStep:
+                0.01,
+            });
+
+          const nextFrame = {
+            a:
+              transported.a,
+
+            roots:
+              transported.roots,
+
+            residual:
+              transported.residual,
+
+            segmentMaximumRootStep:
+              transported
+                .maximumRootStep,
+
+            segmentMinimumRootSeparation:
+              transported
+                .minimumRootSeparation,
+          };
+
+          nextFrames.push(
+            nextFrame
+          );
+
+          previous =
+            nextFrame;
+        }
+      );
+
+
+    /*
+     * Force the final point to the exact physical basepoint
+     * so the Path result registers as closed.
+     */
+    if (
+      distance(
+        previous.a,
+        MONODROMY_BASEPOINT
+      ) > 1e-12
+    ) {
+      const transported =
+        transportRootsAlongSegment({
+          fromA:
+            previous.a,
+
+          roots:
+            previous.roots,
+
+          toA:
+            MONODROMY_BASEPOINT,
+
+          maxParameterStep:
+            0.01,
+        });
+
+      nextFrames.push({
+        a:
+          transported.a,
+
+        roots:
+          transported.roots,
+
+        residual:
+          transported.residual,
+
+        segmentMaximumRootStep:
+          transported
+            .maximumRootStep,
+
+        segmentMinimumRootSeparation:
+          transported
+            .minimumRootSeparation,
+      });
+    }
+
+
+    freeFramesRef.current =
+      nextFrames;
+
+    setFreeFrames(
+      nextFrames
+    );
+
+    setFrameIndex(0);
+
+
+    /*
+     * Animate the transported roots through the finished
+     * continuation. The colored root trails therefore grow
+     * across the root plane instead of appearing all at once.
+     */
+    const durationMs =
+      6000;
+
+    let startTime =
+      null;
+
+    const animate = (
+      timestamp
+    ) => {
+      if (
+        startTime === null
+      ) {
+        startTime =
+          timestamp;
+      }
+
+      const progress =
+        Math.min(
+          1,
+          (
+            timestamp -
+            startTime
+          ) /
+          durationMs
+        );
+
+      const nextIndex =
+        Math.min(
+          nextFrames.length - 1,
+          Math.floor(
+            progress *
+            (
+              nextFrames.length -
+              1
+            )
+          )
+        );
+
+      setFrameIndex(
+        nextIndex
+      );
+
+      if (
+        progress < 1
+      ) {
+        traceAnimationRef.current =
+          window.requestAnimationFrame(
+            animate
+          );
+      } else {
+        traceAnimationRef.current =
+          null;
+      }
+    };
+
+    traceAnimationRef.current =
+      window.requestAnimationFrame(
+        animate
+      );
   }
 
 
@@ -2203,12 +3256,80 @@ export default function MonodromyStage() {
 
         </div>
 
-        <div className={styles.rootPlotWrap}>
-          <RootPlane
+        <div
+          className={styles.rootPlotWrap}
+          style={{
+            position: 'relative',
+          }}
+        >
+          <MonodromyBraid3D
+            active={
+              rootViewerMode === '2D' ||
+              rootViewerMode === '4D'
+            }
+            interactionEnabled={
+              rootViewerMode === '2D' ||
+              rootViewerMode === '4D'
+            }
+            dimensionMode={
+              rootViewerMode === '2D'
+                ? '3D'
+                : rootViewerMode
+            }
             trajectory={trajectory}
             frameIndex={safeFrameIndex}
-            showTrails={true}
+            rootColors={ROOT_COLORS}
+            showRootDots={
+              showRootDots
+            }
+            zoomStep={
+              rootZoomStep
+            }
+            displayMode={
+              (
+                rootViewerMode === '2D' ||
+                rootViewerMode === '4D'
+              )
+                ? (
+                    root2DDisplayMode === 'fill'
+                      ? 'sheets'
+                      : 'strands'
+                  )
+                : root3DDisplayMode
+            }
+            showGluePairs={
+              showCutGluings
+            }
+            fourDPoleXWAngle={
+              root4DPoleXWAngle
+            }
+            fourDPoleYWAngle={
+              root4DPoleYWAngle
+            }
+            fourDPoleZWAngle={
+              root4DPoleZWAngle
+            }
+            surfaceOpacity={
+              root4DSurfaceOpacity
+            }
+            cameraRollCommand={
+              rootCameraRollCommand
+            }
+            cameraResetCommand={
+              rootCameraResetCommand
+            }
           />
+
+          <RiemannSurfaceViewer
+            active={
+              rootViewerMode ===
+              'Riemann'
+            }
+            surfaceOpacity={
+              root4DSurfaceOpacity
+            }
+          />
+
         </div>
 
         <div className={styles.currentRootsFooter}>
@@ -2332,22 +3453,103 @@ export default function MonodromyStage() {
         aria-label="Monodromy controls"
       >
         <section className={styles.sideSection}>
-          <div className={styles.parameterHeaderRow}>
+          <div
+            className={styles.parameterHeaderRow}
+            style={{
+              position: 'relative',
+            }}
+          >
             <div className={styles.sideSectionTitle}>
               Parameter plane
             </div>
 
-            <div className={styles.parameterReadout}>
-              <ASymbol /> = {
-                formatComplex(
-                  currentParameter,
-                  15
-                )
-              }
-            </div>
+            {
+              distance(
+                currentParameter,
+                MONODROMY_BASEPOINT
+              ) < 1e-10
+                ? (
+                    <div
+                      className={
+                        styles.parameterExactReadout
+                      }
+                    >
+                      <div
+                        className={
+                          styles.parameterExactLine
+                        }
+                      >
+                        <img
+                          src="/equations/a_scale.svg"
+                          alt="a defining expression"
+                          className={
+                            styles.parameterExactFormula
+                          }
+                          style={{
+                            height: '30px',
+                            width: 'auto',
+                            flex: '0 0 auto',
+                          }}
+                        />
+
+                        <span>
+                          = {
+                            MONODROMY_BASEPOINT
+                              .re
+                              .toPrecision(15)
+                          }
+                        </span>
+                      </div>
+
+                      <div
+                        className={
+                          styles.parameterExactNote
+                        }
+                        style={{
+                          position: 'absolute',
+                          top:
+                            '32px',
+                          right: 0,
+                          zIndex: 5,
+                          margin: 0,
+                          pointerEvents: 'none',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        principal value of{' '}
+
+                        <MathInline
+                          latex={
+                            String.raw`i^i`
+                          }
+                        />
+                      </div>
+                    </div>
+                  )
+                : (
+                    <div
+                      className={
+                        styles.parameterReadout
+                      }
+                    >
+                      <ASymbol /> = {
+                        formatComplex(
+                          currentParameter,
+                          15
+                        )
+                      }
+                    </div>
+                  )
+            }
           </div>
 
-          <div className={styles.parameterPlaneWrap}>
+          <div
+            className={styles.parameterPlaneWrap}
+            style={{
+              height:
+                '254px',
+            }}
+          >
             <ParameterPlane
               trajectory={trajectory}
               frameIndex={safeFrameIndex}
@@ -2381,26 +3583,1439 @@ export default function MonodromyStage() {
               onClick={
                 returnFreePathToBasepoint
               }
+              onMouseEnter={event => {
+                const rectangle =
+                  event.currentTarget
+                    .getBoundingClientRect();
+
+                const tooltipWidth = 330;
+                const tooltipHeight = 48;
+                const gap = 10;
+
+                let left =
+                  rectangle.left +
+                  rectangle.width / 2 -
+                  tooltipWidth / 2;
+
+                left = Math.max(
+                  8,
+                  Math.min(
+                    window.innerWidth -
+                      tooltipWidth -
+                      8,
+                    left
+                  )
+                );
+
+                let top =
+                  rectangle.top -
+                  tooltipHeight -
+                  gap;
+
+                if (top < 8) {
+                  top =
+                    rectangle.bottom +
+                    gap;
+                }
+
+                setReturnTooltipPosition({
+                  left,
+                  top,
+                });
+              }}
+              onMouseLeave={() =>
+                setReturnTooltipPosition(null)
+              }
+              onFocus={event => {
+                const rectangle =
+                  event.currentTarget
+                    .getBoundingClientRect();
+
+                const tooltipWidth = 330;
+                const tooltipHeight = 48;
+                const gap = 10;
+
+                let left =
+                  rectangle.left +
+                  rectangle.width / 2 -
+                  tooltipWidth / 2;
+
+                left = Math.max(
+                  8,
+                  Math.min(
+                    window.innerWidth -
+                      tooltipWidth -
+                      8,
+                    left
+                  )
+                );
+
+                let top =
+                  rectangle.top -
+                  tooltipHeight -
+                  gap;
+
+                if (top < 8) {
+                  top =
+                    rectangle.bottom +
+                    gap;
+                }
+
+                setReturnTooltipPosition({
+                  left,
+                  top,
+                });
+              }}
+              onBlur={() =>
+                setReturnTooltipPosition(null)
+              }
             >
               Return to <ASymbol />
             </button>
+
+            {
+              returnTooltipPosition &&
+              typeof document !== 'undefined' &&
+              createPortal(
+                <div
+                  role="tooltip"
+                  style={{
+                    position: 'fixed',
+
+                    left:
+                      returnTooltipPosition.left,
+
+                    top:
+                      returnTooltipPosition.top,
+
+                    zIndex: 100000,
+
+                    width: '330px',
+
+                    boxSizing:
+                      'border-box',
+
+                    padding:
+                      '8px 10px 9px',
+
+                    pointerEvents:
+                      'none',
+
+                    border:
+                      '1px solid rgba(232, 223, 200, 0.42)',
+
+                    borderRadius:
+                      '5px',
+
+                    background:
+                      'rgba(10, 8, 6, 0.97)',
+
+                    color:
+                      'rgba(232, 223, 200, 0.88)',
+
+                    fontFamily:
+                      '"Times New Roman", Times, serif',
+
+                    fontSize:
+                      '12px',
+
+                    lineHeight:
+                      1.2,
+                  }}
+                >
+                  Return to <ASymbol /> to close the path and compute
+                  the transported-root permutation.
+                </div>,
+                document.body
+              )
+            }
 
             <button
               type="button"
               onClick={reset}
             >
-              Reset <ASymbol />
+              Reset
             </button>
+
+            <button
+              type="button"
+              onClick={
+                traceAxesAndBoundary
+              }
+            >
+              Trace axes and boundary
+            </button>
+
+            <span
+              role="group"
+              aria-label="Root viewer dimension"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+
+                minHeight: '30px',
+
+                border:
+                  '1px solid rgba(232, 223, 200, 0.24)',
+
+                borderRadius:
+                  '4px',
+
+                overflow:
+                  'hidden',
+
+                background:
+                  'rgba(0, 0, 0, 0.20)',
+              }}
+            >
+              <button
+                type="button"
+                aria-pressed={
+                  rootViewerMode === '2D'
+                }
+                onClick={() =>
+                  setRootViewerMode('2D')
+                }
+                style={{
+                  minHeight:
+                    '28px',
+
+                  padding:
+                    '4px 8px',
+
+                  border:
+                    'none',
+
+                  borderRadius:
+                    0,
+
+                  background:
+                    rootViewerMode === '2D'
+                      ? 'rgba(255, 255, 255, 0.12)'
+                      : 'transparent',
+                }}
+              >
+                2D
+              </button>
+
+              <span
+                aria-hidden="true"
+                style={{
+                  color:
+                    'rgba(232, 223, 200, 0.42)',
+
+                  fontSize:
+                    '13px',
+                }}
+              >
+                |
+              </span>
+
+              <button
+                type="button"
+                aria-pressed={
+                  rootViewerMode === '4D'
+                }
+                onClick={() =>
+                  setRootViewerMode('4D')
+                }
+                style={{
+                  minHeight:
+                    '28px',
+
+                  padding:
+                    '4px 8px',
+
+                  border:
+                    'none',
+
+                  borderRadius:
+                    0,
+
+                  background:
+                    rootViewerMode === '4D'
+                      ? 'rgba(255, 255, 255, 0.12)'
+                      : 'transparent',
+                }}
+              >
+                4D
+              </button>
+
+            </span>
+
           </div>
 
-          <div
-            className={
-              `${styles.sideNote} ${styles.returnPathNote}`
-            }
-          >
-            Return to <ASymbol /> to close the path and compute
-            the transported-root permutation.
-          </div>
+          {
+            (
+              rootViewerMode === '2D' ||
+              rootViewerMode === '4D'
+            ) && (
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  marginTop: '0px',
+                }}
+              >
+                <button
+                  type="button"
+                  aria-pressed={
+                    root2DDisplayMode ===
+                    'trace'
+                  }
+                  onClick={() => {
+                    setRoot2DDisplayMode(
+                      'trace'
+                    );
+
+                    setRootCompactified(
+                      false
+                    );
+
+                    setRootZoomStep(
+                      0
+                    );
+                  }}
+                  style={{
+                    minHeight:
+                      '30px',
+
+                    padding:
+                      '4px 10px',
+
+                    border:
+                      '1px solid rgba(232, 223, 200, 0.24)',
+
+                    borderRadius:
+                      '4px',
+
+                    background:
+                      root2DDisplayMode ===
+                      'trace'
+                        ? 'rgba(255, 255, 255, 0.12)'
+                        : 'rgba(0, 0, 0, 0.20)',
+                  }}
+                >
+                  Trace
+                </button>
+
+                <button
+                  type="button"
+                  aria-pressed={
+                    root2DDisplayMode ===
+                    'fill'
+                  }
+                  onClick={() =>
+                    setRoot2DDisplayMode(
+                      'fill'
+                    )
+                  }
+                  style={{
+                    minHeight:
+                      '30px',
+
+                    padding:
+                      '4px 10px',
+
+                    border:
+                      '1px solid rgba(232, 223, 200, 0.24)',
+
+                    borderRadius:
+                      '4px',
+
+                    background:
+                      root2DDisplayMode ===
+                      'fill'
+                        ? 'rgba(255, 255, 255, 0.12)'
+                        : 'rgba(0, 0, 0, 0.20)',
+                  }}
+                >
+                  Fill
+                </button>
+
+                <button
+                  type="button"
+                  aria-pressed={
+                    showRootDots
+                  }
+                  onClick={() =>
+                    setShowRootDots(
+                      current =>
+                        !current
+                    )
+                  }
+                  style={{
+                    minHeight:
+                      '30px',
+
+                    padding:
+                      '4px 10px',
+
+                    border:
+                      '1px solid rgba(232, 223, 200, 0.24)',
+
+                    borderRadius:
+                      '4px',
+
+                    background:
+                      showRootDots
+                        ? 'rgba(255, 255, 255, 0.12)'
+                        : 'rgba(0, 0, 0, 0.20)',
+                  }}
+                >
+                  Roots
+                </button>
+
+                <span
+                  role="group"
+                  aria-label="Zoom controls"
+                  style={{
+                    display:
+                      'inline-flex',
+
+                    alignItems:
+                      'stretch',
+
+                    minHeight:
+                      '30px',
+
+                    border:
+                      '1px solid rgba(232, 223, 200, 0.24)',
+
+                    borderRadius:
+                      '4px',
+
+                    overflow:
+                      'hidden',
+
+                    background:
+                      'rgba(0, 0, 0, 0.20)',
+                  }}
+                >
+                  <button
+                    type="button"
+                    aria-label="Zoom out"
+                    title="Zoom out"
+                    disabled={
+                      rootZoomStep <=
+                      ROOT_VIEW_ZOOM_MIN_STEP
+                    }
+                    onClick={() =>
+                      setRootZoomStep(
+                        current =>
+                          Math.max(
+                            ROOT_VIEW_ZOOM_MIN_STEP,
+                            current - 1
+                          )
+                      )
+                    }
+                    style={{
+                      minHeight:
+                        '28px',
+
+                      minWidth:
+                        '34px',
+
+                      padding:
+                        '4px 8px',
+
+                      border:
+                        'none',
+
+                      borderRadius:
+                        0,
+
+                      background:
+                        'transparent',
+
+                      opacity:
+                        rootZoomStep <=
+                        ROOT_VIEW_ZOOM_MIN_STEP
+                          ? 0.34
+                          : 1,
+
+                      cursor:
+                        rootZoomStep <=
+                        ROOT_VIEW_ZOOM_MIN_STEP
+                          ? 'default'
+                          : 'pointer',
+                    }}
+                  >
+                    −
+                  </button>
+
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      width:
+                        '1px',
+
+                      alignSelf:
+                        'stretch',
+
+                      background:
+                        'rgba(232, 223, 200, 0.24)',
+                    }}
+                  />
+
+                  <button
+                    type="button"
+                    aria-label="Zoom in"
+                    title="Zoom in"
+                    disabled={
+                      rootZoomStep >=
+                      ROOT_VIEW_ZOOM_MAX_STEP
+                    }
+                    onClick={() =>
+                      setRootZoomStep(
+                        current =>
+                          Math.min(
+                            ROOT_VIEW_ZOOM_MAX_STEP,
+                            current + 1
+                          )
+                      )
+                    }
+                    style={{
+                      minHeight:
+                        '28px',
+
+                      minWidth:
+                        '34px',
+
+                      padding:
+                        '4px 8px',
+
+                      border:
+                        'none',
+
+                      borderRadius:
+                        0,
+
+                      background:
+                        'transparent',
+
+                      opacity:
+                        rootZoomStep >=
+                        ROOT_VIEW_ZOOM_MAX_STEP
+                          ? 0.34
+                          : 1,
+
+                      cursor:
+                        rootZoomStep >=
+                        ROOT_VIEW_ZOOM_MAX_STEP
+                          ? 'default'
+                          : 'pointer',
+                    }}
+                  >
+                    +
+                  </button>
+                </span>
+
+
+
+              </div>
+            )
+          }
+
+          {
+            rootViewerMode === '3D' && (
+              <>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  marginTop: '8px',
+                  flexWrap: 'wrap',
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() =>
+                    setRootCameraResetCommand(
+                      current => ({
+                        id:
+                          current.id + 1,
+                      })
+                    )
+                  }
+                  style={{
+                    minHeight:
+                      '30px',
+
+                    padding:
+                      '4px 10px',
+
+                    border:
+                      '1px solid rgba(232, 223, 200, 0.24)',
+
+                    borderRadius:
+                      '4px',
+
+                    color:
+                      'rgba(245, 239, 224, 0.88)',
+
+                    background:
+                      'rgba(0, 0, 0, 0.20)',
+
+                    font:
+                      'inherit',
+
+                    cursor:
+                      'pointer',
+                  }}
+                >
+                  Reset view
+                </button>
+
+                <span
+                  role="group"
+                  aria-label="3D root-cover display"
+                  style={{
+                    display:
+                      'inline-flex',
+
+                    alignItems:
+                      'center',
+
+                    minHeight:
+                      '30px',
+
+                    border:
+                      '1px solid rgba(232, 223, 200, 0.24)',
+
+                    borderRadius:
+                      '4px',
+
+                    overflow:
+                      'hidden',
+
+                    background:
+                      'rgba(0, 0, 0, 0.20)',
+                  }}
+                >
+                  <button
+                    type="button"
+                    aria-pressed={
+                      root3DDisplayMode ===
+                        'strands'
+                    }
+                    onClick={() =>
+                      setRoot3DDisplayMode(
+                        'strands'
+                      )
+                    }
+                    style={{
+                      minHeight:
+                        '28px',
+
+                      padding:
+                        '4px 8px',
+
+                      border:
+                        'none',
+
+                      borderRadius:
+                        0,
+
+                      background:
+                        root3DDisplayMode ===
+                          'strands'
+                          ? 'rgba(255, 255, 255, 0.12)'
+                          : 'transparent',
+                    }}
+                  >
+                    Strands
+                  </button>
+
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      color:
+                        'rgba(232, 223, 200, 0.42)',
+
+                      fontSize:
+                        '13px',
+                    }}
+                  >
+                    |
+                  </span>
+
+                  <button
+                    type="button"
+                    aria-pressed={
+                      root3DDisplayMode ===
+                        'sheets'
+                    }
+                    onClick={() =>
+                      setRoot3DDisplayMode(
+                        'sheets'
+                      )
+                    }
+                    style={{
+                      minHeight:
+                        '28px',
+
+                      padding:
+                        '4px 8px',
+
+                      border:
+                        'none',
+
+                      borderRadius:
+                        0,
+
+                      background:
+                        root3DDisplayMode ===
+                          'sheets'
+                          ? 'rgba(255, 255, 255, 0.12)'
+                          : 'transparent',
+                    }}
+                  >
+                    Sheets
+                  </button>
+                </span>
+
+                <button
+                  type="button"
+                  aria-expanded={
+                    Boolean(
+                      coordinatePopupPosition
+                    )
+                  }
+                  onClick={event => {
+                    if (
+                      coordinatePopupPosition
+                    ) {
+                      setCoordinatePopupPosition(
+                        null
+                      );
+
+                      return;
+                    }
+
+                    const rectangle =
+                      event.currentTarget
+                        .getBoundingClientRect();
+
+                    const width = 500;
+                    const gap = 8;
+                    const edge = 10;
+
+                    let left =
+                      rectangle.right -
+                      width;
+
+                    left =
+                      Math.max(
+                        edge,
+                        Math.min(
+                          left,
+                          window.innerWidth -
+                            width -
+                            edge
+                        )
+                      );
+
+                    let top =
+                      rectangle.bottom +
+                      gap;
+
+                    const estimatedHeight =
+                      root3DDisplayMode ===
+                      'sheets'
+                        ? 205
+                        : 105;
+
+                    if (
+                      top +
+                        estimatedHeight >
+                      window.innerHeight -
+                        edge
+                    ) {
+                      top =
+                        rectangle.top -
+                        estimatedHeight -
+                        gap;
+                    }
+
+                    top =
+                      Math.max(
+                        edge,
+                        top
+                      );
+
+                    setCoordinatePopupPosition({
+                      left,
+                      top,
+                    });
+                  }}
+                  style={{
+                    minHeight:
+                      '30px',
+
+                    padding:
+                      '4px 10px',
+
+                    border:
+                      '1px solid rgba(232, 223, 200, 0.24)',
+
+                    borderRadius:
+                      '4px',
+
+                    color:
+                      'rgba(245, 239, 224, 0.88)',
+
+                    background:
+                      coordinatePopupPosition
+                        ? 'rgba(255, 255, 255, 0.12)'
+                        : 'rgba(0, 0, 0, 0.20)',
+
+                    font:
+                      'inherit',
+
+                    cursor:
+                      'pointer',
+                  }}
+                >
+                  Coordinates
+                </button>
+
+
+                {
+                  root3DDisplayMode === 'sheets' && (
+                    <button
+                      type="button"
+                      aria-pressed={
+                        showCutGluings
+                      }
+                      onClick={() =>
+                        setShowCutGluings(
+                          current => !current
+                        )
+                      }
+                      style={{
+                        minHeight:
+                          '30px',
+
+                        padding:
+                          '4px 10px',
+
+                        border:
+                          '1px solid rgba(232, 223, 200, 0.24)',
+
+                        borderRadius:
+                          '4px',
+
+                        color:
+                          'rgba(245, 239, 224, 0.88)',
+
+                        background:
+                          showCutGluings
+                            ? 'rgba(255, 255, 255, 0.12)'
+                            : 'rgba(0, 0, 0, 0.20)',
+
+                        font:
+                          'inherit',
+
+                        cursor:
+                          'pointer',
+                      }}
+                    >
+                      Cuts / glue pairs
+                    </button>
+                  )
+                }
+
+              </div>
+
+              {
+                coordinatePopupPosition &&
+                typeof document !==
+                  'undefined' &&
+                createPortal(
+                  <div
+                    role="dialog"
+                    aria-label="Coordinate convention"
+                    style={{
+                      position:
+                        'fixed',
+
+                      left:
+                        coordinatePopupPosition.left,
+
+                      top:
+                        coordinatePopupPosition.top,
+
+                      zIndex:
+                        100000,
+
+                      width:
+                        '500px',
+
+                      maxWidth:
+                        'calc(100vw - 20px)',
+
+                      boxSizing:
+                        'border-box',
+
+                      padding:
+                        '11px 12px 12px',
+
+                      border:
+                        '1px solid rgba(232, 223, 200, 0.42)',
+
+                      borderRadius:
+                        '5px',
+
+                      background:
+                        'rgba(10, 8, 6, 0.97)',
+
+                      color:
+                        'rgba(245, 239, 224, 0.94)',
+
+                      fontFamily:
+                        '"Times New Roman", Times, serif',
+
+                      boxShadow:
+                        '0 8px 28px rgba(0, 0, 0, 0.48)',
+                    }}
+                  >
+                    <div
+                      style={{
+                        display:
+                          'flex',
+
+                        alignItems:
+                          'center',
+
+                        justifyContent:
+                          'space-between',
+
+                        gap:
+                          '12px',
+
+                        marginBottom:
+                          '9px',
+                      }}
+                    >
+                      <strong
+                        style={{
+                          fontSize:
+                            '14px',
+
+                          fontWeight:
+                            600,
+                        }}
+                      >
+                        Coordinate convention
+                      </strong>
+
+                      <button
+                        type="button"
+                        aria-label="Close coordinate convention"
+                        onClick={() =>
+                          setCoordinatePopupPosition(
+                            null
+                          )
+                        }
+                        style={{
+                          border:
+                            'none',
+
+                          padding:
+                            '0 3px',
+
+                          background:
+                            'transparent',
+
+                          color:
+                            'rgba(245, 239, 224, 0.72)',
+
+                          font:
+                            'inherit',
+
+                          fontSize:
+                            '18px',
+
+                          lineHeight:
+                            1,
+
+                          cursor:
+                            'pointer',
+                        }}
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div
+                      style={{
+                        fontSize:
+                          '13px',
+
+                        lineHeight:
+                          1.35,
+                      }}
+                    >
+                      {
+                        root3DDisplayMode ===
+                        'strands'
+                          ? (
+                              <MathInline
+                                latex={
+                                  'X=\\operatorname{Re}(x)\\;\\cdot\\;Y=\\operatorname{Im}(x)\\;\\cdot\\;Z=\\text{continuation time}'
+                                }
+                              />
+                            )
+                          : (
+                              <>
+                                <div
+                                  style={{
+                                    marginBottom:
+                                      '9px',
+                                  }}
+                                >
+                                  <MathInline
+                                    latex={
+                                      'X=\\operatorname{Re}(x)\\;\\cdot\\;Y=\\operatorname{Im}(x)\\;\\cdot\\;Z=\\operatorname{Re}(a)'
+                                    }
+                                  />
+                                </div>
+
+                                <div
+                                  style={{
+                                    display:
+                                      'grid',
+
+                                    gap:
+                                      '6px',
+                                  }}
+                                >
+                                  <div
+                                    style={{
+                                      display:
+                                        'flex',
+
+                                      alignItems:
+                                        'baseline',
+
+                                      gap:
+                                        '8px',
+
+                                      flexWrap:
+                                        'wrap',
+                                    }}
+                                  >
+                                    <MathInline
+                                      latex={
+                                        'Z=\\operatorname{Re}(a)'
+                                      }
+                                    />
+
+                                    <span
+                                      style={{
+                                        opacity:
+                                          0.62,
+
+                                        fontSize:
+                                          '11px',
+                                      }}
+                                    >
+                                      visible depth
+                                    </span>
+                                  </div>
+
+                                  <div
+                                    style={{
+                                      display:
+                                        'flex',
+
+                                      alignItems:
+                                        'baseline',
+
+                                      gap:
+                                        '8px',
+
+                                      flexWrap:
+                                        'wrap',
+                                    }}
+                                  >
+                                    <MathInline
+                                      latex={
+                                        'W=\\operatorname{Im}(a)'
+                                      }
+                                    />
+
+                                    <span
+                                      style={{
+                                        opacity:
+                                          0.62,
+
+                                        fontSize:
+                                          '11px',
+                                      }}
+                                    >
+                                      hidden direction
+                                    </span>
+                                  </div>
+
+                                </div>
+                              </>
+                            )
+                      }
+                    </div>
+                  </div>,
+                  document.body
+                )
+              }
+              </>
+            )
+          }
+
+          {
+            rootViewerMode === 'Riemann' && (
+              <div
+                style={{
+                  marginTop: '8px',
+                  display: 'grid',
+                  gap: '7px',
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    flexWrap: 'wrap',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: '12px',
+                      opacity: 0.76,
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    Surface opacity
+                  </span>
+
+                  <input
+                    type="range"
+                    min={0}
+                    max={1}
+                    step={0.01}
+                    value={
+                      root4DSurfaceOpacity
+                    }
+                    onChange={event =>
+                      setRoot4DSurfaceOpacity(
+                        Number(
+                          event.target.value
+                        )
+                      )
+                    }
+                    aria-label="Riemann surface opacity"
+                    style={{
+                      width: '150px',
+                      maxWidth: '100%',
+                    }}
+                  />
+
+                  <span
+                    style={{
+                      minWidth: '54px',
+                      fontSize: '12px',
+                      opacity: 0.88,
+                      fontVariantNumeric:
+                        'tabular-nums',
+                    }}
+                  >
+                    {
+                      Math.round(
+                        root4DSurfaceOpacity *
+                        100
+                      )
+                    }%
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    fontSize: '12px',
+                    opacity: 0.72,
+                  }}
+                >
+                  <MathInline
+                    latex={
+                      String.raw`\mathbb{CP}^{1}_{x}\xrightarrow{\;a(x)=x^{3}/(2\pi)+x+1/x\;}\mathbb{CP}^{1}_{a}`
+                    }
+                  />
+                </div>
+              </div>
+            )
+          }
+
+          {
+            rootViewerMode === '4D' && (
+              <div
+                style={{
+                  marginTop: '8px',
+                  display: 'grid',
+                  gap: '5px',
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    flexWrap: 'wrap',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: '12px',
+                      opacity: 0.7,
+                      marginRight: '2px',
+                    }}
+                  >
+                    4D projection pole
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setRoot4DPoleXWAngle(0);
+                      setRoot4DPoleYWAngle(0);
+                      setRoot4DPoleZWAngle(0);
+
+                      setRoot4DPolePlaying({
+                        XW: false,
+                        YW: false,
+                        ZW: false,
+                      });
+
+                      setRootZoomStep(0);
+
+                      /*
+                       * Reset viewing orientation only:
+                       *
+                       *   4D pole -> identity
+                       *   camera rotation -> identity
+                       *   camera zoom -> default
+                       *
+                       * Preserve path, frame, dimension mode,
+                       * Trace / Fill, and all other selections.
+                       */
+                      setRootCameraResetCommand(
+                        current => ({
+                          id:
+                            current.id + 1,
+                        })
+                      );
+                    }}
+                    style={{
+                      minHeight: '26px',
+                      padding: '3px 7px',
+                    }}
+                  >
+                    Reset pole
+                  </button>
+
+                  <button
+                    type="button"
+                    aria-label="Rotate viewer counterclockwise"
+                    title="Rotate viewer counterclockwise"
+                    onClick={() =>
+                      setRootCameraRollCommand(
+                        current => ({
+                          id:
+                            current.id + 1,
+
+                          direction:
+                            1,
+                        })
+                      )
+                    }
+                    style={{
+                      minWidth: '30px',
+                      minHeight: '26px',
+                      padding: '3px 7px',
+                    }}
+                  >
+                    ↺
+                  </button>
+
+                  <button
+                    type="button"
+                    aria-label="Rotate viewer clockwise"
+                    title="Rotate viewer clockwise"
+                    onClick={() =>
+                      setRootCameraRollCommand(
+                        current => ({
+                          id:
+                            current.id + 1,
+
+                          direction:
+                            -1,
+                        })
+                      )
+                    }
+                    style={{
+                      minWidth: '30px',
+                      minHeight: '26px',
+                      padding: '3px 7px',
+                    }}
+                  >
+                    ↻
+                  </button>
+                </div>
+
+                {[
+                  {
+                    plane: 'XW',
+                    symbol: '\\alpha',
+                    value: root4DPoleXWAngle,
+                    setValue: setRoot4DPoleXWAngle,
+                  },
+                  {
+                    plane: 'YW',
+                    symbol: '\\beta',
+                    value: root4DPoleYWAngle,
+                    setValue: setRoot4DPoleYWAngle,
+                  },
+                  {
+                    plane: 'ZW',
+                    symbol: '\\gamma',
+                    value: root4DPoleZWAngle,
+                    setValue: setRoot4DPoleZWAngle,
+                  },
+                ].map(
+                  control => (
+                    <div
+                      key={control.plane}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        minHeight: '26px',
+
+                        marginBottom:
+                          control.plane === 'ZW'
+                            ? 0
+                            : '-12px',
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: '24px',
+                          fontSize: '12px',
+                          opacity: 0.76,
+                        }}
+                      >
+                        {control.plane}
+                      </span>
+
+                      <button
+                        type="button"
+                        aria-label={
+                          root4DPolePlaying[
+                            control.plane
+                          ]
+                            ? `Pause ${control.plane} pole animation`
+                            : `Play ${control.plane} pole animation`
+                        }
+                        title={
+                          root4DPolePlaying[
+                            control.plane
+                          ]
+                            ? 'Pause'
+                            : 'Play'
+                        }
+                        onClick={() =>
+                          setRoot4DPolePlaying(
+                            current => ({
+                              ...current,
+
+                              [control.plane]:
+                                !current[
+                                  control.plane
+                                ],
+                            })
+                          )
+                        }
+                        style={{
+                          minWidth: '30px',
+                          minHeight: '26px',
+                          padding: '3px 7px',
+                        }}
+                      >
+                        {
+                          root4DPolePlaying[
+                            control.plane
+                          ]
+                            ? '❚❚'
+                            : '▶'
+                        }
+                      </button>
+
+                      <input
+                        type="range"
+                        min={-Math.PI}
+                        max={Math.PI}
+                        step={Math.PI / 180}
+                        value={control.value}
+                        onChange={event => {
+                          setRoot4DPolePlaying(
+                            current => ({
+                              ...current,
+
+                              [control.plane]:
+                                false,
+                            })
+                          );
+
+                          control.setValue(
+                            Number(
+                              event.target.value
+                            )
+                          );
+                        }}
+                        aria-label={
+                          `${control.plane} pole angle in radians`
+                        }
+                        className={
+                          styles.poleAngleSlider
+                        }
+                      />
+
+                      <span
+                        style={{
+                          width: '64px',
+                          flex: '0 0 64px',
+                          fontSize: '12px',
+                          opacity: 0.88,
+                          fontVariantNumeric:
+                            'tabular-nums',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        <MathInline
+                          latex={
+                            `${control.symbol}=${control.value.toFixed(3)}`
+                          }
+                        />
+                      </span>
+                    </div>
+                  )
+                )}
+
+              </div>
+            )
+          }
+
         </section>
 
         <div className={styles.sideDivider} />
@@ -2466,22 +5081,51 @@ export default function MonodromyStage() {
             Branch values
           </div>
 
-          <div className={styles.sideDataRows}>
+          <div
+            className={styles.sideDataRows}
+          >
             <div>
               <span
-                aria-label="a₃"
-                className={
-                  `${styles.branchValueSvgLabel} ${styles.branchValueA3}`
-                }
                 style={{
-                  '--branch-label-scale':
-                    0.68,
+                  display: 'inline-flex',
+                  alignItems: 'baseline',
+                  gap: '0.24em',
+                  whiteSpace: 'nowrap',
+                  color:
+                    'rgba(232, 223, 200, 0.78)',
+                  transform:
+                    'translateY(7px)',
                 }}
               >
-                a₃
+                <BranchEquationSvg
+                  src="/equations/a_1_equation.svg"
+                  alt="a1 equals square root of 4p times 1 plus 2p over 2 pi"
+                  fontSize={24}
+                />
+
+                <span>,</span>
+
+                <BranchEquationSvg
+                  src="/equations/p_equation.svg"
+                  alt="definition of p"
+                  fontSize={
+                    24 * 28 / 18
+                  }
+                  translateY={3}
+                />
               </span>
 
-              <strong>
+              <strong
+                style={{
+                  color:
+                    'rgba(245, 239, 224, 0.94)',
+                  fontFamily:
+                    '"Times New Roman", Times, serif',
+                  fontSize: '16px',
+                  fontWeight: 400,
+                  whiteSpace: 'nowrap',
+                }}
+              >
                 {
                   MONODROMY_A_STAR
                     .toPrecision(15)
@@ -2491,132 +5135,84 @@ export default function MonodromyStage() {
 
             <div>
               <span
-                aria-label="b₁"
-                className={
-                  `${styles.branchValueSvgLabel} ${styles.branchValueB1}`
-                }
                 style={{
-                  '--branch-label-scale':
-                    0.68,
+                  display: 'inline-flex',
+                  alignItems: 'baseline',
+                  gap: '0.24em',
+                  whiteSpace: 'nowrap',
+                  color:
+                    'rgba(232, 223, 200, 0.78)',
+                  transform:
+                    'translateY(7px)',
                 }}
               >
-                b₁
-              </span>
-
-              <strong>
-                {
-                  formatComplex(
-                    {
-                      re: 0,
-                      im:
-                        MONODROMY_B_STAR,
-                    },
-                    15
-                  )
-                }
-              </strong>
-            </div>
-
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns:
-                  'max-content minmax(0, 1fr) max-content',
-                gridTemplateRows:
-                  'auto',
-                alignItems: 'center',
-                columnGap: '12px',
-              }}
-            >
-              <div
-                style={{
-                  position: 'relative',
-
-                  gridColumn: '1 / 3',
-                  gridRow: '1',
-
-                  alignSelf: 'center',
-                  justifySelf: 'stretch',
-
-                  height: '12px',
-                  minWidth: 0,
-
-                  overflow: 'visible',
-                }}
-              >
-                <img
-                  src="/equations/a_scale.svg"
-                  alt="a defining expression"
-                  style={{
-                    position: 'absolute',
-
-                    left: 0,
-                    top: '50%',
-
-                    display: 'block',
-
-                    width: 'auto',
-                    height: 'auto',
-
-                    maxWidth: 'none',
-                    maxHeight: 'none',
-
-                    transform:
-                      'translate(1px, -50%) scale(0.69)',
-
-                    transformOrigin:
-                      'left center',
-
-                    pointerEvents:
-                      'none',
-                  }}
+                <BranchEquationSvg
+                  src="/equations/b_1_equation.svg"
+                  alt="b1 equals square root of 4q times 1 minus 2q over 2 pi"
+                  fontSize={24}
                 />
-              </div>
+
+                <span>,</span>
+
+                <BranchEquationSvg
+                  src="/equations/q_equation.svg"
+                  alt="definition of q"
+                  fontSize={
+                    24 * 28 / 18
+                  }
+                  translateY={3}
+                />
+              </span>
 
               <strong
                 style={{
-                  gridColumn: '3',
-                  gridRow: '1',
-                }}
-              >
-                {
-                  MONODROMY_BASEPOINT
-                    .re
-                    .toPrecision(15)
-                }
-              </strong>
-
-              <div
-                style={{
-                  gridColumn: '1 / 3',
-                  gridRow: '1',
-
-                  justifySelf: 'start',
-                  alignSelf: 'center',
-
-                  marginLeft:
-                    '106px',
-
                   color:
-                    'rgba(232, 223, 200, 0.52)',
-
-                  fontFamily:
-                    '"Cambria Math", "STIX Two Math", "Times New Roman", serif',
-
-                  fontSize: '10px',
+                    'rgba(245, 239, 224, 0.94)',
+                  fontWeight: 400,
                   whiteSpace: 'nowrap',
                 }}
               >
-                principal value of{' '}
+                <span
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'baseline',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily:
+                        '"Times New Roman", Times, serif',
+                      fontSize: '16px',
+                      fontWeight: 400,
+                      color:
+                        'rgba(245, 239, 224, 0.94)',
+                    }}
+                  >
+                    0 + 0.330118849042346
+                  </span>
 
-                <MathInline
-                  latex={
-                    String.raw`i^i`
-                  }
-                />
-              </div>
+                  <img
+                    src="/equations/i.svg"
+                    alt="i"
+                    style={{
+                      display: 'inline-block',
+                      height: '12px',
+                      width: 'auto',
+                      maxWidth: 'none',
+                      maxHeight: 'none',
+                      marginLeft: '0.24em',
+                      transform:
+                        'translateY(-0.02em)',
+                      flex: '0 0 auto',
+                    }}
+                  />
+                </span>
+              </strong>
             </div>
+
           </div>
+
         </section>
 
       </aside>

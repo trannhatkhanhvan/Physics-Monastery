@@ -26,6 +26,7 @@ import {
   idealTetrahedronVolume,
 } from './math/idealTetrahedronVolume';
 import MonodromyStage from './MonodromyStage';
+import RiemannSurfaceViewer from './RiemannSurfaceViewer';
 import styles from './QuarticTetrahedronTransform.module.css';
 import '../globals.css';
 
@@ -131,6 +132,87 @@ function ColoredZheSymbol({
     />
   );
 }
+
+function ASymbol({
+  size = '1em',
+  className = '',
+}) {
+  return (
+    <img
+      src="/equations/a_symbol.svg"
+      alt="a"
+      className={className}
+      style={{
+        display: 'inline-block',
+        height: size,
+        width: 'auto',
+        verticalAlign: '-0.12em',
+        flex: '0 0 auto',
+      }}
+    />
+  );
+}
+
+
+function RiemannBranchEquationSvg({
+  src,
+  alt,
+  fontSize = 18,
+  translateY = 0,
+}) {
+  return (
+    <span
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        fontSize:
+          `${fontSize}px`,
+        lineHeight: 1,
+        verticalAlign:
+          'middle',
+        transform:
+          `translateY(${translateY}px)`,
+        flex:
+          '0 0 auto',
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          display: 'block',
+          height: '1em',
+          width: 'auto',
+          maxWidth: 'none',
+          maxHeight: 'none',
+          flex: '0 0 auto',
+        }}
+      />
+    </span>
+  );
+}
+
+
+function InfinitySymbol({
+  size = '1em',
+  className = '',
+}) {
+  return (
+    <img
+      src="/equations/infinity.svg"
+      alt="infinity"
+      className={className}
+      style={{
+        display: 'inline-block',
+        height: size,
+        width: 'auto',
+        verticalAlign: '-0.08em',
+        flex: '0 0 auto',
+      }}
+    />
+  );
+}
+
 
 function ZheSymbol({
   kind,
@@ -772,6 +854,23 @@ const BRANCH_A =
       Math.PI
   );
 
+const BRANCH_Q =
+  Math.sqrt(
+    (2 * Math.PI / 6) ** 2 +
+    2 * Math.PI / 3
+  ) +
+  2 * Math.PI / 6;
+
+const BRANCH_B =
+  Math.sqrt(
+    4 * BRANCH_Q
+  ) *
+  (
+    1 -
+    BRANCH_Q /
+      Math.PI
+  );
+
 function aFromUpperRootAngle(phi) {
   const coefficient =
     4 *
@@ -907,7 +1006,7 @@ function orderRootsByContinuity(
  * Canonical persistent root identities used by every sweep graph.
  *
  * Minimum-motion tracking works away from a double root, but at
- * a = +/-a3 the first two roots coalesce exactly.  After that
+ * a = +/-a1 the first two roots coalesce exactly.  After that
  * collision, motion alone cannot decide which outgoing real
  * branch keeps the name zhe_1 versus zhe_2.
  *
@@ -917,11 +1016,11 @@ function orderRootsByContinuity(
  *     zhe_1 = upper member of the small conjugate pair
  *     zhe_2 = lower member of the small conjugate pair
  *
- *   a < -a3:
+ *   a < -a1:
  *     zhe_1 = large negative real root
  *     zhe_2 = small negative real root
  *
- *   a > +a3:
+ *   a > +a1:
  *     zhe_1 = small positive real root
  *     zhe_2 = large positive real root
  *
@@ -1106,12 +1205,50 @@ const SPECIAL_ROOT_ANGLES = [
 }));
 
 const VIEW_MODES = [
-  'Root angles',
-  'Root magnitudes',
   'Roots',
   'Möbius transform',
   'Cross-ratio',
   'Monodromy',
+  'Riemann surface',
+];
+
+
+/*
+ * Internal navigation for the three closely related root views.
+ *
+ * Stage 1:
+ *   Keep the existing top-level tabs intact.
+ *
+ * Once this selector is verified, Root angles and Root magnitudes
+ * can be removed from the top navigation and accessed through Roots.
+ */
+const ROOT_FAMILY_MODES = [
+  'Roots',
+  'Root angles',
+  'Root magnitudes',
+];
+
+
+const RIEMANN_STRUCTURE_MODES = [
+  {
+    id: 'root-paths',
+    label: 'Root paths',
+  },
+
+  {
+    id: 'real-locus',
+    label: 'Real locus',
+  },
+
+  {
+    id: 'imaginary-locus',
+    label: 'Imaginary locus',
+  },
+
+  {
+    id: 'sheet-cuts',
+    label: 'Sheet cuts',
+  },
 ];
 
 /*
@@ -1236,11 +1373,128 @@ function aFromSlider(t) {
 }
 
 export default function QuarticTetrahedronTransform({ embedded = false }) {
+
+
   const PageShell =
     embedded ? Fragment : LayoutWrapper;
 
   const [mode, setMode] = useState('Roots');
   const [a, setA] = useState(0);
+
+  const [
+    riemannStructureModes,
+    setRiemannStructureModes,
+  ] = useState([
+    'root-paths',
+  ]);
+
+
+  /*
+   * Riemann graph visibility.
+   *
+   * Both graphs are shown by default.
+   * At least one graph must remain visible.
+   */
+  const [
+    riemannGraphsVisible,
+    setRiemannGraphsVisible,
+  ] = useState({
+    sphere: true,
+    map: true,
+  });
+
+
+  /*
+   * Incrementing this remounts the Riemann viewers and therefore
+   * restores their internal camera / zoom state.
+   */
+  const [
+    riemannResetKey,
+    setRiemannResetKey,
+  ] = useState(0);
+
+
+
+
+
+
+
+
+
+
+  function toggleRiemannGraph(
+    graphId
+  ) {
+    setRiemannGraphsVisible(
+      current => {
+        const next = {
+          ...current,
+          [graphId]:
+            !current[
+              graphId
+            ],
+        };
+
+        /*
+         * Never allow the stage to become empty.
+         */
+        if (
+          !next.sphere &&
+          !next.map
+        ) {
+          return current;
+        }
+
+        return next;
+      }
+    );
+  }
+
+
+  function resetRiemannView() {
+    /*
+     * Restore the Riemann tab to its reload/default state.
+     */
+    setRiemannGraphsVisible({
+      sphere: true,
+      map: true,
+    });
+
+    setRiemannStructureModes([
+      'root-paths',
+    ]);
+
+    setA(0);
+    setAsymptoticEnd(0);
+
+    /*
+     * Force the two viewer instances back to their initial
+     * rotation / zoom state.
+     */
+    setRiemannResetKey(
+      current =>
+        current + 1
+    );
+  }
+  function toggleRiemannStructureMode(
+    modeId
+  ) {
+    setRiemannStructureModes(
+      currentModes =>
+        currentModes.includes(
+          modeId
+        )
+          ? currentModes.filter(
+              id =>
+                id !== modeId
+            )
+          : [
+              ...currentModes,
+              modeId,
+            ]
+    );
+  }
+
 
   const [
     rootMagnitudeVisible,
@@ -1825,7 +2079,10 @@ const [sceneScale, setSceneScale] = useState(130);
    */
   useEffect(() => {
     const handlePlaybackSpace = (event) => {
-      if (mode === 'Monodromy') {
+      if (
+        mode === 'Monodromy' ||
+        mode === 'Riemann surface'
+      ) {
         return;
       }
 
@@ -2075,7 +2332,7 @@ const [sceneScale, setSceneScale] = useState(130);
        * Each keyed position is held briefly so its exact
        * symbolic / limiting data is actually rendered.
        */
-      const specialStops = [
+      const keyedStops = [
         {
           position: -1,
           aValue: -Infinity,
@@ -2138,6 +2395,77 @@ const [sceneScale, setSceneScale] = useState(130);
         },
       ];
 
+
+      /*
+       * Add one zero-hold guide stop halfway between every pair
+       * of established keyed positions.
+       *
+       * The midpoint is taken in the compactified SLIDER
+       * coordinate, not by averaging a-values. That preserves the
+       * intended geometry of the parameter control.
+       *
+       * 9 keyed stops + 8 guide stops = 17 total stops.
+       */
+      const guideStops =
+        keyedStops
+          .slice(
+            0,
+            -1
+          )
+          .map(
+            (
+              stop,
+              index
+            ) => {
+              const nextStop =
+                keyedStops[
+                  index + 1
+                ];
+
+              const position =
+                (
+                  stop.position +
+                  nextStop.position
+                ) / 2;
+
+              return {
+                position,
+
+                aValue:
+                  aFromSlider(
+                    position
+                  ),
+
+                holdMs: 0,
+              };
+            }
+          );
+
+
+      const specialStops = [
+        ...keyedStops.map(
+          stop => ({
+            ...stop,
+
+            holdMs:
+              Math.abs(
+                stop.position
+              ) >= 1
+                ? 700
+                : 35,
+          })
+        ),
+
+        ...guideStops,
+      ].sort(
+        (
+          left,
+          right
+        ) =>
+          left.position -
+          right.position
+      );
+
       /*
        * Playback timing.
        *
@@ -2151,16 +2479,18 @@ const [sceneScale, setSceneScale] = useState(130);
       const infinityStopHoldMs = 700;
 
       /*
-       * Preserve the travel duration from the earlier
-       * 5-second one-way timing:
+       * Smooth Riemann-view playback:
        *
-       *   5000 - (6 * 35 + 2 * 240) = 4310 ms
+       * The moving portion is now twice as long as before:
        *
-       * Increasing the endpoint holds therefore makes the
-       * total cycle slightly longer instead of speeding up
-       * the moving portion.
+       *   previous moving duration = 4310 ms
+       *   new moving duration      = 8620 ms
+       *
+       * The semantic holds are unchanged. Additional midpoint
+       * guide stops carry zero hold time and exist only to prevent
+       * large visual steps between neighboring keyed positions.
        */
-      const movingDuration = 4310;
+      const movingDuration = 8620;
 
       const speed =
         2 /
@@ -2322,9 +2652,12 @@ const [sceneScale, setSceneScale] = useState(130);
             holdUntil:
               time +
               (
-                Math.abs(position) >= 1
-                  ? infinityStopHoldMs
-                  : stopHoldMs
+                crossedStop.holdMs ??
+                (
+                  Math.abs(position) >= 1
+                    ? infinityStopHoldMs
+                    : stopHoldMs
+                )
               ),
           };
 
@@ -2850,24 +3183,38 @@ const [sceneScale, setSceneScale] = useState(130);
     }
 
     if (
-      isNegativeUnitCirclePreset &&
-      index < 2
+      isNegativeUnitCirclePreset
     ) {
+      if (index < 2) {
+        return (
+          index === 0
+            ? String.raw`) = \frac{2\pi}{3}\;\text{radians}`
+            : String.raw`) = -\frac{2\pi}{3}\;\text{radians}`
+        );
+      }
+
       return (
-        index === 0
-          ? String.raw`) = \frac{2\pi}{3}\;\text{radians}`
-          : String.raw`) = -\frac{2\pi}{3}\;\text{radians}`
+        index === 2
+          ? String.raw`) = \arctan\sqrt{8\pi-1}\;\text{radians}`
+          : String.raw`) = -\arctan\sqrt{8\pi-1}\;\text{radians}`
       );
     }
 
     if (
-      isPositiveUnitCirclePreset &&
-      index < 2
+      isPositiveUnitCirclePreset
     ) {
+      if (index < 2) {
+        return (
+          index === 0
+            ? String.raw`) = \frac{2\pi}{6}\;\text{radians}`
+            : String.raw`) = -\frac{2\pi}{6}\;\text{radians}`
+        );
+      }
+
       return (
-        index === 0
-          ? String.raw`) = \frac{2\pi}{6}\;\text{radians}`
-          : String.raw`) = -\frac{2\pi}{6}\;\text{radians}`
+        index === 2
+          ? String.raw`) = \pi-\arctan\sqrt{8\pi-1}\;\text{radians}`
+          : String.raw`) = -\pi+\arctan\sqrt{8\pi-1}\;\text{radians}`
       );
     }
 
@@ -2891,11 +3238,19 @@ const [sceneScale, setSceneScale] = useState(130);
   }
 
   function rootsPolarModulusLatex(index) {
+    if (isUnitCirclePreset) {
+      if (index < 2) {
+        return '| = 1';
+      }
+
+      return String.raw`| = \sqrt{2\pi}`;
+    }
+
     if (
-      index < 2 &&
-      isUnitCirclePreset
+      isBranchPreset &&
+      index >= 2
     ) {
-      return '| = 1';
+      return String.raw`| = \sqrt{\pi+\sqrt{\pi^2+6\pi}}`;
     }
 
     return (
@@ -3142,7 +3497,7 @@ const [sceneScale, setSceneScale] = useState(130);
     }
 
     /*
-     * a = +/-a_1
+     * a = +/-a_3
      *
      * |zhe_1| = |zhe_2| = 1
      * |zhe_3| = |zhe_4| = sqrt(2pi)
@@ -3154,7 +3509,7 @@ const [sceneScale, setSceneScale] = useState(130);
     }
 
     /*
-     * a = +/-a_3
+     * a = +/-a_1
      *
      * The first pair coalesces at
      *
@@ -3230,7 +3585,7 @@ const [sceneScale, setSceneScale] = useState(130);
     }
 
     /*
-     * a = +/-a_1
+     * a = +/-a_3
      */
     if (isUnitCirclePreset) {
       return [
@@ -3242,7 +3597,7 @@ const [sceneScale, setSceneScale] = useState(130);
     }
 
     /*
-     * a = +/-a_3
+     * a = +/-a_1
      *
      * First two roots coalesce on the real axis.
      */
@@ -5833,7 +6188,11 @@ const [sceneScale, setSceneScale] = useState(130);
                   latex={
                     asymptoticEnd !== 0
                       ? String.raw`= \infty`
-                      : `= ${zheR.toPrecision(15)}`
+                      : isUnitCirclePreset
+                      ? String.raw`= \sqrt{2\pi}`
+                      : isBranchPreset
+                        ? String.raw`= \sqrt{\pi+\sqrt{\pi^2+6\pi}}`
+                        : `= ${zheR.toPrecision(15)}`
                   }
                 />
               </div>
@@ -5871,7 +6230,11 @@ const [sceneScale, setSceneScale] = useState(130);
                         ? String.raw`= \frac{2\pi}{6}`
                         : Math.abs(a) < 1e-14
                           ? String.raw`= \frac{2\pi}{4} = 1.57079632679490\;\text{radians}`
-                          : `= ${zheTheta.toPrecision(15)}\\;\\text{radians}`
+                          : isNegativeUnitCirclePreset
+                            ? String.raw`= \arctan\sqrt{8\pi-1}\;\text{radians}`
+                            : isPositiveUnitCirclePreset
+                              ? String.raw`= \pi-\arctan\sqrt{8\pi-1}\;\text{radians}`
+                              : `= ${zheTheta.toPrecision(15)}\\;\\text{radians}`
                   }
                 />
               </div>
@@ -6238,8 +6601,28 @@ const [sceneScale, setSceneScale] = useState(130);
                   ][index]
                 : null;
 
+            const exactA3LargeRootLatex =
+              mode === 'Roots' &&
+              isUnitCirclePreset &&
+              index >= 2
+                ? (
+                    isNegativeUnitCirclePreset
+                      ? (
+                          index === 2
+                            ? String.raw`= \frac12+\frac12\sqrt{8\pi-1}\,i`
+                            : String.raw`= \frac12-\frac12\sqrt{8\pi-1}\,i`
+                        )
+                      : (
+                          index === 2
+                            ? String.raw`= -\frac12+\frac12\sqrt{8\pi-1}\,i`
+                            : String.raw`= -\frac12-\frac12\sqrt{8\pi-1}\,i`
+                        )
+                  )
+                : null;
+
             const latexValue =
               mobiusStageLatex ??
+              exactA3LargeRootLatex ??
               (
                 asymptoticLatex ??
                 (
@@ -6628,7 +7011,11 @@ const [sceneScale, setSceneScale] = useState(130);
               latex={
                 asymptoticEnd !== 0
                   ? String.raw`= \infty`
-                  : `= ${zheR.toPrecision(15)}`
+                  : isUnitCirclePreset
+                      ? String.raw`= \sqrt{2\pi}`
+                      : isBranchPreset
+                        ? String.raw`= \sqrt{\pi+\sqrt{\pi^2+6\pi}}`
+                        : `= ${zheR.toPrecision(15)}`
               }
             />
           </div>
@@ -6658,7 +7045,11 @@ const [sceneScale, setSceneScale] = useState(130);
                     ? String.raw`= \frac{2\pi}{6}`
                     : Math.abs(a) < 1e-14
                       ? String.raw`= \frac{2\pi}{4}`
-                      : `= ${zheTheta.toPrecision(15)}\\;\\text{radians}`
+                      : isNegativeUnitCirclePreset
+                            ? String.raw`= \arctan\sqrt{8\pi-1}\;\text{radians}`
+                            : isPositiveUnitCirclePreset
+                              ? String.raw`= \pi-\arctan\sqrt{8\pi-1}\;\text{radians}`
+                              : `= ${zheTheta.toPrecision(15)}\\;\\text{radians}`
               }
             />
           </div>
@@ -6798,8 +7189,8 @@ const [sceneScale, setSceneScale] = useState(130);
                   aria-selected={active}
                   onClick={() => {
                     if (
-                      viewMode ===
-                      'Monodromy'
+                      viewMode === 'Monodromy' ||
+                      viewMode === 'Riemann surface'
                     ) {
                       setIsAPlaying(false);
                     }
@@ -6910,6 +7301,177 @@ const [sceneScale, setSceneScale] = useState(130);
                 </span>
 
               </div>
+
+              {mode === 'Riemann surface' && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    left: '14px',
+                    right: '14px',
+                    top: '46px',
+                    bottom: '14px',
+
+                    display: 'grid',
+
+                    gridTemplateColumns:
+                      riemannGraphsVisible.sphere &&
+                      riemannGraphsVisible.map
+                        ? 'repeat(2, minmax(0, 1fr))'
+                        : 'minmax(0, 1fr)',
+
+                    columnGap: '0px',
+
+                    alignItems: 'center',
+
+                    minWidth: 0,
+                    minHeight: 0,
+                  }}
+                >
+                  {riemannGraphsVisible.map && (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: '-46px',
+
+                        left:
+                          riemannGraphsVisible.sphere
+                            ? '50%'
+                            : '0',
+
+                        width:
+                          riemannGraphsVisible.sphere
+                            ? '50%'
+                            : '100%',
+
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+
+                        height: '46px',
+
+                        color:
+                          'rgba(250, 247, 238, 0.92)',
+
+                        fontFamily:
+                          '"Times New Roman", Times, serif',
+
+                        fontSize: '15px',
+
+                        pointerEvents: 'none',
+                      }}
+                    >
+                      Planar map
+                    </div>
+                  )}
+
+
+                  {riemannGraphsVisible.sphere && (
+                    <div
+                      style={{
+                        minWidth: 0,
+                        minHeight: 0,
+                        overflow: 'visible',
+
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <div
+                        style={{
+                          width:
+                            riemannGraphsVisible.map
+                              ? '112%'
+                              : '74%',
+
+                          maxWidth:
+                            riemannGraphsVisible.map
+                              ? '112%'
+                              : '74%',
+
+                          flex:
+                            riemannGraphsVisible.map
+                              ? '0 0 112%'
+                              : '0 0 74%',
+                        }}
+                      >
+                        <RiemannSurfaceViewer
+                          key={
+                            `riemann-sphere-${riemannResetKey}`
+                          }
+                          active={true}
+                          displayMode="sphere"
+                          showDiagnostics={false}
+                          structureMode={
+                            riemannStructureModes
+                          }
+                          conventionAngle={180}
+                          asymptoticEnd={
+                            asymptoticEnd
+                          }
+                          roots={
+                            rootMagnitudeTrackedCurrentRoots
+                          }
+                        />
+                      </div>
+                    </div>
+                  )}
+
+
+                  {riemannGraphsVisible.map && (
+                    <div
+                      style={{
+                        minWidth: 0,
+                        minHeight: 0,
+
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <div
+                        style={{
+                          position: 'relative',
+
+                          width:
+                            riemannGraphsVisible.sphere
+                              ? '108%'
+                              : '72%',
+
+                          maxWidth:
+                            riemannGraphsVisible.sphere
+                              ? '108%'
+                              : '72%',
+
+                          flex:
+                            riemannGraphsVisible.sphere
+                              ? '0 0 108%'
+                              : '0 0 72%',
+                        }}
+                      >
+                        <RiemannSurfaceViewer
+                          key={
+                            `riemann-map-${riemannResetKey}`
+                          }
+                          active={true}
+                          displayMode="map"
+                          showDiagnostics={false}
+                          structureMode={
+                            riemannStructureModes
+                          }
+                          conventionAngle={180}
+                          asymptoticEnd={
+                            asymptoticEnd
+                          }
+                          roots={
+                            rootMagnitudeTrackedCurrentRoots
+                          }
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {mode === 'Root angles' && (
                 <div
@@ -7225,7 +7787,7 @@ const [sceneScale, setSceneScale] = useState(130);
 
                       const keyedGraphStops = [
                         {
-                          label: '−a₃',
+                          label: '−a₁',
                           aValue: -BRANCH_A,
                         },
                         {
@@ -7233,7 +7795,7 @@ const [sceneScale, setSceneScale] = useState(130);
                           aValue: -HARMONIC_A,
                         },
                         {
-                          label: '−a₁',
+                          label: '−a₃',
                           aValue: -UNIT_CIRCLE_A,
                         },
                         {
@@ -7241,7 +7803,7 @@ const [sceneScale, setSceneScale] = useState(130);
                           aValue: 0,
                         },
                         {
-                          label: 'a₁',
+                          label: 'a₃',
                           aValue: UNIT_CIRCLE_A,
                         },
                         {
@@ -7249,7 +7811,7 @@ const [sceneScale, setSceneScale] = useState(130);
                           aValue: HARMONIC_A,
                         },
                         {
-                          label: 'a₃',
+                          label: 'a₁',
                           aValue: BRANCH_A,
                         },
                       ].map((stop) => ({
@@ -7353,7 +7915,7 @@ const [sceneScale, setSceneScale] = useState(130);
                        *
                        * Display zhe_1 (red) on the BOTTOM 0 edge and zhe_2
                        * (yellow) on the identified TOP 2π edge. This begins
-                       * exactly at +a₃ and continues through +infinity.
+                       * exactly at +a₁ and continues through +infinity.
                        *
                        * The numerical/readout arguments remain unchanged;
                        * only the yellow graph marker is wrapped to 2π.
@@ -8423,7 +8985,7 @@ const [sceneScale, setSceneScale] = useState(130);
                        * Equal-magnitude branches.
                        *
                        * zhe_1 / zhe_2:
-                       * conjugate pair between -a3 and +a3.
+                       * conjugate pair between -a1 and +a1.
                        *
                        * zhe_3 / zhe_4:
                        * conjugate pair through the entire sweep.
@@ -8455,7 +9017,7 @@ const [sceneScale, setSceneScale] = useState(130);
 
                       const keyedStops = [
                         [
-                          '−a₃',
+                          '−a₁',
                           -BRANCH_A,
                         ],
                         [
@@ -8463,7 +9025,7 @@ const [sceneScale, setSceneScale] = useState(130);
                           -HARMONIC_A,
                         ],
                         [
-                          '−a₁',
+                          '−a₃',
                           -UNIT_CIRCLE_A,
                         ],
                         [
@@ -8471,7 +9033,7 @@ const [sceneScale, setSceneScale] = useState(130);
                           0,
                         ],
                         [
-                          'a₁',
+                          'a₃',
                           UNIT_CIRCLE_A,
                         ],
                         [
@@ -8479,7 +9041,7 @@ const [sceneScale, setSceneScale] = useState(130);
                           HARMONIC_A,
                         ],
                         [
-                          'a₃',
+                          'a₁',
                           BRANCH_A,
                         ],
                       ].map(
@@ -11364,10 +11926,38 @@ const [sceneScale, setSceneScale] = useState(130);
                       whiteSpace: 'nowrap',
                     }}
                   >
-                    <MathInline
-                      latex={aDisplayLatex}
-                    />
+                    {
+                      mode === 'Riemann surface' &&
+                      asymptoticEnd === 0 &&
+                      Math.abs(
+                        a - PHYSICAL_A
+                      ) < 1e-12
+                        ? (
+                            <img
+                              src="/equations/a_scale.svg"
+                              alt="physical quartic parameter"
+                              style={{
+                                display:
+                                  'block',
+                                height:
+                                  '44px',
+                                width:
+                                  'auto',
+                                maxWidth:
+                                  'none',
+                                maxHeight:
+                                  'none',
+                              }}
+                            />
+                          )
+                        : (
+                            <MathInline
+                              latex={aDisplayLatex}
+                            />
+                          )
+                    }
                   </div>
+
 
                   <div
                     style={{
@@ -11472,10 +12062,10 @@ const [sceneScale, setSceneScale] = useState(130);
                         -BRANCH_A
                       )
                     }
-                    title="Set a = −a₃"
+                    title="Set a = −a₁"
                   >
                     <img
-                      src="/equations/negative_a_3.svg"
+                      src="/equations/negative_a_1.svg"
                       alt=""
                       aria-hidden="true"
                       style={{
@@ -11544,10 +12134,10 @@ const [sceneScale, setSceneScale] = useState(130);
                         -UNIT_CIRCLE_A
                       )
                     }
-                    title="Set a = −a₁"
+                    title="Set a = −a₃"
                   >
                     <img
-                      src="/equations/negative_a_1.svg"
+                      src="/equations/negative_a_3.svg"
                       alt=""
                       aria-hidden="true"
                       style={{
@@ -11603,10 +12193,10 @@ const [sceneScale, setSceneScale] = useState(130);
                         UNIT_CIRCLE_A
                       )
                     }
-                    title="Set a = a₁"
+                    title="Set a = a₃"
                   >
                     <img
-                      src="/equations/a_1.svg"
+                      src="/equations/a_3.svg"
                       alt=""
                       aria-hidden="true"
                       style={{
@@ -11675,10 +12265,10 @@ const [sceneScale, setSceneScale] = useState(130);
                         BRANCH_A
                       )
                     }
-                    title="Set a = a₃"
+                    title="Set a = a₁"
                   >
                     <img
-                      src="/equations/a_3.svg"
+                      src="/equations/a_1.svg"
                       alt=""
                       aria-hidden="true"
                       style={{
@@ -11941,6 +12531,600 @@ const [sceneScale, setSceneScale] = useState(130);
               </div>
 
               <div className={styles.divider} />
+
+              {ROOT_FAMILY_MODES.includes(mode) && (
+                <>
+                  <div
+                    className={styles.controlSection}
+                    style={{
+                      paddingTop: '10px',
+                      paddingBottom: '10px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns:
+                          'repeat(3, minmax(0, 1fr))',
+                        gap: '6px',
+                        width: '100%',
+                      }}
+                    >
+                      {ROOT_FAMILY_MODES.map(
+                        rootMode => {
+                          const active =
+                            mode === rootMode;
+
+                          return (
+                            <button
+                              key={rootMode}
+                              type="button"
+                              className={
+                                active
+                                  ? styles.modeButtonActive
+                                  : styles.modeButton
+                              }
+                              aria-pressed={
+                                active
+                              }
+                              onClick={() =>
+                                setMode(
+                                  rootMode
+                                )
+                              }
+                              style={{
+                                minWidth: 0,
+                                width: '100%',
+                                whiteSpace:
+                                  'nowrap',
+                              }}
+                            >
+                              {rootMode}
+                            </button>
+                          );
+                        }
+                      )}
+                    </div>
+                  </div>
+
+                  <div
+                    className={
+                      styles.divider
+                    }
+                  />
+                </>
+              )}
+
+              {mode === 'Riemann surface' && (
+                <>
+                  <div className={styles.controlSection}>
+                    <div className={styles.sectionTitle}>
+                      Riemann surface
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: '8px',
+                        display: 'grid',
+                        gridTemplateColumns:
+                          'repeat(3, minmax(0, 1fr))',
+                        gap: '6px',
+                      }}
+                    >
+                      <button
+                        type="button"
+                        className={
+                          riemannGraphsVisible.sphere
+                            ? styles.modeButtonActive
+                            : styles.modeButton
+                        }
+                        aria-pressed={
+                          riemannGraphsVisible.sphere
+                        }
+                        onClick={() =>
+                          toggleRiemannGraph(
+                            'sphere'
+                          )
+                        }
+                      >
+                        Riemann surface
+                      </button>
+
+                      <button
+                        type="button"
+                        className={
+                          riemannGraphsVisible.map
+                            ? styles.modeButtonActive
+                            : styles.modeButton
+                        }
+                        aria-pressed={
+                          riemannGraphsVisible.map
+                        }
+                        onClick={() =>
+                          toggleRiemannGraph(
+                            'map'
+                          )
+                        }
+                      >
+                        Planar map
+                      </button>
+
+
+                      <button
+                        type="button"
+                        className={
+                          styles.modeButton
+                        }
+                        onClick={
+                          resetRiemannView
+                        }
+                      >
+                        Reset
+                      </button>
+                    </div>
+
+
+                    <div
+                      style={{
+                        marginTop: '8px',
+                        display: 'grid',
+                        gridTemplateColumns:
+                          'repeat(4, minmax(0, 1fr))',
+                        gap: '6px',
+                        width: '100%',
+                      }}
+                    >
+                      {
+                        RIEMANN_STRUCTURE_MODES.map(
+                          item => (
+                            <button
+                              key={item.id}
+                              type="button"
+                              className={
+                                riemannStructureModes.includes(
+                                  item.id
+                                )
+                                  ? styles.modeButtonActive
+                                  : styles.modeButton
+                              }
+                              aria-pressed={
+                                riemannStructureModes.includes(
+                                  item.id
+                                )
+                              }
+                              onClick={() =>
+                                toggleRiemannStructureMode(
+                                  item.id
+                                )
+                              }
+                              style={{
+                                minWidth: 0,
+                                width: '100%',
+                                whiteSpace: 'nowrap',
+                              }}
+                            >
+                              {item.label}
+                            </button>
+                          )
+                        )
+                      }
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: '10px',
+                        display: 'grid',
+                        gap: '7px',
+
+                        color:
+                          'rgba(232, 223, 200, 0.82)',
+
+                        fontSize:
+                          '12px',
+
+                        lineHeight: 1.35,
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'baseline',
+                          flexWrap: 'wrap',
+                          gap: '0.18em',
+                        }}
+                      >
+                        <span>Degree:</span>
+
+                        <span>
+                          4-sheeted branched cover of the
+                        </span>
+
+                        <span
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'baseline',
+                            gap: 0,
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          <img
+                            src="/equations/a_symbol.svg"
+                            alt="a"
+                            style={{
+                              display: 'inline-block',
+                              width: 'auto',
+                              height: 'auto',
+                              maxWidth: 'none',
+                              maxHeight: 'none',
+
+                              transform:
+                                `translateY(0.10em) scale(0.8333333333333333)`,
+
+                              transformOrigin:
+                                'left center',
+
+                              marginRight:
+                                '-0.11em',
+
+                              flex: '0 0 auto',
+                            }}
+                          />
+
+                          <span>-sphere</span>
+                        </span>
+                      </div>
+
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'baseline',
+                          flexWrap: 'wrap',
+                          gap: '0.18em',
+                        }}
+                      >
+                        <span>Branch points:</span>
+
+                        <img
+                          src="/equations/negative_a_1.svg"
+                          alt="-a3"
+                          style={{
+                            display: 'inline-block',
+
+                            /*
+                             * Equation SVGs use a 12px source-font basis.
+                             * Preserve intrinsic SVG dimensions and size
+                             * them exactly BY FONT SIZE:
+                             *
+                             *     desired font size / 12
+                             */
+                            width: 'auto',
+                            height: 'auto',
+                            maxWidth: 'none',
+                            maxHeight: 'none',
+
+                            transform:
+                              `translateY(0.28em) scale(0.8333333333333333)`,
+
+                            transformOrigin:
+                              'left center',
+
+                            flex: '0 0 auto',
+                          }}
+                        />
+
+                        <span>,</span>
+
+                        <img
+                          src="/equations/a_1.svg"
+                          alt="a3"
+                          style={{
+                            display: 'inline-block',
+
+                            /*
+                             * Equation SVGs use a 12px source-font basis.
+                             * Preserve intrinsic SVG dimensions and size
+                             * them exactly BY FONT SIZE:
+                             *
+                             *     desired font size / 12
+                             */
+                            width: 'auto',
+                            height: 'auto',
+                            maxWidth: 'none',
+                            maxHeight: 'none',
+
+                            transform:
+                              `translateY(0.28em) scale(0.8333333333333333)`,
+
+                            transformOrigin:
+                              'left center',
+
+                            flex: '0 0 auto',
+                          }}
+                        />
+
+                        <span>,</span>
+
+                        <img
+                          src="/equations/negative_b_1.svg"
+                          alt="-ib1"
+                          style={{
+                            display: 'inline-block',
+
+                            /*
+                             * Equation SVGs use a 12px source-font basis.
+                             * Preserve intrinsic SVG dimensions and size
+                             * them exactly BY FONT SIZE:
+                             *
+                             *     desired font size / 12
+                             */
+                            width: 'auto',
+                            height: 'auto',
+                            maxWidth: 'none',
+                            maxHeight: 'none',
+
+                            transform:
+                              `translateY(0.32em) scale(0.8333333333333333)`,
+
+                            transformOrigin:
+                              'left center',
+
+                            flex: '0 0 auto',
+                          }}
+                        />
+
+                        <span>,</span>
+
+                        <img
+                          src="/equations/b_1.svg"
+                          alt="ib1"
+                          style={{
+                            display: 'inline-block',
+
+                            /*
+                             * Equation SVGs use a 12px source-font basis.
+                             * Preserve intrinsic SVG dimensions and size
+                             * them exactly BY FONT SIZE:
+                             *
+                             *     desired font size / 12
+                             */
+                            width: 'auto',
+                            height: 'auto',
+                            maxWidth: 'none',
+                            maxHeight: 'none',
+
+                            transform:
+                              `translateY(0.32em) scale(0.8333333333333333)`,
+
+                            transformOrigin:
+                              'left center',
+
+                            flex: '0 0 auto',
+                          }}
+                        />
+
+                        <span>.</span>
+                      </div>
+
+                      <div>
+                        Ramification: simple
+                      </div>
+
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'baseline',
+                          flexWrap: 'wrap',
+                          gap: '0.18em',
+                        }}
+                      >
+                        <InfinitySymbol size="7px" />
+
+                        <span>
+                          : ramification index 3;
+                        </span>
+
+                        <span>
+                          0: unramified second point over
+                        </span>
+
+                        <img
+                          src="/equations/a_equals_infinity.svg"
+                          alt="a equals infinity"
+                          style={{
+                            display: 'inline-block',
+                            width: 'auto',
+                            height: 'auto',
+                            maxWidth: 'none',
+                            maxHeight: 'none',
+
+                            transform:
+                              `translate(0.04em, 0.07em) scale(0.8333333333333333)`,
+
+                            transformOrigin:
+                              'left center',
+
+                            flex: '0 0 auto',
+                          }}
+                        />
+                      </div>
+
+
+                    </div>
+                  </div>
+
+                  <div
+                    className={
+                      styles.divider
+                    }
+                  />
+
+                  <div
+                    className={
+                      styles.controlSection
+                    }
+                  >
+                    <div
+                      className={
+                        styles.sectionTitle
+                      }
+                    >
+                      Branch values
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: '14px',
+                        display: 'grid',
+                        gap: '18px',
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: 'grid',
+                          gridTemplateColumns:
+                            'minmax(0, 1fr) max-content',
+                          alignItems: 'center',
+                          columnGap: '16px',
+                        }}
+                      >
+                        <span
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'baseline',
+                            gap: '0.24em',
+                            whiteSpace: 'nowrap',
+                            color:
+                              'rgba(232, 223, 200, 0.78)',
+                          }}
+                        >
+                          <RiemannBranchEquationSvg
+                            src="/equations/a_1_equation.svg"
+                            alt="a1 equals square root of 4p times 1 plus 2p over 2 pi"
+                            fontSize={24}
+                          />
+
+                          <span>,</span>
+
+                          <RiemannBranchEquationSvg
+                            src="/equations/p_equation.svg"
+                            alt="definition of p"
+                            fontSize={
+                              24 * 28 / 18
+                            }
+                            translateY={3}
+                          />
+                        </span>
+
+                        <strong
+                          style={{
+                            color:
+                              'rgba(245, 239, 224, 0.94)',
+                            fontFamily:
+                              '"Times New Roman", Times, serif',
+                            fontSize: '16px',
+                            fontWeight: 400,
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          {
+                            BRANCH_A
+                              .toPrecision(15)
+                          }
+                        </strong>
+                      </div>
+
+                      <div
+                        style={{
+                          display: 'grid',
+                          gridTemplateColumns:
+                            'minmax(0, 1fr) max-content',
+                          alignItems: 'center',
+                          columnGap: '16px',
+                        }}
+                      >
+                        <span
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'baseline',
+                            gap: '0.24em',
+                            whiteSpace: 'nowrap',
+                            color:
+                              'rgba(232, 223, 200, 0.78)',
+                          }}
+                        >
+                          <RiemannBranchEquationSvg
+                            src="/equations/b_1_equation.svg"
+                            alt="b1 equals square root of 4q times 1 minus 2q over 2 pi"
+                            fontSize={24}
+                          />
+
+                          <span>,</span>
+
+                          <RiemannBranchEquationSvg
+                            src="/equations/q_equation.svg"
+                            alt="definition of q"
+                            fontSize={
+                              24 * 28 / 18
+                            }
+                            translateY={3}
+                          />
+                        </span>
+
+                        <strong
+                          style={{
+                            color:
+                              'rgba(245, 239, 224, 0.94)',
+                            fontWeight: 400,
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          <span
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'baseline',
+                              whiteSpace: 'nowrap',
+                            }}
+                          >
+                            <span
+                              style={{
+                                fontFamily:
+                                  '"Times New Roman", Times, serif',
+                                fontSize: '16px',
+                                fontWeight: 400,
+                                color:
+                                  'rgba(245, 239, 224, 0.94)',
+                              }}
+                            >
+                              {
+                                `0 + ${BRANCH_B.toPrecision(15)}`
+                              }
+                            </span>
+
+                            <img
+                              src="/equations/i.svg"
+                              alt="i"
+                              style={{
+                                display: 'inline-block',
+                                height: '12px',
+                                width: 'auto',
+                                maxWidth: 'none',
+                                maxHeight: 'none',
+                                marginLeft: '0.24em',
+                                transform:
+                                  'translateY(-0.02em)',
+                                flex: '0 0 auto',
+                              }}
+                            />
+                          </span>
+                        </strong>
+                      </div>
+                    </div>
+
+
+                  </div>
+
+                </>
+              )}
 
               {mode === 'Möbius transform' && (
                 <>
@@ -14009,49 +15193,6 @@ const [sceneScale, setSceneScale] = useState(130);
                */}
               {mode === 'Roots' && (
                 <>
-                  <div className={styles.controlSection}>
-                    <div className={styles.sectionTitle}>
-                      Circles
-                    </div>
-
-                    <div className={styles.modeGrid}>
-                      <button
-                        type="button"
-                        className={
-                          showUnitCircle
-                            ? styles.modeButtonActive
-                            : styles.modeButton
-                        }
-                        onClick={() =>
-                          setShowUnitCircle(
-                            (value) => !value
-                          )
-                        }
-                      >
-                        Unit circle
-                      </button>
-
-                      <button
-                        type="button"
-                        className={
-                          showInfinityCircle
-                            ? styles.modeButtonActive
-                            : styles.modeButton
-                        }
-                        onClick={() =>
-                          setShowInfinityCircle(
-                            (value) => !value
-                          )
-                        }
-                      >
-                        Circle at ∞
-                      </button>
-
-                    </div>
-                  </div>
-
-                  <div className={styles.divider} />
-
                   {(
                       <div
                         style={{
