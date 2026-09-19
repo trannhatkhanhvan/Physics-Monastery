@@ -745,7 +745,7 @@
 }
 
 .rootAnglesGraph {
-  width: min(800px, 94%);
+  width: min(770px, 92%);
   min-height: 0;
 }
 
@@ -756,11 +756,6 @@
  * Both graphs use .rootAnglesGraph, so this one rule keeps them
  * visually matched.
  */
-@media (max-height: 900px) {
-  .rootAnglesGraph {
-    width: min(770px, 92%);
-  }
-}
 
 .rootAnglesSvg {
   display: block;
