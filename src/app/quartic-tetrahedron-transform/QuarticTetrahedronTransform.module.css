@@ -749,6 +749,19 @@
   min-height: 0;
 }
 
+/*
+ * Keep the Root angles / Root magnitudes graphs from growing
+ * too close to the fixed viewer title on shorter browser windows.
+ *
+ * Both graphs use .rootAnglesGraph, so this one rule keeps them
+ * visually matched.
+ */
+@media (max-height: 900px) {
+  .rootAnglesGraph {
+    width: min(770px, 92%);
+  }
+}
+
 .rootAnglesSvg {
   display: block;
   width: 100%;
@@ -3582,4 +3595,18 @@
 
   top:
     calc(50% - 38px);
+}
+
+/*
+ * CROSS-RATIO ONLY:
+ *
+ * Prevent the unit-circle scene from becoming too large on
+ * shorter browser windows. All geometry, positioning, and
+ * other tabs remain unchanged.
+ */
+@media (max-height: 900px) {
+  .crossRatioView .shapePlane {
+    width:
+      min(590px, 58%);
+  }
 }

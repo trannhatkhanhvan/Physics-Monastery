@@ -761,8 +761,22 @@
 .rootPlotWrap {
   flex: 1 1 auto;
 
+  width: 100%;
+
   min-width: 0;
   min-height: 0;
+
+  /*
+   * Prevent the Monodromy circles / sheet viewer from
+   * growing indefinitely on tall browser windows.
+   *
+   * Below this size it remains fully responsive.
+   * Above it, the visualization stops growing.
+   */
+  max-height: 650px;
+
+  margin-top: auto;
+  margin-bottom: auto;
 
   padding:
     0 8px;

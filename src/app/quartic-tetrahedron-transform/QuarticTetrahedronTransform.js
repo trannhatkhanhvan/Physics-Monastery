@@ -7345,7 +7345,10 @@ const [sceneScale, setSceneScale] = useState(130);
 
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'center',
+                        justifyContent: 'flex-start',
+
+                        boxSizing: 'border-box',
+                        paddingLeft: '14px',
 
                         height: '46px',
 
