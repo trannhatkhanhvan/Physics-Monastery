@@ -1392,16 +1392,22 @@ export default function QuarticTetrahedronTransform({ embedded = false }) {
   /*
    * Riemann graph visibility.
    *
-   * Both graphs are shown by default.
-   * At least one graph must remain visible.
+   * Start with the planar map only. The heavier interactive
+   * sphere is enabled after the planar map has completed its
+   * first refined render.
    */
   const [
     riemannGraphsVisible,
     setRiemannGraphsVisible,
   ] = useState({
-    sphere: true,
+    sphere: false,
     map: true,
   });
+
+  const [
+    riemannPlanarReady,
+    setRiemannPlanarReady,
+  ] = useState(false);
 
 
   /*
@@ -1456,9 +1462,11 @@ export default function QuarticTetrahedronTransform({ embedded = false }) {
      * Restore the Riemann tab to its reload/default state.
      */
     setRiemannGraphsVisible({
-      sphere: true,
+      sphere: false,
       map: true,
     });
+
+    setRiemannPlanarReady(false);
 
     setRiemannStructureModes([
       'root-paths',
@@ -6600,7 +6608,13 @@ const [sceneScale, setSceneScale] = useState(130);
                 : null;
 
             const exactA3LargeRootLatex =
-              mode === 'Roots' &&
+              (
+                mode === 'Roots' ||
+                (
+                  mode === 'Möbius transform' &&
+                  mobiusStage === 0
+                )
+              ) &&
               isUnitCirclePreset &&
               index >= 2
                 ? (
@@ -6806,7 +6820,13 @@ const [sceneScale, setSceneScale] = useState(130);
                       }
                     />
                   </span>
-                ) : mode === 'Roots' &&
+                ) : (
+                  mode === 'Roots' ||
+                  (
+                    mode === 'Möbius transform' &&
+                    mobiusStage === 0
+                  )
+                ) &&
                 isUnitCirclePreset &&
                 index < 2 ? (
                   <span
@@ -7110,6 +7130,7 @@ const [sceneScale, setSceneScale] = useState(130);
         >
           <div
             style={{
+              position: 'relative',
               display: 'grid',
               gridTemplateColumns:
                 'minmax(0, 1fr) clamp(460px, 32.5vw, 620px)',
@@ -7130,13 +7151,22 @@ const [sceneScale, setSceneScale] = useState(130);
             >
               <h1
                 className={styles.title}
-                style={{ margin: 0 }}
+                style={{
+                  margin: 0,
+                  whiteSpace: 'nowrap',
+                }}
               >
                 Quartic → Ideal Tetrahedron
               </h1>
 
                 <span
                   style={{
+                    position: 'absolute',
+                    right: '12px',
+                    top: '50%',
+                    transform:
+                      'translateY(-50%)',
+
                     flex: '0 0 auto',
                     fontSize:
                       'clamp(16px, 1.35vw, 20px)',
@@ -7191,6 +7221,18 @@ const [sceneScale, setSceneScale] = useState(130);
                       viewMode === 'Riemann surface'
                     ) {
                       setIsAPlaying(false);
+                    }
+
+                    if (
+                      viewMode === 'Riemann surface' &&
+                      mode !== 'Riemann surface'
+                    ) {
+                      setRiemannGraphsVisible({
+                        sphere: false,
+                        map: true,
+                      });
+
+                      setRiemannPlanarReady(false);
                     }
 
                     setMode(viewMode);
@@ -7456,6 +7498,9 @@ const [sceneScale, setSceneScale] = useState(130);
                           }
                           active={true}
                           displayMode="map"
+                          onReady={
+                            setRiemannPlanarReady
+                          }
                           showDiagnostics={false}
                           structureMode={
                             riemannStructureModes
@@ -12612,11 +12657,24 @@ const [sceneScale, setSceneScale] = useState(130);
                         aria-pressed={
                           riemannGraphsVisible.sphere
                         }
+                        disabled={
+                          !riemannPlanarReady
+                        }
                         onClick={() =>
                           toggleRiemannGraph(
                             'sphere'
                           )
                         }
+                        style={{
+                          opacity:
+                            riemannPlanarReady
+                              ? 1
+                              : 0.42,
+                          cursor:
+                            riemannPlanarReady
+                              ? 'pointer'
+                              : 'not-allowed',
+                        }}
                       >
                         Riemann surface
                       </button>
@@ -12990,15 +13048,15 @@ const [sceneScale, setSceneScale] = useState(130);
                         >
                           <RiemannBranchEquationSvg
                             src="/equations/a_1_equation.svg"
-                            alt="a1 equals square root of 4p times 1 plus 2p over 2 pi"
+                            alt="a1 equals square root of 4u times 1 plus 2u over 2 pi"
                             fontSize={24}
                           />
 
                           <span>,</span>
 
                           <RiemannBranchEquationSvg
-                            src="/equations/p_equation.svg"
-                            alt="definition of p"
+                            src="/equations/u_equation.svg?v=20260920-1"
+                            alt="definition of u"
                             fontSize={
                               24 * 28 / 18
                             }
@@ -13045,15 +13103,15 @@ const [sceneScale, setSceneScale] = useState(130);
                         >
                           <RiemannBranchEquationSvg
                             src="/equations/b_1_equation.svg"
-                            alt="b1 equals square root of 4q times 1 minus 2q over 2 pi"
+                            alt="b1 equals square root of 4v times 1 minus 2v over 2 pi"
                             fontSize={24}
                           />
 
                           <span>,</span>
 
                           <RiemannBranchEquationSvg
-                            src="/equations/q_equation.svg"
-                            alt="definition of q"
+                            src="/equations/v_equation.svg?v=20260920-1"
+                            alt="definition of v"
                             fontSize={
                               24 * 28 / 18
                             }

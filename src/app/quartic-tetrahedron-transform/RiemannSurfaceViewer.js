@@ -144,7 +144,7 @@ let REFINED_SPHERE_CELLS_CACHE =
  * Store the completed polygons persistently instead.
  */
 const REFINED_SPHERE_STORAGE_KEY =
-  'quartic-riemann-refined-v6-angle180-l64-x128-sub8-simple-x';
+  'quartic-riemann-refined-v8-direct-seam-edge-l64-x128-sub8-simple-x';
 
 
 /*
@@ -2305,8 +2305,10 @@ function buildTrueSeamCurves() {
 }
 
 
+console.time('[Riemann startup] true seam curves');
 let TRUE_SEAM_CURVES =
   buildTrueSeamCurves();
+console.timeEnd('[Riemann startup] true seam curves');
 
 
 /*
@@ -2834,8 +2836,10 @@ function buildRealRootPathCurves() {
 }
 
 
+console.time('[Riemann startup] real root paths');
 const REAL_ROOT_PATH_CURVES =
   buildRealRootPathCurves();
+console.timeEnd('[Riemann startup] real root paths');
 
 
 /*
@@ -3575,8 +3579,10 @@ function buildSphereCells() {
 }
 
 
+console.time('[Riemann startup] sphere cells');
 const SPHERE_CELLS =
   buildSphereCells();
+console.timeEnd('[Riemann startup] sphere cells');
 
 
 function cellKey(
@@ -4233,8 +4239,10 @@ function buildRegionDecomposition() {
 }
 
 
+console.time('[Riemann startup] region decomposition');
 let REGION_DECOMPOSITION =
   buildRegionDecomposition();
+console.timeEnd('[Riemann startup] region decomposition');
 
 
 /*
@@ -5525,8 +5533,10 @@ function buildCombinedBoundaryAtlas() {
 }
 
 
+console.time('[Riemann startup] boundary atlas');
 let COMBINED_BOUNDARY_ATLAS_AUDIT =
   buildCombinedBoundaryAtlas();
+console.timeEnd('[Riemann startup] boundary atlas');
 
 
 function buildLocallyRefinedSphereCells() {
@@ -5606,15 +5616,47 @@ function buildLocallyRefinedSphereCells() {
 
 
   function cellTouchesSeam(cell) {
-    const ownRegion =
-      regionOf(cell);
+    /*
+     * Refine only cells whose OWN boundary is crossed by the
+     * pullback seam a^{-1}(Gamma).
+     *
+     * sphereEdgeCrossesCutTree() already tests exactly that:
+     * it maps a short sphere edge through a(x) and asks whether
+     * the image crosses the parameter-plane cut tree.
+     *
+     * This is narrower than inferring seam proximity from a
+     * neighboring coarse region label.
+     */
+    for (
+      let edgeIndex = 0;
+      edgeIndex <
+        cell.vertices.length;
+      edgeIndex += 1
+    ) {
+      const first =
+        cell.vertices[
+          edgeIndex
+        ];
 
-    return nearbyCells(cell)
-      .some(
-        neighbor =>
-          regionOf(neighbor) !==
-            ownRegion
-      );
+      const second =
+        cell.vertices[
+          (
+            edgeIndex + 1
+          ) %
+          cell.vertices.length
+        ];
+
+      if (
+        sphereEdgeCrossesCutTree(
+          first,
+          second
+        )
+      ) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
 
@@ -9724,10 +9766,12 @@ function buildLineAuthoritativeSurface(
  * the colored domain boundaries therefore share the same geometry
  * without restoring the old progressive requestAnimationFrame worker.
  */
+console.time('[Riemann startup] line-authoritative surface');
 let LINE_AUTHORITATIVE_SURFACE =
   buildLineAuthoritativeSurface(
     SPHERE_CELLS
   );
+console.timeEnd('[Riemann startup] line-authoritative surface');
 
 let LINE_AUTHORITATIVE_CELLS = [
   ...LINE_AUTHORITATIVE_SURFACE
@@ -10464,6 +10508,7 @@ function RiemannSurfaceViewer({
   ],
   conventionAngle = 180,
   asymptoticEnd = 0,
+  onReady = null,
 }) {
   const [
     view,
@@ -10484,6 +10529,27 @@ function RiemannSurfaceViewer({
 
   const dragRef =
     useRef(null);
+
+  /*
+   * Drag updates are coalesced to one React state update per
+   * animation frame. Pointer events can arrive much faster than
+   * the browser can repaint this large SVG sphere.
+   */
+  const rotateFrameRef =
+    useRef(null);
+
+  const pendingRotationRef =
+    useRef(null);
+
+  /*
+   * The planar map's expensive static partition/grid is now a
+   * pre-rendered image. Readiness is keyed to that image's real
+   * browser load event rather than to sphere refinement.
+   */
+  const [
+    planarBackgroundReady,
+    setPlanarBackgroundReady,
+  ] = useState(false);
 
 
   /*
@@ -10541,20 +10607,7 @@ function RiemannSurfaceViewer({
     refinedSphereCells,
     setRefinedSphereCells,
   ] =
-    useState(
-      () => {
-        const cached =
-          REFINED_SPHERE_CELLS_CACHE ??
-          loadPersistentRefinedSphereCells();
-
-        if (cached?.length) {
-          REFINED_SPHERE_CELLS_CACHE =
-            cached;
-        }
-
-        return cached;
-      }
-    );
+    useState(null);
 
   const [
     lineBoundaryRibbons,
@@ -10569,6 +10622,19 @@ function RiemannSurfaceViewer({
         return undefined;
       }
 
+      /*
+       * MAP-ONLY FAST PATH.
+       *
+       * The planar partition/grid is now a saved PNG, so this
+       * viewer no longer needs refined sphere geometry at all.
+       * The separate sphere viewer will restore/build that data
+       * only when the user actually opens the sphere.
+       */
+      if (displayMode === 'map') {
+        setRefinementReady(false);
+        return undefined;
+      }
+
       refinementCursorRef.current =
         0;
 
@@ -10577,25 +10643,19 @@ function RiemannSurfaceViewer({
       );
 
       /*
-       * INSTANT PATH.
+       * FIRST-PAINT PATH.
        *
-       * Never throw away finished geometry merely because the
-       * viewer mounted.
+       * Do not synchronously restore tens of thousands of refined
+       * cells during the component's initial render.
        *
-       * This handles both:
-       *
-       *   1. React Fast Refresh preserving the current geometry,
-       *   2. a normal reload restoring the persistent cache.
+       * Let React commit the lightweight Riemann tab first, then
+       * restore/build the heavy geometry on the next animation frame.
        */
       if (
         refinedSphereCells?.length
       ) {
         REFINED_SPHERE_CELLS_CACHE =
           refinedSphereCells;
-
-        savePersistentRefinedSphereCells(
-          refinedSphereCells
-        );
 
         setRefinementReady(true);
 
@@ -10614,14 +10674,13 @@ function RiemannSurfaceViewer({
         }
 
         /*
-         * Build the real refined partition immediately on the
-         * first animation frame.
-         *
-         * The former scheduler spent many frames advancing a
-         * cursor without performing any refinement work.
+         * Restore persistent geometry only AFTER the lightweight
+         * first paint. If no cache exists, build the exact same
+         * refined partition as before.
          */
         const refined =
           REFINED_SPHERE_CELLS_CACHE ??
+          loadPersistentRefinedSphereCells() ??
           buildLocallyRefinedSphereCells();
 
         REFINED_SPHERE_CELLS_CACHE =
@@ -10650,9 +10709,28 @@ function RiemannSurfaceViewer({
       }
 
 
+      /*
+       * Guarantee one actual browser paint of the saved sphere
+       * placeholder before starting the expensive live-sphere render.
+       *
+       * One requestAnimationFrame callback still runs BEFORE paint.
+       * Nesting a second frame lets the first frame complete and paint
+       * the placeholder, then starts refinement on the following frame.
+       *
+       * This makes the placeholder reliable on:
+       *   - first sphere open
+       *   - tab leave / re-entry
+       *   - Reset
+       *   - hide / show sphere
+       */
       refinementFrameRef.current =
         window.requestAnimationFrame(
-          publishRefinement
+          () => {
+            refinementFrameRef.current =
+              window.requestAnimationFrame(
+                publishRefinement
+              );
+          }
         );
 
 
@@ -10675,10 +10753,47 @@ function RiemannSurfaceViewer({
     },
     [
       active,
+      displayMode,
       refinedSphereCells,
     ]
   );
 
+
+  /*
+   * Signal readiness only after the refined geometry has been
+   * committed. For the initial planar-map load this means the
+   * parent can enable the heavier sphere button only when the
+   * map is actually on screen.
+   */
+  useEffect(
+    () => {
+      if (
+        !active ||
+        typeof onReady !== 'function'
+      ) {
+        return;
+      }
+
+      if (displayMode === 'map') {
+        if (planarBackgroundReady) {
+          onReady(true);
+        }
+
+        return;
+      }
+
+      if (refinementReady) {
+        onReady(true);
+      }
+    },
+    [
+      active,
+      displayMode,
+      planarBackgroundReady,
+      refinementReady,
+      onReady,
+    ]
+  );
 
   const sphereCenter =
     displayMode === 'sphere'
@@ -10831,6 +10946,24 @@ function RiemannSurfaceViewer({
   const visibleSphereCells =
     refinedSphereCells ??
     [];
+
+  if (
+    active &&
+    refinedSphereCells &&
+    !window.__RIEMANN_CELL_COUNT_LOGGED__
+  ) {
+    window.__RIEMANN_CELL_COUNT_LOGGED__ = true;
+
+    console.info(
+      '[Riemann render] refined cells:',
+      refinedSphereCells.length
+    );
+
+    console.info(
+      '[Riemann render] line-authoritative cells:',
+      LINE_AUTHORITATIVE_CELLS.length
+    );
+  }
 
 
   const sectionedSphereCells =
@@ -11052,7 +11185,8 @@ function RiemannSurfaceViewer({
    * ORIGINAL uniform SPHERE_CELLS mesh.
    */
   const projectedDisplayGrid =
-    displayMode === 'map'
+    displayMode === 'map' ||
+    !refinedSphereCells
       ? []
       : SPHERE_CELLS
       .map(
@@ -11947,7 +12081,8 @@ function RiemannSurfaceViewer({
 
 
   const rootDomainFillPolygons =
-    displayMode === 'sphere'
+    displayMode === 'sphere' ||
+    displayMode === 'map'
       ? []
       : visibleSphereCells
       .flatMap(
@@ -12096,7 +12231,9 @@ function RiemannSurfaceViewer({
    *   SPHERE_CELLS     = visible uniform grid
    */
   const rootDomainDisplayGrid =
-    displayMode === 'sphere'
+    displayMode === 'sphere' ||
+    displayMode === 'map' ||
+    !refinedSphereCells
       ? []
       : SPHERE_CELLS
       .flatMap(
@@ -13121,17 +13258,46 @@ function RiemannSurfaceViewer({
         )
       );
 
-    setView(
-      current => ({
-        ...current,
+    pendingRotationRef.current =
+      multiplyRotations(
+        dragRotation,
+        drag.startRotation
+      );
 
-        rotation:
-          multiplyRotations(
-            dragRotation,
-            drag.startRotation
-          ),
-      })
-    );
+    /*
+     * Keep only the newest pointer position and commit it once
+     * on the next browser paint frame.
+     */
+    if (
+      rotateFrameRef.current === null
+    ) {
+      rotateFrameRef.current =
+        requestAnimationFrame(
+          () => {
+            rotateFrameRef.current =
+              null;
+
+            const nextRotation =
+              pendingRotationRef.current;
+
+            pendingRotationRef.current =
+              null;
+
+            if (!nextRotation) {
+              return;
+            }
+
+            setView(
+              current => ({
+                ...current,
+
+                rotation:
+                  nextRotation,
+              })
+            );
+          }
+        );
+    }
   }
 
 
@@ -13157,6 +13323,38 @@ function RiemannSurfaceViewer({
         .releasePointerCapture(
           event.pointerId
         );
+    }
+
+    /*
+     * Commit the newest pending rotation on release so the final
+     * mouse position is never lost.
+     */
+    if (
+      rotateFrameRef.current !== null
+    ) {
+      cancelAnimationFrame(
+        rotateFrameRef.current
+      );
+
+      rotateFrameRef.current =
+        null;
+    }
+
+    const finalRotation =
+      pendingRotationRef.current;
+
+    pendingRotationRef.current =
+      null;
+
+    if (finalRotation) {
+      setView(
+        current => ({
+          ...current,
+
+          rotation:
+            finalRotation,
+        })
+      );
     }
 
     dragRef.current =
@@ -13246,9 +13444,7 @@ function RiemannSurfaceViewer({
          * complete refined colored geometry is ready.
          */
         visibility:
-          refinedSphereCells
-            ? 'visible'
-            : 'hidden',
+          'visible',
 
         overflow:
           'visible',
@@ -13279,8 +13475,28 @@ function RiemannSurfaceViewer({
 
 
       {
+        displayMode === 'sphere' &&
+        !refinementReady && (
+          <image
+            href="/riemann/riemann-sphere-default.png"
+            x={0}
+            y={0}
+            width={700}
+            height={690}
+            preserveAspectRatio="none"
+            style={{
+              pointerEvents:
+                'none',
+            }}
+          />
+        )
+      }
+
+
+      {
         displayMode !== 'map' && (
           <>
+      <g>
       {
         coloredSurfacePieces.map(
           piece => (
@@ -13376,6 +13592,7 @@ function RiemannSurfaceViewer({
           )
         )
       }
+      </g>
 
 
       {
@@ -13982,171 +14199,23 @@ function RiemannSurfaceViewer({
             'none',
         }}
       >
-        <rect
+        <image
+          href="/riemann/riemann-planar-background.png"
           x={rootMapBounds.x}
           y={rootMapBounds.y}
           width={rootMapBounds.width}
           height={rootMapBounds.height}
-          rx="3"
+          preserveAspectRatio="none"
+          onLoad={() => {
+            setPlanarBackgroundReady(
+              true
+            );
+          }}
           style={{
-            fill:
-              'rgba(4, 5, 7, 0.84)',
-
-            stroke:
-              'rgba(232, 223, 200, 0.42)',
-
-            strokeWidth:
-              0.8,
-
-            vectorEffect:
-              'non-scaling-stroke',
+            pointerEvents:
+              'none',
           }}
         />
-
-        {
-          rootDomainFillPolygons.map(
-            polygon => (
-              <polygon
-                key={
-                  polygon.key
-                }
-                points={
-                  polygon.points
-                }
-                style={{
-                  fill:
-                    ROOT_COLORS[
-                      polygon.regionIndex
-                    ],
-
-                  /*
-                   * The radial root-domain map is a second
-                   * coordinate representation of the same
-                   * four sheet regions as the compact sphere.
-                   * Keep it fully opaque as well.
-                   */
-                  fillOpacity:
-                    1,
-
-                  /*
-                   * Hide subpixel SVG cracks between adjacent refined
-                   * map polygons without changing the visible grid.
-                   *
-                   * Use the polygon's own sheet color so the hidden
-                   * refinement mesh remains visually continuous.
-                   */
-                  stroke:
-                    ROOT_COLORS[
-                      polygon.regionIndex
-                    ],
-
-                  strokeOpacity:
-                    1,
-
-                  strokeWidth:
-                    0.45,
-
-                  strokeLinejoin:
-                    'round',
-
-                  vectorEffect:
-                    'non-scaling-stroke',
-                }}
-              />
-            )
-          )
-        }
-
-
-        <line
-          x1={
-            rootMapX(0)
-          }
-          y1={
-            rootMapBounds.y
-          }
-          x2={
-            rootMapX(0)
-          }
-          y2={
-            rootMapBounds.y +
-            rootMapBounds.height
-          }
-          style={{
-            stroke:
-              'rgba(232, 223, 200, 0.28)',
-
-            strokeWidth:
-              0.8,
-
-            strokeDasharray:
-              '3 4',
-
-            vectorEffect:
-              'non-scaling-stroke',
-          }}
-        />
-
-        <line
-          x1={
-            rootMapBounds.x
-          }
-          y1={
-            rootMapY(0)
-          }
-          x2={
-            rootMapBounds.x +
-            rootMapBounds.width
-          }
-          y2={
-            rootMapY(0)
-          }
-          style={{
-            stroke:
-              'rgba(232, 223, 200, 0.22)',
-
-            strokeWidth:
-              0.8,
-
-            vectorEffect:
-              'non-scaling-stroke',
-          }}
-        />
-
-        {
-          rootDomainDisplayGrid.map(
-            cell => (
-              <polygon
-                key={
-                  cell.key
-                }
-                points={
-                  cell.points
-                }
-                fill="none"
-                style={{
-                  stroke:
-                    'rgba(0, 0, 0, 0.78)',
-
-                  strokeOpacity:
-                    0.34,
-
-                  strokeWidth:
-                    0.34,
-
-                  strokeLinejoin:
-                    'round',
-
-                  vectorEffect:
-                    'non-scaling-stroke',
-
-                  pointerEvents:
-                    'none',
-                }}
-              />
-            )
-          )
-        }
 
 
         {

@@ -5099,15 +5099,15 @@ export default function MonodromyStage() {
               >
                 <BranchEquationSvg
                   src="/equations/a_1_equation.svg"
-                  alt="a1 equals square root of 4p times 1 plus 2p over 2 pi"
+                  alt="a1 equals square root of 4u times 1 plus 2u over 2 pi"
                   fontSize={24}
                 />
 
                 <span>,</span>
 
                 <BranchEquationSvg
-                  src="/equations/p_equation.svg"
-                  alt="definition of p"
+                  src="/equations/u_equation.svg?v=20260920-1"
+                  alt="definition of u"
                   fontSize={
                     24 * 28 / 18
                   }
@@ -5148,15 +5148,15 @@ export default function MonodromyStage() {
               >
                 <BranchEquationSvg
                   src="/equations/b_1_equation.svg"
-                  alt="b1 equals square root of 4q times 1 minus 2q over 2 pi"
+                  alt="b1 equals square root of 4v times 1 minus 2v over 2 pi"
                   fontSize={24}
                 />
 
                 <span>,</span>
 
                 <BranchEquationSvg
-                  src="/equations/q_equation.svg"
-                  alt="definition of q"
+                  src="/equations/v_equation.svg?v=20260920-1"
+                  alt="definition of v"
                   fontSize={
                     24 * 28 / 18
                   }

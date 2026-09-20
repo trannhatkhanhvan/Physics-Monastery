@@ -80,12 +80,112 @@
 }
 
 @media (max-width: 900px) {
+  /*
+   * STACKED LAYOUT
+   *
+   * Once the viewer and controls move into one column, they must
+   * no longer share the desktop viewport-height workspace.
+   *
+   * Give the main viewer its own full-height row and let the
+   * remaining content continue naturally below it in page scroll.
+   */
+  .page {
+    height: 100dvh;
+    min-height: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /*
+   * STACKED HEADER
+   *
+   * The desktop header reserves the controls-column width even
+   * after the workspace itself has collapsed to one column.
+   * Release that reserved column here so the title and equation
+   * share the full available page width.
+   */
+  .page > div:first-child {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .page > div:first-child > div:first-child {
+    grid-column: 1 !important;
+
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+
+    gap: 14px !important;
+
+    width: 100%;
+    min-width: 0;
+  }
+
+  .title {
+    flex: 0 0 auto;
+
+    white-space: nowrap;
+
+    font-size:
+      clamp(16px, 3vw, 20px);
+  }
+
+  .page > div:first-child > div:first-child > span {
+    flex: 0 0 auto !important;
+
+    margin-left: auto !important;
+
+    white-space: nowrap !important;
+
+    font-size:
+      clamp(14px, 2.6vw, 18px) !important;
+  }
+
   .workspace {
     grid-template-columns: 1fr;
+    grid-template-rows: 100dvh auto;
+
+    flex: 0 0 auto;
+
+    height: auto;
+    min-height: 0;
+
+    overflow: visible;
+  }
+
+  .viewer {
+    height: 100%;
+    min-height: 0;
   }
 
   .controls {
+    height: auto;
     min-height: 180px;
+
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  /*
+   * In stacked mode, every DIRECT child of the control panel
+   * must participate in normal document flow.
+   *
+   * Several Roots / Root angles / Root magnitudes readout blocks
+   * are positioned absolutely on desktop via inline styles.
+   * Force only those top-level control-panel children back into
+   * flow here; nested slider markers and other intentionally
+   * positioned internals remain untouched.
+   */
+  .controls > * {
+    position: static !important;
+
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 
