@@ -7322,7 +7322,9 @@ const [sceneScale, setSceneScale] = useState(130);
               }}
             >
               <div className={styles.viewerReadout}>
-                <span className={styles.viewerMode}>
+                {(mode !== 'Riemann surface' ||
+                  riemannGraphsVisible.sphere) && (
+                  <span className={styles.viewerMode}>
                   {mode === 'Cross-ratio'
                     ? (
                         asymptoticEnd !== 0
@@ -7338,7 +7340,8 @@ const [sceneScale, setSceneScale] = useState(130);
                           mobiusStage === 0
                         ? 'Möbius transform: ideal tetrahedron'
                         : mode}
-                </span>
+                  </span>
+                )}
 
               </div>
 
