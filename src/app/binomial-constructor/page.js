@@ -239,7 +239,7 @@ export default function BinomialConstructor() {
   </div>
 </div>
 
-        <div style={{ height: '2.0rem' }} />
+        <div style={{ height: '1.4rem' }} />
 
         <p className="equation-description">
           The binomial constructor encodes the two-part transformations of the {' '}
@@ -496,13 +496,11 @@ export default function BinomialConstructor() {
 
 </div>
 
-        <div style={{ height: '0.0rem' }} />
-
         <div
           ref={closureHostRef}
           style={{
             marginTop: '1.6rem',
-            marginBottom: '1.2rem',
+            marginBottom: '0.5rem',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
@@ -578,7 +576,7 @@ export default function BinomialConstructor() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     Constants of Nature
-  </a> page to see how the roots of the hyperbolic partition equation are combined to construct each constant of Nature.
+  </a> page to see how the roots of the hyperbolic partition equation construct each constant of Nature.
         </p>
 
         <div style={{ height: '12.5rem' }} />
