@@ -1,10 +1,13 @@
 'use client';
 
+import React, { useState } from 'react';
 import '../globals.css';
 import LayoutWrapper from '../../components/LayoutWrapper';
 
 
 export default function SymbolLegend() {
+  const [searchQuery, setSearchQuery] = useState('');
+
   const rows = [
 
 // 1
@@ -2093,6 +2096,115 @@ export default function SymbolLegend() {
     // Paste more here...
   ];
 
+  const groups = [
+    {
+      title: 'FRAMEWORK',
+      rows: rows.slice(0, 17),
+    },
+    {
+      title: 'HYPERBOLIC',
+      rows: rows.slice(17, 25),
+    },
+    {
+      title: 'CIRCULAR',
+      rows: rows.slice(25, 30),
+    },
+    {
+      title: '',
+      rows: rows.slice(30, 31),
+    },
+    {
+      title: 'LEMNISCATIC',
+      rows: rows.slice(31, 38),
+    },
+    {
+      title: '',
+      rows: rows.slice(38, 39),
+    },
+    {
+      title: 'CLASSICAL',
+      rows: rows.slice(39, 60),
+    },
+    {
+      title: 'PHYSICAL',
+      rows: rows.slice(60, 68),
+    },
+    {
+      title: 'FUNCTIONS',
+      rows: rows.slice(68, 73),
+    },
+    {
+      title: '',
+      rows: rows.slice(73, 74),
+    },
+  ];
+
+  const extractSearchText = (node) => {
+    if (
+      node === null ||
+      node === undefined ||
+      typeof node === 'boolean'
+    ) {
+      return '';
+    }
+
+    if (
+      typeof node === 'string' ||
+      typeof node === 'number'
+    ) {
+      return String(node);
+    }
+
+    if (Array.isArray(node)) {
+      return node.map(extractSearchText).join(' ');
+    }
+
+    if (React.isValidElement(node)) {
+      const alt =
+        typeof node.props?.alt === 'string'
+          ? node.props.alt
+          : '';
+
+      return [
+        alt,
+        extractSearchText(node.props?.children),
+      ].join(' ');
+    }
+
+    return '';
+  };
+
+  const normalizeSearchText = (value) =>
+    String(value)
+      .toLowerCase()
+      .replace(/[_-]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+  const normalizedQuery = normalizeSearchText(searchQuery);
+
+  const visibleGroups = groups
+    .map((group) => {
+      if (!normalizedQuery) {
+        return group;
+      }
+
+      return {
+        ...group,
+        rows: group.rows.filter((row) => {
+          const searchableText = normalizeSearchText(
+            [
+              extractSearchText(row.left),
+              extractSearchText(row.right),
+            ].join(' ')
+          );
+
+          return searchableText.includes(normalizedQuery);
+        }),
+      };
+    })
+    .filter((group) => group.rows.length > 0);
+
 
   return (
       <LayoutWrapper>
@@ -2106,12 +2218,102 @@ export default function SymbolLegend() {
 />
           <div className="legend-content">
             <div className="legend-title">Symbol Legend</div>
+
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(event) =>
+                setSearchQuery(event.target.value)
+              }
+              placeholder="Search…"
+              aria-label="Search symbol legend"
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '2rem',
+                width: '210px',
+                boxSizing: 'border-box',
+                padding: '0.38rem 0.65rem',
+                borderRadius: '4px',
+                border:
+                  '1px solid rgba(255, 255, 255, 0.26)',
+                background: 'rgba(0, 0, 0, 0.32)',
+                color: 'white',
+                fontFamily:
+                  '"Times New Roman", Times, serif',
+                fontSize: '13px',
+                outline: 'none',
+              }}
+            />
+
             <div className="legend-rows">
-              {rows.map((row, index) => (
-                  <div key={index} className="legend-row">
-                    <div className="legend-left">{row.left}</div>
-                    <div className="legend-right">{row.right}</div>
+              {visibleGroups.map((group, groupIndex) => (
+                <div
+                  key={`${group.title}-${groupIndex}`}
+                  className="legend-group"
+                  style={{
+                    position: 'relative',
+                  }}
+                >
+                  {!normalizedQuery && group.title && (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        left: '-2.7rem',
+                        top:
+                          group.title === 'CLASSICAL'
+                            ? '43%'
+                            : group.title === 'HYPERBOLIC'
+                              ? '47%'
+                              : '50%',
+                        transform: 'translateY(-50%)',
+                        width: '18px',
+                        textAlign: 'center',
+                        pointerEvents: 'none',
+                        fontFamily: '"Times New Roman", serif',
+                        fontSize: '13px',
+                        fontWeight: 'normal',
+                        color: 'rgba(255, 255, 255, 0.45)',
+                      }}
+                    >
+                      {group.title.split('').map((letter, letterIndex) => (
+                        <div
+                          key={`${group.title}-${letterIndex}`}
+                          style={{
+                            display: 'block',
+                            width: '18px',
+                            height: '15px',
+                            lineHeight: '15px',
+                            margin: 0,
+                            padding: 0,
+                            transform: 'none',
+                            writingMode: 'horizontal-tb',
+                            textOrientation: 'mixed',
+                          }}
+                        >
+                          {letter}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  <div
+                    className="legend-group-rows"
+                    style={{
+                      width: '100%',
+                    }}
+                  >
+                    {group.rows.map((row, rowIndex) => (
+                      <div
+                        key={`${groupIndex}-${rowIndex}`}
+                        className="legend-row"
+                      >
+                        <div className="legend-left">{row.left}</div>
+                        <div className="legend-right">{row.right}</div>
+                      </div>
+                    ))}
                   </div>
+                </div>
               ))}
             </div>
           </div>

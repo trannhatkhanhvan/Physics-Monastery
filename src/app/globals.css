@@ -317,6 +317,33 @@ body {
   font-size: 16px;
 }
 
+/* Symbol Legend: vertical category labels */
+.legend-group {
+  position: relative;
+}
+
+.legend-group-label {
+  position: absolute;
+  left: -3.2rem;
+  top: 50%;
+
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center center;
+
+  font-family: "Times New Roman", serif;
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.62);
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.legend-group-rows {
+  width: 100%;
+}
+
 .legend-left {
   text-align: left;
   margin-left: 0.5rem;
