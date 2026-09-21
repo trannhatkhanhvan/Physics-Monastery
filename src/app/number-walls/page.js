@@ -780,6 +780,7 @@ function cellColor(value, rowNumber, colorMode, scales, prime, modulus) {
 
 export default function NumberWallsPage() {
     const wallFrameRef = useRef(null);
+    const sequenceSidebarRef = useRef(null);
 
     const [indexItems, setIndexItems] = useState([]);
     const [selectedId, setSelectedId] = useState("");
@@ -922,6 +923,45 @@ export default function NumberWallsPage() {
         };
     }, [selectedId, customInputMode, wallData, loading]);
 
+    useEffect(() => {
+        const fitSequenceSidebarToViewport = () => {
+            const sidebar = sequenceSidebarRef.current;
+
+            if (!sidebar) {
+                return;
+            }
+
+            const rect = sidebar.getBoundingClientRect();
+            const bottomGap = 10;
+
+            const availableHeight = Math.max(
+                120,
+                window.innerHeight - rect.top - bottomGap
+            );
+
+            sidebar.style.maxHeight = `${availableHeight}px`;
+        };
+
+        const animationFrame =
+            window.requestAnimationFrame(
+                fitSequenceSidebarToViewport
+            );
+
+        window.addEventListener(
+            "resize",
+            fitSequenceSidebarToViewport
+        );
+
+        return () => {
+            window.cancelAnimationFrame(animationFrame);
+
+            window.removeEventListener(
+                "resize",
+                fitSequenceSidebarToViewport
+            );
+        };
+    }, []);
+
     const famousSequences = indexItems.filter(
         (item) => item.category === "famous-sequences"
     );
@@ -971,7 +1011,7 @@ export default function NumberWallsPage() {
                     border: 1px solid #303030;
                     padding: 14px;
                     box-sizing: border-box;
-                    max-height: calc(100vh - 70px);
+                    max-height: none;
                     overflow-y: auto;
                 }
 
@@ -1456,7 +1496,10 @@ export default function NumberWallsPage() {
             </p>
 
             <div className="number-walls-layout">
-                <aside className="number-walls-sidebar">
+                <aside
+                    ref={sequenceSidebarRef}
+                    className="number-walls-sidebar"
+                >
     <div className="sidebar-heading">Famous Sequences</div>
 
 <div className="famous-sequences-list">
