@@ -152,7 +152,7 @@ export default function BinomialConstructor() {
       <div
   className="partition-content"
   style={{
-    width: "min(1600px, calc(100vw - 100px))",
+    width: "min(1600px, calc(100vw - var(--sidebar-width) - 4rem))",
     maxWidth: "none",
   }}
 >
