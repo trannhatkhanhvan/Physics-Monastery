@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import 'katex/dist/katex.min.css';
 import { InlineMath } from "react-katex";
 import LayoutWrapper from "../../components/LayoutWrapper";
@@ -172,6 +172,51 @@ function normalizeCustomFunctionExpression(rawExpression) {
     return expandedTokens.join("");
 }
 
+
+function customFunctionToLatex(rawExpression) {
+    let text = stripFunctionPrefix(rawExpression)
+        .trim()
+        .replaceAll("π", "pi");
+
+    if (!text) {
+        return "";
+    }
+
+    // Common supported functions.
+    text = text
+        .replace(/\bpi\b/g, "\\pi")
+        .replace(/\bsqrt\(([^()]*)\)/g, "\\sqrt{$1}")
+        .replace(/\bfloor\(([^()]*)\)/g, "\\left\\lfloor $1 \\right\\rfloor")
+        .replace(/\bceil\(([^()]*)\)/g, "\\left\\lceil $1 \\right\\rceil")
+        .replace(/\babs\(([^()]*)\)/g, "\\left| $1 \\right|");
+
+    // Simple powers such as n^2, n^10, (n+1)^2.
+    text = text
+        .replace(/([A-Za-z0-9]+)\^([A-Za-z0-9]+)/g, "$1^{$2}")
+        .replace(/(\([^()]+\))\^([A-Za-z0-9]+)/g, "$1^{$2}");
+
+    // Convert a simple final division into a fraction:
+    // n(n+1)/2 -> \frac{n(n+1)}{2}
+    const slashIndex = text.lastIndexOf("/");
+
+    if (slashIndex > 0 && slashIndex < text.length - 1) {
+        const numerator = text.slice(0, slashIndex).trim();
+        const denominator = text.slice(slashIndex + 1).trim();
+
+        if (
+            numerator &&
+            denominator &&
+            !denominator.includes("/")
+        ) {
+            text = `\\frac{${numerator}}{${denominator}}`;
+        }
+    }
+
+    text = text.replace(/\*/g, "\\cdot ");
+
+    return text;
+}
+
 function buildSequenceFromCustomFunction(rawExpression, count) {
     const jsExpression = normalizeCustomFunctionExpression(rawExpression);
     const evaluator = new Function("n", "M", `"use strict"; return (${jsExpression});`);
@@ -209,73 +254,6 @@ function isPrimeNumber(value) {
     }
 
     return true;
-}
-
-function SymbolPart({ part }) {
-    if (!part) return null;
-
-    if (part.type === "image") {
-        return (
-            <img
-                src={part.src}
-                alt={part.alt || ""}
-                className="constant-symbol-part-img"
-            />
-        );
-    }
-
-    if (part.type === "latex") {
-        return (
-            <span className="constant-symbol-part-latex">
-                <InlineMath math={part.latex || ""} />
-            </span>
-        );
-    }
-
-    return (
-        <span className="constant-symbol-part-text">
-            {part.text || ""}
-        </span>
-    );
-}
-
-function ConstantSymbol({ item, place = "menu" }) {
-    const symbolText = String(item?.symbol || item?.title || "").trim();
-    const symbolImage = String(item?.symbolImage || "").trim();
-    const symbolParts = Array.isArray(item?.symbolParts) ? item.symbolParts : [];
-
-    const hasRealImagePath =
-        symbolImage.startsWith("/") ||
-        symbolImage.startsWith("http://") ||
-        symbolImage.startsWith("https://");
-
-    if (symbolParts.length > 0) {
-        return (
-            <span className={`constant-symbol constant-symbol-${place} constant-symbol-composite`}>
-                {symbolParts.map((part, index) => (
-                    <SymbolPart key={index} part={part} />
-                ))}
-            </span>
-        );
-    }
-
-    if (hasRealImagePath) {
-        return (
-            <span className={`constant-symbol constant-symbol-${place}`}>
-                <img
-                    src={symbolImage}
-                    alt={symbolText}
-                    className="constant-symbol-img"
-                />
-            </span>
-        );
-    }
-
-    return (
-        <span className={`constant-symbol constant-symbol-${place} constant-symbol-text`}>
-            {symbolText}
-        </span>
-    );
 }
 
 function customBareissDet(matrix) {
@@ -801,6 +779,8 @@ function cellColor(value, rowNumber, colorMode, scales, prime, modulus) {
 }
 
 export default function NumberWallsPage() {
+    const wallFrameRef = useRef(null);
+
     const [indexItems, setIndexItems] = useState([]);
     const [selectedId, setSelectedId] = useState("");
     const [wallData, setWallData] = useState(null);
@@ -907,9 +887,44 @@ export default function NumberWallsPage() {
         };
     }, [wallData, prime]);
 
-    const famousSequences = indexItems.filter((item) => item.category === "famous-sequences");
-const geometricConstants = indexItems.filter((item) => item.category === "constants");
-const constantsOfNature = indexItems.filter((item) => item.category === "constants-of-nature");
+    useEffect(() => {
+        const fitWallFrameToViewport = () => {
+            const frame = wallFrameRef.current;
+
+            if (!frame) {
+                return;
+            }
+
+            const rect = frame.getBoundingClientRect();
+            const bottomGap = 10;
+            const availableHeight = Math.max(
+                120,
+                window.innerHeight - rect.top - bottomGap
+            );
+
+            frame.style.maxHeight = `${availableHeight}px`;
+        };
+
+        const animationFrame =
+            window.requestAnimationFrame(fitWallFrameToViewport);
+
+        window.addEventListener(
+            "resize",
+            fitWallFrameToViewport
+        );
+
+        return () => {
+            window.cancelAnimationFrame(animationFrame);
+            window.removeEventListener(
+                "resize",
+                fitWallFrameToViewport
+            );
+        };
+    }, [selectedId, customInputMode, wallData, loading]);
+
+    const famousSequences = indexItems.filter(
+        (item) => item.category === "famous-sequences"
+    );
 
     return (
         <LayoutWrapper>
@@ -920,7 +935,7 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
                     background: #101010;
                     color: #eeeeee;
                     font-family: Menlo, Monaco, Consolas, monospace;
-                    padding: 24px;
+                    padding: 12px 24px;
                     box-sizing: border-box;
                 }
 
@@ -932,10 +947,16 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
 
                 .number-walls-intro {
     max-width: none;
-    margin: 0 0 24px 0;
+    margin: 0 0 14px 0;
     color: #bbbbbb;
     font-size: var(--intro-font-size);
-    line-height: 1.5;
+    line-height: 1.45;
+}
+
+.number-walls-inline-title {
+    color: #eeeeee;
+    font-size: 16px;
+    font-weight: 500;
 }
 
                 .number-walls-layout {
@@ -950,7 +971,7 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
                     border: 1px solid #303030;
                     padding: 14px;
                     box-sizing: border-box;
-                    max-height: calc(100vh - 120px);
+                    max-height: calc(100vh - 70px);
                     overflow-y: auto;
                 }
 
@@ -996,8 +1017,8 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
                 .control-panel {
     background: #171717;
     border: 1px solid #303030;
-    padding: 14px;
-    margin-bottom: 16px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -1010,6 +1031,41 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
     align-items: center;
     gap: 8px;
     margin-bottom: 0;
+}
+
+.build-own-control-group {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.build-own-control-label {
+    color: #ffd166;
+    font-size: var(--sidebar-heading-font-size);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.build-own-control-button {
+    background: #222222;
+    color: #eeeeee;
+    border: 1px solid #555555;
+    padding: 7px 14px;
+    font-size: var(--control-font-size);
+    font-family: "Times New Roman", Times, serif;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.build-own-control-button:hover {
+    background: #303030;
+}
+
+.build-own-control-button.active {
+    background: #334b5f;
+    border-color: #75c7ff;
+    color: #ffffff;
 }
 
 .control-label {
@@ -1097,13 +1153,13 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
 }
 
                 .wall-title {
-                    margin: 0 0 6px 0;
+                    margin: 0 0 4px 0;
                     font-size: 22px;
                     font-weight: 500;
                 }
 
                 .wall-description {
-                    margin: 0 0 12px 0;
+                    margin: 0 0 8px 0;
                     color: #bbbbbb;
                     font-size: 13px;
                     line-height: 1.45;
@@ -1111,8 +1167,9 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
 
                 .wall-frame {
                     overflow: auto;
-                    max-width: calc(100vw - 360px);
-                    max-height: calc(100vh - 310px);
+                    width: 100%;
+                    max-width: 100%;
+                    max-height: none;
                     border: 1px solid #303030;
                     background: #080808;
                 }
@@ -1223,6 +1280,37 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
     margin: 0;
 }
 
+.custom-function-title-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+    color: #bbbbbb;
+    font-size: var(--description-font-size);
+    white-space: nowrap;
+}
+
+.custom-function-title-current {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.custom-function-title-current .katex {
+    font-size: 1.05em;
+}
+
+.custom-function-title-examples {
+    margin-left: auto;
+    color: #aaaaaa;
+    white-space: nowrap;
+}
+
+.custom-function-title-examples .katex {
+    font-size: 1em;
+}
+
 .clear-custom-sequence-button {
     background: #222222;
     color: #eeeeee;
@@ -1279,14 +1367,21 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
     font-size: var(--control-font-size);
 }
 
+.custom-function-label .katex {
+    font-size: 1.05em;
+}
+
 .custom-function-input {
     width: 260px;
     background: #222222;
     color: #eeeeee;
     border: 1px solid #555555;
     padding: 5px 8px;
-    font-size: var(--control-font-size);
-    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    font-family: "KaTeX_Math", "KaTeX_Main", serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.2;
 }
 
 .custom-function-error {
@@ -1324,139 +1419,6 @@ const constantsOfNature = indexItems.filter((item) => item.category === "constan
     margin-bottom: 14px;
 }
 
-.famous-sequences-scroll-box {
-    height: 190px;
-}
-
-.geometric-constants-scroll-box {
-    height: 170px;
-}
-
-.constants-of-nature-scroll-box {
-    height: 1100px;
-    overflow: auto;
-}
-
-.constants-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    width: 100%;
-}
-
-.constants-of-nature-grid {
---constant-cell-width: 69px;
---constant-cell-height: 34px;
-
-display: grid;
-grid-template-rows: repeat(36, var(--constant-cell-height));
-grid-auto-flow: column;
-grid-auto-columns: var(--constant-cell-width);
-width: max-content;
-
-}
-
-.constant-grid-button {
-width: var(--constant-cell-width);
-height: var(--constant-cell-height);
-min-width: 0;
-max-width: var(--constant-cell-width);
-box-sizing: border-box;
-
-display: flex;
-align-items: center;
-justify-content: center;
-overflow: hidden;
-
-}
-
-
-.constant-grid-button {
-    height: 34px;
-    padding: 0;
-    margin: 0;
-    background: #222222;
-    color: #eeeeee;
-    border: 1px solid #444444;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.constant-grid-button:hover {
-    background: #303030;
-}
-
-.constant-grid-button.active {
-    background: #334b5f;
-    border-color: #75c7ff;
-}
-
-.constant-symbol {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    width: 100%;
-    height: 34px;
-    overflow: visible;
-}
-
-.constant-symbol-menu {
-    height: 34px;
-}
-
-.constant-symbol-img {
-    width: auto;
-    height: auto;
-    max-width: none;
-    max-height: none;
-    display: block;
-    transform: translateX(0px) translateY(0px) scale(1.00);
-    transform-origin: center;
-}
-
-.constant-symbol-text {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 14px;
-    color: #eeeeee;
-    text-align: center;
-    white-space: nowrap;
-    line-height: 1;
-    transform: translateX(0px) translateY(0px) scale(0.88);
-    transform-origin: center;
-}
-
-.constant-symbol-composite {
-    gap: 1px;
-}
-
-.constant-symbol-part-img {
-    width: auto;
-    height: auto;
-    max-width: none;
-    max-height: none;
-    display: inline-block;
-    transform: translateX(0px) translateY(0px) scale(1.00);
-    transform-origin: center;
-}
-
-.constant-symbol-part-text,
-.constant-symbol-part-latex {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 14px;
-    color: #eeeeee;
-    line-height: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.constant-symbol-part-latex .katex {
-    font-size: 1em;
-}
-
 .custom-sequence-button {
     margin-top: 0;
     margin-bottom: 14px;
@@ -1486,28 +1448,18 @@ overflow: hidden;
 
             `}</style>
 
-            <h1 className="number-walls-title">Number Walls</h1>
-
             <p className="number-walls-intro">
-                Select a sequence, geometric constant, or enter an custom sequence, then choose a coloring mode. The entry row contains up to 100 terms.
-                Prime valuation colors each square by how many times the selected prime divides the wall entry.
+                <span className="number-walls-inline-title">Number Walls:</span>{" "}
+                Select a sequence or enter a custom sequence, then choose a coloring mode.
+                The entry row contains up to 100 terms. Prime valuation colors each square
+                by how many times the selected prime divides the wall entry.
             </p>
 
             <div className="number-walls-layout">
                 <aside className="number-walls-sidebar">
-    <div className="sidebar-heading">Build Your Own</div>
-
-<button
-    type="button"
-    className={selectedId === CUSTOM_SEQUENCE_ID ? "sequence-button custom-sequence-button active" : "sequence-button custom-sequence-button"}
-    onClick={() => setSelectedId(CUSTOM_SEQUENCE_ID)}
->
-    Sequence / Function
-</button>
-
     <div className="sidebar-heading">Famous Sequences</div>
 
-<div className="menu-scroll-box famous-sequences-scroll-box">
+<div className="famous-sequences-list">
     {famousSequences.map((item) => (
         <button
             key={item.id}
@@ -1519,49 +1471,6 @@ overflow: hidden;
     ))}
 </div>
 
-    <div className="sidebar-heading">Geometric Constants</div>
-
-<div className="menu-scroll-box geometric-constants-scroll-box">
-    {geometricConstants.length === 0 ? (
-        <p className="empty-note">
-            Geometric constants will appear here after we add their JSON files.
-        </p>
-    ) : (
-        <div className="constants-grid">
-            {geometricConstants.map((item) => (
-                <button
-                    key={item.id}
-                    className={selectedId === item.id ? "constant-grid-button active" : "constant-grid-button"}
-                    onClick={() => setSelectedId(item.id)}
-                >
-                    <ConstantSymbol item={item} />
-                </button>
-            ))}
-        </div>
-    )}
-</div>
-
-    <div className="sidebar-heading">Constants of Nature</div>
-
-<div className="menu-scroll-box constants-of-nature-scroll-box">
-    {constantsOfNature.length === 0 ? (
-        <p className="empty-note">
-            Constants of Nature will appear here after we add their JSON files.
-        </p>
-    ) : (
-        <div className="constants-grid constants-of-nature-grid">
-            {constantsOfNature.map((item) => (
-                <button
-                    key={item.id}
-                    className={selectedId === item.id ? "constant-grid-button active" : "constant-grid-button"}
-                    onClick={() => setSelectedId(item.id)}
-                >
-                    <ConstantSymbol item={item} />
-                </button>
-            ))}
-        </div>
-    )}
-</div>
 </aside>
 
                 <section className="number-walls-main">
@@ -1635,6 +1544,24 @@ overflow: hidden;
         </div>
     </div>
 )}
+
+                        <div className="build-own-control-group">
+                            <span className="build-own-control-label">
+                                Build Your Own
+                            </span>
+
+                            <button
+                                type="button"
+                                className={
+                                    selectedId === CUSTOM_SEQUENCE_ID
+                                        ? "build-own-control-button active"
+                                        : "build-own-control-button"
+                                }
+                                onClick={() => setSelectedId(CUSTOM_SEQUENCE_ID)}
+                            >
+                                Sequence / Function
+                            </button>
+                        </div>
                     </div>
 
                     {loading || !wallData ? (
@@ -1668,9 +1595,51 @@ setTimeout(() => {
             {customInputMode === CUSTOM_INPUT_MODES.FUNCTION ? "Reset" : "Clear"}
         </button>
     )}
+
+    {selectedId === CUSTOM_SEQUENCE_ID &&
+        customInputMode === CUSTOM_INPUT_MODES.FUNCTION && (
+            <div className="custom-function-title-meta">
+                {!customFunctionState.error && (
+                    <span className="custom-function-title-current">
+                        <InlineMath
+                            math={`a(n)=${customFunctionToLatex(customFunctionText)}`}
+                        />
+                        <span>
+                            Generated for
+                        </span>
+                        <InlineMath math={"n=0"} />
+                        <span>through</span>
+                        <InlineMath
+                            math={String(CUSTOM_FUNCTION_TERM_COUNT - 1)}
+                        />
+                        <span>.</span>
+                    </span>
+                )}
+
+                <span className="custom-function-title-examples">
+                    Examples:{" "}
+                    <InlineMath math={"\\frac{n(n+1)}{2}"} />
+                    {", "}
+                    <InlineMath math={"n^2"} />
+                    {", "}
+                    <InlineMath math={"2n+1"} />
+                    {", "}
+                    <InlineMath
+                        math={"\\left\\lfloor n/2 \\right\\rfloor"}
+                    />
+                </span>
+            </div>
+        )}
 </div>
 
-                            <p className="wall-description">{wallData.description}</p>
+                            {!(
+                                selectedId === CUSTOM_SEQUENCE_ID &&
+                                customInputMode === CUSTOM_INPUT_MODES.FUNCTION
+                            ) && (
+                                <p className="wall-description">
+                                    {wallData.description}
+                                </p>
+                            )}
                             {selectedId === CUSTOM_SEQUENCE_ID && (
     <div className="custom-input-panel">
         <div className="custom-mode-toggle">
@@ -1702,7 +1671,7 @@ setTimeout(() => {
         {customInputMode === CUSTOM_INPUT_MODES.FUNCTION && (
             <>
                 <label className="custom-function-label" htmlFor="custom-function-input">
-                    a(n) =
+                    <InlineMath math={"a(n)="} />
                 </label>
 
                 <input
@@ -1714,13 +1683,9 @@ setTimeout(() => {
                     placeholder="n(n+1)/2"
                 />
 
-                {customFunctionState.error ? (
+                {customFunctionState.error && (
                     <span className="custom-function-error">
                         {customFunctionState.error}
-                    </span>
-                ) : (
-                    <span className="custom-function-help">
-                        Examples: n(n+1)/2, n^2, 2n+1, floor(n/2)
                     </span>
                 )}
             </>
@@ -1728,7 +1693,10 @@ setTimeout(() => {
     </div>
 )}
 
-                            <div className="wall-frame">
+                            <div
+                                ref={wallFrameRef}
+                                className="wall-frame"
+                            >
                                 <table className="wall-table">
                                     <tbody>
                                         {wallData.rows.map((row) => (
