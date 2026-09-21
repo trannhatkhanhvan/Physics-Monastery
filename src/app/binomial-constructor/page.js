@@ -5,7 +5,7 @@ import LayoutWrapper from '@/components/LayoutWrapper';
 import '../globals.css';
 
 export default function BinomialConstructor() {
-  const leftEquationGroupY = 8;
+  const leftEquationGroupY = 9;
   const rightEquationGroupY = -5;
 
   const closureDown = -23;
@@ -152,7 +152,7 @@ export default function BinomialConstructor() {
       <div
   className="partition-content"
   style={{
-    width: "min(1400px, calc(100vw - 220px))",
+    width: "min(1600px, calc(100vw - 100px))",
     maxWidth: "none",
   }}
 >
@@ -220,7 +220,7 @@ export default function BinomialConstructor() {
       src="/equations/box_symbol_equation.svg"
       alt="box symbol equation"
       style={{
-        height: '48px',
+        height: '52px',
         width: 'auto',
         display: 'block',
       }}
@@ -268,7 +268,8 @@ export default function BinomialConstructor() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     24-dimensional unit ball
-  </a>.
+  </a>. In Erlangen terms, the constructor separates each transform into an
+          external action, its boundary data, and a bounded internal action.
           Here, <img
             src="/equations/a_external.svg"
             alt="A_external"
@@ -344,20 +345,6 @@ export default function BinomialConstructor() {
         </p>
 
         <div style={{ height: '0.9rem' }} />
-
-        <p
-          className="equation-description"
-          style={{
-            textAlign: 'center',
-            maxWidth: '1050px',
-            margin: '0 auto',
-          }}
-        >
-          In Erlangen terms, the constructor separates each transform into an
-          external action, its boundary data, and a bounded internal action.
-        </p>
-
-        <div style={{ height: '1.5rem' }} />
 
         <p className="equation-description">
           Every constant of Nature is a transform built from the roots of the {' '}
@@ -509,12 +496,12 @@ export default function BinomialConstructor() {
 
 </div>
 
-        <div style={{ height: '0.5rem' }} />
+        <div style={{ height: '0.0rem' }} />
 
         <div
           ref={closureHostRef}
           style={{
-            marginTop: '1.8rem',
+            marginTop: '1.6rem',
             marginBottom: '1.2rem',
             display: 'flex',
             flexDirection: 'column',
