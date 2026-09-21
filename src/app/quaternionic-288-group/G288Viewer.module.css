@@ -1,0 +1,12144 @@
+.page {
+  min-height: 100vh;
+  padding: 20px clamp(10px, 2.0vw, 12px) 42px;
+  color: #f5f1e8;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
+
+  margin-bottom: 18px;
+}
+
+.header h1 {
+  margin: 0;
+
+  color: #f7f3e9;
+
+  font-size: clamp(30px, 3.15vw, 50px);
+  font-weight: 400;
+  line-height: 1;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.72);
+}
+
+.groupDefinition {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  flex: 0 0 auto;
+
+  color: #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: clamp(15px, 1.4vw, 23px);
+  line-height: 1;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 1px 7px rgba(0, 0, 0, 0.78);
+}
+
+.groupSymbol {
+  font-style: italic;
+}
+
+.groupSymbol sub,
+.groupNumerator sub {
+  font-size: 0.66em;
+  font-style: normal;
+}
+
+.groupEquals {
+  font-style: normal;
+}
+
+.groupFraction {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  text-align: center;
+  vertical-align: middle;
+}
+
+.groupNumerator {
+  padding: 0 8px 3px;
+
+  border-bottom:
+    1.2px solid currentColor;
+
+  font-style: italic;
+}
+
+.groupDenominator {
+  padding: 3px 8px 0;
+
+  font-size: 0.78em;
+  font-style: normal;
+}
+
+.groupTimes {
+  display: inline-block;
+  margin: 0 0.28em;
+
+  font-style: normal;
+}
+
+
+/* ============================================================
+   Main viewer
+   ============================================================ */
+
+.viewerShell {
+  height: auto;
+  min-height: 0;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      rgba(5, 7, 10, 0.55),
+      rgba(5, 7, 10, 0.55)
+    );
+
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  backdrop-filter: blur(2px);
+}
+
+.viewerLayout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr);
+
+  width: 100%;
+  height: auto;
+}
+
+.viewerSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  min-width: 0;
+  padding: 14px 14px 14px 16px;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.13);
+
+  background:
+    rgba(4, 6, 9, 0.18);
+}
+
+.viewerLabel {
+  display: flex;
+  gap: 9px;
+  align-items: baseline;
+
+  color: rgba(245, 241, 232, 0.72);
+  font-size: 13px;
+}
+
+.viewerLabelTitle {
+  color: #f5f1e8;
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   Controller
+   ============================================================ */
+
+.viewerControls {
+  padding: 10px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+
+  background:
+    rgba(7, 9, 12, 0.68);
+}
+
+.controlSection {
+  min-width: 0;
+}
+
+.controlTitle {
+  margin: 0 0 6px 1px;
+
+  color: rgba(247, 243, 233, 0.90);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.elementRow {
+  display: grid;
+  grid-template-columns:
+    31px
+    minmax(0, 1fr)
+    31px;
+
+  gap: 5px;
+  align-items: center;
+}
+
+.powerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  margin-bottom: 6px;
+}
+
+.powerHeader .controlTitle {
+  margin-bottom: 0;
+}
+
+.powerHeaderButtons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.powerPlayButton,
+.powerResetButton {
+  height: 24px !important;
+
+  min-width: 43px;
+  padding: 2px 6px !important;
+
+  font-size: 11px !important;
+}
+
+.powerPlayButton {
+}
+
+.powerControls {
+  display: grid;
+
+  grid-template-columns:
+    28px
+    minmax(0, 1fr)
+    28px;
+
+  gap: 5px;
+  align-items: center;
+
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.viewerControls button,
+.elementSelect {
+  height: 30px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 5px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  color: #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+}
+
+.viewerControls button {
+  padding: 3px 9px;
+  cursor: pointer;
+}
+
+.viewerControls button:hover:not(:disabled),
+.elementSelect:hover {
+  background:
+    rgba(255, 255, 255, 0.14);
+}
+
+.viewerControls button:disabled {
+  opacity: 0.34;
+  cursor: default;
+}
+
+.elementSelect option {
+  background: #151515;
+  color: #f7f3e9;
+}
+
+.iconButton {
+  width: 31px;
+  padding: 0 !important;
+  font-size: 17px !important;
+}
+
+.elementSelectWrap {
+  position: relative;
+
+  min-width: 0;
+  width: 100%;
+}
+
+.elementSelect {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+
+  padding: 3px 28px 3px 9px;
+
+  color: transparent;
+
+  font-size: clamp(10px, 0.9vw, 12px);
+
+  text-overflow: ellipsis;
+}
+
+.elementSelect option {
+  color: #f7f3e9;
+}
+
+.elementSelectValue {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+
+  color: #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 12px;
+  line-height: 1;
+}
+
+.controlDivider {
+  height: 1px;
+  margin: 9px 0;
+
+  background:
+    rgba(255, 255, 255, 0.11);
+}
+
+.powerControls button {
+  flex: 0 0 auto;
+
+  height: 28px;
+  min-width: 0;
+
+  padding-left: 7px;
+  padding-right: 7px;
+
+  font-size: 12px;
+}
+
+/* − */
+.powerControls button:nth-of-type(1) {
+  grid-column: 1;
+
+  width: 28px;
+  padding-left: 0;
+  padding-right: 0;
+
+  font-size: 16px;
+}
+
+/* + */
+.powerControls button:nth-of-type(2) {
+  grid-column: 3;
+
+  width: 28px;
+  padding-left: 0;
+  padding-right: 0;
+
+  font-size: 16px;
+}
+
+
+.powerReadout {
+  display: inline-flex;
+  grid-column: 2;
+
+  align-items: baseline;
+  justify-content: center;
+  gap: 3px;
+
+  min-width: 54px;
+
+  text-align: center;
+  font-size: 18px;
+}
+
+.powerOrder {
+  color: rgba(247, 243, 233, 0.60);
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   Mathematical readout
+   ============================================================ */
+
+.mathValue,
+.mathText {
+  font-family:
+    "STIX Two Math",
+    "Cambria Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: 0.01em;
+
+  font-variant-numeric:
+    lining-nums tabular-nums;
+
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: #f7f3e9;
+}
+
+.mathValue sub,
+.mathValue sup {
+  font-size: 0.72em;
+  font-style: normal;
+  line-height: 0;
+}
+
+.viewerReadout {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 7px;
+
+  background:
+    rgba(7, 9, 12, 0.63);
+}
+
+.readoutBlock,
+.readoutPair {
+  padding: 9px 11px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.09);
+}
+
+.viewerReadout > :last-child {
+  border-bottom: 0;
+}
+
+.readoutBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.readoutPair {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.readoutPair > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.readoutLabel {
+  color: rgba(247, 243, 233, 0.58);
+
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.readoutBlock .mathValue,
+.readoutPair .mathValue {
+  display: block;
+  min-width: 0;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+
+  padding-bottom: 2px;
+
+  font-size: clamp(16px, 1.2vw, 22px);
+  line-height: 1.22;
+
+  scrollbar-width: thin;
+}
+
+
+/* ============================================================
+   Action interpretation
+   ============================================================ */
+
+.actionStatus,
+.actionStatusImportant {
+  margin-top: 0;
+  padding: 8px 10px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+
+  background:
+    rgba(0, 0, 0, 0.20);
+}
+
+.actionStatusImportant {
+  border-color:
+    rgba(255, 255, 255, 0.26);
+
+  background:
+    rgba(255, 255, 255, 0.055);
+}
+
+.statusTitle {
+  margin-bottom: 4px;
+
+  color:
+    rgba(247, 243, 233, 0.52);
+
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+}
+
+.statusEquation {
+  margin-bottom: 6px;
+
+  font-size: clamp(24px, 2vw, 34px);
+  line-height: 1.08;
+}
+
+.actionStatus p,
+.actionStatusImportant p {
+  margin: 0;
+
+  color:
+    rgba(247, 243, 233, 0.68);
+
+  font-size: 12px;
+  line-height: 1.36;
+}
+
+.quotientExplanation {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quotientKernelEquation {
+  display: block;
+
+  color: #f7f3e9;
+
+  font-size:
+    clamp(13px, 0.95vw, 16px);
+}
+
+
+/* ============================================================
+   Tetrahedra
+   ============================================================ */
+
+.tetraStage {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    1px
+    minmax(0, 1fr);
+
+  gap: clamp(12px, 1.7vw, 26px);
+  align-items: center;
+
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+
+  padding: 5px 18px 9px;
+}
+
+.geometryModeHeader {
+  position: relative;
+
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 29px;
+
+  margin-bottom: 1px;
+}
+
+.geometryModeButtons {
+  display: inline-flex;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 6px;
+
+  background:
+    rgba(0, 0, 0, 0.20);
+}
+
+.geometryModeButton,
+.geometryModeButtonActive {
+  min-height: 27px;
+  padding: 4px 9px;
+
+  border: 0;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  background: transparent;
+
+  color:
+    rgba(247, 243, 233, 0.58);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.geometryModeButton:last-child,
+.geometryModeButtonActive:last-child {
+  border-right: 0;
+}
+
+.geometryModeButton:hover {
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color:
+    rgba(247, 243, 233, 0.82);
+}
+
+.geometryModeButtonActive {
+  background:
+    rgba(255, 255, 255, 0.11);
+
+  color: #f7f3e9;
+}
+
+.geometryModeMath {
+  position: absolute;
+  right: 2px;
+
+  color:
+    rgba(247, 243, 233, 0.70);
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+.tetraPanel {
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.stageDivider {
+  width: 1px;
+  height: 72%;
+
+  background:
+    rgba(255, 255, 255, 0.14);
+}
+
+.tetraCard {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.tetraHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.tetraHeading h3 {
+  margin: 0;
+
+  color: #f7f3e9;
+
+  font-size: 21px;
+  font-weight: 400;
+
+  text-shadow:
+    0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.tetraHeading p {
+  margin: 3px 0 0;
+
+  color:
+    rgba(247, 243, 233, 0.66);
+
+  font-size: 13px;
+}
+
+.cycleNotation {
+  flex: 0 0 auto;
+
+  padding: 4px 7px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 5px;
+
+  background:
+    rgba(0, 0, 0, 0.28);
+
+  color:
+    rgba(247, 243, 233, 0.88);
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 13px;
+}
+
+.tetraSvg {
+  display: block;
+
+  width: min(100%, 380px);
+  max-height: 380px;
+
+  margin: -2px auto -8px;
+}
+
+.tetraFace {
+  stroke:
+    rgba(255, 255, 255, 0.18);
+
+  stroke-width: 0.7;
+
+  stroke-linejoin: round;
+}
+
+.tetraEdge {
+  stroke:
+    rgba(245, 241, 232, 0.70);
+
+  stroke-width: 1.35;
+}
+
+.fixedVertex,
+.movedVertex {
+  stroke:
+    rgba(255, 255, 255, 0.82);
+
+  stroke-width: 1.35;
+}
+
+.fixedVertex {
+  fill:
+    rgba(7, 9, 12, 0.88);
+}
+
+.movedVertex {
+  fill:
+    rgba(74, 77, 82, 0.92);
+}
+
+.vertexNumber {
+  pointer-events: none;
+  user-select: none;
+
+  fill: #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 15px;
+}
+
+.vertexImage {
+  fill:
+    rgba(247, 243, 233, 0.70);
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11px;
+}
+
+.permutationRow {
+  display: grid;
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 4px;
+
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.permutationCell {
+  padding: 4px 2px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.22);
+
+  color:
+    rgba(247, 243, 233, 0.78);
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  text-align: center;
+  font-size: 12px;
+}
+
+
+/* ============================================================
+   24-cell action
+   ============================================================ */
+
+.cell24Panel {
+  grid-column: 1 / -1;
+
+  min-width: 0;
+  width: 100%;
+}
+
+.cell24Card {
+  width: 100%;
+}
+
+.cell24Heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+
+  width:
+    min(100%, 650px);
+
+  margin:
+    0 auto -4px;
+}
+
+.cell24Heading h3 {
+  margin: 0;
+
+  color: #f7f3e9;
+
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.cell24Heading p {
+  margin: 3px 0 0;
+
+  color:
+    rgba(247, 243, 233, 0.62);
+
+  font-size: 12px;
+}
+
+.cell24MovedCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  flex: 0 0 auto;
+
+  padding: 5px 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 5px;
+
+  background:
+    rgba(0, 0, 0, 0.28);
+
+  color:
+    rgba(247, 243, 233, 0.84);
+
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.cell24LegendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cell24LegendSwatch {
+  display: inline-block;
+
+  width: 9px;
+  height: 9px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+}
+
+.cell24LegendSwatchMoved {
+  background:
+    rgba(103, 90, 139, 0.96);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.82);
+}
+
+.cell24LegendSwatchFixed {
+  background:
+    rgba(7, 9, 12, 0.94);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.82);
+}
+
+.cell24Svg {
+  display: block;
+
+  width:
+    min(100%, 790px);
+
+  max-height: 430px;
+
+  margin:
+    -5px auto -7px;
+}
+
+.cell24Edge {
+  stroke:
+    rgba(245, 241, 232, 0.31);
+
+  stroke-width: 1;
+}
+
+.cell24FixedVertex circle,
+.cell24MovedVertex circle {
+  stroke:
+    rgba(255, 255, 255, 0.82);
+
+  stroke-width: 1;
+}
+
+.cell24FixedVertex circle {
+  fill:
+    rgba(7, 9, 12, 0.94);
+}
+
+.cell24MovedVertex circle {
+  fill:
+    rgba(103, 90, 139, 0.96);
+}
+
+.cell24FixedVertex text,
+.cell24MovedVertex text {
+  pointer-events: none;
+  user-select: none;
+
+  fill: #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 7px;
+}
+
+.cell24Explanation {
+  width:
+    min(100%, 650px);
+
+  margin:
+    0 auto;
+
+  color:
+    rgba(247, 243, 233, 0.55);
+
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+
+/* ============================================================
+   C3 × C3 quotient
+   ============================================================ */
+
+.quotientGridPanel {
+  grid-column: 1 / -1;
+
+  min-width: 0;
+  width: 100%;
+}
+
+.quotientGridCard {
+  width:
+    min(100%, 840px);
+
+  margin: 0 auto;
+}
+
+.quotientGridHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+.quotientGridHeading h3 {
+  margin: 0;
+
+  color: #f7f3e9;
+
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.quotientGridHeading p {
+  margin: 3px 0 0;
+
+  color:
+    rgba(247, 243, 233, 0.62);
+
+  font-size: 12px;
+}
+
+.quotientGridEquation {
+  color:
+    rgba(247, 243, 233, 0.78);
+
+  font-size: 14px;
+}
+
+.quotientGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+
+  width:
+    min(100%, 510px);
+
+  margin:
+    0 auto 18px;
+}
+
+.quotientGridCell,
+.quotientGridCellActive {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 92px;
+  padding: 10px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 8px;
+
+  background:
+    rgba(0, 0, 0, 0.25);
+
+  color: #f7f3e9;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  cursor: pointer;
+
+  transition:
+    background 120ms ease,
+    border-color 120ms ease,
+    transform 120ms ease;
+}
+
+.quotientGridCell:hover {
+  border-color:
+    rgba(255, 255, 255, 0.28);
+
+  background:
+    rgba(255, 255, 255, 0.06);
+}
+
+.quotientGridCellActive {
+  border-color:
+    rgba(255, 255, 255, 0.58);
+
+  background:
+    rgba(103, 90, 139, 0.34);
+
+  box-shadow:
+    inset 0 0 0 1px
+      rgba(255, 255, 255, 0.10);
+}
+
+.quotientGridCoordinate {
+  line-height: 1;
+}
+
+.quotientGridCoordinateMath {
+  font-size:
+    clamp(18px, 1.5vw, 24px);
+}
+
+.quotientGridCellMeta {
+  margin-top: 7px;
+
+  color:
+    rgba(247, 243, 233, 0.55);
+
+  font-size: 10px;
+}
+
+.quotientKernelTag {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+
+  color:
+    rgba(247, 243, 233, 0.52);
+
+  font-size: 10px;
+}
+
+.quotientGridExplanation {
+  width:
+    min(100%, 620px);
+
+  margin: 0 auto;
+
+  color:
+    rgba(247, 243, 233, 0.60);
+
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+/* ============================================================
+   Inspector
+   ============================================================ */
+
+.lowerGrid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(300px, 0.85fr);
+
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.infoCard {
+  min-height: 206px;
+  padding: 15px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 10px;
+
+  background: rgba(7, 9, 12, 0.70);
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(7px);
+}
+
+.infoCard h2 {
+  margin: 0 0 9px;
+
+  color: #f7f3e9;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.cardNote {
+  margin: -5px 0 8px;
+
+  color: rgba(247, 243, 233, 0.56);
+  font-size: 12px;
+}
+
+.infoList {
+  margin: 0;
+}
+
+.infoList > div {
+  display: grid;
+  grid-template-columns:
+    minmax(145px, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 14px;
+  padding: 4px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.infoList > div:last-child {
+  border-bottom: 0;
+}
+
+.infoList dt {
+  color: rgba(247, 243, 233, 0.58);
+  font-size: 13px;
+}
+
+.infoList dd {
+  margin: 0;
+  color: #f7f3e9;
+  font-size: 14px;
+}
+
+.mathText {
+  font-style: italic;
+}
+
+
+
+.polynomialDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  margin: 0;
+
+  font-family:
+    "STIX Two Math",
+    "Cambria Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  color: #f7f3e9;
+
+  font-style: normal;
+  font-weight: 500;
+}
+
+.polynomialLine {
+  display: grid;
+  grid-template-columns:
+    auto
+    auto
+    minmax(0, 1fr);
+
+  align-items: baseline;
+  column-gap: 9px;
+
+  white-space: nowrap;
+}
+
+.polynomialName,
+.polynomialNameGhost {
+  font-family:
+    "STIX Two Math",
+    "Cambria Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-style: normal;
+}
+
+.polynomialNameGhost {
+  visibility: hidden;
+}
+
+.polynomialName sub {
+  font-size: 0.68em;
+  line-height: 0;
+}
+
+.polynomialEquals {
+  font-style: normal;
+}
+
+.polynomialVariable {
+  font-style: italic;
+}
+
+.polynomialFormula {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding-bottom: 2px;
+
+  font-style: normal;
+  font-size: clamp(17px, 1.5vw, 23px);
+
+  scrollbar-width: thin;
+}
+
+.polynomialSup {
+  position: relative;
+  top: -0.02em;
+
+  margin-left: 0.02em;
+
+  font-size: 0.68em;
+  line-height: 0;
+  vertical-align: super;
+}
+
+
+/* ============================================================
+   Matrix
+   ============================================================ */
+
+.matrixWrap {
+  display: flex;
+  justify-content: center;
+
+  overflow-x: auto;
+  padding: 7px 0 2px;
+}
+
+.matrixBracket {
+  position: relative;
+  padding: 0 12px;
+}
+
+.matrixBracket::before,
+.matrixBracket::after {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+
+  width: 7px;
+
+  content: "";
+}
+
+.matrixBracket::before {
+  left: 0;
+
+  border-left: 1.5px solid #f7f3e9;
+  border-top: 1.5px solid #f7f3e9;
+  border-bottom: 1.5px solid #f7f3e9;
+}
+
+.matrixBracket::after {
+  right: 0;
+
+  border-right: 1.5px solid #f7f3e9;
+  border-top: 1.5px solid #f7f3e9;
+  border-bottom: 1.5px solid #f7f3e9;
+}
+
+.matrix {
+  border-collapse: separate;
+  border-spacing: 15px 7px;
+
+  color: #f7f3e9;
+
+  font-size: 17px;
+  text-align: center;
+}
+
+.matrix td {
+  min-width: 25px;
+}
+
+.footerNote {
+  margin: 12px 0 0;
+
+  color: rgba(247, 243, 233, 0.58);
+
+  text-align: center;
+  font-size: 12px;
+}
+
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/*
+ * Desktop / laptop:
+ * Keep the two-column viewer intact and compress it naturally.
+ */
+@media (max-width: 1100px) {
+  .viewerLayout {
+    grid-template-columns:
+      minmax(0, 1fr);
+  }
+
+  .viewerSidebar {
+    gap: 8px;
+    padding:
+      11px 10px 11px 12px;
+  }
+
+  .viewerControls {
+    padding: 8px;
+  }
+
+  .controlTitle {
+    font-size: 11px;
+  }
+
+  .readoutBlock,
+  .readoutPair {
+    padding: 7px 8px;
+  }
+
+  .actionStatus,
+  .actionStatusImportant {
+    padding: 7px 8px;
+  }
+
+  .tetraStage {
+    gap: 10px;
+    padding: 18px 10px;
+  }
+
+  .tetraHeading {
+    max-width: 300px;
+  }
+
+  .tetraHeading h3 {
+    font-size:
+      clamp(17px, 1.8vw, 21px);
+  }
+
+  .tetraSvg {
+    width:
+      min(100%, 285px);
+  }
+
+  .permutationRow {
+    max-width: 285px;
+  }
+
+  .lowerGrid {
+    grid-template-columns:
+      minmax(0, 1.15fr)
+      minmax(260px, 0.85fr);
+  }
+}
+
+
+/*
+ * Medium screens:
+ * Still keep controls on the left and tetrahedra on the right.
+ */
+@media (max-width: 900px) {
+  .header {
+    gap: 18px;
+  }
+
+  .viewerLayout {
+    grid-template-columns:
+      minmax(0, 1fr);
+  }
+
+  .viewerShell {
+    height: auto;
+    min-height: 0;
+  }
+
+  .viewerLabel {
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .viewerLabelTitle {
+    font-size: 13px;
+  }
+
+  .elementRow {
+    grid-template-columns:
+      28px
+      minmax(0, 1fr)
+      28px;
+  }
+
+  .iconButton {
+    width: 28px;
+  }
+
+  .viewerControls button,
+  .elementSelect {
+    height: 28px;
+  }
+
+  .powerReadout {
+    min-width: 48px;
+    font-size: 13px;
+  }
+
+  .powerControls button {
+    min-width: 26px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 11px;
+  }
+
+  .readoutLabel,
+  .statusTitle {
+    font-size: 8px;
+  }
+
+  .actionStatus p,
+  .actionStatusImportant p {
+    font-size: 10px;
+  }
+
+  .tetraStage {
+    padding:
+      16px 6px;
+  }
+
+  .tetraHeading {
+    gap: 7px;
+  }
+
+  .tetraHeading p {
+    font-size: 11px;
+  }
+
+  .cycleNotation {
+    padding: 3px 5px;
+    font-size: 11px;
+  }
+
+  .tetraSvg {
+    width:
+      min(100%, 250px);
+  }
+
+  .permutationRow {
+    max-width: 250px;
+  }
+
+  .permutationCell {
+    font-size: 10px;
+  }
+
+  .lowerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/*
+ * Only now do we stack the viewer.
+ */
+@media (max-width: 760px) {
+  .viewerShell {
+    height: auto;
+    min-height: 0;
+  }
+
+  .viewerLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .viewerSidebar {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    gap: 10px 12px;
+
+    border-right: 0;
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.13);
+  }
+
+  .viewerLabel {
+    grid-column: 1 / -1;
+  }
+
+  .actionStatus,
+  .actionStatusImportant {
+    margin-top: 0;
+  }
+
+  .tetraStage {
+    min-height: 410px;
+  }
+}
+
+
+/*
+ * Header stacks only on genuinely narrow screens.
+ */
+@media (max-width: 700px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .header h1 {
+    white-space: normal;
+  }
+
+  .groupDefinition {
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 560px) {
+  .page {
+    padding:
+      16px 8px 32px;
+  }
+
+  .viewerSidebar {
+    display: flex;
+  }
+
+  .viewerShell {
+    min-height: 1080px;
+  }
+
+  .tetraStage {
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 22px;
+
+    padding: 16px 8px;
+  }
+
+  .stageDivider {
+    display: none;
+  }
+
+  .infoList > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+/* ============================================================
+   Algebraic control room
+   Element control + classification + matrix in one lower band.
+   ============================================================ */
+
+.lowerGrid {
+  grid-template-columns:
+    minmax(280px, 0.30fr)
+    minmax(0, 0.42fr)
+    minmax(250px, 0.28fr);
+
+  align-items: stretch;
+}
+
+.controlRoomCard,
+.infoCard {
+  min-width: 0;
+  height: 100%;
+}
+
+.controlRoomCard {
+  padding: 15px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 10px;
+  border-right:
+    1px solid rgba(255, 255, 255, 0.17);
+
+  background:
+    rgba(7, 9, 12, 0.70);
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.controlRoomHeading {
+  margin: 0 0 10px;
+
+  color: #f7f3e9;
+
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.controlRoomCard .viewerLabel {
+  margin-bottom: 2px;
+}
+
+
+/* Keep the matrix centered in its right-hand panel. */
+.matrixWrap {
+  flex: 1 1 auto;
+  align-items: center;
+}
+
+
+/* Desktop: three cards in one horizontal algebraic band. */
+@media (min-width: 1001px) {
+  .lowerGrid {
+    grid-template-columns:
+      minmax(280px, 0.30fr)
+      minmax(0, 0.42fr)
+      minmax(250px, 0.28fr);
+  }
+}
+
+
+/*
+ * Smaller laptop/tablet:
+ * controller spans the row, inspectors remain together below.
+ */
+@media (min-width: 561px) and (max-width: 1000px) {
+  .lowerGrid {
+    grid-template-columns:
+      minmax(0, 1.6fr)
+      minmax(240px, 1fr);
+  }
+
+  .controlRoomCard {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* Narrow mobile: stack all three. */
+@media (max-width: 560px) {
+  .lowerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================
+   True KaTeX mathematics
+   ============================================================ */
+
+.katexMath {
+  color: #f7f3e9;
+  font-style: normal;
+}
+
+.katexMath :global(.katex) {
+  color: inherit;
+  font-size: 1em;
+}
+
+.polynomialDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  margin: 0;
+  color: #f7f3e9;
+}
+
+.polynomialLatexLine {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  min-width: 0;
+  padding-bottom: 2px;
+
+  white-space: nowrap;
+
+  font-size: clamp(14px, 1.05vw, 18px);
+
+  scrollbar-width: thin;
+}
+
+
+
+/* G288 full-page KaTeX pass */
+
+.headerKatex,
+.controlKatex,
+.readoutKatex,
+.labelKatex,
+.actionKatex,
+.inlineKatex,
+.classificationKatex,
+.matrixKatex {
+  color: inherit;
+  font-style: normal;
+}
+
+.headerKatex :global(.katex),
+.controlKatex :global(.katex),
+.readoutKatex :global(.katex),
+.labelKatex :global(.katex),
+.actionKatex :global(.katex),
+.inlineKatex :global(.katex),
+.classificationKatex :global(.katex),
+.matrixKatex :global(.katex) {
+  color: inherit;
+}
+
+.headerKatex {
+  font-size: clamp(17px, 1.55vw, 24px);
+}
+
+.controlKatex {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.readoutKatex {
+  display: block;
+
+  min-width: 0;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding-bottom: 2px;
+
+  white-space: nowrap;
+
+  font-size: clamp(13px, 0.9vw, 16px);
+
+  scrollbar-width: thin;
+}
+
+.labelKatex {
+  font-size: 13px;
+}
+
+.actionKatex {
+  font-size: clamp(17px, 1.25vw, 22px);
+}
+
+.inlineKatex {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.classificationKatex {
+  font-size: clamp(14px, 1vw, 17px);
+}
+
+.matrixKatex {
+  display: block;
+
+  font-size:
+    clamp(16px, 1.15vw, 20px);
+
+  line-height: 1.2;
+}
+
+.matrixWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow-x: auto;
+
+  min-width: 0;
+  padding: 12px 0;
+
+  scrollbar-width: thin;
+}
+
+
+/* G288 KaTeX regular weight */
+
+.katexMath :global(.katex),
+.headerKatex :global(.katex),
+.controlKatex :global(.katex),
+.readoutKatex :global(.katex),
+.labelKatex :global(.katex),
+.actionKatex :global(.katex),
+.inlineKatex :global(.katex),
+.classificationKatex :global(.katex),
+.matrixKatex :global(.katex) {
+  font-weight: 400;
+}
+
+.katexMath :global(.katex *),
+.headerKatex :global(.katex *),
+.controlKatex :global(.katex *),
+.readoutKatex :global(.katex *),
+.labelKatex :global(.katex *),
+.actionKatex :global(.katex *),
+.inlineKatex :global(.katex *),
+.classificationKatex :global(.katex *),
+.matrixKatex :global(.katex *) {
+  font-weight: 400;
+}
+
+/* ============================================================
+   Exact paired opposite-edge orbit
+   ============================================================ */
+
+.quotientOrbitSection {
+  width: min(100%, 620px);
+
+  margin:
+    5px auto 18px;
+
+  padding-top: 14px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.09);
+}
+
+.quotientOrbitHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-bottom: 8px;
+}
+
+.quotientOrbitTitle {
+  color: #f7f3e9;
+
+  font-size: 15px;
+}
+
+.quotientOrbitSubtitle {
+  margin-top: 3px;
+
+  color:
+    rgba(247, 243, 233, 0.52);
+
+  font-size: 10px;
+}
+
+.quotientOrbitStats {
+  display: inline-flex;
+  gap: 12px;
+
+  flex: 0 0 auto;
+
+  color:
+    rgba(247, 243, 233, 0.66);
+
+  font-size: 11px;
+}
+
+.quotientOrbitStats strong {
+  color: #f7f3e9;
+
+  font-weight: 400;
+}
+
+.quotientTetraPair {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  width: min(100%, 520px);
+
+  margin: 0 auto;
+}
+
+.quotientTetraCard {
+  min-width: 0;
+
+  padding: 7px 10px 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 7px;
+
+  background:
+    rgba(0, 0, 0, 0.16);
+}
+
+.quotientTetraTitle {
+  color:
+    rgba(247, 243, 233, 0.76);
+
+  text-align: center;
+  font-size: 11px;
+}
+
+.quotientTetraSvg {
+  display: block;
+
+  width: 100%;
+  height: 118px;
+
+  margin: -4px auto -8px;
+}
+
+.quotientTetraEdge {
+  stroke:
+    rgba(247, 243, 233, 0.25);
+
+  stroke-width: 1.1;
+}
+
+.quotientTetraEdgeActive {
+  stroke: #8d7bd6;
+
+  stroke-width: 4.5;
+
+  stroke-linecap: round;
+
+  filter:
+    drop-shadow(
+      0 0 2px
+      rgba(141, 123, 214, 0.65)
+    );
+}
+
+.quotientTetraVertex {
+  fill:
+    rgba(7, 9, 12, 0.94);
+
+  stroke:
+    rgba(255, 255, 255, 0.72);
+
+  stroke-width: 1;
+}
+
+.quotientTetraVertexNumber {
+  fill: #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11px;
+}
+
+.quotientPairReadout {
+  color:
+    rgba(247, 243, 233, 0.62);
+
+  text-align: center;
+  font-size: 10px;
+}
+
+.quotientStabilizerNote {
+  margin-top: 8px;
+
+  color:
+    rgba(247, 243, 233, 0.57);
+
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+  .quotientTetraPair {
+    grid-template-columns: 1fr;
+  }
+
+  .quotientOrbitHeading {
+    flex-direction: column;
+  }
+}
+
+
+/* ============================================================
+   Paired-state transport + exact stabilizer
+   ============================================================ */
+
+.quotientStateTransport {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  width: min(100%, 560px);
+
+  margin:
+    2px auto 10px;
+
+  padding: 6px 9px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 6px;
+
+  background:
+    rgba(0, 0, 0, 0.14);
+}
+
+.quotientStateTransportLabel {
+  color:
+    rgba(247, 243, 233, 0.46);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+}
+
+.quotientStateTransportValue {
+  color:
+    rgba(247, 243, 233, 0.88);
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11px;
+}
+
+.quotientStateTransportArrow {
+  margin:
+    0 5px;
+
+  color:
+    rgba(247, 243, 233, 0.46);
+
+  font-size: 15px;
+}
+
+.quotientStabilizerDetails {
+  width:
+    min(100%, 560px);
+
+  margin:
+    9px auto 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 6px;
+
+  background:
+    rgba(0, 0, 0, 0.18);
+}
+
+.quotientStabilizerSummary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding:
+    7px 9px;
+
+  color:
+    rgba(247, 243, 233, 0.67);
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  list-style: none;
+}
+
+.quotientStabilizerSummary::-webkit-details-marker {
+  display: none;
+}
+
+.quotientStabilizerSummary::before {
+  content: "▸";
+
+  color:
+    rgba(247, 243, 233, 0.42);
+
+  transition:
+    transform 120ms ease;
+}
+
+.quotientStabilizerDetails[open]
+  .quotientStabilizerSummary::before {
+  transform:
+    rotate(90deg);
+}
+
+.quotientStabilizerSummary strong {
+  color: #f7f3e9;
+
+  font-weight: 400;
+}
+
+.quotientStabilizerK32 {
+  margin-left: auto;
+
+  color:
+    rgba(247, 243, 233, 0.56);
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+}
+
+.quotientStabilizerElements {
+  display: grid;
+
+  grid-template-columns:
+    repeat(8, minmax(0, 1fr));
+
+  gap: 4px;
+
+  padding:
+    0 8px 8px;
+}
+
+.quotientStabilizerElement,
+.quotientStabilizerElementActive {
+  min-width: 0;
+
+  padding:
+    4px 2px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.22);
+
+  color:
+    rgba(247, 243, 233, 0.64);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.quotientStabilizerElement:hover {
+  border-color:
+    rgba(255, 255, 255, 0.24);
+
+  color:
+    rgba(247, 243, 233, 0.88);
+}
+
+.quotientStabilizerElementActive {
+  border-color:
+    rgba(255, 255, 255, 0.54);
+
+  background:
+    rgba(103, 90, 139, 0.38);
+
+  color: #f7f3e9;
+}
+
+@media (max-width: 760px) {
+  .quotientStabilizerElements {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+}
+
+
+/* ============================================================
+   Orbit type explorer
+   ============================================================ */
+
+.orbitTypeSelector {
+  display: flex;
+  justify-content: center;
+
+  width: min(100%, 510px);
+
+  margin:
+    0 auto 12px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 6px;
+}
+
+.orbitTypeButton,
+.orbitTypeButtonActive {
+  flex: 1 1 0;
+
+  min-height: 28px;
+  padding: 4px 8px;
+
+  border: 0;
+  border-right:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    rgba(0, 0, 0, 0.18);
+
+  color:
+    rgba(247, 243, 233, 0.58);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.orbitTypeButton:last-child,
+.orbitTypeButtonActive:last-child {
+  border-right: 0;
+}
+
+.orbitTypeButtonActive {
+  background:
+    rgba(103, 90, 139, 0.38);
+
+  color: #f7f3e9;
+}
+
+.orbitStateGrid4,
+.orbitStateGrid6 {
+  display: grid;
+
+  gap: 5px;
+
+  width: min(100%, 620px);
+
+  margin:
+    0 auto 14px;
+}
+
+.orbitStateGrid4 {
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+}
+
+.orbitStateGrid6 {
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+}
+
+.orbitStateCell,
+.orbitStateCellActive {
+  min-width: 0;
+
+  padding:
+    7px 3px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 5px;
+
+  background:
+    rgba(0, 0, 0, 0.20);
+
+  color:
+    rgba(247, 243, 233, 0.70);
+
+  font-family:
+    "Cambria Math",
+    "Times New Roman",
+    serif;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.orbitStateCell small,
+.orbitStateCellActive small {
+  display: block;
+
+  margin-top: 3px;
+
+  color:
+    rgba(247, 243, 233, 0.40);
+
+  font-size: 8px;
+}
+
+.orbitStateCellActive {
+  border-color:
+    rgba(255, 255, 255, 0.52);
+
+  background:
+    rgba(103, 90, 139, 0.38);
+
+  color: #f7f3e9;
+}
+
+.quotientTetraVertexActive {
+  fill:
+    rgba(103, 90, 139, 0.96);
+
+  stroke:
+    rgba(255, 255, 255, 0.90);
+
+  stroke-width: 1.5;
+}
+
+@media (max-width: 760px) {
+  .orbitStateGrid6 {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+/* ============================================================
+   Cyclic orbit
+   ============================================================ */
+
+.cyclicOrbitPanel {
+  grid-column: 1 / -1;
+
+  min-width: 0;
+  width: 100%;
+}
+
+.cyclicOrbitCard {
+  width:
+    min(100%, 880px);
+
+  margin: 0 auto;
+}
+
+.cyclicOrbitHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 8px;
+}
+
+.cyclicOrbitHeading h3 {
+  margin: 0;
+
+  color: #f7f3e9;
+
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.cyclicOrbitHeading p {
+  margin:
+    3px 0 0;
+
+  color:
+    rgba(247, 243, 233, 0.56);
+
+  font-size: 11px;
+}
+
+.cyclicOrbitOrder {
+  padding:
+    5px 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 5px;
+
+  background:
+    rgba(0, 0, 0, 0.20);
+
+  color:
+    rgba(247, 243, 233, 0.76);
+
+  font-size: 12px;
+}
+
+.c12Navigator {
+  display: grid;
+
+  grid-template-columns:
+    30px 1fr 30px;
+
+  align-items: center;
+
+  gap: 7px;
+
+  width:
+    min(100%, 360px);
+
+  margin:
+    0 auto 8px;
+}
+
+.c12Navigator button {
+  height: 28px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 5px;
+
+  background:
+    rgba(0, 0, 0, 0.20);
+
+  color: #f7f3e9;
+
+  cursor: pointer;
+}
+
+.c12Navigator div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color:
+    rgba(247, 243, 233, 0.72);
+
+  font-size: 11px;
+}
+
+.c12Navigator strong {
+  color: #f7f3e9;
+
+  font-weight: 400;
+}
+
+.c12Navigator span {
+  margin-top: 1px;
+
+  color:
+    rgba(247, 243, 233, 0.43);
+
+  font-size: 9px;
+}
+
+.cyclicOrbitStage {
+  position: relative;
+
+  width:
+    min(72vw, 520px);
+
+  aspect-ratio: 1;
+
+  margin:
+    -2px auto -4px;
+}
+
+.cyclicOrbitGuide {
+  position: absolute;
+
+  inset: 11%;
+
+  border:
+    1px solid rgba(247, 243, 233, 0.18);
+
+  border-radius: 50%;
+
+  box-shadow:
+    inset 0 0 28px
+      rgba(255, 255, 255, 0.015);
+}
+
+.cyclicNode,
+.cyclicNodePrimitive,
+.cyclicNodeActive {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 54px;
+  height: 54px;
+
+  transform:
+    translate(-50%, -50%);
+
+  padding: 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 50%;
+
+  background:
+    rgba(5, 7, 10, 0.92);
+
+  color:
+    rgba(247, 243, 233, 0.76);
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  cursor: pointer;
+
+  transition:
+    border-color 120ms ease,
+    background 120ms ease,
+    transform 120ms ease;
+}
+
+.cyclicNode:hover,
+.cyclicNodePrimitive:hover {
+  border-color:
+    rgba(255, 255, 255, 0.38);
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.05);
+}
+
+.cyclicNodePrimitive {
+  border-color:
+    rgba(141, 123, 214, 0.64);
+
+  background:
+    rgba(58, 49, 82, 0.88);
+}
+
+.cyclicNodeActive {
+  border-color:
+    rgba(255, 255, 255, 0.82);
+
+  background:
+    rgba(103, 90, 139, 0.96);
+
+  box-shadow:
+    0 0 0 2px
+      rgba(141, 123, 214, 0.22),
+    0 0 12px
+      rgba(141, 123, 214, 0.24);
+
+  color: #fff;
+}
+
+.cyclicNodePower {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.cyclicNodeSpecial {
+  margin-top: 3px;
+
+  color:
+    rgba(247, 243, 233, 0.58);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 7px;
+}
+
+.cyclicOrbitCenter {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform:
+    translate(-50%, -50%);
+
+  pointer-events: none;
+}
+
+.cyclicOrbitCenterMath {
+  color: #f7f3e9;
+
+  font-size:
+    clamp(18px, 1.4vw, 23px);
+}
+
+.cyclicOrbitCenter span {
+  margin-top: 4px;
+
+  color:
+    rgba(247, 243, 233, 0.42);
+
+  font-size: 9px;
+}
+
+.cyclicOrbitExplanation {
+  width:
+    min(100%, 560px);
+
+  margin: 0 auto;
+
+  color:
+    rgba(247, 243, 233, 0.58);
+
+  text-align: center;
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .cyclicOrbitStage {
+    width:
+      min(88vw, 390px);
+  }
+
+  .cyclicNode,
+  .cyclicNodePrimitive,
+  .cyclicNodeActive {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+
+/* ============================================================
+   Collective C12 subgroup overview
+   ============================================================ */
+
+.c12Overview {
+  width: min(100%, 540px);
+
+  margin:
+    0 auto 8px;
+}
+
+.c12OverviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 6px;
+}
+
+.c12OverviewTitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.c12OverviewTitle strong {
+  color:
+    rgba(247, 243, 233, 0.84);
+
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.c12OverviewTitle span {
+  margin-top: 1px;
+
+  color:
+    rgba(247, 243, 233, 0.43);
+
+  font-size: 9px;
+}
+
+.c12OverviewNavigator {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  flex: 0 0 auto;
+}
+
+.c12OverviewNavigator button {
+  width: 25px;
+  height: 25px;
+
+  padding: 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.11);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.22);
+
+  color: #f7f3e9;
+
+  cursor: pointer;
+}
+
+.c12OverviewNavigator span {
+  min-width: 40px;
+
+  color:
+    rgba(247, 243, 233, 0.67);
+
+  text-align: center;
+  font-size: 10px;
+}
+
+.c12SubgroupGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(8, minmax(0, 1fr));
+
+  gap: 4px;
+}
+
+.c12SubgroupCell,
+.c12SubgroupCellActive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-width: 0;
+  height: 30px;
+
+  padding:
+    3px 6px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.19);
+
+  color:
+    rgba(247, 243, 233, 0.55);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  cursor: pointer;
+}
+
+.c12SubgroupCell:hover {
+  border-color:
+    rgba(255, 255, 255, 0.24);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+}
+
+.c12SubgroupCellActive {
+  border-color:
+    rgba(255, 255, 255, 0.58);
+
+  background:
+    rgba(103, 90, 139, 0.42);
+
+  color: #f7f3e9;
+
+  box-shadow:
+    inset 0 0 0 1px
+      rgba(255, 255, 255, 0.08);
+}
+
+.c12SubgroupNumber {
+  font-size: 9px;
+  line-height: 1;
+}
+
+.c12PrimitiveDots {
+  display: inline-flex;
+
+  gap: 2px;
+}
+
+.c12PrimitiveDots i {
+  display: block;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(141, 123, 214, 0.74);
+}
+
+.c12SubgroupCellActive
+  .c12PrimitiveDots i {
+  background:
+    rgba(247, 243, 233, 0.92);
+}
+
+@media (max-width: 760px) {
+  .c12SubgroupGrid {
+    grid-template-columns:
+      repeat(6, minmax(0, 1fr));
+  }
+
+  .c12OverviewHeader {
+    align-items: flex-start;
+  }
+}
+
+
+/* ============================================================
+   32-core
+   ============================================================ */
+
+.core32Panel {
+  grid-column: 1 / -1;
+
+  min-width: 0;
+  width: 100%;
+}
+
+.core32Card {
+  width:
+    min(100%, 900px);
+
+  margin: 0 auto;
+}
+
+.core32Heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 9px;
+}
+
+.core32Heading h3 {
+  margin: 0;
+
+  color: #f7f3e9;
+
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.core32Heading p {
+  margin:
+    3px 0 0;
+
+  color:
+    rgba(247, 243, 233, 0.55);
+
+  font-size: 11px;
+}
+
+.core32MainEquation {
+  color:
+    rgba(247, 243, 233, 0.82);
+
+  font-size:
+    clamp(16px, 1.2vw, 20px);
+}
+
+.core32OutsideNotice {
+  width:
+    min(100%, 600px);
+
+  margin:
+    0 auto 8px;
+
+  padding:
+    6px 9px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 5px;
+
+  background:
+    rgba(0, 0, 0, 0.17);
+
+  color:
+    rgba(247, 243, 233, 0.54);
+
+  text-align: center;
+  font-size: 10px;
+}
+
+.core32Summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 7px;
+
+  width:
+    min(100%, 560px);
+
+  margin:
+    0 auto 10px;
+}
+
+.core32SummaryCell {
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr;
+
+  align-items: baseline;
+
+  column-gap: 7px;
+
+  padding:
+    7px 9px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 6px;
+
+  background:
+    rgba(0, 0, 0, 0.18);
+}
+
+.core32SummaryCell strong {
+  grid-row:
+    1 / 3;
+
+  color: #f7f3e9;
+
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.core32SummaryCell span {
+  color:
+    rgba(247, 243, 233, 0.73);
+
+  font-size: 11px;
+}
+
+.core32SummaryCell small {
+  color:
+    rgba(247, 243, 233, 0.40);
+
+  font-size: 9px;
+}
+
+.core32Section {
+  width:
+    min(100%, 650px);
+
+  margin:
+    0 auto 9px;
+
+  padding-top: 8px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.core32SectionHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 6px;
+
+  color:
+    rgba(247, 243, 233, 0.76);
+
+  font-size: 11px;
+}
+
+.coreCenterRow {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 6px;
+
+  width:
+    min(100%, 250px);
+
+  margin: 0 auto;
+}
+
+.coreCouplingGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 5px;
+}
+
+.coreComplexGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap: 5px;
+}
+
+.coreDirectionCell {
+  min-width: 0;
+
+  padding:
+    6px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 5px;
+
+  background:
+    rgba(0, 0, 0, 0.17);
+}
+
+.coreDirectionLabel {
+  min-height: 19px;
+
+  color:
+    rgba(247, 243, 233, 0.81);
+
+  text-align: center;
+  font-size: 11px;
+}
+
+.coreDirectionMath {
+  font-size: 13px;
+}
+
+.coreDirectionSubLabel {
+  margin-top: -2px;
+  margin-bottom: 4px;
+
+  color:
+    rgba(247, 243, 233, 0.35);
+
+  text-align: center;
+  font-size: 8px;
+}
+
+.coreDirectionElements {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 3px;
+}
+
+.coreElementButton,
+.coreElementButtonActive {
+  min-width: 0;
+
+  padding:
+    4px 3px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.22);
+
+  color:
+    rgba(247, 243, 233, 0.58);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+.coreElementButton:hover {
+  border-color:
+    rgba(255, 255, 255, 0.24);
+
+  color:
+    rgba(247, 243, 233, 0.86);
+}
+
+.coreElementButtonActive {
+  border-color:
+    rgba(255, 255, 255, 0.60);
+
+  background:
+    rgba(103, 90, 139, 0.44);
+
+  color: #f7f3e9;
+}
+
+.coreElementMath {
+  display: block;
+
+  font-size: 13px;
+}
+
+.coreElementButton small,
+.coreElementButtonActive small {
+  display: block;
+
+  margin-top: 1px;
+
+  color:
+    rgba(247, 243, 233, 0.42);
+
+  font-size: 8px;
+}
+
+.core32Explanation {
+  width:
+    min(100%, 640px);
+
+  margin:
+    7px auto 0;
+
+  color:
+    rgba(247, 243, 233, 0.51);
+
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+  .coreComplexGrid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .core32Summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================
+   Finite geometry — projective 15-point collapse
+   ============================================================ */
+
+.finiteGeometryPanel {
+  grid-column: 1 / -1;
+
+  min-width: 0;
+  width: 100%;
+}
+
+.finiteGeometryCard {
+  width:
+    min(100%, 920px);
+
+  margin: 0 auto;
+}
+
+.finiteGeometryHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 8px;
+}
+
+.finiteGeometryHeading h3 {
+  margin: 0;
+
+  color: #f7f3e9;
+
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.finiteGeometryHeading p {
+  margin:
+    3px 0 0;
+
+  color:
+    rgba(247, 243, 233, 0.55);
+
+  font-size: 11px;
+}
+
+.finiteGeometryEquation {
+  color:
+    rgba(247, 243, 233, 0.84);
+
+  font-size:
+    clamp(17px, 1.25vw, 21px);
+}
+
+.projectiveCollapse {
+  display: grid;
+
+  grid-template-columns:
+    auto
+    24px
+    auto
+    24px
+    auto;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  width:
+    min(100%, 620px);
+
+  margin:
+    0 auto 9px;
+
+  padding:
+    7px 10px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 6px;
+
+  background:
+    rgba(0, 0, 0, 0.17);
+}
+
+.projectiveCollapseSource,
+.projectiveCollapseTarget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color:
+    rgba(247, 243, 233, 0.78);
+
+  font-size: 12px;
+}
+
+.projectiveCollapseSource span,
+.projectiveCollapseTarget span {
+  margin-top: 1px;
+
+  color:
+    rgba(247, 243, 233, 0.42);
+
+  font-size: 8px;
+}
+
+.projectiveCollapseTarget strong {
+  color: #f7f3e9;
+
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.projectiveCollapseCenter {
+  color:
+    rgba(247, 243, 233, 0.52);
+
+  text-align: center;
+  font-size: 9px;
+}
+
+.projectiveCollapseArrow {
+  color:
+    rgba(247, 243, 233, 0.37);
+
+  text-align: center;
+  font-size: 15px;
+}
+
+.projectiveZeroRow {
+  display: grid;
+
+  grid-template-columns:
+    auto
+    auto
+    auto;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  width:
+    min(100%, 560px);
+
+  margin:
+    0 auto 9px;
+
+  color:
+    rgba(247, 243, 233, 0.54);
+
+  font-size: 9px;
+}
+
+.projectiveZeroPair {
+  display: inline-flex;
+
+  gap: 4px;
+}
+
+.projectiveZeroButton,
+.projectiveZeroButtonActive {
+  min-width: 34px;
+
+  padding:
+    3px 6px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.20);
+
+  color:
+    rgba(247, 243, 233, 0.60);
+
+  font-family:
+    "Cambria Math",
+    "Times New Roman",
+    serif;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.projectiveZeroButtonActive {
+  border-color:
+    rgba(255, 255, 255, 0.58);
+
+  background:
+    rgba(103, 90, 139, 0.42);
+
+  color: #f7f3e9;
+}
+
+.projectivePointSection {
+  width:
+    min(100%, 650px);
+
+  margin:
+    0 auto 9px;
+
+  padding-top: 8px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.projectivePointSectionHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 6px;
+}
+
+.projectivePointSectionHeading > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectivePointSectionHeading strong {
+  color:
+    rgba(247, 243, 233, 0.78);
+
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.projectivePointSectionHeading span {
+  margin-top: 1px;
+
+  color:
+    rgba(247, 243, 233, 0.39);
+
+  font-size: 8px;
+}
+
+.projectiveCouplingGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 5px;
+}
+
+.projectiveComplexGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap: 5px;
+}
+
+.projectivePointCoupling,
+.projectivePointCouplingActive,
+.projectivePointComplex,
+.projectivePointComplexActive {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 48px;
+
+  padding:
+    5px 4px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 6px;
+
+  background:
+    rgba(0, 0, 0, 0.18);
+
+  color:
+    rgba(247, 243, 233, 0.70);
+
+  cursor: pointer;
+}
+
+.projectivePointCoupling:hover,
+.projectivePointComplex:hover {
+  border-color:
+    rgba(255, 255, 255, 0.25);
+}
+
+.projectivePointCouplingActive,
+.projectivePointComplexActive {
+  border-color:
+    rgba(255, 255, 255, 0.60);
+
+  background:
+    rgba(103, 90, 139, 0.43);
+
+  color: #f7f3e9;
+}
+
+.projectivePointCoupling {
+  background:
+    rgba(0, 0, 0, 0.18);
+}
+
+.projectivePointComplex {
+  background:
+    rgba(54, 47, 75, 0.18);
+}
+
+.projectivePointNumber {
+  position: absolute;
+
+  top: 4px;
+  left: 5px;
+
+  color:
+    rgba(247, 243, 233, 0.30);
+
+  font-size: 7px;
+}
+
+.projectivePointMath {
+  font-size: 12px;
+}
+
+.projectivePointCoupling small,
+.projectivePointCouplingActive small,
+.projectivePointComplex small,
+.projectivePointComplexActive small {
+  margin-top: 3px;
+
+  color:
+    rgba(247, 243, 233, 0.36);
+
+  font-size: 7px;
+}
+
+.projectiveSplitSummary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  width:
+    min(100%, 500px);
+
+  margin:
+    7px auto 5px;
+
+  padding:
+    7px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 6px;
+
+  background:
+    rgba(0, 0, 0, 0.14);
+}
+
+.projectiveSplitSummary > div {
+  display: flex;
+  align-items: baseline;
+
+  gap: 5px;
+}
+
+.projectiveSplitSummary strong {
+  color: #f7f3e9;
+
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.projectiveSplitSummary span {
+  color:
+    rgba(247, 243, 233, 0.46);
+
+  font-size: 9px;
+}
+
+.projectivePlus,
+.projectiveEquals {
+  color:
+    rgba(247, 243, 233, 0.34) !important;
+
+  font-size: 14px !important;
+}
+
+.finiteGeometryExplanation {
+  width:
+    min(100%, 640px);
+
+  margin:
+    5px auto 0;
+
+  color:
+    rgba(247, 243, 233, 0.52);
+
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+  .projectiveComplexGrid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .projectiveCollapse {
+    grid-template-columns: 1fr;
+
+    gap: 3px;
+  }
+
+  .projectiveCollapseArrow {
+    transform:
+      rotate(90deg);
+  }
+}
+
+
+/* ============================================================
+   Exact doily incidence
+   ============================================================ */
+
+.finiteGeometryViewTabs {
+  display: flex;
+
+  width:
+    min(84%, 455px);
+
+  margin:
+    0 auto 9px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 5px;
+
+  background:
+    rgba(0, 0, 0, 0.18);
+}
+
+.finiteGeometryViewTab,
+.finiteGeometryViewTabActive {
+  flex: 1 1 0;
+
+  min-height: 27px;
+  padding: 4px 8px;
+
+  border: 0;
+  border-right:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    transparent;
+
+  color:
+    rgba(247, 243, 233, 0.52);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.finiteGeometryViewTab:last-child,
+.finiteGeometryViewTabActive:last-child {
+  border-right: 0;
+}
+
+.finiteGeometryViewTabActive {
+  background:
+    rgba(103, 90, 139, 0.38);
+
+  color: #f7f3e9;
+}
+
+.doilyWrap {
+  width:
+    min(100%, 690px);
+
+  margin: 0 auto;
+}
+
+.doilyStats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 4px;
+
+  margin-bottom: 4px;
+}
+
+.doilyStats span {
+  padding:
+    3px 7px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.15);
+
+  color:
+    rgba(247, 243, 233, 0.48);
+
+  font-size: 9px;
+}
+
+.doilyStats strong {
+  color:
+    rgba(247, 243, 233, 0.88);
+
+  font-weight: 400;
+}
+
+.doilySvg {
+  display: block;
+
+  width:
+    min(100%, 590px);
+
+  height: auto;
+
+  margin:
+    -4px auto -5px;
+}
+
+.doilyIncidence {
+  stroke:
+    rgba(247, 243, 233, 0.10);
+
+  stroke-width: 0.8;
+}
+
+.doilyIncidenceActive {
+  stroke:
+    rgba(141, 123, 214, 0.72);
+
+  stroke-width: 1.8;
+}
+
+.doilyLineNode,
+.doilyLineNodeActive {
+  fill:
+    rgba(7, 9, 12, 0.96);
+
+  stroke:
+    rgba(255, 255, 255, 0.24);
+
+  stroke-width: 1;
+}
+
+.doilyLineNodeActive {
+  fill:
+    rgba(103, 90, 139, 0.82);
+
+  stroke:
+    rgba(255, 255, 255, 0.72);
+}
+
+.doilyLineNumber {
+  pointer-events: none;
+
+  fill:
+    rgba(247, 243, 233, 0.68);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 7px;
+}
+
+.doilyPointGroup {
+  cursor: pointer;
+}
+
+.doilyPointCoupling,
+.doilyPointComplex,
+.doilyPointActive {
+  stroke:
+    rgba(255, 255, 255, 0.62);
+
+  stroke-width: 1.1;
+}
+
+.doilyPointCoupling {
+  fill:
+    rgba(12, 14, 18, 0.96);
+}
+
+.doilyPointComplex {
+  fill:
+    rgba(55, 47, 76, 0.94);
+}
+
+.doilyPointActive {
+  fill:
+    rgba(118, 100, 165, 1);
+
+  stroke:
+    rgba(255, 255, 255, 1);
+
+  stroke-width: 2.2;
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgba(165, 145, 235, 0.88)
+    );
+}
+
+.doilyPointIndex {
+  pointer-events: none;
+
+  fill:
+    rgba(247, 243, 233, 0.42);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 6px;
+}
+
+.doilyPointLabel {
+  pointer-events: none;
+
+  fill: #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 7px;
+}
+
+.doilyCenterTitle {
+  fill:
+    rgba(247, 243, 233, 0.80);
+
+  font-family:
+    "Cambria Math",
+    "Times New Roman",
+    serif;
+
+  font-size: 16px;
+  font-style: italic;
+}
+
+.doilyCenterMeta {
+  fill:
+    rgba(247, 243, 233, 0.35);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 7px;
+}
+
+.doilyLineList {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 3px;
+
+  width:
+    min(100%, 660px);
+
+  margin:
+    0 auto 6px;
+}
+
+.doilyLineChip,
+.doilyLineChipActive {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+
+  padding:
+    3px 5px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.15);
+
+  color:
+    rgba(247, 243, 233, 0.42);
+
+  font-size: 7px;
+}
+
+.doilyLineChip > span,
+.doilyLineChipActive > span {
+  flex: 0 0 auto;
+
+  margin-right: 5px;
+
+  color:
+    rgba(247, 243, 233, 0.30);
+}
+
+.doilyLineChip > div,
+.doilyLineChipActive > div {
+  min-width: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.doilyLineChipActive {
+  border-color:
+    rgba(141, 123, 214, 0.42);
+
+  background:
+    rgba(103, 90, 139, 0.24);
+
+  color:
+    rgba(247, 243, 233, 0.78);
+}
+
+.doilyExplanation {
+  width:
+    min(100%, 680px);
+
+  margin: -1px auto 0;
+
+  color:
+    rgba(247, 243, 233, 0.50);
+
+  text-align: center;
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+  .doilyLineList {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+/* ============================================================
+   Compact standard doily
+   ============================================================ */
+
+.compactDoilyWrap {
+  width:
+    min(100%, 790px);
+
+  margin: 0 auto;
+}
+
+.compactDoilySvg {
+  display: block;
+
+  width:
+    min(100%, 720px);
+
+  height: auto;
+
+  margin:
+    -7px auto -14px;
+}
+
+.compactDoilyLine,
+.compactDoilyArc,
+.compactDoilyLineActive {
+  fill: none;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.compactDoilyLine {
+  stroke:
+    rgba(247, 243, 233, 0.30);
+
+  stroke-width: 1.25;
+}
+
+.compactDoilyArc {
+  stroke:
+    rgba(247, 243, 233, 0.24);
+
+  stroke-width: 1.15;
+}
+
+.compactDoilyLineActive {
+  stroke:
+    rgba(190, 175, 255, 0.98);
+
+  stroke-width: 2.8;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(141, 123, 214, 0.72)
+    );
+}
+
+.compactDoilyLineDimmed {
+  fill: none;
+
+  stroke:
+    rgba(247, 243, 233, 0.075);
+
+  stroke-width: 0.85;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.compactDoilyPointNeighbor {
+  fill:
+    rgba(91, 77, 128, 0.98);
+
+  stroke:
+    rgba(205, 193, 255, 0.96);
+
+  stroke-width: 1.65;
+
+  filter:
+    drop-shadow(
+      0 0 3px
+      rgba(141, 123, 214, 0.42)
+    );
+}
+
+.compactDoilyPointDimmed {
+  fill:
+    rgba(7, 9, 12, 0.62);
+
+  stroke:
+    rgba(247, 243, 233, 0.19);
+
+  stroke-width: 0.8;
+
+  opacity: 0.46;
+}
+
+.compactDoilyLegend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  width:
+    min(100%, 500px);
+
+  margin:
+    0 auto 5px;
+
+  color:
+    rgba(247, 243, 233, 0.38);
+
+  font-size: 8px;
+}
+
+.compactDoilyLegend span {
+  position: relative;
+
+  padding-left: 15px;
+}
+
+.compactDoilyLegend span::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  width: 10px;
+  height: 1px;
+
+  transform:
+    translateY(-50%);
+
+  background:
+    rgba(247, 243, 233, 0.35);
+}
+
+
+.compactDoilyCenterMark {
+  fill:
+    rgba(247, 243, 233, 0.18);
+
+  stroke:
+    rgba(247, 243, 233, 0.24);
+
+  stroke-width: 0.7;
+}
+
+
+/* ============================================================
+   Exact doily ovoids
+   ============================================================ */
+
+.ovoidExplorer {
+  width:
+    min(100%, 680px);
+
+  margin: 0 auto;
+}
+
+.ovoidHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  width:
+    min(100%, 590px);
+
+  margin:
+    0 auto 6px;
+}
+
+.ovoidHeader > div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.ovoidHeader strong {
+  color:
+    rgba(247, 243, 233, 0.84);
+
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.ovoidHeader span {
+  margin-top: 1px;
+
+  color:
+    rgba(247, 243, 233, 0.42);
+
+  font-size: 8px;
+}
+
+.ovoidNavigator {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  flex: 0 0 auto;
+}
+
+.ovoidNavigator button {
+  width: 25px;
+  height: 25px;
+
+  padding: 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.11);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.20);
+
+  color: #f7f3e9;
+
+  cursor: pointer;
+}
+
+.ovoidNavigator > span {
+  min-width: 70px;
+
+  margin: 0;
+
+  color:
+    rgba(247, 243, 233, 0.66);
+
+  text-align: center;
+
+  font-size: 9px;
+}
+
+.ovoidSelector {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap: 4px;
+
+  width:
+    min(100%, 590px);
+
+  margin:
+    0 auto 2px;
+}
+
+.ovoidSelectorButton,
+.ovoidSelectorButtonActive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+
+  padding:
+    4px 3px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.18);
+
+  color:
+    rgba(247, 243, 233, 0.58);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+.ovoidSelectorButton span,
+.ovoidSelectorButtonActive span {
+  margin-top: 2px;
+
+  color:
+    rgba(247, 243, 233, 0.33);
+
+  font-size: 6px;
+
+  white-space: nowrap;
+}
+
+.ovoidSelectorButtonActive {
+  border-color:
+    rgba(255, 255, 255, 0.56);
+
+  background:
+    rgba(103, 90, 139, 0.40);
+
+  color: #f7f3e9;
+}
+
+.compactDoilyPointOvoid {
+  fill:
+    rgba(118, 100, 165, 1);
+
+  stroke:
+    rgba(255, 255, 255, 0.98);
+
+  stroke-width: 2;
+
+  filter:
+    drop-shadow(
+      0 0 5px
+      rgba(165, 145, 235, 0.72)
+    );
+}
+
+.compactDoilyPointOvoidDimmed {
+  fill:
+    rgba(7, 9, 12, 0.70);
+
+  stroke:
+    rgba(247, 243, 233, 0.22);
+
+  stroke-width: 0.8;
+
+  opacity: 0.52;
+}
+
+.ovoidPointList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  width:
+    min(100%, 560px);
+
+  margin:
+    0 auto 5px;
+}
+
+.ovoidPointList button {
+  min-width: 48px;
+
+  padding:
+    4px 7px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 4px;
+
+  background:
+    rgba(103, 90, 139, 0.18);
+
+  color: #f7f3e9;
+
+  cursor: pointer;
+}
+
+.ovoidExplanation {
+  width:
+    min(100%, 610px);
+
+  margin: 0 auto;
+
+  color:
+    rgba(247, 243, 233, 0.50);
+
+  text-align: center;
+
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+  .ovoidSelector {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .ovoidHeader {
+    align-items: flex-start;
+  }
+}
+
+
+/* ============================================================
+   Ovoid symmetry explorer
+   ============================================================ */
+
+.ovoidSymmetryPanel {
+  width:
+    min(100%, 590px);
+
+  margin:
+    6px auto 3px;
+
+  padding:
+    7px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 6px;
+
+  background:
+    rgba(0, 0, 0, 0.15);
+}
+
+.ovoidSymmetryStats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 4px;
+
+  margin-bottom: 6px;
+}
+
+.ovoidSymmetryStats > div {
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr;
+
+  align-items: baseline;
+
+  column-gap: 5px;
+
+  padding:
+    4px 6px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.13);
+}
+
+.ovoidSymmetryStats strong {
+  grid-row:
+    1 / 3;
+
+  color: #f7f3e9;
+
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.ovoidSymmetryStats span {
+  color:
+    rgba(247, 243, 233, 0.58);
+
+  font-size: 8px;
+}
+
+.ovoidSymmetryStats small {
+  color:
+    rgba(247, 243, 233, 0.32);
+
+  font-size: 7px;
+}
+
+.ovoidSymmetryControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  margin-bottom: 6px;
+}
+
+.ovoidSymmetryMode {
+  display: flex;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 4px;
+}
+
+.ovoidSymmetryModeButton,
+.ovoidSymmetryModeActive {
+  min-height: 24px;
+
+  padding:
+    3px 8px;
+
+  border: 0;
+
+  background:
+    transparent;
+
+  color:
+    rgba(247, 243, 233, 0.48);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 8px;
+
+  cursor: pointer;
+}
+
+.ovoidSymmetryModeActive {
+  background:
+    rgba(103, 90, 139, 0.40);
+
+  color: #f7f3e9;
+}
+
+.ovoidSymmetryNavigator {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.ovoidSymmetryNavigator button {
+  width: 24px;
+  height: 24px;
+
+  padding: 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.18);
+
+  color: #f7f3e9;
+
+  cursor: pointer;
+}
+
+.ovoidSymmetryNavigator span {
+  min-width: 44px;
+
+  color:
+    rgba(247, 243, 233, 0.55);
+
+  text-align: center;
+
+  font-size: 8px;
+}
+
+.ovoidPermutationRow {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 4px;
+}
+
+.ovoidPermutationMoved,
+.ovoidPermutationFixed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  min-width: 0;
+
+  padding:
+    4px 2px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 4px;
+
+  color:
+    rgba(247, 243, 233, 0.68);
+
+  font-size: 7px;
+}
+
+.ovoidPermutationMoved {
+  background:
+    rgba(103, 90, 139, 0.16);
+}
+
+.ovoidPermutationFixed {
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  opacity: 0.58;
+}
+
+.ovoidPermutationRow
+  .katex {
+  font-size: 8px;
+}
+
+.ovoidSymmetryStatus {
+  margin-top: 5px;
+
+  color:
+    rgba(247, 243, 233, 0.42);
+
+  text-align: center;
+
+  font-size: 8px;
+}
+
+@media (max-width: 760px) {
+  .ovoidSymmetryStats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .ovoidPermutationRow {
+    grid-template-columns:
+      repeat(5, minmax(54px, 1fr));
+
+    overflow-x: auto;
+  }
+}
+
+
+/* Lower-band controller overrides */
+
+.controlRoomCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 760px) {
+  .controlRoomCard {
+    display: flex;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.17);
+  }
+}
+
+
+/* === BOUNDED ADAPTIVE G288 VIEWER === */
+
+/*
+ * The upper viewer owns its size.
+ *
+ * Individual geometry modes must fit inside this rectangle
+ * rather than increasing the page height.
+ */
+
+.viewerShell {
+  height:
+    clamp(
+      500px,
+      calc(100vh - 175px),
+      680px
+    );
+
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+.viewerLayout {
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+}
+
+
+/* ------------------------------------------------------------
+   Shared geometry stage
+   ------------------------------------------------------------ */
+
+.tetraStage {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    1px
+    minmax(0, 1fr);
+
+  grid-template-rows:
+    auto
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap:
+    clamp(10px, 1.35vw, 22px);
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding:
+    5px 16px 8px;
+
+  overflow: hidden;
+}
+
+
+/*
+ * Global visualization-mode controller.
+ */
+.geometryModeHeader {
+  position: relative;
+
+  grid-column: 1 / -1;
+  grid-row: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 29px;
+
+  margin: 0;
+}
+
+
+/*
+ * Keep the equation associated with the selected mode inside
+ * the same header, but out of the way of the central buttons.
+ */
+.geometryModeMath {
+  position: absolute;
+
+  right: 4px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  white-space: nowrap;
+}
+
+
+/* ------------------------------------------------------------
+   Ordinary two-tetrahedron mode
+   ------------------------------------------------------------ */
+
+.tetraPanel {
+  min-width: 0;
+  min-height: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.tetraCard {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  min-height: 0;
+}
+
+.tetraSvg {
+  flex: 1 1 auto;
+
+  width:
+    min(100%, 340px);
+
+  height: 100%;
+
+  min-height: 0;
+
+  max-width: 340px;
+  max-height: 340px;
+
+  margin:
+    -2px auto -7px;
+}
+
+.tetraHeading {
+  flex: 0 0 auto;
+
+  width: 100%;
+  max-width: 400px;
+}
+
+.permutationRow {
+  flex: 0 0 auto;
+
+  width: 100%;
+  max-width: 340px;
+}
+
+
+/* ------------------------------------------------------------
+   Full-width geometry modes
+   ------------------------------------------------------------ */
+
+.cell24Panel,
+.quotientGridPanel,
+.cyclicOrbitPanel,
+.core32Panel,
+.finiteGeometryPanel {
+  grid-column: 1 / -1;
+  grid-row: 2;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* ------------------------------------------------------------
+   24-cell
+   ------------------------------------------------------------ */
+
+.cell24Card {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+.cell24Heading {
+  flex: 0 0 auto;
+}
+
+.cell24Svg {
+  display: block;
+
+  flex: 1 1 auto;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+
+  max-width: 700px;
+  max-height: 395px;
+
+  margin:
+    -4px auto -6px;
+}
+
+.cell24Explanation {
+  flex: 0 0 auto;
+}
+
+
+/* ------------------------------------------------------------
+   Orbit explorer
+   ------------------------------------------------------------ */
+
+.quotientGridCard {
+  display: flex;
+  flex-direction: column;
+
+  width:
+    min(100%, 790px);
+
+  height: 100%;
+
+  min-height: 0;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+
+/* ------------------------------------------------------------
+   Cyclic orbit
+   ------------------------------------------------------------ */
+
+.cyclicOrbitCard {
+  display: flex;
+  flex-direction: column;
+
+  width:
+    min(100%, 820px);
+
+  height: 100%;
+
+  min-height: 0;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+.cyclicOrbitHeading,
+.c12Overview {
+  flex: 0 0 auto;
+}
+
+.cyclicOrbitStage {
+  position: relative;
+
+  flex: 1 1 auto;
+
+  width:
+    min(100%, 455px);
+
+  max-width: 455px;
+  max-height: 455px;
+
+  min-height: 0;
+
+  aspect-ratio: 1;
+
+  margin:
+    -2px auto -4px;
+}
+
+
+/* ------------------------------------------------------------
+   32-core
+   ------------------------------------------------------------ */
+
+.core32Card {
+  display: flex;
+  flex-direction: column;
+
+  width:
+    min(100%, 850px);
+
+  height: 100%;
+
+  min-height: 0;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+
+/* ------------------------------------------------------------
+   Finite geometry
+   ------------------------------------------------------------ */
+
+.finiteGeometryCard {
+  display: flex;
+  flex-direction: column;
+
+  width:
+    min(100%, 850px);
+
+  height: 100%;
+
+  min-height: 0;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+.finiteGeometryHeading {
+  flex: 0 0 auto;
+
+  margin-bottom: 5px;
+}
+
+.finiteGeometryViewTabs {
+  flex: 0 0 auto;
+
+  width:
+    min(82%, 455px);
+
+  margin:
+    0 auto 6px;
+}
+
+
+/*
+ * The counters are part of the local controller, not part of
+ * the geometric viewscreen.
+ */
+.doilyStats {
+  flex: 0 0 auto;
+
+  gap: 4px;
+
+  margin-bottom: 3px;
+}
+
+
+/* ------------------------------------------------------------
+   Doily viewscreen
+   ------------------------------------------------------------ */
+
+.compactDoilyWrap {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 auto;
+
+  width:
+    min(100%, 720px);
+
+  min-height: 0;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+.compactDoilySvg {
+  display: block;
+
+  flex: 1 1 auto;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+
+  max-width: 590px;
+  max-height: 470px;
+
+  margin:
+    -3px auto -5px;
+}
+
+.compactDoilyLegend {
+  flex: 0 0 auto;
+
+  margin-bottom: 2px;
+}
+
+.doilyExplanation {
+  flex: 0 0 auto;
+
+  width:
+    min(100%, 650px);
+
+  margin:
+    1px auto 0;
+
+  font-size: 9px;
+  line-height: 1.25;
+}
+
+
+/* ------------------------------------------------------------
+   Ovoids
+   ------------------------------------------------------------ */
+
+.ovoidExplorer {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 auto;
+
+  width:
+    min(100%, 760px);
+
+  min-height: 0;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+.ovoidHeader,
+.ovoidSelector,
+.ovoidSymmetryPanel {
+  flex: 0 0 auto;
+}
+
+
+/*
+ * In Ovoid mode the same doily must yield its height rather
+ * than forcing the viewer to grow.
+ */
+.ovoidExplorer .compactDoilyWrap {
+  flex: 1 1 auto;
+
+  min-height: 0;
+}
+
+.ovoidExplorer .compactDoilySvg {
+  max-width: 500px;
+  max-height: 360px;
+}
+
+
+/* ------------------------------------------------------------
+   Incidence graph
+   ------------------------------------------------------------ */
+
+.doilyWrap {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+.doilySvg {
+  flex: 1 1 auto;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+
+  max-width: 570px;
+  max-height: 430px;
+}
+
+
+/* ------------------------------------------------------------
+   Short desktop windows
+   ------------------------------------------------------------ */
+
+@media
+  (max-height: 800px)
+  and (min-width: 761px) {
+
+  .viewerShell {
+    height:
+      clamp(
+        465px,
+        calc(100vh - 155px),
+        590px
+      );
+  }
+
+  .compactDoilySvg {
+    max-width: 520px;
+    max-height: 390px;
+  }
+
+  .ovoidExplorer .compactDoilySvg {
+    max-width: 450px;
+    max-height: 310px;
+  }
+
+  .cell24Svg {
+    max-width: 630px;
+    max-height: 335px;
+  }
+
+  .cyclicOrbitStage {
+    max-width: 395px;
+    max-height: 395px;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   Narrow screens
+   ------------------------------------------------------------ */
+
+@media (max-width: 760px) {
+
+  /*
+   * On mobile, vertical scrolling is preferable to crushing
+   * every visualization into an unusably short rectangle.
+   */
+  .viewerShell {
+    height: auto;
+
+    min-height: 500px;
+
+    overflow: visible;
+  }
+
+  .viewerLayout,
+  .tetraStage {
+    height: auto;
+  }
+
+  .tetraStage {
+    min-height: 500px;
+
+    overflow: visible;
+  }
+
+  .geometryModeHeader {
+    position: static;
+
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+  .geometryModeMath {
+    position: static;
+
+    transform: none;
+  }
+
+  .compactDoilySvg,
+  .cell24Svg,
+  .doilySvg {
+    height: auto;
+  }
+}
+
+/* ============================================================
+   Algebraic control room — final desktop proportions
+   ============================================================ */
+
+@media (min-width: 1001px) {
+  .lowerGrid {
+  grid-template-columns:
+    minmax(330px, 36fr)
+    minmax(330px, 36fr)
+    minmax(260px, 28fr);
+
+  gap: 14px;
+}
+  
+}
+
+/* ============================================================
+   Algebraic control room — desktop proportions
+   38% / 40% / 22%
+   ============================================================ */
+
+@media (min-width: 1001px) {
+  .lowerGrid {
+    grid-template-columns:
+      minmax(330px, 38fr)
+      minmax(362px, 40fr)
+      minmax(244px, 22fr);
+
+    gap: 14px;
+
+    width: 100%;
+  }
+}
+
+
+/* Exact 4D matrix spacing */
+
+.matrixKatex :global(.mtable .mtr > .mtd) {
+  padding:
+    0.13em 0.20em;
+}
+
+.matrixKatex :global(.mfrac) {
+  margin:
+    0 0.02em;
+}
+
+.matrixWrap {
+  padding:
+    14px 8px;
+
+  overflow-x: visible;
+}
+
+
+/* === EASY ALGEBRAIC WIDTH CONTROLS === */
+
+@media (min-width: 1001px) {
+  .lowerGrid {
+    /*
+     * EDIT ONLY THESE THREE VALUES.
+     *
+     * They determine the relative widths of:
+     *
+     *   1. Element control
+     *   2. Exact classification
+     *   3. Exact 4D matrix
+     *
+     * Example:
+     *   35fr / 37fr / 28fr
+     */
+
+    --control-share: 34fr;
+    --classification-share: 36fr;
+    --matrix-share: 30fr;
+
+
+    grid-template-columns:
+      minmax(
+        330px,
+        var(--control-share)
+      )
+      minmax(
+        330px,
+        var(--classification-share)
+      )
+      minmax(
+        250px,
+        var(--matrix-share)
+      );
+
+    gap: 14px;
+    width: 100%;
+  }
+}
+
+
+/* === SIX-OVOID SYMMETRY MAP === */
+
+.ovoidOrbitMap {
+  width:
+    min(100%, 430px);
+
+  margin:
+    2px auto 6px;
+}
+
+.ovoidOrbitSvg {
+  display: block;
+
+  width: 100%;
+  height: 150px;
+
+  overflow: visible;
+}
+
+.ovoidOrbitArrow {
+  fill: none;
+
+  stroke:
+    rgba(180, 163, 236, 0.54);
+
+  stroke-width: 1.35;
+
+  stroke-linecap: round;
+}
+
+.ovoidOrbitArrowHead {
+  fill:
+    rgba(190, 175, 255, 0.82);
+}
+
+.ovoidOrbitNodeGroup {
+  cursor: pointer;
+}
+
+.ovoidOrbitNode,
+.ovoidOrbitNodeFixed,
+.ovoidOrbitNodeImage,
+.ovoidOrbitNodeSelected {
+  stroke-width: 1.2;
+}
+
+.ovoidOrbitNode {
+  fill:
+    rgba(7, 9, 12, 0.92);
+
+  stroke:
+    rgba(247, 243, 233, 0.32);
+}
+
+.ovoidOrbitNodeFixed {
+  fill:
+    rgba(26, 28, 34, 0.96);
+
+  stroke:
+    rgba(247, 243, 233, 0.58);
+}
+
+.ovoidOrbitNodeImage {
+  fill:
+    rgba(72, 63, 98, 0.96);
+
+  stroke:
+    rgba(190, 175, 255, 0.82);
+}
+
+.ovoidOrbitNodeSelected {
+  fill:
+    rgba(103, 90, 139, 0.98);
+
+  stroke:
+    rgba(255, 255, 255, 0.96);
+
+  stroke-width: 1.8;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(141, 123, 214, 0.56)
+    );
+}
+
+.ovoidOrbitNodeText {
+  pointer-events: none;
+  user-select: none;
+
+  fill: #f7f3e9;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 10px;
+}
+
+.ovoidOrbitCaption {
+  margin-top: -4px;
+
+  color:
+    rgba(247, 243, 233, 0.46);
+
+  text-align: center;
+
+  font-size: 8px;
+}
+
+@media (max-width: 760px) {
+  .ovoidOrbitSvg {
+    height: 140px;
+  }
+}
+
+
+/* === COMPACT OVOID SYMMETRY LAYOUT === */
+
+.ovoidSymmetryPanel {
+  width:
+    min(100%, 620px);
+
+  margin:
+    4px auto 1px;
+
+  padding:
+    6px;
+}
+
+.ovoidSymmetryStats {
+  gap: 3px;
+  margin-bottom: 4px;
+}
+
+.ovoidSymmetryStats > div {
+  padding:
+    3px 5px;
+}
+
+
+/* Keep the mode buttons and navigator as one tight row. */
+
+.ovoidSymmetryControls {
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 2px;
+}
+
+.ovoidSymmetryNavigator {
+  margin-left: 2px;
+}
+
+
+/* Smaller six-ovoid action picture. */
+
+.ovoidOrbitMap {
+  width:
+    min(100%, 330px);
+
+  margin:
+    -2px auto 0;
+}
+
+.ovoidOrbitSvg {
+  height: 104px;
+}
+
+.ovoidOrbitCaption {
+  margin-top: -6px;
+}
+
+
+/* Pull the induced S5 action directly underneath it. */
+
+.ovoidPermutationRow {
+  gap: 3px;
+  margin-top: 0;
+}
+
+.ovoidPermutationMoved,
+.ovoidPermutationFixed {
+  padding:
+    3px 2px;
+}
+
+.ovoidSymmetryStatus {
+  margin-top: 2px;
+}
+
+
+/* Reclaim the space for the actual doily. */
+
+.ovoidExplorer .compactDoilyWrap {
+  margin-top: -5px;
+}
+
+.ovoidExplorer .compactDoilySvg {
+  max-width: 550px;
+  max-height: 410px;
+}
+
+
+@media
+  (max-height: 800px)
+  and (min-width: 761px) {
+
+  .ovoidOrbitSvg {
+    height: 92px;
+  }
+
+  .ovoidExplorer .compactDoilySvg {
+    max-width: 500px;
+    max-height: 350px;
+  }
+}
+
+
+/* === TWO-COLUMN OVOID WORKSPACE === */
+
+/*
+ * Ovoid mode uses horizontal space:
+ *
+ *   left  = local ovoid / symmetry controls
+ *   right = actual W(3,2) geometry
+ */
+
+.ovoidExplorer {
+  width:
+    min(100%, 1000px);
+}
+
+
+/* EASY WIDTH CONTROLS */
+
+.ovoidWorkspace {
+  --ovoid-controls-share: 34fr;
+  --ovoid-geometry-share: 66fr;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(270px, var(--ovoid-controls-share))
+    minmax(0, var(--ovoid-geometry-share));
+
+  gap:
+    clamp(14px, 1.8vw, 24px);
+
+  align-items: stretch;
+
+  flex:
+    1 1 auto;
+
+  width: 100%;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+.ovoidControlColumn {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding-right: 2px;
+}
+
+
+.ovoidGeometryColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/*
+ * Six ovoid buttons become a compact 2 × 3 local selector.
+ */
+
+.ovoidControlColumn .ovoidSelector {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  width: 100%;
+
+  margin:
+    0;
+}
+
+
+/*
+ * The symmetry panel belongs completely to the left column.
+ */
+
+.ovoidControlColumn .ovoidSymmetryPanel {
+  width: 100%;
+
+  margin:
+    0;
+
+  flex:
+    1 1 auto;
+}
+
+
+/*
+ * Four numerical symmetry facts fit naturally as a 2 × 2 block.
+ */
+
+.ovoidControlColumn .ovoidSymmetryStats {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+}
+
+
+/*
+ * Stack the action-mode selector above its navigator when
+ * necessary instead of allowing the narrow column to overflow.
+ */
+
+.ovoidControlColumn .ovoidSymmetryControls {
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  row-gap: 5px;
+}
+
+
+.ovoidControlColumn .ovoidSymmetryMode {
+  max-width: 100%;
+}
+
+
+.ovoidControlColumn .ovoidOrbitMap {
+  width:
+    min(100%, 300px);
+
+  margin:
+    0 auto;
+}
+
+
+/*
+ * The five induced point maps are narrow in a sidebar.
+ * Allow them to use a compact single column.
+ */
+
+.ovoidControlColumn .ovoidPermutationRow {
+  grid-template-columns:
+    minmax(0, 1fr);
+
+  gap: 3px;
+}
+
+
+.ovoidControlColumn .ovoidPermutationMoved,
+.ovoidControlColumn .ovoidPermutationFixed {
+  min-height: 24px;
+}
+
+
+/*
+ * Geometry gets the large side of the workspace.
+ */
+
+.ovoidGeometryColumn .compactDoilyWrap {
+  flex:
+    1 1 auto;
+
+  width: 100%;
+
+  min-height: 0;
+
+  margin: 0;
+
+  overflow: hidden;
+}
+
+
+.ovoidGeometryColumn .compactDoilySvg {
+  width:
+    min(100%, 660px);
+
+  max-width: 660px;
+  max-height: 470px;
+
+  margin:
+    -5px auto -10px;
+}
+
+
+.ovoidGeometryColumn .ovoidPointList {
+  width:
+    min(100%, 610px);
+
+  margin:
+    0 auto 5px;
+}
+
+
+.ovoidGeometryColumn .ovoidExplanation {
+  width:
+    min(100%, 620px);
+
+  margin:
+    0 auto;
+
+  text-align: center;
+}
+
+
+/*
+ * Override the previous reclaimed-space rule: the two columns
+ * now own their heights independently.
+ */
+
+.ovoidExplorer .compactDoilyWrap {
+  margin-top: 0;
+}
+
+
+/*
+ * Collapse back to the original vertical logic on narrower
+ * screens.
+ */
+
+@media (max-width: 900px) {
+
+  .ovoidWorkspace {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    overflow: visible;
+  }
+
+  .ovoidControlColumn {
+    padding-right: 0;
+  }
+
+  .ovoidControlColumn .ovoidSelector {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .ovoidControlColumn .ovoidPermutationRow {
+    grid-template-columns:
+      repeat(5, minmax(54px, 1fr));
+
+    overflow-x: auto;
+  }
+
+  .ovoidGeometryColumn .compactDoilySvg {
+    max-width: 520px;
+    max-height: 360px;
+  }
+}
+
+
+/* === FINITE GEOMETRY SINGLE-ROW HEADER === */
+
+/*
+ * One line:
+ *
+ * Finite geometry | view tabs | W(3,2)
+ *
+ * The subtitle remains attached to the title block on the left.
+ */
+
+.finiteGeometryHeading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(170px, auto)
+    minmax(360px, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap:
+    clamp(12px, 1.7vw, 24px);
+
+  width: 100%;
+
+  margin-bottom: 5px;
+}
+
+
+.finiteGeometryHeading
+  > .finiteGeometryViewTabs {
+
+  width:
+    min(100%, 455px);
+
+  margin:
+    0 auto;
+}
+
+
+.finiteGeometryHeading
+  > .finiteGeometryEquation {
+
+  justify-self: end;
+
+  white-space: nowrap;
+}
+
+
+/*
+ * Keep the title/subtitle block compact.
+ */
+
+.finiteGeometryHeading > div:first-child {
+  min-width: 0;
+}
+
+
+.finiteGeometryHeading p {
+  white-space: nowrap;
+}
+
+
+/*
+ * At narrower widths, allow the header to return to
+ * a two-row arrangement rather than crushing the controls.
+ */
+
+@media (max-width: 900px) {
+
+  .finiteGeometryHeading {
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto;
+
+    row-gap: 6px;
+  }
+
+  .finiteGeometryHeading
+    > .finiteGeometryViewTabs {
+
+    grid-column:
+      1 / -1;
+
+    grid-row: 2;
+
+    width:
+      min(100%, 455px);
+
+    margin:
+      0 auto;
+  }
+
+  .finiteGeometryHeading
+    > .finiteGeometryEquation {
+
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+
+/* === OVOID SIDEBAR PACKING PASS === */
+
+/*
+ * The two-column Ovoid architecture is correct.
+ * This pass removes vertical waste inside the left column.
+ */
+
+
+/* ------------------------------------------------------------
+   Six ovoids: 3 columns × 2 rows
+   ------------------------------------------------------------ */
+
+.ovoidControlColumn .ovoidSelector {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 4px;
+}
+
+
+.ovoidControlColumn
+  .ovoidSelectorButton,
+.ovoidControlColumn
+  .ovoidSelectorButtonActive {
+
+  padding:
+    3px 2px;
+}
+
+
+/* ------------------------------------------------------------
+   Keep the four symmetry counts compact.
+   ------------------------------------------------------------ */
+
+.ovoidControlColumn .ovoidSymmetryStats {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 3px;
+
+  margin-bottom:
+    3px;
+}
+
+
+.ovoidControlColumn
+  .ovoidSymmetryStats > div {
+
+  padding:
+    3px 5px;
+}
+
+
+/* ------------------------------------------------------------
+   Tighten mode + navigator region.
+   ------------------------------------------------------------ */
+
+.ovoidControlColumn
+  .ovoidSymmetryControls {
+
+  gap: 5px;
+
+  row-gap: 3px;
+
+  margin-bottom:
+    1px;
+}
+
+
+.ovoidControlColumn
+  .ovoidSymmetryModeButton,
+.ovoidControlColumn
+  .ovoidSymmetryModeActive {
+
+  min-height:
+    22px;
+
+  padding:
+    2px 6px;
+}
+
+
+.ovoidControlColumn
+  .ovoidSymmetryNavigator button {
+
+  width:
+    22px;
+
+  height:
+    22px;
+}
+
+
+/* ------------------------------------------------------------
+   Keep the six-ovoid action diagram compact.
+   ------------------------------------------------------------ */
+
+.ovoidControlColumn .ovoidOrbitMap {
+  width:
+    min(100%, 270px);
+
+  margin:
+    -2px auto 0;
+}
+
+
+.ovoidControlColumn .ovoidOrbitSvg {
+  height:
+    88px;
+}
+
+
+.ovoidControlColumn .ovoidOrbitCaption {
+  margin-top:
+    -7px;
+}
+
+
+/* ------------------------------------------------------------
+   Five induced S5 maps: one horizontal row.
+   ------------------------------------------------------------ */
+
+.ovoidControlColumn
+  .ovoidPermutationRow {
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 3px;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+
+.ovoidControlColumn
+  .ovoidPermutationMoved,
+.ovoidControlColumn
+  .ovoidPermutationFixed {
+
+  min-height:
+    22px;
+
+  padding:
+    2px 1px;
+
+  gap: 1px;
+
+  white-space: nowrap;
+}
+
+
+.ovoidControlColumn
+  .ovoidPermutationRow
+  .katex {
+
+  font-size:
+    7px;
+}
+
+
+.ovoidControlColumn
+  .ovoidSymmetryStatus {
+
+  margin-top:
+    1px;
+
+  line-height:
+    1.15;
+}
+
+
+/* ------------------------------------------------------------
+   Tighten the whole left stack slightly.
+   ------------------------------------------------------------ */
+
+.ovoidControlColumn {
+  gap: 4px;
+}
+
+
+.ovoidControlColumn
+  .ovoidSymmetryPanel {
+
+  padding:
+    5px;
+}
+
+
+/* ------------------------------------------------------------
+   In Ovoid mode the general Doily explanation is redundant.
+   Keep only the ovoid-specific explanation beneath the
+   highlighted point buttons.
+   ------------------------------------------------------------ */
+
+.ovoidGeometryColumn
+  .doilyExplanation {
+
+  display: none;
+}
+
+
+/* ------------------------------------------------------------
+   Use the reclaimed vertical space for geometry.
+   ------------------------------------------------------------ */
+
+.ovoidGeometryColumn
+  .compactDoilySvg {
+
+  max-height:
+    500px;
+}
+
+
+.ovoidGeometryColumn
+  .compactDoilyLegend {
+
+  margin-bottom:
+    2px;
+}
+
+
+.ovoidGeometryColumn
+  .ovoidPointList {
+
+  margin-bottom:
+    2px;
+}
+
+
+/* Narrow screens retain the stacked/mobile treatment. */
+
+@media (max-width: 900px) {
+
+  .ovoidControlColumn
+    .ovoidPermutationRow {
+
+    grid-template-columns:
+      repeat(5, minmax(54px, 1fr));
+
+    overflow-x:
+      auto;
+  }
+
+  .ovoidGeometryColumn
+    .doilyExplanation {
+
+    display: block;
+  }
+}
+
+
+/* === G288 CONJUGACY CLASS VIEWER === */
+
+.conjugacyPanelWrap {
+  grid-column: 1 / -1;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+.conjugacyPanel {
+  display: flex;
+  flex-direction: column;
+
+  width:
+    min(100%, 1000px);
+
+  height: 100%;
+  min-height: 0;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+.conjugacyHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  flex: 0 0 auto;
+
+  margin-bottom: 8px;
+}
+
+.conjugacyHeading h3 {
+  margin: 0;
+
+  color: #f7f3e9;
+
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.conjugacyHeading p {
+  margin: 3px 0 0;
+
+  color:
+    rgba(247, 243, 233, 0.58);
+
+  font-size: 11px;
+}
+
+.conjugacyHeadingMath {
+  font-size:
+    clamp(15px, 1.25vw, 20px);
+}
+
+.conjugacyWorkspace {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 42fr)
+    minmax(360px, 58fr);
+
+  gap:
+    clamp(14px, 2vw, 26px);
+
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+.conjugacyClassGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  grid-template-rows:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 5px;
+
+  min-height: 0;
+}
+
+.conjugacyClassButton,
+.conjugacyClassButtonActive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding: 5px 3px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 5px;
+
+  background:
+    rgba(0, 0, 0, 0.22);
+
+  color:
+    rgba(247, 243, 233, 0.74);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  cursor: pointer;
+}
+
+.conjugacyClassButton:hover {
+  border-color:
+    rgba(255, 255, 255, 0.28);
+
+  background:
+    rgba(255, 255, 255, 0.05);
+}
+
+.conjugacyClassButtonActive {
+  border-color:
+    rgba(255, 255, 255, 0.68);
+
+  background:
+    rgba(103, 90, 139, 0.46);
+
+  color: #f7f3e9;
+}
+
+.conjugacyClassButton strong,
+.conjugacyClassButtonActive strong {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.conjugacyClassButton span,
+.conjugacyClassButtonActive span {
+  margin-top: 2px;
+  font-size: 9px;
+}
+
+.conjugacyClassButton small,
+.conjugacyClassButtonActive small {
+  margin-top: 1px;
+
+  color:
+    rgba(247, 243, 233, 0.46);
+
+  font-size: 8px;
+}
+
+.conjugacyDetail {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding: 10px 12px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 8px;
+
+  background:
+    rgba(0, 0, 0, 0.22);
+}
+
+.conjugacyDetailHeader {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 8px;
+
+  margin-bottom: 8px;
+}
+
+.conjugacyDetailHeader > div,
+.conjugacyKeyStats > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  min-width: 0;
+}
+
+.conjugacyDetailHeader span,
+.conjugacyKeyStats span,
+.conjugacyDetailRows span {
+  color:
+    rgba(247, 243, 233, 0.48);
+
+  font-size: 9px;
+}
+
+.conjugacyDetailHeader strong {
+  color: #f7f3e9;
+
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.conjugacyKeyStats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 5px;
+
+  margin-bottom: 8px;
+}
+
+.conjugacyKeyStats > div {
+  padding: 6px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 5px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.conjugacyKeyStats strong {
+  color: #f7f3e9;
+
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.conjugacyEquation {
+  padding: 7px 4px;
+
+  margin-bottom: 6px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  text-align: center;
+}
+
+.conjugacyEquationMath {
+  font-size:
+    clamp(14px, 1.15vw, 18px);
+}
+
+.conjugacyDetailRows {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 5px;
+}
+
+.conjugacyDetailRows > div {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 54px;
+
+  padding: 6px 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 5px;
+}
+
+.conjugacyDetailRows strong {
+  margin-top: 4px;
+
+  color: #f7f3e9;
+
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.conjugacyValueMath {
+  margin-top: 4px;
+
+  font-size:
+    clamp(13px, 1vw, 17px);
+}
+
+.conjugacyValueMathSmall {
+  margin-top: 4px;
+
+  font-size:
+    clamp(10px, 0.82vw, 14px);
+}
+
+.conjugacyAudit {
+  margin-top: auto;
+
+  padding-top: 7px;
+
+  color:
+    rgba(247, 243, 233, 0.42);
+
+  text-align: center;
+
+  font-size: 9px;
+}
+
+@media (max-width: 900px) {
+  .conjugacyWorkspace {
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    overflow-y: auto;
+  }
+
+  .conjugacyClassGrid {
+    min-height: 300px;
+  }
+
+  .conjugacyDetail {
+    min-height: 300px;
+  }
+}
+
+
+/* === CONJUGACY 25-TO-9 SPECTRAL FAMILIES === */
+
+.conjugacySpectralBridge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 2px;
+
+  color:
+    rgba(247, 243, 233, 0.62);
+
+  font-size: 9px;
+}
+
+
+.conjugacyDetailHeader {
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+}
+
+
+.conjugacySpectralFamilies {
+  display: grid;
+
+  grid-template-columns:
+    repeat(9, minmax(0, 1fr));
+
+  gap: 4px;
+
+  margin-bottom: 6px;
+}
+
+
+.conjugacySpectralFamily,
+.conjugacySpectralFamilyActive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 43px;
+
+  padding: 3px 2px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 4px;
+
+  background:
+    rgba(0, 0, 0, 0.18);
+
+  color:
+    rgba(247, 243, 233, 0.60);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  cursor: pointer;
+}
+
+
+.conjugacySpectralFamily:hover {
+  border-color:
+    rgba(255, 255, 255, 0.26);
+
+  background:
+    rgba(255, 255, 255, 0.045);
+}
+
+
+.conjugacySpectralFamilyActive {
+  border-color:
+    rgba(255, 255, 255, 0.58);
+
+  background:
+    rgba(103, 90, 139, 0.34);
+
+  color: #f7f3e9;
+}
+
+
+.conjugacySpectralFamily strong,
+.conjugacySpectralFamilyActive strong {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+
+.conjugacySpectralFamily span,
+.conjugacySpectralFamilyActive span,
+.conjugacySpectralFamily small,
+.conjugacySpectralFamilyActive small {
+  margin-top: 1px;
+
+  font-size: 7px;
+}
+
+
+.conjugacySpectralDetail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  min-width: 0;
+
+  padding:
+    5px 7px;
+
+  margin-bottom:
+    7px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius:
+    5px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+
+.conjugacySpectralDetail span {
+  color:
+    rgba(247, 243, 233, 0.54);
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+
+.conjugacySpectralPolynomial {
+  min-width: 0;
+
+  font-size:
+    clamp(11px, 0.9vw, 15px);
+
+  white-space: nowrap;
+}
+
+
+@media (max-width: 900px) {
+
+  .conjugacySpectralFamilies {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .conjugacySpectralDetail {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 4px;
+  }
+}
+
+
+/* === PRIMARY PROJECTED 24-CELL STAGE === */
+
+/*
+ * The projected 24-cell is now the primary visual object.
+ * It owns the available upper-viewer area.
+ */
+
+.cell24Panel {
+  height: 100%;
+  min-height: 0;
+}
+
+
+.cell24Card {
+  display: flex;
+  flex-direction: column;
+
+  width:
+    min(100%, 1080px);
+
+  height: 100%;
+  min-height: 0;
+
+  margin:
+    0 auto;
+}
+
+
+.cell24Heading {
+  width:
+    min(100%, 980px);
+
+  max-width: none;
+
+  margin:
+    0 auto 2px;
+}
+
+
+.cell24MovedCount {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+
+.cell24DragHint {
+  color:
+    rgba(247, 243, 233, 0.46);
+
+  font-size: 10px;
+}
+
+
+.cell24ResetView {
+  min-height: 24px;
+
+  padding:
+    2px 7px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius:
+    5px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  color:
+    rgba(247, 243, 233, 0.76);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size:
+    10px;
+
+  cursor:
+    pointer;
+}
+
+
+.cell24ResetView:hover {
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  color:
+    #f7f3e9;
+}
+
+
+/*
+ * This deliberately overrides the old small diagnostic size.
+ */
+
+.cell24Svg {
+  flex:
+    1 1 auto;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  min-height:
+    0;
+
+  max-width:
+    1000px;
+
+  max-height:
+    none;
+
+  margin:
+    -2px auto -4px;
+
+  cursor:
+    grab;
+
+  touch-action:
+    none;
+
+  user-select:
+    none;
+}
+
+
+.cell24Svg:active {
+  cursor:
+    grabbing;
+}
+
+
+.cell24Explanation {
+  width:
+    min(100%, 760px);
+
+  flex:
+    0 0 auto;
+
+  margin:
+    0 auto;
+
+  font-size:
+    11px;
+}
+
+
+@media (max-height: 800px) and (min-width: 761px) {
+
+  .cell24Svg {
+    max-width:
+      900px;
+
+    max-height:
+      none;
+  }
+}
+
+
+/* === EXACT OCTAHEDRAL 24-CELL === */
+
+.cell24DisplayModes {
+  display: inline-flex;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 5px;
+}
+
+
+.cell24DisplayButton,
+.cell24DisplayButtonActive {
+  min-height: 24px;
+
+  padding: 2px 7px;
+
+  border: 0;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  color:
+    rgba(247, 243, 233, 0.58);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+
+.cell24DisplayButton:last-child,
+.cell24DisplayButtonActive:last-child {
+  border-right: 0;
+}
+
+
+.cell24DisplayButton:hover {
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  color:
+    rgba(247, 243, 233, 0.86);
+}
+
+
+.cell24DisplayButtonActive {
+  background:
+    rgba(255, 255, 255, 0.14);
+
+  color:
+    #f7f3e9;
+}
+
+
+.cell24CellStepper {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  white-space: nowrap;
+
+  color:
+    rgba(247, 243, 233, 0.76);
+
+  font-size: 10px;
+}
+
+
+.cell24CellStepper button {
+  width: 23px;
+  height: 23px;
+
+  padding: 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 4px;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color:
+    #f7f3e9;
+
+  font-size: 14px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+.cell24Face,
+.cell24FaceSelected {
+  stroke:
+    rgba(247, 243, 233, 0.16);
+
+  stroke-width: 0.7;
+
+  stroke-linejoin: round;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+
+.cell24Face {
+  cursor: pointer;
+}
+
+
+.cell24Face:hover {
+  stroke:
+    rgba(255, 255, 255, 0.48);
+
+  stroke-width: 1.05;
+}
+
+
+.cell24FaceSelected {
+  stroke:
+    rgba(255, 255, 255, 0.68);
+
+  stroke-width: 1.15;
+}
+
+
+.cell24Edge {
+  pointer-events: none;
+}
+
+
+@media (max-width: 900px) {
+
+  .cell24MovedCount {
+    gap: 7px;
+  }
+
+
+  .cell24DragHint {
+    display: none;
+  }
+}
+
+
+/* === TRACKED 24-CELL OCTAHEDRON === */
+
+.cell24TrackReadout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 23px;
+  padding: 2px 7px;
+
+  border:
+    1px solid rgba(255, 103, 92, 0.42);
+
+  border-radius: 4px;
+
+  background:
+    rgba(255, 74, 64, 0.10);
+
+  color:
+    rgba(255, 224, 218, 0.96);
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+
+.cell24TrackedReferenceFace {
+  fill: none;
+
+  stroke:
+    rgba(255, 126, 112, 0.72);
+
+  stroke-width: 1.15;
+
+  stroke-dasharray:
+    4 3;
+
+  stroke-linejoin: round;
+
+  vector-effect:
+    non-scaling-stroke;
+
+  pointer-events: none;
+}
+
+
+.cell24FaceSelected {
+  stroke:
+    rgba(255, 235, 228, 0.98);
+
+  stroke-width: 1.45;
+
+  filter:
+    drop-shadow(
+      0 0 2px
+      rgba(255, 78, 64, 0.52)
+    );
+}
+
+
+.cell24Face:not(.cell24FaceSelected) {
+  stroke:
+    rgba(247, 243, 233, 0.11);
+}
+
+
+@media (max-width: 900px) {
+
+  .cell24TrackReadout {
+    font-size: 10px;
+  }
+}
+
+
+/* === INTEGRATED VIEWER CONTROL COLUMN === */
+
+/*
+ * Main viewer architecture:
+ *
+ *   LEFT  = live element/control/data column
+ *   RIGHT = geometry viewscreen
+ *
+ * The geometric center is therefore the center of the RIGHT
+ * region, not the center of the complete viewer rectangle.
+ */
+
+.viewerLayout {
+  --viewer-control-width:
+    clamp(300px, 25vw, 360px);
+
+  display: grid;
+
+  grid-template-columns:
+    var(--viewer-control-width)
+    minmax(0, 1fr);
+
+  align-items: stretch;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+}
+
+
+/* ------------------------------------------------------------
+   Left live control / data column
+   ------------------------------------------------------------ */
+
+.viewerControlPanel {
+  grid-column: 1;
+  grid-row: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding:
+    14px 14px 12px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  border: 0;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.17);
+
+  border-radius: 0;
+
+  background:
+    rgba(5, 7, 10, 0.58);
+
+  box-shadow: none;
+}
+
+
+.viewerControlPanel .controlRoomHeading {
+  margin-bottom: 1px;
+
+  font-size:
+    clamp(19px, 1.55vw, 24px);
+}
+
+
+.viewerControlPanel .viewerLabel {
+  flex: 0 0 auto;
+
+  margin-bottom: 1px;
+}
+
+
+.viewerControlPanel .viewerControls,
+.viewerControlPanel .viewerReadout,
+.viewerControlPanel .actionStatus,
+.viewerControlPanel .actionStatusImportant {
+  flex: 0 0 auto;
+}
+
+
+.viewerControlPanel .viewerControls {
+  padding: 9px;
+}
+
+
+.viewerControlPanel .viewerReadout {
+  overflow: visible;
+}
+
+
+.viewerControlPanel .readoutBlock,
+.viewerControlPanel .readoutPair {
+  padding:
+    8px 9px;
+}
+
+
+.viewerControlPanel .readoutPair {
+  gap: 8px;
+}
+
+
+.viewerControlPanel .readoutPair .readoutKatex {
+  font-size:
+    clamp(13px, 1.05vw, 18px);
+}
+
+
+.viewerControlPanel .statusEquation {
+  font-size:
+    clamp(21px, 1.8vw, 29px);
+}
+
+
+/* ------------------------------------------------------------
+   Right geometry viewscreen
+   ------------------------------------------------------------ */
+
+/*
+ * This is the important centering change.
+ *
+ * The stage does NOT occupy the full viewer anymore.
+ * It begins after the control column, so anything centered
+ * inside it is centered in the actual visible geometry region.
+ */
+
+.viewerLayout > .tetraStage {
+  grid-column: 2;
+  grid-row: 1;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+}
+
+
+/*
+ * The 24-cell naturally wants approximately square proportions.
+ */
+
+.viewerLayout > .tetraStage .cell24Panel {
+  display: flex;
+
+  align-items: stretch;
+  justify-content: center;
+}
+
+
+.viewerLayout > .tetraStage .cell24Card {
+  width: 100%;
+  max-width: none;
+}
+
+
+.viewerLayout > .tetraStage .cell24Svg {
+  width: 100%;
+  height: 100%;
+
+  max-width:
+    min(100%, 680px);
+
+  max-height:
+    min(100%, 680px);
+
+  aspect-ratio: 1;
+
+  margin:
+    -2px auto -4px;
+}
+
+
+/* ------------------------------------------------------------
+   Lower algebra band
+   ------------------------------------------------------------ */
+
+/*
+ * Element control has moved into the viewer.
+ * Only classification and matrix remain below.
+ */
+
+.lowerGrid {
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 14px;
+
+  width: 100%;
+}
+
+
+/*
+ * Override all previous desktop three-column lowerGrid rules.
+ */
+
+@media (min-width: 1001px) {
+
+  .lowerGrid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+  }
+}
+
+
+/* ------------------------------------------------------------
+   Narrow screens
+   ------------------------------------------------------------ */
+
+@media (max-width: 760px) {
+
+  .viewerLayout {
+    grid-template-columns: 1fr;
+
+    grid-template-rows:
+      auto
+      auto;
+  }
+
+
+  .viewerControlPanel {
+    grid-column: 1;
+    grid-row: 1;
+
+    height: auto;
+
+    overflow: visible;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.17);
+
+    border-radius: 0;
+  }
+
+
+  .viewerLayout > .tetraStage {
+    grid-column: 1;
+    grid-row: 2;
+
+    min-height: 500px;
+  }
+
+
+  .lowerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* === CLEAN GEOMETRY VIEW + TRUE TOP TABS === */
+
+/*
+ * Mode-specific text and controls belong in the left column.
+ * The right side is now reserved for geometry.
+ */
+
+.viewerModeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  flex: 0 0 auto;
+
+  padding:
+    9px 10px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 7px;
+
+  background:
+    rgba(7, 9, 12, 0.48);
+}
+
+
+.viewerModeInfoLabel,
+.cell24SidebarLabel {
+  color:
+    rgba(247, 243, 233, 0.52);
+
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+}
+
+
+.viewerModeInfoTitle {
+  color: #f7f3e9;
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+
+.viewerModeInfoMath {
+  color:
+    rgba(247, 243, 233, 0.76);
+
+  font-size: 13px;
+}
+
+
+.viewerModeLocalControls {
+  min-width: 0;
+}
+
+
+.cell24SidebarControls {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  margin-top: 2px;
+  padding-top: 7px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.09);
+}
+
+
+.cell24SidebarStats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 5px;
+}
+
+
+.cell24SidebarStats span {
+  padding:
+    4px 5px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 4px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  color:
+    rgba(247, 243, 233, 0.68);
+
+  text-align: center;
+
+  font-size: 9px;
+  line-height: 1.2;
+}
+
+
+.cell24SidebarControls .cell24DisplayModes {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  width: 100%;
+}
+
+
+.cell24SidebarControls .cell24DisplayButton,
+.cell24SidebarControls .cell24DisplayButtonActive {
+  width: 100%;
+}
+
+
+.cell24SidebarTrackRow {
+  display: grid;
+
+  grid-template-columns:
+    auto
+    minmax(0, 1fr)
+    auto;
+
+  gap: 6px;
+
+  align-items: center;
+}
+
+
+.cell24SidebarTrackRow .cell24SidebarLabel {
+  grid-column:
+    1 / -1;
+}
+
+
+.cell24SidebarTrackRow .cell24CellStepper {
+  grid-column:
+    1 / 3;
+}
+
+
+.cell24SidebarTrackRow .cell24TrackReadout {
+  grid-column: 3;
+}
+
+
+.cell24SidebarUtilityRow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+
+  color:
+    rgba(247, 243, 233, 0.76);
+
+  font-size: 10px;
+}
+
+
+.cell24SidebarUtilityRow .cell24ResetView {
+  margin-left: auto;
+}
+
+
+.cell24SidebarExplanation {
+  color:
+    rgba(247, 243, 233, 0.49);
+
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+
+/* ------------------------------------------------------------
+   True tabs attached above the geometry viewscreen
+   ------------------------------------------------------------ */
+
+.viewerShell {
+  margin-top: 35px;
+
+  overflow: visible;
+}
+
+
+.viewerLayout > .tetraStage {
+  position: relative;
+
+  overflow: visible;
+}
+
+
+.viewerLayout > .tetraStage .geometryModeHeader {
+  position: absolute;
+
+  top: -36px;
+  left: -1px;
+  right: -1px;
+
+  z-index: 30;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  width: auto;
+
+  min-height: 36px;
+
+  margin: 0;
+
+  pointer-events: none;
+}
+
+
+.viewerLayout > .tetraStage .geometryModeButtons {
+  pointer-events: auto;
+
+  display: inline-flex;
+
+  align-items: stretch;
+
+  overflow: visible;
+
+  border: 0;
+  border-radius: 0;
+
+  background: transparent;
+}
+
+
+.viewerLayout > .tetraStage .geometryModeButton,
+.viewerLayout > .tetraStage .geometryModeButtonActive {
+  min-height: 36px;
+
+  padding:
+    7px 12px 6px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.16);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.22);
+
+  border-radius:
+    7px 7px 0 0;
+
+  margin-right: -1px;
+
+  background:
+    rgba(7, 9, 12, 0.76);
+
+  color:
+    rgba(247, 243, 233, 0.60);
+
+  font-size: 11px;
+}
+
+
+.viewerLayout > .tetraStage .geometryModeButton:hover {
+  background:
+    rgba(18, 20, 24, 0.94);
+
+  color:
+    rgba(247, 243, 233, 0.88);
+}
+
+
+.viewerLayout > .tetraStage .geometryModeButtonActive {
+  position: relative;
+
+  z-index: 2;
+
+  border-color:
+    rgba(255, 255, 255, 0.28);
+
+  border-bottom-color:
+    rgba(7, 9, 12, 0.96);
+
+  background:
+    rgba(7, 9, 12, 0.96);
+
+  color: #f7f3e9;
+}
+
+
+/*
+ * The equation formerly living in the tab row now belongs
+ * to the left View block.
+ */
+
+
+
+
+/* ------------------------------------------------------------
+   Reclaim the complete right-hand region for geometry
+   ------------------------------------------------------------ */
+
+.viewerLayout > .tetraStage {
+  grid-template-rows:
+    0
+    minmax(0, 1fr);
+
+  padding:
+    0 8px 4px;
+}
+
+
+.viewerLayout > .tetraStage .cell24Card {
+  justify-content: center;
+}
+
+
+.viewerLayout > .tetraStage .cell24Svg {
+  flex:
+    1 1 auto;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  max-width:
+    min(100%, 760px);
+
+  max-height:
+    min(100%, 620px);
+
+  margin: auto;
+}
+
+
+/*
+ * These rows have been relocated to the left panel.
+ */
+
+
+
+
+@media
+  (max-height: 800px)
+  and (min-width: 761px) {
+
+  .viewerLayout > .tetraStage .cell24Svg {
+    max-width: 680px;
+    max-height: 540px;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   Mobile
+   ------------------------------------------------------------ */
+
+@media (max-width: 760px) {
+
+  .viewerShell {
+    margin-top: 0;
+
+    overflow: visible;
+  }
+
+
+  .viewerLayout > .tetraStage .geometryModeHeader {
+    position: static;
+
+    min-height: 0;
+
+    margin-bottom: 8px;
+  }
+
+
+  .viewerLayout > .tetraStage .geometryModeButtons {
+    display: flex;
+
+    flex-wrap: wrap;
+  }
+
+
+  .viewerLayout > .tetraStage .geometryModeButton,
+  .viewerLayout > .tetraStage .geometryModeButtonActive {
+    margin: 2px;
+
+    border-radius: 5px;
+  }
+
+
+  .viewerLayout > .tetraStage {
+    grid-template-rows:
+      auto
+      minmax(0, 1fr);
+  }
+}
+
+
+/* === RESTORED 24-CELL VIEWER IDENTITY === */
+
+/*
+ * These identify the current viewscreen without consuming
+ * any of the space needed by the projected 24-cell.
+ */
+
+.geometryStageIdentity {
+  position: absolute;
+
+  top: 15px;
+  left: 18px;
+  right: 18px;
+
+  z-index: 18;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  pointer-events: none;
+}
+
+
+.geometryStageIdentity h3 {
+  margin: 0;
+
+  color: #f7f3e9;
+
+  font-size:
+    clamp(20px, 1.8vw, 27px);
+
+  font-weight: 400;
+  line-height: 1;
+
+  text-shadow:
+    0 1px 7px
+    rgba(0, 0, 0, 0.82);
+}
+
+
+.geometryStageIdentityMath {
+  color:
+    rgba(247, 243, 233, 0.82);
+
+  font-size:
+    clamp(14px, 1.15vw, 18px);
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 1px 7px
+    rgba(0, 0, 0, 0.82);
+}
+
+
+@media (max-width: 760px) {
+
+  .geometryStageIdentity {
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+
+    margin:
+      4px 8px 0;
+  }
+}
+
+/* === TOP VIEWER SPACING POLISH === */
+
+/*
+ * Give the attached mode tabs a little breathing room
+ * below the page header without making the layout feel loose.
+ */
+.viewerShell {
+  margin-top: 32px;
+}
+
+
+/*
+ * The tabs remain attached to the viewer, but sit slightly
+ * farther above the viewscreen border.
+ */
+.viewerLayout > .tetraStage .geometryModeHeader {
+  top: -39px;
+}
+
+
+/*
+ * Give the restored viewscreen identity labels a little
+ * space below the tabs.
+ */
+.geometryStageIdentity {
+  top: 20px;
+}
+
+
+/*
+ * Keep mobile behavior compact.
+ */
+@media (max-width: 760px) {
+  .viewerShell {
+    margin-top: 0;
+  }
+
+  .geometryStageIdentity {
+    top: auto;
+  }
+}
+
+
+/* === RESPONSIVE 24-CELL SIZE — AUTHORITATIVE === */
+
+/*
+ * ONE sizing rule only.
+ *
+ * The 24-cell responds to the width of its actual geometry
+ * pane, rather than directly to the full browser width.
+ *
+ * This is one continuous linear relation:
+ *
+ *   displayed width = 312px + 31% of the geometry pane
+ *
+ * Therefore:
+ *   smaller pane -> smaller 24-cell
+ *   larger pane  -> larger 24-cell
+ *
+ * but it grows substantially more slowly on very wide screens.
+ *
+ * TUNING:
+ *   312px = baseline size
+ *   31%   = growth rate
+ */
+.viewerLayout > .tetraStage .cell24Panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.viewerLayout > .tetraStage .cell24Svg {
+  width: calc(312px + 31%);
+
+  height: auto;
+
+  max-width: none;
+  max-height: none;
+
+  margin: auto;
+}
+
+
+
+/* === COMPACT ELEMENT CONTROLLER — FINAL === */
+
+/*
+ * Preserve the established controller width.
+ * This section changes vertical organization only.
+ */
+
+.viewerControlPanel {
+  gap: 7px;
+}
+
+
+/* ------------------------------------------------------------
+   Element + powers
+   ------------------------------------------------------------ */
+
+.viewerControlsCompact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 10px 11px;
+}
+
+
+.viewerControlsCompact .elementRow {
+  grid-template-columns:
+    31px
+    minmax(0, 1fr)
+    31px;
+}
+
+
+.compactPowerRow {
+  display: grid;
+
+  grid-template-columns:
+    28px
+    minmax(54px, 1fr)
+    28px
+    auto;
+
+  gap: 6px;
+  align-items: center;
+
+  padding-top: 8px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.11);
+}
+
+
+.compactPowerStep {
+  width: 28px !important;
+  min-width: 28px !important;
+  height: 28px !important;
+
+  padding: 0 !important;
+
+  font-size: 16px !important;
+}
+
+
+.compactPowerRow .powerReadout {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+
+  font-size: 18px;
+}
+
+
+.compactPowerActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+
+.compactPowerActions .powerPlayButton,
+.compactPowerActions .powerResetButton {
+  height: 28px !important;
+
+  min-width: 43px;
+
+  padding:
+    2px 7px !important;
+}
+
+
+/* ------------------------------------------------------------
+   Compact View block
+   ------------------------------------------------------------ */
+
+.viewerModeInfo {
+  gap: 5px;
+
+  padding:
+    8px 10px;
+}
+
+
+.cell24SidebarControls {
+  gap: 6px;
+
+  margin-top: 1px;
+  padding-top: 6px;
+}
+
+
+.cell24SidebarStats {
+  gap: 4px;
+}
+
+
+.cell24SidebarStats span {
+  padding:
+    3px 4px;
+}
+
+
+.cell24SidebarTrackRow {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  gap: 6px;
+  align-items: center;
+}
+
+
+/*
+ * The label is redundant because C1 itself identifies
+ * the tracked-cell control.
+ */
+.cell24SidebarTrackRow .cell24SidebarLabel {
+  display: none;
+}
+
+
+.cell24SidebarTrackRow .cell24CellStepper {
+  grid-column: 1;
+}
+
+
+.cell24SidebarTrackRow .cell24TrackReadout {
+  grid-column: 2;
+}
+
+
+.cell24SidebarUtilityRow {
+  gap: 7px;
+
+  flex-wrap: nowrap;
+}
+
+
+/*
+ * The permanent explanatory paragraph was useful while
+ * establishing the interface, but it need not consume
+ * controller height on every frame.
+ */
+.cell24SidebarExplanation {
+  display: none;
+}
+
+
+/* ------------------------------------------------------------
+   One compact mathematical dashboard
+   ------------------------------------------------------------ */
+
+.compactReadout {
+  overflow: visible;
+}
+
+
+.compactReadout .readoutPair {
+  padding:
+    8px 10px;
+}
+
+
+.compactReadoutBottom {
+  display: grid;
+
+  grid-template-columns:
+    0.78fr
+    0.64fr
+    1.25fr;
+
+  gap: 8px;
+
+  padding:
+    8px 10px;
+}
+
+
+.compactReadoutBottom > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  min-width: 0;
+}
+
+
+.compactReadoutBottom .mathValue {
+  font-size:
+    clamp(16px, 1.2vw, 21px);
+}
+
+
+.compactReadoutBottom .readoutKatex {
+  display: block;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  font-size:
+    clamp(15px, 1.12vw, 20px);
+}
+
+
+.compactActionCell {
+  padding-left: 8px;
+
+  border-left:
+    1px solid rgba(255, 255, 255, 0.09);
+}
+
+
+.compactActionMeta {
+  color:
+    rgba(247, 243, 233, 0.48);
+
+  font-size: 9px;
+  line-height: 1.1;
+
+  white-space: nowrap;
+}
+
+
+/* ------------------------------------------------------------
+   Compact desktop height without changing width
+   ------------------------------------------------------------ */
+
+.viewerControlPanel .controlRoomHeading {
+  margin-bottom: 1px;
+}
+
+
+.viewerControlPanel .viewerLabel {
+  margin-bottom: 1px;
+}
+
+
+@media (max-width: 760px) {
+
+  .compactPowerRow {
+    grid-template-columns:
+      28px
+      minmax(54px, 1fr)
+      28px;
+  }
+
+  .compactPowerActions {
+    grid-column:
+      1 / -1;
+
+    justify-content: flex-end;
+  }
+
+
+  .compactReadoutBottom {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+
+/* === VIEWPORT-FITTED DASHBOARD — FINAL === */
+
+/*
+ * Desktop architecture
+ *
+ * 1. The compact Element controller determines the height of
+ *    the complete upper viewer.
+ *
+ * 2. The geometry stage fills exactly that same height without
+ *    participating in layout height calculation.
+ *
+ * 3. The classification + matrix band begins immediately below.
+ *
+ * 4. The complete page occupies at least one browser viewport.
+ */
+
+@media (min-width: 761px) {
+
+  /* ----------------------------------------------------------
+     Full-page dashboard
+     ---------------------------------------------------------- */
+
+  .page {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+
+  .header {
+    flex: 0 0 auto;
+  }
+
+
+  /*
+   * Remove the old viewport-derived viewer height.
+   * Height now comes from the controller itself.
+   */
+  .viewerShell {
+    flex: 0 0 auto;
+
+    height: auto;
+    min-height: 0;
+
+    overflow: visible;
+  }
+
+
+  /* ----------------------------------------------------------
+     Controller defines the upper row height
+     ---------------------------------------------------------- */
+
+  .viewerLayout {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    min-height: 0;
+  }
+
+
+  .viewerControlPanel {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+      var(--viewer-control-width);
+
+    height: auto;
+
+    min-height: 0;
+
+    overflow: visible;
+  }
+
+
+  /* ----------------------------------------------------------
+     Geometry occupies exactly the controller's vertical band
+     ---------------------------------------------------------- */
+
+  .viewerLayout > .tetraStage {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left:
+      var(--viewer-control-width);
+
+    width: auto;
+    height: auto;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+
+  /*
+   * Preserve the divider between controller and geometry.
+   */
+  .viewerLayout > .tetraStage::before {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 1px;
+
+    background:
+      rgba(255, 255, 255, 0.17);
+
+    content: "";
+
+    pointer-events: none;
+  }
+
+
+  /* ----------------------------------------------------------
+     Lower analysis band rises directly beneath the viewer
+     and uses any remaining viewport height.
+     ---------------------------------------------------------- */
+
+  .lowerGrid {
+    flex: 1 1 auto;
+
+    align-items: stretch;
+
+    min-height: 0;
+
+    margin-top: 12px;
+  }
+
+
+  .lowerGrid > .infoCard {
+    height: 100%;
+
+    min-height: 0;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   Mobile/tablet:
+   return to ordinary document flow.
+   ------------------------------------------------------------ */
+
+@media (max-width: 760px) {
+
+  .page {
+    display: block;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+
+  .viewerShell {
+    height: auto;
+
+    overflow: visible;
+  }
+
+
+  .viewerLayout {
+    position: static;
+
+    display: grid;
+
+    height: auto;
+  }
+
+
+  .viewerControlPanel {
+    position: static;
+
+    width: 100%;
+    height: auto;
+  }
+
+
+  .viewerLayout > .tetraStage {
+    position: relative;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    width: 100%;
+    height: auto;
+
+    min-height: 500px;
+
+    overflow: visible;
+  }
+
+
+  .viewerLayout > .tetraStage::before {
+    display: none;
+  }
+
+
+  .lowerGrid {
+    display: grid;
+
+    min-height: 0;
+  }
+}
+
+
+/* === RESTORE ATTACHED VIEWER TABS === */
+
+@media (min-width: 761px) {
+  .viewerLayout > .tetraStage {
+    overflow: visible;
+  }
+}
+
+
+
+/* === FIT LOWER PANELS INTO VIEWPORT === */
+
+@media (min-width: 761px) {
+
+  /*
+   * Make the desktop composition a true one-screen dashboard.
+   * The page itself may no longer grow beyond the viewport.
+   */
+  .page {
+    box-sizing: border-box;
+
+    height: 100vh;
+    height: 100dvh;
+
+    min-height: 0;
+
+    padding-bottom: 10px;
+
+    overflow: hidden;
+  }
+
+
+  /*
+   * The upper viewer keeps its natural controller-defined height.
+   * The lower band receives exactly what remains.
+   */
+  .lowerGrid {
+    flex:
+      1 1 0;
+
+    min-height: 0;
+
+    margin-top: 10px;
+
+    overflow: hidden;
+  }
+
+
+  /*
+   * Both lower cards fill that remaining band rather than
+   * demanding their old minimum height.
+   */
+  .lowerGrid > .infoCard {
+    box-sizing: border-box;
+
+    height: 100%;
+    min-height: 0;
+
+    padding:
+      11px 15px;
+
+    overflow: hidden;
+  }
+
+
+  /*
+   * Slightly tighten internal vertical rhythm.
+   * Font sizes remain essentially unchanged.
+   */
+  .lowerGrid > .infoCard h2 {
+    margin-bottom: 6px;
+  }
+
+
+  .lowerGrid > .infoCard .cardNote {
+    margin:
+      -3px 0 5px;
+  }
+
+
+  .lowerGrid > .infoCard .infoList > div {
+    padding:
+      2px 0;
+  }
+
+
+  .lowerGrid > .infoCard .polynomialDisplay {
+    gap: 4px;
+  }
+
+
+  .lowerGrid > .infoCard .matrixWrap {
+    padding:
+      4px 0 0;
+  }
+}
+
+
+/*
+ * Below desktop width, return to normal document scrolling.
+ */
+@media (max-width: 760px) {
+
+  .page {
+    height: auto;
+    min-height: 100dvh;
+
+    overflow: visible;
+  }
+
+
+  .lowerGrid {
+    overflow: visible;
+  }
+
+
+  .lowerGrid > .infoCard {
+    height: auto;
+
+    overflow: visible;
+  }
+}
+
+
+
+/* === SINGLE-LINE ELEMENT HEADER === */
+
+/*
+ * One compact row:
+ *
+ *   ←  →  Element 32 ▾  order 2
+ *
+ * This replaces the previous label row + selector row.
+ */
+
+.compactElementHeader {
+  display: grid;
+
+  grid-template-columns:
+    30px
+    30px
+    minmax(0, auto)
+    auto;
+
+  align-items: center;
+  justify-content: start;
+
+  gap: 5px;
+
+  min-width: 0;
+
+  margin:
+    1px 0 2px;
+}
+
+
+.compactElementArrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 28px;
+
+  padding: 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.22);
+
+  border-radius: 5px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  color: #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 17px;
+
+  cursor: pointer;
+}
+
+
+.compactElementArrow:hover {
+  background:
+    rgba(255, 255, 255, 0.14);
+}
+
+
+.compactElementSelectWrap {
+  position: relative;
+
+  min-width: 0;
+}
+
+
+.compactElementSelect {
+  width: 116px;
+  height: 28px;
+
+  padding:
+    2px 22px 2px 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.22);
+
+  border-radius: 5px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  color: transparent;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+
+.compactElementSelect option {
+  background: #151515;
+  color: #f7f3e9;
+}
+
+
+.compactElementSelectValue {
+  position: absolute;
+
+  top: 50%;
+  left: 8px;
+
+  transform:
+    translateY(-50%);
+
+  pointer-events: none;
+
+  color: #f7f3e9;
+
+  font-size: 15px;
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+.compactElementChevron {
+  position: absolute;
+
+  top: 50%;
+  right: 7px;
+
+  transform:
+    translateY(-52%);
+
+  pointer-events: none;
+
+  color:
+    rgba(247, 243, 233, 0.62);
+
+  font-size: 10px;
+}
+
+
+.compactElementOrder {
+  color:
+    rgba(245, 241, 232, 0.72);
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+
+/*
+ * The power card no longer needs as much top/bottom space
+ * because its element-selector row has been removed.
+ */
+.viewerControlsCompact {
+  padding:
+    8px 10px;
+}
+
+
+/*
+ * The power row is now the only row inside this card,
+ * so it does not need its former internal separator.
+ */
+.viewerControlsCompact .compactPowerRow {
+  padding-top: 0;
+
+  border-top: 0;
+}
+
+
+/*
+ * Narrow screens can wrap this gracefully rather than
+ * crushing the element label.
+ */
+@media (max-width: 760px) {
+
+  .compactElementHeader {
+    grid-template-columns:
+      28px
+      28px
+      minmax(110px, 1fr)
+      auto;
+  }
+
+
+  .compactElementSelect {
+    width: 100%;
+  }
+}
+
+
+
+/* === LOWER PANEL POLISH — ACTION PAIR + BASIS === */
+
+
+/* ------------------------------------------------------------
+   Classification: left + right action on one line
+   ------------------------------------------------------------ */
+
+.tetrahedralActionPair {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 10px;
+
+  white-space: nowrap;
+}
+
+
+.tetrahedralActionSeparator {
+  color:
+    rgba(247, 243, 233, 0.38);
+}
+
+
+/* ------------------------------------------------------------
+   Matrix: move basis into upper-right corner
+   ------------------------------------------------------------ */
+
+.lowerGrid > .infoCard:last-child {
+  position: relative;
+}
+
+
+.lowerGrid > .infoCard:last-child > .cardNote {
+  position: absolute;
+
+  top: 13px;
+  right: 15px;
+
+  margin: 0;
+
+  line-height: 1;
+}
+
+
+/*
+ * The basis no longer consumes its own row, so the matrix
+ * can begin directly beneath the title.
+ */
+.lowerGrid > .infoCard:last-child .matrixWrap {
+  padding-top: 12px;
+}
+
+
+/* On narrow mobile, return basis to ordinary document flow. */
+@media (max-width: 760px) {
+
+  .lowerGrid > .infoCard:last-child > .cardNote {
+    position: static;
+
+    margin:
+      -3px 0 5px;
+  }
+}
+
+
+/* === LOWER BAND CONTENT HEIGHT / VIEWER GETS REMAINDER === */
+
+@media (min-width: 761px) {
+
+  /*
+   * The upper viewer now receives whatever vertical room
+   * remains after the compact lower information band.
+   */
+  .viewerShell {
+    flex: 1 1 0;
+
+    min-height: 0;
+  }
+
+
+  .viewerLayout {
+    height: 100%;
+    min-height: 0;
+  }
+
+
+  /*
+   * Keep the controller panel filling the viewer frame.
+   * Its controls remain at the top; any reclaimed room
+   * simply becomes breathing room below them.
+   */
+  .viewerControlPanel {
+    height: 100%;
+  }
+
+
+  /*
+   * Bottom band is now only as tall as its actual content.
+   */
+  .lowerGrid {
+    flex: 0 0 auto;
+
+    min-height: 0;
+  }
+
+
+  .lowerGrid > .infoCard {
+    height: auto;
+    min-height: 0;
+
+    /*
+     * Slightly reduce the bottom padding that is visible
+     * in the current layout.
+     */
+    padding-bottom: 7px;
+  }
+}
+
+
+
+/* === MATRIX ACTION MODE === */
+
+/*
+ * The matrix panel drives the exact cyclic action shown
+ * by the projected 24-cell.
+ */
+
+.matrixPanelHeading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+
+  /*
+   * Preserve room for the basis label already parked
+   * in the upper-right corner.
+   */
+  padding-right: 142px;
+}
+
+
+.matrixPanelHeading h2 {
+  flex: 0 0 auto;
+
+  margin-bottom: 0 !important;
+}
+
+
+.matrixActionControls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  min-width: 0;
+}
+
+
+.matrixPowerKatex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 30px;
+
+  color:
+    rgba(247, 243, 233, 0.76);
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+
+.matrixApplyButton,
+.matrixResetButton {
+  height: 27px;
+
+  padding:
+    2px 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.20);
+
+  border-radius: 5px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  color: #f7f3e9;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+
+.matrixApplyButton:hover:not(:disabled),
+.matrixResetButton:hover {
+  background:
+    rgba(255, 255, 255, 0.14);
+}
+
+
+.matrixApplyButton:disabled {
+  opacity: 0.34;
+  cursor: default;
+}
+
+
+/*
+ * M itself stays fixed in this panel.
+ * M^k tells us the currently accumulated action shown above.
+ */
+.lowerGrid > .infoCard:last-child .matrixWrap {
+  padding-top: 12px;
+}
+
+
+@media (max-width: 1050px) and (min-width: 761px) {
+
+  .matrixPanelHeading {
+    gap: 7px;
+
+    padding-right: 118px;
+  }
+
+
+  .matrixApplyButton,
+  .matrixResetButton {
+    padding:
+      2px 6px;
+
+    font-size: 10px;
+  }
+
+
+  .matrixPowerKatex {
+    min-width: 24px;
+
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 760px) {
+
+  .matrixPanelHeading {
+    flex-wrap: wrap;
+
+    padding-right: 0;
+  }
+
+
+  .matrixActionControls {
+    width: 100%;
+  }
+}
+
+
+/* === MATRIX ACTION CONTROLS — BOTTOM LEFT === */
+
+.lowerGrid > .infoCard:last-child {
+  position: relative;
+}
+
+.matrixPanelHeading {
+  display: block;
+
+  padding-right: 142px;
+}
+
+.matrixActionControls {
+  position: absolute;
+
+  left: 15px;
+  bottom: 10px;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lowerGrid > .infoCard:last-child .matrixWrap {
+  padding-top: 12px;
+  padding-bottom: 31px;
+}
+
+
+/* === MATRIX ACTION CONTROLS — LEFT COLUMN === */
+
+.lowerGrid > .infoCard:last-child {
+  position: relative;
+}
+
+.matrixPanelHeading {
+  display: block;
+  padding-right: 142px;
+}
+
+.matrixActionControls {
+  position: absolute;
+
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.lowerGrid > .infoCard:last-child .matrixWrap {
+  padding-top: 18px;
+  padding-bottom: 10px;
+  padding-left: 120px;
+}
+
+.matrixPowerReadout {
+  min-width: 0;
+}
+
+
+
+/* === MATRIX CONTROLS CENTERED ON MATRIX BODY === */
+
+/*
+ * Controls and matrix now occupy the same body row.
+ * align-items:center means the control column is centered
+ * against the MATRIX itself, not against the entire card.
+ */
+.matrixActionBody {
+  display: grid;
+
+  grid-template-columns:
+    120px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  min-width: 0;
+}
+
+
+/*
+ * Override the earlier absolute positioning.
+ */
+.matrixActionBody .matrixActionControls {
+  position: static;
+
+  left: auto;
+  top: auto;
+  bottom: auto;
+
+  transform: none;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 8px;
+
+  width: auto;
+}
+
+
+/*
+ * The matrix no longer needs fake left padding,
+ * because the grid creates a real control column.
+ */
+.matrixActionBody .matrixWrap {
+  min-width: 0;
+
+  padding:
+    18px 0 10px !important;
+
+  margin: 0;
+
+  justify-content: center;
+}
+
+
+/*
+ * Keep the M^k readout aligned with the buttons.
+ */
+.matrixActionBody .matrixPowerKatex {
+  min-width: 0;
+
+  justify-content: flex-start;
+}
+
+
+@media (max-width: 760px) {
+
+  .matrixActionBody {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .matrixActionBody .matrixActionControls {
+    flex-direction: row;
+
+    align-items: center;
+
+    margin-bottom: 8px;
+  }
+}
+
+
+
+/* === EXACT 24-CELL ORBIT TRAIL === */
+
+
+/*
+ * Every ghost octahedron is an exact cell position reached
+ * by repeated powers of the selected matrix.
+ */
+.cell24OrbitTrailFace {
+  fill:
+    rgba(110, 220, 255, 0.14);
+
+  stroke:
+    rgba(190, 245, 255, 0.92);
+
+  stroke-width: 1.2;
+
+  stroke-linejoin: round;
+
+  opacity: 0.95;
+
+  filter:
+    drop-shadow(0 0 5px rgba(120, 220, 255, 0.34));
+
+  pointer-events: none;
+}
+
+
+/* ------------------------------------------------------------
+   Matrix trail toggle
+   ------------------------------------------------------------ */
+
+.matrixOrbitButton,
+.matrixOrbitButtonActive {
+  min-height: 27px;
+
+  padding:
+    2px 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.20);
+
+  border-radius: 5px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  color: #f7f3e9;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+
+.matrixOrbitButton:hover {
+  background:
+    rgba(255, 255, 255, 0.14);
+}
+
+
+.matrixOrbitButtonActive {
+  border-color:
+    rgba(255, 135, 125, 0.72);
+
+  background:
+    rgba(255, 74, 64, 0.18);
+}
+
+
+/*
+ * Current left-column matrix layout:
+ * let the new trail button join that same vertical stack.
+ */
+.matrixActionBody .matrixActionControls {
+  align-items: flex-start;
+}
+
+/* === KEEP CONTROLLER EXACTLY MATCHED TO VIEWER HEIGHT === */
+
+@media (min-width: 761px) {
+
+  /*
+   * height:100% now includes the controller's
+   * padding and border instead of adding them afterward.
+   */
+  .viewerControlPanel {
+    box-sizing: border-box;
+
+    height: 100%;
+
+    align-self: stretch;
+  }
+
+
+  /*
+   * Keep the geometry side locked to the exact same
+   * top and bottom edges.
+   */
+  .viewerLayout > .tetraStage {
+    box-sizing: border-box;
+
+    top: 0;
+    bottom: 0;
+  }
+}
+
+
+
+
+/* === RESPONSIVE CONTROLLER HEIGHT FIT — FINAL === */
+
+@media (min-width: 761px) {
+
+  /*
+   * The controller is exactly the same outer height
+   * as the geometry viewer.
+   */
+  .viewerControlPanel {
+    box-sizing: border-box;
+
+    height: 100%;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    /*
+     * Vertical spacing now responds to available HEIGHT,
+     * rather than becoming larger simply because the
+     * browser becomes wider.
+     */
+    gap: clamp(5px, 0.75vh, 8px);
+
+    padding:
+      clamp(9px, 1.25vh, 14px)
+      14px
+      clamp(8px, 1.05vh, 12px);
+  }
+
+
+  /*
+   * Do not let a very wide monitor make the heading
+   * taller while the viewer height stays unchanged.
+   */
+  .viewerControlPanel .controlRoomHeading {
+    font-size:
+      clamp(
+        19px,
+        min(1.55vw, 2.45vh),
+        24px
+      );
+  }
+
+
+  /*
+   * Same principle for the mathematical readouts.
+   */
+  .viewerControlPanel .readoutPair .readoutKatex {
+    font-size:
+      clamp(
+        13px,
+        min(1.05vw, 1.85vh),
+        18px
+      );
+  }
+
+
+  .viewerControlPanel .compactReadoutBottom .readoutKatex {
+    font-size:
+      clamp(
+        14px,
+        min(1.12vw, 1.9vh),
+        20px
+      );
+  }
+
+
+  .viewerControlPanel .compactReadoutBottom .mathValue {
+    font-size:
+      clamp(
+        16px,
+        min(1.2vw, 2.05vh),
+        21px
+      );
+  }
+
+
+  /*
+   * Compact the three major controller blocks slightly
+   * when vertical room becomes limited.
+   */
+  .viewerControlsCompact {
+    padding:
+      clamp(6px, 0.9vh, 8px)
+      10px;
+  }
+
+
+  .viewerModeInfo {
+    gap:
+      clamp(4px, 0.65vh, 5px);
+
+    padding:
+      clamp(6px, 0.85vh, 8px)
+      10px;
+  }
+
+
+  .compactReadout .readoutPair {
+    padding:
+      clamp(6px, 0.85vh, 8px)
+      10px;
+  }
+
+
+  .compactReadoutBottom {
+    padding:
+      clamp(6px, 0.85vh, 8px)
+      10px;
+  }
+}
+
+
+/* === RESTORE TETRAHEDRAL QUOTIENT VIEW === */
+
+@media (min-width: 761px) {
+
+  /*
+   * The tab header occupies the zero-height first grid row.
+   * The two tetrahedra and their divider must live in the
+   * actual visible geometry row beneath it.
+   */
+  .viewerLayout > .tetraStage > .tetraPanel,
+  .viewerLayout > .tetraStage > .stageDivider {
+    grid-row: 2;
+  }
+}
+
+
+/* === RESTORE CONJUGACY CLASSES VIEW === */
+
+@media (min-width: 761px) {
+
+  .viewerLayout > .tetraStage > .conjugacyPanelWrap {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+
+  .viewerLayout > .tetraStage
+    > .conjugacyPanelWrap
+    > .conjugacyPanel {
+
+    width: min(100%, 1000px);
+    height: 100%;
+
+    min-height: 0;
+
+    margin: 0 auto;
+  }
+}
+
+
+
+/* === EXACT SO(4) ROTATION ANGLES === */
+
+/*
+ * Current order and fixed-space dimension share one row,
+ * reclaiming the vertical line used by Rotation angles.
+ */
+.infoList > .classificationSummaryRow {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  padding:
+    2px 0;
+}
+
+
+.classificationSummaryItem {
+  display: grid;
+
+  grid-template-columns:
+    minmax(115px, 1fr)
+    auto;
+
+  align-items: baseline;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+
+.classificationSummaryItem dt,
+.classificationSummaryItem dd {
+  min-width: 0;
+}
+
+
+.classificationSummaryItem dd {
+  text-align: right;
+}
+
+
+.rotationAnglesKatex {
+  color: #f7f3e9;
+
+  font-size:
+    clamp(15px, 1.08vw, 18px);
+
+  white-space: nowrap;
+}
+
+
+@media (max-width: 760px) {
+
+  .infoList > .classificationSummaryRow {
+    grid-template-columns:
+      1fr;
+  }
+}
+
+
+/* === CLASSIFICATION SUMMARY ALIGNMENT — FINAL === */
+
+/*
+ * Use exactly the same two-column geometry as the ordinary
+ * classification rows below:
+ *
+ *   Current order  2      Fixed-space dimension  0
+ *
+ * This makes "Fixed-space dimension" begin exactly where
+ * the characteristic-polynomial "=" signs begin.
+ */
+.infoList > .classificationSummaryRow {
+  display: grid;
+
+  grid-template-columns:
+    minmax(145px, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 14px;
+
+  align-items: baseline;
+
+  padding:
+    2px 0;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.classificationSummaryItem {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+
+.classificationSummaryItem dt,
+.classificationSummaryItem dd {
+  min-width: 0;
+
+  margin: 0;
+}
+
+
+.classificationSummaryItem dd {
+  flex: 0 0 auto;
+
+  text-align: left;
+}
+
+
+/*
+ * Rotation-angle mathematics matches the characteristic-
+ * polynomial mathematics exactly in scale.
+ */
+.rotationAnglesKatex {
+  color: #f7f3e9;
+
+  font-size:
+    clamp(14px, 1.05vw, 18px);
+
+  white-space: nowrap;
+}
+
+
+@media (max-width: 760px) {
+
+  .infoList > .classificationSummaryRow {
+    grid-template-columns:
+      1fr;
+
+    row-gap: 4px;
+  }
+}
+
+
+/* === CONJUGACY DETAIL CLEANUP — FINAL === */
+
+.conjugacyKeyStats {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+}
+
+
+.conjugacySpectralDetail > div {
+  display: flex;
+  align-items: baseline;
+
+  gap: 8px;
+}
+
+
+.conjugacySpectralDetail strong {
+  color: #f7f3e9;
+
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+.conjugacySpectralPolynomial {
+  font-size:
+    clamp(12px, 0.95vw, 15px);
+}
+
+
+/* === CONJUGACY WIDTH / CLIPPING FIX — FINAL === */
+
+/*
+ * The old workspace forced minimum widths of 300px + 360px.
+ * That could make the right detail panel extend beyond the
+ * available stage width.
+ *
+ * Preserve the 42 / 58 proportion, but let both columns shrink
+ * all the way down when necessary.
+ */
+.conjugacyWorkspace {
+  grid-template-columns:
+    minmax(0, 42fr)
+    minmax(0, 58fr);
+
+  width: 100%;
+  max-width: 100%;
+
+  min-width: 0;
+}
+
+
+/*
+ * Both major children must be allowed to shrink inside
+ * their grid tracks.
+ */
+.conjugacyClassGrid,
+.conjugacyDetail {
+  min-width: 0;
+  max-width: 100%;
+
+  box-sizing: border-box;
+}
+
+
+/*
+ * Keep the nine spectral-family buttons inside the detail panel.
+ */
+.conjugacySpectralFamilies {
+  width: 100%;
+  max-width: 100%;
+
+  min-width: 0;
+}
+
+
+/*
+ * The spectral readout should use the available width rather
+ * than forcing the parent wider.
+ */
+.conjugacySpectralDetail {
+  width: 100%;
+  max-width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+.conjugacySpectralDetail > div {
+  flex:
+    0 1 auto;
+
+  min-width: 0;
+}
+
+
+.conjugacySpectralPolynomial {
+  flex:
+    0 1 auto;
+
+  min-width: 0;
+  max-width: 100%;
+
+  white-space: normal;
+}
+
+
+/*
+ * KaTeX itself should not establish a wider intrinsic box
+ * than the spectral-detail container.
+ */
+.conjugacySpectralPolynomial :global(.katex) {
+  max-width: 100%;
+}
+
+
+/*
+ * Keep the class-size equation inside the same right-hand panel.
+ */
+.conjugacyEquation {
+  width: 100%;
+  max-width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+.conjugacyEquationMath {
+  display: inline-block;
+
+  max-width: 100%;
+}
+
+
+/*
+ * At somewhat narrower desktop widths, give the detail side a
+ * little more room before the existing stacked/mobile behavior
+ * takes over.
+ */
+@media
+  (min-width: 901px)
+  and (max-width: 1150px) {
+
+  .conjugacyWorkspace {
+    grid-template-columns:
+      minmax(0, 38fr)
+      minmax(0, 62fr);
+
+    gap: 12px;
+  }
+}
+
+
+/* === K32 SPECTRAL SUMMARY === */
+
+.core32SpectralSummary {
+  width:
+    min(100%, 650px);
+
+  margin:
+    -1px auto 8px;
+}
+
+
+.core32SpectralHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 5px;
+
+  color:
+    rgba(247, 243, 233, 0.72);
+
+  font-size: 10px;
+}
+
+
+.core32SpectralHeading small {
+  color:
+    rgba(247, 243, 233, 0.38);
+
+  font-size: 8px;
+}
+
+
+.core32SpectralGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(125px, 1fr)
+    );
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+
+.core32SpectralCell,
+.core32SpectralCellActive {
+  display: grid;
+
+  grid-template-columns:
+    auto
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+  min-height: 34px;
+
+  padding:
+    4px 7px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 5px;
+
+  background:
+    rgba(0, 0, 0, 0.18);
+
+  color:
+    rgba(247, 243, 233, 0.62);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  cursor: pointer;
+}
+
+
+.core32SpectralCell:hover {
+  border-color:
+    rgba(255, 255, 255, 0.25);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+}
+
+
+.core32SpectralCellActive {
+  border-color:
+    rgba(255, 255, 255, 0.58);
+
+  background:
+    rgba(103, 90, 139, 0.42);
+
+  color:
+    #f7f3e9;
+}
+
+
+.core32SpectralFamily {
+  font-size: 10px;
+}
+
+
+.core32SpectralAngles {
+  min-width: 0;
+
+  text-align: center;
+
+  font-size:
+    clamp(11px, 0.82vw, 14px);
+
+  white-space: nowrap;
+}
+
+
+.core32SpectralCell strong,
+.core32SpectralCellActive strong {
+  color:
+    #f7f3e9;
+
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+@media (max-width: 760px) {
+
+  .core32SpectralGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* === K32 UNIFIED STRUCTURAL / SPECTRAL LAYOUT === */
+
+.core32UnifiedSummary {
+  width:
+    min(100%, 700px);
+
+  margin:
+    0 auto 5px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 7px;
+
+  background:
+    rgba(0, 0, 0, 0.17);
+}
+
+
+.core32UnifiedHeader,
+.core32UnifiedRow,
+.core32UnifiedRowActive {
+  display: grid;
+
+  grid-template-columns:
+    minmax(150px, 1.45fr)
+    minmax(58px, 0.45fr)
+    minmax(88px, 0.65fr)
+    minmax(150px, 1.15fr);
+
+  align-items: center;
+
+  column-gap: 10px;
+
+  min-width: 0;
+}
+
+
+.core32UnifiedHeader {
+  padding:
+    5px 9px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  color:
+    rgba(247, 243, 233, 0.42);
+
+  font-size: 8px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+
+.core32UnifiedRow,
+.core32UnifiedRowActive {
+  width: 100%;
+
+  min-height: 34px;
+
+  padding:
+    5px 9px;
+
+  border: 0;
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  background:
+    transparent;
+
+  color:
+    rgba(247, 243, 233, 0.69);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+.core32UnifiedRow:last-child,
+.core32UnifiedRowActive:last-child {
+  border-bottom: 0;
+}
+
+
+.core32UnifiedRow:hover {
+  background:
+    rgba(255, 255, 255, 0.04);
+}
+
+
+.core32UnifiedRowActive {
+  background:
+    rgba(103, 90, 139, 0.34);
+
+  color:
+    #f7f3e9;
+}
+
+
+.core32UnifiedRole {
+  min-width: 0;
+
+  font-size: 11px;
+}
+
+
+.core32UnifiedCount {
+  color:
+    #f7f3e9;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  text-align: center;
+}
+
+
+.core32UnifiedFamily {
+  font-size: 11px;
+
+  text-align: center;
+}
+
+
+.core32UnifiedAngles {
+  min-width: 0;
+
+  font-size:
+    clamp(11px, 0.85vw, 14px);
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+.core32UnifiedEquation {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding:
+    6px 9px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  color:
+    rgba(247, 243, 233, 0.76);
+
+  font-size: 11px;
+}
+
+
+.core32UnifiedEquation > span:last-child {
+  color:
+    rgba(247, 243, 233, 0.39);
+
+  font-size: 8px;
+}
+
+
+.core32ElementLayout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.55fr)
+    minmax(0, 1fr);
+
+  gap:
+    8px 10px;
+
+  width:
+    min(100%, 760px);
+
+  margin:
+    0 auto;
+}
+
+
+.core32CenterSection {
+  grid-column:
+    1 / -1;
+
+  padding-top: 4px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.core32ElementColumn {
+  min-width: 0;
+
+  padding-top: 7px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.core32ElementColumn .coreCouplingGrid {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+
+.core32ElementColumn .coreComplexGrid {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+
+.core32CenterSection .coreCenterRow {
+  width:
+    min(100%, 250px);
+}
+
+
+@media (max-width: 760px) {
+
+  .core32UnifiedHeader,
+  .core32UnifiedRow,
+  .core32UnifiedRowActive {
+    grid-template-columns:
+      minmax(120px, 1.3fr)
+      50px
+      60px
+      minmax(110px, 1fr);
+
+    column-gap: 6px;
+  }
+
+
+  .core32ElementLayout {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .core32CenterSection {
+    grid-column:
+      1;
+  }
+}
+
+
+/* === K32 CENTRAL ROLE LABELS === */
+
+.core32UnifiedRole {
+  display: flex;
+  align-items: baseline;
+
+  gap: 7px;
+}
+
+
+.core32UnifiedRoleMath {
+  color: #f7f3e9;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+
+.core32UnifiedRole small {
+  color:
+    rgba(247, 243, 233, 0.43);
+
+  font-size: 8px;
+
+  white-space: nowrap;
+}
+
+
+/* === K32 COLLAPSIBLE CATEGORY LAYOUT === */
+
+.core32CategoryTabs {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 7px;
+
+  width:
+    min(100%, 650px);
+
+  margin:
+    7px auto 8px;
+}
+
+
+.core32CategoryTab,
+.core32CategoryTabActive {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  gap: 7px;
+
+  min-width: 0;
+  min-height: 35px;
+
+  padding:
+    5px 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 6px;
+
+  background:
+    rgba(0, 0, 0, 0.18);
+
+  color:
+    rgba(247, 243, 233, 0.62);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  cursor: pointer;
+}
+
+
+.core32CategoryTab:hover {
+  border-color:
+    rgba(255, 255, 255, 0.25);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+}
+
+
+.core32CategoryTabActive {
+  border-color:
+    rgba(255, 255, 255, 0.58);
+
+  background:
+    rgba(103, 90, 139, 0.38);
+
+  color:
+    #f7f3e9;
+}
+
+
+.core32CategoryTab strong,
+.core32CategoryTabActive strong {
+  color:
+    #f7f3e9;
+
+  font-size: 15px;
+  font-weight: 400;
+}
+
+
+.core32CategoryTab span,
+.core32CategoryTabActive span {
+  font-size: 10px;
+}
+
+
+.core32CategoryDetail {
+  width:
+    min(100%, 650px);
+
+  min-height: 128px;
+
+  margin:
+    0 auto;
+
+  padding:
+    8px 10px 9px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 7px;
+
+  background:
+    rgba(0, 0, 0, 0.13);
+}
+
+
+.core32CategoryDetailHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 7px;
+}
+
+
+.core32CategoryDetailHeading > div {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+
+.core32CategoryDetailHeading strong {
+  color:
+    rgba(247, 243, 233, 0.82);
+
+  font-size: 11px;
+  font-weight: 400;
+}
+
+
+.core32CategoryDetailHeading span {
+  margin-top: 1px;
+
+  color:
+    rgba(247, 243, 233, 0.40);
+
+  font-size: 8px;
+}
+
+
+.core32CategoryDetail .coreComplexGrid {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+
+.core32CategoryDetail .coreCouplingGrid {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+
+.core32CategoryDetail .coreCenterRow {
+  width:
+    min(100%, 260px);
+
+  margin:
+    18px auto 8px;
+}
+
+
+/*
+ * Old simultaneous-layout container is no longer used.
+ * Keep this defensive rule so it cannot contribute spacing
+ * if stale markup survives during hot reload.
+ */
+.core32ElementLayout {
+  display: none;
+}
+
+
+@media (max-width: 760px) {
+
+  .core32CategoryTabs {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .core32CategoryDetail .coreComplexGrid,
+  .core32CategoryDetail .coreCouplingGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* === K32 COMPACT DATA-MATRIX LAYOUT === */
+
+
+/* ---------- top spectral table ---------- */
+
+.core32UnifiedSummary {
+  width:
+    min(100%, 620px);
+
+  margin:
+    0 auto 4px;
+
+  border-radius:
+    5px;
+}
+
+
+.core32UnifiedHeader,
+.core32UnifiedRow,
+.core32UnifiedRowActive {
+  grid-template-columns:
+    minmax(110px, 1.35fr)
+    48px
+    72px
+    minmax(120px, 1fr);
+
+  column-gap:
+    6px;
+}
+
+
+.core32UnifiedHeader {
+  padding:
+    3px 7px;
+
+  font-size:
+    7px;
+}
+
+
+.core32UnifiedRow,
+.core32UnifiedRowActive {
+  min-height:
+    27px;
+
+  padding:
+    2px 7px;
+}
+
+
+.core32UnifiedRole {
+  font-size:
+    10px;
+}
+
+
+.core32UnifiedRoleMath {
+  font-size:
+    12px;
+}
+
+
+.core32UnifiedCount {
+  font-size:
+    13px;
+}
+
+
+.core32UnifiedFamily {
+  font-size:
+    10px;
+}
+
+
+.core32UnifiedAngles {
+  font-size:
+    clamp(10px, 0.78vw, 13px);
+}
+
+
+/* ---------- category selector ---------- */
+
+.core32CategoryTabs {
+  width:
+    min(100%, 620px);
+
+  gap:
+    4px;
+
+  margin:
+    4px auto;
+}
+
+
+.core32CategoryTab,
+.core32CategoryTabActive {
+  min-height:
+    27px;
+
+  gap:
+    5px;
+
+  padding:
+    2px 6px;
+
+  border-radius:
+    4px;
+}
+
+
+.core32CategoryTab strong,
+.core32CategoryTabActive strong {
+  font-size:
+    12px;
+}
+
+
+.core32CategoryTab span,
+.core32CategoryTabActive span {
+  font-size:
+    9px;
+}
+
+
+/* ---------- selected category ---------- */
+
+.core32CompactDetail {
+  width:
+    min(100%, 620px);
+
+  margin:
+    0 auto;
+
+  min-width:
+    0;
+}
+
+
+.core32CompactTitle {
+  display:
+    flex;
+
+  align-items:
+    baseline;
+
+  justify-content:
+    space-between;
+
+  gap:
+    12px;
+
+  min-height:
+    21px;
+
+  padding:
+    2px 2px 3px;
+
+  color:
+    rgba(247, 243, 233, 0.74);
+
+  font-size:
+    10px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.core32CompactMatrix {
+  width:
+    100%;
+
+  min-width:
+    0;
+}
+
+
+.core32CompactMatrixHeader,
+.core32CompactMatrixRow {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(90px, 1fr)
+    minmax(72px, 0.75fr)
+    minmax(72px, 0.75fr);
+
+  align-items:
+    center;
+
+  column-gap:
+    5px;
+
+  min-width:
+    0;
+}
+
+
+.core32CompactMatrixHeader {
+  min-height:
+    20px;
+
+  padding:
+    1px 5px;
+
+  color:
+    rgba(247, 243, 233, 0.36);
+
+  font-size:
+    7px;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.04em;
+}
+
+
+.core32CompactMatrixHeader span:not(:first-child) {
+  text-align:
+    center;
+}
+
+
+.core32CompactMatrixRow {
+  min-height:
+    25px;
+
+  padding:
+    1px 5px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.045);
+}
+
+
+.core32CompactDirection {
+  min-width:
+    0;
+
+  font-size:
+    11px;
+}
+
+
+.core32CompactElement,
+.core32CompactElementActive {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    6px;
+
+  min-width:
+    0;
+
+  height:
+    21px;
+
+  padding:
+    1px 5px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius:
+    3px;
+
+  background:
+    rgba(0, 0, 0, 0.15);
+
+  color:
+    rgba(247, 243, 233, 0.61);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size:
+    9px;
+
+  cursor:
+    pointer;
+}
+
+
+.core32CompactElement:hover {
+  border-color:
+    rgba(255, 255, 255, 0.24);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+}
+
+
+.core32CompactElementActive {
+  border-color:
+    rgba(255, 255, 255, 0.58);
+
+  background:
+    rgba(103, 90, 139, 0.42);
+
+  color:
+    #f7f3e9;
+}
+
+
+.core32CompactElement small {
+  color:
+    rgba(247, 243, 233, 0.42);
+
+  font-size:
+    8px;
+}
+
+
+.core32CompactCenter {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    5px;
+
+  width:
+    min(100%, 240px);
+
+  margin:
+    7px auto 0;
+}
+
+
+/* old large detail presentation is no longer used */
+.core32CategoryDetail,
+.core32Explanation {
+  display:
+    none;
+}
+
+
+@media (max-width: 760px) {
+
+  .core32UnifiedHeader,
+  .core32UnifiedRow,
+  .core32UnifiedRowActive {
+    grid-template-columns:
+      minmax(80px, 1.1fr)
+      40px
+      55px
+      minmax(100px, 1fr);
+  }
+
+
+  .core32CompactMatrixHeader,
+  .core32CompactMatrixRow {
+    grid-template-columns:
+      minmax(75px, 1fr)
+      minmax(60px, 0.75fr)
+      minmax(60px, 0.75fr);
+  }
+}
+
+
+/* === EXACT 24-CELL VERTEX DISPLACEMENT SPECTRUM === */
+
+.vertexDisplacementSpectrum {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: baseline;
+
+  gap:
+    3px 7px;
+
+  min-width: 0;
+}
+
+
+.vertexDisplacementEntry {
+  display: inline-flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+
+  min-width: 0;
+
+  white-space: nowrap;
+}
+
+
+.vertexDisplacementAngle {
+  color: #f7f3e9;
+
+  font-size:
+    clamp(13px, 1vw, 17px);
+}
+
+
+.vertexDisplacementMultiplicity {
+  color:
+    rgba(247, 243, 233, 0.52);
+
+  font-size:
+    10px;
+}
+
+
+.vertexDisplacementSeparator {
+  margin-left:
+    2px;
+
+  color:
+    rgba(247, 243, 233, 0.25);
+
+  font-size:
+    11px;
+}
+
+
+/* === 24-CELL SPLIT-FAMILY GEOMETRY === */
+
+.cell24SplitDiagnostic {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin-top: 6px;
+  padding: 6px 7px;
+
+  border:
+    1px solid rgba(255, 221, 117, 0.18);
+
+  border-radius: 5px;
+
+  background:
+    rgba(255, 221, 117, 0.035);
+}
+
+
+.cell24SplitDiagnosticHeader {
+  display: flex;
+
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  color:
+    rgba(247, 243, 233, 0.80);
+
+  font-size: 10px;
+}
+
+
+.cell24SplitAnglesMath {
+  color:
+    rgba(247, 243, 233, 0.82);
+
+  font-size: 12px;
+}
+
+
+.cell24SplitPlaneRow {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 4px;
+
+  color:
+    rgba(247, 243, 233, 0.64);
+
+  font-size: 10px;
+}
+
+
+.cell24SplitPlaneMath {
+  color:
+    rgba(255, 224, 119, 0.98);
+
+  font-size: 12px;
+}
+
+
+.cell24SplitSpectrum {
+  min-width: 0;
+}
+
+
+.cell24SplitSpectrumMath {
+  color:
+    rgba(247, 243, 233, 0.88);
+
+  font-size: 12px;
+}
+
+
+.cell24SplitDiagnosticText {
+  color:
+    rgba(247, 243, 233, 0.48);
+
+  font-size: 9px;
+  line-height: 1.25;
+}
+
+
+.cell24SplitEdge {
+  pointer-events: none;
+
+  stroke:
+    rgba(255, 219, 92, 0.82);
+
+  stroke-width: 1.8;
+
+  vector-effect:
+    non-scaling-stroke;
+
+  filter:
+    drop-shadow(
+      0 0 1.5px
+      rgba(255, 212, 70, 0.42)
+    );
+}
+
+
+.cell24SplitVertex circle {
+  fill:
+    rgba(245, 194, 55, 0.98);
+
+  stroke:
+    rgba(255, 248, 218, 0.98);
+
+  stroke-width: 1.6;
+
+  vector-effect:
+    non-scaling-stroke;
+
+  filter:
+    drop-shadow(
+      0 0 3px
+      rgba(255, 205, 63, 0.62)
+    );
+}
+
+
+.cell24SplitVertex text {
+  pointer-events: none;
+  user-select: none;
+
+  fill:
+    rgba(18, 16, 11, 0.96);
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 7px;
+
+  font-weight: 700;
+}
+
+
+.cell24SplitMixedVertex circle {
+  fill:
+    rgba(97, 94, 110, 0.22);
+
+  stroke:
+    rgba(247, 243, 233, 0.34);
+
+  stroke-width: 0.9;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+
+.cell24SplitMixedVertex text {
+  pointer-events: none;
+  user-select: none;
+
+  fill:
+    rgba(247, 243, 233, 0.42);
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 7px;
+}
+
+
+/* === FOUR-MODE 24-CELL BUTTON ROW ONLY === */
+
+.cell24SidebarControls .cell24DisplayModes {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  width: 100%;
+
+  min-width: 0;
+}
+
+
+.cell24SidebarControls .cell24DisplayButton,
+.cell24SidebarControls .cell24DisplayButtonActive {
+  width: 100%;
+
+  min-width: 0;
+
+  padding-left: 3px;
+  padding-right: 3px;
+
+  white-space: nowrap;
+}
+
+
+/* === FULL-WIDTH DECOMPOSITION VIEW === */
+
+@media (min-width: 761px) {
+
+  /*
+   * Decomposition is the one global tab:
+   * no Element controller and no left-column reservation.
+   */
+  .viewerLayoutDecomposition {
+    height:
+      clamp(
+        500px,
+        66dvh,
+        650px
+      );
+  }
+
+
+  .viewerLayoutDecomposition
+    .viewerControlPanel {
+
+    display: none;
+  }
+
+
+  .viewerLayoutDecomposition
+    > .tetraStage {
+
+    left: 0;
+  }
+
+
+  .viewerLayoutDecomposition
+    > .tetraStage::before {
+
+    display: none;
+  }
+
+
+  .lowerGridDecomposition {
+    display:
+      none !important;
+  }
+}
+
+
+.decompositionPanel {
+  grid-column:
+    1 / -1;
+
+  grid-row: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  width:
+    min(
+      100%,
+      1180px
+    );
+
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  margin:
+    0 auto;
+
+  padding:
+    4px 14px 10px;
+
+  box-sizing:
+    border-box;
+}
+
+
+.decompositionHeading {
+  display: flex;
+
+  align-items:
+    flex-start;
+
+  justify-content:
+    space-between;
+
+  gap: 16px;
+}
+
+
+.decompositionHeading h3 {
+  margin: 0;
+
+  color:
+    #f7f3e9;
+
+  font-size:
+    clamp(
+      19px,
+      1.5vw,
+      24px
+    );
+
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+
+.decompositionHeading p {
+  margin:
+    3px 0 0;
+
+  color:
+    rgba(
+      247,
+      243,
+      233,
+      0.56
+    );
+
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+
+/* 288 -> 25 -> 11 -> 9 */
+
+.decompositionHierarchy {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr);
+
+  gap: 8px;
+
+  align-items:
+    center;
+}
+
+
+.decompositionHierarchyItem {
+  display: flex;
+
+  align-items:
+    baseline;
+
+  justify-content:
+    center;
+
+  gap: 7px;
+
+  min-width: 0;
+
+  padding:
+    6px 8px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.11
+    );
+
+  border-radius:
+    6px;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.20
+    );
+
+  white-space:
+    nowrap;
+}
+
+
+.decompositionHierarchyItem strong {
+  color:
+    #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size:
+    17px;
+
+  font-weight:
+    500;
+}
+
+
+.decompositionHierarchyItem span {
+  color:
+    rgba(
+      247,
+      243,
+      233,
+      0.61
+    );
+
+  font-size:
+    10px;
+}
+
+
+.decompositionArrow {
+  color:
+    rgba(
+      247,
+      243,
+      233,
+      0.42
+    );
+
+  font-size:
+    16px;
+}
+
+
+/* Exact D1-D11 table */
+
+.decompositionTableWrap {
+  min-width: 0;
+  min-height: 0;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  border-radius:
+    7px;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.17
+    );
+}
+
+
+.decompositionTable {
+  width: 100%;
+
+  border-collapse:
+    collapse;
+
+  table-layout:
+    fixed;
+
+  color:
+    rgba(
+      247,
+      243,
+      233,
+      0.82
+    );
+
+  font-size:
+    clamp(
+      9px,
+      0.72vw,
+      11px
+    );
+
+  line-height:
+    1.05;
+}
+
+
+.decompositionTable th,
+.decompositionTable td {
+  padding:
+    4px 6px;
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  text-align:
+    center;
+
+  vertical-align:
+    middle;
+}
+
+
+.decompositionTable thead th {
+  padding-top:
+    5px;
+
+  padding-bottom:
+    5px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.045
+    );
+
+  color:
+    rgba(
+      247,
+      243,
+      233,
+      0.60
+    );
+
+  font-size:
+    9px;
+
+  font-weight:
+    400;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.035em;
+}
+
+
+.decompositionTable
+  tbody
+  tr:last-child
+  td {
+
+  border-bottom: 0;
+}
+
+
+.decompositionTable th:nth-child(1) {
+  width: 9%;
+}
+
+.decompositionTable th:nth-child(2) {
+  width: 9%;
+}
+
+.decompositionTable th:nth-child(3) {
+  width: 24%;
+}
+
+.decompositionTable th:nth-child(4) {
+  width: 10%;
+}
+
+.decompositionTable th:nth-child(5) {
+  width: 17%;
+}
+
+.decompositionTable th:nth-child(6) {
+  width: 8%;
+}
+
+.decompositionTable th:nth-child(7) {
+  width: 23%;
+}
+
+
+.decompositionTypeCell,
+.decompositionPartitionCell,
+.decompositionElementsCell {
+  color:
+    #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+}
+
+
+.decompositionTypeCell {
+  font-size:
+    12px;
+}
+
+
+.decompositionSpectrumCell {
+  white-space:
+    nowrap;
+}
+
+
+.decompositionSpectrumEntry {
+  display:
+    inline-flex;
+
+  align-items:
+    baseline;
+
+  gap: 2px;
+}
+
+
+.decompositionDot {
+  margin:
+    0 5px;
+
+  color:
+    rgba(
+      247,
+      243,
+      233,
+      0.38
+    );
+}
+
+
+.decompositionMath {
+  font-size:
+    1.05em;
+}
+
+
+.decompositionClassesCell {
+  color:
+    rgba(
+      247,
+      243,
+      233,
+      0.62
+    );
+
+  white-space:
+    nowrap;
+}
+
+
+/* Four geometric partition patterns */
+
+.decompositionPartitions {
+  display: grid;
+
+  grid-template-columns:
+    minmax(
+      135px,
+      1.25fr
+    )
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 7px;
+
+  align-items:
+    stretch;
+}
+
+
+.decompositionPartitionsLabel,
+.decompositionPartitionSummary {
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-width: 0;
+
+  min-height:
+    34px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    );
+
+  border-radius:
+    6px;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+}
+
+
+.decompositionPartitionsLabel {
+  color:
+    rgba(
+      247,
+      243,
+      233,
+      0.56
+    );
+
+  font-size:
+    10px;
+}
+
+
+.decompositionPartitionSummary {
+  gap: 8px;
+}
+
+
+.decompositionPartitionSummary strong {
+  color:
+    #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size:
+    14px;
+
+  font-weight:
+    500;
+}
+
+
+.decompositionPartitionSummary span {
+  color:
+    rgba(
+      247,
+      243,
+      233,
+      0.50
+    );
+
+  font-size:
+    9px;
+}
+
+
+@media (max-width: 760px) {
+
+  .lowerGridDecomposition {
+    display:
+      none !important;
+  }
+
+
+  .viewerLayoutDecomposition
+    .viewerControlPanel {
+
+    display:
+      none;
+  }
+
+
+  .decompositionPanel {
+    padding:
+      6px 8px 12px;
+  }
+
+
+  .decompositionHierarchy {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .decompositionArrow {
+    display:
+      none;
+  }
+
+
+  .decompositionTableWrap {
+    overflow-x:
+      auto;
+  }
+
+
+  .decompositionTable {
+    min-width:
+      840px;
+  }
+
+
+  .decompositionPartitions {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .decompositionPartitionsLabel {
+    grid-column:
+      1 / -1;
+  }
+}
+
+
+/* === EXACT VERTEX-ANGLE DISPLAY === */
+
+.cell24DisplacementLegend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0;
+
+  flex-wrap: nowrap;
+}
+
+
+.cell24DisplacementLegendItem {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+
+  min-width: 0;
+
+  color:
+    rgba(247, 243, 233, 0.72);
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+
+.cell24DisplacementSwatch {
+  width: 9px;
+  height: 9px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.78);
+}
+
+
+.cell24DisplacementSwatch0 {
+  background:
+    rgba(245, 194, 55, 0.98);
+}
+
+
+.cell24DisplacementSwatch1 {
+  background:
+    rgba(111, 98, 154, 0.98);
+}
+
+
+.cell24DisplacementSwatch2 {
+  background:
+    rgba(93, 177, 184, 0.98);
+}
+
+
+.cell24DisplacementUtility {
+  color:
+    rgba(247, 243, 233, 0.48);
+
+  font-size: 9px;
+}
+
+
+.cell24DisplacementVertex0 circle,
+.cell24DisplacementVertex1 circle,
+.cell24DisplacementVertex2 circle {
+  stroke:
+    rgba(255, 255, 255, 0.90);
+
+  stroke-width: 1.35;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+
+.cell24DisplacementVertex0 circle {
+  fill:
+    rgba(245, 194, 55, 0.98);
+}
+
+
+.cell24DisplacementVertex1 circle {
+  fill:
+    rgba(111, 98, 154, 0.98);
+}
+
+
+.cell24DisplacementVertex2 circle {
+  fill:
+    rgba(93, 177, 184, 0.98);
+}
+
+
+.cell24DisplacementVertex0 text,
+.cell24DisplacementVertex1 text,
+.cell24DisplacementVertex2 text {
+  pointer-events: none;
+  user-select: none;
+
+  fill: #f7f3e9;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 7px;
+  font-weight: 600;
+}
+
+
+.cell24DisplacementVertex0 text {
+  fill:
+    rgba(22, 18, 8, 0.96);
+}
+
+
+/* === DECOMPOSITION ROW LINK + CURRENT D/S LABEL === */
+
+.decompositionClickableRow {
+  cursor: pointer;
+
+  transition:
+    background 120ms ease;
+}
+
+
+.decompositionClickableRow:hover,
+.decompositionClickableRow:focus-visible {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.055
+    );
+
+  outline: none;
+}
+
+
+.decompositionClickableRow:focus-visible {
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(
+      255,
+      255,
+      255,
+      0.24
+    );
+}
+
+
+.vertexDisplacementLabelRow {
+  display: flex;
+
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 8px;
+}
+
+
+.currentDisplacementType {
+  color:
+    rgba(
+      247,
+      243,
+      233,
+      0.70
+    );
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  letter-spacing: 0;
+
+  text-transform: none;
+
+  white-space: nowrap;
+}
+
+
+/* === CONJUGACY SPECTRAL-TO-DISPLACEMENT REFINEMENT === */
+
+.conjugacySpectralFamily,
+.conjugacySpectralFamilyActive {
+  min-height: 47px;
+  padding: 2px;
+
+  cursor: default;
+}
+
+
+.conjugacySpectralFamilySelect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 1px 1px 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: inherit;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  cursor: pointer;
+}
+
+
+.conjugacySpectralFamilySelect:hover {
+  color: #f7f3e9;
+}
+
+
+.conjugacySpectralFamilySelect strong {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+
+.conjugacySpectralFamilySelect span {
+  margin-top: 1px;
+
+  color:
+    rgba(247, 243, 233, 0.48);
+
+  font-size: 7px;
+
+  white-space: nowrap;
+}
+
+
+.conjugacySpectralDisplacements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 13px;
+
+  margin-top: 1px;
+}
+
+
+.conjugacySpectralDisplacementWrap {
+  display: inline-flex;
+  align-items: center;
+
+  min-width: 0;
+}
+
+
+.conjugacySpectralDisplacement {
+  height: auto !important;
+  min-height: 0 !important;
+
+  padding: 0 2px !important;
+
+  border: 0 !important;
+
+  background: transparent !important;
+
+  color:
+    rgba(247, 243, 233, 0.70) !important;
+
+  font-family:
+    "Cambria Math",
+    "STIX Two Math",
+    "Times New Roman",
+    Times,
+    serif !important;
+
+  font-size: 8px !important;
+  line-height: 1.1 !important;
+
+  cursor: pointer;
+}
+
+
+.conjugacySpectralDisplacement:hover {
+  color: #f7f3e9 !important;
+
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+
+.conjugacySpectralDisplacementDivider {
+  margin: 0 1px;
+
+  color:
+    rgba(247, 243, 233, 0.30);
+
+  font-size: 8px;
+}
+
+
+.conjugacySpectralDetailIdentity {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1px;
+
+  min-width: 0;
+}
+
+
+.conjugacySpectralDetailBridge {
+  display: flex;
+  align-items: baseline;
+
+  gap: 2px;
+
+  min-width: 0;
+}
+
+
+.conjugacySpectralDetailBridge > strong {
+  color: #f7f3e9;
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+
+.conjugacySpectralDetailArrow {
+  margin: 0 2px;
+
+  color:
+    rgba(247, 243, 233, 0.42) !important;
+
+  font-size: 10px !important;
+}
