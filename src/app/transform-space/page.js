@@ -28,6 +28,52 @@ const ZERO_SWAP = Object.freeze({
 });
 
 
+const ALL_DILOG_ROWS = Object.freeze([
+  {
+    power: 1,
+    label: "vfe",
+    src: "/equations/dilog_difference_1.svg",
+  },
+  {
+    power: 2,
+    label: "twoThirdsVfe",
+    src: "/equations/dilog_difference_2.svg",
+  },
+  {
+    power: 3,
+    label: "zero",
+    src: "/equations/constructive_zero_1.svg",
+  },
+  {
+    power: 4,
+    label: "minusTwoThirdsVfe",
+    src: "/equations/dilog_difference_4.svg",
+  },
+  {
+    power: 5,
+    label: "minusVfe",
+    src: "/equations/dilog_difference_5.svg",
+  },
+  {
+    power: 6,
+    label: "zero",
+    src: "/equations/constructive_zero_2.svg",
+  },
+]);
+
+
+const DILOG_EXPANSION = Object.freeze({
+  labelFadeMs: 150,
+  motionWindowMs: 1850,
+
+  // The two original zero equations move at the same speed.
+  // Row 3 moves 132px in 850ms.
+  // Row 6 moves 264px in 1700ms.
+  row3MotionMs: 850,
+  row6MotionMs: 1700,
+});
+
+
 function equationClip(left, right, width = ZERO_SWAP.sourceWidth) {
   const leftPercent = (left / width) * 100;
   const rightPercent = ((width - right) / width) * 100;
@@ -102,7 +148,167 @@ function TransformMeasureEquation() {
 }
 
 
-function ZeroSwapViewer() {
+function DilogFractionTwoThirds() {
+  return (
+    <span
+      className="dilog-word-fraction"
+      aria-label="two-thirds"
+    >
+      <span className="dilog-word-fraction-top">
+        2
+      </span>
+      <span className="dilog-word-fraction-bottom">
+        3
+      </span>
+    </span>
+  );
+}
+
+
+function DilogRowLabel({ label }) {
+  if (label === "zero") {
+    return (
+      <span className="dilog-word-label-zero">
+        zero
+      </span>
+    );
+  }
+
+  if (label === "vfe") {
+    return (
+      <span className="dilog-word-label">
+        figure-eight knot hyperbolic volume
+      </span>
+    );
+  }
+
+  if (label === "twoThirdsVfe") {
+    return (
+      <span className="dilog-word-label">
+        <DilogFractionTwoThirds />
+        <span>figure-eight knot hyperbolic volume</span>
+      </span>
+    );
+  }
+
+  if (label === "minusTwoThirdsVfe") {
+    return (
+      <span className="dilog-word-label">
+        <span className="dilog-word-minus">−</span>
+        <DilogFractionTwoThirds />
+        <span>figure-eight knot hyperbolic volume</span>
+      </span>
+    );
+  }
+
+  return (
+    <span className="dilog-word-label">
+      <span className="dilog-word-minus">−</span>
+      <span>figure-eight knot hyperbolic volume</span>
+    </span>
+  );
+}
+
+
+function DilogAllViewer({
+  transitionDirection = null,
+}) {
+  const compactStageWidth =
+    ZERO_SWAP.sourceWidth *
+    (ZERO_SWAP.displayHeight / ZERO_SWAP.sourceHeight);
+
+  const compactCompositionWidth =
+    compactStageWidth + 80 + 140;
+
+  const [motionStarted, setMotionStarted] =
+    useState(false);
+
+  useEffect(() => {
+    if (!transitionDirection) {
+      return undefined;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      setMotionStarted(true);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, [transitionDirection]);
+
+  const expanded =
+    transitionDirection === "expand"
+      ? motionStarted
+      : transitionDirection === "collapse"
+        ? !motionStarted
+        : true;
+
+  const transitionClass =
+    transitionDirection
+      ? ` dilog-transition-grid direction-${transitionDirection}`
+      : "";
+
+  const positionClass =
+    expanded
+      ? " is-expanded"
+      : " is-collapsed";
+
+  return (
+    <div
+      className="dilog-all-viewer"
+      style={{
+        width: `${compactCompositionWidth}px`,
+      }}
+    >
+      <div
+        className={
+          `dilog-all-grid${transitionClass}${positionClass}`
+        }
+      >
+        {ALL_DILOG_ROWS.map((row) => (
+          <div
+            className="dilog-all-row"
+            key={row.power}
+          >
+            <div className="dilog-all-equation-anchor">
+
+              <img
+                className="dilog-all-equation"
+                data-power={row.power}
+                src={row.src}
+                alt={`Dilogarithmic difference at operation power ${row.power}`}
+                style={{
+                  gridRow: row.power,
+                }}
+              />
+
+              <div
+                className={
+                  row.label === "zero"
+                    ? "dilog-all-label dilog-all-label-zero"
+                    : "dilog-all-label"
+                }
+                data-power={row.power}
+                style={{
+                  gridRow: row.power,
+                }}
+              >
+                <DilogRowLabel label={row.label} />
+              </div>
+
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
+function ZeroSwapViewer({
+  hideStateLabels = false,
+}) {
   const [swapFirst, setSwapFirst] = useState(false);
   const [swapSecond, setSwapSecond] = useState(false);
   const [displayProductNonzero, setDisplayProductNonzero] =
@@ -268,7 +474,11 @@ function ZeroSwapViewer() {
       >
 
         <div
-          className="zero-state-label zero-state-label-row-1"
+          className={
+            hideStateLabels
+              ? "zero-state-label zero-state-label-row-1 hidden"
+              : "zero-state-label zero-state-label-row-1"
+          }
           aria-hidden="true"
         >
           <span
@@ -286,7 +496,11 @@ function ZeroSwapViewer() {
         </div>
 
         <div
-          className="zero-state-label zero-state-label-row-2"
+          className={
+            hideStateLabels
+              ? "zero-state-label zero-state-label-row-2 hidden"
+              : "zero-state-label zero-state-label-row-2"
+          }
           aria-hidden="true"
         >
           <span
@@ -503,6 +717,61 @@ function ZeroSwapViewer() {
 
 
 export default function TransformSpace() {
+  const [dilogMode, setDilogMode] =
+    useState("zeros");
+
+  const dilogAnimating =
+    dilogMode !== "zeros" &&
+    dilogMode !== "all";
+
+  useEffect(() => {
+    let timer = null;
+
+    if (dilogMode === "pre-expand") {
+      timer = window.setTimeout(() => {
+        setDilogMode("expanding");
+      }, DILOG_EXPANSION.labelFadeMs);
+    }
+
+    if (dilogMode === "expanding") {
+      timer = window.setTimeout(() => {
+        setDilogMode("all");
+      }, DILOG_EXPANSION.motionWindowMs);
+    }
+
+    if (dilogMode === "collapsing") {
+      timer = window.setTimeout(() => {
+        setDilogMode("post-collapse");
+      }, DILOG_EXPANSION.motionWindowMs);
+    }
+
+    if (dilogMode === "post-collapse") {
+      timer = window.setTimeout(() => {
+        setDilogMode("zeros");
+      }, DILOG_EXPANSION.labelFadeMs);
+    }
+
+    return () => {
+      if (timer !== null) {
+        window.clearTimeout(timer);
+      }
+    };
+  }, [dilogMode]);
+
+  const handleDilogModeToggle = () => {
+    if (dilogAnimating) {
+      return;
+    }
+
+    if (dilogMode === "zeros") {
+      setDilogMode("pre-expand");
+      return;
+    }
+
+    setDilogMode("collapsing");
+  };
+
+
   return (
     <LayoutWrapper>
       <style>{`
@@ -547,6 +816,621 @@ export default function TransformSpace() {
 
         .transform-measure-equation-image.hidden {
           opacity: 0;
+        }
+
+
+        .dilog-section-heading {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 18px;
+          width: 100%;
+        }
+
+        .dilog-section-heading .equation-description {
+          flex: 1;
+          min-width: 0;
+        }
+
+        .dilog-mode-toggle {
+          flex: 0 0 auto;
+
+          width: 70px;
+          height: 25px;
+          padding: 0;
+
+          background: rgba(22, 22, 18, 0.36);
+          color: rgba(242, 237, 224, 0.94);
+
+          border: 1px solid rgba(214, 207, 188, 0.48);
+          border-radius: 7px;
+
+          font-family:
+            "Times New Roman",
+            Times,
+            serif;
+          font-size: 10.5px;
+          font-weight: normal;
+
+          cursor: pointer;
+
+          transition:
+            background 160ms ease,
+            border-color 160ms ease,
+            color 160ms ease;
+        }
+
+        .dilog-mode-toggle:hover {
+          background: rgba(232, 223, 200, 0.10);
+          border-color: rgba(232, 223, 200, 0.72);
+          color: rgba(255, 250, 236, 1);
+        }
+
+        .dilog-all-viewer {
+          display: block;
+
+          flex-shrink: 0;
+
+          margin: 0;
+          overflow: visible;
+        }
+
+        .dilog-all-grid {
+          display: grid;
+
+          /*
+           * Column 1 = widest equation.
+           * Column 2 = shared label column.
+           *
+           * This inner grid may extend beyond the fixed-width
+           * outer viewer. That is intentional: labels must not
+           * participate in centering the equation group.
+           */
+          grid-template-columns:
+            max-content
+            285px;
+
+          column-gap: 14px;
+
+          /*
+           * Match compact Zeros mode:
+           * 42px equation height + 24px visible gap
+           * = 66px row-to-row spacing.
+           */
+          row-gap: 24px;
+
+          align-items: center;
+
+          width: max-content;
+
+          /*
+           * Exact expanded equation anchor.
+           *
+           * 35px compact viewer shift
+           * + 14px compact equation-content shift
+           * = 49px.
+           *
+           * Do not change this when adjusting labels.
+           */
+          padding-left: 49px;
+        }
+
+        .dilog-all-row,
+        .dilog-all-equation-anchor {
+          display: contents;
+        }
+
+        .dilog-all-label {
+          position: static;
+
+          grid-column: 2;
+
+          width: 285px;
+
+          transform: none;
+
+          text-align: left;
+
+          color: rgba(242, 237, 224, 0.58);
+
+          opacity: 1;
+          animation:
+            dilog-all-labels-in
+            180ms
+            ease
+            both;
+
+          font-family:
+            "Times New Roman",
+            Times,
+            serif;
+          font-size: 13px;
+          font-style: normal;
+          line-height: 1.05;
+
+          white-space: normal;
+          pointer-events: none;
+          user-select: none;
+        }
+
+        @keyframes dilog-all-labels-in {
+          from {
+            opacity: 0;
+          }
+
+          to {
+            opacity: 1;
+          }
+        }
+
+        .dilog-all-label-zero {
+          color: rgba(242, 237, 224, 0.58);
+          font-size: 15px;
+          font-style: italic;
+        }
+
+        .dilog-word-label {
+          display: inline-flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 4px;
+
+          white-space: nowrap;
+        }
+
+        .dilog-word-label-zero {
+          font-style: italic;
+        }
+
+        .dilog-word-minus {
+          display: inline-block;
+
+          font-family:
+            "Times New Roman",
+            Times,
+            serif;
+          font-style: normal;
+          font-size: 1.08em;
+          line-height: 1;
+        }
+
+        .dilog-word-fraction {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          min-width: 12px;
+
+          font-family:
+            "Times New Roman",
+            Times,
+            serif;
+          font-style: italic;
+          font-size: 0.92em;
+          line-height: 0.72;
+
+          vertical-align: middle;
+        }
+
+        .dilog-word-fraction-top {
+          display: block;
+          min-width: 11px;
+          padding: 0 1px 1px;
+
+          text-align: center;
+
+          border-bottom:
+            1px solid rgba(242, 237, 224, 0.58);
+        }
+
+        .dilog-word-fraction-bottom {
+          display: block;
+          min-width: 11px;
+          padding-top: 1px;
+
+          text-align: center;
+        }
+
+        .dilog-all-equation {
+          grid-column: 1;
+
+          display: block;
+
+          height: 42px;
+          width: auto;
+          max-width: 100%;
+
+          margin-left: 0;
+        }
+
+
+        /*
+         * --------------------------------------------------
+         * ZEROS <-> ALL expansion animation
+         * --------------------------------------------------
+         *
+         * STRICT SLOT MOTION
+         *
+         * Every vertical move is exactly one 66px row.
+         * A destination row is cleared before an original
+         * zero equation is allowed to move into it.
+         *
+         * This prevents row 6 from visually overtaking or
+         * passing through another visible equation.
+         */
+
+        .dilog-transition-grid
+        .dilog-all-equation,
+        .dilog-transition-grid
+        .dilog-all-label {
+          will-change:
+            transform,
+            opacity;
+        }
+
+
+        /*
+         * Static compact positions before expansion:
+         *
+         * p3 final row = 132px
+         * compact row  =   0px
+         * transform    = -132px
+         *
+         * p6 final row = 330px
+         * compact row  =  66px
+         * transform    = -264px
+         */
+
+        .dilog-transition-grid.is-collapsed
+        .dilog-all-equation[data-power="3"] {
+          transform: translateY(-132px);
+        }
+
+        .dilog-transition-grid.is-collapsed
+        .dilog-all-equation[data-power="6"] {
+          transform: translateY(-264px);
+        }
+
+        .dilog-transition-grid.is-expanded
+        .dilog-all-equation[data-power="3"],
+        .dilog-transition-grid.is-expanded
+        .dilog-all-equation[data-power="6"] {
+          transform: translateY(0);
+        }
+
+
+        /*
+         * EXPAND
+         *
+         * 0-300      both zeros move down one slot
+         * 300-400    hold; row 1 appears
+         * 400-700    both zeros move down one slot
+         * 700-800    hold; row 2 appears, p3 lands
+         * 800-1100   p6 moves down one slot
+         * 1100-1200  hold; row 4 appears
+         * 1200-1500  p6 moves down one slot
+         * 1500+      row 5 and p6 zero label appear
+         */
+
+        .dilog-transition-grid.direction-expand.is-expanded
+        .dilog-all-equation[data-power="3"] {
+          animation:
+            dilog-expand-p3
+            1850ms
+            linear
+            forwards;
+        }
+
+        .dilog-transition-grid.direction-expand.is-expanded
+        .dilog-all-equation[data-power="6"] {
+          animation:
+            dilog-expand-p6
+            1850ms
+            linear
+            forwards;
+        }
+
+        @keyframes dilog-expand-p3 {
+          0% {
+            transform: translateY(-132px);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          18% {
+            transform: translateY(-66px);
+          }
+
+          18.6% {
+            transform: translateY(-66px);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          38% {
+            transform: translateY(0);
+          }
+
+          100% {
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes dilog-expand-p6 {
+          0% {
+            transform: translateY(-264px);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          18% {
+            transform: translateY(-198px);
+          }
+
+          18.6% {
+            transform: translateY(-198px);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          38% {
+            transform: translateY(-132px);
+          }
+
+          38.6% {
+            transform: translateY(-132px);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          58% {
+            transform: translateY(-66px);
+          }
+
+          58.6% {
+            transform: translateY(-66px);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          78% {
+            transform: translateY(0);
+          }
+
+          100% {
+            transform: translateY(0);
+          }
+        }
+
+
+        /*
+         * COLLAPSE
+         *
+         * 0-100      row 5 clears
+         * 100-400    p6 moves up one slot
+         * 400-500    row 4 clears
+         * 500-800    p6 moves up one slot
+         * 800-900    row 2 clears
+         * 900-1200   p3 + p6 move up together
+         * 1200-1300  row 1 clears
+         * 1300-1600  p3 + p6 move up together
+         * 1600+      compact positions held
+         */
+
+        .dilog-transition-grid.direction-collapse.is-collapsed
+        .dilog-all-equation[data-power="3"] {
+          animation:
+            dilog-collapse-p3
+            1850ms
+            linear
+            forwards;
+        }
+
+        .dilog-transition-grid.direction-collapse.is-collapsed
+        .dilog-all-equation[data-power="6"] {
+          animation:
+            dilog-collapse-p6
+            1850ms
+            linear
+            forwards;
+        }
+
+        @keyframes dilog-collapse-p3 {
+          0% {
+            transform: translateY(0);
+          }
+
+          40% {
+            transform: translateY(0);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          58% {
+            transform: translateY(-66px);
+          }
+
+          60% {
+            transform: translateY(-66px);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          78% {
+            transform: translateY(-132px);
+          }
+
+          100% {
+            transform: translateY(-132px);
+          }
+        }
+
+        @keyframes dilog-collapse-p6 {
+          0% {
+            transform: translateY(0);
+          }
+
+          0.6% {
+            transform: translateY(0);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          20% {
+            transform: translateY(-66px);
+          }
+
+          20.6% {
+            transform: translateY(-66px);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          40% {
+            transform: translateY(-132px);
+          }
+
+          40.6% {
+            transform: translateY(-132px);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          60% {
+            transform: translateY(-198px);
+          }
+
+          60.6% {
+            transform: translateY(-198px);
+            animation-timing-function:
+              cubic-bezier(0.42, 0, 0.20, 1);
+          }
+
+          80% {
+            transform: translateY(-264px);
+          }
+
+          100% {
+            transform: translateY(-264px);
+          }
+        }
+
+
+        /*
+         * The four added equations do not travel.
+         * They appear only AFTER their slot has been vacated.
+         */
+
+        .dilog-transition-grid
+        .dilog-all-equation[data-power="1"],
+        .dilog-transition-grid
+        .dilog-all-equation[data-power="2"],
+        .dilog-transition-grid
+        .dilog-all-equation[data-power="4"],
+        .dilog-transition-grid
+        .dilog-all-equation[data-power="5"] {
+          transition:
+            opacity 180ms ease;
+        }
+
+        .dilog-transition-grid.is-collapsed
+        .dilog-all-equation[data-power="1"],
+        .dilog-transition-grid.is-collapsed
+        .dilog-all-equation[data-power="2"],
+        .dilog-transition-grid.is-collapsed
+        .dilog-all-equation[data-power="4"],
+        .dilog-transition-grid.is-collapsed
+        .dilog-all-equation[data-power="5"] {
+          opacity: 0;
+        }
+
+        .dilog-transition-grid.is-expanded
+        .dilog-all-equation[data-power="1"],
+        .dilog-transition-grid.is-expanded
+        .dilog-all-equation[data-power="2"],
+        .dilog-transition-grid.is-expanded
+        .dilog-all-equation[data-power="4"],
+        .dilog-transition-grid.is-expanded
+        .dilog-all-equation[data-power="5"] {
+          opacity: 1;
+        }
+
+
+        /* EXPAND: rows appear only after being cleared */
+
+        .dilog-transition-grid.direction-expand
+        .dilog-all-equation[data-power="1"] {
+          transition-delay: 300ms;
+        }
+
+        .dilog-transition-grid.direction-expand
+        .dilog-all-equation[data-power="2"] {
+          transition-delay: 700ms;
+        }
+
+        .dilog-transition-grid.direction-expand
+        .dilog-all-equation[data-power="4"] {
+          transition-delay: 1100ms;
+        }
+
+        .dilog-transition-grid.direction-expand
+        .dilog-all-equation[data-power="5"] {
+          transition-delay: 1500ms;
+        }
+
+
+        /* COLLAPSE: clear each slot BEFORE entering it */
+
+        .dilog-transition-grid.direction-collapse
+        .dilog-all-equation[data-power="5"] {
+          transition-delay: 0ms;
+        }
+
+        .dilog-transition-grid.direction-collapse
+        .dilog-all-equation[data-power="4"] {
+          transition-delay: 400ms;
+        }
+
+        .dilog-transition-grid.direction-collapse
+        .dilog-all-equation[data-power="2"] {
+          transition-delay: 800ms;
+        }
+
+        .dilog-transition-grid.direction-collapse
+        .dilog-all-equation[data-power="1"] {
+          transition-delay: 1200ms;
+        }
+
+
+        /*
+         * LABELS
+         *
+         * Keep the entire motion sequence visually clean:
+         *
+         * EXPAND:
+         *   compact zero labels disappear first;
+         *   no expanded labels are visible while equations move;
+         *   all six labels appear together only after All is settled.
+         *
+         * COLLAPSE:
+         *   all expanded labels disappear immediately;
+         *   no labels are visible while equations move;
+         *   compact zero labels return only after collapse finishes.
+         */
+
+        .dilog-transition-grid
+        .dilog-all-label {
+          animation: none;
+          opacity: 0;
+          transition:
+            opacity 150ms ease;
+        }
+
+
+        .dilog-mode-toggle:disabled {
+          opacity: 0.62;
+          cursor: default;
         }
 
 
@@ -623,7 +1507,7 @@ export default function TransformSpace() {
 
         .zero-state-label {
           position: absolute;
-          right: calc(100% + 14px);
+          right: 100%;
 
           width: 92px;
           height: 24px;
@@ -642,6 +1526,14 @@ export default function TransformSpace() {
           user-select: none;
 
           z-index: 5;
+
+          opacity: 1;
+          transition:
+            opacity 150ms linear;
+        }
+
+        .zero-state-label.hidden {
+          opacity: 0;
         }
 
         .zero-state-label-row-1 {
@@ -753,6 +1645,9 @@ export default function TransformSpace() {
 
         @media (prefers-reduced-motion: reduce) {
           .transform-measure-equation-image,
+          .dilog-transition-grid .dilog-all-equation,
+          .dilog-transition-grid .dilog-all-label,
+          .zero-state-label,
           .zero-swap-moving,
           .zero-swap-result,
           .zero-swap-product-zero,
@@ -761,6 +1656,15 @@ export default function TransformSpace() {
             transition: none;
           }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+          .dilog-transition-grid .dilog-all-equation,
+          .dilog-transition-grid .dilog-all-label,
+          .dilog-all-label {
+            animation: none !important;
+          }
+        }
+
       `}</style>
       {/* ✅ Page-specific overlay */}
       <div
@@ -930,7 +1834,8 @@ export default function TransformSpace() {
 
         <div style={{ height: '1.0rem' }} />
 
-        <p className="equation-description">
+        <div className="dilog-section-heading">
+          <p className="equation-description">
           The constructive zeros of the{" "}
           <a
             href="/simplest-manifold"
@@ -948,24 +1853,83 @@ export default function TransformSpace() {
             hyperbolic figure-eight knot
           </a>{" "}
           are:
-        </p>
+          </p>
+          <button
+            type="button"
+            className="dilog-mode-toggle"
+            onClick={handleDilogModeToggle}
+            disabled={dilogAnimating}
+          >
+            {
+              dilogMode === "all" ||
+              dilogMode === "collapsing"
+                ? "Zeros"
+                : "All"
+            }
+          </button>
+        </div>
 
         <div style={{ height: '1.5rem' }} />
 
         <div
           className="equation-line"
-          style={{ marginLeft: '-4.4rem' }}
+          style={{
+            marginLeft: "-4.4rem",
+            transform: "translateX(-19px)",
+          }}
         >
-          <ZeroSwapViewer />
+          {dilogMode === "zeros" && (
+            <ZeroSwapViewer />
+          )}
+
+          {dilogMode === "pre-expand" && (
+            <ZeroSwapViewer
+              hideStateLabels={true}
+            />
+          )}
+
+          {dilogMode === "expanding" && (
+            <DilogAllViewer
+              key="dilog-expanding"
+              transitionDirection="expand"
+            />
+          )}
+
+          {dilogMode === "all" && (
+            <DilogAllViewer
+              key="dilog-all"
+            />
+          )}
+
+          {dilogMode === "collapsing" && (
+            <DilogAllViewer
+              key="dilog-collapsing"
+              transitionDirection="collapse"
+            />
+          )}
+
+          {dilogMode === "post-collapse" && (
+            <ZeroSwapViewer
+              hideStateLabels={true}
+            />
+          )}
         </div>
 
-        <div style={{ height: '1.5rem' }} />
+        {(
+          dilogMode === "zeros" ||
+          dilogMode === "pre-expand" ||
+          dilogMode === "post-collapse"
+        ) && (
+          <>
+            <div style={{ height: '1.5rem' }} />
 
-        <p className="equation-description">
-          Swap either side to produce a pair of <i>twisted</i> zeros.
-        </p>
+            <p className="equation-description">
+              Swap either side to produce a pair of <i>twisted</i> zeros.
+            </p>
 
-        <div style={{ height: '1.5rem' }} />
+            <div style={{ height: '1.5rem' }} />
+          </>
+        )}
 
         <div style={{ height: '10rem' }} />
       </div>
