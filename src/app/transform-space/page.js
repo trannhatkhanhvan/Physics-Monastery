@@ -1836,23 +1836,33 @@ export default function TransformSpace() {
 
         <div className="dilog-section-heading">
           <p className="equation-description">
-          The constructive zeros of the{" "}
-          <a
-            href="/simplest-manifold"
-            style={{
-              color: "inherit",
-              textDecoration: "none",
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.color = "yellow";
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.color = "inherit";
-            }}
-          >
-            hyperbolic figure-eight knot
-          </a>{" "}
-          are:
+            {
+              dilogMode === "pre-expand" ||
+              dilogMode === "expanding" ||
+              dilogMode === "all"
+                ? "The six-step dilogarithmic difference cycle is:"
+                : (
+                  <>
+                    The constructive zeros of the{" "}
+                    <a
+                      href="/simplest-manifold"
+                      style={{
+                        color: "inherit",
+                        textDecoration: "none",
+                      }}
+                      onMouseOver={(e) => {
+                        e.currentTarget.style.color = "yellow";
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.color = "inherit";
+                      }}
+                    >
+                      hyperbolic figure-eight knot
+                    </a>{" "}
+                    are:
+                  </>
+                )
+            }
           </p>
           <button
             type="button"
