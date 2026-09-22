@@ -790,6 +790,9 @@ export default function NumberWallsPage() {
     const [modulus, setModulus] = useState(DEFAULT_MODULUS);
     const [isModMenuOpen, setIsModMenuOpen] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [sequenceSidebarCollapsed, setSequenceSidebarCollapsed] = useState(false);
+    const [wallZoom, setWallZoom] = useState(0);
+    const [fitCellSize, setFitCellSize] = useState(28);
     const [customSequenceValues, setCustomSequenceValues] = useState(
     Array.from({ length: 100 }, () => "")
 );
@@ -879,6 +882,104 @@ export default function NumberWallsPage() {
 
         loadWall();
     }, [selectedId, indexItems, customSequenceValues, customInputMode, customFunctionText, customFunctionState]);
+
+    useEffect(() => {
+        const frame = wallFrameRef.current;
+
+        if (!frame) {
+            return;
+        }
+
+        const measureFitCellSize = () => {
+            const currentFrame = wallFrameRef.current;
+
+            if (!currentFrame) {
+                return;
+            }
+
+            const rowLabel =
+                currentFrame.querySelector(".row-label");
+
+            const rowLabelWidth = rowLabel
+                ? rowLabel.getBoundingClientRect().width
+                : 50;
+
+            const columnCount =
+                wallData?.visibleWidth || 100;
+
+            const usableWidth =
+                currentFrame.clientWidth - rowLabelWidth - 2;
+
+            const nextFitCellSize = Math.max(
+                5,
+                Math.min(
+                    28,
+                    usableWidth / columnCount
+                )
+            );
+
+            setFitCellSize(nextFitCellSize);
+        };
+
+        const animationFrame =
+            window.requestAnimationFrame(
+                measureFitCellSize
+            );
+
+        const resizeObserver =
+            new ResizeObserver(() => {
+                measureFitCellSize();
+            });
+
+        resizeObserver.observe(frame);
+
+        window.addEventListener(
+            "resize",
+            measureFitCellSize
+        );
+
+        return () => {
+            window.cancelAnimationFrame(
+                animationFrame
+            );
+
+            resizeObserver.disconnect();
+
+            window.removeEventListener(
+                "resize",
+                measureFitCellSize
+            );
+        };
+    }, [wallData, selectedId, customInputMode]);
+
+    const detailCellSize = 28;
+
+    const wallCellSize =
+        detailCellSize +
+        (fitCellSize - detailCellSize) *
+            (wallZoom / 100);
+
+    const fiftyTermCellSize =
+        fitCellSize * 2;
+
+    const fiftyTermZoom =
+        fitCellSize === detailCellSize
+            ? 0
+            : Math.max(
+                  0,
+                  Math.min(
+                      100,
+                      ((fiftyTermCellSize - detailCellSize) /
+                          (fitCellSize - detailCellSize)) *
+                          100
+                  )
+              );
+
+    const wallCellFontSize =
+        10 * (wallCellSize / detailCellSize);
+
+    const wallRowLabelFontSize =
+        13 * (wallCellSize / detailCellSize);
 
     const scales = useMemo(() => {
         return {
@@ -1004,7 +1105,12 @@ export default function NumberWallsPage() {
                     grid-template-columns: 200px minmax(0, 1fr);
                     column-gap: 20px;
                     align-items: start;
+                    transition: grid-template-columns 160ms ease;
                 }
+
+.number-walls-layout.sequences-collapsed {
+    grid-template-columns: 40px minmax(0, 1fr);
+}
 
                 .number-walls-sidebar {
                     background: #171717;
@@ -1013,7 +1119,76 @@ export default function NumberWallsPage() {
                     box-sizing: border-box;
                     max-height: none;
                     overflow-y: auto;
+                    min-width: 0;
                 }
+
+.number-walls-sidebar.sequences-collapsed {
+    padding: 8px 4px;
+    overflow: hidden;
+}
+
+.sequence-sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.sequence-sidebar-header .sidebar-heading {
+    flex: 1;
+    margin: 0;
+}
+
+.sequence-sidebar-collapse-button {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: #222222;
+    color: #dddddd;
+    border: 1px solid #444444;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.sequence-sidebar-collapse-button:hover {
+    background: #303030;
+    border-color: #666666;
+}
+
+.sequence-sidebar-collapsed-label {
+    display: none;
+}
+
+.number-walls-sidebar.sequences-collapsed .sequence-sidebar-header {
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.number-walls-sidebar.sequences-collapsed .sequence-sidebar-header .sidebar-heading {
+    display: none;
+}
+
+.number-walls-sidebar.sequences-collapsed .famous-sequences-list {
+    display: none;
+}
+
+.number-walls-sidebar.sequences-collapsed .sequence-sidebar-collapsed-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    margin-top: 8px;
+    color: rgba(255,255,255,0.46);
+    font-size: 10px;
+    line-height: 1;
+    user-select: none;
+}
 
                 .sidebar-heading {
                     margin: 14px 0 8px 0;
@@ -1218,44 +1393,64 @@ export default function NumberWallsPage() {
                     border-collapse: collapse;
                 }
 
+                .wall-table tr {
+                    height: var(--wall-cell-size, 28px);
+                    min-height: var(--wall-cell-size, 28px);
+                    max-height: var(--wall-cell-size, 28px);
+                }
+
                 .row-label {
                     position: sticky;
                     left: 0;
                     z-index: 2;
                     min-width: 50px;
-                    height: 28px;
+                    height: var(--wall-cell-size, 28px);
+                    min-height: var(--wall-cell-size, 28px);
+                    max-height: var(--wall-cell-size, 28px);
                     text-align: right;
                     padding-right: 8px;
                     color: #aaaaaa;
                     background: #181818;
                     border: 1px solid #2b2b2b;
-                    font-size: 13px;
+                    font-size: var(--wall-row-label-font-size, 13px);
                 }
 
                 .wall-cell {
-                    width: 28px;
-                    min-width: 28px;
-                    height: 28px;
+                    width: var(--wall-cell-size, 28px);
+                    min-width: var(--wall-cell-size, 28px);
+                    max-width: var(--wall-cell-size, 28px);
+                    height: var(--wall-cell-size, 28px);
+                    min-height: var(--wall-cell-size, 28px);
+                    max-height: var(--wall-cell-size, 28px);
                     border: 1px solid #2b2b2b;
                     text-align: center;
                     vertical-align: middle;
                     padding: 0;
-                    font-size: 10px;
+                    font-size: var(--wall-cell-font-size, 10px);
                     line-height: 1.05;
                     font-weight: 700;
                     overflow: hidden;
+                    box-sizing: border-box;
+                    line-height: 1;
                 }
 
                 .cell-inner {
                     width: 100%;
-                    height: 100%;
+                    height: var(--wall-cell-size, 28px);
+                    min-height: var(--wall-cell-size, 28px);
+                    max-height: var(--wall-cell-size, 28px);
                     display: table;
+                    overflow: hidden;
                 }
 
                 .cell-text {
                     display: table-cell;
                     vertical-align: middle;
                     text-align: center;
+                    font-size: var(--wall-cell-font-size, 10px);
+                    line-height: 1;
+                    white-space: nowrap;
+                    overflow: hidden;
                 }
 
                 .empty-note {
@@ -1318,6 +1513,97 @@ export default function NumberWallsPage() {
 
 .wall-title-row .wall-title {
     margin: 0;
+}
+
+.wall-zoom-control {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #aaaaaa;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.wall-zoom-slider-wrap {
+    position: relative;
+    width: 150px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.wall-zoom-fifty-tick {
+    position: absolute;
+    top: 8px;
+    width: 1px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.68);
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.wall-zoom-fifty-label {
+    position: absolute;
+    top: 17px;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 9px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.wall-zoom-control input[type="range"] {
+    position: relative;
+    z-index: 1;
+    width: 150px;
+    height: 14px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+.wall-zoom-control input[type="range"]::-webkit-slider-runnable-track {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.42);
+    border-radius: 999px;
+}
+
+.wall-zoom-control input[type="range"]::-webkit-slider-thumb {
+    width: 12px;
+    height: 12px;
+    margin-top: -5px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 50%;
+    background: #dddddd;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.wall-zoom-control input[type="range"]::-moz-range-track {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.42);
+    border: none;
+    border-radius: 999px;
+}
+
+.wall-zoom-control input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 50%;
+    background: #dddddd;
+}
+
+.wall-zoom-end-label {
+    color: #bbbbbb;
+    min-width: 54px;
 }
 
 .custom-function-title-meta {
@@ -1439,11 +1725,16 @@ export default function NumberWallsPage() {
 }
 
 .row-label {
-    font-size: var(--row-label-font-size);
+    font-size: var(
+        --wall-row-label-font-size,
+        var(--row-label-font-size)
+    );
+    line-height: 1;
+    overflow: hidden;
 }
 
 .wall-cell {
-    font-size: var(--cell-font-size);
+    font-size: var(--wall-cell-font-size, var(--cell-font-size));
 }
 
 .empty-note {
@@ -1475,7 +1766,10 @@ export default function NumberWallsPage() {
     color: inherit;
     text-align: center;
     font-family: "Times New Roman", Times, serif;
-    font-size: var(--cell-font-size);
+    font-size: var(
+        --wall-cell-font-size,
+        var(--cell-font-size)
+    );
     font-weight: 700;
     line-height: 1;
     box-sizing: border-box;
@@ -1495,12 +1789,58 @@ export default function NumberWallsPage() {
                 by how many times the selected prime divides the wall entry.
             </p>
 
-            <div className="number-walls-layout">
+            <div
+                className={
+                    sequenceSidebarCollapsed
+                        ? "number-walls-layout sequences-collapsed"
+                        : "number-walls-layout"
+                }
+            >
                 <aside
                     ref={sequenceSidebarRef}
-                    className="number-walls-sidebar"
+                    className={
+                        sequenceSidebarCollapsed
+                            ? "number-walls-sidebar sequences-collapsed"
+                            : "number-walls-sidebar"
+                    }
                 >
-    <div className="sidebar-heading">Famous Sequences</div>
+    <div className="sequence-sidebar-header">
+        <div className="sidebar-heading">Famous Sequences</div>
+
+        <button
+            type="button"
+            className="sequence-sidebar-collapse-button"
+            onClick={() =>
+                setSequenceSidebarCollapsed(
+                    (previous) => !previous
+                )
+            }
+            aria-label={
+                sequenceSidebarCollapsed
+                    ? "Expand famous sequences"
+                    : "Collapse famous sequences"
+            }
+            aria-expanded={!sequenceSidebarCollapsed}
+            title={
+                sequenceSidebarCollapsed
+                    ? "Expand sequences"
+                    : "Collapse sequences"
+            }
+        >
+            {sequenceSidebarCollapsed ? "›" : "‹"}
+        </button>
+    </div>
+
+    <div
+        className="sequence-sidebar-collapsed-label"
+        aria-hidden={!sequenceSidebarCollapsed}
+    >
+        {"SEQUENCES".split("").map((letter, index) => (
+            <span key={`${letter}-${index}`}>
+                {letter}
+            </span>
+        ))}
+    </div>
 
 <div className="famous-sequences-list">
     {famousSequences.map((item) => (
@@ -1673,6 +2013,52 @@ setTimeout(() => {
                 </span>
             </div>
         )}
+    <label
+        className="wall-zoom-control"
+        title="Zoom from detail view to the full 100-term wall"
+    >
+        <span>View</span>
+
+        <div className="wall-zoom-slider-wrap">
+            <span
+                className="wall-zoom-fifty-tick"
+                style={{
+                    left: `calc(
+                        6px + (100% - 12px) * ${fiftyTermZoom / 100}
+                    )`,
+                }}
+                aria-hidden="true"
+            />
+
+            <span
+                className="wall-zoom-fifty-label"
+                style={{
+                    left: `calc(
+                        6px + (100% - 12px) * ${fiftyTermZoom / 100}
+                    )`,
+                }}
+                aria-hidden="true"
+            >
+                50
+            </span>
+
+            <input
+                type="range"
+                min="0"
+                max="100"
+                step="1"
+                value={wallZoom}
+                onChange={(event) =>
+                    setWallZoom(Number(event.target.value))
+                }
+                aria-label="Number wall view zoom"
+            />
+        </div>
+
+        <span className="wall-zoom-end-label">
+            100 terms
+        </span>
+    </label>
 </div>
 
                             {!(
@@ -1739,6 +2125,11 @@ setTimeout(() => {
                             <div
                                 ref={wallFrameRef}
                                 className="wall-frame"
+                                style={{
+                                    "--wall-cell-size": `${wallCellSize}px`,
+                                    "--wall-cell-font-size": `${wallCellFontSize}px`,
+                                    "--wall-row-label-font-size": `${wallRowLabelFontSize}px`,
+                                }}
                             >
                                 <table className="wall-table">
                                     <tbody>
