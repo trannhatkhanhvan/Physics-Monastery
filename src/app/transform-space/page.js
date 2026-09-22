@@ -1876,6 +1876,11 @@ export default function TransformSpace() {
           style={{
             marginLeft: "-4.4rem",
             transform: "translateX(-19px)",
+
+            // Reserve the full six-row All-mode height
+            // in both states so the page never reflows.
+            height: "372px",
+            alignItems: "flex-start",
           }}
         >
           {dilogMode === "zeros" && (
@@ -1920,7 +1925,11 @@ export default function TransformSpace() {
           dilogMode === "pre-expand" ||
           dilogMode === "post-collapse"
         ) && (
-          <>
+          <div
+            style={{
+              transform: "translateY(-221px)",
+            }}
+          >
             <div style={{ height: '1.5rem' }} />
 
             <p className="equation-description">
@@ -1928,7 +1937,7 @@ export default function TransformSpace() {
             </p>
 
             <div style={{ height: '1.5rem' }} />
-          </>
+          </div>
         )}
 
         <div style={{ height: '10rem' }} />
