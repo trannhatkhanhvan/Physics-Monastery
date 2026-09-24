@@ -8,6 +8,7 @@ import LayoutWrapper from '../../components/LayoutWrapper';
 export default function SymbolLegend() {
   const [searchQuery, setSearchQuery] = useState('');
 
+
   const rows = [
 
 // 1
@@ -2098,15 +2099,15 @@ export default function SymbolLegend() {
 
   const groups = [
     {
-      title: 'FRAMEWORK',
+      title: 'framework',
       rows: rows.slice(0, 17),
     },
     {
-      title: 'HYPERBOLIC',
+      title: 'hyperbolic',
       rows: rows.slice(17, 25),
     },
     {
-      title: 'CIRCULAR',
+      title: 'circular',
       rows: rows.slice(25, 30),
     },
     {
@@ -2114,7 +2115,7 @@ export default function SymbolLegend() {
       rows: rows.slice(30, 31),
     },
     {
-      title: 'LEMNISCATIC',
+      title: 'lemniscatic',
       rows: rows.slice(31, 38),
     },
     {
@@ -2122,15 +2123,15 @@ export default function SymbolLegend() {
       rows: rows.slice(38, 39),
     },
     {
-      title: 'CLASSICAL',
+      title: 'classical',
       rows: rows.slice(39, 60),
     },
     {
-      title: 'PHYSICAL',
+      title: 'physical',
       rows: rows.slice(60, 68),
     },
     {
-      title: 'FUNCTIONS',
+      title: 'functions',
       rows: rows.slice(68, 73),
     },
     {
@@ -2259,41 +2260,31 @@ export default function SymbolLegend() {
                     <div
                       style={{
                         position: 'absolute',
-                        left: '-2.7rem',
+                        left: 'calc(-2.7rem + 18px)',
                         top:
-                          group.title === 'CLASSICAL'
+                          group.title === 'classical'
                             ? '43%'
-                            : group.title === 'HYPERBOLIC'
+                            : group.title === 'hyperbolic'
                               ? '47%'
-                              : '50%',
-                        transform: 'translateY(-50%)',
-                        width: '18px',
-                        textAlign: 'center',
+                              : group.title === 'circular' ||
+                                  group.title === 'lemniscatic'
+                                ? 'calc(50% + 14px)'
+                                : '50%',
+                        transform: 'translate(-50%, -50%) rotate(90deg)',
+                        transformOrigin: 'center center',
                         pointerEvents: 'none',
-                        fontFamily: '"Times New Roman", serif',
-                        fontSize: '13px',
+
+                        fontFamily: '"Times New Roman", Times, serif',
+                        fontSize: '24px',
                         fontWeight: 'normal',
-                        color: 'rgba(255, 255, 255, 0.45)',
+                        fontStyle: 'normal',
+                        lineHeight: 1,
+                        whiteSpace: 'nowrap',
+
+                        color: 'rgba(255, 255, 255, 0.24)',
                       }}
                     >
-                      {group.title.split('').map((letter, letterIndex) => (
-                        <div
-                          key={`${group.title}-${letterIndex}`}
-                          style={{
-                            display: 'block',
-                            width: '18px',
-                            height: '15px',
-                            lineHeight: '15px',
-                            margin: 0,
-                            padding: 0,
-                            transform: 'none',
-                            writingMode: 'horizontal-tb',
-                            textOrientation: 'mixed',
-                          }}
-                        >
-                          {letter}
-                        </div>
-                      ))}
+                      {group.title}
                     </div>
                   )}
 
