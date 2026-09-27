@@ -1,0 +1,422 @@
+{
+  "schema": "physics-monastery.3-manifold-surgery-explorer.manifold-state.v1",
+  "manifold": {
+    "id": "m129",
+    "display_name": "Whitehead link complement",
+    "link_name": "5^2_1",
+    "component_count": 2,
+    "cusp_count": 2,
+    "tetrahedron_count": 4,
+    "volume": "3.6638623767",
+    "isometry_signature": "eLPkbdcddhgggb",
+    "triangulation_isosig": "eLPkbdcddhgggb",
+    "identify": [
+      "m129(0,0)(0,0)",
+      "5^2_1(0,0)(0,0)",
+      "L5a1(0,0)(0,0)",
+      "ooct01_00001(0,0)(0,0)"
+    ]
+  },
+  "directed_marking": {
+    "intrinsic": false,
+    "reason": "The unmarked m129 complement has symmetric cusps. These labels belong to the directed crossing-circle surgery operation.",
+    "surviving_knot_cusp": 0,
+    "crossing_circle_cusp": 1
+  },
+  "link_description": {
+    "PD_code": [
+      [
+        6,
+        5,
+        7,
+        0
+      ],
+      [
+        0,
+        3,
+        1,
+        4
+      ],
+      [
+        8,
+        2,
+        9,
+        1
+      ],
+      [
+        2,
+        8,
+        3,
+        7
+      ],
+      [
+        4,
+        9,
+        5,
+        6
+      ]
+    ],
+    "DT_code": "[(-4, -8, -10), (-6, -2)]",
+    "component_lengths": [
+      6,
+      4
+    ]
+  },
+  "cusps": [
+    {
+      "index": 0,
+      "role": "surviving-knot",
+      "complete": true,
+      "filling": [
+        "0.0",
+        "0.0"
+      ],
+      "shape": {
+        "value": "2.00000000000 + 2.00000000000*I",
+        "real": "2.00000000000",
+        "imag": "2.00000000000"
+      },
+      "peripheral_basis": {
+        "meridian": [
+          1,
+          0
+        ],
+        "longitude": [
+          0,
+          1
+        ],
+        "basis_source": "link-derived SnapPy peripheral basis"
+      }
+    },
+    {
+      "index": 1,
+      "role": "crossing-circle",
+      "complete": true,
+      "filling": [
+        "0.0",
+        "0.0"
+      ],
+      "shape": {
+        "value": "2.00000000000 + 2.00000000000*I",
+        "real": "2.00000000000",
+        "imag": "2.00000000000"
+      },
+      "peripheral_basis": {
+        "meridian": [
+          1,
+          0
+        ],
+        "longitude": [
+          0,
+          1
+        ],
+        "basis_source": "link-derived SnapPy peripheral basis"
+      }
+    }
+  ],
+  "tetrahedron_shapes": [
+    {
+      "tetrahedron": 0,
+      "z": {
+        "value": "1.0000000000 + 1.000000000*I",
+        "real": "1.0000000000",
+        "imag": "1.000000000"
+      }
+    },
+    {
+      "tetrahedron": 1,
+      "z": {
+        "value": "1.0000000000 + 1.00000000000*I",
+        "real": "1.0000000000",
+        "imag": "1.00000000000"
+      }
+    },
+    {
+      "tetrahedron": 2,
+      "z": {
+        "value": "1.0000000000 + 1.00000000000*I",
+        "real": "1.0000000000",
+        "imag": "1.00000000000"
+      }
+    },
+    {
+      "tetrahedron": 3,
+      "z": {
+        "value": "1.0000000000 + 1.00000000000*I",
+        "real": "1.0000000000",
+        "imag": "1.00000000000"
+      }
+    }
+  ],
+  "face_gluings": [
+    {
+      "tetrahedron": 0,
+      "faces": [
+        {
+          "face": 0,
+          "neighbor_tetrahedron": 1,
+          "vertex_permutation": [
+            0,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "face": 1,
+          "neighbor_tetrahedron": 1,
+          "vertex_permutation": [
+            2,
+            1,
+            0,
+            3
+          ]
+        },
+        {
+          "face": 2,
+          "neighbor_tetrahedron": 3,
+          "vertex_permutation": [
+            0,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "face": 3,
+          "neighbor_tetrahedron": 2,
+          "vertex_permutation": [
+            0,
+            3,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "tetrahedron": 1,
+      "faces": [
+        {
+          "face": 0,
+          "neighbor_tetrahedron": 0,
+          "vertex_permutation": [
+            0,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "face": 1,
+          "neighbor_tetrahedron": 0,
+          "vertex_permutation": [
+            2,
+            1,
+            0,
+            3
+          ]
+        },
+        {
+          "face": 2,
+          "neighbor_tetrahedron": 2,
+          "vertex_permutation": [
+            2,
+            1,
+            0,
+            3
+          ]
+        },
+        {
+          "face": 3,
+          "neighbor_tetrahedron": 3,
+          "vertex_permutation": [
+            2,
+            1,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "tetrahedron": 2,
+      "faces": [
+        {
+          "face": 0,
+          "neighbor_tetrahedron": 1,
+          "vertex_permutation": [
+            2,
+            1,
+            0,
+            3
+          ]
+        },
+        {
+          "face": 1,
+          "neighbor_tetrahedron": 0,
+          "vertex_permutation": [
+            0,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "face": 2,
+          "neighbor_tetrahedron": 3,
+          "vertex_permutation": [
+            2,
+            1,
+            0,
+            3
+          ]
+        },
+        {
+          "face": 3,
+          "neighbor_tetrahedron": 3,
+          "vertex_permutation": [
+            0,
+            3,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "tetrahedron": 3,
+      "faces": [
+        {
+          "face": 0,
+          "neighbor_tetrahedron": 2,
+          "vertex_permutation": [
+            2,
+            1,
+            0,
+            3
+          ]
+        },
+        {
+          "face": 1,
+          "neighbor_tetrahedron": 2,
+          "vertex_permutation": [
+            0,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "face": 2,
+          "neighbor_tetrahedron": 0,
+          "vertex_permutation": [
+            0,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "face": 3,
+          "neighbor_tetrahedron": 1,
+          "vertex_permutation": [
+            2,
+            1,
+            0,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "ideal_vertex_orbits": [
+    [
+      {
+        "tetrahedron": 0,
+        "vertex": 0
+      },
+      {
+        "tetrahedron": 0,
+        "vertex": 2
+      },
+      {
+        "tetrahedron": 1,
+        "vertex": 0
+      },
+      {
+        "tetrahedron": 1,
+        "vertex": 2
+      },
+      {
+        "tetrahedron": 2,
+        "vertex": 0
+      },
+      {
+        "tetrahedron": 2,
+        "vertex": 2
+      },
+      {
+        "tetrahedron": 3,
+        "vertex": 0
+      },
+      {
+        "tetrahedron": 3,
+        "vertex": 2
+      }
+    ],
+    [
+      {
+        "tetrahedron": 0,
+        "vertex": 1
+      },
+      {
+        "tetrahedron": 0,
+        "vertex": 3
+      },
+      {
+        "tetrahedron": 1,
+        "vertex": 1
+      },
+      {
+        "tetrahedron": 1,
+        "vertex": 3
+      },
+      {
+        "tetrahedron": 2,
+        "vertex": 1
+      },
+      {
+        "tetrahedron": 2,
+        "vertex": 3
+      },
+      {
+        "tetrahedron": 3,
+        "vertex": 1
+      },
+      {
+        "tetrahedron": 3,
+        "vertex": 3
+      }
+    ]
+  ],
+  "certified_operations": {
+    "fill_crossing_circle_to_m004": {
+      "filled_cusp": 1,
+      "filled_cusp_role": "crossing-circle",
+      "slope": [
+        1,
+        1
+      ],
+      "result_isometry_signature": "cPcbbbiht",
+      "identify": [
+        "m004(0,0)",
+        "4_1(0,0)",
+        "K2_1(0,0)",
+        "K4a1(0,0)",
+        "otet02_00001(0,0)"
+      ],
+      "certified": true
+    }
+  }
+}

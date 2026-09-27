@@ -1,0 +1,133 @@
+{
+  "components": [
+    {
+      "component": 0,
+      "role": "SURVIVING_KNOT",
+      "traversed_pd_edges": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ]
+    },
+    {
+      "component": 1,
+      "role": "CROSSING_CIRCLE",
+      "traversed_pd_edges": [
+        7,
+        8,
+        9,
+        6
+      ]
+    }
+  ],
+  "isometry_signature": "eLPkbdcddhgggb",
+  "link_name": "5^2_1",
+  "manifold": "m129",
+  "pd_code": [
+    [
+      6,
+      5,
+      7,
+      0
+    ],
+    [
+      0,
+      3,
+      1,
+      4
+    ],
+    [
+      8,
+      2,
+      9,
+      1
+    ],
+    [
+      2,
+      8,
+      3,
+      7
+    ],
+    [
+      4,
+      9,
+      5,
+      6
+    ]
+  ],
+  "projection_embedding": {
+    "crossing_positions": {
+      "0": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "1": {
+        "x": 18.0,
+        "y": 4.0
+      },
+      "2": {
+        "x": 12.0,
+        "y": 8.0
+      },
+      "3": {
+        "x": 8.0,
+        "y": 6.0
+      },
+      "4": {
+        "x": 25.0,
+        "y": 1.0
+      }
+    },
+    "edge_count": 20,
+    "edge_midpoints": {
+      "0": {
+        "x": 20.0,
+        "y": 3.0
+      },
+      "1": {
+        "x": 15.0,
+        "y": 10.0
+      },
+      "2": {
+        "x": 11.0,
+        "y": 9.0
+      },
+      "3": {
+        "x": 8.0,
+        "y": 5.0
+      },
+      "4": {
+        "x": 19.0,
+        "y": 5.0
+      },
+      "5": {
+        "x": 26.0,
+        "y": 0.0
+      },
+      "6": {
+        "x": 20.0,
+        "y": 2.0
+      },
+      "7": {
+        "x": 7.0,
+        "y": 7.0
+      },
+      "8": {
+        "x": 12.0,
+        "y": 7.0
+      },
+      "9": {
+        "x": 15.0,
+        "y": 11.0
+      }
+    },
+    "euler_characteristic": 2,
+    "face_count": 7,
+    "rotation_orientation": "forward",
+    "vertex_count": 15
+  },
+  "source": "certified Spherogram PD/KLP combinatorics"
+}

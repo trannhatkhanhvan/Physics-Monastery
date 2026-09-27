@@ -1,0 +1,220 @@
+{
+  "arrows": [
+    {
+      "component": 0,
+      "head": 1,
+      "index": 0,
+      "tail": 0
+    },
+    {
+      "component": 0,
+      "head": 2,
+      "index": 1,
+      "tail": 1
+    },
+    {
+      "component": 0,
+      "head": 3,
+      "index": 2,
+      "tail": 2
+    },
+    {
+      "component": 0,
+      "head": 4,
+      "index": 3,
+      "tail": 3
+    },
+    {
+      "component": 0,
+      "head": 5,
+      "index": 4,
+      "tail": 4
+    },
+    {
+      "component": 0,
+      "head": 0,
+      "index": 5,
+      "tail": 5
+    },
+    {
+      "component": 1,
+      "head": 7,
+      "index": 6,
+      "tail": 6
+    },
+    {
+      "component": 1,
+      "head": 8,
+      "index": 7,
+      "tail": 7
+    },
+    {
+      "component": 1,
+      "head": 9,
+      "index": 8,
+      "tail": 8
+    },
+    {
+      "component": 1,
+      "head": 6,
+      "index": 9,
+      "tail": 9
+    }
+  ],
+  "component_roles": {
+    "0": "SURVIVING_KNOT",
+    "1": "CROSSING_CIRCLE"
+  },
+  "crossings": [
+    {
+      "crossing_label": 2,
+      "index": 0,
+      "native_flag": false,
+      "over_arrow": 0,
+      "under_arrow": 6
+    },
+    {
+      "crossing_label": 1,
+      "index": 1,
+      "native_flag": false,
+      "over_arrow": 2,
+      "under_arrow": 5
+    },
+    {
+      "crossing_label": 0,
+      "index": 2,
+      "native_flag": false,
+      "over_arrow": 5,
+      "under_arrow": 9
+    },
+    {
+      "crossing_label": 3,
+      "index": 3,
+      "native_flag": false,
+      "over_arrow": 6,
+      "under_arrow": 2
+    },
+    {
+      "crossing_label": 4,
+      "index": 4,
+      "native_flag": false,
+      "over_arrow": 8,
+      "under_arrow": 2
+    }
+  ],
+  "isometry_signature": "eLPkbdcddhgggb",
+  "link_name": "5^2_1",
+  "manifold": "m129",
+  "native_pipeline": [
+    "Link('5^2_1')",
+    "OrthogonalLinkDiagram(link)",
+    "orthogonal_rep().basic_grid_embedding()",
+    "break_into_arrows()",
+    "plink_data()"
+  ],
+  "pd_code": [
+    [
+      6,
+      5,
+      7,
+      0
+    ],
+    [
+      0,
+      3,
+      1,
+      4
+    ],
+    [
+      8,
+      2,
+      9,
+      1
+    ],
+    [
+      2,
+      8,
+      3,
+      7
+    ],
+    [
+      4,
+      9,
+      5,
+      6
+    ]
+  ],
+  "source": "Spherogram OrthogonalLinkDiagram.plink_data()",
+  "vertices": [
+    {
+      "component": 0,
+      "index": 0,
+      "role": "SURVIVING_KNOT",
+      "x": 30.0,
+      "y": 20.0
+    },
+    {
+      "component": 0,
+      "index": 1,
+      "role": "SURVIVING_KNOT",
+      "x": 50.0,
+      "y": 20.0
+    },
+    {
+      "component": 0,
+      "index": 2,
+      "role": "SURVIVING_KNOT",
+      "x": 50.0,
+      "y": 30.0
+    },
+    {
+      "component": 0,
+      "index": 3,
+      "role": "SURVIVING_KNOT",
+      "x": 10.0,
+      "y": 30.0
+    },
+    {
+      "component": 0,
+      "index": 4,
+      "role": "SURVIVING_KNOT",
+      "x": 10.0,
+      "y": 50.0
+    },
+    {
+      "component": 0,
+      "index": 5,
+      "role": "SURVIVING_KNOT",
+      "x": 30.0,
+      "y": 50.0
+    },
+    {
+      "component": 1,
+      "index": 6,
+      "role": "CROSSING_CIRCLE",
+      "x": 40.0,
+      "y": 40.0
+    },
+    {
+      "component": 1,
+      "index": 7,
+      "role": "CROSSING_CIRCLE",
+      "x": 40.0,
+      "y": 10.0
+    },
+    {
+      "component": 1,
+      "index": 8,
+      "role": "CROSSING_CIRCLE",
+      "x": 20.0,
+      "y": 10.0
+    },
+    {
+      "component": 1,
+      "index": 9,
+      "role": "CROSSING_CIRCLE",
+      "x": 20.0,
+      "y": 40.0
+    }
+  ]
+}

@@ -1,0 +1,1785 @@
+{
+  "schema": "physics-monastery.3-manifold-surgery-explorer.m129-cusp-connectivity.v1",
+  "manifold": {
+    "id": "m129",
+    "display_name": "Whitehead link complement",
+    "isometry_signature": "eLPkbdcddhgggb",
+    "tetrahedron_count": 4,
+    "cusp_count": 2
+  },
+  "tetrahedron_count": 4,
+  "cusp_count": 2,
+  "triangle_count": 16,
+  "material_colors": {
+    "0": {
+      "name": "Red",
+      "hex": "#ff2020"
+    },
+    "1": {
+      "name": "Green",
+      "hex": "#159447"
+    },
+    "2": {
+      "name": "Blue",
+      "hex": "#4da3ff"
+    },
+    "3": {
+      "name": "Yellow",
+      "hex": "#ffe600"
+    },
+    "4": {
+      "name": "Green",
+      "hex": "#159447"
+    },
+    "5": {
+      "name": "Blue",
+      "hex": "#4da3ff"
+    },
+    "6": {
+      "name": "Red",
+      "hex": "#ff2020"
+    },
+    "7": {
+      "name": "Yellow",
+      "hex": "#ffe600"
+    }
+  },
+  "face_material_lookup": [
+    {
+      "tetrahedron": 0,
+      "face": 0,
+      "material_id": 0,
+      "color_name": "Red",
+      "color_hex": "#ff2020"
+    },
+    {
+      "tetrahedron": 0,
+      "face": 1,
+      "material_id": 1,
+      "color_name": "Green",
+      "color_hex": "#159447"
+    },
+    {
+      "tetrahedron": 0,
+      "face": 2,
+      "material_id": 2,
+      "color_name": "Blue",
+      "color_hex": "#4da3ff"
+    },
+    {
+      "tetrahedron": 0,
+      "face": 3,
+      "material_id": 3,
+      "color_name": "Yellow",
+      "color_hex": "#ffe600"
+    },
+    {
+      "tetrahedron": 1,
+      "face": 0,
+      "material_id": 0,
+      "color_name": "Red",
+      "color_hex": "#ff2020"
+    },
+    {
+      "tetrahedron": 1,
+      "face": 1,
+      "material_id": 3,
+      "color_name": "Yellow",
+      "color_hex": "#ffe600"
+    },
+    {
+      "tetrahedron": 1,
+      "face": 2,
+      "material_id": 4,
+      "color_name": "Green",
+      "color_hex": "#159447"
+    },
+    {
+      "tetrahedron": 1,
+      "face": 3,
+      "material_id": 5,
+      "color_name": "Blue",
+      "color_hex": "#4da3ff"
+    },
+    {
+      "tetrahedron": 2,
+      "face": 0,
+      "material_id": 5,
+      "color_name": "Blue",
+      "color_hex": "#4da3ff"
+    },
+    {
+      "tetrahedron": 2,
+      "face": 1,
+      "material_id": 1,
+      "color_name": "Green",
+      "color_hex": "#159447"
+    },
+    {
+      "tetrahedron": 2,
+      "face": 2,
+      "material_id": 6,
+      "color_name": "Red",
+      "color_hex": "#ff2020"
+    },
+    {
+      "tetrahedron": 2,
+      "face": 3,
+      "material_id": 7,
+      "color_name": "Yellow",
+      "color_hex": "#ffe600"
+    },
+    {
+      "tetrahedron": 3,
+      "face": 0,
+      "material_id": 7,
+      "color_name": "Yellow",
+      "color_hex": "#ffe600"
+    },
+    {
+      "tetrahedron": 3,
+      "face": 1,
+      "material_id": 6,
+      "color_name": "Red",
+      "color_hex": "#ff2020"
+    },
+    {
+      "tetrahedron": 3,
+      "face": 2,
+      "material_id": 4,
+      "color_name": "Green",
+      "color_hex": "#159447"
+    },
+    {
+      "tetrahedron": 3,
+      "face": 3,
+      "material_id": 2,
+      "color_name": "Blue",
+      "color_hex": "#4da3ff"
+    }
+  ],
+  "cusps": [
+    {
+      "cusp": 0,
+      "triangle_ids": [
+        "t0v0",
+        "t0v2",
+        "t1v0",
+        "t1v3",
+        "t2v0",
+        "t2v3",
+        "t3v0",
+        "t3v3"
+      ],
+      "sides": [
+        {
+          "id": "t0v0:s0",
+          "triangle_id": "t0v0",
+          "tetrahedron": 0,
+          "ideal_vertex": 0,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 0,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": -2.220446049250315e-16,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t0v0:s1",
+          "triangle_id": "t0v0",
+          "tetrahedron": 0,
+          "ideal_vertex": 0,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 2,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 0,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": 0.0,
+            "im": 0.0
+          }
+        },
+        {
+          "id": "t0v0:s2",
+          "triangle_id": "t0v0",
+          "tetrahedron": 0,
+          "ideal_vertex": 0,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 3,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 0,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": 0.0,
+            "im": 0.0
+          },
+          "endpoint_b": {
+            "re": -2.220446049250315e-16,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t0v2:s0",
+          "triangle_id": "t0v2",
+          "tetrahedron": 0,
+          "ideal_vertex": 2,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 2,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": -1.0000000000000004,
+            "im": -1.0000000000000009
+          },
+          "endpoint_b": {
+            "re": 0.0,
+            "im": 0.0
+          }
+        },
+        {
+          "id": "t0v2:s1",
+          "triangle_id": "t0v2",
+          "tetrahedron": 0,
+          "ideal_vertex": 2,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 2,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": 0.0,
+            "im": 0.0
+          },
+          "endpoint_b": {
+            "re": -1.000000000000001,
+            "im": -3.330669073875472e-16
+          }
+        },
+        {
+          "id": "t0v2:s2",
+          "triangle_id": "t0v2",
+          "tetrahedron": 0,
+          "ideal_vertex": 2,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 3,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 2,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": -1.000000000000001,
+            "im": -3.330669073875472e-16
+          },
+          "endpoint_b": {
+            "re": -1.0000000000000004,
+            "im": -1.0000000000000009
+          }
+        },
+        {
+          "id": "t1v0:s0",
+          "triangle_id": "t1v0",
+          "tetrahedron": 1,
+          "ideal_vertex": 0,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 1,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 0,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": -1.0000000000000004,
+            "im": -1.0000000000000009
+          },
+          "endpoint_b": {
+            "re": -1.000000000000001,
+            "im": -3.330669073875472e-16
+          }
+        },
+        {
+          "id": "t1v0:s1",
+          "triangle_id": "t1v0",
+          "tetrahedron": 1,
+          "ideal_vertex": 0,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 0,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": -1.000000000000001,
+            "im": -3.330669073875472e-16
+          },
+          "endpoint_b": {
+            "re": -2.0000000000000018,
+            "im": -2.220446049250307e-16
+          }
+        },
+        {
+          "id": "t1v0:s2",
+          "triangle_id": "t1v0",
+          "tetrahedron": 1,
+          "ideal_vertex": 0,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 3,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 0,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": -2.0000000000000018,
+            "im": -2.220446049250307e-16
+          },
+          "endpoint_b": {
+            "re": -1.0000000000000004,
+            "im": -1.0000000000000009
+          }
+        },
+        {
+          "id": "t1v3:s0",
+          "triangle_id": "t1v3",
+          "tetrahedron": 1,
+          "ideal_vertex": 3,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 5,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": -1.0000000000000004,
+            "im": -1.0000000000000009
+          },
+          "endpoint_b": {
+            "re": -2.220446049250313e-16,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t1v3:s1",
+          "triangle_id": "t1v3",
+          "tetrahedron": 1,
+          "ideal_vertex": 3,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 1,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 5,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": -2.220446049250313e-16,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": 0.0,
+            "im": 0.0
+          }
+        },
+        {
+          "id": "t1v3:s2",
+          "triangle_id": "t1v3",
+          "tetrahedron": 1,
+          "ideal_vertex": 3,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 5,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": 0.0,
+            "im": 0.0
+          },
+          "endpoint_b": {
+            "re": -1.0000000000000004,
+            "im": -1.0000000000000009
+          }
+        },
+        {
+          "id": "t2v0:s0",
+          "triangle_id": "t2v0",
+          "tetrahedron": 2,
+          "ideal_vertex": 0,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 3,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 5,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": -7.771561172376101e-16,
+            "im": -2.0000000000000004
+          },
+          "endpoint_b": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t2v0:s1",
+          "triangle_id": "t2v0",
+          "tetrahedron": 2,
+          "ideal_vertex": 0,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 5,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": -2.220446049250315e-16,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t2v0:s2",
+          "triangle_id": "t2v0",
+          "tetrahedron": 2,
+          "ideal_vertex": 0,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 2,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 5,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": -2.220446049250315e-16,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": -7.771561172376101e-16,
+            "im": -2.0000000000000004
+          }
+        },
+        {
+          "id": "t2v3:s0",
+          "triangle_id": "t2v3",
+          "tetrahedron": 2,
+          "ideal_vertex": 3,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 7,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": -1.000000000000001,
+            "im": -3.330669073875472e-16
+          },
+          "endpoint_b": {
+            "re": 0.0,
+            "im": 0.0
+          }
+        },
+        {
+          "id": "t2v3:s1",
+          "triangle_id": "t2v3",
+          "tetrahedron": 2,
+          "ideal_vertex": 3,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 0,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 7,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": 0.0,
+            "im": 0.0
+          },
+          "endpoint_b": {
+            "re": -1.000000000000002,
+            "im": 1.0000000000000007
+          }
+        },
+        {
+          "id": "t2v3:s2",
+          "triangle_id": "t2v3",
+          "tetrahedron": 2,
+          "ideal_vertex": 3,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 2,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 7,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": -1.000000000000002,
+            "im": 1.0000000000000007
+          },
+          "endpoint_b": {
+            "re": -1.000000000000001,
+            "im": -3.330669073875472e-16
+          }
+        },
+        {
+          "id": "t3v0:s0",
+          "triangle_id": "t3v0",
+          "tetrahedron": 3,
+          "ideal_vertex": 0,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 1,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 7,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": 1.0,
+            "im": -1.6653345369377348e-16
+          }
+        },
+        {
+          "id": "t3v0:s1",
+          "triangle_id": "t3v0",
+          "tetrahedron": 3,
+          "ideal_vertex": 0,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 7,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": 1.0,
+            "im": -1.6653345369377348e-16
+          },
+          "endpoint_b": {
+            "re": 0.0,
+            "im": 0.0
+          }
+        },
+        {
+          "id": "t3v0:s2",
+          "triangle_id": "t3v0",
+          "tetrahedron": 3,
+          "ideal_vertex": 0,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 3,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 7,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": 0.0,
+            "im": 0.0
+          },
+          "endpoint_b": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t3v3:s0",
+          "triangle_id": "t3v3",
+          "tetrahedron": 3,
+          "ideal_vertex": 3,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 2,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": -2.0000000000000018,
+            "im": -2.220446049250307e-16
+          },
+          "endpoint_b": {
+            "re": -1.000000000000001,
+            "im": -3.330669073875472e-16
+          }
+        },
+        {
+          "id": "t3v3:s1",
+          "triangle_id": "t3v3",
+          "tetrahedron": 3,
+          "ideal_vertex": 3,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 1,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 2,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": -1.000000000000001,
+            "im": -3.330669073875472e-16
+          },
+          "endpoint_b": {
+            "re": -1.0000000000000009,
+            "im": 1.0000000000000002
+          }
+        },
+        {
+          "id": "t3v3:s2",
+          "triangle_id": "t3v3",
+          "tetrahedron": 3,
+          "ideal_vertex": 3,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 0,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 2,
+          "triangle_fill_color_name": "Blue",
+          "triangle_fill_color_hex": "#4da3ff",
+          "endpoint_a": {
+            "re": -1.0000000000000009,
+            "im": 1.0000000000000002
+          },
+          "endpoint_b": {
+            "re": -2.0000000000000018,
+            "im": -2.220446049250307e-16
+          }
+        }
+      ],
+      "pairings": [
+        {
+          "pair_index": 0,
+          "side_a": "t0v0:s0",
+          "side_b": "t2v0:s1",
+          "triangle_a": "t0v0",
+          "triangle_b": "t2v0",
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 1,
+          "side_a": "t0v0:s1",
+          "side_b": "t3v0:s2",
+          "triangle_a": "t0v0",
+          "triangle_b": "t3v0",
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 2,
+          "side_a": "t0v0:s2",
+          "side_b": "t1v3:s1",
+          "triangle_a": "t0v0",
+          "triangle_b": "t1v3",
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 3,
+          "side_a": "t0v2:s0",
+          "side_b": "t1v3:s2",
+          "triangle_a": "t0v2",
+          "triangle_b": "t1v3",
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 4,
+          "side_a": "t0v2:s1",
+          "side_b": "t2v3:s0",
+          "triangle_a": "t0v2",
+          "triangle_b": "t2v3",
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 5,
+          "side_a": "t0v2:s2",
+          "side_b": "t1v0:s0",
+          "triangle_a": "t0v2",
+          "triangle_b": "t1v0",
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 6,
+          "side_a": "t1v0:s1",
+          "side_b": "t3v3:s0",
+          "triangle_a": "t1v0",
+          "triangle_b": "t3v3",
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 7,
+          "side_a": "t1v0:s2",
+          "side_b": "t2v3:s1",
+          "triangle_a": "t1v0",
+          "triangle_b": "t2v3",
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "orientation": "reversed",
+          "meridian_shift": 1,
+          "longitude_shift": 0,
+          "kind": "peripheral"
+        },
+        {
+          "pair_index": 8,
+          "side_a": "t1v3:s0",
+          "side_b": "t3v0:s1",
+          "triangle_a": "t1v3",
+          "triangle_b": "t3v0",
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "orientation": "reversed",
+          "meridian_shift": 1,
+          "longitude_shift": 0,
+          "kind": "peripheral"
+        },
+        {
+          "pair_index": 9,
+          "side_a": "t2v0:s0",
+          "side_b": "t3v3:s2",
+          "triangle_a": "t2v0",
+          "triangle_b": "t3v3",
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": -1,
+          "kind": "peripheral"
+        },
+        {
+          "pair_index": 10,
+          "side_a": "t2v0:s2",
+          "side_b": "t3v0:s0",
+          "triangle_a": "t2v0",
+          "triangle_b": "t3v0",
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "orientation": "reversed",
+          "meridian_shift": 1,
+          "longitude_shift": 0,
+          "kind": "peripheral"
+        },
+        {
+          "pair_index": 11,
+          "side_a": "t2v3:s2",
+          "side_b": "t3v3:s1",
+          "triangle_a": "t2v3",
+          "triangle_b": "t3v3",
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        }
+      ],
+      "direct_pair_count": 8,
+      "peripheral_pair_count": 4
+    },
+    {
+      "cusp": 1,
+      "triangle_ids": [
+        "t0v1",
+        "t0v3",
+        "t1v1",
+        "t1v2",
+        "t2v1",
+        "t2v2",
+        "t3v1",
+        "t3v2"
+      ],
+      "sides": [
+        {
+          "id": "t0v1:s0",
+          "triangle_id": "t0v1",
+          "tetrahedron": 0,
+          "ideal_vertex": 1,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 1,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": -2.220446049250315e-16,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t0v1:s1",
+          "triangle_id": "t0v1",
+          "tetrahedron": 0,
+          "ideal_vertex": 1,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 3,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 1,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": 0.0,
+            "im": 0.0
+          }
+        },
+        {
+          "id": "t0v1:s2",
+          "triangle_id": "t0v1",
+          "tetrahedron": 0,
+          "ideal_vertex": 1,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 2,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 1,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": 0.0,
+            "im": 0.0
+          },
+          "endpoint_b": {
+            "re": -2.220446049250315e-16,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t0v3:s0",
+          "triangle_id": "t0v3",
+          "tetrahedron": 0,
+          "ideal_vertex": 3,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 3,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": -2.0000000000000027,
+            "im": -2.0000000000000013
+          },
+          "endpoint_b": {
+            "re": -1.0000000000000009,
+            "im": -2.0000000000000013
+          }
+        },
+        {
+          "id": "t0v3:s1",
+          "triangle_id": "t0v3",
+          "tetrahedron": 0,
+          "ideal_vertex": 3,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 2,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 3,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": -1.0000000000000009,
+            "im": -2.0000000000000013
+          },
+          "endpoint_b": {
+            "re": -1.000000000000001,
+            "im": -1.0000000000000002
+          }
+        },
+        {
+          "id": "t0v3:s2",
+          "triangle_id": "t0v3",
+          "tetrahedron": 0,
+          "ideal_vertex": 3,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 3,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": -1.000000000000001,
+            "im": -1.0000000000000002
+          },
+          "endpoint_b": {
+            "re": -2.0000000000000027,
+            "im": -2.0000000000000013
+          }
+        },
+        {
+          "id": "t1v1:s0",
+          "triangle_id": "t1v1",
+          "tetrahedron": 1,
+          "ideal_vertex": 1,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 3,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": -8.881784197001258e-16,
+            "im": -2.000000000000001
+          },
+          "endpoint_b": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t1v1:s1",
+          "triangle_id": "t1v1",
+          "tetrahedron": 1,
+          "ideal_vertex": 1,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 3,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": -2.220446049250313e-16,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t1v1:s2",
+          "triangle_id": "t1v1",
+          "tetrahedron": 1,
+          "ideal_vertex": 1,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 3,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 3,
+          "triangle_fill_color_name": "Yellow",
+          "triangle_fill_color_hex": "#ffe600",
+          "endpoint_a": {
+            "re": -2.220446049250313e-16,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": -8.881784197001258e-16,
+            "im": -2.000000000000001
+          }
+        },
+        {
+          "id": "t1v2:s0",
+          "triangle_id": "t1v2",
+          "tetrahedron": 1,
+          "ideal_vertex": 2,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 3,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 4,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": 0.9999999999999999,
+            "im": -7.771561172376096e-16
+          }
+        },
+        {
+          "id": "t1v2:s1",
+          "triangle_id": "t1v2",
+          "tetrahedron": 1,
+          "ideal_vertex": 2,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 4,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": 0.9999999999999999,
+            "im": -7.771561172376096e-16
+          },
+          "endpoint_b": {
+            "re": 0.0,
+            "im": 0.0
+          }
+        },
+        {
+          "id": "t1v2:s2",
+          "triangle_id": "t1v2",
+          "tetrahedron": 1,
+          "ideal_vertex": 2,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 1,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 4,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": 0.0,
+            "im": 0.0
+          },
+          "endpoint_b": {
+            "re": 0.9999999999999998,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t2v1:s0",
+          "triangle_id": "t2v1",
+          "tetrahedron": 2,
+          "ideal_vertex": 1,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 0,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 1,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": 1.1102230246251565e-16,
+            "im": -2.0000000000000013
+          },
+          "endpoint_b": {
+            "re": -2.220446049250313e-16,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t2v1:s1",
+          "triangle_id": "t2v1",
+          "tetrahedron": 2,
+          "ideal_vertex": 1,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 3,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 1,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": -2.220446049250313e-16,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": -1.000000000000001,
+            "im": -1.0000000000000002
+          }
+        },
+        {
+          "id": "t2v1:s2",
+          "triangle_id": "t2v1",
+          "tetrahedron": 2,
+          "ideal_vertex": 1,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 2,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 1,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": -1.000000000000001,
+            "im": -1.0000000000000002
+          },
+          "endpoint_b": {
+            "re": 1.1102230246251565e-16,
+            "im": -2.0000000000000013
+          }
+        },
+        {
+          "id": "t2v2:s0",
+          "triangle_id": "t2v2",
+          "tetrahedron": 2,
+          "ideal_vertex": 2,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 6,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": -1.000000000000001,
+            "im": -3.000000000000002
+          },
+          "endpoint_b": {
+            "re": 1.1102230246251565e-16,
+            "im": -2.0000000000000013
+          }
+        },
+        {
+          "id": "t2v2:s1",
+          "triangle_id": "t2v2",
+          "tetrahedron": 2,
+          "ideal_vertex": 2,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 3,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 6,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": 1.1102230246251565e-16,
+            "im": -2.0000000000000013
+          },
+          "endpoint_b": {
+            "re": -1.0000000000000009,
+            "im": -2.0000000000000013
+          }
+        },
+        {
+          "id": "t2v2:s2",
+          "triangle_id": "t2v2",
+          "tetrahedron": 2,
+          "ideal_vertex": 2,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 0,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 6,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": -1.0000000000000009,
+            "im": -2.0000000000000013
+          },
+          "endpoint_b": {
+            "re": -1.000000000000001,
+            "im": -3.000000000000002
+          }
+        },
+        {
+          "id": "t3v1:s0",
+          "triangle_id": "t3v1",
+          "tetrahedron": 3,
+          "ideal_vertex": 1,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 0,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 6,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": -1.000000000000001,
+            "im": -1.0000000000000002
+          },
+          "endpoint_b": {
+            "re": -2.220446049250313e-16,
+            "im": -1.0000000000000004
+          }
+        },
+        {
+          "id": "t3v1:s1",
+          "triangle_id": "t3v1",
+          "tetrahedron": 3,
+          "ideal_vertex": 1,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 3,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 6,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": -2.220446049250313e-16,
+            "im": -1.0000000000000004
+          },
+          "endpoint_b": {
+            "re": 0.0,
+            "im": 0.0
+          }
+        },
+        {
+          "id": "t3v1:s2",
+          "triangle_id": "t3v1",
+          "tetrahedron": 3,
+          "ideal_vertex": 1,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "triangle_fill_material_id": 6,
+          "triangle_fill_color_name": "Red",
+          "triangle_fill_color_hex": "#ff2020",
+          "endpoint_a": {
+            "re": 0.0,
+            "im": 0.0
+          },
+          "endpoint_b": {
+            "re": -1.000000000000001,
+            "im": -1.0000000000000002
+          }
+        },
+        {
+          "id": "t3v2:s0",
+          "triangle_id": "t3v2",
+          "tetrahedron": 3,
+          "ideal_vertex": 2,
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "face": 0,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "triangle_fill_material_id": 4,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": -1.0000000000000009,
+            "im": -2.0000000000000013
+          },
+          "endpoint_b": {
+            "re": 1.1102230246251565e-16,
+            "im": -2.0000000000000013
+          }
+        },
+        {
+          "id": "t3v2:s1",
+          "triangle_id": "t3v2",
+          "tetrahedron": 3,
+          "ideal_vertex": 2,
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "face": 1,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "triangle_fill_material_id": 4,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": 1.1102230246251565e-16,
+            "im": -2.0000000000000013
+          },
+          "endpoint_b": {
+            "re": -1.000000000000001,
+            "im": -1.0000000000000002
+          }
+        },
+        {
+          "id": "t3v2:s2",
+          "triangle_id": "t3v2",
+          "tetrahedron": 3,
+          "ideal_vertex": 2,
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "face": 3,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "triangle_fill_material_id": 4,
+          "triangle_fill_color_name": "Green",
+          "triangle_fill_color_hex": "#159447",
+          "endpoint_a": {
+            "re": -1.000000000000001,
+            "im": -1.0000000000000002
+          },
+          "endpoint_b": {
+            "re": -1.0000000000000009,
+            "im": -2.0000000000000013
+          }
+        }
+      ],
+      "pairings": [
+        {
+          "pair_index": 0,
+          "side_a": "t0v1:s0",
+          "side_b": "t1v1:s1",
+          "triangle_a": "t0v1",
+          "triangle_b": "t1v1",
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 1,
+          "side_a": "t0v1:s1",
+          "side_b": "t1v2:s2",
+          "triangle_a": "t0v1",
+          "triangle_b": "t1v2",
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 2,
+          "side_a": "t0v1:s2",
+          "side_b": "t3v1:s1",
+          "triangle_a": "t0v1",
+          "triangle_b": "t3v1",
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 3,
+          "side_a": "t0v3:s0",
+          "side_b": "t1v2:s1",
+          "triangle_a": "t0v3",
+          "triangle_b": "t1v2",
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": -1,
+          "kind": "peripheral"
+        },
+        {
+          "pair_index": 4,
+          "side_a": "t0v3:s1",
+          "side_b": "t3v2:s2",
+          "triangle_a": "t0v3",
+          "triangle_b": "t3v2",
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 5,
+          "side_a": "t0v3:s2",
+          "side_b": "t2v2:s0",
+          "triangle_a": "t0v3",
+          "triangle_b": "t2v2",
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "orientation": "reversed",
+          "meridian_shift": 1,
+          "longitude_shift": 0,
+          "kind": "peripheral"
+        },
+        {
+          "pair_index": 6,
+          "side_a": "t1v1:s0",
+          "side_b": "t3v1:s2",
+          "triangle_a": "t1v1",
+          "triangle_b": "t3v1",
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447",
+          "orientation": "reversed",
+          "meridian_shift": -1,
+          "longitude_shift": 0,
+          "kind": "peripheral"
+        },
+        {
+          "pair_index": 7,
+          "side_a": "t1v1:s2",
+          "side_b": "t2v1:s0",
+          "triangle_a": "t1v1",
+          "triangle_b": "t2v1",
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 8,
+          "side_a": "t1v2:s0",
+          "side_b": "t2v2:s2",
+          "triangle_a": "t1v2",
+          "triangle_b": "t2v2",
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 1,
+          "kind": "peripheral"
+        },
+        {
+          "pair_index": 9,
+          "side_a": "t2v1:s1",
+          "side_b": "t3v1:s0",
+          "triangle_a": "t2v1",
+          "triangle_b": "t3v1",
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 10,
+          "side_a": "t2v1:s2",
+          "side_b": "t3v2:s1",
+          "triangle_a": "t2v1",
+          "triangle_b": "t3v2",
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        },
+        {
+          "pair_index": 11,
+          "side_a": "t2v2:s1",
+          "side_b": "t3v2:s0",
+          "triangle_a": "t2v2",
+          "triangle_b": "t3v2",
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600",
+          "orientation": "reversed",
+          "meridian_shift": 0,
+          "longitude_shift": 0,
+          "kind": "direct"
+        }
+      ],
+      "direct_pair_count": 8,
+      "peripheral_pair_count": 4
+    }
+  ]
+}

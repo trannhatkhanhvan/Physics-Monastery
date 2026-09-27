@@ -1,0 +1,1529 @@
+{
+  "schema": "physics-monastery.3-manifold-surgery-explorer.m129-animation-manifest.v1",
+  "manifold": {
+    "id": "m129",
+    "display_name": "Whitehead link complement",
+    "isometry_signature": "eLPkbdcddhgggb",
+    "tetrahedron_count": 4,
+    "cusp_count": 2
+  },
+  "invariants": {
+    "triangle_count": 16,
+    "triangles_per_cusp": 8,
+    "triangles_per_tetrahedron": 4,
+    "face_pair_count": 8,
+    "persistent_identity_rule": "cusp triangle t{tetrahedron}v{ideal_vertex} lands on the truncation face at that same tetrahedron / ideal vertex"
+  },
+  "cusps": [
+    {
+      "cusp": 0,
+      "role": "surviving-knot",
+      "triangle_ids": [
+        "t0v0",
+        "t0v2",
+        "t1v0",
+        "t1v3",
+        "t2v0",
+        "t2v3",
+        "t3v0",
+        "t3v3"
+      ]
+    },
+    {
+      "cusp": 1,
+      "role": "crossing-circle",
+      "triangle_ids": [
+        "t0v1",
+        "t0v3",
+        "t1v1",
+        "t1v2",
+        "t2v1",
+        "t2v2",
+        "t3v1",
+        "t3v2"
+      ]
+    }
+  ],
+  "tetrahedra": [
+    {
+      "tetrahedron": 0,
+      "truncation_triangles": [
+        {
+          "triangle_id": "t0v0",
+          "cusp": 0,
+          "ideal_vertex": 0
+        },
+        {
+          "triangle_id": "t0v1",
+          "cusp": 1,
+          "ideal_vertex": 1
+        },
+        {
+          "triangle_id": "t0v2",
+          "cusp": 0,
+          "ideal_vertex": 2
+        },
+        {
+          "triangle_id": "t0v3",
+          "cusp": 1,
+          "ideal_vertex": 3
+        }
+      ],
+      "faces": [
+        {
+          "face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "face": 2,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        },
+        {
+          "face": 3,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        }
+      ]
+    },
+    {
+      "tetrahedron": 1,
+      "truncation_triangles": [
+        {
+          "triangle_id": "t1v0",
+          "cusp": 0,
+          "ideal_vertex": 0
+        },
+        {
+          "triangle_id": "t1v1",
+          "cusp": 1,
+          "ideal_vertex": 1
+        },
+        {
+          "triangle_id": "t1v2",
+          "cusp": 1,
+          "ideal_vertex": 2
+        },
+        {
+          "triangle_id": "t1v3",
+          "cusp": 0,
+          "ideal_vertex": 3
+        }
+      ],
+      "faces": [
+        {
+          "face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "face": 1,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        },
+        {
+          "face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "face": 3,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        }
+      ]
+    },
+    {
+      "tetrahedron": 2,
+      "truncation_triangles": [
+        {
+          "triangle_id": "t2v0",
+          "cusp": 0,
+          "ideal_vertex": 0
+        },
+        {
+          "triangle_id": "t2v1",
+          "cusp": 1,
+          "ideal_vertex": 1
+        },
+        {
+          "triangle_id": "t2v2",
+          "cusp": 1,
+          "ideal_vertex": 2
+        },
+        {
+          "triangle_id": "t2v3",
+          "cusp": 0,
+          "ideal_vertex": 3
+        }
+      ],
+      "faces": [
+        {
+          "face": 0,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        },
+        {
+          "face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "face": 2,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "face": 3,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        }
+      ]
+    },
+    {
+      "tetrahedron": 3,
+      "truncation_triangles": [
+        {
+          "triangle_id": "t3v0",
+          "cusp": 0,
+          "ideal_vertex": 0
+        },
+        {
+          "triangle_id": "t3v1",
+          "cusp": 1,
+          "ideal_vertex": 1
+        },
+        {
+          "triangle_id": "t3v2",
+          "cusp": 1,
+          "ideal_vertex": 2
+        },
+        {
+          "triangle_id": "t3v3",
+          "cusp": 0,
+          "ideal_vertex": 3
+        }
+      ],
+      "faces": [
+        {
+          "face": 0,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        },
+        {
+          "face": 1,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "face": 3,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        }
+      ]
+    }
+  ],
+  "face_pairs": [
+    {
+      "material_id": 0,
+      "color_name": "Red",
+      "color_hex": "#ff2020",
+      "faces": [
+        {
+          "tetrahedron": 0,
+          "face": 0
+        },
+        {
+          "tetrahedron": 1,
+          "face": 0
+        }
+      ]
+    },
+    {
+      "material_id": 1,
+      "color_name": "Green",
+      "color_hex": "#159447",
+      "faces": [
+        {
+          "tetrahedron": 0,
+          "face": 1
+        },
+        {
+          "tetrahedron": 2,
+          "face": 1
+        }
+      ]
+    },
+    {
+      "material_id": 2,
+      "color_name": "Blue",
+      "color_hex": "#4da3ff",
+      "faces": [
+        {
+          "tetrahedron": 0,
+          "face": 2
+        },
+        {
+          "tetrahedron": 3,
+          "face": 3
+        }
+      ]
+    },
+    {
+      "material_id": 3,
+      "color_name": "Yellow",
+      "color_hex": "#ffe600",
+      "faces": [
+        {
+          "tetrahedron": 0,
+          "face": 3
+        },
+        {
+          "tetrahedron": 1,
+          "face": 1
+        }
+      ]
+    },
+    {
+      "material_id": 4,
+      "color_name": "Green",
+      "color_hex": "#159447",
+      "faces": [
+        {
+          "tetrahedron": 1,
+          "face": 2
+        },
+        {
+          "tetrahedron": 3,
+          "face": 2
+        }
+      ]
+    },
+    {
+      "material_id": 5,
+      "color_name": "Blue",
+      "color_hex": "#4da3ff",
+      "faces": [
+        {
+          "tetrahedron": 1,
+          "face": 3
+        },
+        {
+          "tetrahedron": 2,
+          "face": 0
+        }
+      ]
+    },
+    {
+      "material_id": 6,
+      "color_name": "Red",
+      "color_hex": "#ff2020",
+      "faces": [
+        {
+          "tetrahedron": 2,
+          "face": 2
+        },
+        {
+          "tetrahedron": 3,
+          "face": 1
+        }
+      ]
+    },
+    {
+      "material_id": 7,
+      "color_name": "Yellow",
+      "color_hex": "#ffe600",
+      "faces": [
+        {
+          "tetrahedron": 2,
+          "face": 3
+        },
+        {
+          "tetrahedron": 3,
+          "face": 0
+        }
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "id": "t0v0",
+      "cusp": 0,
+      "tetrahedron": 0,
+      "ideal_vertex": 0,
+      "cells_destination": {
+        "tetrahedron": 0,
+        "ideal_vertex": 0
+      },
+      "opposite_face": 0,
+      "material_id": 0,
+      "fill_color_name": "Red",
+      "fill_color_hex": "#ff2020",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            0,
+            2
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            0,
+            3
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            0,
+            1
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        }
+      ]
+    },
+    {
+      "id": "t0v2",
+      "cusp": 0,
+      "tetrahedron": 0,
+      "ideal_vertex": 2,
+      "cells_destination": {
+        "tetrahedron": 0,
+        "ideal_vertex": 2
+      },
+      "opposite_face": 2,
+      "material_id": 2,
+      "fill_color_name": "Blue",
+      "fill_color_hex": "#4da3ff",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            1,
+            2
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            2,
+            3
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            0,
+            2
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        }
+      ]
+    },
+    {
+      "id": "t1v0",
+      "cusp": 0,
+      "tetrahedron": 1,
+      "ideal_vertex": 0,
+      "cells_destination": {
+        "tetrahedron": 1,
+        "ideal_vertex": 0
+      },
+      "opposite_face": 0,
+      "material_id": 0,
+      "fill_color_name": "Red",
+      "fill_color_hex": "#ff2020",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            0,
+            2
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            0,
+            3
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            0,
+            1
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        }
+      ]
+    },
+    {
+      "id": "t1v3",
+      "cusp": 0,
+      "tetrahedron": 1,
+      "ideal_vertex": 3,
+      "cells_destination": {
+        "tetrahedron": 1,
+        "ideal_vertex": 3
+      },
+      "opposite_face": 3,
+      "material_id": 5,
+      "fill_color_name": "Blue",
+      "fill_color_hex": "#4da3ff",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            1,
+            3
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            0,
+            3
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            2,
+            3
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        }
+      ]
+    },
+    {
+      "id": "t2v0",
+      "cusp": 0,
+      "tetrahedron": 2,
+      "ideal_vertex": 0,
+      "cells_destination": {
+        "tetrahedron": 2,
+        "ideal_vertex": 0
+      },
+      "opposite_face": 0,
+      "material_id": 5,
+      "fill_color_name": "Blue",
+      "fill_color_hex": "#4da3ff",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            0,
+            1
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            0,
+            2
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            0,
+            3
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        }
+      ]
+    },
+    {
+      "id": "t2v3",
+      "cusp": 0,
+      "tetrahedron": 2,
+      "ideal_vertex": 3,
+      "cells_destination": {
+        "tetrahedron": 2,
+        "ideal_vertex": 3
+      },
+      "opposite_face": 3,
+      "material_id": 7,
+      "fill_color_name": "Yellow",
+      "fill_color_hex": "#ffe600",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            0,
+            3
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            2,
+            3
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            1,
+            3
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        }
+      ]
+    },
+    {
+      "id": "t3v0",
+      "cusp": 0,
+      "tetrahedron": 3,
+      "ideal_vertex": 0,
+      "cells_destination": {
+        "tetrahedron": 3,
+        "ideal_vertex": 0
+      },
+      "opposite_face": 0,
+      "material_id": 7,
+      "fill_color_name": "Yellow",
+      "fill_color_hex": "#ffe600",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            0,
+            2
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            0,
+            3
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            0,
+            1
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        }
+      ]
+    },
+    {
+      "id": "t3v3",
+      "cusp": 0,
+      "tetrahedron": 3,
+      "ideal_vertex": 3,
+      "cells_destination": {
+        "tetrahedron": 3,
+        "ideal_vertex": 3
+      },
+      "opposite_face": 3,
+      "material_id": 2,
+      "fill_color_name": "Blue",
+      "fill_color_hex": "#4da3ff",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            1,
+            3
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            0,
+            3
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            2,
+            3
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        }
+      ]
+    },
+    {
+      "id": "t0v1",
+      "cusp": 1,
+      "tetrahedron": 0,
+      "ideal_vertex": 1,
+      "cells_destination": {
+        "tetrahedron": 0,
+        "ideal_vertex": 1
+      },
+      "opposite_face": 1,
+      "material_id": 1,
+      "fill_color_name": "Green",
+      "fill_color_hex": "#159447",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            1,
+            3
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            1,
+            2
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            0,
+            1
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        }
+      ]
+    },
+    {
+      "id": "t0v3",
+      "cusp": 1,
+      "tetrahedron": 0,
+      "ideal_vertex": 3,
+      "cells_destination": {
+        "tetrahedron": 0,
+        "ideal_vertex": 3
+      },
+      "opposite_face": 3,
+      "material_id": 3,
+      "fill_color_name": "Yellow",
+      "fill_color_hex": "#ffe600",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            2,
+            3
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            1,
+            3
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            0,
+            3
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        }
+      ]
+    },
+    {
+      "id": "t1v1",
+      "cusp": 1,
+      "tetrahedron": 1,
+      "ideal_vertex": 1,
+      "cells_destination": {
+        "tetrahedron": 1,
+        "ideal_vertex": 1
+      },
+      "opposite_face": 1,
+      "material_id": 3,
+      "fill_color_name": "Yellow",
+      "fill_color_hex": "#ffe600",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            0,
+            1
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            1,
+            3
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            1,
+            2
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        }
+      ]
+    },
+    {
+      "id": "t1v2",
+      "cusp": 1,
+      "tetrahedron": 1,
+      "ideal_vertex": 2,
+      "cells_destination": {
+        "tetrahedron": 1,
+        "ideal_vertex": 2
+      },
+      "opposite_face": 2,
+      "material_id": 4,
+      "fill_color_name": "Green",
+      "fill_color_hex": "#159447",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            0,
+            2
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            1,
+            2
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            2,
+            3
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 0,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 3,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        }
+      ]
+    },
+    {
+      "id": "t2v1",
+      "cusp": 1,
+      "tetrahedron": 2,
+      "ideal_vertex": 1,
+      "cells_destination": {
+        "tetrahedron": 2,
+        "ideal_vertex": 1
+      },
+      "opposite_face": 1,
+      "material_id": 1,
+      "fill_color_name": "Green",
+      "fill_color_hex": "#159447",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            1,
+            3
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            1,
+            2
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            0,
+            1
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        }
+      ]
+    },
+    {
+      "id": "t2v2",
+      "cusp": 1,
+      "tetrahedron": 2,
+      "ideal_vertex": 2,
+      "cells_destination": {
+        "tetrahedron": 2,
+        "ideal_vertex": 2
+      },
+      "opposite_face": 2,
+      "material_id": 6,
+      "fill_color_name": "Red",
+      "fill_color_hex": "#ff2020",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            2,
+            3
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            0,
+            2
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            1,
+            2
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 1,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 5,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        }
+      ]
+    },
+    {
+      "id": "t3v1",
+      "cusp": 1,
+      "tetrahedron": 3,
+      "ideal_vertex": 1,
+      "cells_destination": {
+        "tetrahedron": 3,
+        "ideal_vertex": 1
+      },
+      "opposite_face": 1,
+      "material_id": 6,
+      "fill_color_name": "Red",
+      "fill_color_hex": "#ff2020",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            1,
+            3
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            1,
+            2
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            0,
+            1
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 2,
+          "material_id": 4,
+          "color_name": "Green",
+          "color_hex": "#159447"
+        }
+      ]
+    },
+    {
+      "id": "t3v2",
+      "cusp": 1,
+      "tetrahedron": 3,
+      "ideal_vertex": 2,
+      "cells_destination": {
+        "tetrahedron": 3,
+        "ideal_vertex": 2
+      },
+      "opposite_face": 2,
+      "material_id": 4,
+      "fill_color_name": "Green",
+      "fill_color_hex": "#159447",
+      "corners": [
+        {
+          "corner_index": 0,
+          "edge_vertices": [
+            1,
+            2
+          ]
+        },
+        {
+          "corner_index": 1,
+          "edge_vertices": [
+            2,
+            3
+          ]
+        },
+        {
+          "corner_index": 2,
+          "edge_vertices": [
+            0,
+            2
+          ]
+        }
+      ],
+      "sides": [
+        {
+          "side_index": 0,
+          "corner_indices": [
+            0,
+            1
+          ],
+          "tetrahedral_face": 0,
+          "material_id": 7,
+          "color_name": "Yellow",
+          "color_hex": "#ffe600"
+        },
+        {
+          "side_index": 1,
+          "corner_indices": [
+            1,
+            2
+          ],
+          "tetrahedral_face": 1,
+          "material_id": 6,
+          "color_name": "Red",
+          "color_hex": "#ff2020"
+        },
+        {
+          "side_index": 2,
+          "corner_indices": [
+            2,
+            0
+          ],
+          "tetrahedral_face": 3,
+          "material_id": 2,
+          "color_name": "Blue",
+          "color_hex": "#4da3ff"
+        }
+      ]
+    }
+  ]
+}

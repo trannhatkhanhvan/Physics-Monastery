@@ -562,7 +562,7 @@ export default function HyperbolicPartitionEq() {
 
 <div
   className="legend-title"
-  style={{ fontSize: '1.50rem', color: 'yellow' }}
+  style={{ fontSize: '1.50rem', color: 'rgba(255, 255, 255, 0.40)' }}
 >
   the Companion Matrix
 </div>

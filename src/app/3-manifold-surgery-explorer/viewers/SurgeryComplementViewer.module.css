@@ -1,0 +1,1065 @@
+.viewer {
+  position: absolute;
+  inset: 0;
+
+  /*
+   * Representation tabs attach above this frame.
+   * The actual rendered scene is clipped by .canvas below.
+   */
+  overflow: visible;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.placeholder {
+  font-size: 18px;
+  opacity: 0.55;
+}
+
+.controlSection {
+  display: grid;
+  gap: 5px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(232, 223, 200, 0.18);
+}
+
+.controlSection + .controlSection {
+  padding-top: 1px;
+}
+
+.controlTitle {
+  color: rgba(232, 223, 200, 0.78);
+  font-size: 13px;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.controlGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.cuspTransition {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 4px 0;
+  color: rgba(232, 223, 200, 0.62);
+  font-size: 11px;
+  text-align: center;
+}
+
+.cuspTransition span:nth-child(2) {
+  color: rgba(255, 225, 172, 0.88);
+}
+
+.cuspRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 110px;
+  gap: 5px;
+}
+
+.controlSelect {
+  min-width: 0;
+  height: 27px;
+  box-sizing: border-box;
+  padding: 2px 6px;
+  color: rgba(238, 234, 222, 0.94);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  border: 1px solid rgba(232, 223, 200, 0.34);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.slopeInputs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.slopeInputs label {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 3px;
+  color: rgba(232, 223, 200, 0.72);
+  font-size: 11px;
+}
+
+.slopeInputs input {
+  width: 100%;
+  min-width: 0;
+  height: 27px;
+  box-sizing: border-box;
+  padding: 2px 3px;
+  color: rgba(238, 234, 222, 0.94);
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  border: 1px solid rgba(232, 223, 200, 0.34);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.viewGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.activeViewButton {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(232, 223, 200, 0.62) !important;
+}
+
+
+.cellsViewControls {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.cellsViewControls button {
+  min-width: 0;
+  height: 34px;
+}
+
+.cellsResetButton {
+  grid-column: 1 / -1;
+}
+
+.rotationArrowIcon {
+  display: block;
+  width: 24px;
+  height: 27px;
+  margin: 0 auto;
+}
+
+.cellsLayer {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.cellsLayerDragging {
+  cursor: grabbing;
+}
+
+
+/* ==========================================================
+ * Representation-specific controller
+ * ========================================================== */
+
+.identificationSection {
+  display: grid;
+  gap: 6px;
+  padding-bottom: 8px;
+  border-bottom:
+    1px solid rgba(232, 223, 200, 0.18);
+}
+
+.identificationTitle {
+  color: rgba(232, 223, 200, 0.78);
+  font-size: 13px;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.identificationColumns {
+  display: grid;
+  grid-template-columns:
+    1fr 1fr;
+  padding: 0 8px;
+  color: rgba(248, 242, 225, 0.92);
+  font-size: 18px;
+  line-height: 1;
+  text-align: center;
+}
+
+.identificationRows {
+  display: grid;
+  gap: 5px;
+}
+
+.identificationRow {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    34px
+    minmax(0, 1fr);
+  align-items: center;
+  min-height: 43px;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+
+  color:
+    rgba(250, 246, 232, 0.96);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 13px;
+
+  border:
+    1px solid
+    rgba(232, 223, 200, 0.58);
+
+  border-left-color:
+    var(--source-color);
+
+  border-right-color:
+    var(--target-color);
+
+  border-radius: 6px;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--source-tint) 0%,
+      var(--source-tint)
+        calc(50% - 17px),
+      rgba(3, 3, 3, 0.94)
+        calc(50% - 17px),
+      rgba(3, 3, 3, 0.94)
+        calc(50% + 17px),
+      var(--target-tint)
+        calc(50% + 17px),
+      var(--target-tint) 100%
+    );
+
+  text-shadow:
+    0 1px 2px
+    rgba(0, 0, 0, 0.78);
+}
+
+.identificationRow:not(
+  [aria-disabled="true"]
+) {
+  cursor: pointer;
+}
+
+.identificationRow[
+  aria-disabled="true"
+] {
+  cursor: default;
+}
+
+.identificationRowActive {
+  box-shadow:
+    inset 0 0 0 1px
+      rgba(255, 255, 255, 0.30),
+    0 0 0 1px
+      rgba(255, 255, 255, 0.12);
+}
+
+.identificationSide {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  padding: 0 8px;
+}
+
+.identificationSide strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.identificationSide span {
+  opacity: 0.78;
+  font-variant-numeric:
+    tabular-nums;
+}
+
+.identificationArrow {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-size: 20px;
+}
+
+.truncationControl {
+  display: grid;
+  gap: 7px;
+  padding-top: 8px;
+  border-top:
+    1px solid rgba(232, 223, 200, 0.18);
+}
+
+.truncationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  color:
+    rgba(232, 223, 200, 0.82);
+
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.truncationHeader strong {
+  color:
+    rgba(255, 235, 194, 0.96);
+
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.truncationControl input[
+  type="range"
+] {
+  width: 100%;
+}
+
+.truncationScale {
+  display: flex;
+  justify-content: space-between;
+
+  color:
+    rgba(232, 223, 200, 0.48);
+
+  font-size: 11px;
+}
+
+
+/* Surgery viewer manifold navigation */
+
+.viewer {
+  isolation: isolate;
+}
+
+.manifoldPicker {
+  position: absolute;
+  z-index: 1001;
+  top: 14px;
+  left: 14px;
+}
+
+.manifoldPicker select {
+  min-width: 220px;
+  height: 31px;
+  box-sizing: border-box;
+  padding: 3px 28px 3px 9px;
+  color: rgba(248, 242, 225, 0.94);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  border: 1px solid rgba(232, 223, 200, 0.34);
+  border-radius: 5px;
+  background: rgba(7, 7, 8, 0.82);
+  backdrop-filter: blur(2px);
+}
+
+.representationTabs {
+  position: absolute;
+  z-index: 1001;
+
+  /*
+   * The tabs sit directly on the upper edge of the viewer.
+   * The active tab visually opens into the viewer below.
+   */
+  top: auto;
+  bottom: calc(100% - 1px);
+
+  right:
+    calc(
+      clamp(300px, 29vw, 420px) +
+      8px
+    );
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, auto);
+
+  gap: 3px;
+
+  align-items: end;
+}
+
+.representationTabs button {
+  min-width: 78px;
+  min-height: 30px;
+
+  box-sizing: border-box;
+
+  padding:
+    6px 13px 5px;
+
+  color:
+    rgba(232, 223, 200, 0.72);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 12px;
+
+  border:
+    1px solid
+    rgba(232, 223, 200, 0.26);
+
+  border-bottom-color:
+    rgba(232, 223, 200, 0.38);
+
+  border-radius:
+    7px 7px 0 0;
+
+  background:
+    rgba(5, 5, 6, 0.82);
+
+  backdrop-filter:
+    blur(4px);
+
+  cursor: pointer;
+
+  transition:
+    min-height 140ms ease,
+    color 140ms ease,
+    background 140ms ease,
+    border-color 140ms ease,
+    transform 140ms ease;
+}
+
+.representationTabs button:hover:not(:disabled) {
+  color:
+    rgba(248, 242, 225, 0.92);
+
+  background:
+    rgba(22, 20, 18, 0.90);
+
+  border-color:
+    rgba(232, 223, 200, 0.42);
+}
+
+.representationTabs button:disabled {
+  opacity: 0.36;
+  cursor: not-allowed;
+}
+
+.activeRepresentationTab {
+  min-height: 34px !important;
+
+  color:
+    rgba(255, 248, 226, 1) !important;
+
+  background:
+    rgba(35, 31, 27, 0.96) !important;
+
+  border-color:
+    rgba(232, 223, 200, 0.70) !important;
+
+  border-bottom-color:
+    rgba(35, 31, 27, 0.96) !important;
+
+  transform:
+    translateY(1px);
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.08);
+}
+
+.m129Pending {
+  position: absolute;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding-right: clamp(300px, 29vw, 420px);
+  box-sizing: border-box;
+  background:
+    rgba(4, 4, 5, 0.88);
+}
+
+.m129PendingCard {
+  display: grid;
+  gap: 7px;
+  max-width: 360px;
+  padding: 18px 22px;
+  text-align: center;
+  border:
+    1px solid rgba(232, 223, 200, 0.22);
+  border-radius: 8px;
+  background: rgba(7, 7, 8, 0.84);
+}
+
+.m129PendingCard strong {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.m129PendingCard span {
+  color: rgba(232, 223, 200, 0.68);
+  font-size: 12px;
+}
+
+
+/* ==========================================================
+ * Certified m129 two-cusp material development
+ * ========================================================== */
+
+.m129CuspScene {
+  position: absolute;
+  z-index: 950;
+
+  inset:
+    0
+    clamp(300px, 29vw, 420px)
+    0
+    0;
+
+  display: grid;
+  grid-template-rows:
+    auto minmax(0, 1fr) auto;
+
+  box-sizing: border-box;
+
+  padding:
+    62px
+    28px
+    24px;
+
+  color:
+    rgba(248, 242, 225, 0.96);
+
+  background:
+    rgba(4, 4, 5, 0.22);
+
+  pointer-events: auto;
+
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  outline: none;
+}
+
+.m129CuspSceneDragging {
+  cursor: grabbing;
+}
+
+
+.m129CuspSharedLabels {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  align-items: end;
+
+  padding:
+    0 14px 2px;
+}
+
+
+.m129CuspSharedLabel {
+  display: flex;
+
+  align-items: baseline;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-width: 0;
+
+  color:
+    rgba(248, 242, 225, 0.92);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  text-align: center;
+}
+
+
+.m129CuspSharedLabel strong {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+.m129CuspSharedLabel span {
+  color:
+    rgba(232, 223, 200, 0.50);
+
+  font-size: 11px;
+}
+
+
+.m129CuspSharedSvg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 300px;
+
+  overflow: visible;
+
+  transform-box:
+    fill-box;
+}
+
+
+.m129CuspSharedFacts {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  padding:
+    2px 14px 0;
+}
+
+.m129CuspCards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  min-height: 0;
+
+  align-items: stretch;
+}
+
+.m129CuspCard {
+  display: grid;
+
+  grid-template-rows:
+    auto minmax(0, 1fr) auto;
+
+  gap: 9px;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding: 14px;
+
+  color:
+    rgba(248, 242, 225, 0.90);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  text-align: left;
+
+  border: 0;
+  border-radius: 0;
+
+  background:
+    transparent;
+
+  box-shadow:
+    none;
+
+  backdrop-filter:
+    none;
+}
+
+.m129CuspCard:hover,
+.m129CuspCardActive {
+  border: 0;
+
+  background:
+    transparent;
+
+  box-shadow:
+    none;
+}
+
+.m129CuspCardHeader {
+  display: flex;
+
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 8px;
+}
+
+.m129CuspCardHeader strong {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.m129CuspCardHeader span {
+  color:
+    rgba(232, 223, 200, 0.50);
+
+  font-size: 11px;
+}
+
+.m129CuspSvg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 250px;
+
+  overflow: visible;
+}
+
+.m129CuspFundamentalCell {
+  fill:
+    rgba(255, 248, 226, 0.025);
+
+  stroke:
+    rgba(255, 248, 226, 0.25);
+
+  stroke-width: 1.25;
+}
+
+.m129CuspTriangle {
+  fill-opacity: 1;
+
+  stroke:
+    rgba(255, 248, 226, 0.62);
+
+  stroke-width: 1.15;
+
+  stroke-linejoin: round;
+}
+
+.m129CuspBoundaryU {
+  stroke:
+    rgba(255, 202, 92, 0.98);
+
+  stroke-width: 3.2;
+
+  stroke-linecap: round;
+}
+
+.m129CuspBoundaryV {
+  stroke:
+    rgba(121, 190, 255, 0.98);
+
+  stroke-width: 3.2;
+
+  stroke-linecap: round;
+}
+
+.m129CuspFacts {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  gap: 5px 10px;
+
+  color:
+    rgba(232, 223, 200, 0.56);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11px;
+}
+
+
+/*
+ * One Cusp controller for every manifold.
+ *
+ * m129 adds a two-cusp selector here; it does not create
+ * another floating control panel.
+ */
+.cuspCustomPicker {
+  position: relative;
+  width: 100%;
+}
+
+.cuspCustomTrigger {
+  width: 100%;
+  min-height: 31px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+
+  padding: 5px 9px;
+
+  color:
+    rgba(248, 242, 225, 0.96);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 13px;
+  text-align: left;
+
+  border:
+    1px solid
+    rgba(232, 223, 200, 0.34);
+
+  border-radius: 5px;
+
+  background:
+    rgba(7, 7, 8, 0.84);
+
+  backdrop-filter:
+    blur(4px);
+
+  cursor: pointer;
+}
+
+.cuspCustomArrow,
+.cuspCustomArrowOpen {
+  opacity: 0.72;
+  font-size: 10px;
+
+  transition:
+    transform 160ms ease;
+}
+
+.cuspCustomArrowOpen {
+  transform:
+    rotate(180deg);
+}
+
+.cuspCustomMenu {
+  position: absolute;
+  z-index: 1400;
+
+  top:
+    calc(100% + 5px);
+  left: 0;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 7px;
+
+  color:
+    rgba(248, 242, 225, 0.96);
+
+  border:
+    1px solid
+    rgba(232, 223, 200, 0.34);
+
+  border-radius: 7px;
+
+  background:
+    rgba(7, 7, 8, 0.96);
+
+  backdrop-filter:
+    blur(8px);
+
+  box-shadow:
+    0 10px 28px
+      rgba(0, 0, 0, 0.42);
+}
+
+.cuspCustomOption {
+  width: 100%;
+  min-height: 29px;
+
+  display: grid;
+  grid-template-columns:
+    18px minmax(0, 1fr);
+  align-items: center;
+  gap: 5px;
+
+  padding: 3px 7px;
+
+  color:
+    rgba(248, 242, 225, 0.96);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 13px;
+  text-align: left;
+
+  border: 0;
+  border-radius: 4px;
+
+  background:
+    transparent;
+
+  cursor: pointer;
+
+  transition:
+    background 120ms ease;
+}
+
+.cuspCustomOption:hover {
+  background:
+    rgba(255, 255, 255, 0.10);
+}
+
+.cuspCustomOptionActive {
+  background:
+    rgba(255, 255, 255, 0.13);
+}
+
+.cuspCustomCheck {
+  color:
+    rgba(255, 235, 194, 0.92);
+
+  text-align: center;
+}
+
+
+.m129CuspBasisNote {
+  justify-self: center;
+
+  max-width: 620px;
+
+  color:
+    rgba(232, 223, 200, 0.48);
+
+  font-size: 11px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.m129CuspControlNote {
+  color:
+    rgba(232, 223, 200, 0.50);
+
+  font-size: 10px;
+  line-height: 1.25;
+}
+
+@media (max-width: 900px) {
+  .m129CuspScene {
+    right: 0;
+    padding:
+      62px 16px 20px;
+  }
+
+  .m129CuspCards {
+    grid-template-columns: 1fr;
+  }
+
+  .m129CuspSvg {
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 900px) {
+  .representationTabs {
+    right: 8px;
+  }
+
+  .m129Pending {
+    padding-right: 0;
+  }
+}
+
+
+/*
+ * Cells uses the exact existing Figure-eight / Sister renderer.
+ *
+ * Keep the surgery controller visible at right by covering only
+ * the visual portion of the Projection viewer.
+ */
+.cellsLayer {
+  position: absolute;
+  z-index: 40;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: clamp(300px, 29vw, 420px);
+  overflow: hidden;
+  background:
+    rgba(0, 0, 0, 0.02);
+}
+
+.cellsLayer > svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+@media (max-width: 900px) {
+  .cellsLayer {
+    right: 0;
+  }
+}
+
+
+/* Surgery Explorer dark native manifold menu */
+
+.manifoldPicker select {
+  color-scheme: dark;
+
+  color:
+    rgba(248, 242, 225, 0.96);
+
+  background:
+    rgba(7, 7, 8, 0.88);
+}
+
+.manifoldPicker select option,
+.manifoldPicker select optgroup {
+  color:
+    rgba(248, 242, 225, 0.96);
+
+  background-color:
+    rgb(12, 11, 10);
+}
+
+.manifoldPicker select optgroup {
+  color:
+    rgba(232, 223, 200, 0.68);
+
+  font-style: normal;
+  font-weight: 400;
+}
+
+.manifoldPicker select option {
+  color:
+    rgba(248, 242, 225, 0.96);
+
+  font-weight: 400;
+}
+
+.manifoldPicker select option:disabled {
+  color:
+    rgba(232, 223, 200, 0.36);
+}

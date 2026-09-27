@@ -1,0 +1,160 @@
+{
+  "definition": {
+    "level1": {
+      "idealTetrahedra": 2,
+      "description": "Orientable cusped hyperbolic 3-manifolds represented at the minimal two-ideal-tetrahedron complexity."
+    },
+    "level2": {
+      "idealTetrahedra": 3,
+      "description": "Orientable cusped hyperbolic 3-manifolds at the next three-ideal-tetrahedron complexity."
+    }
+  },
+  "levels": {
+    "1": [
+      {
+        "id": "m003(0,0)",
+        "level": 1,
+        "idealTetrahedra": 2,
+        "cusps": 1,
+        "volume": 2.029883212819308,
+        "isometrySignature": "cPcbbbdxm",
+        "identifications": [
+          "m003(0,0)",
+          "otet02_00000(0,0)"
+        ],
+        "linkSignature": null
+      },
+      {
+        "id": "m004(0,0)",
+        "level": 1,
+        "idealTetrahedra": 2,
+        "cusps": 1,
+        "volume": 2.029883212819307,
+        "isometrySignature": "cPcbbbiht",
+        "identifications": [
+          "m004(0,0)",
+          "4_1(0,0)",
+          "K2_1(0,0)",
+          "K4a1(0,0)",
+          "otet02_00001(0,0)"
+        ],
+        "linkSignature": null
+      }
+    ],
+    "2": [
+      {
+        "id": "m006(0,0)",
+        "level": 2,
+        "idealTetrahedra": 3,
+        "cusps": 1,
+        "volume": 2.568970600936709,
+        "isometrySignature": "eLAkaccddngbak",
+        "identifications": [
+          "m006(0,0)"
+        ],
+        "linkSignature": null
+      },
+      {
+        "id": "m007(0,0)",
+        "level": 2,
+        "idealTetrahedra": 3,
+        "cusps": 1,
+        "volume": 2.5689706009367086,
+        "isometrySignature": "eLPkbcdddhggsj",
+        "identifications": [
+          "m007(0,0)"
+        ],
+        "linkSignature": null
+      },
+      {
+        "id": "m009(0,0)",
+        "level": 2,
+        "idealTetrahedra": 3,
+        "cusps": 1,
+        "volume": 2.6667447834490603,
+        "isometrySignature": "dLQbccchhfo",
+        "identifications": [
+          "m009(0,0)"
+        ],
+        "linkSignature": null
+      },
+      {
+        "id": "m010(0,0)",
+        "level": 2,
+        "idealTetrahedra": 3,
+        "cusps": 1,
+        "volume": 2.66674478344906,
+        "isometrySignature": "dLQbccchhsj",
+        "identifications": [
+          "m010(0,0)"
+        ],
+        "linkSignature": null
+      },
+      {
+        "id": "m011(0,0)",
+        "level": 2,
+        "idealTetrahedra": 3,
+        "cusps": 1,
+        "volume": 2.7818339123960794,
+        "isometrySignature": "dLQacccjsjb",
+        "identifications": [
+          "m011(0,0)"
+        ],
+        "linkSignature": null
+      },
+      {
+        "id": "m015(0,0)",
+        "level": 2,
+        "idealTetrahedra": 3,
+        "cusps": 1,
+        "volume": 2.8281220883307836,
+        "isometrySignature": "eLPkbcdddhggcv",
+        "identifications": [
+          "m015(0,0)",
+          "5_2(0,0)",
+          "K3_2(0,0)",
+          "K5a1(0,0)"
+        ],
+        "linkSignature": null
+      },
+      {
+        "id": "m016(0,0)",
+        "level": 2,
+        "idealTetrahedra": 3,
+        "cusps": 1,
+        "volume": 2.828122088330783,
+        "isometrySignature": "dLQacccjsnk",
+        "identifications": [
+          "m016(0,0)",
+          "K3_1(0,0)",
+          "K12n242(0,0)"
+        ],
+        "linkSignature": null
+      },
+      {
+        "id": "m017(0,0)",
+        "level": 2,
+        "idealTetrahedra": 3,
+        "cusps": 1,
+        "volume": 2.828122088330783,
+        "isometrySignature": "eLAkaccddjgbaj",
+        "identifications": [
+          "m017(0,0)"
+        ],
+        "linkSignature": null
+      },
+      {
+        "id": "m019(0,0)",
+        "level": 2,
+        "idealTetrahedra": 3,
+        "cusps": 1,
+        "volume": 2.9441064866766964,
+        "isometrySignature": "dLQacccjnbk",
+        "identifications": [
+          "m019(0,0)"
+        ],
+        "linkSignature": null
+      }
+    ]
+  }
+}

@@ -207,8 +207,8 @@ export default function LayoutWrapper({ children }) {
           <a href="/hyperbolic-partition-eq" className="menu-text-link">Hyperbolic Partitions</a>
           <a href="/binomial-constructor" className="menu-text-link">Binomial Constructor</a>
           <a href="/simplest-manifold" className="menu-text-link">Simplest Manifold</a>
-          <a href="/quaternionic-288-group" className="menu-text-link">Quaternionic 288</a>
           <a href="/transform-space" className="menu-text-link">Transform Space</a>
+          <a href="/quaternionic-288-group" className="menu-text-link">Quaternionic 288</a>
 
 
           <div className="separator"></div>
@@ -275,7 +275,6 @@ export default function LayoutWrapper({ children }) {
 
           <div className="separator"></div>
 
-          <a href="/forum" className="menu-text-link">Forum</a>
           <a href="/monastery-events" className="menu-text-link">Events</a>
           <a href="/books" className="menu-text-link">Books</a>
           <a href="/the-logic-of-persistence" className="menu-text-link">Logic of Persistence</a>

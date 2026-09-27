@@ -576,10 +576,10 @@ export default function BinomialConstructor() {
     onMouseOut={e => (e.target.style.color = 'inherit')}
   >
     Constants of Nature
-  </a> page to see how the roots of the hyperbolic partition equation construct each constant of Nature.
+  </a> page to see how these roots construct each constant of Nature.
         </p>
 
-        <div style={{ height: '12.5rem' }} />
+        <div style={{ height: '10.0rem' }} />
 
       </div>
     </LayoutWrapper>

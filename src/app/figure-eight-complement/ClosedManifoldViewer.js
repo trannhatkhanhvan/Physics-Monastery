@@ -1698,6 +1698,32 @@ export default function ClosedManifoldViewer({
           storedDimension
         )
       ) {
+        /*
+         * Restore the same camera baseline used by an explicit
+         * dimension selection and by Reset.
+         *
+         * Without this, an embedded reload begins as 1D,
+         * inherits DEFAULT_VIEW.zoom, and then switches only the
+         * dimension to 3D, leaving the restored tetrahedra too small.
+         */
+        setViewTransform({
+          ...DEFAULT_VIEW,
+
+          zoom:
+            storedDimension === "3D"
+              ? DEFAULT_3D_VIEW_ZOOM
+              : DEFAULT_VIEW.zoom,
+        });
+
+        setAutoFit3D(true);
+
+        initial3DFrameResolvedRef.current =
+          false;
+
+        setInitial3DFrameReady(
+          storedDimension === "3D"
+        );
+
         setDimension(
           storedDimension
         );
@@ -1977,9 +2003,38 @@ export default function ClosedManifoldViewer({
       [pendingCuspMeshFaceCount]
     );
 
+  /*
+   * Start at the same camera scale used by Reset.
+   *
+   * In particular, a direct/reloaded 3D entry must not begin from
+   * DEFAULT_VIEW.zoom (the 1D / 2D baseline) while Reset begins
+   * from DEFAULT_3D_VIEW_ZOOM.
+   */
   const [viewTransform, setViewTransform] = useState(() => ({
     ...DEFAULT_VIEW,
+
+    zoom:
+      (
+        isClosedManifoldDimension(
+          initialDimension
+        )
+          ? initialDimension
+          : "1D"
+      ) === "3D"
+        ? DEFAULT_3D_VIEW_ZOOM
+        : DEFAULT_VIEW.zoom,
   }));
+
+  /*
+   * Mouse-wheel zoom begins disabled so ordinary page scrolling
+   * can pass through the viewer. Pressing either explicit zoom
+   * button once opts the viewer into wheel zoom for this mount.
+   */
+  const [
+    wheelZoomEnabled,
+    setWheelZoomEnabled,
+  ] = useState(false);
+
   const [
     autoFit3D,
     setAutoFit3D,
@@ -3255,6 +3310,15 @@ export default function ClosedManifoldViewer({
   }
 
   function handleWheel(event) {
+    /*
+     * Until the visitor deliberately uses one of the zoom buttons,
+     * leave the wheel event completely untouched so the browser can
+     * continue scrolling the surrounding page normally.
+     */
+    if (!wheelZoomEnabled) {
+      return;
+    }
+
     event.preventDefault();
 
     zoomView(
@@ -3287,7 +3351,10 @@ export default function ClosedManifoldViewer({
         "wheel",
         onWheel
       );
-  }, [projectionActive]);
+  }, [
+    projectionActive,
+    wheelZoomEnabled,
+  ]);
 
   function handleViewerKeyDown(event) {
     const horizontalDirections = {
@@ -3685,12 +3752,57 @@ export default function ClosedManifoldViewer({
 
     if (!exactSource) {
       /*
-       * Defensive fallback: if Cells has not published yet,
-       * use the ordinary Cusp switch rather than inventing
-       * coordinates.
+       * A freshly mounted Cells viewer can need a few paint frames
+       * before its exact screen-space truncation faces are available.
+       *
+       * Do NOT abandon the Cells -> Cusp flight merely because that
+       * first measurement is slightly late. The old fallback switched
+       * directly to the Cusp renderer, producing a blank interval and
+       * skipping the intended material-triangle transition.
+       *
+       * Keep the Cells endpoint visible and wait for the same exact
+       * source geometry that is normally available after Reset.
        */
-      setProjectionMode("cusp");
-      setProjectionActive(true);
+      const sourceWaitStartedAt =
+        performance.now();
+
+      function waitForCellsSource() {
+        if (
+          cuspFlightSourceRef.current
+        ) {
+          cuspFlightFrameRef.current =
+            null;
+
+          beginCellsToCuspFlight();
+          return;
+        }
+
+        if (
+          performance.now() -
+            sourceWaitStartedAt >
+          1500
+        ) {
+          /*
+           * Leave the current Cells scene intact rather than replacing
+           * an unavailable exact transition with a visually incorrect
+           * direct jump.
+           */
+          cuspFlightFrameRef.current =
+            null;
+          return;
+        }
+
+        cuspFlightFrameRef.current =
+          window.requestAnimationFrame(
+            waitForCellsSource
+          );
+      }
+
+      cuspFlightFrameRef.current =
+        window.requestAnimationFrame(
+          waitForCellsSource
+        );
+
       return;
     }
 
@@ -5701,6 +5813,8 @@ export default function ClosedManifoldViewer({
                   type="button"
 
                   onClick={() => {
+                    setWheelZoomEnabled(true);
+
                     if (
                       dimension === "3D" &&
                       projectionActive
@@ -5723,6 +5837,8 @@ export default function ClosedManifoldViewer({
                   type="button"
 
                   onClick={() => {
+                    setWheelZoomEnabled(true);
+
                     if (
                       dimension === "3D" &&
                       projectionActive
