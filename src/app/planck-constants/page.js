@@ -544,6 +544,33 @@ export default function PlanckConstants() {
     GENERAL_G_RHS_GAP *
     COMPACT_RELATION_SCALE;
 
+  /*
+   * ONE SHARED EQUALS-SIGN SPINE FOR ALL 12 EQUATIONS.
+   *
+   * Authority:
+   *   G_0, G_1, G_2, G_3, G_4
+   *
+   * The compact G rows place "=" at the beginning of their
+   * RHS column, after the rendered G width and G/RHS gap.
+   */
+  const SHARED_EQUALS_X =
+    GEOMETRY_EQUATIONS_X +
+    COMPACT_G_COLUMN_WIDTH +
+    COMPACT_G_RHS_GAP;
+
+  /*
+   * Exact native visible X position of "=" inside
+   * geometric_relation_equation.svg.
+   *
+   * Measured directly from the supplied SVG geometry.
+   */
+  const GENERAL_G_EQUALS_NATIVE_X = 22.015626256;
+
+  const GENERAL_G_RELATION_X =
+    SHARED_EQUALS_X -
+    GENERAL_G_EQUALS_NATIVE_X *
+      COMPACT_RELATION_SCALE;
+
 
   /*
    * Independent gap between the mathematical relation
@@ -587,49 +614,80 @@ export default function PlanckConstants() {
   const BOUNDARY_RHS_COLUMN_WIDTH = 270;
 
   /*
-   * General B_k relation remains centered independently.
+   * Fixed SI-unit column for normalized Planck boundaries.
+   *
+   * The mathematical RHS moves left on expansion while the
+   * physical unit remains anchored.
    */
-  const BOUNDARY_RELATION_X = 0;
+  const BOUNDARY_UNIT_COLUMN_WIDTH = 32;
 
   /*
-   * Final normalized-boundary equation horizontal positions.
+   * TEMPORARY unit / expanded-end-position X tuner.
    *
-   * Each individual row slides between these two X positions
-   * as it expands or collapses.
+   * This moves the fixed SI-unit symbols and the expanded
+   * equations together. Collapsed equations remain locked
+   * to the shared 12-equation equals-sign spine.
    */
-  const BOUNDARY_EXPANDED_EQUATIONS_X = -233;
-  const BOUNDARY_COLLAPSED_EQUATIONS_X = -88;
+  /*
+   * Final unit / expanded-endpoint placement.
+   */
+  const BOUNDARY_UNIT_GROUP_X = 30;
+  const BOUNDARY_UNIT_GROUP_Y = 0;
 
   /*
-   * Exact shared-column alignment with the upper G section.
-   *
-   * Upper title column:
-   *   G geometry + gap + RHS + gap + title transform
-   *
-   * Lower title column:
-   *   boundary symbol + gap + RHS + gap
-   *
-   * The difference is applied as one lower-title translation.
+   * The fixed SI-unit geometry was finalized with this
+   * lower-boundary group reference.
    */
-  const UPPER_TITLE_COLUMN_X =
-    COMPACT_G_COLUMN_WIDTH +
-    COMPACT_G_RHS_GAP +
-    EXPANDED_RHS_COLUMN_WIDTH +
-    RELATION_LABEL_GAP +
-    GEOMETRY_TITLES_X;
+  const BOUNDARY_EQUATION_GROUP_X = 23;
 
-  const LOWER_TITLE_COLUMN_X =
-    BOUNDARY_SYMBOL_COLUMN_WIDTH +
-    BOUNDARY_SYMBOL_RHS_GAP +
-    BOUNDARY_RHS_COLUMN_WIDTH +
-    RELATION_LABEL_GAP;
+  /*
+   * Exact native visible X position of "=" inside
+   * boundary_relation_equation.svg.
+   *
+   * Measured directly from the supplied SVG geometry.
+   */
+  const GENERAL_B_EQUALS_NATIVE_X = 22.812505008;
 
-  const BOUNDARY_TITLES_X =
-    UPPER_TITLE_COLUMN_X -
-    LOWER_TITLE_COLUMN_X;
+  /*
+   * Place the general B_k equation on the SAME equals spine.
+   */
+  const BOUNDARY_RELATION_X =
+    SHARED_EQUALS_X -
+    GENERAL_B_EQUALS_NATIVE_X *
+      COMPACT_RELATION_SCALE;
+
+  /*
+   * Collapsed Planck equations:
+   *
+   * [boundary symbol][gap][RHS beginning with "="]
+   *
+   * Therefore the RHS origin is placed directly on the
+   * shared equals-sign spine.
+   */
+  const BOUNDARY_COLLAPSED_EQUATIONS_X =
+    SHARED_EQUALS_X -
+    BOUNDARY_SYMBOL_COLUMN_WIDTH -
+    BOUNDARY_SYMBOL_RHS_GAP;
+
+  /*
+   * Expanded Planck equations retain the exact absolute
+   * position established before this alignment pass.
+   *
+   * Previously:
+   *
+   *   23 + (-233) = -210 px
+   *
+   * Keeping that value preserves the expanded equation/unit
+   * geometry exactly.
+   */
+  const BOUNDARY_EXPANDED_EQUATIONS_X =
+    BOUNDARY_EQUATION_GROUP_X - 233;
 
   /*
    * Exact shared button column.
+   *
+   * The lower five row buttons and lower master button align
+   * to the same X position as the six controls above.
    */
   const UPPER_BUTTON_COLUMN_X =
     COMPACT_G_COLUMN_WIDTH +
@@ -644,8 +702,7 @@ export default function PlanckConstants() {
     BOUNDARY_SYMBOL_COLUMN_WIDTH +
     BOUNDARY_SYMBOL_RHS_GAP +
     BOUNDARY_RHS_COLUMN_WIDTH +
-    RELATION_LABEL_GAP +
-    150 +
+    BOUNDARY_UNIT_COLUMN_WIDTH +
     14;
 
   const BOUNDARY_BUTTONS_X =
@@ -752,6 +809,10 @@ export default function PlanckConstants() {
       symbolSrc: '/equations/planck_time.svg',
       symbolAlt: 't_p',
       symbolHeight: '16.5px',
+      unitSrc: '/equations/second.svg',
+      unitAlt: 's',
+      expandedAnchorCorrectionX: 0,
+      unitTranslateY: 0.13312528,
       rhsSrc: '/equations/boundary_rhs_0.svg',
       expandedRhsSrc:
         '/equations/boundary_rhs_0_expanded.svg',
@@ -762,6 +823,10 @@ export default function PlanckConstants() {
       symbolSrc: '/equations/planck_length.svg',
       symbolAlt: 'l_p',
       symbolHeight: '16.5px',
+      unitSrc: '/equations/meter.svg',
+      unitAlt: 'm',
+      expandedAnchorCorrectionX: 0.0875,
+      unitTranslateY: 0.26401968,
       rhsSrc: '/equations/boundary_rhs_1.svg',
       expandedRhsSrc:
         '/equations/boundary_rhs_1_expanded.svg',
@@ -772,6 +837,10 @@ export default function PlanckConstants() {
       symbolSrc: '/equations/planck_charge.svg',
       symbolAlt: 'q_p',
       symbolHeight: '13.5px',
+      unitSrc: '/equations/coulomb.svg',
+      unitAlt: 'C',
+      expandedAnchorCorrectionX: -0.2275,
+      unitTranslateY: -1.60812472,
       rhsSrc: '/equations/boundary_rhs_2.svg',
       expandedRhsSrc:
         '/equations/boundary_rhs_2_expanded.svg',
@@ -782,6 +851,10 @@ export default function PlanckConstants() {
       symbolSrc: '/equations/planck_temperature.svg',
       symbolAlt: 'T_p',
       symbolHeight: '16px',
+      unitSrc: '/equations/kelvin.svg',
+      unitAlt: 'K',
+      expandedAnchorCorrectionX: 8.9879,
+      unitTranslateY: -1.60812472,
       rhsSrc: '/equations/boundary_rhs_3.svg',
       expandedRhsSrc:
         '/equations/boundary_rhs_3_expanded.svg',
@@ -792,6 +865,10 @@ export default function PlanckConstants() {
       symbolSrc: '/equations/planck_mass.svg',
       symbolAlt: 'm_p',
       symbolHeight: '14.5px',
+      unitSrc: '/equations/kilogram.svg',
+      unitAlt: 'kg',
+      expandedAnchorCorrectionX: 7.6050,
+      unitTranslateY: -1.82686912,
       rhsSrc: '/equations/boundary_rhs_4.svg',
       expandedRhsSrc:
         '/equations/boundary_rhs_4_expanded.svg',
@@ -819,108 +896,10 @@ export default function PlanckConstants() {
 
         <p className="equation-description">
           The Planck constants define the boundaries of the coherent bases of atomic logic.
-          Below, the same five boundaries are shown through phase plots, real and imaginary surface plots, and their coherent closed-form definitions.
+          Below, the same five boundaries are shown through real and imaginary surface plots, phase plots, and their coherent closed-form definitions.
         </p>
 
         <div style={{ height: '2.2rem' }} />
-
-        {/* -------------------------------------------------- */}
-        {/* Phase plots                                        */}
-        {/* -------------------------------------------------- */}
-
-        <div
-          style={{
-            width: '100%',
-            maxWidth: '1320px',
-            margin: '0 auto 0.7rem',
-            textAlign: 'center',
-            fontSize: '0.78rem',
-            lineHeight: 1,
-            fontWeight: 'normal',
-            color: 'rgba(255, 255, 255, 0.40)',
-          }}
-        >
-          Phase plots
-        </div>
-
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
-            gap: 'clamp(0.45rem, 1.15vw, 1rem)',
-            width: '100%',
-            maxWidth: '1320px',
-            margin: '0 auto',
-            alignItems: 'start',
-          }}
-        >
-          {videoFiles.map((file, index) => (
-            <div
-              key={file}
-              style={{
-                textAlign: 'center',
-                minWidth: 0,
-              }}
-            >
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  aspectRatio: '16 / 9',
-                  margin: '0 auto',
-                }}
-              >
-                <img
-                  src={`/videos/${file.replace('.mp4', '_thumbnail.jpg')}`}
-                  alt={constants[index]}
-                  onClick={() => setModalVideo(file)}
-                  style={{
-                    display: 'block',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '0.4rem',
-                    boxShadow: '0 0 8px rgba(0,0,0,0.3)',
-                    cursor: 'pointer',
-                    objectFit: 'cover',
-                  }}
-                />
-
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    pointerEvents: 'none',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 0,
-                      height: 0,
-                      borderTop: '6.4px solid transparent',
-                      borderBottom: '6.4px solid transparent',
-                      borderLeft: '9.6px solid white',
-                      filter: 'drop-shadow(0 0 1.5px black)',
-                    }}
-                  />
-                </div>
-              </div>
-
-              <div
-                style={{
-                  marginTop: '0.5rem',
-                  whiteSpace: 'nowrap',
-                  fontSize: 'clamp(0.75rem, 1.25vw, 1rem)',
-                }}
-              >
-                {constants[index]}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div style={{ height: '1rem' }} />
 
         {/* -------------------------------------------------- */}
         {/* Surface plots header + controls                    */}
@@ -940,7 +919,7 @@ export default function PlanckConstants() {
         >
           <div
             style={{
-              fontSize: '0.78rem',
+              fontSize: '0.88rem',
               lineHeight: 1,
               fontWeight: 'normal',
               color: 'rgba(255, 255, 255, 0.40)',
@@ -1180,6 +1159,104 @@ export default function PlanckConstants() {
 
         <div style={{ height: '2.0rem' }} />
 
+        {/* -------------------------------------------------- */}
+        {/* Phase plots                                        */}
+        {/* -------------------------------------------------- */}
+
+        <div
+          style={{
+            width: '100%',
+            maxWidth: '1320px',
+            margin: '0 auto 0.7rem',
+            textAlign: 'center',
+            fontSize: '0.88rem',
+            lineHeight: 1,
+            fontWeight: 'normal',
+            color: 'rgba(255, 255, 255, 0.40)',
+          }}
+        >
+          Phase plots
+        </div>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
+            gap: 'clamp(0.45rem, 1.15vw, 1rem)',
+            width: '100%',
+            maxWidth: '1320px',
+            margin: '0 auto',
+            alignItems: 'start',
+          }}
+        >
+          {videoFiles.map((file, index) => (
+            <div
+              key={file}
+              style={{
+                textAlign: 'center',
+                minWidth: 0,
+              }}
+            >
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  aspectRatio: '16 / 9',
+                  margin: '0 auto',
+                }}
+              >
+                <img
+                  src={`/videos/${file.replace('.mp4', '_thumbnail.jpg')}`}
+                  alt={constants[index]}
+                  onClick={() => setModalVideo(file)}
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '0.4rem',
+                    boxShadow: '0 0 8px rgba(0,0,0,0.3)',
+                    cursor: 'pointer',
+                    objectFit: 'cover',
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    pointerEvents: 'none',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 0,
+                      height: 0,
+                      borderTop: '6.4px solid transparent',
+                      borderBottom: '6.4px solid transparent',
+                      borderLeft: '9.6px solid white',
+                      filter: 'drop-shadow(0 0 1.5px black)',
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div
+                style={{
+                  marginTop: '0.5rem',
+                  whiteSpace: 'nowrap',
+                  fontSize: 'clamp(0.75rem, 1.25vw, 1rem)',
+                }}
+              >
+                {constants[index]}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ height: '2.0rem' }} />
+
         <p
           className="equation-description"
           style={{
@@ -1221,25 +1298,35 @@ export default function PlanckConstants() {
 
         <div
           style={{
-            width: '100%',
+            position: 'relative',
+            width: `${RELATION_BLOCK_WIDTH}px`,
             maxWidth: '100%',
             margin: '0 auto',
-            display: 'flex',
-            justifyContent: 'center',
+            transform:
+              `translateX(${RELATION_GROUP_X}px)`,
           }}
         >
-          <img
-            src="/equations/geometric_relation_equation.svg"
-            alt="G_k equals n_k divided by e to the phi_k"
+          <div
             style={{
-              width: 'auto',
-              height: 'auto',
-              display: 'block',
+              display: 'flex',
+              justifyContent: 'flex-start',
               transform:
-                `scale(${COMPACT_RELATION_SCALE})`,
-              transformOrigin: 'center center',
+                `translateX(${GENERAL_G_RELATION_X}px)`,
             }}
-          />
+          >
+            <img
+              src="/equations/geometric_relation_equation.svg"
+              alt="G_k equals n_k divided by e to the phi_k"
+              style={{
+                width: 'auto',
+                height: 'auto',
+                display: 'block',
+                transform:
+                  `scale(${COMPACT_RELATION_SCALE})`,
+                transformOrigin: 'left center',
+              }}
+            />
+          </div>
         </div>
 
         <div style={{ height: '1.5rem' }} />
@@ -1888,25 +1975,35 @@ export default function PlanckConstants() {
         {/* General normalized-boundary relation */}
         <div
           style={{
-            width: '100%',
+            position: 'relative',
+            width: `${RELATION_BLOCK_WIDTH}px`,
             maxWidth: '100%',
             margin: '0 auto',
-            display: 'flex',
-            justifyContent: 'center',
+            transform:
+              `translateX(${RELATION_GROUP_X}px)`,
           }}
         >
-          <img
-            src="/equations/boundary_relation_equation.svg"
-            alt="B_k equals phi_k times ten to the n_k times u_k"
+          <div
             style={{
-              width: 'auto',
-              height: 'auto',
-              display: 'block',
+              display: 'flex',
+              justifyContent: 'flex-start',
               transform:
-                `scale(${COMPACT_RELATION_SCALE})`,
-              transformOrigin: 'center center',
+                `translateX(${BOUNDARY_RELATION_X}px)`,
             }}
-          />
+          >
+            <img
+              src="/equations/boundary_relation_equation.svg"
+              alt="B_k equals phi_k times ten to the n_k times u_k"
+              style={{
+                width: 'auto',
+                height: 'auto',
+                display: 'block',
+                transform:
+                  `scale(${COMPACT_RELATION_SCALE})`,
+                transformOrigin: 'left center',
+              }}
+            />
+          </div>
         </div>
 
         <div style={{ height: '2.0rem' }} />
@@ -1955,8 +2052,8 @@ export default function PlanckConstants() {
                 `${BOUNDARY_SYMBOL_COLUMN_WIDTH}px ` +
                 `${BOUNDARY_SYMBOL_RHS_GAP}px ` +
                 `${BOUNDARY_RHS_COLUMN_WIDTH}px ` +
-                `${RELATION_LABEL_GAP}px ` +
-                `150px 14px ${GEOMETRY_BUTTON_WIDTH}px`,
+                `${BOUNDARY_UNIT_COLUMN_WIDTH}px ` +
+                `14px ${GEOMETRY_BUTTON_WIDTH}px`,
               width: '100%',
               maxWidth: '100%',
               alignItems: 'center',
@@ -1994,7 +2091,11 @@ export default function PlanckConstants() {
                       transform:
                         `translateX(${
                           isExpanded
-                            ? BOUNDARY_EXPANDED_EQUATIONS_X
+                            ? (
+                                BOUNDARY_EXPANDED_EQUATIONS_X +
+                                row.expandedAnchorCorrectionX +
+                                BOUNDARY_UNIT_GROUP_X
+                              )
                             : BOUNDARY_COLLAPSED_EQUATIONS_X
                         }px)`,
                       transition:
@@ -2030,7 +2131,11 @@ export default function PlanckConstants() {
                       transform:
                         `translateX(${
                           isExpanded
-                            ? BOUNDARY_EXPANDED_EQUATIONS_X
+                            ? (
+                                BOUNDARY_EXPANDED_EQUATIONS_X +
+                                row.expandedAnchorCorrectionX +
+                                BOUNDARY_UNIT_GROUP_X
+                              )
                             : BOUNDARY_COLLAPSED_EQUATIONS_X
                         }px)`,
                       transition:
@@ -2068,20 +2173,43 @@ export default function PlanckConstants() {
                     />
                   </div>
 
-                  <div />
-
-                  {/* Fixed physical-quantity label */}
+                  {/* Fixed coherent SI unit.
+                      This does NOT receive the equation X translation,
+                      so it remains stationary during expansion. */}
                   <div
                     style={{
-                      width: '150px',
-                      whiteSpace: 'nowrap',
-                      textAlign: 'left',
-                      justifySelf: 'start',
+                      width:
+                        `${BOUNDARY_UNIT_COLUMN_WIDTH}px`,
+                      display: 'flex',
+                      justifyContent: 'flex-start',
+                      alignItems: 'center',
+                      overflow: 'visible',
                       transform:
-                        `translateX(${BOUNDARY_TITLES_X}px) translateY(${BOUNDARY_EXPANDED_RHS_Y}px)`,
+                        `translateX(${
+                          BOUNDARY_EQUATION_GROUP_X -
+                          273.3115 +
+                          BOUNDARY_UNIT_GROUP_X
+                        }px) translateY(${
+                          row.unitTranslateY +
+                          BOUNDARY_UNIT_GROUP_Y
+                        }px)`,
                     }}
                   >
-                    {row.label}
+                    <img
+                      src={row.unitSrc}
+                      alt={row.unitAlt}
+                      style={{
+                        width: 'auto',
+                        height: 'auto',
+                        maxWidth: 'none',
+                        display: 'block',
+                        flexShrink: 0,
+                        transform:
+                          `scale(${COMPACT_RELATION_SCALE})`,
+                        transformOrigin:
+                          'left center',
+                      }}
+                    />
                   </div>
 
                   <div />
@@ -2127,7 +2255,7 @@ export default function PlanckConstants() {
             {/* Master boundary control */}
             <div
               style={{
-                gridColumn: '7',
+                gridColumn: '6',
                 justifySelf: 'start',
                 marginTop: '0.15rem',
               }}
@@ -2177,8 +2305,8 @@ export default function PlanckConstants() {
 
         <p className="equation-description">
           Together, these relations present the same five Planck boundaries
-          in three complementary forms: as complex phase structure, as real
-          and imaginary surfaces, and as exact closed-form coordinates. The
+          in three complementary forms: as real
+          and imaginary surfaces, as complex phase structure, and as exact closed-form coordinates. The
           geometric factors{' '}
           <img
             src="/equations/G_k.svg"
