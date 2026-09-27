@@ -569,7 +569,7 @@ body {
   width: 420px !important;
   min-width: 420px !important;
   max-width: 420px !important;
-  flex: 0 0 420px !important;
+  flex: 0 0 auto !important;
   align-self: center !important;
   overflow: visible !important;
 }
