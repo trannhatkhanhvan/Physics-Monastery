@@ -575,7 +575,14 @@ body {
 }
 
 .planck-constants-page .planck-geometry-stack-grid,
-.planck-constants-page .planck-boundary-stack-grid,
+.planck-constants-page .planck-boundary-stack-grid {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: none !important;
+  overflow: visible !important;
+}
+
 .planck-constants-page .planck-geometry-row,
 .planck-constants-page .planck-boundary-row {
   display: grid !important;
@@ -583,15 +590,9 @@ body {
   width: 100% !important;
   min-width: 100% !important;
   max-width: none !important;
-  grid-auto-flow: row !important;
   align-items: center !important;
   column-gap: 0 !important;
   overflow: visible !important;
-}
-
-.planck-constants-page .planck-geometry-row,
-.planck-constants-page .planck-boundary-row {
-  grid-column: 1 / -1 !important;
 }
 
 

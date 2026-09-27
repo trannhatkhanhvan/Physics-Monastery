@@ -899,7 +899,7 @@ export default function PlanckConstants() {
           Below, the same five boundaries are shown through real and imaginary surface plots, phase plots, and their coherent closed-form definitions.
         </p>
 
-        <div style={{ height: '2.2rem' }} />
+        <div style={{ height: '1.2rem' }} />
 
         {/* -------------------------------------------------- */}
         {/* Surface plots header + controls                    */}
@@ -1431,36 +1431,12 @@ export default function PlanckConstants() {
           <div
             className="planck-geometry-stack-grid"
             style={{
-              display: 'grid',
-
-              /*
-               * One invariant horizontal architecture for all
-               * mixed states:
-               *
-               * geometry | gap | RHS | gap | label | gap | button
-               *
-               * Using the fixed RHS column preserves the "="
-               * and label anchors while individual rows expand.
-               */
-              gridTemplateColumns:
-                `${COMPACT_G_COLUMN_WIDTH}px ` +
-                `${COMPACT_G_RHS_GAP}px ` +
-                `${EXPANDED_RHS_COLUMN_WIDTH}px ` +
-                `${RELATION_LABEL_GAP}px ` +
-                `150px 14px ${GEOMETRY_BUTTON_WIDTH}px`,
-
+              display: 'flex',
+              flexDirection: 'column',
               width: '100%',
               maxWidth: '100%',
-              alignItems: 'center',
-              justifyContent: 'start',
-
-              /*
-               * Keep the accepted collapsed/final row gap.
-               * Expanded rows become intrinsically taller, so
-               * surrounding rows move apart naturally.
-               */
-              rowGap: `${GEOMETRY_ROW_GAP}rem`,
-              columnGap: 0,
+              alignItems: 'stretch',
+              gap: `${GEOMETRY_ROW_GAP}rem`,
               margin: 0,
               overflow: 'visible',
             }}
@@ -1476,7 +1452,6 @@ export default function PlanckConstants() {
                   key={row.key}
                   className="planck-geometry-row"
                   style={{
-                    gridColumn: '1 / -1',
                     display: 'grid',
                     gridTemplateColumns:
                       `${COMPACT_G_COLUMN_WIDTH}px ` +
@@ -2063,19 +2038,12 @@ export default function PlanckConstants() {
           <div
             className="planck-boundary-stack-grid"
             style={{
-              display: 'grid',
-              gridTemplateColumns:
-                `${BOUNDARY_SYMBOL_COLUMN_WIDTH}px ` +
-                `${BOUNDARY_SYMBOL_RHS_GAP}px ` +
-                `${BOUNDARY_RHS_COLUMN_WIDTH}px ` +
-                `${BOUNDARY_UNIT_COLUMN_WIDTH}px ` +
-                `14px ${GEOMETRY_BUTTON_WIDTH}px`,
+              display: 'flex',
+              flexDirection: 'column',
               width: '100%',
               maxWidth: '100%',
-              alignItems: 'center',
-              justifyContent: 'start',
-              rowGap: `${BOUNDARY_ROW_GAP}rem`,
-              columnGap: 0,
+              alignItems: 'stretch',
+              gap: `${BOUNDARY_ROW_GAP}rem`,
               margin: 0,
               overflow: 'visible',
             }}
@@ -2093,7 +2061,6 @@ export default function PlanckConstants() {
                   key={row.key}
                   className="planck-boundary-row"
                   style={{
-                    gridColumn: '1 / -1',
                     display: 'grid',
                     gridTemplateColumns:
                       `${BOUNDARY_SYMBOL_COLUMN_WIDTH}px ` +
@@ -2283,8 +2250,9 @@ export default function PlanckConstants() {
             {/* Master boundary control */}
             <div
               style={{
-                gridColumn: '6',
-                justifySelf: 'start',
+                position: 'relative',
+                width: '100%',
+                height: `${GEOMETRY_BUTTON_HEIGHT}px`,
                 marginTop: '0.15rem',
               }}
             >
@@ -2301,6 +2269,13 @@ export default function PlanckConstants() {
                   allBoundariesExpanded
                 }
                 style={{
+                  position: 'absolute',
+                  left:
+                    `${
+                      LOWER_BUTTON_COLUMN_X +
+                      BOUNDARY_BUTTONS_X
+                    }px`,
+                  top: 0,
                   width:
                     `${GEOMETRY_BUTTON_WIDTH}px`,
                   height:
@@ -2319,8 +2294,6 @@ export default function PlanckConstants() {
                   padding: '0 0.5rem',
                   cursor: 'pointer',
                   whiteSpace: 'nowrap',
-                  transform:
-                    `translateX(${BOUNDARY_BUTTONS_X}px)`,
                 }}
               >
                 all
