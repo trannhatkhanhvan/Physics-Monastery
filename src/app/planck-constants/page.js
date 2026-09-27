@@ -1825,7 +1825,7 @@ export default function PlanckConstants() {
             paddingLeft: 0,
           }}
         >
-          Here k ∈ {'{0, 1, 2, 3, 4}'},{' '}
+          Here k ∈ {'{ 0, 1, 2, 3, 4 }'},{' '}
           <img
             src="/equations/G_k.svg"
             alt="G_k"
@@ -2197,7 +2197,7 @@ export default function PlanckConstants() {
             alt="n_k"
             style={inlineMathNKStyle}
           />
-          , while the same (
+          , while the same ({' '}
           <img
             src="/equations/phi_k.svg"
             alt="phi_k"
@@ -2209,7 +2209,7 @@ export default function PlanckConstants() {
             alt="n_k"
             style={inlineMathNKStyle}
           />
-          ) pairs locate the corresponding Planck boundaries on their
+          {' '}) pairs locate the corresponding Planck boundaries on their
           physical decimal scales. In this way, the geometric and numerical
           descriptions are two representations of the same boundary
           structure.
