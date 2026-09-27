@@ -1418,6 +1418,7 @@ export default function PlanckConstants() {
         <div style={{ height: '1.25rem' }} />
 
         <div
+          className="planck-geometry-stack"
           style={{
             position: 'relative',
             width: `${RELATION_BLOCK_WIDTH}px`,
@@ -1428,6 +1429,7 @@ export default function PlanckConstants() {
           }}
         >
           <div
+            className="planck-geometry-stack-grid"
             style={{
               display: 'grid',
 
@@ -1472,6 +1474,7 @@ export default function PlanckConstants() {
               return (
                 <div
                   key={row.key}
+                  className="planck-geometry-row"
                   style={{
                     gridColumn: '1 / -1',
                     display: 'grid',
@@ -2047,6 +2050,7 @@ export default function PlanckConstants() {
 
         {/* Five normalized Planck boundaries */}
         <div
+          className="planck-boundary-stack"
           style={{
             position: 'relative',
             width: `${RELATION_BLOCK_WIDTH}px`,
@@ -2057,6 +2061,7 @@ export default function PlanckConstants() {
           }}
         >
           <div
+            className="planck-boundary-stack-grid"
             style={{
               display: 'grid',
               gridTemplateColumns:
@@ -2086,6 +2091,7 @@ export default function PlanckConstants() {
               return (
                 <div
                   key={row.key}
+                  className="planck-boundary-row"
                   style={{
                     gridColumn: '1 / -1',
                     display: 'grid',

@@ -543,6 +543,58 @@ body {
 }
 
 
+/*
+ * Planck Constants layout lock.
+ *
+ * .main-content is globally width:100vw and also receives
+ * sidebar padding. Keep that padding inside the viewport width
+ * on this page so development and production use the same
+ * containing-block geometry.
+ */
+.main-content.planck-constants-page {
+  box-sizing: border-box !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+}
+
+/*
+ * The closed-form equation systems use a deliberately fixed
+ * 420px mathematical coordinate frame. Do not allow production
+ * CSS, flex sizing, or intrinsic-content sizing to collapse the
+ * frame or turn its columns into separate vertical blocks.
+ */
+.planck-constants-page .planck-geometry-stack,
+.planck-constants-page .planck-boundary-stack {
+  box-sizing: border-box !important;
+  width: 420px !important;
+  min-width: 420px !important;
+  max-width: 420px !important;
+  flex: 0 0 420px !important;
+  align-self: center !important;
+  overflow: visible !important;
+}
+
+.planck-constants-page .planck-geometry-stack-grid,
+.planck-constants-page .planck-boundary-stack-grid,
+.planck-constants-page .planck-geometry-row,
+.planck-constants-page .planck-boundary-row {
+  display: grid !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: none !important;
+  grid-auto-flow: row !important;
+  align-items: center !important;
+  column-gap: 0 !important;
+  overflow: visible !important;
+}
+
+.planck-constants-page .planck-geometry-row,
+.planck-constants-page .planck-boundary-row {
+  grid-column: 1 / -1 !important;
+}
+
+
 .coherent-units-page {
   background-image: url('/physics_monastery_background.jpg');
   background-size: cover;
