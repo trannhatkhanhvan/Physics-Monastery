@@ -595,6 +595,35 @@ body {
   overflow: visible !important;
 }
 
+/*
+ * Production-stable equation column definitions.
+ *
+ * These are the exact same authored dimensions used in page.js.
+ * Chrome was dropping the inline grid-template-columns declaration
+ * in the production build, causing each row to collapse to one
+ * implicit 420px column and place the children vertically.
+ */
+.planck-constants-page .planck-geometry-row {
+  grid-template-columns:
+    16.73px
+    7.91px
+    64px
+    28px
+    150px
+    14px
+    61px !important;
+}
+
+.planck-constants-page .planck-boundary-row {
+  grid-template-columns:
+    24px
+    10px
+    270px
+    32px
+    14px
+    61px !important;
+}
+
 
 .coherent-units-page {
   background-image: url('/physics_monastery_background.jpg');
