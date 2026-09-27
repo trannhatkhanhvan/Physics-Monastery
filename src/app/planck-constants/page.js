@@ -1473,7 +1473,18 @@ export default function PlanckConstants() {
                 <div
                   key={row.key}
                   style={{
-                    display: 'contents',
+                    gridColumn: '1 / -1',
+                    display: 'grid',
+                    gridTemplateColumns:
+                      `${COMPACT_G_COLUMN_WIDTH}px ` +
+                      `${COMPACT_G_RHS_GAP}px ` +
+                      `${EXPANDED_RHS_COLUMN_WIDTH}px ` +
+                      `${RELATION_LABEL_GAP}px ` +
+                      `150px 14px ${GEOMETRY_BUTTON_WIDTH}px`,
+                    alignItems: 'center',
+                    columnGap: 0,
+                    width: '100%',
+                    overflow: 'visible',
                   }}
                 >
                   {isExpanded ? (
@@ -2076,7 +2087,18 @@ export default function PlanckConstants() {
                 <div
                   key={row.key}
                   style={{
-                    display: 'contents',
+                    gridColumn: '1 / -1',
+                    display: 'grid',
+                    gridTemplateColumns:
+                      `${BOUNDARY_SYMBOL_COLUMN_WIDTH}px ` +
+                      `${BOUNDARY_SYMBOL_RHS_GAP}px ` +
+                      `${BOUNDARY_RHS_COLUMN_WIDTH}px ` +
+                      `${BOUNDARY_UNIT_COLUMN_WIDTH}px ` +
+                      `14px ${GEOMETRY_BUTTON_WIDTH}px`,
+                    alignItems: 'center',
+                    columnGap: 0,
+                    width: '100%',
+                    overflow: 'visible',
                   }}
                 >
                   {/* Fixed Planck-boundary symbol */}
