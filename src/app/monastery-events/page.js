@@ -7,14 +7,20 @@ import '../globals.css';
 export default function MonasteryEvents() {
   const [activeImage, setActiveImage] = useState(null);
 
-  const photoList = Array.from({ length: 41 }, (_, i) => {
-    const index = i + 1;
-    return {
-      thumb: `/photos/thumbnails/photo_${index}_thumb.jpg`,
-      full: `/photos/photo_${index}.jpg`,
-      alt: `Monastery Photo ${index}`,
-    };
-  });
+  const photoOrder = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+    11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    40, 31, 32, 34, 35, 37, 36, 39, 38, 41,
+    55, 43, 60, 54, 52, 44, 48, 45, 46, 47, 49, 50,
+    59, 57, 51, 53, 56, 42, 58,
+  ];
+
+  const photoList = photoOrder.map((index) => ({
+    thumb: `/photos/thumbnails/photo_${index}_thumb.jpg`,
+    full: `/photos/photo_${index}.jpg`,
+    alt: `Monastery Photo ${index}`,
+  }));
 
   return (
     <LayoutWrapper>
@@ -31,7 +37,7 @@ export default function MonasteryEvents() {
       <div
   className="partition-content"
   style={{
-    width: "min(1400px, calc(100vw - 220px))",
+    width: "min(1800px, calc(100vw - 40px))",
     maxWidth: "none",
   }}
 >
@@ -39,11 +45,11 @@ export default function MonasteryEvents() {
 
         {/* 1️⃣ First two lines */}
         <p className="equation-description">
-          The next Physics Monastery Science Retreat will include camping from September 23-27, 2026 in Zion's National Park, followed by lectures and collaborative whiteboard sessions from September 27-30 in Logan, Utah.
+          The next Physics Monastery Science Retreat will be in Yellowstone National Park, late spring 2027.
         </p>
         <div style={{ height: '1rem' }} />
         <p className="equation-description">
-          Scroll down for details.
+          Details forthcoming.
         </p>
 
         <div style={{ height: '1rem' }} />
@@ -85,21 +91,19 @@ export default function MonasteryEvents() {
   className="equation-description"
   style={{ whiteSpace: 'pre-wrap', textIndent: 0 }}
 >
-{`         Join us, as we explore the combinatorial logic of atomic structures. We will focus on:
+{`         Join us as we explore the combinatorial logic of atomic structures. We will focus on:
                  
                  the language of Calculus
-                 geometries available to Calculus: manifolds
-                 the simplest manifold: Gieseking's 3-manifold
-                 and its double cover: the hyperbolic figure eight knot
-                 
+                 the geometries on which Calculus operates: manifolds
+                 the simplest hyperbolic 3-manifold: the Gieseking manifold
+                 and its orientable double cover: the hyperbolic figure-eight knot
                  laws of physics
                      forces
-                     built-in rules
-                     built-in limits
-                     
-                 288 constants of Nature
-                 the 24-ball (Leech lattice): the transform space available to the base manifold
-                 118 unimodular link types: lattices available in 23D (consuming 1D to connect), & 118 atoms
+                     structural rules
+                     fundamental limits
+                     the 288 constants of Nature
+                 the 24-dimensional Leech lattice and its transformation structure
+                 unimodular lattices, links, and their possible relation to atomic structure.
                  
 `}
 </div>
@@ -147,14 +151,10 @@ export default function MonasteryEvents() {
   style={{ whiteSpace: 'pre-wrap', textIndent: 0 }}
 >
 {`                 
-                 Coding all of these rules as a closed set                 
+                 Coding the logic of physics with the simplest closed set.                 
                                   
-         Camping activities:
-                 Zion's National Park: camping, hiking, slot canyons, observational astronomy.`}
+                `}
 </div>
-
-
-        <div style={{ height: '2rem' }} />
 
         <p className="equation-description">
           <a
@@ -167,10 +167,10 @@ export default function MonasteryEvents() {
           >
             Contact us
           </a>{' '}
-          to participate in this in-person collaborative problem-solving session.
+          to participate in our next Physics Monastery retreat, or in-person collaborative problem-solving session.
         </p>
 
-        <div style={{ height: '2rem' }} />
+        <div style={{ height: '0.25rem' }} />
 
         <p className="equation-description">
           All events aim to deepen our shared understanding of the structural foundations of Nature and to inspire a collective pursuit of insight.
