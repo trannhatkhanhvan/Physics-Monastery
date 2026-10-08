@@ -11,9 +11,10 @@ export default function MonasteryEvents() {
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
     11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
     21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-    40, 31, 32, 34, 35, 37, 36, 39, 38, 41,
-    55, 43, 60, 54, 52, 44, 48, 45, 46, 47, 49, 50,
-    59, 57, 51, 53, 56, 42, 58,
+    40, 31, 32, 69, 34, 35, 37, 36, 39, 38, 41,
+    55, 43, 60, 54, 52, 44, 48, 64, 49, 59, 45, 67, 46, 42, 50, 61, 71, 47,
+    51, 57, 58, 56, 53,
+    66, 72, 63, 65, 62, 68, 70,
   ];
 
   const photoList = photoOrder.map((index) => ({
@@ -37,8 +38,8 @@ export default function MonasteryEvents() {
       <div
   className="partition-content"
   style={{
-    width: "min(1800px, calc(100vw - 40px))",
-    maxWidth: "none",
+    width: "100%",
+    maxWidth: "1800px",
   }}
 >
         <div className="legend-title">Physics Monastery events</div>
@@ -57,10 +58,10 @@ export default function MonasteryEvents() {
         {/* 2️⃣ Thumbnail gallery section (moved up) */}
         <div
           style={{
-            display: 'flex',
-            flexWrap: 'wrap',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: '1.5rem',
-            justifyContent: 'center',
+            width: '100%',
             padding: '1rem 0',
           }}
         >
@@ -71,8 +72,9 @@ export default function MonasteryEvents() {
               alt={photo.alt}
               onClick={() => setActiveImage(photo.full)}
               style={{
-                width: '200px',
-                height: '150px',
+                width: '100%',
+                aspectRatio: '4 / 3',
+                height: 'auto',
                 objectFit: 'cover',
                 cursor: 'pointer',
                 borderRadius: '0.4rem',
