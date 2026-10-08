@@ -153,7 +153,7 @@ export default function MonasteryEvents() {
   style={{ whiteSpace: 'pre-wrap', textIndent: 0 }}
 >
 {`                 
-                 Coding the logic of physics with the simplest closed set.                 
+                  Coding the logic of physics with the simplest closed set.                 
                                   
                 `}
 </div>
