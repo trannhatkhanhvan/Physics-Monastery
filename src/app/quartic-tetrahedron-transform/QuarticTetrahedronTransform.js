@@ -27,6 +27,7 @@ import {
 } from './math/idealTetrahedronVolume';
 import MonodromyStage from './MonodromyStage';
 import RiemannSurfaceViewer from './RiemannSurfaceViewer';
+import ParaboloidLiftViewer from './ParaboloidLiftViewer';
 import styles from './QuarticTetrahedronTransform.module.css';
 import '../globals.css';
 
@@ -1210,6 +1211,7 @@ const VIEW_MODES = [
   'Cross-ratio',
   'Monodromy',
   'Riemann surface',
+  'Paraboloid Lift',
 ];
 
 
@@ -1380,6 +1382,16 @@ export default function QuarticTetrahedronTransform({ embedded = false }) {
 
   const [mode, setMode] = useState('Roots');
   const [a, setA] = useState(0);
+
+  const [liftCameraCommand, setLiftCameraCommand] =
+    useState({ action: 'top', sequence: 0 });
+
+  function commandLiftCamera(action) {
+    setLiftCameraCommand(previous => ({
+      action,
+      sequence: previous.sequence + 1,
+    }));
+  }
 
   const [
     riemannStructureModes,
@@ -7345,6 +7357,15 @@ const [sceneScale, setSceneScale] = useState(130);
 
               </div>
 
+              {mode === 'Paraboloid Lift' && (
+                <ParaboloidLiftViewer
+                  a={a}
+                  roots={roots}
+                  asymptoticEnd={asymptoticEnd}
+                  cameraCommand={liftCameraCommand}
+                />
+              )}
+
               {mode === 'Riemann surface' && (
                 <div
                   style={{
@@ -12632,6 +12653,77 @@ const [sceneScale, setSceneScale] = useState(130);
                     }
                   />
                 </>
+              )}
+
+              {mode === 'Paraboloid Lift' && (
+                <>
+                  <div className={styles.controlSection}>
+                    <div className={styles.sectionTitle}>
+                      Paraboloid camera
+                    </div>
+
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+                      gap: '6px',
+                      marginTop: '8px',
+                    }}>
+                      {[
+                        ['Top view', 'top'],
+                        ['+X view', 'plusX'],
+                        ['+Y view', 'plusY'],
+                        ['Reset', 'reset'],
+                      ].map(([label, action]) => (
+                        <button
+                          key={action}
+                          type="button"
+                          className={styles.modeButton}
+                          onClick={() => commandLiftCamera(action)}
+                          style={{ minWidth: 0 }}
+                        >
+                          {label}
+                        </button>
+                      ))}
+                    </div>
+
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+                      gap: '6px',
+                      marginTop: '6px',
+                    }}>
+                      <button
+                        type="button"
+                        className={styles.modeButton}
+                        onClick={() => commandLiftCamera('zoomOut')}
+                      >
+                        −
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.modeButton}
+                        onClick={() => commandLiftCamera('zoomIn')}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  {asymptoticEnd !== 0 && (
+                    <div
+                      style={{
+                        marginTop: '14px',
+                        fontSize: '14px',
+                        lineHeight: 1.5,
+                        color: 'rgba(245,239,224,0.85)',
+                      }}
+                    >
+                      As |a| → ∞, one root approaches the origin
+                      while the other three escape to infinity.
+                    </div>
+                  )}
+
+</>
               )}
 
               {mode === 'Riemann surface' && (
