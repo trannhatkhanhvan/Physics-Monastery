@@ -79,7 +79,7 @@ export default function HomePage() {
           style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '52rem',
+            maxWidth: '100rem',
             flexShrink: 0,
             marginTop: 'clamp(2.0rem, 4vh, 4rem)',
             marginBottom: '2rem',
