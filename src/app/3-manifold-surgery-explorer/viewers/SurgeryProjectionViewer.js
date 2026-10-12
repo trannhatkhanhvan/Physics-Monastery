@@ -131,9 +131,9 @@ const DEFAULT_SAVED_PROJECTION_PRESETS =
       cuspMorph: 1,
 
       mesh: Object.freeze({
-        level: 6,
-        nu: 288,
-        nv: 64,
+        level: 8,
+        nu: 576,
+        nv: 144,
       }),
     }),
 
@@ -167,9 +167,9 @@ const DEFAULT_SAVED_PROJECTION_PRESETS =
       cuspMorph: 1,
 
       mesh: Object.freeze({
-        level: 6,
-        nu: 288,
-        nv: 64,
+        level: 8,
+        nu: 576,
+        nv: 144,
       }),
     }),
 
@@ -205,9 +205,9 @@ const DEFAULT_SAVED_PROJECTION_PRESETS =
       cuspMorph: 1,
 
       mesh: Object.freeze({
-        level: 6,
-        nu: 288,
-        nv: 64,
+        level: 8,
+        nu: 576,
+        nv: 144,
       }),
     }),
 
@@ -251,9 +251,9 @@ const DEFAULT_SAVED_PROJECTION_PRESETS =
       cuspMorph: 1,
 
       mesh: Object.freeze({
-        level: 6,
-        nu: 288,
-        nv: 64,
+        level: 8,
+        nu: 576,
+        nv: 144,
       }),
     }),
 
@@ -292,9 +292,9 @@ const DEFAULT_SAVED_PROJECTION_PRESETS =
       cuspMorph: 1,
 
       mesh: Object.freeze({
-        level: 6,
-        nu: 288,
-        nv: 64,
+        level: 8,
+        nu: 576,
+        nv: 144,
       }),
     }),
 
@@ -333,9 +333,9 @@ const DEFAULT_SAVED_PROJECTION_PRESETS =
       cuspMorph: 1,
 
       mesh: Object.freeze({
-        level: 6,
-        nu: 288,
-        nv: 64,
+        level: 8,
+        nu: 576,
+        nv: 144,
       }),
     }),
 
@@ -446,7 +446,7 @@ const CUSP_MACRO_TRIANGLES = [
   },
 ];
 
-const CUSP_TRIANGLE_EDGE_SAMPLES = 96;
+const CUSP_TRIANGLE_EDGE_SAMPLES = 384;
 
 /*
  * Tiny VISUAL separation between the eight logical Cusp triangles.
@@ -506,6 +506,43 @@ const SISTER_CUSP_TRIANGLE_COLORS =
     B2: "#ffe600", // orange
     B3: "#159447", // green
   });
+
+
+/*
+ * m003 uses the EXACT SAME visible eight-triangle partition
+ * as m004.
+ *
+ * Only the material colors are permuted:
+ *
+ *   m004 red    -> m003 red
+ *   m004 yellow -> m003 green
+ *   m004 green  -> m003 blue
+ *   m004 blue   -> m003 yellow
+ *
+ * Do not alter geometry, triangle ownership, normals or shading.
+ */
+function sisterColorFromFigureEightColor(
+  color
+) {
+  switch (
+    String(color).toLowerCase()
+  ) {
+    case "#ff2020":
+      return "#ff2020";
+
+    case "#ffe600":
+      return "#159447";
+
+    case "#159447":
+      return "#4da3ff";
+
+    case "#4da3ff":
+      return "#ffe600";
+
+    default:
+      return color;
+  }
+}
 
 const CUSP_MATERIAL_EDGE_COLORS =
   Object.freeze({
@@ -1159,6 +1196,307 @@ function wrapUnitInterval(value) {
   ) % 1;
 }
 
+
+function cuspDomainCoordinatesFromTubeParameters(
+  routeAmount,
+  minorAmount
+) {
+  const basis =
+    DEFAULT_FIGURE_EIGHT_CUSP_COORDINATE_SPEC
+      .peripheralBasis;
+
+  const minorOrigin =
+    DEFAULT_FIGURE_EIGHT_CUSP_COORDINATE_SPEC
+      .minorOrigin;
+
+  const meridian =
+    minorAmount +
+    minorOrigin;
+
+  const longitude =
+    routeAmount;
+
+  const determinant =
+    basis.meridian.u *
+      basis.longitude.v -
+    basis.meridian.v *
+      basis.longitude.u;
+
+  if (
+    Math.abs(
+      determinant
+    ) < 1e-12
+  ) {
+    return null;
+  }
+
+  return {
+    u:
+      (
+        basis.longitude.v *
+          meridian -
+        basis.meridian.v *
+          longitude
+      ) /
+      determinant,
+
+    v:
+      (
+        -basis.longitude.u *
+          meridian +
+        basis.meridian.u *
+          longitude
+      ) /
+      determinant,
+  };
+}
+
+
+const CUSP_MACRO_TRIANGLES_DOMAIN =
+  CUSP_MACRO_TRIANGLES.map(
+    (triangle) => ({
+      id:
+        triangle.id,
+
+      corners:
+        triangle.corners.map(
+          (corner) =>
+            cuspDomainCoordinates(
+              corner
+            )
+        ),
+    })
+  );
+
+
+function barycentricWeightsInDomainTriangle(
+  point,
+  corners
+) {
+  const first =
+    corners[0];
+
+  const second =
+    corners[1];
+
+  const third =
+    corners[2];
+
+  const denominator =
+    (
+      second.v -
+      third.v
+    ) *
+      (
+        first.u -
+        third.u
+      ) +
+    (
+      third.u -
+      second.u
+    ) *
+      (
+        first.v -
+        third.v
+      );
+
+  if (
+    Math.abs(
+      denominator
+    ) < 1e-12
+  ) {
+    return null;
+  }
+
+  const firstWeight =
+    (
+      (
+        second.v -
+        third.v
+      ) *
+        (
+          point.u -
+          third.u
+        ) +
+      (
+        third.u -
+        second.u
+      ) *
+        (
+          point.v -
+          third.v
+        )
+    ) /
+    denominator;
+
+  const secondWeight =
+    (
+      (
+        third.v -
+        first.v
+      ) *
+        (
+          point.u -
+          third.u
+        ) +
+      (
+        first.u -
+        third.u
+      ) *
+        (
+          point.v -
+          third.v
+        )
+    ) /
+    denominator;
+
+  return [
+    firstWeight,
+    secondWeight,
+    1 -
+      firstWeight -
+      secondWeight,
+  ];
+}
+
+
+function cuspMacroTriangleIdAtTubeParameters(
+  routeAmount,
+  minorAmount
+) {
+  const point =
+    cuspDomainCoordinatesFromTubeParameters(
+      routeAmount,
+      minorAmount
+    );
+
+  if (!point) {
+    return null;
+  }
+
+  const epsilon =
+    1e-8;
+
+  for (
+    const triangle of
+    CUSP_MACRO_TRIANGLES_DOMAIN
+  ) {
+    const centroidU =
+      (
+        triangle.corners[0].u +
+        triangle.corners[1].u +
+        triangle.corners[2].u
+      ) /
+      3;
+
+    const centroidV =
+      (
+        triangle.corners[0].v +
+        triangle.corners[1].v +
+        triangle.corners[2].v
+      ) /
+      3;
+
+    const baseShiftU =
+      Math.round(
+        point.u -
+        centroidU
+      );
+
+    const baseShiftV =
+      Math.round(
+        point.v -
+        centroidV
+      );
+
+    for (
+      let offsetU = -1;
+      offsetU <= 1;
+      offsetU += 1
+    ) {
+      for (
+        let offsetV = -1;
+        offsetV <= 1;
+        offsetV += 1
+      ) {
+        const shiftU =
+          baseShiftU +
+          offsetU;
+
+        const shiftV =
+          baseShiftV +
+          offsetV;
+
+        const liftedCorners =
+          triangle.corners.map(
+            (corner) => ({
+              u:
+                corner.u +
+                shiftU,
+
+              v:
+                corner.v +
+                shiftV,
+            })
+          );
+
+        const weights =
+          barycentricWeightsInDomainTriangle(
+            point,
+            liftedCorners
+          );
+
+        if (
+          weights &&
+          weights.every(
+            (weight) =>
+              weight >=
+              -epsilon
+          )
+        ) {
+          return triangle.id;
+        }
+      }
+    }
+  }
+
+  return null;
+}
+
+
+function unwrapPeriodicTriangleValues(
+  values
+) {
+  const anchor =
+    values[0];
+
+  return values.map(
+    (value) => {
+      let result =
+        value;
+
+      while (
+        result -
+          anchor >
+        0.5
+      ) {
+        result -= 1;
+      }
+
+      while (
+        result -
+          anchor <
+        -0.5
+      ) {
+        result += 1;
+      }
+
+      return result;
+    }
+  );
+}
+
+
 function buildTube(
   NU = DEFAULT_NU,
   NV = DEFAULT_NV,
@@ -1748,7 +2086,7 @@ export default function FigureEightProjectionLab({
     });
 
   const [meshLevel, setMeshLevel] =
-    useState(6);
+    useState(8);
 
   const [colorMode, setColorMode] =
     useState("triangles");
@@ -1834,23 +2172,30 @@ export default function FigureEightProjectionLab({
               )
             : null;
 
+        /*
+         * First determine the canonical m004 color occupying this
+         * exact geometric triangle.
+         *
+         * m003 then uses the SAME triangle and SAME geometry, with
+         * only its material color permuted.
+         */
+        const figureEightColor =
+          pair
+            ? tetrahedronId === "B"
+              ? pair.BColor ??
+                pair.color
+              : pair.AColor ??
+                pair.color
+            : CUSP_TRIANGLE_COLORS[
+                triangle.id
+              ] ?? "#ffe600";
+
         const color =
           sisterCuspActive
-            ? SISTER_CUSP_TRIANGLE_COLORS[
-                SISTER_CUSP_MATERIAL_BY_SLOT[
-                  triangle.id
-                ] ??
-                triangle.id
-              ] ?? "#ffe600"
-            : pair
-              ? tetrahedronId === "B"
-                ? pair.BColor ??
-                  pair.color
-                : pair.AColor ??
-                  pair.color
-              : CUSP_TRIANGLE_COLORS[
-                  triangle.id
-                ] ?? "#ffe600";
+            ? sisterColorFromFigureEightColor(
+                figureEightColor
+              )
+            : figureEightColor;
 
         const match =
           /^#([0-9a-f]{6})$/i.exec(
@@ -4844,6 +5189,409 @@ export default function FigureEightProjectionLab({
       }
     }
 
+    /*
+     * ========================================================
+     * SMOOTH m004 BOUNDARY NORMAL FIELD
+     * ========================================================
+     *
+     * The eight logical cusp triangles remain the exact material
+     * partition.
+     *
+     * We do NOT:
+     *
+     *   - recolor them,
+     *   - merge them,
+     *   - change their coordinates,
+     *   - change their topology.
+     *
+     * We evaluate the differential of the smooth figure-eight tube
+     * at shared material vertices and interpolate those normals
+     * per pixel in the rasterizer below.
+     */
+    const smoothBoundaryNormalCache =
+      new Map();
+
+
+    function smoothBoundaryNormalAt(
+      rawPoint,
+      routeAmount,
+      minorAmount
+    ) {
+      if (
+        cuspMorph <
+        1 - 1e-7
+      ) {
+        return null;
+      }
+
+      const key =
+        `${Number(routeAmount).toFixed(10)}|` +
+        `${Number(minorAmount).toFixed(10)}`;
+
+      const cached =
+        smoothBoundaryNormalCache.get(
+          key
+        );
+
+      if (cached) {
+        return cached;
+      }
+
+      const step =
+        1e-4;
+
+      const center =
+        projectCuspMorphPointToScreen(
+          rawPoint,
+          routeAmount,
+          minorAmount
+        );
+
+      const alongRoute =
+        projectCuspMorphPointToScreen(
+          rawPoint,
+          routeAmount + step,
+          minorAmount
+        );
+
+      const alongMinor =
+        projectCuspMorphPointToScreen(
+          rawPoint,
+          routeAmount,
+          minorAmount + step
+        );
+
+      if (
+        !center ||
+        !alongRoute ||
+        !alongMinor
+      ) {
+        return null;
+      }
+
+      const ux =
+        alongRoute.viewX -
+        center.viewX;
+
+      const uy =
+        alongRoute.viewY -
+        center.viewY;
+
+      const uz =
+        alongRoute.viewZ -
+        center.viewZ;
+
+      const vx =
+        alongMinor.viewX -
+        center.viewX;
+
+      const vy =
+        alongMinor.viewY -
+        center.viewY;
+
+      const vz =
+        alongMinor.viewZ -
+        center.viewZ;
+
+      const nx =
+        uy * vz -
+        uz * vy;
+
+      const ny =
+        uz * vx -
+        ux * vz;
+
+      const nz =
+        ux * vy -
+        uy * vx;
+
+      const length =
+        Math.hypot(
+          nx,
+          ny,
+          nz
+        );
+
+      if (
+        !Number.isFinite(length) ||
+        length < 1e-12
+      ) {
+        return null;
+      }
+
+      const normal = {
+        x:
+          nx / length,
+
+        y:
+          ny / length,
+
+        z:
+          nz / length,
+      };
+
+      smoothBoundaryNormalCache.set(
+        key,
+        normal
+      );
+
+      return normal;
+    }
+
+
+    /*
+     * Native dense Boundary vertex.
+     *
+     * This is infrastructure only for now.
+     * Step 2C will use it for the completed Boundary surface.
+     *
+     * No rendering behavior changes in this step.
+     */
+    const nativeBoundaryVertexCache =
+      new Map();
+
+
+    function nativeBoundaryVertex(
+      vertexIndex
+    ) {
+      const cached =
+        nativeBoundaryVertexCache.get(
+          vertexIndex
+        );
+
+      if (cached) {
+        return cached;
+      }
+
+      const routeIndex =
+        Math.floor(
+          vertexIndex /
+          tube.nv
+        );
+
+      const minorIndex =
+        vertexIndex %
+        tube.nv;
+
+      const routeAmount =
+        routeIndex /
+        tube.nu;
+
+      const minorAmount =
+        minorIndex /
+        tube.nv;
+
+      const screenIndex =
+        vertexIndex *
+        2;
+
+      const viewIndex =
+        vertexIndex *
+        3;
+
+      /*
+       * At the completed Boundary endpoint the embedding depends
+       * only on route/minor. The raw cusp coordinate is irrelevant
+       * to the position because cuspMorph = 1.
+       */
+      const smoothNormal =
+        smoothBoundaryNormalAt(
+          { x: 0, y: 0 },
+          routeAmount,
+          minorAmount
+        );
+
+      const vertex = {
+        x:
+          screen[
+            screenIndex
+          ],
+
+        y:
+          screen[
+            screenIndex + 1
+          ],
+
+        depth:
+          view[
+            viewIndex + 2
+          ] -
+          viewCenterZ,
+
+        routeAmount,
+
+        minorAmount,
+
+        normalX:
+          smoothNormal?.x,
+
+        normalY:
+          smoothNormal?.y,
+
+        normalZ:
+          smoothNormal?.z,
+      };
+
+      nativeBoundaryVertexCache.set(
+        vertexIndex,
+        vertex
+      );
+
+      return vertex;
+    }
+
+
+    /*
+     * One triangle from the native dense tube mesh.
+     *
+     * The three vertices retain:
+     *
+     *   - projected geometry,
+     *   - smooth normals,
+     *   - unwrapped route/minor material coordinates.
+     *
+     * The unwrapped coordinates are important at the periodic seams:
+     * raster interpolation must cross 1 -> 0 continuously rather
+     * than interpolating halfway around the torus.
+     *
+     * This function is not used by the renderer yet.
+     */
+    function nativeBoundaryTriangle(
+      a,
+      b,
+      c
+    ) {
+      const first =
+        nativeBoundaryVertex(
+          a
+        );
+
+      const second =
+        nativeBoundaryVertex(
+          b
+        );
+
+      const third =
+        nativeBoundaryVertex(
+          c
+        );
+
+      const routes =
+        unwrapPeriodicTriangleValues([
+          first.routeAmount,
+          second.routeAmount,
+          third.routeAmount,
+        ]);
+
+      const minors =
+        unwrapPeriodicTriangleValues([
+          first.minorAmount,
+          second.minorAmount,
+          third.minorAmount,
+        ]);
+
+      const points = [
+        {
+          ...first,
+
+          materialRoute:
+            routes[0],
+
+          materialMinor:
+            minors[0],
+        },
+
+        {
+          ...second,
+
+          materialRoute:
+            routes[1],
+
+          materialMinor:
+            minors[1],
+        },
+
+        {
+          ...third,
+
+          materialRoute:
+            routes[2],
+
+          materialMinor:
+            minors[2],
+        },
+      ];
+
+      const fallbackRoute =
+        wrapUnitInterval(
+          (
+            routes[0] +
+            routes[1] +
+            routes[2]
+          ) /
+          3
+        );
+
+      const fallbackMinor =
+        wrapUnitInterval(
+          (
+            minors[0] +
+            minors[1] +
+            minors[2]
+          ) /
+          3
+        );
+
+      const fallbackMaterialId =
+        cuspMacroTriangleIdAtTubeParameters(
+          fallbackRoute,
+          fallbackMinor
+        );
+
+      return {
+        kind:
+          "cusp-surface",
+
+        nativeMaterialRaster:
+          true,
+
+        cuspBaseId:
+          fallbackMaterialId,
+
+        materialRgb:
+          cuspTriangleMaterials[
+            fallbackMaterialId
+          ]?.rgb ??
+          [
+            255,
+            176,
+            0,
+          ],
+
+        points,
+
+        depth:
+          (
+            first.depth +
+            second.depth +
+            third.depth
+          ) /
+          3,
+
+        /*
+         * The native path will use the existing smooth normal
+         * interpolation, so this shade is only a safe fallback.
+         */
+        shade:
+          170,
+
+        hue:
+          fallbackRoute *
+          360,
+      };
+    }
+
+
     const triangles = [];
 
     if (!showCuspTriangulation) {
@@ -4996,10 +5744,53 @@ export default function FigureEightProjectionLab({
      * on the rectangular tube mesh.
      */
     if (showCuspTriangulation) {
-      for (
-        const macroTriangle of
-        cuspMacroTriangles
+      const useNativeBoundaryMaterialSurface =
+        cuspMorph >=
+        1 - 1e-7;
+
+      if (
+        useNativeBoundaryMaterialSurface
       ) {
+        for (
+          let cursor = 0;
+          cursor <
+          tube.indices.length;
+          cursor += 3
+        ) {
+          const a =
+            tube.indices[cursor];
+
+          const b =
+            tube.indices[
+              cursor + 1
+            ];
+
+          const c =
+            tube.indices[
+              cursor + 2
+            ];
+
+          if (
+            !valid[a] ||
+            !valid[b] ||
+            !valid[c]
+          ) {
+            continue;
+          }
+
+          triangles.push(
+            nativeBoundaryTriangle(
+              a,
+              b,
+              c
+            )
+          );
+        }
+      } else {
+        for (
+          const macroTriangle of
+          cuspMacroTriangles
+        ) {
         for (
           const cell of
           cuspSurfaceCells
@@ -5038,16 +5829,45 @@ export default function FigureEightProjectionLab({
                     macroTriangle.corners
                   );
 
+                const projected =
+                  projectCuspMorphPointToScreen(
+                    displayRawPoint,
+                    routeAmount,
+                    minorAmount
+                  );
+
+                const smoothNormal =
+                  projected
+                    ? smoothBoundaryNormalAt(
+                        rawPoint,
+                        routeAmount,
+                        minorAmount
+                      )
+                    : null;
+
                 return {
                   rawPoint,
                   routeAmount,
                   minorAmount,
+
                   projected:
-                    projectCuspMorphPointToScreen(
-                      displayRawPoint,
-                      routeAmount,
-                      minorAmount
-                    ),
+                    (
+                      projected &&
+                      smoothNormal
+                    )
+                      ? {
+                          ...projected,
+
+                          normalX:
+                            smoothNormal.x,
+
+                          normalY:
+                            smoothNormal.y,
+
+                          normalZ:
+                            smoothNormal.z,
+                        }
+                      : projected,
                 };
               }
             );
@@ -5070,6 +5890,16 @@ export default function FigureEightProjectionLab({
           const third =
             mappedPoints[2].projected;
 
+          /*
+           * Ordinary facet shade remains only as a fallback for:
+           *
+           *   - the Cusp <-> Boundary morph,
+           *   - projection-pole edge cases,
+           *   - non-material display modes.
+           *
+           * At the completed Boundary endpoint, material mode uses
+           * per-pixel interpolated smooth normals instead.
+           */
           const ux =
             second.viewX -
             first.viewX;
@@ -5188,6 +6018,7 @@ export default function FigureEightProjectionLab({
               ) * 360,
           });
         }
+      }
       }
 
       /*
@@ -6220,13 +7051,33 @@ export default function FigureEightProjectionLab({
           third.depth
         );
 
-      const [
-        red,
-        green,
-        blue,
-      ] =
+      const fallbackRgb =
         surfaceTriangleRgb(
           triangle
+        );
+
+      const smoothMaterialLighting =
+        colorMode ===
+          "triangles" &&
+        triangle.kind ===
+          "cusp-surface" &&
+        cuspMorph >=
+          1 - 1e-7 &&
+        [
+          first,
+          second,
+          third,
+        ].every(
+          (point) =>
+            Number.isFinite(
+              point.normalX
+            ) &&
+            Number.isFinite(
+              point.normalY
+            ) &&
+            Number.isFinite(
+              point.normalZ
+            )
         );
 
       /*
@@ -6343,17 +7194,182 @@ export default function FigureEightProjectionLab({
           const colorIndex =
             index * 4;
 
+          let pixelRgb =
+            fallbackRgb;
+
+          /*
+           * Native Boundary material ownership.
+           *
+           * For dense native tube triangles, interpolate the torus
+           * coordinates at THIS pixel and ask which exact A/B cusp
+           * triangle owns that point.
+           *
+           * This is what removes polygonal material boundaries.
+           */
+          if (
+            triangle.nativeMaterialRaster
+          ) {
+            const projectiveWeight =
+              weight0 *
+                depth0 +
+              weight1 *
+                depth1 +
+              weight2 *
+                depth2;
+
+            if (
+              projectiveWeight <=
+              1e-14
+            ) {
+              continue;
+            }
+
+            const routeAmount =
+              wrapUnitInterval(
+                (
+                  weight0 *
+                    depth0 *
+                    first.materialRoute +
+                  weight1 *
+                    depth1 *
+                    second.materialRoute +
+                  weight2 *
+                    depth2 *
+                    third.materialRoute
+                ) /
+                projectiveWeight
+              );
+
+            const minorAmount =
+              wrapUnitInterval(
+                (
+                  weight0 *
+                    depth0 *
+                    first.materialMinor +
+                  weight1 *
+                    depth1 *
+                    second.materialMinor +
+                  weight2 *
+                    depth2 *
+                    third.materialMinor
+                ) /
+                projectiveWeight
+              );
+
+            const materialId =
+              cuspMacroTriangleIdAtTubeParameters(
+                routeAmount,
+                minorAmount
+              );
+
+            pixelRgb =
+              cuspTriangleMaterials[
+                materialId
+              ]?.rgb ??
+              fallbackRgb;
+          }
+
+          if (
+            smoothMaterialLighting
+          ) {
+            /*
+             * Smooth per-pixel normal interpolation.
+             *
+             * Adjacent rendering facets share the SAME normal at
+             * their shared vertices, so no lighting discontinuity
+             * exists at the internal render-mesh edges.
+             */
+            const normalX =
+              weight0 *
+                first.normalX +
+              weight1 *
+                second.normalX +
+              weight2 *
+                third.normalX;
+
+            const normalY =
+              weight0 *
+                first.normalY +
+              weight1 *
+                second.normalY +
+              weight2 *
+                third.normalY;
+
+            const normalZ =
+              weight0 *
+                first.normalZ +
+              weight1 *
+                second.normalZ +
+              weight2 *
+                third.normalZ;
+
+            const normalLength =
+              Math.max(
+                1e-12,
+                Math.hypot(
+                  normalX,
+                  normalY,
+                  normalZ
+                )
+              );
+
+            const diffuse =
+              Math.pow(
+                Math.abs(
+                  (
+                    normalX /
+                    normalLength
+                  ) *
+                    -0.32 +
+                  (
+                    normalY /
+                    normalLength
+                  ) *
+                    -0.42 +
+                  (
+                    normalZ /
+                    normalLength
+                  ) *
+                    0.85
+                ),
+                0.85
+              );
+
+            const lightFactor =
+              boundaryLightFactor(
+                diffuse
+              );
+
+            /*
+             * IMPORTANT:
+             *
+             * The material RGB is constant for this logical cusp
+             * triangle. Only the smooth lighting varies.
+             */
+            pixelRgb =
+              pixelRgb.map(
+                (channel) =>
+                  Math.round(
+                    channel *
+                    lightFactor
+                  )
+              );
+          }
+
           zPixels[
             colorIndex
-          ] = red;
+          ] =
+            pixelRgb[0];
 
           zPixels[
             colorIndex + 1
-          ] = green;
+          ] =
+            pixelRgb[1];
 
           zPixels[
             colorIndex + 2
-          ] = blue;
+          ] =
+            pixelRgb[2];
 
           zPixels[
             colorIndex + 3

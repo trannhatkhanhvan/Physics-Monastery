@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import LayoutWrapper from '@/components/LayoutWrapper';
+import GFunctionsExplorer from '../g-functions/GFunctionsExplorer';
 import '../globals.css';
 
 export default function PlanckConstants() {
@@ -40,6 +41,163 @@ export default function PlanckConstants() {
 
   const [modalImage, setModalImage] = useState(null);
   const [modalVideo, setModalVideo] = useState(null);
+
+  const gExplorerHostRef = useRef(null);
+  const gScrollLockRef = useRef({
+    locked: false,
+    armed: true,
+    upwardGestures: 0,
+    lastUpwardEvent: 0,
+    lastGestureDirection: 0,
+  });
+
+  useEffect(() => {
+    const host = gExplorerHostRef.current;
+    if (!host) return undefined;
+
+    const state = gScrollLockRef.current;
+    let lastScrollY = window.scrollY;
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      const movingDown = y > lastScrollY;
+      const rect = host.getBoundingClientRect();
+
+      if (!state.armed && rect.top > 120) {
+        state.armed = true;
+      }
+
+      if (
+        state.armed &&
+        !state.locked &&
+        movingDown &&
+        rect.top <= 0 &&
+        rect.bottom > window.innerHeight * 0.5
+      ) {
+        state.locked = true;
+        state.upwardGestures = 0;
+        state.lastGestureDirection = 0;
+        window.scrollTo(0, y + rect.top);
+      }
+
+      lastScrollY = window.scrollY;
+    };
+
+    const onWheel = event => {
+      if (!state.locked) return;
+
+      // Preserve gestures inside the actual graph and
+      // scrollable explorer controls.
+      const target = event.target;
+      const interactive =
+        target instanceof Element &&
+        (
+          target.closest('.g-plane-wrap') ||
+          target.closest('.g-toolbar')
+        );
+
+      if (interactive) return;
+
+      const direction = Math.sign(event.deltaY);
+
+      if (direction >= 0) {
+        state.upwardGestures = 0;
+        state.lastGestureDirection = direction;
+        event.preventDefault();
+        return;
+      }
+
+      const now = performance.now();
+
+      if (
+        state.lastGestureDirection !== -1 ||
+        now - state.lastUpwardEvent > 350
+      ) {
+        state.upwardGestures += 1;
+      }
+
+      state.lastUpwardEvent = now;
+      state.lastGestureDirection = -1;
+
+      if (state.upwardGestures >= 2) {
+        state.locked = false;
+        state.armed = false;
+        state.upwardGestures = 0;
+        return;
+      }
+
+      event.preventDefault();
+    };
+
+    window.addEventListener('scroll', onScroll, {
+      passive: true,
+    });
+
+    window.addEventListener('wheel', onWheel, {
+      capture: true,
+      passive: false,
+    });
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('wheel', onWheel, true);
+      state.locked = false;
+    };
+  }, []);
+
+
+  const [gExplorerFrame, setGExplorerFrame] = useState({
+    left: 0,
+    width: 0,
+    ready: false,
+  });
+
+  useEffect(() => {
+    const host = gExplorerHostRef.current;
+    const sidebar = document.querySelector('.sidebar');
+    const mainContent = document.querySelector('.main-content');
+
+    if (!host) return undefined;
+
+    const oldOverflowX = mainContent?.style.overflowX ?? '';
+
+    if (mainContent) {
+      mainContent.style.overflowX = 'visible';
+    }
+
+    const measure = () => {
+      const hostRect = host.getBoundingClientRect();
+      const sidebarRect = sidebar?.getBoundingClientRect();
+      const sidebarRight = sidebarRect?.right ?? 0;
+
+      const viewportRight =
+        document.documentElement.clientWidth;
+
+      setGExplorerFrame({
+        left: sidebarRight - hostRect.left,
+        width: Math.max(0, viewportRight - sidebarRight),
+        ready: true,
+      });
+    };
+
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(host);
+
+    if (sidebar) observer.observe(sidebar);
+
+    window.addEventListener('resize', measure);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', measure);
+
+      if (mainContent) {
+        mainContent.style.overflowX = oldOverflowX;
+      }
+    };
+  }, []);
 
   /*
    * Each geometry expands independently.
@@ -2021,7 +2179,7 @@ export default function PlanckConstants() {
           physical quantity. Thus, for the five Planck boundaries,
         </p>
 
-        <div style={{ height: '1.50rem' }} />
+        <div style={{ height: '2.00rem' }} />
 
         {/* Five normalized Planck boundaries */}
         <div
@@ -2302,7 +2460,7 @@ export default function PlanckConstants() {
           </div>
         </div>
 
-        <div style={{ height: '2.5rem' }} />
+        <div style={{ height: '2.0rem' }} />
 
         <p className="equation-description">
           Together, these relations present the same five Planck boundaries
@@ -2344,9 +2502,47 @@ export default function PlanckConstants() {
           structure.
         </p>
 
-        <div style={{ height: '16rem' }} />
+        <div style={{ height: '2rem' }} />
       </div>
 
+
+      {/*
+       * G₀–G₄ Complex Geometry
+       *
+       * Embedded below the Planck constants article.
+       * Same explorer as /g-functions, without an iframe
+       * or a second LayoutWrapper.
+       */}
+      <section
+        ref={gExplorerHostRef}
+        id="g-functions-explorer"
+        aria-label="G₀–G₄ Complex Geometry explorer"
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: 'calc(100vh + 300px)',
+          minHeight: '100vh',
+        }}
+      >
+        <div
+          style={{
+            position: 'sticky',
+            top: 0,
+            height: '100vh',
+            left: `${gExplorerFrame.left}px`,
+            width: `${gExplorerFrame.width}px`,
+            maxWidth: 'none',
+            minWidth: 0,
+            boxSizing: 'border-box',
+            overflow: 'hidden',
+            visibility: gExplorerFrame.ready
+              ? 'visible'
+              : 'hidden',
+          }}
+        >
+          <GFunctionsExplorer />
+        </div>
+      </section>
 
       {/* Image Modal */}
       {modalImage && (

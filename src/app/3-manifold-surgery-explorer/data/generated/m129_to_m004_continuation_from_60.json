@@ -1,0 +1,1407 @@
+{
+  "schema": "physics-monastery.continuation-from-60.v1",
+  "complete": false,
+  "start_tetrahedra": 60,
+  "current_tetrahedra": 9,
+  "current_isoSig": "jLLLLQQcefhhghiiiiidmgcvbog",
+  "rounds_completed": 20,
+  "states": [
+    {
+      "step": 0,
+      "tetrahedra": 60,
+      "isoSig": "8LLvLLvLzLvvPPvwwLQAwwMzMvPPQQwPPPQQQzMQQcdgipkrysuqEAJIwvADzFCHCOJXUPVSUWYMOMP11ZRTT21Z4V30Y343765677hsgvhphavsoamahaabgbgwjceohmepmiqupmagggccbkdbbhvmkctmhoofoob",
+      "move": null
+    },
+    {
+      "step": 1,
+      "tetrahedra": 61,
+      "isoSig": "9LLvLLvLAvvvAzLvzPQMLLzMzvAQQMQzPPQQMzQPQkcdgipjkxrqEtCzzDCCyFBHBOIXUPVWKYMOLUS0P2ZRTT12Z4V3Y34527568788hsgvhgpavoaglebgjjbgwjceohmepqoupmbuxogaccbkdhbhvmctmtmocfloap",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 24,
+        "before_tetrahedra": 60,
+        "after_tetrahedra": 61,
+        "before_isoSig": "8LLvLLvLzLvvPPvwwLQAwwMzMvPPQQwPPPQQQzMQQcdgipkrysuqEAJIwvADzFCHCOJXUPVSUWYMOMP11ZRTT21Z4V30Y343765677hsgvhphavsoamahaabgbgwjceohmepmiqupmagggccbkdbbhvmkctmhoofoob",
+        "after_isoSig": "9LLvLLvLAvvvAzLvzPQMLLzMzvAQQMQzPPQQMzQPQkcdgipjkxrqEtCzzDCCyFBHBOIXUPVWKYMOLUS0P2ZRTT12Z4V3Y34527568788hsgvhgpavoaglebgjjbgwjceohmepqoupmbuxogaccbkdhbhvmctmtmocfloap"
+      }
+    },
+    {
+      "step": 2,
+      "tetrahedra": 62,
+      "isoSig": "+LLvLLvLwvwzPLvwzzPPvwAMMwLMMPQQQwAQQzMMQQccdgipjrwysqEvuCzCBFNHBQNNJYVRWKXLZQ2MVTUS1R30U305W4Z45863679899hsgvhgsaavoadglewwgpjcexiohmepcqoumdbuxkcsgacbhbhvmctmeuqcfoowc",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 24,
+        "before_tetrahedra": 61,
+        "after_tetrahedra": 62,
+        "before_isoSig": "9LLvLLvLAvvvAzLvzPQMLLzMzvAQQMQzPPQQMzQPQkcdgipjkxrqEtCzzDCCyFBHBOIXUPVWKYMOLUS0P2ZRTT12Z4V3Y34527568788hsgvhgpavoaglebgjjbgwjceohmepqoupmbuxogaccbkdhbhvmctmtmocfloap",
+        "after_isoSig": "+LLvLLvLwvwzPLvwzzPPvwAMMwLMMPQQQwAQQzMMQQccdgipjrwysqEvuCzCBFNHBQNNJYVRWKXLZQ2MVTUS1R30U305W4Z45863679899hsgvhgsaavoadglewwgpjcexiohmepcqoumdbuxkcsgacbhbhvmctmeuqcfoowc"
+      }
+    },
+    {
+      "step": 3,
+      "tetrahedra": 61,
+      "isoSig": "9LLvLLvLwvvPzPvzwzMMAPzzAwPQQMzwAPwQMPQQQkcdgipjxrzuqFwvJLBDNBHEHCNPQRQMTXNLKSVOSW23T2051W4Z070742468688hsgvhgavasohpmaaiganjkjchuhqlbtamwcuumekaabesdvftgcinphdcovrwc",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 39,
+        "edge_degree": 3,
+        "before_tetrahedra": 62,
+        "after_tetrahedra": 61,
+        "before_isoSig": "+LLvLLvLwvwzPLvwzzPPvwAMMwLMMPQQQwAQQzMMQQccdgipjrwysqEvuCzCBFNHBQNNJYVRWKXLZQ2MVTUS1R30U305W4Z45863679899hsgvhgsaavoadglewwgpjcexiohmepcqoumdbuxkcsgacbhbhvmctmeuqcfoowc",
+        "after_isoSig": "9LLvLLvLwvvPzPvzwzMMAPzzAwPQQMzwAPwQMPQQQkcdgipjxrzuqFwvJLBDNBHEHCNPQRQMTXNLKSVOSW23T2051W4Z070742468688hsgvhgavasohpmaaiganjkjchuhqlbtamwcuumekaabesdvftgcinphdcovrwc"
+      }
+    },
+    {
+      "step": 4,
+      "tetrahedra": 60,
+      "isoSig": "8LLvLLvLwvvPPPvzvzMQwAwMzLQQAMzPLAPAMQQQQcdgipjxrzwuqEvJLHwCHGDGBOPQPMSWHLKRUNRV12S1Z40V3YZ6Z631357577hsgvhgavausohmaaeggsjkjcuhqlbtaswcuumekaabesdvftgcinphdcovrwc",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 37,
+        "edge_degree": 3,
+        "before_tetrahedra": 61,
+        "after_tetrahedra": 60,
+        "before_isoSig": "9LLvLLvLwvvPzPvzwzMMAPzzAwPQQMzwAPwQMPQQQkcdgipjxrzuqFwvJLBDNBHEHCNPQRQMTXNLKSVOSW23T2051W4Z070742468688hsgvhgavasohpmaaiganjkjchuhqlbtamwcuumekaabesdvftgcinphdcovrwc",
+        "after_isoSig": "8LLvLLvLwvvPPPvzvzMQwAwMzLQQAMzPLAPAMQQQQcdgipjxrzwuqEvJLHwCHGDGBOPQPMSWHLKRUNRV12S1Z40V3YZ6Z631357577hsgvhgavausohmaaeggsjkjcuhqlbtaswcuumekaabesdvftgcinphdcovrwc"
+      }
+    },
+    {
+      "step": 5,
+      "tetrahedra": 59,
+      "isoSig": "7LLvLLvLwvvLPPwzwzMwQQvzwPQQzMLMPAPzQQQQccdgipjrzxuqvEwxIKwGAGDMGCQOMLSVKJRNPRZUSU212Y30XY5Y502146466hsgvhgvaisoihpxaamcbjkpjcuqhbtawcuxmernbkaaesddgcinpidwovrwc",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 43,
+        "edge_degree": 3,
+        "before_tetrahedra": 60,
+        "after_tetrahedra": 59,
+        "before_isoSig": "8LLvLLvLwvvPPPvzvzMQwAwMzLQQAMzPLAPAMQQQQcdgipjxrzwuqEvJLHwCHGDGBOPQPMSWHLKRUNRV12S1Z40V3YZ6Z631357577hsgvhgavausohmaaeggsjkjcuhqlbtaswcuumekaabesdvftgcinphdcovrwc",
+        "after_isoSig": "7LLvLLvLwvvLPPwzwzMwQQvzwPQQzMLMPAPzQQQQccdgipjrzxuqvEwxIKwGAGDMGCQOMLSVKJRNPRZUSU212Y30XY5Y502146466hsgvhgvaisoihpxaamcbjkpjcuqhbtawcuxmernbkaaesddgcinpidwovrwc"
+      }
+    },
+    {
+      "step": 6,
+      "tetrahedra": 60,
+      "isoSig": "8LLvMvvPvvPwzLvvQAvzPLQwLMAPMAQLAQAMPQPQQcdfgoiutmpBsEAzICxIGzKHGUHOSITSXRQNPZO1RW0Y0V2V23Y41163457677hsaghgapcoaelgkngfsovqoohcepgqpbwkocagagcmbpbmctmcqiinccfxoel",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 16,
+        "before_tetrahedra": 59,
+        "after_tetrahedra": 60,
+        "before_isoSig": "7LLvLLvLwvvLPPwzwzMwQQvzwPQQzMLMPAPzQQQQccdgipjrzxuqvEwxIKwGAGDMGCQOMLSVKJRNPRZUSU212Y30XY5Y502146466hsgvhgvaisoihpxaamcbjkpjcuqhbtawcuxmernbkaaesddgcinpidwovrwc",
+        "after_isoSig": "8LLvMvvPvvPwzLvvQAvzPLQwLMAPMAQLAQAMPQPQQcdfgoiutmpBsEAzICxIGzKHGUHOSITSXRQNPZO1RW0Y0V2V23Y41163457677hsaghgapcoaelgkngfsovqoohcepgqpbwkocagagcmbpbmctmcqiinccfxoel"
+      }
+    },
+    {
+      "step": 7,
+      "tetrahedra": 61,
+      "isoSig": "9LLvMvvPvvPwzLvvQAvzPvQALMMMLAQPAMAMPQAQQkcdfgoiutmpBsEAzICxIzKGSHUFOHGSXRQNP0OY2RW11VTVY34Z455273468788hsaghgapcoaelgkngfsvqvabhjevcaawkocagkagcmpbfcomehhhrjncsfxoel",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 26,
+        "before_tetrahedra": 60,
+        "after_tetrahedra": 61,
+        "before_isoSig": "8LLvMvvPvvPwzLvvQAvzPLQwLMAPMAQLAQAMPQPQQcdfgoiutmpBsEAzICxIGzKHGUHOSITSXRQNPZO1RW0Y0V2V23Y41163457677hsaghgapcoaelgkngfsovqoohcepgqpbwkocagagcmbpbmctmcqiinccfxoel",
+        "after_isoSig": "9LLvMvvPvvPwzLvvQAvzPvQALMMMLAQPAMAMPQAQQkcdfgoiutmpBsEAzICxIzKGSHUFOHGSXRQNP0OY2RW11VTVY34Z455273468788hsaghgapcoaelgkngfsvqvabhjevcaawkocagkagcmpbfcomehhhrjncsfxoel"
+      }
+    },
+    {
+      "step": 8,
+      "tetrahedra": 60,
+      "isoSig": "8LLvMvvPvvLvMwzvQMAPQwwwPzMLwAQQMMvQAQMQQcdfgoitypsDGBtvFABDFxzCKFHOISMJXRSXPWWQT0TYZY2V11366603754757hsaghgpaoihalmbcssgncffajoqbaexrnfngccfkxkhptlcliiaffwvijctfl",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 25,
+        "edge_degree": 3,
+        "before_tetrahedra": 61,
+        "after_tetrahedra": 60,
+        "before_isoSig": "9LLvMvvPvvPwzLvvQAvzPvQALMMMLAQPAMAMPQAQQkcdfgoiutmpBsEAzICxIzKGSHUFOHGSXRQNP0OY2RW11VTVY34Z455273468788hsaghgapcoaelgkngfsvqvabhjevcaawkocagkagcmpbfcomehhhrjncsfxoel",
+        "after_isoSig": "8LLvMvvPvvLvMwzvQMAPQwwwPzMLwAQQMMvQAQMQQcdfgoitypsDGBtvFABDFxzCKFHOISMJXRSXPWWQT0TYZY2V11366603754757hsaghgpaoihalmbcssgncffajoqbaexrnfngccfkxkhptlcliiaffwvijctfl"
+      }
+    },
+    {
+      "step": 9,
+      "tetrahedra": 59,
+      "isoSig": "7LLvMvvPvvLzMwzvQMAPQvwLPzwAPPQPzPPQPAQQccdfgoitwypsCFAtvwzACEBEJGHQRLIWPQWNVVOSXYXSZ1U002555Z2643646hsaghgpaaoihalmbbssgwfwaobahexrnfngccfkhptchlcliiaffwvijctfl",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 41,
+        "edge_degree": 3,
+        "before_tetrahedra": 60,
+        "after_tetrahedra": 59,
+        "before_isoSig": "8LLvMvvPvvLvMwzvQMAPQwwwPzMLwAQQMMvQAQMQQcdfgoitypsDGBtvFABDFxzCKFHOISMJXRSXPWWQT0TYZY2V11366603754757hsaghgpaoihalmbcssgncffajoqbaexrnfngccfkxkhptlcliiaffwvijctfl",
+        "after_isoSig": "7LLvMvvPvvLzMwzvQMAPQvwLPzwAPPQPzPPQPAQQccdfgoitwypsCFAtvwzACEBEJGHQRLIWPQWNVVOSXYXSZ1U002555Z2643646hsaghgpaaoihalmbbssgwfwaobahexrnfngccfkhptchlcliiaffwvijctfl"
+      }
+    },
+    {
+      "step": 10,
+      "tetrahedra": 58,
+      "isoSig": "6LLvMvvPvvPLQvwvQwvwMMPLMwwQPMQPzMPQAQQkcdfgoiutqsrpADzxGByIGEFQREMFUOPLNXMVZOTYSYSV01W122Z40135455hsaghgapopsoalgwngfmsrbahjevavkocagkaccmkpcomehhhrjncsfxoel",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 38,
+        "edge_degree": 3,
+        "before_tetrahedra": 59,
+        "after_tetrahedra": 58,
+        "before_isoSig": "7LLvMvvPvvLzMwzvQMAPQvwLPzwAPPQPzPPQPAQQccdfgoitwypsCFAtvwzACEBEJGHQRLIWPQWNVVOSXYXSZ1U002555Z2643646hsaghgpaaoihalmbbssgwfwaobahexrnfngccfkhptchlcliiaffwvijctfl",
+        "after_isoSig": "6LLvMvvPvvPLQvwvQwvwMMPLMwwQPMQPzMPQAQQkcdfgoiutqsrpADzxGByIGEFQREMFUOPLNXMVZOTYSYSV01W122Z40135455hsaghgapopsoalgwngfmsrbahjevavkocagkaccmkpcomehhhrjncsfxoel"
+      }
+    },
+    {
+      "step": 11,
+      "tetrahedra": 59,
+      "isoSig": "7LLvLvvAPzLMzwwzzLvQzLzMQMvQMzLMMPPMQQQQccdghpjmqtnruvtuAxJEHzILKGNSHKFMRMTON0ZQ1UV43X3WY400Y64252566hsgnaoahhffdiiplcafxcieespamuohnrvofiqfdwcdueevexhcvfjnkrgwk",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 16,
+        "before_tetrahedra": 58,
+        "after_tetrahedra": 59,
+        "before_isoSig": "6LLvMvvPvvPLQvwvQwvwMMPLMwwQPMQPzMPQAQQkcdfgoiutqsrpADzxGByIGEFQREMFUOPLNXMVZOTYSYSV01W122Z40135455hsaghgapopsoalgwngfmsrbahjevavkocagkaccmkpcomehhhrjncsfxoel",
+        "after_isoSig": "7LLvLvvAPzLMzwwzzLvQzLzMQMvQMzLMMPPMQQQQccdghpjmqtnruvtuAxJEHzILKGNSHKFMRMTON0ZQ1UV43X3WY400Y64252566hsgnaoahhffdiiplcafxcieespamuohnrvofiqfdwcdueevexhcvfjnkrgwk"
+      }
+    },
+    {
+      "step": 12,
+      "tetrahedra": 58,
+      "isoSig": "6LLvLLvALzMMzzvvwwzwzMPQPQvAMvAAMMAQQQQkcdgihorpqtmqutyEIxCKJGMRHJLFSEHLQNMZYP0TU32W2VX3ZZX53141455hsgvnaahshfviilracbeespamuugafdhnofiqfdwcdhuevexhcvfjnkrgwk",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 29,
+        "edge_degree": 3,
+        "before_tetrahedra": 59,
+        "after_tetrahedra": 58,
+        "before_isoSig": "7LLvLvvAPzLMzwwzzLvQzLzMQMvQMzLMMPPMQQQQccdghpjmqtnruvtuAxJEHzILKGNSHKFMRMTON0ZQ1UV43X3WY400Y64252566hsgnaoahhffdiiplcafxcieespamuohnrvofiqfdwcdueevexhcvfjnkrgwk",
+        "after_isoSig": "6LLvLLvALzMMzzvvwwzwzMPQPQvAMvAAMMAQQQQkcdgihorpqtmqutyEIxCKJGMRHJLFSEHLQNMZYP0TU32W2VX3ZZX53141455hsgvnaahshfviilracbeespamuugafdhnofiqfdwcdhuevexhcvfjnkrgwk"
+      }
+    },
+    {
+      "step": 13,
+      "tetrahedra": 57,
+      "isoSig": "5LLvLLvAvzMMzzvMLMvMvMzQQwLPMvAQMMPQQQQcdgihopqumqvusvFzGIyDKJHMRGJELQLTNMZYP0SUV2UXZ4WX2Z4213134hsgvnahshfviioxalsacbeespakucuehjofiqfdnwcdoetuvexhwjnkrgj",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 44,
+        "edge_degree": 3,
+        "before_tetrahedra": 58,
+        "after_tetrahedra": 57,
+        "before_isoSig": "6LLvLLvALzMMzzvvwwzwzMPQPQvAMvAAMMAQQQQkcdgihorpqtmqutyEIxCKJGMRHJLFSEHLQNMZYP0TU32W2VX3ZZX53141455hsgvnaahshfviilracbeespamuugafdhnofiqfdwcdhuevexhcvfjnkrgwk",
+        "after_isoSig": "5LLvLLvAvzMMzzvMLMvMvMzQQwLPMvAQMMPQQQQcdgihopqumqvusvFzGIyDKJHMRGJELQLTNMZYP0SUV2UXZ4WX2Z4213134hsgvnahshfviioxalsacbeespakucuehjofiqfdnwcdoetuvexhwjnkrgj"
+      }
+    },
+    {
+      "step": 14,
+      "tetrahedra": 58,
+      "isoSig": "6LLvAvzLvvPvwLQAMwvvMwMPzMzLAQPMzQQPQQQkcdfhioutspzBAsCvExyIGDGRQROUSOPLNZMU1OR00XS2YUZW553Y4153434hsahahappbaauocvawfmpbpueujnbvkocagjacfmpejiifoccggvvjccsob",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 6,
+        "before_tetrahedra": 57,
+        "after_tetrahedra": 58,
+        "before_isoSig": "5LLvLLvAvzMMzzvMLMvMvMzQQwLPMvAQMMPQQQQcdgihopqumqvusvFzGIyDKJHMRGJELQLTNMZYP0SUV2UXZ4WX2Z4213134hsgvnahshfviioxalsacbeespakucuehjofiqfdnwcdoetuvexhwjnkrgj",
+        "after_isoSig": "6LLvAvzLvvPvwLQAMwvvMwMPzMzLAQPMzQQPQQQkcdfhioutspzBAsCvExyIGDGRQROUSOPLNZMU1OR00XS2YUZW553Y4153434hsahahappbaauocvawfmpbpueujnbvkocagjacfmpejiifoccggvvjccsob"
+      }
+    },
+    {
+      "step": 15,
+      "tetrahedra": 59,
+      "isoSig": "7vLAMvvvAwvvPAwvQPvwwvMPMMQvMAQQzPLQQAQQcdcfehopqpxsurAvGyGzJQCFSESTFOUJKLLQVO0ZXPXTV1YW5012053246466okanuuawwammeobavageaoexvexqvrocbbnofammbpnkxtumkokswocfmbpm",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 3,
+        "before_tetrahedra": 58,
+        "after_tetrahedra": 59,
+        "before_isoSig": "6LLvAvzLvvPvwLQAMwvvMwMPzMzLAQPMzQQPQQQkcdfhioutspzBAsCvExyIGDGRQROUSOPLNZMU1OR00XS2YUZW553Y4153434hsahahappbaauocvawfmpbpueujnbvkocagjacfmpejiifoccggvvjccsob",
+        "after_isoSig": "7vLAMvvvAwvvPAwvQPvwwvMPMMQvMAQQzPLQQAQQcdcfehopqpxsurAvGyGzJQCFSESTFOUJKLLQVO0ZXPXTV1YW5012053246466okanuuawwammeobavageaoexvexqvrocbbnofammbpnkxtumkokswocfmbpm"
+      }
+    },
+    {
+      "step": 16,
+      "tetrahedra": 58,
+      "isoSig": "6vLALvMvzvMvwwLPLMLMPzMAzvQLMzQAPPMQQMQkecfeklmruqsCsCDHFGwyLKGBHEPMLOTPJOYRV0XYW102UWZX4WZ22433555ccabadabcgcacauaebbbpubcsfahpiahblbsnhvociudgnhohcpehnosvjo",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 4,
+        "edge_degree": 3,
+        "before_tetrahedra": 59,
+        "after_tetrahedra": 58,
+        "before_isoSig": "7vLAMvvvAwvvPAwvQPvwwvMPMMQvMAQQzPLQQAQQcdcfehopqpxsurAvGyGzJQCFSESTFOUJKLLQVO0ZXPXTV1YW5012053246466okanuuawwammeobavageaoexvexqvrocbbnofammbpnkxtumkokswocfmbpm",
+        "after_isoSig": "6vLALvMvzvMvwwLPLMLMPzMAzvQLMzQAPPMQQMQkecfeklmruqsCsCDHFGwyLKGBHEPMLOTPJOYRV0XYW102UWZX4WZ22433555ccabadabcgcacauaebbbpubcsfahpiahblbsnhvociudgnhohcpehnosvjo"
+      }
+    },
+    {
+      "step": 17,
+      "tetrahedra": 57,
+      "isoSig": "5vLLMwvvAzLwzvPAMvAwQwAwvAzPzQzAAAQQQQQcdhgfnjomsxAuDwvxvIGCEBHBNMGJUQTLSMURQTSRWW44XYZ42Y2031332bcuadebgffaheultavadnonmjaapqkwjosnvrvgffppatvgfbnvbfjfbjj",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 13,
+        "edge_degree": 3,
+        "before_tetrahedra": 58,
+        "after_tetrahedra": 57,
+        "before_isoSig": "6vLALvMvzvMvwwLPLMLMPzMAzvQLMzQAPPMQQMQkecfeklmruqsCsCDHFGwyLKGBHEPMLOTPJOYRV0XYW102UWZX4WZ22433555ccabadabcgcacauaebbbpubcsfahpiahblbsnhvociudgnhohcpehnosvjo",
+        "after_isoSig": "5vLLMwvvAzLwzvPAMvAwQwAwvAzPzQzAAAQQQQQcdhgfnjomsxAuDwvxvIGCEBHBNMGJUQTLSMURQTSRWW44XYZ42Y2031332bcuadebgffaheultavadnonmjaapqkwjosnvrvgffppatvgfbnvbfjfbjj"
+      }
+    },
+    {
+      "step": 18,
+      "tetrahedra": 56,
+      "isoSig": "4LLvvLAvLLAvvLMzMAMvQMMAwvAwwQQMMQMQPQccdimjlsnrwrwCFvuxzJzLIJFDKEOMHOKWTRXVYWVQUU1X0UZY00122333hsvasphgnanaaaioppbbhobwctfaavmiucfkbkbvgcnhbdnaoemmabgbg",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 65,
+        "edge_degree": 3,
+        "before_tetrahedra": 57,
+        "after_tetrahedra": 56,
+        "before_isoSig": "5vLLMwvvAzLwzvPAMvAwQwAwvAzPzQzAAAQQQQQcdhgfnjomsxAuDwvxvIGCEBHBNMGJUQTLSMURQTSRWW44XYZ42Y2031332bcuadebgffaheultavadnonmjaapqkwjosnvrvgffppatvgfbnvbfjfbjj",
+        "after_isoSig": "4LLvvLAvLLAvvLMzMAMvQMMAwvAwwQQMMQMQPQccdimjlsnrwrwCFvuxzJzLIJFDKEOMHOKWTRXVYWVQUU1X0UZY00122333hsvasphgnanaaaioppbbhobwctfaavmiucfkbkbvgcnhbdnaoemmabgbg"
+      }
+    },
+    {
+      "step": 19,
+      "tetrahedra": 57,
+      "isoSig": "5LvvAvvAwvvLwALwLQPwQvzzLPAMPAPPPQQMQQQbhikhjnzByArJBuHuAxAGMFEFOMOKJLKPSYPY2ZRWWUVT2X12Z3Y434134hhaaojjaaatvadjxfeovfarvfdqdsvprddsgkaffbjjvfpkehbhchtbfgj",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 4,
+        "before_tetrahedra": 56,
+        "after_tetrahedra": 57,
+        "before_isoSig": "4LLvvLAvLLAvvLMzMAMvQMMAwvAwwQQMMQMQPQccdimjlsnrwrwCFvuxzJzLIJFDKEOMHOKWTRXVYWVQUU1X0UZY00122333hsvasphgnanaaaioppbbhobwctfaavmiucfkbkbvgcnhbdnaoemmabgbg",
+        "after_isoSig": "5LvvAvvAwvvLwALwLQPwQvzzLPAMPAPPPQQMQQQbhikhjnzByArJBuHuAxAGMFEFOMOKJLKPSYPY2ZRWWUVT2X12Z3Y434134hhaaojjaaatvadjxfeovfarvfdqdsvprddsgkaffbjjvfpkehbhchtbfgj"
+      }
+    },
+    {
+      "step": 20,
+      "tetrahedra": 56,
+      "isoSig": "4LLvLLzvvvvPzMAMvwQMwzMPvMvMMQMMPQQQQQccdgijysAwqzDCEzEKvBvzJILKOHHINNLSVOS1RQZ2Y20U3XXZYW103123hsgvsavainlaaatpanpvesrwvhwvfddwppgoagfjlnlvvabnnvfpbhhhl",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 6,
+        "edge_degree": 3,
+        "before_tetrahedra": 57,
+        "after_tetrahedra": 56,
+        "before_isoSig": "5LvvAvvAwvvLwALwLQPwQvzzLPAMPAPPPQQMQQQbhikhjnzByArJBuHuAxAGMFEFOMOKJLKPSYPY2ZRWWUVT2X12Z3Y434134hhaaojjaaatvadjxfeovfarvfdqdsvprddsgkaffbjjvfpkehbhchtbfgj",
+        "after_isoSig": "4LLvLLzvvvvPzMAMvwQMwzMPvMvMMQMMPQQQQQccdgijysAwqzDCEzEKvBvzJILKOHHINNLSVOS1RQZ2Y20U3XXZYW103123hsgvsavainlaaatpanpvesrwvhwvfddwppgoagfjlnlvvabnnvfpbhhhl"
+      }
+    },
+    {
+      "step": 21,
+      "tetrahedra": 55,
+      "isoSig": "3LLvLLvvvzvMMAMAMvwQzLzPvQvMMQMMPQQQQkcdginwztAuBxrwDCEwEKJAJIKOHLHINNSVXOS0RQY1X1ZU2WWY0Z2012hsgvlfavavainvaaagpallsrvhwvvfddplagoagfjlnlvvabnnpbhhhl",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 7,
+        "edge_degree": 3,
+        "before_tetrahedra": 56,
+        "after_tetrahedra": 55,
+        "before_isoSig": "4LLvLLzvvvvPzMAMvwQMwzMPvMvMMQMMPQQQQQccdgijysAwqzDCEzEKvBvzJILKOHHINNLSVOS1RQZ2Y20U3XXZYW103123hsgvsavainlaaatpanpvesrwvhwvfddwppgoagfjlnlvvabnnvfpbhhhl",
+        "after_isoSig": "3LLvLLvvvzvMMAMAMvwQzLzPvQvMMQMMPQQQQkcdginwztAuBxrwDCEwEKJAJIKOHLHINNSVXOS0RQY1X1ZU2WWY0Z2012hsgvlfavavainvaaagpallsrvhwvvfddplagoagfjlnlvvabnnpbhhhl"
+      }
+    },
+    {
+      "step": 22,
+      "tetrahedra": 56,
+      "isoSig": "4LLvLvzvvwvMALPMzLLQzLzPALALPPQPzQQQQQccdgjmwznuxrwEDFwCFLKAKJCLPCIMIJOOTWYPT1SRZ2Y20V3XXZ103123hsgsafagbinvaaaglpallsrfsibwvvfddplagoagfjlnlvvabnnpbhhhl",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 14,
+        "before_tetrahedra": 55,
+        "after_tetrahedra": 56,
+        "before_isoSig": "3LLvLLvvvzvMMAMAMvwQzLzPvQvMMQMMPQQQQkcdginwztAuBxrwDCEwEKJAJIKOHLHINNSVXOS0RQY1X1ZU2WWY0Z2012hsgvlfavavainvaaagpallsrvhwvvfddplagoagfjlnlvvabnnpbhhhl",
+        "after_isoSig": "4LLvLvzvvwvMALPMzLLQzLzPALALPPQPzQQQQQccdgjmwznuxrwEDFwCFLKAKJCLPCIMIJOOTWYPT1SRZ2Y20V3XXZ103123hsgsafagbinvaaaglpallsrfsibwvvfddplagoagfjlnlvvabnnpbhhhl"
+      }
+    },
+    {
+      "step": 23,
+      "tetrahedra": 55,
+      "isoSig": "3LLvLLzvvvLPvMQMvwLwzwQALwzQQMMMPQQQQkcdgijvyswqvDtCtvKzLHBJOBIGGHNNLJSVXOS0RQY1X1ZU2WWY0Z2012hsgvsfavinvavavgalkrfvibvwvfddfoxlagoagfjlnlgvabnnpshhht",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 17,
+        "edge_degree": 3,
+        "before_tetrahedra": 56,
+        "after_tetrahedra": 55,
+        "before_isoSig": "4LLvLvzvvwvMALPMzLLQzLzPALALPPQPzQQQQQccdgjmwznuxrwEDFwCFLKAKJCLPCIMIJOOTWYPT1SRZ2Y20V3XXZ103123hsgsafagbinvaaaglpallsrfsibwvvfddplagoagfjlnlvvabnnpbhhhl",
+        "after_isoSig": "3LLvLLzvvvLPvMQMvwLwzwQALwzQQMMMPQQQQkcdgijvyswqvDtCtvKzLHBJOBIGGHNNLJSVXOS0RQY1X1ZU2WWY0Z2012hsgvsfavinvavavgalkrfvibvwvfddfoxlagoagfjlnlgvabnnpshhht"
+      }
+    },
+    {
+      "step": 24,
+      "tetrahedra": 54,
+      "isoSig": "2LLvLLzvvvLzzMQMvwwAPzPALwzQQMzMQQQQQcdgijvyzwqvDtCtvAKzBLHJIMQGGHNNLJRUWRZPX0W0YT1VVXZY1Z01hsgvsfaainvavavgtalgkrjgaawvfddfoxlaoafjlnlgvabnnpshhht",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 26,
+        "edge_degree": 3,
+        "before_tetrahedra": 55,
+        "after_tetrahedra": 54,
+        "before_isoSig": "3LLvLLzvvvLPvMQMvwLwzwQALwzQQMMMPQQQQkcdgijvyswqvDtCtvKzLHBJOBIGGHNNLJSVXOS0RQY1X1ZU2WWY0Z2012hsgvsfavinvavavgalkrfvibvwvfddfoxlagoagfjlnlgvabnnpshhht",
+        "after_isoSig": "2LLvLLzvvvLzzMQMvwwAPzPALwzQQMzMQQQQQcdgijvyzwqvDtCtvAKzBLHJIMQGGHNNLJRUWRZPX0W0YT1VVXZY1Z01hsgvsfaainvavavgtalgkrjgaawvfddfoxlaoafjlnlgvabnnpshhht"
+      }
+    },
+    {
+      "step": 25,
+      "tetrahedra": 53,
+      "isoSig": "1LLvLLzvvvLzzMQMvMwAPzzQwALPAMzQQQQQccdgijvyzwqvDtCtvIIJzBKHIKLPQGGHMMTVQYOWZVZXS0UUWYX0YZ0hsgvsfaainvavavgaaalgkrvgaaawvfddlaoafjlnlgvabnnpshhht",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 35,
+        "edge_degree": 3,
+        "before_tetrahedra": 54,
+        "after_tetrahedra": 53,
+        "before_isoSig": "2LLvLLzvvvLzzMQMvwwAPzPALwzQQMzMQQQQQcdgijvyzwqvDtCtvAKzBLHJIMQGGHNNLJRUWRZPX0W0YT1VVXZY1Z01hsgvsfaainvavavgtalgkrjgaawvfddfoxlaoafjlnlgvabnnpshhht",
+        "after_isoSig": "1LLvLLzvvvLzzMQMvMwAPzzQwALPAMzQQQQQccdgijvyzwqvDtCtvIIJzBKHIKLPQGGHMMTVQYOWZVZXS0UUWYX0YZ0hsgvsfaainvavavgaaalgkrvgaaawvfddlaoafjlnlgvabnnpshhht"
+      }
+    },
+    {
+      "step": 26,
+      "tetrahedra": 51,
+      "isoSig": "ZLLvLLzvvvLPzMQMvwPwAwQLwzAQMzQQQQQcdgijvyszwqvCtBtvHJzAHGKOIFFGLLVKRTWNUXTXQYSSUWVYWXYhsgvsfavainvavavglalgsraavwvfddaulaafjlnlvabnnpbhhhl",
+      "move": {
+        "kind": "2-0",
+        "face_dimension": 0,
+        "face_index": 9,
+        "before_tetrahedra": 53,
+        "after_tetrahedra": 51,
+        "before_isoSig": "1LLvLLzvvvLzzMQMvMwAPzzQwALPAMzQQQQQccdgijvyzwqvDtCtvIIJzBKHIKLPQGGHMMTVQYOWZVZXS0UUWYX0YZ0hsgvsfaainvavavgaaalgkrvgaaawvfddlaoafjlnlgvabnnpshhht",
+        "after_isoSig": "ZLLvLLzvvvLPzMQMvwPwAwQLwzAQMzQQQQQcdgijvyszwqvCtBtvHJzAHGKOIFFGLLVKRTWNUXTXQYSSUWVYWXYhsgvsfavainvavavglalgsraavwvfddaulaafjlnlvabnnpbhhhl"
+      }
+    },
+    {
+      "step": 27,
+      "tetrahedra": 52,
+      "isoSig": "0LLvvLPvvvAPzvQAwzLAAzPzPLMAQMAQMQQkcdijklwvntrwDuBuwIKCyHALJPGGNHRRLWPTNVXOVXYSUYUVYWZZZhsvsaovvfvnvavavglaofnfmviwvufpppaulugdbbmlvbxnnqbhlc",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 11,
+        "before_tetrahedra": 51,
+        "after_tetrahedra": 52,
+        "before_isoSig": "ZLLvLLzvvvLPzMQMvwPwAwQLwzAQMzQQQQQcdgijvyszwqvCtBtvHJzAHGKOIFFGLLVKRTWNUXTXQYSSUWVYWXYhsgvsfavainvavavglalgsraavwvfddaulaafjlnlvabnnpbhhhl",
+        "after_isoSig": "0LLvvLPvvvAPzvQAwzLAAzPzPLMAQMAQMQQkcdijklwvntrwDuBuwIKCyHALJPGGNHRRLWPTNVXOVXYSUYUVYWZZZhsvsaovvfvnvavavglaofnfmviwvufpppaulugdbbmlvbxnnqbhlc"
+      }
+    },
+    {
+      "step": 28,
+      "tetrahedra": 53,
+      "isoSig": "1LLvvLzvwvQLMPLzvwPLwwQAAMvAQQPMQAQQccdijqolwvntpwuuwIKyHAMLECGHOJGWMXQUOQWSYPSYZTVSVZX0Z00hsvshgovvfvcfkvglafnfmaovjslvvapaulucbbdbgmlbgbbqbhilc",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 14,
+        "before_tetrahedra": 52,
+        "after_tetrahedra": 53,
+        "before_isoSig": "0LLvvLPvvvAPzvQAwzLAAzPzPLMAQMAQMQQkcdijklwvntrwDuBuwIKCyHALJPGGNHRRLWPTNVXOVXYSUYUVYWZZZhsvsaovvfvnvavavglaofnfmviwvufpppaulugdbbmlvbxnnqbhlc",
+        "after_isoSig": "1LLvvLzvwvQLMPLzvwPLwwQAAMvAQQPMQAQQccdijqolwvntpwuuwIKyHAMLECGHOJGWMXQUOQWSYPSYZTVSVZX0Z00hsvshgovvfvcfkvglafnfmaovjslvvapaulucbbdbgmlbgbbqbhilc"
+      }
+    },
+    {
+      "step": 29,
+      "tetrahedra": 52,
+      "isoSig": "0LLvvLzvwvMwAMwMvzLMAzPPAQMvMQQPPQQkcdijqowxvntpwuuwJLIBJNBPMFDHIQOKHWXRUQRWPPSZTVYVZXYZYhsvshgvavfvcfkvglasgsafaiovjslavvaaulugsggblbgabqbhil",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 18,
+        "edge_degree": 3,
+        "before_tetrahedra": 53,
+        "after_tetrahedra": 52,
+        "before_isoSig": "1LLvvLzvwvQLMPLzvwPLwwQAAMvAQQPMQAQQccdijqolwvntpwuuwIKyHAMLECGHOJGWMXQUOQWSYPSYZTVSVZX0Z00hsvshgovvfvcfkvglafnfmaovjslvvapaulucbbdbgmlbgbbqbhilc",
+        "after_isoSig": "0LLvvLzvwvMwAMwMvzLMAzPPAQMvMQQPPQQkcdijqowxvntpwuuwJLIBJNBPMFDHIQOKHWXRUQRWPPSZTVYVZXYZYhsvshgvavfvcfkvglasgsafaiovjslavvaaulugsggblbgabqbhil"
+      }
+    },
+    {
+      "step": 30,
+      "tetrahedra": 51,
+      "isoSig": "ZLLvvLzvwvMwAwMzALvAQLLMAMQMzQQMPQQcdijqowxvntwCuuDwJLIBJNBPMHKSOIQOHTVWRUQRVPPYXTXYWYXhsvshgvavfvfakvaglasgsafamkvaaslavhaaulugsgglagaqbil",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 21,
+        "edge_degree": 3,
+        "before_tetrahedra": 52,
+        "after_tetrahedra": 51,
+        "before_isoSig": "0LLvvLzvwvMwAMwMvzLMAzPPAQMvMQQPPQQkcdijqowxvntpwuuwJLIBJNBPMFDHIQOKHWXRUQRWPPSZTVYVZXYZYhsvshgvavfvcfkvglasgsafaiovjslavvaaulugsggblbgabqbhil",
+        "after_isoSig": "ZLLvvLzvwvMwAwMzALvAQLLMAMQMzQQMPQQcdijqowxvntwCuuDwJLIBJNBPMHKSOIQOHTVWRUQRVPPYXTXYWYXhsvshgvavfvfakvaglasgsafamkvaaslavhaaulugsgglagaqbil"
+      }
+    },
+    {
+      "step": 31,
+      "tetrahedra": 50,
+      "isoSig": "YLLvvLPvwLvPzvMwzLQPwwAMAQAMPQAMQQccdijkpkunsttBvIKwCHAIMAOJLGRNHPNGSUVQTPQUOOXWSWXVXWhsvsahavfvkvahlaocsgsafavmkaaslavhaaulugsgglagaqbil",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 31,
+        "edge_degree": 3,
+        "before_tetrahedra": 51,
+        "after_tetrahedra": 50,
+        "before_isoSig": "ZLLvvLzvwvMwAwMzALvAQLLMAMQMzQQMPQQcdijqowxvntwCuuDwJLIBJNBPMHKSOIQOHTVWRUQRVPPYXTXYWYXhsvshgvavfvfakvaglasgsafamkvaaslavhaaulugsgglagaqbil",
+        "after_isoSig": "YLLvvLPvwLvPzvMwzLQPwwAMAQAMPQAMQQccdijkpkunsttBvIKwCHAIMAOJLGRNHPNGSUVQTPQUOOXWSWXVXWhsvsahavfvkvahlaocsgsafavmkaaslavhaaulugsgglagaqbil"
+      }
+    },
+    {
+      "step": 32,
+      "tetrahedra": 51,
+      "isoSig": "ZLLvvLPvwLwPzvMwvPzAzPzAMQMQPQPzQQQcdijkpkrunsttAHJGzHMzOIKFRNLPNSTGSLVQUPQWOOYXTWXYVXYhsvsahagvfvkvalaggsafavmgaaalahhghhaulugagglagmaqblv",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 44,
+        "before_tetrahedra": 50,
+        "after_tetrahedra": 51,
+        "before_isoSig": "YLLvvLPvwLvPzvMwzLQPwwAMAQAMPQAMQQccdijkpkunsttBvIKwCHAIMAOJLGRNHPNGSUVQTPQUOOXWSWXVXWhsvsahavfvkvahlaocsgsafavmkaaslavhaaulugsgglagaqbil",
+        "after_isoSig": "ZLLvvLPvwLwPzvMwvPzAzPzAMQMQPQPzQQQcdijkpkrunsttAHJGzHMzOIKFRNLPNSTGSLVQUPQWOOYXTWXYVXYhsvsahagvfvkvalaggsafavmgaaalahhghhaulugagglagmaqblv"
+      }
+    },
+    {
+      "step": 33,
+      "tetrahedra": 50,
+      "isoSig": "YLLvvLPvwLwPzvMwwPPwwAwMPAQPQzMQQQccdijkpkrunsttAvGIDzGKzMHFPLNLRSJRUOTNQMMQXWSVVWXUWXhsvsahagvfvkvailavgsafavgaalahhihauluoggolagppaqblf",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 37,
+        "edge_degree": 3,
+        "before_tetrahedra": 51,
+        "after_tetrahedra": 50,
+        "before_isoSig": "ZLLvvLPvwLwPzvMwvPzAzPzAMQMQPQPzQQQcdijkpkrunsttAHJGzHMzOIKFRNLPNSTGSLVQUPQWOOYXTWXYVXYhsvsahagvfvkvalaggsafavmgaaalahhghhaulugagglagmaqblv",
+        "after_isoSig": "YLLvvLPvwLwPzvMwwPPwwAwMPAQPQzMQQQccdijkpkrunsttAvGIDzGKzMHFPLNLRSJRUOTNQMMQXWSVVWXUWXhsvsahagvfvkvailavgsafavgaalahhihauluoggolagppaqblf"
+      }
+    },
+    {
+      "step": 34,
+      "tetrahedra": 49,
+      "isoSig": "XLLvvLPvwLwPzvMMwPPwwAwAQzQMzMQQQkcdijkpkrunsttABvFHDzFJzLGEOKMKQSNRMPLLTWVQTUVWSVUWhsvsahagvfvkvamilavgsafavjaalahaulugggalagihaqblvf",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 45,
+        "edge_degree": 3,
+        "before_tetrahedra": 50,
+        "after_tetrahedra": 49,
+        "before_isoSig": "YLLvvLPvwLwPzvMwwPPwwAwMPAQPQzMQQQccdijkpkrunsttAvGIDzGKzMHFPLNLRSJRUOTNQMMQXWSVVWXUWXhsvsahagvfvkvailavgsafavgaalahhihauluoggolagppaqblf",
+        "after_isoSig": "XLLvvLPvwLwPzvMMwPPwwAwAQzQMzMQQQkcdijkpkrunsttABvFHDzFJzLGEOKMKQSNRMPLLTWVQTUVWSVUWhsvsahagvfvkvamilavgsafavjaalahaulugggalagihaqblvf"
+      }
+    },
+    {
+      "step": 35,
+      "tetrahedra": 48,
+      "isoSig": "WLLvvLPvwLwPzvMMwPPwwAwAQzQMAMQQQcdijkpkrunsttABvFHDzFJzLGEOKMKQSNRMTTLLPVUQTVUVSUhsvsahagvfvkvamilavgsafavjaalahauluaaggolagmmaqbl",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 51,
+        "edge_degree": 3,
+        "before_tetrahedra": 49,
+        "after_tetrahedra": 48,
+        "before_isoSig": "XLLvvLPvwLwPzvMMwPPwwAwAQzQMzMQQQkcdijkpkrunsttABvFHDzFJzLGEOKMKQSNRMPLLTWVQTUVWSVUWhsvsahagvfvkvamilavgsafavjaalahaulugggalagihaqblvf",
+        "after_isoSig": "WLLvvLPvwLwPzvMMwPPwwAwAQzQMAMQQQcdijkpkrunsttABvFHDzFJzLGEOKMKQSNRMTTLLPVUQTVUVSUhsvsahagvfvkvamilavgsafavjaalahauluaaggolagmmaqbl"
+      }
+    },
+    {
+      "step": 36,
+      "tetrahedra": 46,
+      "isoSig": "ULLvvLPvwLwPzvMMwPPwwAMAQzQAMQQkcdijkpkrunsttABvFHDzFJzLGIEOKMKPRNQMNLLSSTPTSRThsvsahagvfvkvamilavgsafavmjaalahaulugggalagaqbl",
+      "move": {
+        "kind": "2-0",
+        "face_dimension": 0,
+        "face_index": 8,
+        "before_tetrahedra": 48,
+        "after_tetrahedra": 46,
+        "before_isoSig": "WLLvvLPvwLwPzvMMwPPwwAwAQzQMAMQQQcdijkpkrunsttABvFHDzFJzLGEOKMKQSNRMTTLLPVUQTVUVSUhsvsahagvfvkvamilavgsafavjaalahauluaaggolagmmaqbl",
+        "after_isoSig": "ULLvvLPvwLwPzvMMwPPwwAMAQzQAMQQkcdijkpkrunsttABvFHDzFJzLGIEOKMKPRNQMNLLSSTPTSRThsvsahagvfvkvamilavgsafavmjaalahaulugggalagaqbl"
+      }
+    },
+    {
+      "step": 37,
+      "tetrahedra": 45,
+      "isoSig": "TLLvvLPvwLwPzvMMwPPwwQwAQzQQMQQcdijkpkrunsttABvFHDzFJzLIGENKMKPROQMOMLLSPQSRShsvsahagvfvkvamilavgsafaavjaalahatlugfggagjabl",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 51,
+        "edge_degree": 3,
+        "before_tetrahedra": 46,
+        "after_tetrahedra": 45,
+        "before_isoSig": "ULLvvLPvwLwPzvMMwPPwwAMAQzQAMQQkcdijkpkrunsttABvFHDzFJzLGIEOKMKPRNQMNLLSSTPTSRThsvsahagvfvkvamilavgsafavmjaalahaulugggalagaqbl",
+        "after_isoSig": "TLLvvLPvwLwPzvMMwPPwwQwAQzQQMQQcdijkpkrunsttABvFHDzFJzLIGENKMKPROQMOMLLSPQSRShsvsahagvfvkvamilavgsafaavjaalahatlugfggagjabl"
+      }
+    },
+    {
+      "step": 38,
+      "tetrahedra": 46,
+      "isoSig": "ULLvvLQvwLwvvMMwMAMLPzPzMPQQMQQkcdimjkokqsszAuxEGxCEJyIFDNKKPSORQIOQMLLMQTPRTSThsvasahagkvamitlaavsaoivjaaahatlhggvnggbsagjabl",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 32,
+        "before_tetrahedra": 45,
+        "after_tetrahedra": 46,
+        "before_isoSig": "TLLvvLPvwLwPzvMMwPPwwQwAQzQQMQQcdijkpkrunsttABvFHDzFJzLIGENKMKPROQMOMLLSPQSRShsvsahagvfvkvamilavgsafaavjaalahatlugfggagjabl",
+        "after_isoSig": "ULLvvLQvwLwvvMMwMAMLPzPzMPQQMQQkcdimjkokqsszAuxEGxCEJyIFDNKKPSORQIOQMLLMQTPRTSThsvasahagkvamitlaavsaoivjaaahatlhggvnggbsagjabl"
+      }
+    },
+    {
+      "step": 39,
+      "tetrahedra": 45,
+      "isoSig": "TLLvvLQvwLwvvMMwMAQLLAPzMPQQPQQcdimjkokqsszAuxEGxCyEILKFDMJJORNQPLNPKKPSOQSRShsvasahagkvamitlaavgsaaavjaaahatlhggvgggagjabl",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 43,
+        "edge_degree": 3,
+        "before_tetrahedra": 46,
+        "after_tetrahedra": 45,
+        "before_isoSig": "ULLvvLQvwLwvvMMwMAMLPzPzMPQQMQQkcdimjkokqsszAuxEGxCEJyIFDNKKPSORQIOQMLLMQTPRTSThsvasahagkvamitlaavsaoivjaaahatlhggvnggbsagjabl",
+        "after_isoSig": "TLLvvLQvwLwvvMMwMAQLLAPzMPQQPQQcdimjkokqsszAuxEGxCyEILKFDMJJORNQPLNPKKPSOQSRShsvasahagkvamitlaavgsaaavjaaahatlhggvgggagjabl"
+      }
+    },
+    {
+      "step": 40,
+      "tetrahedra": 44,
+      "isoSig": "SLLvvLQvwLwvvMMwMAQLLAPPMPQMQQccdimjkokqsszAuxEGxCyEIHKFDMJHJOQNPLLKKNROPRQRhsvasahagkvamitlaavgsaaavjaalahatlaoggcagjabl",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 50,
+        "edge_degree": 3,
+        "before_tetrahedra": 45,
+        "after_tetrahedra": 44,
+        "before_isoSig": "TLLvvLQvwLwvvMMwMAQLLAPzMPQQPQQcdimjkokqsszAuxEGxCyEILKFDMJJORNQPLNPKKPSOQSRShsvasahagkvamitlaavgsaaavjaaahatlhggvgggagjabl",
+        "after_isoSig": "SLLvvLQvwLwvvMMwMAQLLAPPMPQMQQccdimjkokqsszAuxEGxCyEIHKFDMJHJOQNPLLKKNROPRQRhsvasahagkvamitlaavgsaaavjaalahatlaoggcagjabl"
+      }
+    },
+    {
+      "step": 41,
+      "tetrahedra": 43,
+      "isoSig": "RLLvvLQvwLwvvMMwMQMMwAPPzQQPQkcdimjkokqsszACxEGxyCyEHIJFDLHKNPMOKJJMQNOQPQhsvasahagkvamhtlaagbgsaaavjaahhatlaggcagjabl",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 37,
+        "edge_degree": 3,
+        "before_tetrahedra": 44,
+        "after_tetrahedra": 43,
+        "before_isoSig": "SLLvvLQvwLwvvMMwMAQLLAPPMPQMQQccdimjkokqsszAuxEGxCyEIHKFDMJHJOQNPLLKKNROPRQRhsvasahagkvamitlaavgsaaavjaalahatlaoggcagjabl",
+        "after_isoSig": "RLLvvLQvwLwvvMMwMQMMwAPPzQQPQkcdimjkokqsszACxEGxyCyEHIJFDLHKNPMOKJJMQNOQPQhsvasahagkvamhtlaagbgsaaavjaahhatlaggcagjabl"
+      }
+    },
+    {
+      "step": 42,
+      "tetrahedra": 44,
+      "isoSig": "SLLvvLQvwLwvvMMALQMPzwPPzQQPQQccdimjkokqsszACvFGxyCyHIFJDMHKOLFPKJJNNQROPRQRhsvasahagkvamhptaagbgaavajaahhxblaggcgwagjajp",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 45,
+        "before_tetrahedra": 43,
+        "after_tetrahedra": 44,
+        "before_isoSig": "RLLvvLQvwLwvvMMwMQMMwAPPzQQPQkcdimjkokqsszACxEGxyCyEHIJFDLHKNPMOKJJMQNOQPQhsvasahagkvamhtlaagbgsaaavjaahhatlaggcagjabl",
+        "after_isoSig": "SLLvvLQvwLwvvMMALQMPzwPPzQQPQQccdimjkokqsszACvFGxyCyHIFJDMHKOLFPKJJNNQROPRQRhsvasahagkvamhptaagbgaavajaahhxblaggcgwagjajp"
+      }
+    },
+    {
+      "step": 43,
+      "tetrahedra": 43,
+      "isoSig": "RLLvvLQvwLwzvMMAwAMMvAwMQQMQQkcdimjkokqtssyzBvtxBxGHICKGMJFOFNNIILPQMNOQPQhsvasahagvkvamhpfgbgaaajaahxflohmgggwagkjajp",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 34,
+        "edge_degree": 3,
+        "before_tetrahedra": 44,
+        "after_tetrahedra": 43,
+        "before_isoSig": "SLLvvLQvwLwvvMMALQMPzwPPzQQPQQccdimjkokqsszACvFGxyCyHIFJDMHKOLFPKJJNNQROPRQRhsvasahagkvamhptaagbgaavajaahhxblaggcgwagjajp",
+        "after_isoSig": "RLLvvLQvwLwzvMMAwAMMvAwMQQMQQkcdimjkokqtssyzBvtxBxGHICKGMJFOFNNIILPQMNOQPQhsvasahagvkvamhpfgbgaaajaahxflohmgggwagkjajp"
+      }
+    },
+    {
+      "step": 44,
+      "tetrahedra": 42,
+      "isoSig": "QLLvvLQvwLwzvMMAwAMMwAwwQQQQQcdimjkokqtssyzBvtxBxGHIDCJGLNFMPMIIOOLPMNOPhsvasahagvkvamhpfgbgaaavjaahlohdmggvvgvkjvk",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 45,
+        "edge_degree": 3,
+        "before_tetrahedra": 43,
+        "after_tetrahedra": 42,
+        "before_isoSig": "RLLvvLQvwLwzvMMAwAMMvAwMQQMQQkcdimjkokqtssyzBvtxBxGHICKGMJFOFNNIILPQMNOQPQhsvasahagvkvamhpfgbgaaajaahxflohmgggwagkjajp",
+        "after_isoSig": "QLLvvLQvwLwzvMMAwAMMwAwwQQQQQcdimjkokqtssyzBvtxBxGHIDCJGLNFMPMIIOOLPMNOPhsvasahagvkvamhpfgbgaaavjaahlohdmggvvgvkjvk"
+      }
+    },
+    {
+      "step": 45,
+      "tetrahedra": 41,
+      "isoSig": "PLLvvLQvwLwzvMMAMAMMwAAwPQQQccdimjkokqtssyzBvtExBxFGHDCIFEKHHMMKNOLMNOOhsvasahagvkvamhpfagbgaaavjaakhggvvgvjjvkvf",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 43,
+        "edge_degree": 3,
+        "before_tetrahedra": 42,
+        "after_tetrahedra": 41,
+        "before_isoSig": "QLLvvLQvwLwzvMMAwAMMwAwwQQQQQcdimjkokqtssyzBvtxBxGHIDCJGLNFMPMIIOOLPMNOPhsvasahagvkvamhpfgbgaaavjaahlohdmggvvgvkjvk",
+        "after_isoSig": "PLLvvLQvwLwzvMMAMAMMwAAwPQQQccdimjkokqtssyzBvtExBxFGHDCIFEKHHMMKNOLMNOOhsvasahagvkvamhpfagbgaaavjaakhggvvgvjjvkvf"
+      }
+    },
+    {
+      "step": 46,
+      "tetrahedra": 40,
+      "isoSig": "OLLvvLQvwLwzvMMAMAMMwAQwQQPkcdimjkokqtssyzBvtExBxFGHDCIFEJKJHHLLKLNNNhsvasahagvkvamhpfagbgaaavjaakehxggvvgvttt",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 43,
+        "edge_degree": 3,
+        "before_tetrahedra": 41,
+        "after_tetrahedra": 40,
+        "before_isoSig": "PLLvvLQvwLwzvMMAMAMMwAAwPQQQccdimjkokqtssyzBvtExBxFGHDCIFEKHHMMKNOLMNOOhsvasahagvkvamhpfagbgaaavjaakhggvvgvjjvkvf",
+        "after_isoSig": "OLLvvLQvwLwzvMMAMAMMwAQwQQPkcdimjkokqtssyzBvtExBxFGHDCIFEJKJHHLLKLNNNhsvasahagvkvamhpfagbgaaavjaakehxggvvgvttt"
+      }
+    },
+    {
+      "step": 47,
+      "tetrahedra": 38,
+      "isoSig": "MLLvvLQvwLwzvMMAMAMMwAQMQQccdimjkokqtssyzBvtExBxFGHDCIFEJKJJHHLLKLhsvasahagvkvamhpfagbgaaavjaakehtxggvvgv",
+      "move": {
+        "kind": "2-0",
+        "face_dimension": 0,
+        "face_index": 7,
+        "before_tetrahedra": 40,
+        "after_tetrahedra": 38,
+        "before_isoSig": "OLLvvLQvwLwzvMMAMAMMwAQwQQPkcdimjkokqtssyzBvtExBxFGHDCIFEJKJHHLLKLNNNhsvasahagvkvamhpfagbgaaavjaakehxggvvgvttt",
+        "after_isoSig": "MLLvvLQvwLwzvMMAMAMMwAQMQQccdimjkokqtssyzBvtExBxFGHDCIFEJKJJHHLLKLhsvasahagvkvamhpfagbgaaavjaakehtxggvvgv"
+      }
+    },
+    {
+      "step": 48,
+      "tetrahedra": 37,
+      "isoSig": "LLLvvLQvwLwzvMMAMAMMMMQMQkcdimjkokqtssyCBvtExBxFGHDDCIJFEEHHKKJKhsvasahagvkvaahpfagbgaaavvgaaakvggvvgv",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 40,
+        "edge_degree": 3,
+        "before_tetrahedra": 38,
+        "after_tetrahedra": 37,
+        "before_isoSig": "MLLvvLQvwLwzvMMAMAMMwAQMQQccdimjkokqtssyzBvtExBxFGHDCIFEJKJJHHLLKLhsvasahagvkvamhpfagbgaaavjaakehtxggvvgv",
+        "after_isoSig": "LLLvvLQvwLwzvMMAMAMMMMQMQkcdimjkokqtssyCBvtExBxFGHDDCIJFEEHHKKJKhsvasahagvkvaahpfagbgaaavvgaaakvggvvgv"
+      }
+    },
+    {
+      "step": 49,
+      "tetrahedra": 38,
+      "isoSig": "MLLvvLQvzLvwLMLMPAMMAAQQPQccdimjkkktqsqBvtCFxBxGHIECEDJKGFDFIILLKLhsvasahavnkglpfuagbgaaavovkaaakboggvvgv",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 20,
+        "before_tetrahedra": 37,
+        "after_tetrahedra": 38,
+        "before_isoSig": "LLLvvLQvwLwzvMMAMAMMMMQMQkcdimjkokqtssyCBvtExBxFGHDDCIJFEEHHKKJKhsvasahagvkvaahpfagbgaaavvgaaakvggvvgv",
+        "after_isoSig": "MLLvvLQvzLvwLMLMPAMMAAQQPQccdimjkkktqsqBvtCFxBxGHIECEDJKGFDFIILLKLhsvasahavnkglpfuagbgaaavovkaaakboggvvgv"
+      }
+    },
+    {
+      "step": 50,
+      "tetrahedra": 37,
+      "isoSig": "LLLvvLQvALvwvAzMQzAQPPQMQkcdimjkokkstAusBAEwwFGHDBDCIJFECEHHKKJKhsvasahhavahpfumaggaaavovkaaajboggvvgv",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 27,
+        "edge_degree": 3,
+        "before_tetrahedra": 38,
+        "after_tetrahedra": 37,
+        "before_isoSig": "MLLvvLQvzLvwLMLMPAMMAAQQPQccdimjkkktqsqBvtCFxBxGHIECEDJKGFDFIILLKLhsvasahavnkglpfuagbgaaavovkaaakboggvvgv",
+        "after_isoSig": "LLLvvLQvALvwvAzMQzAQPPQMQkcdimjkokkstAusBAEwwFGHDBDCIJFECEHHKKJKhsvasahhavahpfumaggaaavovkaaajboggvvgv"
+      }
+    },
+    {
+      "step": 51,
+      "tetrahedra": 36,
+      "isoSig": "KLLvvLQvALvwvMAMQzAAMQAQQcdimjkokkstxyusBADwwEFGCCHIEBDDGGJJIJhsvasahhavaahpfxmaggaaavvaaabjwggvvgv",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 28,
+        "edge_degree": 3,
+        "before_tetrahedra": 37,
+        "after_tetrahedra": 36,
+        "before_isoSig": "LLLvvLQvALvwvAzMQzAQPPQMQkcdimjkokkstAusBAEwwFGHDBDCIJFECEHHKKJKhsvasahhavahpfumaggaaavovkaaajboggvvgv",
+        "after_isoSig": "KLLvvLQvALvwvMAMQzAAMQAQQcdimjkokkstxyusBADwwEFGCCHIEBDDGGJJIJhsvasahhavaahpfxmaggaaavvaaabjwggvvgv"
+      }
+    },
+    {
+      "step": 52,
+      "tetrahedra": 35,
+      "isoSig": "JLLvvLQvALvwLQAwMPPzQPQQccdimjkokksrtrxyuswwDEFAAGHDCCCFFIIHIhsvasahhavkavahpfggaaavvaaaoooggvvgv",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 28,
+        "edge_degree": 3,
+        "before_tetrahedra": 36,
+        "after_tetrahedra": 35,
+        "before_isoSig": "KLLvvLQvALvwvMAMQzAAMQAQQcdimjkokkstxyusBADwwEFGCCHIEBDDGGJJIJhsvasahhavaahpfxmaggaaavvaaabjwggvvgv",
+        "after_isoSig": "JLLvvLQvALvwLQAwMPPzQPQQccdimjkokksrtrxyuswwDEFAAGHDCCCFFIIHIhsvasahhavkavahpfggaaavvaaaoooggvvgv"
+      }
+    },
+    {
+      "step": 53,
+      "tetrahedra": 33,
+      "isoSig": "HLLvvLQvALvwLQAQzAAMAQQcdimjkokksrtrxyusswwBCDAAEFBDDGGFGhsvasahhavkavahpfoggaaavvaaaggvvgv",
+      "move": {
+        "kind": "2-0",
+        "face_dimension": 0,
+        "face_index": 6,
+        "before_tetrahedra": 35,
+        "after_tetrahedra": 33,
+        "before_isoSig": "JLLvvLQvALvwLQAwMPPzQPQQccdimjkokksrtrxyuswwDEFAAGHDCCCFFIIHIhsvasahhavkavahpfggaaavvaaaoooggvvgv",
+        "after_isoSig": "HLLvvLQvALvwLQAQzAAMAQQcdimjkokksrtrxyusswwBCDAAEFBDDGGFGhsvasahhavkavahpfoggaaavvaaaggvvgv"
+      }
+    },
+    {
+      "step": 54,
+      "tetrahedra": 34,
+      "isoSig": "ILLvvLQvALvwLAzQAAQzQAQkcdimjkokksrtrusswzwzDEyABECFCGEHGHHhsvasahhavkavpfogbgbaagokhvuktgvgow",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 32,
+        "before_tetrahedra": 33,
+        "after_tetrahedra": 34,
+        "before_isoSig": "HLLvvLQvALvwLQAQzAAMAQQcdimjkokksrtrxyusswwBCDAAEFBDDGGFGhsvasahhavkavahpfoggaaavvaaaggvvgv",
+        "after_isoSig": "ILLvvLQvALvwLAzQAAQzQAQkcdimjkokksrtrusswzwzDEyABECFCGEHGHHhsvasahhavkavpfogbgbaagokhvuktgvgow"
+      }
+    },
+    {
+      "step": 55,
+      "tetrahedra": 33,
+      "isoSig": "HLLvvLQvALvwLQzQAAwQQPQcdimjkokksrtrxusswzwzCDEAFDBFEDGGGhsvasahhavkavapfogbgbaaaklhkaxgvwk",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 33,
+        "edge_degree": 3,
+        "before_tetrahedra": 34,
+        "after_tetrahedra": 33,
+        "before_isoSig": "ILLvvLQvALvwLAzQAAQzQAQkcdimjkokksrtrusswzwzDEyABECFCGEHGHHhsvasahhavkavpfogbgbaagokhvuktgvgow",
+        "after_isoSig": "HLLvvLQvALvwLQzQAAwQQPQcdimjkokksrtrxusswzwzCDEAFDBFEDGGGhsvasahhavkavapfogbgbaaaklhkaxgvwk"
+      }
+    },
+    {
+      "step": 56,
+      "tetrahedra": 32,
+      "isoSig": "GLLvvLQvALvwLQAQAAMzQQccdimjkokksrtrxyusswzwzBCyCDECFEFFhsvasahhavkavahpfogbgbaaghxugvgwo",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 32,
+        "edge_degree": 3,
+        "before_tetrahedra": 33,
+        "after_tetrahedra": 32,
+        "before_isoSig": "HLLvvLQvALvwLQzQAAwQQPQcdimjkokksrtrxusswzwzCDEAFDBFEDGGGhsvasahhavkavapfogbgbaaaklhkaxgvwk",
+        "after_isoSig": "GLLvvLQvALvwLQAQAAMzQQccdimjkokksrtrxyusswzwzBCyCDECFEFFhsvasahhavkavahpfogbgbaaghxugvgwo"
+      }
+    },
+    {
+      "step": 57,
+      "tetrahedra": 31,
+      "isoSig": "FLLvvLQvALvMMMPQMMwPQkcdimjkokkspprtussywxwxABBCDBEDEEhsvasahhavokkapfotgbgbaahtpgvbfb",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 24,
+        "edge_degree": 3,
+        "before_tetrahedra": 32,
+        "after_tetrahedra": 31,
+        "before_isoSig": "GLLvvLQvALvwLQAQAAMzQQccdimjkokksrtrxyusswzwzBCyCDECFEFFhsvasahhavkavahpfogbgbaaghxugvgwo",
+        "after_isoSig": "FLLvvLQvALvMMMPQMMwPQkcdimjkokkspprtussywxwxABBCDBEDEEhsvasahhavokkapfotgbgbaahtpgvbfb"
+      }
+    },
+    {
+      "step": 58,
+      "tetrahedra": 30,
+      "isoSig": "ELLvvLQvALvMMMPQMMQzQcdimjkokkspprtussywxwxABBzzBDDDhsvasahhavokkapfotgbgbaahrogppp",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 31,
+        "edge_degree": 3,
+        "before_tetrahedra": 31,
+        "after_tetrahedra": 30,
+        "before_isoSig": "FLLvvLQvALvMMMPQMMwPQkcdimjkokkspprtussywxwxABBCDBEDEEhsvasahhavokkapfotgbgbaahtpgvbfb",
+        "after_isoSig": "ELLvvLQvALvMMMPQMMQzQcdimjkokkspprtussywxwxABBzzBDDDhsvasahhavokkapfotgbgbaahrogppp"
+      }
+    },
+    {
+      "step": 59,
+      "tetrahedra": 28,
+      "isoSig": "CLLvvLQvALvMMMPQMMQkcdimjkokkspprtussywxwxABBzzABhsvasahhavokkapfotgbgbaahropg",
+      "move": {
+        "kind": "2-0",
+        "face_dimension": 0,
+        "face_index": 5,
+        "before_tetrahedra": 30,
+        "after_tetrahedra": 28,
+        "before_isoSig": "ELLvvLQvALvMMMPQMMQzQcdimjkokkspprtussywxwxABBzzBDDDhsvasahhavokkapfotgbgbaahrogppp",
+        "after_isoSig": "CLLvvLQvALvMMMPQMMQkcdimjkokkspprtussywxwxABBzzABhsvasahhavokkapfotgbgbaahropg"
+      }
+    },
+    {
+      "step": 60,
+      "tetrahedra": 29,
+      "isoSig": "DLLvvLQvALvMMvPQAQQQccdimjkokkspprsszuyxAxCwyAyBBCChsvasahhavokkfotgovsgtbgkbroll",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 27,
+        "before_tetrahedra": 28,
+        "after_tetrahedra": 29,
+        "before_isoSig": "CLLvvLQvALvMMMPQMMQkcdimjkokkspprtussywxwxABBzzABhsvasahhavokkapfotgbgbaahropg",
+        "after_isoSig": "DLLvvLQvALvMMvPQAQQQccdimjkokkspprsszuyxAxCwyAyBBCChsvasahhavokkfotgovsgtbgkbroll"
+      }
+    },
+    {
+      "step": 61,
+      "tetrahedra": 28,
+      "isoSig": "CLLvvLQvALvMQwPMMQQkcdimjkokkspptrtssxAyABwAyzzBBhsvasahhavokakafotasttbmkroll",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 26,
+        "edge_degree": 3,
+        "before_tetrahedra": 29,
+        "after_tetrahedra": 28,
+        "before_isoSig": "DLLvvLQvALvMMvPQAQQQccdimjkokkspprsszuyxAxCwyAyBBCChsvasahhavokkfotgovsgtbgkbroll",
+        "after_isoSig": "CLLvvLQvALvMQwPMMQQkcdimjkokkspptrtssxAyABwAyzzBBhsvasahhavokakafotasttbmkroll"
+      }
+    },
+    {
+      "step": 62,
+      "tetrahedra": 27,
+      "isoSig": "BLLvvLQvALvMQMPwQQQcdimjkokkspptrtussxyzAwzAyyAhsvasahhavokakapfotvtlbmirog",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 25,
+        "edge_degree": 3,
+        "before_tetrahedra": 28,
+        "after_tetrahedra": 27,
+        "before_isoSig": "CLLvvLQvALvMQwPMMQQkcdimjkokkspptrtssxAyABwAyzzBBhsvasahhavokakafotasttbmkroll",
+        "after_isoSig": "BLLvvLQvALvMQMPwQQQcdimjkokkspptrtussxyzAwzAyyAhsvasahhavokakapfotvtlbmirog"
+      }
+    },
+    {
+      "step": 63,
+      "tetrahedra": 26,
+      "isoSig": "ALLvvLQvALzMQMPMPQccdimjkokkqspptrtwswxyvyzxzzhsvasahhasvokakatotatbmdkxf",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 24,
+        "edge_degree": 3,
+        "before_tetrahedra": 27,
+        "after_tetrahedra": 26,
+        "before_isoSig": "BLLvvLQvALvMQMPwQQQcdimjkokkspptrtussxyzAwzAyyAhsvasahhavokakapfotvtlbmirog",
+        "after_isoSig": "ALLvvLQvALzMQMPMPQccdimjkokkqspptrtwswxyvyzxzzhsvasahhasvokakatotatbmdkxf"
+      }
+    },
+    {
+      "step": 64,
+      "tetrahedra": 25,
+      "isoSig": "zLLvvLQvALzQQMPwQkcdimjkokkqsupptrtvsvwwwyyyhsvasahhasvaokakatotaskggg",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 24,
+        "edge_degree": 3,
+        "before_tetrahedra": 26,
+        "after_tetrahedra": 25,
+        "before_isoSig": "ALLvvLQvALzMQMPMPQccdimjkokkqspptrtwswxyvyzxzzhsvasahhasvokakatotatbmdkxf",
+        "after_isoSig": "zLLvvLQvALzQQMPwQkcdimjkokkqsupptrtvsvwwwyyyhsvasahhasvaokakatotaskggg"
+      }
+    },
+    {
+      "step": 65,
+      "tetrahedra": 23,
+      "isoSig": "xLLvvLQvALzQQMPQccdimjkokkqsupptrtvsvwuwwhsvasahhasvaokakatotagsk",
+      "move": {
+        "kind": "2-0",
+        "face_dimension": 0,
+        "face_index": 4,
+        "before_tetrahedra": 25,
+        "after_tetrahedra": 23,
+        "before_isoSig": "zLLvvLQvALzQQMPwQkcdimjkokkqsupptrtvsvwwwyyyhsvasahhasvaokakatotaskggg",
+        "after_isoSig": "xLLvvLQvALzQQMPQccdimjkokkqsupptrtvsvwuwwhsvasahhasvaokakatotagsk"
+      }
+    },
+    {
+      "step": 66,
+      "tetrahedra": 24,
+      "isoSig": "yLvvAvMAwLAPAQLQQbhimkkhjsnnpuprttvswvxwxxhhahhaojbscshvcllafmffnww",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 4,
+        "before_tetrahedra": 23,
+        "after_tetrahedra": 24,
+        "before_isoSig": "xLLvvLQvALzQQMPQccdimjkokkqsupptrtvsvwuwwhsvasahhasvaokakatotagsk",
+        "after_isoSig": "yLvvAvMAwLAPAQLQQbhimkkhjsnnpuprttvswvxwxxhhahhaojbscshvcllafmffnww"
+      }
+    },
+    {
+      "step": 67,
+      "tetrahedra": 23,
+      "isoSig": "xLLvLMzLvMMAPQMQccdghijnkrproopvutuswvuwwhsgbvshhkvkokkhtttukggsv",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 6,
+        "edge_degree": 3,
+        "before_tetrahedra": 24,
+        "after_tetrahedra": 23,
+        "before_isoSig": "yLvvAvMAwLAPAQLQQbhimkkhjsnnpuprttvswvxwxxhhahhaojbscshvcllafmffnww",
+        "after_isoSig": "xLLvLMzLvMMAPQMQccdghijnkrproopvutuswvuwwhsgbvshhkvkokkhtttukggsv"
+      }
+    },
+    {
+      "step": 68,
+      "tetrahedra": 22,
+      "isoSig": "wLLvLLLvQwPPQPQkcdjijpjklnrtupqqvuvstvuhsbvbhgpuohaanokalovnso",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 7,
+        "edge_degree": 3,
+        "before_tetrahedra": 23,
+        "after_tetrahedra": 22,
+        "before_isoSig": "xLLvLMzLvMMAPQMQccdghijnkrproopvutuswvuwwhsgbvshhkvkokkhtttukggsv",
+        "after_isoSig": "wLLvLLLvQwPPQPQkcdjijpjklnrtupqqvuvstvuhsbvbhgpuohaanokalovnso"
+      }
+    },
+    {
+      "step": 69,
+      "tetrahedra": 21,
+      "isoSig": "vLLvLLLvAMMMQQQcdjijpjlrsnrtupqqssutuhsbvbhgustovaanokaaluo",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 16,
+        "edge_degree": 3,
+        "before_tetrahedra": 22,
+        "after_tetrahedra": 21,
+        "before_isoSig": "wLLvLLLvQwPPQPQkcdjijpjklnrtupqqvuvstvuhsbvbhgpuohaanokalovnso",
+        "after_isoSig": "vLLvLLLvAMMMQQQcdjijpjlrsnrtupqqssutuhsbvbhgustovaanokaaluo"
+      }
+    },
+    {
+      "step": 70,
+      "tetrahedra": 22,
+      "isoSig": "wLLvLAvLMMwQwQQkcdghjookllqsrppvtuvvutuhsgbghdatgbasokhpdpaggg",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 14,
+        "before_tetrahedra": 21,
+        "after_tetrahedra": 22,
+        "before_isoSig": "vLLvLLLvAMMMQQQcdjijpjlrsnrtupqqssutuhsbvbhgustovaanokaaluo",
+        "after_isoSig": "wLLvLAvLMMwQwQQkcdghjookllqsrppvtuvvutuhsgbghdatgbasokhpdpaggg"
+      }
+    },
+    {
+      "step": 71,
+      "tetrahedra": 21,
+      "isoSig": "vLLvLPLzALwQQPQcdjiijmmjqpqooqsrtuutuhsbbvbipgtvmokappbvvbb",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 15,
+        "edge_degree": 3,
+        "before_tetrahedra": 22,
+        "after_tetrahedra": 21,
+        "before_isoSig": "wLLvLAvLMMwQwQQkcdghjookllqsrppvtuvvutuhsgbghdatgbasokhpdpaggg",
+        "after_isoSig": "vLLvLPLzALwQQPQcdjiijmmjqpqooqsrtuutuhsbbvbipgtvmokappbvvbb"
+      }
+    },
+    {
+      "step": 72,
+      "tetrahedra": 20,
+      "isoSig": "uLLvLPLzALzQQQccdjiijmmjqoqooqrtsstthsbbvbipgtsmokapetsrv",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 18,
+        "edge_degree": 3,
+        "before_tetrahedra": 21,
+        "after_tetrahedra": 20,
+        "before_isoSig": "vLLvLPLzALwQQPQcdjiijmmjqpqooqsrtuutuhsbbvbipgtvmokappbvvbb",
+        "after_isoSig": "uLLvLPLzALzQQQccdjiijmmjqoqooqrtsstthsbbvbipgtsmokapetsrv"
+      }
+    },
+    {
+      "step": 73,
+      "tetrahedra": 19,
+      "isoSig": "tLLvLPLzALQQMkcdjiijmmjqrorqooqssshsbbvbipgtdsimokaaas",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 18,
+        "edge_degree": 3,
+        "before_tetrahedra": 20,
+        "after_tetrahedra": 19,
+        "before_isoSig": "uLLvLPLzALzQQQccdjiijmmjqoqooqrtsstthsbbvbipgtsmokapetsrv",
+        "after_isoSig": "tLLvLPLzALQQMkcdjiijmmjqrorqooqssshsbbvbipgtdsimokaaas"
+      }
+    },
+    {
+      "step": 74,
+      "tetrahedra": 17,
+      "isoSig": "rLLvLLLMPMQQccehikkolkponmqqopqiiivimudduusfsobog",
+      "move": {
+        "kind": "2-0",
+        "face_dimension": 0,
+        "face_index": 3,
+        "before_tetrahedra": 19,
+        "after_tetrahedra": 17,
+        "before_isoSig": "tLLvLPLzALQQMkcdjiijmmjqrorqooqssshsbbvbipgtdsimokaaas",
+        "after_isoSig": "rLLvLLLMPMQQccehikkolkponmqqopqiiivimudduusfsobog"
+      }
+    },
+    {
+      "step": 75,
+      "tetrahedra": 18,
+      "isoSig": "sLLvLPLPvMQQQcdjiijmnpqrqoqroprphsbbvbiahstvwbmwgaf",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 4,
+        "before_tetrahedra": 17,
+        "after_tetrahedra": 18,
+        "before_isoSig": "rLLvLLLMPMQQccehikkolkponmqqopqiiivimudduusfsobog",
+        "after_isoSig": "sLLvLPLPvMQQQcdjiijmnpqrqoqroprphsbbvbiahstvwbmwgaf"
+      }
+    },
+    {
+      "step": 76,
+      "tetrahedra": 19,
+      "isoSig": "tLLvLPvwLMQQQkcdjiihnqrsrprspoqosqhsbbvohhstvwbmwrofpf",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 9,
+        "before_tetrahedra": 18,
+        "after_tetrahedra": 19,
+        "before_isoSig": "sLLvLPLPvMQQQcdjiijmnpqrqoqroprphsbbvbiahstvwbmwgaf",
+        "after_isoSig": "tLLvLPvwLMQQQkcdjiihnqrsrprspoqosqhsbbvohhstvwbmwrofpf"
+      }
+    },
+    {
+      "step": 77,
+      "tetrahedra": 18,
+      "isoSig": "sLLvLPvwLQQQQcdjiihnqormrpronqpqhsbbvohhosvvwbooonf",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 13,
+        "edge_degree": 3,
+        "before_tetrahedra": 19,
+        "after_tetrahedra": 18,
+        "before_isoSig": "tLLvLPvwLMQQQkcdjiihnqrsrprspoqosqhsbbvohhstvwbmwrofpf",
+        "after_isoSig": "sLLvLPvwLQQQQcdjiihnqormrpronqpqhsbbvohhosvvwbooonf"
+      }
+    },
+    {
+      "step": 78,
+      "tetrahedra": 17,
+      "isoSig": "rLvvLAwLMQQQcbfkilonokmplnqqpqpmmnceamifemeqcfcwr",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 15,
+        "edge_degree": 3,
+        "before_tetrahedra": 18,
+        "after_tetrahedra": 17,
+        "before_isoSig": "sLLvLPvwLQQQQcdjiihnqormrpronqpqhsbbvohhosvvwbooonf",
+        "after_isoSig": "rLvvLAwLMQQQcbfkilonokmplnqqpqpmmnceamifemeqcfcwr"
+      }
+    },
+    {
+      "step": 79,
+      "tetrahedra": 16,
+      "isoSig": "qLvvLAMvQQQkbfkilhlnkmolppopommnceodifemelwcor",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 14,
+        "edge_degree": 3,
+        "before_tetrahedra": 17,
+        "after_tetrahedra": 16,
+        "before_isoSig": "rLvvLAwLMQQQcbfkilonokmplnqqpqpmmnceamifemeqcfcwr",
+        "after_isoSig": "qLvvLAMvQQQkbfkilhlnkmolppopommnceodifemelwcor"
+      }
+    },
+    {
+      "step": 80,
+      "tetrahedra": 17,
+      "isoSig": "rLLvLLzPMPQQcbdhglknjlkmqnpopqqmkcoximgqigcogkjns",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 1,
+        "before_tetrahedra": 16,
+        "after_tetrahedra": 17,
+        "before_isoSig": "qLvvLAMvQQQkbfkilhlnkmolppopommnceodifemelwcor",
+        "after_isoSig": "rLLvLLzPMPQQcbdhglknjlkmqnpopqqmkcoximgqigcogkjns"
+      }
+    },
+    {
+      "step": 81,
+      "tetrahedra": 18,
+      "isoSig": "sLLvLLzPMPAQQbdhglknjlkmqnrqprqrmkcoximgqigcopvnxgh",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 26,
+        "before_tetrahedra": 17,
+        "after_tetrahedra": 18,
+        "before_isoSig": "rLLvLLzPMPQQcbdhglknjlkmqnpopqqmkcoximgqigcogkjns",
+        "after_isoSig": "sLLvLLzPMPAQQbdhglknjlkmqnrqprqrmkcoximgqigcopvnxgh"
+      }
+    },
+    {
+      "step": 82,
+      "tetrahedra": 17,
+      "isoSig": "rLvvLLQLAPQQcbfgihhljkpomnpoqqqmmcnnoxkgioggnojws",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 5,
+        "edge_degree": 3,
+        "before_tetrahedra": 18,
+        "after_tetrahedra": 17,
+        "before_isoSig": "sLLvLLzPMPAQQbdhglknjlkmqnrqprqrmkcoximgqigcopvnxgh",
+        "after_isoSig": "rLvvLLQLAPQQcbfgihhljkpomnpoqqqmmcnnoxkgioggnojws"
+      }
+    },
+    {
+      "step": 83,
+      "tetrahedra": 16,
+      "isoSig": "qLvvLLQwMQQkbihjighmkplomnoppmxcvnnodjadoggoob",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 14,
+        "edge_degree": 3,
+        "before_tetrahedra": 17,
+        "after_tetrahedra": 16,
+        "before_isoSig": "rLvvLLQLAPQQcbfgihhljkpomnpoqqqmmcnnoxkgioggnojws",
+        "after_isoSig": "qLvvLLQwMQQkbihjighmkplomnoppmxcvnnodjadoggoob"
+      }
+    },
+    {
+      "step": 84,
+      "tetrahedra": 15,
+      "isoSig": "pLvvLLQMMQQbihjighnmknlomoomxcvnnoadjudwgwn",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 15,
+        "edge_degree": 3,
+        "before_tetrahedra": 16,
+        "after_tetrahedra": 15,
+        "before_isoSig": "qLvvLLQwMQQkbihjighmkplomnoppmxcvnnodjadoggoob",
+        "after_isoSig": "pLvvLLQMMQQbihjighnmknlomoomxcvnnoadjudwgwn"
+      }
+    },
+    {
+      "step": 85,
+      "tetrahedra": 16,
+      "isoSig": "qLvvvAALQQQkchghjjkpnlolonoppdgkwkccptolchcfkb",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 8,
+        "before_tetrahedra": 15,
+        "after_tetrahedra": 16,
+        "before_isoSig": "pLvvLLQMMQQbihjighnmknlomoomxcvnnoadjudwgwn",
+        "after_isoSig": "qLvvvAALQQQkchghjjkpnlolonoppdgkwkccptolchcfkb"
+      }
+    },
+    {
+      "step": 86,
+      "tetrahedra": 15,
+      "isoSig": "pLvLLLzAQQQbffghnmjmnkolomomumooiujatdwgwwf",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 11,
+        "edge_degree": 3,
+        "before_tetrahedra": 16,
+        "after_tetrahedra": 15,
+        "before_isoSig": "qLvvvAALQQQkchghjjkpnlolonoppdgkwkccptolchcfkb",
+        "after_isoSig": "pLvLLLzAQQQbffghnmjmnkolomomumooiujatdwgwwf"
+      }
+    },
+    {
+      "step": 87,
+      "tetrahedra": 14,
+      "isoSig": "oLLLLvLQQQcceffkknijlmnlmniidqdxpkxdggsvg",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 11,
+        "edge_degree": 3,
+        "before_tetrahedra": 15,
+        "after_tetrahedra": 14,
+        "before_isoSig": "pLvLLLzAQQQbffghnmjmnkolomomumooiujatdwgwwf",
+        "after_isoSig": "oLLLLvLQQQcceffkknijlmnlmniidqdxpkxdggsvg"
+      }
+    },
+    {
+      "step": 88,
+      "tetrahedra": 15,
+      "isoSig": "pLLLLzLPMQQceffgmijknolmonoiidqclkxdktogmsp",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 15,
+        "before_tetrahedra": 14,
+        "after_tetrahedra": 15,
+        "before_isoSig": "oLLLLvLQQQcceffkknijlmnlmniidqdxpkxdggsvg",
+        "after_isoSig": "pLLLLzLPMQQceffgmijknolmonoiidqclkxdktogmsp"
+      }
+    },
+    {
+      "step": 89,
+      "tetrahedra": 14,
+      "isoSig": "oLLLLzzPQQcceffghjnkmnmlnmiidqcvxqdvjfovr",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 12,
+        "edge_degree": 3,
+        "before_tetrahedra": 15,
+        "after_tetrahedra": 14,
+        "before_isoSig": "pLLLLzLPMQQceffgmijknolmonoiidqclkxdktogmsp",
+        "after_isoSig": "oLLLLzzPQQcceffghjnkmnmlnmiidqcvxqdvjfovr"
+      }
+    },
+    {
+      "step": 90,
+      "tetrahedra": 13,
+      "isoSig": "nLLLLAzMQkceffighilmkmlmiidqwcvkfbowrj",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 12,
+        "edge_degree": 3,
+        "before_tetrahedra": 14,
+        "after_tetrahedra": 13,
+        "before_isoSig": "oLLLLzzPQQcceffghjnkmnmlnmiidqcvxqdvjfovr",
+        "after_isoSig": "nLLLLAzMQkceffighilmkmlmiidqwcvkfbowrj"
+      }
+    },
+    {
+      "step": 91,
+      "tetrahedra": 12,
+      "isoSig": "mLLLLAAAQceffigjhijllliidqwcuvkdqqq",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 10,
+        "edge_degree": 3,
+        "before_tetrahedra": 13,
+        "after_tetrahedra": 12,
+        "before_isoSig": "nLLLLAzMQkceffighilmkmlmiidqwcvkfbowrj",
+        "after_isoSig": "mLLLLAAAQceffigjhijllliidqwcuvkdqqq"
+      }
+    },
+    {
+      "step": 92,
+      "tetrahedra": 10,
+      "isoSig": "kLLLLAQkceffigjhjijiidqwcuvqkd",
+      "move": {
+        "kind": "2-0",
+        "face_dimension": 0,
+        "face_index": 2,
+        "before_tetrahedra": 12,
+        "after_tetrahedra": 10,
+        "before_isoSig": "mLLLLAAAQceffigjhijllliidqwcuvkdqqq",
+        "after_isoSig": "kLLLLAQkceffigjhjijiidqwcuvqkd"
+      }
+    },
+    {
+      "step": 93,
+      "tetrahedra": 11,
+      "isoSig": "lLLLzAMQccedfghjikjkkiifecnueakgn",
+      "move": {
+        "kind": "2-3",
+        "face_dimension": 2,
+        "face_index": 1,
+        "before_tetrahedra": 10,
+        "after_tetrahedra": 11,
+        "before_isoSig": "kLLLLAQkceffigjhjijiidqwcuvqkd",
+        "after_isoSig": "lLLLzAMQccedfghjikjkkiifecnueakgn"
+      }
+    },
+    {
+      "step": 94,
+      "tetrahedra": 10,
+      "isoSig": "kLLLLPQkceffgjhiijjiiheoxrwgxq",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 5,
+        "edge_degree": 3,
+        "before_tetrahedra": 11,
+        "after_tetrahedra": 10,
+        "before_isoSig": "lLLLzAMQccedfghjikjkkiifecnueakgn",
+        "after_isoSig": "kLLLLPQkceffgjhiijjiiheoxrwgxq"
+      }
+    },
+    {
+      "step": 95,
+      "tetrahedra": 9,
+      "isoSig": "jLLLLQQcefhhghiiiiidmgcvbog",
+      "move": {
+        "kind": "3-2",
+        "face_dimension": 1,
+        "face_index": 8,
+        "edge_degree": 3,
+        "before_tetrahedra": 10,
+        "after_tetrahedra": 9,
+        "before_isoSig": "kLLLLPQkceffgjhiijjiiheoxrwgxq",
+        "after_isoSig": "jLLLLQQcefhhghiiiiidmgcvbog"
+      }
+    }
+  ]
+}

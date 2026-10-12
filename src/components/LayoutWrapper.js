@@ -105,6 +105,7 @@ export default function LayoutWrapper({ children }) {
     pathname === '/simplest-manifold' ? 'simplest-manifold-page' :
     pathname === '/combinatorics' ? 'combinatorics-page' :
     pathname === '/number-walls' ? 'number-walls-wrapper-page' :
+    pathname === '/g-functions' ? 'planck-constants-page' :
     pathname === '/animated-math' ? 'animated-math-page' :
     pathname === '/books' ? 'books-page' :
     pathname === '/the-logic-of-persistence' ? 'books-page' :

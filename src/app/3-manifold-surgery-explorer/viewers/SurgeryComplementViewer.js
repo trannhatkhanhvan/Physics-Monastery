@@ -42,6 +42,9 @@ import M129_ANIMATION_MANIFEST
 import M129_TO_M004_SURGERY_EDGE
   from "../data/generated/m129_to_m004_surgery_edge.json";
 
+import M129_TO_M004_CUSP_MOVIE
+  from "../data/generated/m129_to_m004_cusp_movie.json";
+
 import {
   M129_BOUNDARY_RHO,
   m129BoundaryPoint4,
@@ -79,6 +82,95 @@ const M129_TO_M004_TARGET_ID =
 const M129_TO_M004_OPERATION =
   M129_TO_M004_SURGERY_EDGE
     .operation;
+
+
+const M129_RETRIANGULATION_STATES =
+  M129_TO_M004_CUSP_MOVIE
+    .states ?? [];
+
+const M129_RETRIANGULATION_MOVES =
+  M129_TO_M004_CUSP_MOVIE
+    .moves ?? [];
+
+const M129_RETRIANGULATION_MOVE_COUNT =
+  M129_RETRIANGULATION_MOVES.length;
+
+const M129_RETRIANGULATION_STEP_MS =
+  110;
+
+
+/*
+ * Exact subset of the 195 certified 3-manifold moves that
+ * genuinely changes the surviving cusp-link triangulation.
+ *
+ * Move index i means:
+ *
+ *   state i -> state i + 1
+ *
+ * Every omitted move is interior-only from the point of view of
+ * the surviving boundary torus and must NOT invent visible cusp
+ * activity.
+ */
+const M129_CUSP_CHANGING_MOVE_INDICES =
+  Object.freeze([
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    156,
+    159,
+    160,
+    162,
+    163,
+    164,
+    165,
+    166,
+    171,
+    172,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+  ]);
+
+const M129_CUSP_CHANGING_MOVE_SET =
+  new Set(
+    M129_CUSP_CHANGING_MOVE_INDICES
+  );
+
+if (
+  M129_RETRIANGULATION_STATES.length !==
+    M129_RETRIANGULATION_MOVE_COUNT + 1 ||
+  M129_RETRIANGULATION_STATES.at(-1)
+    ?.manifold_isoSig !== "cPcbbbiht"
+) {
+  throw new Error(
+    "Invalid certified m129 -> m004 cusp movie."
+  );
+}
 
 
 const M129_TO_M004_SOURCE_CUSP_COUNT =
@@ -504,9 +596,9 @@ const ONE_CUSP_PUBLICATION_STATE =
     }),
 
     mesh: Object.freeze({
-      level: 6,
-      nu: 288,
-      nv: 64,
+      level: 8,
+      nu: 576,
+      nv: 144,
     }),
   });
 
@@ -3835,6 +3927,10 @@ function M129BoundaryViewer({
   surgeryPathT = 0,
   surgeryPathActive = false,
   ambientSurgeryTwist = 0,
+  retriangulationActive = false,
+  retriangulationState = null,
+  retriangulationMove = null,
+  retriangulationTouchesCusp = false,
   presentationOpacity = 1,
   m004TargetState = ONE_CUSP_PUBLICATION_STATE,
   projectM004PointToClient = null,
@@ -5893,11 +5989,25 @@ function M129BoundaryViewer({
     /*
      * Only cusp 0 survives the certified filling.
      */
+    /*
+     * SHARED SURGERY GEOMETRY CLOCK
+     *
+     * surgeryPathT is the certified m129 -> m004 Dehn-path
+     * parameter. Use that SAME t to move the surviving boundary
+     * between its two actual S3 endpoint embeddings:
+     *
+     *   t = 0  -> native m129 surviving boundary
+     *   t = 1  -> native m004 figure-eight boundary tube
+     *
+     * This is the geometric shape evolution. It is not a camera
+     * rotation and it is not a renderer fade.
+     */
     const morph =
-      cuspIndex === 0
+      cuspIndex ===
+        M129_TO_M004_SURVIVING_CUSP
         ? clamp(
             Number(
-              survivingCuspMorph
+              surgeryPathT
             ),
             0,
             1
@@ -6008,11 +6118,18 @@ function M129BoundaryViewer({
      */
 
 
+    /*
+     * The same surgery clock also carries the completed geometry
+     * into the exact native m004 projection/camera.
+     *
+     * Geometry and view therefore cannot get out of phase.
+     */
     const viewMorph =
-      cuspIndex === 0
+      cuspIndex ===
+        M129_TO_M004_SURVIVING_CUSP
         ? clamp(
             Number(
-              survivingCuspViewMorph
+              surgeryPathT
             ),
             0,
             1
@@ -6435,7 +6552,7 @@ function M129BoundaryViewer({
           fillingAnimationActive &&
           !survivingCuspMorphActive
             ? 1.0
-            : 1.25
+            : 2.0
         );
 
       const MAX_RASTER_PIXELS =
@@ -8915,8 +9032,27 @@ function M129BoundaryViewer({
           continue;
         }
 
+        /*
+         * The certified Dehn parameter is now the authoritative
+         * animation clock.
+         *
+         * Do not key geometric animation behavior off the old
+         * survivingCuspMorph flag.
+         */
+        const dehnSurfaceIsMoving =
+          (
+            mesh.cuspIndex ===
+              M129_TO_M004_SURVIVING_CUSP &&
+            (
+              surgeryPathActive ||
+              Number(
+                surgeryPathT
+              ) > 1e-9
+            )
+          );
+
         const projected =
-          survivingCuspMorphActive
+          dehnSurfaceIsMoving
             ? projectAnimatedSurfaceMesh(
                 mesh
               )
@@ -9013,393 +9149,29 @@ function M129BoundaryViewer({
 
 
         /*
-         * ======================================================
-         * NATIVE m004 TESSELLATION DURING FINAL HANDOFF
-         * ======================================================
+         * CERTIFIED SNAP-PY MATERIAL OWNERSHIP
          *
-         * Cusp 0 now uses the exact same finite barycentric display
-         * topology as the native figure-eight Boundary.
+         * No endpoint tessellation takeover occurs here.
          *
-         * This removes the terminal:
+         * mesh.materialTriangles is rebuilt from the current
+         * certified Dehn state through boundaryTriangleUV().
          *
-         *   smooth/rectangular mesh -> faceted m004 mesh
+         * The same eight persistent cusp triangles therefore own
+         * the surface for the entire path:
          *
-         * switch that was still visible in the screenshots.
+         *   t0v0, t0v2,
+         *   t1v0, t1v3,
+         *   t2v0, t2v3,
+         *   t3v0, t3v3.
          */
-        if (
-          mesh.cuspIndex === 0 &&
-          survivingCuspMorphActive &&
-          !layers.wireframe
-        ) {
-          /*
-           * Keep the successful moving material partition for most
-           * of the animation.
-           *
-           * In the final 8%, settle every native fine facet onto
-           * the material identity of its own m004 macro-triangle.
-           *
-           * Therefore the right-hand B0 region becomes completely
-           * blue BEFORE renderer ownership changes, instead of
-           * acquiring the last blue strip on the final frame.
-           */
-          const ownershipRaw =
-            clamp(
-              (
-                Number(
-                  survivingCuspMorph
-                ) -
-                0.92
-              ) /
-                0.08,
-              0,
-              1
-            );
-
-          const ownershipAmount =
-            ownershipRaw *
-            ownershipRaw *
-            (
-              3 -
-              2 *
-                ownershipRaw
-            );
-
-
-          for (
-            const nativeMesh of
-            nativeM004HandoffMeshes
-          ) {
-            /*
-             * Project every unique barycentric vertex exactly once.
-             *
-             * m129BoundaryProjectUVWithFill() already performs:
-             *
-             *   m129 S3 geometry
-             *       ->
-             *   m004 S3 geometry
-             *       ->
-             *   exact native m004 screen framing.
-             */
-            const nativeProjected =
-              nativeMesh.vertices
-                .map(
-                  (uv) => {
-                    const point =
-                      m129BoundaryProjectUVWithFill(
-                        0,
-                        uv,
-                        viewYawDegrees,
-                        viewPitchDegrees,
-                        viewZoom,
-                        projection,
-                        lambda,
-                        epsilon,
-                        rho
-                      );
-
-                    return rasterPoint({
-                      ...point,
-
-                      rainbowRoute:
-                        uv.v,
-
-                      materialU:
-                        uv.u,
-
-                      materialV:
-                        uv.v,
-
-                      /*
-                       * Replaced per fine triangle below by its
-                       * native FLAT facet normal.
-                       */
-                      normalX: 0,
-                      normalY: 0,
-                      normalZ: 1,
-                    });
-                  }
-                );
-
-
-            for (
-              const triangle of
-              nativeMesh.indices
-            ) {
-              const firstBase =
-                nativeProjected[
-                  triangle[0]
-                ];
-
-              const secondBase =
-                nativeProjected[
-                  triangle[1]
-                ];
-
-              const thirdBase =
-                nativeProjected[
-                  triangle[2]
-                ];
-
-              const firstUV =
-                nativeMesh.vertices[
-                  triangle[0]
-                ];
-
-              const secondUV =
-                nativeMesh.vertices[
-                  triangle[1]
-                ];
-
-              const thirdUV =
-                nativeMesh.vertices[
-                  triangle[2]
-                ];
-
-
-              /*
-               * NATIVE m004 PROJECTION-POLE RULE.
-               *
-               * Do NOT use trianglePassesProjectionHorizon() here.
-               * That function intentionally uses the more
-               * conservative m129 threshold:
-               *
-               *     |1 - w| >= 0.025
-               *
-               * The native figure-eight Boundary renderer actually
-               * renders its barycentric cusp facets down to:
-               *
-               *     |1 - w| >= 0.012
-               *
-               * Using 0.025 here was deleting valid final-m004
-               * facets during the penultimate handoff frame, which
-               * produced the rough/jagged green and red regions that
-               * suddenly filled in on renderer ownership change.
-               */
-              const nativeProjectionThreshold =
-                0.012;
-
-              const nativeFacetVisible =
-                [
-                  firstBase,
-                  secondBase,
-                  thirdBase,
-                ].every(
-                  (point) =>
-                    Number.isFinite(
-                      point
-                        .stereographicDenominator
-                    ) &&
-                    Math.abs(
-                      point
-                        .stereographicDenominator
-                    ) >=
-                      nativeProjectionThreshold &&
-                    Number.isFinite(
-                      point.rasterX
-                    ) &&
-                    Number.isFinite(
-                      point.rasterY
-                    ) &&
-                    Number.isFinite(
-                      point.depth
-                    )
-                );
-
-              if (
-                !nativeFacetVisible
-              ) {
-                continue;
-              }
-
-
-              /*
-               * EXACT native m004 facet-normal principle:
-               *
-               * the fine barycentric rendering triangle itself
-               * determines one flat camera-space normal.
-               */
-              const ux =
-                secondBase.cameraX -
-                firstBase.cameraX;
-
-              const uy =
-                secondBase.cameraY -
-                firstBase.cameraY;
-
-              const uz =
-                secondBase.cameraZ -
-                firstBase.cameraZ;
-
-              const vx =
-                thirdBase.cameraX -
-                firstBase.cameraX;
-
-              const vy =
-                thirdBase.cameraY -
-                firstBase.cameraY;
-
-              const vz =
-                thirdBase.cameraZ -
-                firstBase.cameraZ;
-
-              const normalX =
-                uy * vz -
-                uz * vy;
-
-              const normalY =
-                uz * vx -
-                ux * vz;
-
-              const normalZ =
-                ux * vy -
-                uy * vx;
-
-              const normalLength =
-                Math.max(
-                  1e-12,
-                  Math.hypot(
-                    normalX,
-                    normalY,
-                    normalZ
-                  )
-                );
-
-              const nx =
-                normalX /
-                normalLength;
-
-              const ny =
-                normalY /
-                normalLength;
-
-              const nz =
-                normalZ /
-                normalLength;
-
-
-              const first = {
-                ...firstBase,
-                normalX: nx,
-                normalY: ny,
-                normalZ: nz,
-              };
-
-              const second = {
-                ...secondBase,
-                normalX: nx,
-                normalY: ny,
-                normalZ: nz,
-              };
-
-              const third = {
-                ...thirdBase,
-                normalX: nx,
-                normalY: ny,
-                normalZ: nz,
-              };
-
-
-              /*
-               * Determine the color from the CURRENT moving
-               * material partition at this fine facet's centroid.
-               */
-              const centroidU =
-                (
-                  firstUV.u +
-                  secondUV.u +
-                  thirdUV.u
-                ) /
-                3;
-
-              const centroidV =
-                (
-                  firstUV.v +
-                  secondUV.v +
-                  thirdUV.v
-                ) /
-                3;
-
-              const movingRgb =
-                materialRgbAt(
-                  survivingHandoffMaterialTriangles,
-                  centroidU,
-                  centroidV,
-                  nativeMesh.targetRgb
-                );
-
-
-              /*
-               * Complete material ownership before the semantic
-               * m129 -> m004 state switch.
-               */
-              const baseRgb =
-                movingRgb.map(
-                  (
-                    channel,
-                    channelIndex
-                  ) =>
-                    Math.round(
-                      channel +
-                      (
-                        nativeMesh
-                          .targetRgb[
-                            channelIndex
-                          ] -
-                        channel
-                      ) *
-                        ownershipAmount
-                    )
-                );
-
-
-              rasterizeTriangle(
-                first,
-                second,
-                third,
-                baseRgb,
-                null,
-                surfaceOpacity,
-
-                /*
-                 * Material is already resolved at the native fine
-                 * facet level. Do not reclassify pixels through the
-                 * old rectangular m129 material lookup.
-                 */
-                true,
-
-                mesh.cuspIndex !==
-                  selectedCuspIndex
-              );
-            }
-          }
-
-
-          /*
-           * Critical:
-           *
-           * Do NOT also render the old rectangular cusp-0 mesh.
-           * There must be exactly one visible surface owner during
-           * the handoff.
-           */
-          continue;
-        }
-
-
         /*
-         * During the final m129 -> m004 handoff, cusp 0's visible
-         * tetrahedral partition is itself part of the animation.
+         * Material identity comes directly from the persistent
+         * SnapPy cusp triangles of the current solved state.
          *
-         * Do not freeze the source m129 material colors.
+         * There is no independent m129 -> m004 color morph.
          */
-        const transportingM004Materials =
-          mesh.cuspIndex === 0 &&
-          survivingCuspMorphActive &&
-          !layers.split;
-
         const activeMaterialTriangles =
-          transportingM004Materials
-            ? survivingHandoffMaterialTriangles
-            : mesh.materialTriangles;
+          mesh.materialTriangles;
 
 
         for (
@@ -9476,14 +9248,20 @@ function M129BoundaryViewer({
             surfaceOpacity,
 
             /*
-             * The old performance shortcut remains valid for any
-             * non-transported animated surface.
+             * Always resolve tetrahedral material ownership at
+             * the actual raster pixel.
              *
-             * Cusp 0 must NOT use it during this handoff because its
-             * material boundaries are actually moving.
+             * The connected torus mesh is geometry only.
+             * Its hidden render triangles must never determine
+             * the visible certified cusp-triangle boundaries.
+             *
+             * This is the same separation used by the smooth
+             * one-cusp Boundary renderer:
+             *
+             *   render mesh = geometry
+             *   certified cusp triangles = material partition
              */
-            survivingCuspMorphActive &&
-              !transportingM004Materials,
+            false,
 
             mesh.cuspIndex !==
               selectedCuspIndex
@@ -11720,6 +11498,82 @@ function M129BoundaryViewer({
         }}
       />
 
+      {(
+        retriangulationActive &&
+        retriangulationState
+      ) && (
+        <div
+          style={{
+            position: "absolute",
+            left: "18px",
+            bottom: "18px",
+            zIndex: 12,
+            padding: "8px 11px",
+            borderRadius: "6px",
+            background:
+              "rgba(8, 10, 14, 0.72)",
+            border:
+              "1px solid rgba(255,255,255,0.18)",
+            color:
+              "rgba(255,255,255,0.92)",
+            fontSize: "12px",
+            lineHeight: 1.45,
+            pointerEvents: "none",
+            backdropFilter:
+              "blur(3px)",
+          }}
+        >
+          <div
+            style={{
+              fontWeight: 600,
+              marginBottom: "2px",
+            }}
+          >
+            Certified cusp retriangulation
+          </div>
+
+          <div>
+            {
+              retriangulationMove?.kind ??
+              "start"
+            }
+            {" · "}
+            {
+              retriangulationState
+                .manifold_tetrahedra
+            }
+            {" tetrahedra"}
+          </div>
+
+          <div>
+            {
+              retriangulationMove
+                ? (
+                    retriangulationTouchesCusp
+                      ? "boundary changes"
+                      : "interior only"
+                  )
+                : "filled endpoint"
+            }
+          </div>
+
+          <div>
+            {
+              retriangulationState
+                .link
+                .triangles
+            }
+            {" cusp triangles · χ = "}
+            {
+              retriangulationState
+                .link
+                .euler_characteristic
+            }
+          </div>
+        </div>
+      )}
+
+
       <svg
         viewBox="0 0 1000 700"
         preserveAspectRatio="xMidYMid meet"
@@ -12753,6 +12607,25 @@ export default function SurgeryComplementViewer({
     setM129HandoffOverlayActive,
   ] = useState(false);
 
+  /*
+   * Exact post-filling Regina retriangulation.
+   *
+   * Integer state i is the ith certified state of the
+   * 123 -> ... -> 2 move chain.
+   */
+  const [
+    m129RetriangulationActive,
+    setM129RetriangulationActive,
+  ] = useState(false);
+
+  const [
+    m129RetriangulationStateIndex,
+    setM129RetriangulationStateIndex,
+  ] = useState(0);
+
+  const m129RetriangulationFrameRef =
+    useRef(null);
+
   const [
     m004HandoffTargetState,
     setM004HandoffTargetState,
@@ -12787,6 +12660,38 @@ export default function SurgeryComplementViewer({
 
   const m129FillSurvivingCuspWasHiddenRef =
     useRef(false);
+
+
+  const m129RetriangulationState =
+    M129_RETRIANGULATION_STATES[
+      Math.min(
+        m129RetriangulationStateIndex,
+        M129_RETRIANGULATION_STATES.length - 1
+      )
+    ] ?? null;
+
+  const m129RetriangulationMove =
+    m129RetriangulationStateIndex > 0
+      ? (
+          M129_RETRIANGULATION_MOVES[
+            m129RetriangulationStateIndex - 1
+          ] ?? null
+        )
+      : null;
+
+  const m129RetriangulationMoveIndex =
+    m129RetriangulationStateIndex > 0
+      ? (
+          m129RetriangulationStateIndex - 1
+        )
+      : null;
+
+  const m129RetriangulationTouchesCusp =
+    m129RetriangulationMoveIndex !==
+      null &&
+    M129_CUSP_CHANGING_MOVE_SET.has(
+      m129RetriangulationMoveIndex
+    );
 
 
   function m129FillNarrationText() {
@@ -12901,6 +12806,47 @@ export default function SurgeryComplementViewer({
 
 
   function m129FillNarrationLines() {
+    if (
+      m129RetriangulationActive &&
+      m129RetriangulationState
+    ) {
+      const move =
+        m129RetriangulationMove;
+
+      const moveText =
+        move
+          ? (
+              `${move.kind} move ` +
+              `${m129RetriangulationStateIndex}` +
+              ` / ${M129_RETRIANGULATION_MOVE_COUNT}`
+            )
+          : (
+              `Retriangulation 0 / ` +
+              `${M129_RETRIANGULATION_MOVE_COUNT}`
+            );
+
+      const visibilityText =
+        move
+          ? (
+              m129RetriangulationTouchesCusp
+                ? "boundary triangulation changes"
+                : "interior move · boundary unchanged"
+            )
+          : "certified filled endpoint";
+
+      return [
+        "Certified retriangulation → native m004",
+        moveText,
+        visibilityText,
+        (
+          `${m129RetriangulationState.manifold_tetrahedra} ` +
+          `tetrahedra · ` +
+          `${m129RetriangulationState.link.triangles} ` +
+          `cusp triangles`
+        ),
+      ];
+    }
+
     if (
       !m129FillActive &&
       !m129SurvivingCuspMorphActive &&
@@ -13278,6 +13224,90 @@ export default function SurgeryComplementViewer({
   }
 
 
+  function stopM129Retriangulation() {
+    if (
+      m129RetriangulationFrameRef.current !==
+      null
+    ) {
+      window.cancelAnimationFrame(
+        m129RetriangulationFrameRef.current
+      );
+
+      m129RetriangulationFrameRef.current =
+        null;
+    }
+
+    setM129RetriangulationActive(
+      false
+    );
+  }
+
+
+  function beginM129Retriangulation(
+    onComplete = null
+  ) {
+    stopM129Retriangulation();
+
+    setM129RetriangulationStateIndex(
+      0
+    );
+
+    setM129RetriangulationActive(
+      true
+    );
+
+    const startedAt =
+      performance.now();
+
+    function frame(now) {
+      const elapsed =
+        Math.max(
+          0,
+          now - startedAt
+        );
+
+      const nextIndex =
+        Math.min(
+          M129_RETRIANGULATION_MOVE_COUNT,
+          Math.floor(
+            elapsed /
+              M129_RETRIANGULATION_STEP_MS
+          )
+        );
+
+      setM129RetriangulationStateIndex(
+        nextIndex
+      );
+
+      if (
+        nextIndex <
+        M129_RETRIANGULATION_MOVE_COUNT
+      ) {
+        m129RetriangulationFrameRef.current =
+          window.requestAnimationFrame(
+            frame
+          );
+
+        return;
+      }
+
+      m129RetriangulationFrameRef.current =
+        null;
+
+      setM129RetriangulationActive(
+        false
+      );
+
+      onComplete?.();
+    }
+
+    m129RetriangulationFrameRef.current =
+      window.requestAnimationFrame(
+        frame
+      );
+  }
+
+
   function stopM129RendererTransfer() {
     if (
       m129RendererTransferFrameRef.current !==
@@ -13290,6 +13320,78 @@ export default function SurgeryComplementViewer({
       m129RendererTransferFrameRef.current =
         null;
     }
+  }
+
+
+  /*
+   * Final visual ownership transfer.
+   *
+   * Geometry is already fixed at the certified t = 1 m004
+   * endpoint. This animation changes renderer ownership only:
+   *
+   *   m129 opacity = 1 - transfer
+   *   m004 opacity = transfer
+   */
+  function animateM129RendererTransfer(
+    duration = 700,
+    onComplete = null
+  ) {
+    stopM129RendererTransfer();
+
+    setM129RendererTransfer(
+      0
+    );
+
+    const startedAt =
+      performance.now();
+
+    function frame(now) {
+      const raw =
+        clamp(
+          (
+            now -
+            startedAt
+          ) /
+            duration,
+          0,
+          1
+        );
+
+      const eased =
+        raw *
+        raw *
+        (
+          3 -
+          2 * raw
+        );
+
+      setM129RendererTransfer(
+        eased
+      );
+
+      if (raw < 1) {
+        m129RendererTransferFrameRef.current =
+          window.requestAnimationFrame(
+            frame
+          );
+
+        return;
+      }
+
+      m129RendererTransferFrameRef.current =
+        null;
+
+      setM129RendererTransfer(
+        1
+      );
+
+      onComplete?.();
+    }
+
+    m129RendererTransferFrameRef.current =
+      window.requestAnimationFrame(
+        frame
+      );
   }
 
 
@@ -13328,17 +13430,14 @@ export default function SurgeryComplementViewer({
    * projective animation.
    */
   function beginM129SurvivingCuspHandoff() {
-    /*
-     * The old pointwise m129 -> m004 S3 blend is no longer part
-     * of the active surgery path.
-     *
-     * From here onward the certified surgery parameter t is the
-     * only geometric clock. The ambient twist hook receives this
-     * same t and will be implemented in the next patch.
-     */
     stopM129SurvivingCuspMorph();
     stopM129RendererTransfer();
 
+    /*
+     * Renderer transfer is NOT part of the geometry.
+     * Keep the m129 renderer fully opaque while the actual S3
+     * boundary shape evolves.
+     */
     setM129RendererTransfer(
       0
     );
@@ -13347,6 +13446,13 @@ export default function SurgeryComplementViewer({
       false
     );
 
+    /*
+     * Legacy independent morph clocks are deliberately neutral.
+     *
+     * The single authoritative clock is now:
+     *
+     *   m129SurgeryPathT
+     */
     setM129SurvivingCuspMorph(
       0
     );
@@ -13359,6 +13465,14 @@ export default function SurgeryComplementViewer({
       false
     );
 
+
+    /*
+     * Prepare the REAL native m004 Boundary endpoint before the
+     * animation begins.
+     *
+     * m129BoundaryProjectUVWithFill() uses this exact state as its
+     * S3 target and final screen-framing target.
+     */
     const exactTargetState =
       projectionControlRef.current
         ?.prepareSymmetricBoundary?.() ??
@@ -13368,18 +13482,121 @@ export default function SurgeryComplementViewer({
       exactTargetState
     );
 
+
+    /*
+     * One clock now controls:
+     *
+     *   1. certified Dehn-path state
+     *   2. surviving-boundary S3 shape
+     *   3. S3 projection
+     *   4. ordinary camera
+     *   5. exact final m004 screen framing
+     *
+     * Therefore the torus MUST geometrically evolve during this
+     * interval. It can no longer remain a rigid torus whose only
+     * visible change is orientation.
+     */
     animateM129SurgeryPathTo(
       1,
       10000,
       () => {
-        /*
-         * Do NOT switch renderer ownership yet.
-         *
-         * t = 1 is the certified intrinsic m004 state, but the
-         * ambient figure-eight embedding must be installed first.
-         */
         setM129FillActive(
           false
+        );
+
+        /*
+         * CERTIFIED ENDPOINT HANDOFF
+         *
+         * The persistent four-tetrahedron Dehn-path state has now
+         * reached t = 1.
+         *
+         * Backend certification shows that permanent filling
+         * simplifies directly to the native two-tetrahedron m004
+         * triangulation:
+         *
+         *   cPcbbbiht_BaCB
+         *
+         * exactly matching the census m004 triangulation.
+         *
+         * Therefore the persistent m129 cusp triangulation is no
+         * longer authoritative after this instant. Hold this exact
+         * terminal frame above the already-prepared native m004
+         * Boundary while React commits the canonical manifold state.
+         */
+        setM129HandoffOverlayActive(
+          true
+        );
+
+        setM129RendererTransfer(
+          0
+        );
+
+        setM129FillProgress(
+          1
+        );
+
+        setM129SurgeryPathT(
+          1
+        );
+
+        setM129FillStartedInSplit(
+          false
+        );
+
+        /*
+         * The geometric Dehn path is now complete.
+         *
+         * Do not switch renderers here.
+         *
+         * Run the complete certified Regina movie first:
+         *
+         *   123 -> ... -> 61 -> 60 -> ... -> 9 -> 2
+         *
+         * and only transfer ownership after the final state is
+         * literally cPcbbbiht.
+         */
+        beginM129Retriangulation(
+          () => {
+            onManifoldStateChange?.(
+              M129_TO_M004_TARGET_ID
+            );
+
+            setM129HandoffOverlayActive(
+              false
+            );
+
+            setM129RendererTransfer(
+              0
+            );
+
+            setM129FillProgress(
+              0
+            );
+
+            setM129SurgeryPathT(
+              0
+            );
+
+            setM129SurvivingCuspMorph(
+              0
+            );
+
+            setM129SurvivingCuspViewMorph(
+              0
+            );
+
+            setM129SurvivingCuspReveal(
+              0
+            );
+
+            setM129RetriangulationStateIndex(
+              0
+            );
+
+            setM129FillStartedInSplit(
+              false
+            );
+          }
         );
       }
     );
@@ -13424,6 +13641,12 @@ export default function SurgeryComplementViewer({
     stopM129SurvivingCuspMorph();
 
     stopM129RendererTransfer();
+
+    stopM129Retriangulation();
+
+    setM129RetriangulationStateIndex(
+      0
+    );
 
     setM129RendererTransfer(
       0
@@ -13581,7 +13804,7 @@ export default function SurgeryComplementViewer({
   const [
     m129BoundarySubdivisions,
     setM129BoundarySubdivisions,
-  ] = useState(24);
+  ] = useState(72);
 
   const [
     m129BoundaryLambda,
@@ -13656,7 +13879,7 @@ export default function SurgeryComplementViewer({
             wireframe: false,
           },
 
-          subdivisions: 24,
+          subdivisions: 72,
         },
 
         {
@@ -13693,7 +13916,7 @@ export default function SurgeryComplementViewer({
             wireframe: false,
           },
 
-          subdivisions: 24,
+          subdivisions: 72,
         },
       ],
       []
@@ -14316,7 +14539,7 @@ export default function SurgeryComplementViewer({
         wireframe: false,
       },
 
-      subdivisions: 24,
+      subdivisions: 72,
     };
   }
 
@@ -18274,6 +18497,18 @@ export default function SurgeryComplementViewer({
             }
             ambientSurgeryTwist={
               m129SurgeryPathT
+            }
+            retriangulationActive={
+              m129RetriangulationActive
+            }
+            retriangulationState={
+              m129RetriangulationState
+            }
+            retriangulationMove={
+              m129RetriangulationMove
+            }
+            retriangulationTouchesCusp={
+              m129RetriangulationTouchesCusp
             }
             survivingCuspReveal={
               m129SurvivingCuspReveal

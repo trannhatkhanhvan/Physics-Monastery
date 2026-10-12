@@ -1,0 +1,6497 @@
+{
+  "schema": "physics-monastery.m129-to-m004-cusp-transitions.v2",
+  "comparison": "canonical Regina Triangulation2 isoSig",
+  "state_count": 196,
+  "move_count": 195,
+  "cusp_changing_move_count": 41,
+  "cusp_changing_move_indices": [
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    156,
+    159,
+    160,
+    162,
+    163,
+    164,
+    165,
+    166,
+    171,
+    172,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194
+  ],
+  "link_states": [
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 0
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 1
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 2
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 3
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 4
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 5
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 6
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 7
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 8
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 9
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 10
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 11
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 12
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 13
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 14
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 15
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 16
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 17
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 18
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 19
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 20
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 21
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 22
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 23
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 24
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 25
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 26
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 27
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 28
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 29
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 30
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 31
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 32
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 33
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 34
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 35
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 36
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 37
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 38
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 39
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 40
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 41
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 42
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 43
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 44
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 45
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 46
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 47
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 48
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 49
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 50
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 51
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 52
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 53
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 54
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 55
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 56
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 57
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 58
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 59
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 60
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 61
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 62
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 63
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 64
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 65
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 66
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 67
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 68
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 69
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 70
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 71
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 72
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 73
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 74
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 75
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 76
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 77
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 78
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 79
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 80
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 81
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 82
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 83
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 84
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 85
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 86
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 87
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 88
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 89
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 90
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 91
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 92
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 93
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 94
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 95
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 96
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 97
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 98
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 99
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 100
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 101
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 102
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 103
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 104
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 105
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 106
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 107
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 108
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 109
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 110
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 111
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 112
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 113
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 114
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 115
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 116
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 117
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 118
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 119
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 120
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 121
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 122
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 123
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 124
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 125
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 126
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 127
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 128
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 129
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 130
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 131
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 132
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 133
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 134
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 135
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 136
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 137
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 138
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 139
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 140
+    },
+    {
+      "isoSig": "ivAvQcdhghbbaab",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 141
+    },
+    {
+      "isoSig": "kvAvLQcdhjijbbbfcb",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 142
+    },
+    {
+      "isoSig": "kvAvLQcdijijbbbfff",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 143
+    },
+    {
+      "isoSig": "kvAvLQcdhjijbbbfcb",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 144
+    },
+    {
+      "isoSig": "kLvLzQbfihjjefacee",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 145
+    },
+    {
+      "isoSig": "kLLvMPbegijjaefadf",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 146
+    },
+    {
+      "isoSig": "iLLvQbehgheeccc",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 147
+    },
+    {
+      "isoSig": "kLLvLQbehjijeecdab",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 148
+    },
+    {
+      "isoSig": "kLLvLQbeijijeeadea",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 149
+    },
+    {
+      "isoSig": "kLLvLQbehjijeecdab",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 150
+    },
+    {
+      "isoSig": "kLvLLQcghijjddefbb",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 151
+    },
+    {
+      "isoSig": "kLvLMPbfgijjefecaa",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 152
+    },
+    {
+      "isoSig": "iLvLQbfghhefeac",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 153
+    },
+    {
+      "isoSig": "iLvLQbfghhefeac",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 154
+    },
+    {
+      "isoSig": "iLvLQbfghhefeac",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 155
+    },
+    {
+      "isoSig": "iLvLQbfghhefeac",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 156
+    },
+    {
+      "isoSig": "iLLvQbehgheeccc",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 157
+    },
+    {
+      "isoSig": "iLLvQbehgheeccc",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 158
+    },
+    {
+      "isoSig": "iLLvQbehgheeccc",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 159
+    },
+    {
+      "isoSig": "iLLvQbeghheecbf",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 160
+    },
+    {
+      "isoSig": "gLLPbeffeede",
+      "vertices": 3,
+      "edges": 9,
+      "triangles": 6,
+      "euler_characteristic": 0,
+      "state_index": 161
+    },
+    {
+      "isoSig": "gLLPbeffeede",
+      "vertices": 3,
+      "edges": 9,
+      "triangles": 6,
+      "euler_characteristic": 0,
+      "state_index": 162
+    },
+    {
+      "isoSig": "iLLvQbeghheecbf",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 163
+    },
+    {
+      "isoSig": "kLLvwQbegjijeecaac",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 164
+    },
+    {
+      "isoSig": "kLvLLQbfhjijefccff",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 165
+    },
+    {
+      "isoSig": "kLvLLQbfijijefcccb",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 166
+    },
+    {
+      "isoSig": "kLvLLQbfjhijeffccf",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 167
+    },
+    {
+      "isoSig": "kLvLLQbfjhijeffccf",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 168
+    },
+    {
+      "isoSig": "kLvLLQbfjhijeffccf",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 169
+    },
+    {
+      "isoSig": "kLvLLQbfjhijeffccf",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 170
+    },
+    {
+      "isoSig": "kLvLLQbfjhijeffccf",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 171
+    },
+    {
+      "isoSig": "kLvLzQbfihjjefacad",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 172
+    },
+    {
+      "isoSig": "kLvLzQbfihjjefacee",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 173
+    },
+    {
+      "isoSig": "kLvLzQbfihjjefacee",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 174
+    },
+    {
+      "isoSig": "iLLvQbehgheeccc",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 175
+    },
+    {
+      "isoSig": "kLLvwQbegijjeecdec",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 176
+    },
+    {
+      "isoSig": "kLLvLQbeijijeeadea",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 177
+    },
+    {
+      "isoSig": "kLLvLQbehjijeecdab",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 178
+    },
+    {
+      "isoSig": "kLLvMPbehhjjeecccc",
+      "vertices": 5,
+      "edges": 15,
+      "triangles": 10,
+      "euler_characteristic": 0,
+      "state_index": 179
+    },
+    {
+      "isoSig": "iLLvQbehgheeccc",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 180
+    },
+    {
+      "isoSig": "iLLvQbehgheeccc",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 181
+    },
+    {
+      "isoSig": "iLLvQbehgheeccc",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 182
+    },
+    {
+      "isoSig": "iLLzPbefhheedad",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 183
+    },
+    {
+      "isoSig": "mLvLPzPbfihjllefdcdea",
+      "vertices": 6,
+      "edges": 18,
+      "triangles": 12,
+      "euler_characteristic": 0,
+      "state_index": 184
+    },
+    {
+      "isoSig": "oLvLPzvQbfihjmnnefdcdbfb",
+      "vertices": 7,
+      "edges": 21,
+      "triangles": 14,
+      "euler_characteristic": 0,
+      "state_index": 185
+    },
+    {
+      "isoSig": "sLvPvwLzLQcegiloqprrdbdccaddbb",
+      "vertices": 9,
+      "edges": 27,
+      "triangles": 18,
+      "euler_characteristic": 0,
+      "state_index": 186
+    },
+    {
+      "isoSig": "svAvvPwzwQcdkljonrqrbfdafafdfe",
+      "vertices": 9,
+      "edges": 27,
+      "triangles": 18,
+      "euler_characteristic": 0,
+      "state_index": 187
+    },
+    {
+      "isoSig": "svAvLvPwLQcdhmnlqprrbbbdabbbff",
+      "vertices": 9,
+      "edges": 27,
+      "triangles": 18,
+      "euler_characteristic": 0,
+      "state_index": 188
+    },
+    {
+      "isoSig": "svAvLLvwMQcdhjlnrpqrbbbbbbbbbb",
+      "vertices": 9,
+      "edges": 27,
+      "triangles": 18,
+      "euler_characteristic": 0,
+      "state_index": 189
+    },
+    {
+      "isoSig": "sLLvzvPzLQbegmnlrqrqeecaecdedd",
+      "vertices": 9,
+      "edges": 27,
+      "triangles": 18,
+      "euler_characteristic": 0,
+      "state_index": 190
+    },
+    {
+      "isoSig": "sLLvLwvMLQbeijlnprqreeadcbcddb",
+      "vertices": 9,
+      "edges": 27,
+      "triangles": 18,
+      "euler_characteristic": 0,
+      "state_index": 191
+    },
+    {
+      "isoSig": "svAvLzwwLQcdhkjmqprrbbbabbabab",
+      "vertices": 9,
+      "edges": 27,
+      "triangles": 18,
+      "euler_characteristic": 0,
+      "state_index": 192
+    },
+    {
+      "isoSig": "qvAvvAAvQcdhkjloppcbcebdeab",
+      "vertices": 8,
+      "edges": 24,
+      "triangles": 16,
+      "euler_characteristic": 0,
+      "state_index": 193
+    },
+    {
+      "isoSig": "oLLLvPLPcdgkkmnnaedadaed",
+      "vertices": 7,
+      "edges": 21,
+      "triangles": 14,
+      "euler_characteristic": 0,
+      "state_index": 194
+    },
+    {
+      "isoSig": "iLLzPbefhheedad",
+      "vertices": 4,
+      "edges": 12,
+      "triangles": 8,
+      "euler_characteristic": 0,
+      "state_index": 195
+    }
+  ],
+  "transitions": [
+    {
+      "move_index": 0,
+      "state_before": 0,
+      "state_after": 1,
+      "move_kind": "2-1",
+      "touches_cusp": false,
+      "tetrahedra_before": 123,
+      "tetrahedra_after": 122,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 0
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 1
+      }
+    },
+    {
+      "move_index": 1,
+      "state_before": 1,
+      "state_after": 2,
+      "move_kind": "2-1",
+      "touches_cusp": false,
+      "tetrahedra_before": 122,
+      "tetrahedra_after": 121,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 1
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 2
+      }
+    },
+    {
+      "move_index": 2,
+      "state_before": 2,
+      "state_after": 3,
+      "move_kind": "2-1",
+      "touches_cusp": false,
+      "tetrahedra_before": 121,
+      "tetrahedra_after": 120,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 2
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 3
+      }
+    },
+    {
+      "move_index": 3,
+      "state_before": 3,
+      "state_after": 4,
+      "move_kind": "2-1",
+      "touches_cusp": false,
+      "tetrahedra_before": 120,
+      "tetrahedra_after": 119,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 3
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 4
+      }
+    },
+    {
+      "move_index": 4,
+      "state_before": 4,
+      "state_after": 5,
+      "move_kind": "2-1",
+      "touches_cusp": false,
+      "tetrahedra_before": 119,
+      "tetrahedra_after": 118,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 4
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 5
+      }
+    },
+    {
+      "move_index": 5,
+      "state_before": 5,
+      "state_after": 6,
+      "move_kind": "2-1",
+      "touches_cusp": false,
+      "tetrahedra_before": 118,
+      "tetrahedra_after": 117,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 5
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 6
+      }
+    },
+    {
+      "move_index": 6,
+      "state_before": 6,
+      "state_after": 7,
+      "move_kind": "2-1",
+      "touches_cusp": false,
+      "tetrahedra_before": 117,
+      "tetrahedra_after": 116,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 6
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 7
+      }
+    },
+    {
+      "move_index": 7,
+      "state_before": 7,
+      "state_after": 8,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 116,
+      "tetrahedra_after": 114,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 7
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 8
+      }
+    },
+    {
+      "move_index": 8,
+      "state_before": 8,
+      "state_after": 9,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 114,
+      "tetrahedra_after": 115,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 8
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 9
+      }
+    },
+    {
+      "move_index": 9,
+      "state_before": 9,
+      "state_after": 10,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 115,
+      "tetrahedra_after": 114,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 9
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 10
+      }
+    },
+    {
+      "move_index": 10,
+      "state_before": 10,
+      "state_after": 11,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 114,
+      "tetrahedra_after": 113,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 10
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 11
+      }
+    },
+    {
+      "move_index": 11,
+      "state_before": 11,
+      "state_after": 12,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 113,
+      "tetrahedra_after": 112,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 11
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 12
+      }
+    },
+    {
+      "move_index": 12,
+      "state_before": 12,
+      "state_after": 13,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 112,
+      "tetrahedra_after": 111,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 12
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 13
+      }
+    },
+    {
+      "move_index": 13,
+      "state_before": 13,
+      "state_after": 14,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 111,
+      "tetrahedra_after": 110,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 13
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 14
+      }
+    },
+    {
+      "move_index": 14,
+      "state_before": 14,
+      "state_after": 15,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 110,
+      "tetrahedra_after": 108,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 14
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 15
+      }
+    },
+    {
+      "move_index": 15,
+      "state_before": 15,
+      "state_after": 16,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 108,
+      "tetrahedra_after": 109,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 15
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 16
+      }
+    },
+    {
+      "move_index": 16,
+      "state_before": 16,
+      "state_after": 17,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 109,
+      "tetrahedra_after": 108,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 16
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 17
+      }
+    },
+    {
+      "move_index": 17,
+      "state_before": 17,
+      "state_after": 18,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 108,
+      "tetrahedra_after": 107,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 17
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 18
+      }
+    },
+    {
+      "move_index": 18,
+      "state_before": 18,
+      "state_after": 19,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 107,
+      "tetrahedra_after": 106,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 18
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 19
+      }
+    },
+    {
+      "move_index": 19,
+      "state_before": 19,
+      "state_after": 20,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 106,
+      "tetrahedra_after": 105,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 19
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 20
+      }
+    },
+    {
+      "move_index": 20,
+      "state_before": 20,
+      "state_after": 21,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 105,
+      "tetrahedra_after": 104,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 20
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 21
+      }
+    },
+    {
+      "move_index": 21,
+      "state_before": 21,
+      "state_after": 22,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 104,
+      "tetrahedra_after": 102,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 21
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 22
+      }
+    },
+    {
+      "move_index": 22,
+      "state_before": 22,
+      "state_after": 23,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 102,
+      "tetrahedra_after": 103,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 22
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 23
+      }
+    },
+    {
+      "move_index": 23,
+      "state_before": 23,
+      "state_after": 24,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 103,
+      "tetrahedra_after": 102,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 23
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 24
+      }
+    },
+    {
+      "move_index": 24,
+      "state_before": 24,
+      "state_after": 25,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 102,
+      "tetrahedra_after": 101,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 24
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 25
+      }
+    },
+    {
+      "move_index": 25,
+      "state_before": 25,
+      "state_after": 26,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 101,
+      "tetrahedra_after": 100,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 25
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 26
+      }
+    },
+    {
+      "move_index": 26,
+      "state_before": 26,
+      "state_after": 27,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 100,
+      "tetrahedra_after": 99,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 26
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 27
+      }
+    },
+    {
+      "move_index": 27,
+      "state_before": 27,
+      "state_after": 28,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 99,
+      "tetrahedra_after": 98,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 27
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 28
+      }
+    },
+    {
+      "move_index": 28,
+      "state_before": 28,
+      "state_after": 29,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 98,
+      "tetrahedra_after": 96,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 28
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 29
+      }
+    },
+    {
+      "move_index": 29,
+      "state_before": 29,
+      "state_after": 30,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 96,
+      "tetrahedra_after": 97,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 29
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 30
+      }
+    },
+    {
+      "move_index": 30,
+      "state_before": 30,
+      "state_after": 31,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 97,
+      "tetrahedra_after": 96,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 30
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 31
+      }
+    },
+    {
+      "move_index": 31,
+      "state_before": 31,
+      "state_after": 32,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 96,
+      "tetrahedra_after": 95,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 31
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 32
+      }
+    },
+    {
+      "move_index": 32,
+      "state_before": 32,
+      "state_after": 33,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 95,
+      "tetrahedra_after": 94,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 32
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 33
+      }
+    },
+    {
+      "move_index": 33,
+      "state_before": 33,
+      "state_after": 34,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 94,
+      "tetrahedra_after": 93,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 33
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 34
+      }
+    },
+    {
+      "move_index": 34,
+      "state_before": 34,
+      "state_after": 35,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 93,
+      "tetrahedra_after": 92,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 34
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 35
+      }
+    },
+    {
+      "move_index": 35,
+      "state_before": 35,
+      "state_after": 36,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 92,
+      "tetrahedra_after": 90,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 35
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 36
+      }
+    },
+    {
+      "move_index": 36,
+      "state_before": 36,
+      "state_after": 37,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 90,
+      "tetrahedra_after": 91,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 36
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 37
+      }
+    },
+    {
+      "move_index": 37,
+      "state_before": 37,
+      "state_after": 38,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 91,
+      "tetrahedra_after": 90,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 37
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 38
+      }
+    },
+    {
+      "move_index": 38,
+      "state_before": 38,
+      "state_after": 39,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 90,
+      "tetrahedra_after": 89,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 38
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 39
+      }
+    },
+    {
+      "move_index": 39,
+      "state_before": 39,
+      "state_after": 40,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 89,
+      "tetrahedra_after": 88,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 39
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 40
+      }
+    },
+    {
+      "move_index": 40,
+      "state_before": 40,
+      "state_after": 41,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 88,
+      "tetrahedra_after": 87,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 40
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 41
+      }
+    },
+    {
+      "move_index": 41,
+      "state_before": 41,
+      "state_after": 42,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 87,
+      "tetrahedra_after": 86,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 41
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 42
+      }
+    },
+    {
+      "move_index": 42,
+      "state_before": 42,
+      "state_after": 43,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 86,
+      "tetrahedra_after": 84,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 42
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 43
+      }
+    },
+    {
+      "move_index": 43,
+      "state_before": 43,
+      "state_after": 44,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 84,
+      "tetrahedra_after": 85,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 43
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 44
+      }
+    },
+    {
+      "move_index": 44,
+      "state_before": 44,
+      "state_after": 45,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 85,
+      "tetrahedra_after": 84,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 44
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 45
+      }
+    },
+    {
+      "move_index": 45,
+      "state_before": 45,
+      "state_after": 46,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 84,
+      "tetrahedra_after": 83,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 45
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 46
+      }
+    },
+    {
+      "move_index": 46,
+      "state_before": 46,
+      "state_after": 47,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 83,
+      "tetrahedra_after": 82,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 46
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 47
+      }
+    },
+    {
+      "move_index": 47,
+      "state_before": 47,
+      "state_after": 48,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 82,
+      "tetrahedra_after": 81,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 47
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 48
+      }
+    },
+    {
+      "move_index": 48,
+      "state_before": 48,
+      "state_after": 49,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 81,
+      "tetrahedra_after": 80,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 48
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 49
+      }
+    },
+    {
+      "move_index": 49,
+      "state_before": 49,
+      "state_after": 50,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 80,
+      "tetrahedra_after": 78,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 49
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 50
+      }
+    },
+    {
+      "move_index": 50,
+      "state_before": 50,
+      "state_after": 51,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 78,
+      "tetrahedra_after": 79,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 50
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 51
+      }
+    },
+    {
+      "move_index": 51,
+      "state_before": 51,
+      "state_after": 52,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 79,
+      "tetrahedra_after": 78,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 51
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 52
+      }
+    },
+    {
+      "move_index": 52,
+      "state_before": 52,
+      "state_after": 53,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 78,
+      "tetrahedra_after": 77,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 52
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 53
+      }
+    },
+    {
+      "move_index": 53,
+      "state_before": 53,
+      "state_after": 54,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 77,
+      "tetrahedra_after": 76,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 53
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 54
+      }
+    },
+    {
+      "move_index": 54,
+      "state_before": 54,
+      "state_after": 55,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 76,
+      "tetrahedra_after": 75,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 54
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 55
+      }
+    },
+    {
+      "move_index": 55,
+      "state_before": 55,
+      "state_after": 56,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 75,
+      "tetrahedra_after": 74,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 55
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 56
+      }
+    },
+    {
+      "move_index": 56,
+      "state_before": 56,
+      "state_after": 57,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 74,
+      "tetrahedra_after": 72,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 56
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 57
+      }
+    },
+    {
+      "move_index": 57,
+      "state_before": 57,
+      "state_after": 58,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 72,
+      "tetrahedra_after": 73,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 57
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 58
+      }
+    },
+    {
+      "move_index": 58,
+      "state_before": 58,
+      "state_after": 59,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 73,
+      "tetrahedra_after": 72,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 58
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 59
+      }
+    },
+    {
+      "move_index": 59,
+      "state_before": 59,
+      "state_after": 60,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 72,
+      "tetrahedra_after": 71,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 59
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 60
+      }
+    },
+    {
+      "move_index": 60,
+      "state_before": 60,
+      "state_after": 61,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 71,
+      "tetrahedra_after": 70,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 60
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 61
+      }
+    },
+    {
+      "move_index": 61,
+      "state_before": 61,
+      "state_after": 62,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 70,
+      "tetrahedra_after": 69,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 61
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 62
+      }
+    },
+    {
+      "move_index": 62,
+      "state_before": 62,
+      "state_after": 63,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 69,
+      "tetrahedra_after": 67,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 62
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 63
+      }
+    },
+    {
+      "move_index": 63,
+      "state_before": 63,
+      "state_after": 64,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 67,
+      "tetrahedra_after": 68,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 63
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 64
+      }
+    },
+    {
+      "move_index": 64,
+      "state_before": 64,
+      "state_after": 65,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 68,
+      "tetrahedra_after": 67,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 64
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 65
+      }
+    },
+    {
+      "move_index": 65,
+      "state_before": 65,
+      "state_after": 66,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 67,
+      "tetrahedra_after": 66,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 65
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 66
+      }
+    },
+    {
+      "move_index": 66,
+      "state_before": 66,
+      "state_after": 67,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 66,
+      "tetrahedra_after": 65,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 66
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 67
+      }
+    },
+    {
+      "move_index": 67,
+      "state_before": 67,
+      "state_after": 68,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 65,
+      "tetrahedra_after": 64,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 67
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 68
+      }
+    },
+    {
+      "move_index": 68,
+      "state_before": 68,
+      "state_after": 69,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 64,
+      "tetrahedra_after": 65,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 68
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 69
+      }
+    },
+    {
+      "move_index": 69,
+      "state_before": 69,
+      "state_after": 70,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 65,
+      "tetrahedra_after": 64,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 69
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 70
+      }
+    },
+    {
+      "move_index": 70,
+      "state_before": 70,
+      "state_after": 71,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 64,
+      "tetrahedra_after": 63,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 70
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 71
+      }
+    },
+    {
+      "move_index": 71,
+      "state_before": 71,
+      "state_after": 72,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 63,
+      "tetrahedra_after": 64,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 71
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 72
+      }
+    },
+    {
+      "move_index": 72,
+      "state_before": 72,
+      "state_after": 73,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 64,
+      "tetrahedra_after": 65,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 72
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 73
+      }
+    },
+    {
+      "move_index": 73,
+      "state_before": 73,
+      "state_after": 74,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 65,
+      "tetrahedra_after": 64,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 73
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 74
+      }
+    },
+    {
+      "move_index": 74,
+      "state_before": 74,
+      "state_after": 75,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 64,
+      "tetrahedra_after": 63,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 74
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 75
+      }
+    },
+    {
+      "move_index": 75,
+      "state_before": 75,
+      "state_after": 76,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 63,
+      "tetrahedra_after": 62,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 75
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 76
+      }
+    },
+    {
+      "move_index": 76,
+      "state_before": 76,
+      "state_after": 77,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 62,
+      "tetrahedra_after": 63,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 76
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 77
+      }
+    },
+    {
+      "move_index": 77,
+      "state_before": 77,
+      "state_after": 78,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 63,
+      "tetrahedra_after": 64,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 77
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 78
+      }
+    },
+    {
+      "move_index": 78,
+      "state_before": 78,
+      "state_after": 79,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 64,
+      "tetrahedra_after": 63,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 78
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 79
+      }
+    },
+    {
+      "move_index": 79,
+      "state_before": 79,
+      "state_after": 80,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 63,
+      "tetrahedra_after": 62,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 79
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 80
+      }
+    },
+    {
+      "move_index": 80,
+      "state_before": 80,
+      "state_after": 81,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 62,
+      "tetrahedra_after": 61,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 80
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 81
+      }
+    },
+    {
+      "move_index": 81,
+      "state_before": 81,
+      "state_after": 82,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 61,
+      "tetrahedra_after": 62,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 81
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 82
+      }
+    },
+    {
+      "move_index": 82,
+      "state_before": 82,
+      "state_after": 83,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 62,
+      "tetrahedra_after": 63,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 82
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 83
+      }
+    },
+    {
+      "move_index": 83,
+      "state_before": 83,
+      "state_after": 84,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 63,
+      "tetrahedra_after": 64,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 83
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 84
+      }
+    },
+    {
+      "move_index": 84,
+      "state_before": 84,
+      "state_after": 85,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 64,
+      "tetrahedra_after": 63,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 84
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 85
+      }
+    },
+    {
+      "move_index": 85,
+      "state_before": 85,
+      "state_after": 86,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 63,
+      "tetrahedra_after": 62,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 85
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 86
+      }
+    },
+    {
+      "move_index": 86,
+      "state_before": 86,
+      "state_after": 87,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 62,
+      "tetrahedra_after": 61,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 86
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 87
+      }
+    },
+    {
+      "move_index": 87,
+      "state_before": 87,
+      "state_after": 88,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 61,
+      "tetrahedra_after": 60,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 87
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 88
+      }
+    },
+    {
+      "move_index": 88,
+      "state_before": 88,
+      "state_after": 89,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 60,
+      "tetrahedra_after": 61,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 88
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 89
+      }
+    },
+    {
+      "move_index": 89,
+      "state_before": 89,
+      "state_after": 90,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 61,
+      "tetrahedra_after": 62,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 89
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 90
+      }
+    },
+    {
+      "move_index": 90,
+      "state_before": 90,
+      "state_after": 91,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 62,
+      "tetrahedra_after": 61,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 90
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 91
+      }
+    },
+    {
+      "move_index": 91,
+      "state_before": 91,
+      "state_after": 92,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 61,
+      "tetrahedra_after": 60,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 91
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 92
+      }
+    },
+    {
+      "move_index": 92,
+      "state_before": 92,
+      "state_after": 93,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 60,
+      "tetrahedra_after": 59,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 92
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 93
+      }
+    },
+    {
+      "move_index": 93,
+      "state_before": 93,
+      "state_after": 94,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 59,
+      "tetrahedra_after": 60,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 93
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 94
+      }
+    },
+    {
+      "move_index": 94,
+      "state_before": 94,
+      "state_after": 95,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 60,
+      "tetrahedra_after": 61,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 94
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 95
+      }
+    },
+    {
+      "move_index": 95,
+      "state_before": 95,
+      "state_after": 96,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 61,
+      "tetrahedra_after": 60,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 95
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 96
+      }
+    },
+    {
+      "move_index": 96,
+      "state_before": 96,
+      "state_after": 97,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 60,
+      "tetrahedra_after": 59,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 96
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 97
+      }
+    },
+    {
+      "move_index": 97,
+      "state_before": 97,
+      "state_after": 98,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 59,
+      "tetrahedra_after": 58,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 97
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 98
+      }
+    },
+    {
+      "move_index": 98,
+      "state_before": 98,
+      "state_after": 99,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 58,
+      "tetrahedra_after": 59,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 98
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 99
+      }
+    },
+    {
+      "move_index": 99,
+      "state_before": 99,
+      "state_after": 100,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 59,
+      "tetrahedra_after": 58,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 99
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 100
+      }
+    },
+    {
+      "move_index": 100,
+      "state_before": 100,
+      "state_after": 101,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 58,
+      "tetrahedra_after": 57,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 100
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 101
+      }
+    },
+    {
+      "move_index": 101,
+      "state_before": 101,
+      "state_after": 102,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 57,
+      "tetrahedra_after": 58,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 101
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 102
+      }
+    },
+    {
+      "move_index": 102,
+      "state_before": 102,
+      "state_after": 103,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 58,
+      "tetrahedra_after": 59,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 102
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 103
+      }
+    },
+    {
+      "move_index": 103,
+      "state_before": 103,
+      "state_after": 104,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 59,
+      "tetrahedra_after": 58,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 103
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 104
+      }
+    },
+    {
+      "move_index": 104,
+      "state_before": 104,
+      "state_after": 105,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 58,
+      "tetrahedra_after": 57,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 104
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 105
+      }
+    },
+    {
+      "move_index": 105,
+      "state_before": 105,
+      "state_after": 106,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 57,
+      "tetrahedra_after": 56,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 105
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 106
+      }
+    },
+    {
+      "move_index": 106,
+      "state_before": 106,
+      "state_after": 107,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 56,
+      "tetrahedra_after": 57,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 106
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 107
+      }
+    },
+    {
+      "move_index": 107,
+      "state_before": 107,
+      "state_after": 108,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 57,
+      "tetrahedra_after": 56,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 107
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 108
+      }
+    },
+    {
+      "move_index": 108,
+      "state_before": 108,
+      "state_after": 109,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 56,
+      "tetrahedra_after": 55,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 108
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 109
+      }
+    },
+    {
+      "move_index": 109,
+      "state_before": 109,
+      "state_after": 110,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 55,
+      "tetrahedra_after": 56,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 109
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 110
+      }
+    },
+    {
+      "move_index": 110,
+      "state_before": 110,
+      "state_after": 111,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 56,
+      "tetrahedra_after": 55,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 110
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 111
+      }
+    },
+    {
+      "move_index": 111,
+      "state_before": 111,
+      "state_after": 112,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 55,
+      "tetrahedra_after": 54,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 111
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 112
+      }
+    },
+    {
+      "move_index": 112,
+      "state_before": 112,
+      "state_after": 113,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 54,
+      "tetrahedra_after": 53,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 112
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 113
+      }
+    },
+    {
+      "move_index": 113,
+      "state_before": 113,
+      "state_after": 114,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 53,
+      "tetrahedra_after": 51,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 113
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 114
+      }
+    },
+    {
+      "move_index": 114,
+      "state_before": 114,
+      "state_after": 115,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 51,
+      "tetrahedra_after": 52,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 114
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 115
+      }
+    },
+    {
+      "move_index": 115,
+      "state_before": 115,
+      "state_after": 116,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 52,
+      "tetrahedra_after": 53,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 115
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 116
+      }
+    },
+    {
+      "move_index": 116,
+      "state_before": 116,
+      "state_after": 117,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 53,
+      "tetrahedra_after": 52,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 116
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 117
+      }
+    },
+    {
+      "move_index": 117,
+      "state_before": 117,
+      "state_after": 118,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 52,
+      "tetrahedra_after": 51,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 117
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 118
+      }
+    },
+    {
+      "move_index": 118,
+      "state_before": 118,
+      "state_after": 119,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 51,
+      "tetrahedra_after": 50,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 118
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 119
+      }
+    },
+    {
+      "move_index": 119,
+      "state_before": 119,
+      "state_after": 120,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 50,
+      "tetrahedra_after": 51,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 119
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 120
+      }
+    },
+    {
+      "move_index": 120,
+      "state_before": 120,
+      "state_after": 121,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 51,
+      "tetrahedra_after": 50,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 120
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 121
+      }
+    },
+    {
+      "move_index": 121,
+      "state_before": 121,
+      "state_after": 122,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 50,
+      "tetrahedra_after": 49,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 121
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 122
+      }
+    },
+    {
+      "move_index": 122,
+      "state_before": 122,
+      "state_after": 123,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 49,
+      "tetrahedra_after": 48,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 122
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 123
+      }
+    },
+    {
+      "move_index": 123,
+      "state_before": 123,
+      "state_after": 124,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 48,
+      "tetrahedra_after": 46,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 123
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 124
+      }
+    },
+    {
+      "move_index": 124,
+      "state_before": 124,
+      "state_after": 125,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 46,
+      "tetrahedra_after": 45,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 124
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 125
+      }
+    },
+    {
+      "move_index": 125,
+      "state_before": 125,
+      "state_after": 126,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 45,
+      "tetrahedra_after": 46,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 125
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 126
+      }
+    },
+    {
+      "move_index": 126,
+      "state_before": 126,
+      "state_after": 127,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 46,
+      "tetrahedra_after": 45,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 126
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 127
+      }
+    },
+    {
+      "move_index": 127,
+      "state_before": 127,
+      "state_after": 128,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 45,
+      "tetrahedra_after": 44,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 127
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 128
+      }
+    },
+    {
+      "move_index": 128,
+      "state_before": 128,
+      "state_after": 129,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 44,
+      "tetrahedra_after": 43,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 128
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 129
+      }
+    },
+    {
+      "move_index": 129,
+      "state_before": 129,
+      "state_after": 130,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 43,
+      "tetrahedra_after": 44,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 129
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 130
+      }
+    },
+    {
+      "move_index": 130,
+      "state_before": 130,
+      "state_after": 131,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 44,
+      "tetrahedra_after": 43,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 130
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 131
+      }
+    },
+    {
+      "move_index": 131,
+      "state_before": 131,
+      "state_after": 132,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 43,
+      "tetrahedra_after": 42,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 131
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 132
+      }
+    },
+    {
+      "move_index": 132,
+      "state_before": 132,
+      "state_after": 133,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 42,
+      "tetrahedra_after": 41,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 132
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 133
+      }
+    },
+    {
+      "move_index": 133,
+      "state_before": 133,
+      "state_after": 134,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 41,
+      "tetrahedra_after": 40,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 133
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 134
+      }
+    },
+    {
+      "move_index": 134,
+      "state_before": 134,
+      "state_after": 135,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 40,
+      "tetrahedra_after": 38,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 134
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 135
+      }
+    },
+    {
+      "move_index": 135,
+      "state_before": 135,
+      "state_after": 136,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 38,
+      "tetrahedra_after": 37,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 135
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 136
+      }
+    },
+    {
+      "move_index": 136,
+      "state_before": 136,
+      "state_after": 137,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 37,
+      "tetrahedra_after": 38,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 136
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 137
+      }
+    },
+    {
+      "move_index": 137,
+      "state_before": 137,
+      "state_after": 138,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 38,
+      "tetrahedra_after": 37,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 137
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 138
+      }
+    },
+    {
+      "move_index": 138,
+      "state_before": 138,
+      "state_after": 139,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 37,
+      "tetrahedra_after": 36,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 138
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 139
+      }
+    },
+    {
+      "move_index": 139,
+      "state_before": 139,
+      "state_after": 140,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 36,
+      "tetrahedra_after": 35,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 139
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 140
+      }
+    },
+    {
+      "move_index": 140,
+      "state_before": 140,
+      "state_after": 141,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 35,
+      "tetrahedra_after": 33,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 140
+      },
+      "cusp_after": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 141
+      }
+    },
+    {
+      "move_index": 141,
+      "state_before": 141,
+      "state_after": 142,
+      "move_kind": "2-3",
+      "touches_cusp": true,
+      "tetrahedra_before": 33,
+      "tetrahedra_after": 34,
+      "cusp_before": {
+        "isoSig": "ivAvQcdhghbbaab",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 141
+      },
+      "cusp_after": {
+        "isoSig": "kvAvLQcdhjijbbbfcb",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 142
+      }
+    },
+    {
+      "move_index": 142,
+      "state_before": 142,
+      "state_after": 143,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 34,
+      "tetrahedra_after": 33,
+      "cusp_before": {
+        "isoSig": "kvAvLQcdhjijbbbfcb",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 142
+      },
+      "cusp_after": {
+        "isoSig": "kvAvLQcdijijbbbfff",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 143
+      }
+    },
+    {
+      "move_index": 143,
+      "state_before": 143,
+      "state_after": 144,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 33,
+      "tetrahedra_after": 32,
+      "cusp_before": {
+        "isoSig": "kvAvLQcdijijbbbfff",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 143
+      },
+      "cusp_after": {
+        "isoSig": "kvAvLQcdhjijbbbfcb",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 144
+      }
+    },
+    {
+      "move_index": 144,
+      "state_before": 144,
+      "state_after": 145,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 32,
+      "tetrahedra_after": 31,
+      "cusp_before": {
+        "isoSig": "kvAvLQcdhjijbbbfcb",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 144
+      },
+      "cusp_after": {
+        "isoSig": "kLvLzQbfihjjefacee",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 145
+      }
+    },
+    {
+      "move_index": 145,
+      "state_before": 145,
+      "state_after": 146,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 31,
+      "tetrahedra_after": 30,
+      "cusp_before": {
+        "isoSig": "kLvLzQbfihjjefacee",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 145
+      },
+      "cusp_after": {
+        "isoSig": "kLLvMPbegijjaefadf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 146
+      }
+    },
+    {
+      "move_index": 146,
+      "state_before": 146,
+      "state_after": 147,
+      "move_kind": "2-0",
+      "touches_cusp": true,
+      "tetrahedra_before": 30,
+      "tetrahedra_after": 28,
+      "cusp_before": {
+        "isoSig": "kLLvMPbegijjaefadf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 146
+      },
+      "cusp_after": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 147
+      }
+    },
+    {
+      "move_index": 147,
+      "state_before": 147,
+      "state_after": 148,
+      "move_kind": "2-3",
+      "touches_cusp": true,
+      "tetrahedra_before": 28,
+      "tetrahedra_after": 29,
+      "cusp_before": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 147
+      },
+      "cusp_after": {
+        "isoSig": "kLLvLQbehjijeecdab",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 148
+      }
+    },
+    {
+      "move_index": 148,
+      "state_before": 148,
+      "state_after": 149,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 29,
+      "tetrahedra_after": 28,
+      "cusp_before": {
+        "isoSig": "kLLvLQbehjijeecdab",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 148
+      },
+      "cusp_after": {
+        "isoSig": "kLLvLQbeijijeeadea",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 149
+      }
+    },
+    {
+      "move_index": 149,
+      "state_before": 149,
+      "state_after": 150,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 28,
+      "tetrahedra_after": 27,
+      "cusp_before": {
+        "isoSig": "kLLvLQbeijijeeadea",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 149
+      },
+      "cusp_after": {
+        "isoSig": "kLLvLQbehjijeecdab",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 150
+      }
+    },
+    {
+      "move_index": 150,
+      "state_before": 150,
+      "state_after": 151,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 27,
+      "tetrahedra_after": 26,
+      "cusp_before": {
+        "isoSig": "kLLvLQbehjijeecdab",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 150
+      },
+      "cusp_after": {
+        "isoSig": "kLvLLQcghijjddefbb",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 151
+      }
+    },
+    {
+      "move_index": 151,
+      "state_before": 151,
+      "state_after": 152,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 26,
+      "tetrahedra_after": 25,
+      "cusp_before": {
+        "isoSig": "kLvLLQcghijjddefbb",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 151
+      },
+      "cusp_after": {
+        "isoSig": "kLvLMPbfgijjefecaa",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 152
+      }
+    },
+    {
+      "move_index": 152,
+      "state_before": 152,
+      "state_after": 153,
+      "move_kind": "2-0",
+      "touches_cusp": true,
+      "tetrahedra_before": 25,
+      "tetrahedra_after": 23,
+      "cusp_before": {
+        "isoSig": "kLvLMPbfgijjefecaa",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 152
+      },
+      "cusp_after": {
+        "isoSig": "iLvLQbfghhefeac",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 153
+      }
+    },
+    {
+      "move_index": 153,
+      "state_before": 153,
+      "state_after": 154,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 23,
+      "tetrahedra_after": 24,
+      "cusp_before": {
+        "isoSig": "iLvLQbfghhefeac",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 153
+      },
+      "cusp_after": {
+        "isoSig": "iLvLQbfghhefeac",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 154
+      }
+    },
+    {
+      "move_index": 154,
+      "state_before": 154,
+      "state_after": 155,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 24,
+      "tetrahedra_after": 23,
+      "cusp_before": {
+        "isoSig": "iLvLQbfghhefeac",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 154
+      },
+      "cusp_after": {
+        "isoSig": "iLvLQbfghhefeac",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 155
+      }
+    },
+    {
+      "move_index": 155,
+      "state_before": 155,
+      "state_after": 156,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 23,
+      "tetrahedra_after": 22,
+      "cusp_before": {
+        "isoSig": "iLvLQbfghhefeac",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 155
+      },
+      "cusp_after": {
+        "isoSig": "iLvLQbfghhefeac",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 156
+      }
+    },
+    {
+      "move_index": 156,
+      "state_before": 156,
+      "state_after": 157,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 22,
+      "tetrahedra_after": 21,
+      "cusp_before": {
+        "isoSig": "iLvLQbfghhefeac",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 156
+      },
+      "cusp_after": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 157
+      }
+    },
+    {
+      "move_index": 157,
+      "state_before": 157,
+      "state_after": 158,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 21,
+      "tetrahedra_after": 22,
+      "cusp_before": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 157
+      },
+      "cusp_after": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 158
+      }
+    },
+    {
+      "move_index": 158,
+      "state_before": 158,
+      "state_after": 159,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 22,
+      "tetrahedra_after": 21,
+      "cusp_before": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 158
+      },
+      "cusp_after": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 159
+      }
+    },
+    {
+      "move_index": 159,
+      "state_before": 159,
+      "state_after": 160,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 21,
+      "tetrahedra_after": 20,
+      "cusp_before": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 159
+      },
+      "cusp_after": {
+        "isoSig": "iLLvQbeghheecbf",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 160
+      }
+    },
+    {
+      "move_index": 160,
+      "state_before": 160,
+      "state_after": 161,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 20,
+      "tetrahedra_after": 19,
+      "cusp_before": {
+        "isoSig": "iLLvQbeghheecbf",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 160
+      },
+      "cusp_after": {
+        "isoSig": "gLLPbeffeede",
+        "vertices": 3,
+        "edges": 9,
+        "triangles": 6,
+        "euler_characteristic": 0,
+        "state_index": 161
+      }
+    },
+    {
+      "move_index": 161,
+      "state_before": 161,
+      "state_after": 162,
+      "move_kind": "2-0",
+      "touches_cusp": false,
+      "tetrahedra_before": 19,
+      "tetrahedra_after": 17,
+      "cusp_before": {
+        "isoSig": "gLLPbeffeede",
+        "vertices": 3,
+        "edges": 9,
+        "triangles": 6,
+        "euler_characteristic": 0,
+        "state_index": 161
+      },
+      "cusp_after": {
+        "isoSig": "gLLPbeffeede",
+        "vertices": 3,
+        "edges": 9,
+        "triangles": 6,
+        "euler_characteristic": 0,
+        "state_index": 162
+      }
+    },
+    {
+      "move_index": 162,
+      "state_before": 162,
+      "state_after": 163,
+      "move_kind": "2-3",
+      "touches_cusp": true,
+      "tetrahedra_before": 17,
+      "tetrahedra_after": 18,
+      "cusp_before": {
+        "isoSig": "gLLPbeffeede",
+        "vertices": 3,
+        "edges": 9,
+        "triangles": 6,
+        "euler_characteristic": 0,
+        "state_index": 162
+      },
+      "cusp_after": {
+        "isoSig": "iLLvQbeghheecbf",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 163
+      }
+    },
+    {
+      "move_index": 163,
+      "state_before": 163,
+      "state_after": 164,
+      "move_kind": "2-3",
+      "touches_cusp": true,
+      "tetrahedra_before": 18,
+      "tetrahedra_after": 19,
+      "cusp_before": {
+        "isoSig": "iLLvQbeghheecbf",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 163
+      },
+      "cusp_after": {
+        "isoSig": "kLLvwQbegjijeecaac",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 164
+      }
+    },
+    {
+      "move_index": 164,
+      "state_before": 164,
+      "state_after": 165,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 19,
+      "tetrahedra_after": 18,
+      "cusp_before": {
+        "isoSig": "kLLvwQbegjijeecaac",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 164
+      },
+      "cusp_after": {
+        "isoSig": "kLvLLQbfhjijefccff",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 165
+      }
+    },
+    {
+      "move_index": 165,
+      "state_before": 165,
+      "state_after": 166,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 18,
+      "tetrahedra_after": 17,
+      "cusp_before": {
+        "isoSig": "kLvLLQbfhjijefccff",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 165
+      },
+      "cusp_after": {
+        "isoSig": "kLvLLQbfijijefcccb",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 166
+      }
+    },
+    {
+      "move_index": 166,
+      "state_before": 166,
+      "state_after": 167,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 17,
+      "tetrahedra_after": 16,
+      "cusp_before": {
+        "isoSig": "kLvLLQbfijijefcccb",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 166
+      },
+      "cusp_after": {
+        "isoSig": "kLvLLQbfjhijeffccf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 167
+      }
+    },
+    {
+      "move_index": 167,
+      "state_before": 167,
+      "state_after": 168,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 16,
+      "tetrahedra_after": 17,
+      "cusp_before": {
+        "isoSig": "kLvLLQbfjhijeffccf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 167
+      },
+      "cusp_after": {
+        "isoSig": "kLvLLQbfjhijeffccf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 168
+      }
+    },
+    {
+      "move_index": 168,
+      "state_before": 168,
+      "state_after": 169,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 17,
+      "tetrahedra_after": 18,
+      "cusp_before": {
+        "isoSig": "kLvLLQbfjhijeffccf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 168
+      },
+      "cusp_after": {
+        "isoSig": "kLvLLQbfjhijeffccf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 169
+      }
+    },
+    {
+      "move_index": 169,
+      "state_before": 169,
+      "state_after": 170,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 18,
+      "tetrahedra_after": 17,
+      "cusp_before": {
+        "isoSig": "kLvLLQbfjhijeffccf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 169
+      },
+      "cusp_after": {
+        "isoSig": "kLvLLQbfjhijeffccf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 170
+      }
+    },
+    {
+      "move_index": 170,
+      "state_before": 170,
+      "state_after": 171,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 17,
+      "tetrahedra_after": 16,
+      "cusp_before": {
+        "isoSig": "kLvLLQbfjhijeffccf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 170
+      },
+      "cusp_after": {
+        "isoSig": "kLvLLQbfjhijeffccf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 171
+      }
+    },
+    {
+      "move_index": 171,
+      "state_before": 171,
+      "state_after": 172,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 16,
+      "tetrahedra_after": 15,
+      "cusp_before": {
+        "isoSig": "kLvLLQbfjhijeffccf",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 171
+      },
+      "cusp_after": {
+        "isoSig": "kLvLzQbfihjjefacad",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 172
+      }
+    },
+    {
+      "move_index": 172,
+      "state_before": 172,
+      "state_after": 173,
+      "move_kind": "2-3",
+      "touches_cusp": true,
+      "tetrahedra_before": 15,
+      "tetrahedra_after": 16,
+      "cusp_before": {
+        "isoSig": "kLvLzQbfihjjefacad",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 172
+      },
+      "cusp_after": {
+        "isoSig": "kLvLzQbfihjjefacee",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 173
+      }
+    },
+    {
+      "move_index": 173,
+      "state_before": 173,
+      "state_after": 174,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 16,
+      "tetrahedra_after": 15,
+      "cusp_before": {
+        "isoSig": "kLvLzQbfihjjefacee",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 173
+      },
+      "cusp_after": {
+        "isoSig": "kLvLzQbfihjjefacee",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 174
+      }
+    },
+    {
+      "move_index": 174,
+      "state_before": 174,
+      "state_after": 175,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 15,
+      "tetrahedra_after": 14,
+      "cusp_before": {
+        "isoSig": "kLvLzQbfihjjefacee",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 174
+      },
+      "cusp_after": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 175
+      }
+    },
+    {
+      "move_index": 175,
+      "state_before": 175,
+      "state_after": 176,
+      "move_kind": "2-3",
+      "touches_cusp": true,
+      "tetrahedra_before": 14,
+      "tetrahedra_after": 15,
+      "cusp_before": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 175
+      },
+      "cusp_after": {
+        "isoSig": "kLLvwQbegijjeecdec",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 176
+      }
+    },
+    {
+      "move_index": 176,
+      "state_before": 176,
+      "state_after": 177,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 15,
+      "tetrahedra_after": 14,
+      "cusp_before": {
+        "isoSig": "kLLvwQbegijjeecdec",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 176
+      },
+      "cusp_after": {
+        "isoSig": "kLLvLQbeijijeeadea",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 177
+      }
+    },
+    {
+      "move_index": 177,
+      "state_before": 177,
+      "state_after": 178,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 14,
+      "tetrahedra_after": 13,
+      "cusp_before": {
+        "isoSig": "kLLvLQbeijijeeadea",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 177
+      },
+      "cusp_after": {
+        "isoSig": "kLLvLQbehjijeecdab",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 178
+      }
+    },
+    {
+      "move_index": 178,
+      "state_before": 178,
+      "state_after": 179,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 13,
+      "tetrahedra_after": 12,
+      "cusp_before": {
+        "isoSig": "kLLvLQbehjijeecdab",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 178
+      },
+      "cusp_after": {
+        "isoSig": "kLLvMPbehhjjeecccc",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 179
+      }
+    },
+    {
+      "move_index": 179,
+      "state_before": 179,
+      "state_after": 180,
+      "move_kind": "2-0",
+      "touches_cusp": true,
+      "tetrahedra_before": 12,
+      "tetrahedra_after": 10,
+      "cusp_before": {
+        "isoSig": "kLLvMPbehhjjeecccc",
+        "vertices": 5,
+        "edges": 15,
+        "triangles": 10,
+        "euler_characteristic": 0,
+        "state_index": 179
+      },
+      "cusp_after": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 180
+      }
+    },
+    {
+      "move_index": 180,
+      "state_before": 180,
+      "state_after": 181,
+      "move_kind": "2-3",
+      "touches_cusp": false,
+      "tetrahedra_before": 10,
+      "tetrahedra_after": 11,
+      "cusp_before": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 180
+      },
+      "cusp_after": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 181
+      }
+    },
+    {
+      "move_index": 181,
+      "state_before": 181,
+      "state_after": 182,
+      "move_kind": "3-2",
+      "touches_cusp": false,
+      "tetrahedra_before": 11,
+      "tetrahedra_after": 10,
+      "cusp_before": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 181
+      },
+      "cusp_after": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 182
+      }
+    },
+    {
+      "move_index": 182,
+      "state_before": 182,
+      "state_after": 183,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 10,
+      "tetrahedra_after": 9,
+      "cusp_before": {
+        "isoSig": "iLLvQbehgheeccc",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 182
+      },
+      "cusp_after": {
+        "isoSig": "iLLzPbefhheedad",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 183
+      }
+    },
+    {
+      "move_index": 183,
+      "state_before": 183,
+      "state_after": 184,
+      "move_kind": "2-3",
+      "touches_cusp": true,
+      "tetrahedra_before": 9,
+      "tetrahedra_after": 10,
+      "cusp_before": {
+        "isoSig": "iLLzPbefhheedad",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 183
+      },
+      "cusp_after": {
+        "isoSig": "mLvLPzPbfihjllefdcdea",
+        "vertices": 6,
+        "edges": 18,
+        "triangles": 12,
+        "euler_characteristic": 0,
+        "state_index": 184
+      }
+    },
+    {
+      "move_index": 184,
+      "state_before": 184,
+      "state_after": 185,
+      "move_kind": "2-3",
+      "touches_cusp": true,
+      "tetrahedra_before": 10,
+      "tetrahedra_after": 11,
+      "cusp_before": {
+        "isoSig": "mLvLPzPbfihjllefdcdea",
+        "vertices": 6,
+        "edges": 18,
+        "triangles": 12,
+        "euler_characteristic": 0,
+        "state_index": 184
+      },
+      "cusp_after": {
+        "isoSig": "oLvLPzvQbfihjmnnefdcdbfb",
+        "vertices": 7,
+        "edges": 21,
+        "triangles": 14,
+        "euler_characteristic": 0,
+        "state_index": 185
+      }
+    },
+    {
+      "move_index": 185,
+      "state_before": 185,
+      "state_after": 186,
+      "move_kind": "2-3",
+      "touches_cusp": true,
+      "tetrahedra_before": 11,
+      "tetrahedra_after": 12,
+      "cusp_before": {
+        "isoSig": "oLvLPzvQbfihjmnnefdcdbfb",
+        "vertices": 7,
+        "edges": 21,
+        "triangles": 14,
+        "euler_characteristic": 0,
+        "state_index": 185
+      },
+      "cusp_after": {
+        "isoSig": "sLvPvwLzLQcegiloqprrdbdccaddbb",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 186
+      }
+    },
+    {
+      "move_index": 186,
+      "state_before": 186,
+      "state_after": 187,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 12,
+      "tetrahedra_after": 11,
+      "cusp_before": {
+        "isoSig": "sLvPvwLzLQcegiloqprrdbdccaddbb",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 186
+      },
+      "cusp_after": {
+        "isoSig": "svAvvPwzwQcdkljonrqrbfdafafdfe",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 187
+      }
+    },
+    {
+      "move_index": 187,
+      "state_before": 187,
+      "state_after": 188,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 11,
+      "tetrahedra_after": 10,
+      "cusp_before": {
+        "isoSig": "svAvvPwzwQcdkljonrqrbfdafafdfe",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 187
+      },
+      "cusp_after": {
+        "isoSig": "svAvLvPwLQcdhmnlqprrbbbdabbbff",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 188
+      }
+    },
+    {
+      "move_index": 188,
+      "state_before": 188,
+      "state_after": 189,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 10,
+      "tetrahedra_after": 9,
+      "cusp_before": {
+        "isoSig": "svAvLvPwLQcdhmnlqprrbbbdabbbff",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 188
+      },
+      "cusp_after": {
+        "isoSig": "svAvLLvwMQcdhjlnrpqrbbbbbbbbbb",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 189
+      }
+    },
+    {
+      "move_index": 189,
+      "state_before": 189,
+      "state_after": 190,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 9,
+      "tetrahedra_after": 8,
+      "cusp_before": {
+        "isoSig": "svAvLLvwMQcdhjlnrpqrbbbbbbbbbb",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 189
+      },
+      "cusp_after": {
+        "isoSig": "sLLvzvPzLQbegmnlrqrqeecaecdedd",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 190
+      }
+    },
+    {
+      "move_index": 190,
+      "state_before": 190,
+      "state_after": 191,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 8,
+      "tetrahedra_after": 7,
+      "cusp_before": {
+        "isoSig": "sLLvzvPzLQbegmnlrqrqeecaecdedd",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 190
+      },
+      "cusp_after": {
+        "isoSig": "sLLvLwvMLQbeijlnprqreeadcbcddb",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 191
+      }
+    },
+    {
+      "move_index": 191,
+      "state_before": 191,
+      "state_after": 192,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 7,
+      "tetrahedra_after": 6,
+      "cusp_before": {
+        "isoSig": "sLLvLwvMLQbeijlnprqreeadcbcddb",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 191
+      },
+      "cusp_after": {
+        "isoSig": "svAvLzwwLQcdhkjmqprrbbbabbabab",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 192
+      }
+    },
+    {
+      "move_index": 192,
+      "state_before": 192,
+      "state_after": 193,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 6,
+      "tetrahedra_after": 5,
+      "cusp_before": {
+        "isoSig": "svAvLzwwLQcdhkjmqprrbbbabbabab",
+        "vertices": 9,
+        "edges": 27,
+        "triangles": 18,
+        "euler_characteristic": 0,
+        "state_index": 192
+      },
+      "cusp_after": {
+        "isoSig": "qvAvvAAvQcdhkjloppcbcebdeab",
+        "vertices": 8,
+        "edges": 24,
+        "triangles": 16,
+        "euler_characteristic": 0,
+        "state_index": 193
+      }
+    },
+    {
+      "move_index": 193,
+      "state_before": 193,
+      "state_after": 194,
+      "move_kind": "3-2",
+      "touches_cusp": true,
+      "tetrahedra_before": 5,
+      "tetrahedra_after": 4,
+      "cusp_before": {
+        "isoSig": "qvAvvAAvQcdhkjloppcbcebdeab",
+        "vertices": 8,
+        "edges": 24,
+        "triangles": 16,
+        "euler_characteristic": 0,
+        "state_index": 193
+      },
+      "cusp_after": {
+        "isoSig": "oLLLvPLPcdgkkmnnaedadaed",
+        "vertices": 7,
+        "edges": 21,
+        "triangles": 14,
+        "euler_characteristic": 0,
+        "state_index": 194
+      }
+    },
+    {
+      "move_index": 194,
+      "state_before": 194,
+      "state_after": 195,
+      "move_kind": "2-0",
+      "touches_cusp": true,
+      "tetrahedra_before": 4,
+      "tetrahedra_after": 2,
+      "cusp_before": {
+        "isoSig": "oLLLvPLPcdgkkmnnaedadaed",
+        "vertices": 7,
+        "edges": 21,
+        "triangles": 14,
+        "euler_characteristic": 0,
+        "state_index": 194
+      },
+      "cusp_after": {
+        "isoSig": "iLLzPbefhheedad",
+        "vertices": 4,
+        "edges": 12,
+        "triangles": 8,
+        "euler_characteristic": 0,
+        "state_index": 195
+      }
+    }
+  ]
+}

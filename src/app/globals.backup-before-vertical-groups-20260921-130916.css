@@ -1,0 +1,1017 @@
+/* Import Tailwind base if needed */
+@import "tailwindcss";
+
+/* Theme color variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --sidebar-expanded-width: 142px;
+  --sidebar-collapsed-width: 32px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: var(--sidebar-expanded-width);
+  transition: width 0.25s ease;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 100vh;
+  scroll-behavior: smooth;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 92px;
+  left: 6px;
+
+  width: 22px;
+  height: 22px;
+
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: white;
+
+  font-size: 22px;
+  line-height: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3000;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.sidebar.sidebar-collapsed {
+  width: var(--sidebar-collapsed-width);
+  padding-top: 0.6rem;
+  overflow: hidden;
+}
+
+.sidebar.sidebar-collapsed .logo-link,
+.sidebar.sidebar-collapsed > .separator,
+.sidebar.sidebar-collapsed .menu {
+  display: none;
+}
+
+.logo {
+  width: 115px;
+  margin-left: -2px;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+.logo-spacer {
+  height: 0.01rem;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.menu a.menu-text-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0.05rem 0;
+  font-family: "Times New Roman", serif;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.1rem 0.1rem 0.1rem 1.0rem; /* Top, Right, Bottom, Left */
+  text-align: left;
+  transition: background 0.3s;
+}
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-youtube-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.52rem;
+  margin: 0.5rem 0;
+  padding-left: 0.6rem;
+}
+
+.menu-icon {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.menu-icon:hover {
+  transform: scale(1.1);
+}
+
+.menu-youtube-links img:first-child {
+  transform: translateX(7.0px);
+}
+
+
+.menu-youtube-links a:last-child {
+  margin-left: -30px; /* Try adjusting this value */
+}
+
+
+.separator {
+  width: 100%;
+  height: 1.5px;
+  background-color: rgba(255, 0, 0, 0.4);
+  margin: 0.35rem 0;
+  flex-shrink: 0;
+}
+
+
+/* Layout Container */
+.layout-container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  overflow-x: visible; /* ← let contents extend left/right */
+  overflow-y: hidden;  /* keep vertical behavior the same */
+}
+
+
+/* Background Overlay (used by multiple pages) */
+.symbol-overlay,
+.constants-overlay {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-expanded-width);
+  width: calc(100vw - var(--sidebar-expanded-width));
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.layout-container.sidebar-is-collapsed .symbol-overlay,
+.layout-container.sidebar-is-collapsed .constants-overlay {
+  left: var(--sidebar-collapsed-width);
+  width: calc(100vw - var(--sidebar-collapsed-width));
+}
+
+/* Shared Page Styles */
+.symbol-legend-page,
+.constants-of-nature-page,
+.hyperbolic-partition-page,
+.quartic-tetrahedron-transform-page,
+.forum-page {
+  position: relative;
+  min-height: 100vh;
+  font-family: "Times New Roman", serif;
+  color: white;
+  overflow-x: hidden;
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/*
+ * Quartic explorer embedded in Hyperbolic Partitions.
+ *
+ * Collapsed menu: use the existing inline geometry unchanged.
+ *
+ * Expanded menu only: the parent layout introduces the 110px
+ * difference between the 32px and 142px sidebar states. Remove
+ * exactly that displacement from the explorer's real layout
+ * position. Do not alter its width or its collapsed position.
+ */
+.layout-container:not(.sidebar-is-collapsed)
+  .hyperbolic-partition-page
+  .quartic-explorer-embed {
+  margin-left:
+    calc(
+      50% - 50vw
+      + var(--sidebar-width)
+      - 110px
+    ) !important;
+}
+
+
+/* Main Content Area */
+.main-content {
+  padding-left: var(--sidebar-expanded-width);                /* ✅ Push content away from sidebar */
+  width: 100vw;                        /* ✅ Let content take full width */
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  background-color: transparent;
+  color: white;
+  z-index: 1;
+}
+
+.layout-container.sidebar-is-collapsed .main-content {
+  padding-left: var(--sidebar-collapsed-width);
+}
+
+
+/*
+ * Hyperbolic Partition Equation background.
+ *
+ * .hyperbolic-partition-content is present in the server-rendered
+ * HTML, before LayoutWrapper hydrates and assigns the page-specific
+ * class. Giving .main-content the background at that stage prevents
+ * the gray reload flash.
+ */
+.main-content:has(.hyperbolic-partition-content) {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.main-content:has(.quartic-tetrahedron-transform-page) {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+
+/* Legend and Partition Page Specifics */
+.legend-content,
+.partition-content,
+.hyperbolic-partition-content {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 2rem;
+  width: min(1500px, calc(100vw - var(--sidebar-width) - 4rem));
+  max-width: none !important;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.legend-content > *,
+.partition-content > *,
+.hyperbolic-partition-content > * {
+  max-width: none;
+}
+
+.legend-content .equation-description,
+.partition-content .equation-description,
+.hyperbolic-partition-content .equation-description {
+  width: 100%;
+  max-width: none !important;
+}
+
+.legend-title {
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.legend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 16px;
+}
+
+.legend-left {
+  text-align: left;
+  margin-left: 0.5rem;
+}
+
+.legend-right {
+  text-align: right;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.legend-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.legend-link:hover {
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+.equation-line,
+.equation-line-left {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.equation-line {
+  justify-content: center;
+}
+
+.equation-line-left {
+  justify-content: flex-start;
+}
+
+.equation-line img {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.equation-description {
+  text-indent: 2em;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+}
+
+.constants-main-content {
+  margin-left: var(--sidebar-expanded-width);
+  width: calc(100vw - var(--sidebar-expanded-width));
+  max-width: calc(100vw - var(--sidebar-expanded-width));
+  min-height: 100vh;
+  position: relative;
+  background: transparent;
+  color: white;
+  z-index: 1;
+
+  overflow-y: auto;
+  overflow-x: visible;                      /* <-- lets hover labels extend to the right */
+}
+
+.layout-container.sidebar-is-collapsed .constants-main-content {
+  margin-left: var(--sidebar-collapsed-width);
+  width: calc(100vw - var(--sidebar-collapsed-width));
+  max-width: calc(100vw - var(--sidebar-collapsed-width));
+}
+
+
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;   /* Keep alignment tight */
+  line-height: 0;           /* Prevent vertical stretching */
+}
+
+.custom-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-family: "Times New Roman", serif;
+  color: white;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  line-height: normal;
+}
+
+.tooltip-container:hover .custom-tooltip {
+  opacity: 1;
+}
+
+.menu-youtube-links a:hover {
+  background: transparent;
+}
+
+.menu-youtube-links a:focus,
+.menu-youtube-links a:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.menu-youtube-links a img:focus,
+.menu-youtube-links a img:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.tooltip-thad {
+  left: 24px;         /* move 10px from the left edge of the container */
+}
+
+.binomial-constructor-page {
+  background-image: url('/backgrounds/starfield.png');
+  background-size: cover;
+  background-position: center;
+  overflow-y: scroll;
+  height: 100vh;
+  position: relative;
+}
+
+.binomial-constructor-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+
+.binomial-constructor-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.external-transform-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.external-transform-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.home-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.home-page {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.planck-constants-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.planck-constants-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.coherent-units-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+
+.layout-container.coherent-units-page {
+  background-image: url('/your-background-image.jpg'); /* use your correct image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.coherent-units-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+ * Simplest Manifold background.
+ *
+ * The :has() selector supplies the same background from the
+ * server-rendered page contents before LayoutWrapper has
+ * hydrated and added .simplest-manifold-page.
+ *
+ * This prevents the gray pre-hydration flash on reload.
+ */
+.simplest-manifold-page,
+.main-content:has(.simplest-manifold-viewer-lock) {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+/*
+ * Simplest Manifold viewport-width correction.
+ *
+ * .main-content already receives sidebar-width padding from
+ * LayoutWrapper. Globally it is also width: 100vw using the
+ * default content-box model, which makes the actual rendered
+ * box wider than the viewport by exactly that left padding.
+ *
+ * Keep the existing 100vw outer width, but include the sidebar
+ * padding INSIDE that width on this page.
+ */
+.main-content.simplest-manifold-page {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+.simplest-manifold-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.simplest-manifold-viewer-lock {
+  position: relative;
+
+  /*
+   * Match the Quartic explorer's visible-frame convention:
+   * stop the actual viewer 20px before the viewport-side edge.
+   *
+   * Put the inset on the viewer itself rather than on the
+   * scrolling parent so the spacing cannot be consumed by
+   * scrollbar/layout geometry.
+   */
+  width: calc(100% - 20px);
+
+  height: calc(100vh - 36px);
+}
+
+.simplest-manifold-viewer-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.combinatorics-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.combinatorics-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.animated-math-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.animated-math-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.monastery-events-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.monastery-events-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.supporters-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.supporters-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.contact-us-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.contact-us-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.zhe-value-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 2.0rem;  /* only horizontal spacing */
+  row-gap: 0rem;       /* no vertical spacing */
+  flex-wrap: wrap;
+}
+
+
+.zhe-values-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.zhe-image-column {
+  flex: 0 0 auto;
+}
+
+.zhe-diagram {
+  width: 105px;
+  height: 105px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+
+.inline-symbol {
+  height: 1em;
+  vertical-align: middle;
+  margin-left: 0.3em;
+}
+
+.books-page {
+  background-image: url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.books-page .partition-content {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Keep buttons neutral ONLY on this page so no global/UA styles fight you */
+.main-content.constants-of-nature-page button {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}
+
+/* Let the right-side hover label extend beyond the column */
+.main-content.constants-of-nature-page { overflow-x: visible; }
+
+/* CSS-driven hover label: hidden by default, shown when the button is hovered */
+.main-content.constants-of-nature-page .eqName { display: none; }
+.main-content.constants-of-nature-page .eqBtn:hover + .eqName { display: block; }
+
+.wolframalpha-logo {
+  width: 88px;
+  height: auto;
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 15px;
+}
+
+.books-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.book-slot {
+  width: 200px;                /* controls how many fit per row */
+  display: flex;
+  justify-content: center;     /* centers the image inside the slot */
+  align-items: flex-start;
+  position: relative;          /* needed for the Einstein toggle positioning */
+}
+
+/* Make the Books page gallery area wider so more books can fit per row */
+.books-page .partition-content {
+  max-width: 2300px;  /* try 1400–1800 */
+}
+
+.popup-equation {
+    display: inline-block;
+}
+
+/* --- Global collapsible sidebar overrides --- */
+
+:root {
+  --sidebar-expanded-width: 142px;
+  --sidebar-collapsed-width: 32px;
+}
+
+.sidebar {
+  width: var(--sidebar-expanded-width);
+  transition: width 0.25s ease;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 92px;
+  left: 6px;
+
+  width: 22px;
+  height: 22px;
+
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: white;
+
+  font-size: 22px;
+  line-height: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3000;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.sidebar.sidebar-collapsed {
+  width: var(--sidebar-collapsed-width) !important;
+  padding-top: 0.6rem;
+  overflow: hidden;
+}
+
+.sidebar.sidebar-collapsed .logo-link,
+.sidebar.sidebar-collapsed > .separator,
+.sidebar.sidebar-collapsed .menu {
+  display: none !important;
+}
+
+.layout-container.sidebar-is-collapsed .main-content {
+  padding-left: var(--sidebar-collapsed-width) !important;
+}
+
+.layout-container.sidebar-is-collapsed .symbol-overlay,
+.layout-container.sidebar-is-collapsed .constants-overlay {
+  left: var(--sidebar-collapsed-width) !important;
+  width: calc(100vw - var(--sidebar-collapsed-width)) !important;
+}
+
+.layout-container.sidebar-is-collapsed .constants-main-content {
+  margin-left: var(--sidebar-collapsed-width) !important;
+  width: calc(100vw - var(--sidebar-collapsed-width)) !important;
+  max-width: calc(100vw - var(--sidebar-collapsed-width)) !important;
+}
+
+/* Make background overlays follow the current sidebar width */
+.layout-container .symbol-overlay,
+.layout-container .constants-overlay {
+  left: var(--sidebar-width) !important;
+  width: calc(100vw - var(--sidebar-width)) !important;
+}
+
+.layout-container .constants-main-content {
+  margin-left: var(--sidebar-width) !important;
+  width: calc(100vw - var(--sidebar-width)) !important;
+  max-width: calc(100vw - var(--sidebar-width)) !important;
+}
+
+/* Force dark background overlays to cover the full viewport.
+   The fixed black sidebar sits above this, so it will not be harmed. */
+.symbol-overlay.symbol-overlay.symbol-overlay,
+.constants-overlay.constants-overlay.constants-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Darken the Constants of Nature background directly.
+   This fixes the bright strip exposed by the collapsible sidebar. */
+.main-content.constants-of-nature-page {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('/physics_monastery_background.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+}
+
+.page-content-layer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Forum page background */
+.main-content.forum-page {
+  background-image:
+    url('/physics_monastery_background.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  min-height: 100vh !important;
+}
+
+/* --- Sidebar moon/sun toggle icon --- */
+
+.sidebar-toggle {
+  background: transparent !important;
+  border: none !important;
+  color: #f8f3e8;
+  padding: 0 !important;
+}
+
+.sidebar-toggle-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  transition:
+    color 0.2s ease,
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+  background: transparent !important;
+  color: #ffcc00;
+}
+
+.sidebar-toggle:hover .sidebar-toggle-icon {
+  filter: drop-shadow(0 0 6px rgba(255, 204, 0, 0.85));
+  transform: scale(1.08);
+}
+
+.sidebar-toggle:active .sidebar-toggle-icon {
+  transform: scale(0.94);
+}
+
+.sidebar-toggle:focus-visible {
+  outline: 1px solid rgba(255, 204, 0, 0.8);
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+
+.main-content.forum-page {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
+    url('/physics_monastery_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+/* Hidden homepage fox link */
+.secret-fox-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  text-decoration: none;
+  transition:
+    opacity 0.25s ease,
+    filter 0.25s ease,
+    transform 0.25s ease;
+}
+
+.secret-fox-link:hover {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.82));
+}
+
+.hidden-fox-image-stack {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.hidden-fox-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  transition:
+    opacity 0.22s ease,
+    filter 0.22s ease;
+}
+
+.hidden-fox-image-gold {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.secret-fox-link:hover .hidden-fox-image-white {
+  opacity: 0;
+}
+
+.secret-fox-link:hover .hidden-fox-image-gold {
+  opacity: 1;
+}
+

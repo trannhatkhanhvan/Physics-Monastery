@@ -1,0 +1,131 @@
+{
+  "start": {
+    "tetrahedra": 9,
+    "isoSig": "jLLLLQQcefhhghiiiiidmgcvbog"
+  },
+  "expansions": [
+    {
+      "kind": "2-3",
+      "face_dimension": 2,
+      "face_index": 0,
+      "before_tetrahedra": 9,
+      "after_tetrahedra": 10,
+      "before_isoSig": "jLLLLQQcefhhghiiiiidmgcvbog",
+      "after_isoSig": "kLvLAAQkbhfeghiijjjppiigwccudx"
+    },
+    {
+      "kind": "2-3",
+      "face_dimension": 2,
+      "face_index": 0,
+      "before_tetrahedra": 10,
+      "after_tetrahedra": 11,
+      "before_isoSig": "kLvLAAQkbhfeghiijjjppiigwccudx",
+      "after_isoSig": "lLvLLAQQcbefhjjkhikjkmlmfggiokaga"
+    },
+    {
+      "kind": "2-3",
+      "face_dimension": 2,
+      "face_index": 0,
+      "before_tetrahedra": 11,
+      "after_tetrahedra": 12,
+      "before_isoSig": "lLvLLAQQcbefhjjkhikjkmlmfggiokaga",
+      "after_isoSig": "mLvALzPQQcdeijikljiklldvawdwedpclsf"
+    }
+  ],
+  "descent": [
+    {
+      "kind": "3-2",
+      "face_dimension": 1,
+      "face_index": 1,
+      "edge_degree": 3,
+      "before_tetrahedra": 12,
+      "after_tetrahedra": 11,
+      "before_isoSig": "mLvALzPQQcdeijikljiklldvawdwedpclsf",
+      "after_isoSig": "lvLAvAQQccedgihikkjjkovcugkciqrrt"
+    },
+    {
+      "kind": "3-2",
+      "face_dimension": 1,
+      "face_index": 3,
+      "edge_degree": 3,
+      "before_tetrahedra": 11,
+      "after_tetrahedra": 10,
+      "before_isoSig": "lvLAvAQQccedgihikkjjkovcugkciqrrt",
+      "after_isoSig": "kvLLAPQkefeejihijjioafoorkrrok"
+    },
+    {
+      "kind": "3-2",
+      "face_dimension": 1,
+      "face_index": 0,
+      "edge_degree": 3,
+      "before_tetrahedra": 10,
+      "after_tetrahedra": 9,
+      "before_isoSig": "kvLLAPQkefeejihijjioafoorkrrok",
+      "after_isoSig": "jvLALQQecdgfihihivvcaxccvcv"
+    },
+    {
+      "kind": "3-2",
+      "face_dimension": 1,
+      "face_index": 3,
+      "edge_degree": 3,
+      "before_tetrahedra": 9,
+      "after_tetrahedra": 8,
+      "before_isoSig": "jvLALQQecdgfihihivvcaxccvcv",
+      "after_isoSig": "iLLLAQccefgehhghiiellsvff"
+    },
+    {
+      "kind": "3-2",
+      "face_dimension": 1,
+      "face_index": 3,
+      "edge_degree": 3,
+      "before_tetrahedra": 8,
+      "after_tetrahedra": 7,
+      "before_isoSig": "iLLLAQccefgehhghiiellsvff",
+      "after_isoSig": "hLLLQkcdfefgggiceaukff"
+    },
+    {
+      "kind": "3-2",
+      "face_dimension": 1,
+      "face_index": 4,
+      "edge_degree": 3,
+      "before_tetrahedra": 7,
+      "after_tetrahedra": 6,
+      "before_isoSig": "hLLLQkcdfefgggiceaukff",
+      "after_isoSig": "gvLQQcdeffeffffeabe"
+    },
+    {
+      "kind": "3-2",
+      "face_dimension": 1,
+      "face_index": 4,
+      "edge_degree": 3,
+      "before_tetrahedra": 6,
+      "after_tetrahedra": 5,
+      "before_isoSig": "gvLQQcdeffeffffeabe",
+      "after_isoSig": "fvPQccdedeefovgsb"
+    },
+    {
+      "kind": "3-2",
+      "face_dimension": 1,
+      "face_index": 2,
+      "edge_degree": 3,
+      "before_tetrahedra": 5,
+      "after_tetrahedra": 4,
+      "before_isoSig": "fvPQccdedeefovgsb",
+      "after_isoSig": "eLMkbbdddaamdx"
+    },
+    {
+      "kind": "2-0",
+      "face_dimension": 0,
+      "face_index": 1,
+      "before_tetrahedra": 4,
+      "after_tetrahedra": 2,
+      "before_isoSig": "eLMkbbdddaamdx",
+      "after_isoSig": "cPcbbbiht"
+    }
+  ],
+  "endpoint": {
+    "tetrahedra": 2,
+    "isoSig": "cPcbbbiht"
+  },
+  "tested_depth3_states": 1
+}
