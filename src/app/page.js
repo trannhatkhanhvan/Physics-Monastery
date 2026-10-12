@@ -38,6 +38,7 @@ export default function HomePage() {
   }, []);
 
   const videoData = [
+    { id: 'tEpsfuD9G_U' },
     { id: '23BhfLN65jI' },
     { id: 'yvaqdHpGU-g' },
     { id: 'sDHcTJzbzos' },
@@ -54,7 +55,7 @@ export default function HomePage() {
       <div
         className="partition-content"
         style={{
-          minHeight: '74vh',
+          minHeight: '50vh',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
@@ -76,12 +77,12 @@ export default function HomePage() {
                 {/* Center thesis text */}
         <div
           style={{
-            position: 'absolute',
-            top: '40%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
+            position: 'relative',
             width: '100%',
             maxWidth: '52rem',
+            flexShrink: 0,
+            marginTop: 'clamp(2.0rem, 4vh, 4rem)',
+            marginBottom: '2rem',
             padding: '0 1.5rem',
             boxSizing: 'border-box',
             textAlign: 'justify',

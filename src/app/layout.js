@@ -61,6 +61,7 @@ export default function RootLayout({ children }) {
             __html: `
               try {
                 if (
+                  window.location.pathname !== "/" &&
                   localStorage.getItem(
                     "physics-monastery:sidebar-collapsed"
                   ) === "true"
@@ -68,6 +69,10 @@ export default function RootLayout({ children }) {
                   document.documentElement.setAttribute(
                     "data-sidebar-collapsed",
                     "true"
+                  );
+                } else {
+                  document.documentElement.removeAttribute(
+                    "data-sidebar-collapsed"
                   );
                 }
               } catch (error) {}

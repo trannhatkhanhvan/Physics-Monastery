@@ -71,24 +71,36 @@ export default function LayoutWrapper({ children }) {
    * state is applied.
    */
   useLayoutEffect(() => {
-    try {
-      const stored =
-        window.localStorage.getItem(
-          SIDEBAR_COLLAPSED_STORAGE_KEY
-        );
+    // Home always opens expanded, without changing the saved
+    // preference used by other routes.
+    let collapsed = false;
 
-      if (stored === "true") {
-        setSidebarCollapsed(true);
-      } else if (stored === "false") {
-        setSidebarCollapsed(false);
+    if (pathname !== '/') {
+      try {
+        collapsed =
+          window.localStorage.getItem(
+            SIDEBAR_COLLAPSED_STORAGE_KEY
+          ) === 'true';
+      } catch {
+        // Storage unavailable: use the expanded default.
       }
-    } catch {
-      /*
-       * If storage is unavailable, retain the normal
-       * expanded default.
-       */
     }
-  }, []);
+
+    setSidebarCollapsed(collapsed);
+
+    // Keep the pre-hydration CSS flag in sync on both
+    // full reloads and client-side route transitions.
+    if (collapsed) {
+      document.documentElement.setAttribute(
+        'data-sidebar-collapsed',
+        'true'
+      );
+    } else {
+      document.documentElement.removeAttribute(
+        'data-sidebar-collapsed'
+      );
+    }
+  }, [pathname]);
 
   const pageClass =
     pathname === '/' ? 'home-page' :
