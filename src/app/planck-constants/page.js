@@ -2,8 +2,476 @@
 
 import { useEffect, useRef, useState } from 'react';
 import LayoutWrapper from '@/components/LayoutWrapper';
-import GFunctionsExplorer from '../g-functions/GFunctionsExplorer';
+import GFunctionsExplorer, { renderSignedGPhase } from '../g-functions/GFunctionsExplorer';
 import '../globals.css';
+
+
+const PHASE_IDS = ['G0', 'G1', 'G2', 'G3', 'G4'];
+const PHASE_INITIAL_ZOOM = {
+  normal: [33.12, 35.16, 43.82, 4.06, 4.57],
+  inverted: [0.41, 0.21, 0.80, 7.39, 5.70],
+};
+
+function SignedPhaseCanvas({ id, halfWidth, inverted, expanded = false }) {
+  const ref = useRef(null);
+  const width = expanded ? 960 : 320;
+  const height = expanded ? 540 : 180;
+
+  useEffect(() => {
+    renderSignedGPhase(ref.current, id, halfWidth, inverted);
+  }, [id, halfWidth, inverted, expanded]);
+
+  return (
+    <canvas
+      ref={ref}
+      width={width}
+      height={height}
+      aria-label={`${id}(${inverted ? "1/z" : "z"}) signed phase field`}
+      style={{
+        display: 'block',
+        width: '100%',
+        height: 'auto',
+        aspectRatio: '16 / 9',
+        borderRadius: '0.4rem',
+      }}
+    />
+  );
+}
+
+
+function clampPhaseZoomFactor(value, zoomOutLimit, zoomInLimit) {
+  const minFactor = 1 / Math.max(1, zoomOutLimit);
+  const maxFactor = Math.max(1, zoomInLimit);
+  return Math.min(maxFactor, Math.max(minFactor, value));
+}
+
+function sliderToZoomFactor(position, zoomOutLimit, zoomInLimit) {
+  const p = Math.max(0, Math.min(1, position));
+  const minFactor = 1 / Math.max(1, zoomOutLimit);
+  const maxFactor = Math.max(1, zoomInLimit);
+
+  if (p <= 0.5) {
+    if (minFactor === 1) return 1;
+    const t = p / 0.5;
+    return Math.exp(Math.log(minFactor) * (1 - t));
+  }
+
+  if (maxFactor === 1) return 1;
+  const t = (p - 0.5) / 0.5;
+  return Math.exp(Math.log(maxFactor) * t);
+}
+
+function zoomFactorToSlider(zoomFactor, zoomOutLimit, zoomInLimit) {
+  const z = clampPhaseZoomFactor(
+    zoomFactor,
+    zoomOutLimit,
+    zoomInLimit
+  );
+
+  const minFactor = 1 / Math.max(1, zoomOutLimit);
+  const maxFactor = Math.max(1, zoomInLimit);
+
+  if (z <= 1) {
+    if (minFactor === 1) return 0.5;
+    const t =
+      (Math.log(z) - Math.log(minFactor)) /
+      (0 - Math.log(minFactor));
+    return 0.5 * t;
+  }
+
+  if (maxFactor === 1) return 0.5;
+  const t = Math.log(z) / Math.log(maxFactor);
+  return 0.5 + 0.5 * t;
+}
+
+function NavigablePhaseCanvas({
+  id, initialHalfWidth, inverted, onClose, zoomLimits
+}) {
+  const canvasRef = useRef(null);
+  const frameRef = useRef(null);
+  const dragRef = useRef(null);
+  const [isZoomPlaying, setIsZoomPlaying] = useState(false);
+  const playbackRef = useRef({ position: 0.5, direction: 1 });
+
+  const [rasterSize, setRasterSize] = useState({
+    width: 960,
+    height: 540,
+  });
+
+  useEffect(() => {
+    const frame = frameRef.current;
+    if (!frame) return undefined;
+
+    const measure = () => {
+      const rect = frame.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+      const scale = Math.min(
+        dpr,
+        2560 / rect.width,
+        1600 / rect.height
+      );
+
+      const width = Math.max(1, Math.round(rect.width * scale));
+      const height = Math.max(1, Math.round(rect.height * scale));
+
+      setRasterSize(previous =>
+        previous.width === width && previous.height === height
+          ? previous
+          : { width, height }
+      );
+    };
+
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(frame);
+    window.addEventListener("resize", measure);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+
+  const { out: zoomOutLimit, in: zoomInLimit } = zoomLimits;
+
+  const [camera, setCamera] = useState({
+    halfWidth: initialHalfWidth,
+    re: 0,
+    im: 0,
+  });
+
+  const zoomFactor = initialHalfWidth / camera.halfWidth;
+  const zoomSliderValue = zoomFactorToSlider(
+    zoomFactor,
+    zoomOutLimit,
+    zoomInLimit
+  );
+
+  useEffect(() => {
+    renderSignedGPhase(
+      canvasRef.current,
+      id,
+      camera.halfWidth,
+      inverted,
+      180,
+      camera.re,
+      camera.im
+    );
+  }, [id, inverted, camera, rasterSize]);
+
+  const setZoomFactor = nextZoomFactor => {
+    const selected = clampPhaseZoomFactor(
+      nextZoomFactor,
+      zoomOutLimit,
+      zoomInLimit
+    );
+
+    setCamera(current => ({
+      ...current,
+      halfWidth: initialHalfWidth / selected,
+    }));
+  };
+
+  const zoomBy = factor => {
+    setZoomFactor(zoomFactor * factor);
+  };
+
+  // Automatic back-and-forth zoom.
+  // One complete left-to-right traversal takes about 25 seconds.
+  useEffect(() => {
+    if (!isZoomPlaying) return undefined;
+
+    let frameId;
+    let lastTime = null;
+    let lastRender = 0;
+
+    const traverseMs = 25000;
+    const renderIntervalMs = 140;
+
+    const animate = time => {
+      if (lastTime === null) lastTime = time;
+
+      // Ignore long gaps when the tab is inactive.
+      const dt = Math.min(time - lastTime, 250);
+      lastTime = time;
+
+      const motion = playbackRef.current;
+      motion.position += motion.direction * dt / traverseMs;
+
+      if (motion.position >= 1) {
+        motion.position = 2 - motion.position;
+        motion.direction = -1;
+      } else if (motion.position <= 0) {
+        motion.position = -motion.position;
+        motion.direction = 1;
+      }
+
+      if (time - lastRender >= renderIntervalMs) {
+        const factor = sliderToZoomFactor(
+          motion.position,
+          zoomOutLimit,
+          zoomInLimit
+        );
+
+        setCamera(current => ({
+          ...current,
+          halfWidth: initialHalfWidth / factor,
+        }));
+
+        lastRender = time;
+      }
+
+      frameId = requestAnimationFrame(animate);
+    };
+
+    frameId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(frameId);
+  }, [
+    isZoomPlaying,
+    initialHalfWidth,
+    zoomOutLimit,
+    zoomInLimit,
+  ]);
+
+  const toggleZoomPlayback = () => {
+    if (isZoomPlaying) {
+      setIsZoomPlaying(false);
+      return;
+    }
+
+    playbackRef.current = {
+      position: zoomFactorToSlider(
+        initialHalfWidth / camera.halfWidth,
+        zoomOutLimit,
+        zoomInLimit
+      ),
+      direction: 1,
+    };
+
+    setIsZoomPlaying(true);
+  };
+
+  const onWheel = event => {
+    event.preventDefault();
+    setIsZoomPlaying(false);
+    zoomBy(Math.exp(-event.deltaY * 0.0012));
+  };
+
+  const onPointerDown = event => {
+    if (event.button !== 0) return;
+
+    dragRef.current = {
+      x: event.clientX,
+      y: event.clientY,
+      re: camera.re,
+      im: camera.im,
+      halfWidth: camera.halfWidth,
+    };
+
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const onPointerMove = event => {
+    const drag = dragRef.current;
+    if (!drag) return;
+
+    const rect = event.currentTarget.getBoundingClientRect();
+    const unitsPerPixel = (2 * drag.halfWidth) / rect.width;
+
+    setCamera(current => ({
+      ...current,
+      re: drag.re - (event.clientX - drag.x) * unitsPerPixel,
+      im: drag.im + (event.clientY - drag.y) * unitsPerPixel,
+    }));
+  };
+
+  const stopDrag = () => {
+    dragRef.current = null;
+  };
+
+  return (
+    <>
+    <style jsx global>{`
+      .planck-phase-thin-zoom {
+        appearance: none;
+        -webkit-appearance: none;
+        display: block;
+        width: 100%;
+        height: 14px;
+        margin: 0;
+        background: transparent;
+        cursor: pointer;
+      }
+      .planck-phase-thin-zoom::-webkit-slider-runnable-track {
+        height: 2px;
+        border-radius: 1px;
+        background: rgba(210, 230, 245, 0.85);
+      }
+      .planck-phase-thin-zoom::-moz-range-track {
+        height: 2px;
+        border-radius: 1px;
+        background: rgba(210, 230, 245, 0.85);
+      }
+      .planck-phase-thin-zoom::-webkit-slider-thumb {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 10px;
+        height: 10px;
+        margin-top: -4px;
+        border: 0;
+        border-radius: 50%;
+        background: #75c7ff;
+      }
+      .planck-phase-thin-zoom::-moz-range-thumb {
+        width: 10px;
+        height: 10px;
+        border: 0;
+        border-radius: 50%;
+        background: #75c7ff;
+      }
+    `}</style>
+    <div
+      ref={frameRef}
+      className="phase-viewer-image"
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '0.55rem',
+            right: '0.55rem',
+            zIndex: 3,
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '0.45rem',
+          }}
+        >
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.4rem',
+          }}>
+            <button
+              type="button"
+              onClick={toggleZoomPlayback}
+              aria-label={
+                isZoomPlaying ? "Pause zoom animation" : "Play zoom animation"
+              }
+              title={
+                isZoomPlaying ? "Pause animation" : "Play bouncing zoom"
+              }
+              style={{
+                width: '30px',
+                height: '30px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 0,
+                border: '1px solid rgba(255,255,255,0.3)',
+                borderRadius: '6px',
+                background: 'rgba(0,0,0,0.45)',
+                color: '#fff',
+                fontSize: '14px',
+                cursor: 'pointer',
+              }}
+            >
+              {isZoomPlaying ? "Ⅱ" : "▶"}
+            </button>
+
+            <div style={{
+              width: '185px',
+              height: '30px',
+              padding: '0 0.5rem',
+              borderRadius: '7px',
+              background: 'rgba(0,0,0,0.38)',
+              color: '#fff',
+              boxSizing: 'border-box',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}>
+            <input
+              type="range"
+              className="planck-phase-thin-zoom"
+              min="0"
+              max="1"
+              step="0.001"
+              value={zoomSliderValue}
+              onChange={event => {
+                setIsZoomPlaying(false);
+                setZoomFactor(sliderToZoomFactor(
+                  Number(event.target.value),
+                  zoomOutLimit,
+                  zoomInLimit
+                ));
+              }}
+              aria-label="Zoom phase image"
+              title="Drag left to zoom out, right to zoom in"
+            />
+
+          </div>
+
+          </div>
+
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close phase viewer"
+            style={{
+              padding: '0.3rem 0.5rem',
+              color: '#fff',
+              background: 'rgba(0,0,0,0.45)',
+              border: '1px solid rgba(255,255,255,0.25)',
+              borderRadius: '6px',
+              fontSize: '0.85rem',
+              cursor: 'pointer',
+            }}
+          >
+            Close ×
+          </button>
+        </div>
+
+        <canvas
+          ref={canvasRef}
+          width={rasterSize.width}
+          height={rasterSize.height}
+          onWheel={onWheel}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={stopDrag}
+          onPointerCancel={stopDrag}
+          onLostPointerCapture={stopDrag}
+          aria-label={`Interactive ${id} phase field`}
+          style={{
+            display: 'block',
+            width: '100%',
+            height: '100%',
+            flexShrink: 0,
+            borderRadius: 0,
+            cursor: 'grab',
+            touchAction: 'none',
+          }}
+        />
+    </div>
+    </>
+  );
+}
+
+
+const BOUNDARY_DIGIT_STOPS = [[15.22426999999999,24.2837,36.4243,45.2836,54.143,63.0023,72.2568,81.5113,90.7657,100.0202,109.2747,118.5291,127.7836,137.0381,160.7778],[15.224299999999971,24.2837,36.4243,45.2836,54.143,63.0023,71.8617,81.1655,90.4694,99.7732,109.0771,118.3809,127.6847,136.9886,160.7777],[15.224280000000022,24.2837,36.4243,45.2837,54.1431,63.0025,71.8619,80.7213,89.5807,99.0326,108.4846,117.9365,127.3884,136.8404,160.7779],[15.225889999999993,24.2853,36.4259,45.2853,54.1447,63.0041,71.8635,81.1673,90.4711,99.7749,109.0787,118.3825,127.6863,136.9901,160.7795],[15.225929999999948,24.2853,36.4259,45.2852,54.1446,63.0039,72.2584,81.5129,90.7673,100.0218,109.2763,118.5307,127.7852,137.0397,160.7794]];
 
 export default function PlanckConstants() {
     const constants = [
@@ -41,6 +509,28 @@ export default function PlanckConstants() {
 
   const [modalImage, setModalImage] = useState(null);
   const [modalVideo, setModalVideo] = useState(null);
+  const phaseZooms = PHASE_INITIAL_ZOOM;
+  const [expandedPhase, setExpandedPhase] = useState(null);
+  const [phasePlotMode, setPhasePlotMode] = useState("normal");
+  const PHASE_SVG_SCALE = 0.77;
+  const PHASE_TOGGLE_WIDTH = 120;
+  const PHASE_DIVIDER_GAP = 1;
+  const phaseZoomLimits = {
+    normal: [
+      { out: 2.42, in: 2.96 },  // G0(z)
+      { out: 2.27, in: 10.9 },  // G1(z)
+      { out: 12.0, in: 129 },  // G2(z)
+      { out: 2.94, in: 2.07 },  // G3(z)
+      { out: 3.01, in: 2.36 },  // G4(z)
+    ],
+    inverted: [
+      { out: 1.67, in: 445 },   // G0(1/z)
+      { out: 10, in: 100 },     // G1(1/z)
+      { out: 10, in: 100 },     // G2(1/z)
+      { out: 9.46, in: 437 },   // G3(1/z)
+      { out: 9.29, in: 586 },   // G4(1/z)
+    ],
+  };
 
   const gExplorerHostRef = useRef(null);
   const gScrollLockRef = useRef({
@@ -268,100 +758,81 @@ export default function PlanckConstants() {
   });
 
   const boundaryTimersRef = useRef({});
+  const [boundaryDigitCounts, setBoundaryDigitCounts] = useState({
+    time: 0, length: 0, charge: 0, temperature: 0, mass: 0,
+  });
+  const BOUNDARY_ANIMATION_MS = 2000;
+  const BOUNDARY_SYMBOL_TRAVEL_MS = 900;
+  const BOUNDARY_RHS_TRAVEL_MS = 500;
+  const BOUNDARY_DIGITS_START_MS = 1000;
+  const BOUNDARY_DIGITS_END_MS = 1850;
 
   const allBoundariesExpanded =
     BOUNDARY_KEYS.every(
       key => boundaryExpansionStates[key] > 0
     );
 
-  const clearBoundaryTimer = (key) => {
-    if (boundaryTimersRef.current[key]) {
-      window.clearTimeout(
-        boundaryTimersRef.current[key]
+  const clearBoundaryTimer = key => {
+    (boundaryTimersRef.current[key] || []).forEach(window.clearTimeout);
+    delete boundaryTimersRef.current[key];
+  };
+
+  const scheduleBoundaryReveal = key => {
+    clearBoundaryTimer(key);
+    const rowIndex = BOUNDARY_KEYS.indexOf(key);
+    const steps = BOUNDARY_DIGIT_STOPS[rowIndex].length - 1;
+    const timers = [];
+
+    const schedule = (ms, callback) => {
+      timers.push(window.setTimeout(callback, ms));
+    };
+
+    // The persistent 10 settles first; the Planck symbol follows.
+    schedule(920, () => {
+      setBoundaryExpansionStates(current =>
+        current[key] === 1 ? { ...current, [key]: 2 } : current
       );
-      delete boundaryTimersRef.current[key];
+    });
+
+    // Reveal original SVG digits individually.
+    for (let count = 1; count <= steps; count++) {
+      const ms = BOUNDARY_DIGITS_START_MS +
+        (count - 1) *
+        (BOUNDARY_DIGITS_END_MS - BOUNDARY_DIGITS_START_MS) /
+        Math.max(1, steps - 1);
+
+      schedule(Math.round(ms), () => {
+        setBoundaryDigitCounts(current => ({
+          ...current,
+          [key]: count,
+        }));
+      });
     }
+
+    // Replace symbolic exponent last, at exactly 2 seconds.
+    schedule(BOUNDARY_ANIMATION_MS, () => {
+      setBoundaryExpansionStates(current =>
+        current[key] > 0 ? { ...current, [key]: 3 } : current
+      );
+    });
+
+    boundaryTimersRef.current[key] = timers;
   };
 
-  const scheduleBoundaryReveal = (key) => {
+  const expandBoundaryRow = key => {
     clearBoundaryTimer(key);
-
-    boundaryTimersRef.current[key] =
-      window.setTimeout(() => {
-        setBoundaryExpansionStates(
-          current => {
-            if (current[key] !== 1) {
-              return current;
-            }
-
-            return {
-              ...current,
-              [key]: 2,
-            };
-          }
-        );
-
-        delete boundaryTimersRef.current[key];
-      }, 330);
-  };
-
-  const expandBoundaryRow = (key) => {
-    clearBoundaryTimer(key);
-
-    setBoundaryExpansionStates(
-      current => ({
-        ...current,
-        [key]: 1,
-      })
-    );
-
+    setBoundaryDigitCounts(current => ({ ...current, [key]: 0 }));
+    setBoundaryExpansionStates(current => ({ ...current, [key]: 1 }));
     scheduleBoundaryReveal(key);
   };
 
-  const collapseBoundaryRow = (key) => {
+  const collapseBoundaryRow = key => {
     clearBoundaryTimer(key);
-
-    const currentStage =
-      boundaryExpansionStates[key];
-
-    /*
-     * If the full equation is visible, first replace it with
-     * the compact equation while remaining at the left position.
-     * Then, on the next short beat, slide the compact equation
-     * back to its collapsed position.
-     */
-    if (currentStage === 2) {
-      setBoundaryExpansionStates(
-        current => ({
-          ...current,
-          [key]: 1,
-        })
-      );
-
-      boundaryTimersRef.current[key] =
-        window.setTimeout(() => {
-          setBoundaryExpansionStates(
-            current => ({
-              ...current,
-              [key]: 0,
-            })
-          );
-
-          delete boundaryTimersRef.current[key];
-        }, 40);
-
-      return;
-    }
-
-    setBoundaryExpansionStates(
-      current => ({
-        ...current,
-        [key]: 0,
-      })
-    );
+    setBoundaryExpansionStates(current => ({ ...current, [key]: 0 }));
+    setBoundaryDigitCounts(current => ({ ...current, [key]: 0 }));
   };
 
-  const toggleBoundaryRow = (key) => {
+  const toggleBoundaryRow = key => {
     if (boundaryExpansionStates[key] > 0) {
       collapseBoundaryRow(key);
     } else {
@@ -370,78 +841,22 @@ export default function PlanckConstants() {
   };
 
   const expandAllBoundaries = () => {
-    const keysToExpand =
-      BOUNDARY_KEYS.filter(
-        key => boundaryExpansionStates[key] === 0
-      );
-
-    if (keysToExpand.length === 0) {
-      return;
-    }
-
-    keysToExpand.forEach(clearBoundaryTimer);
-
-    setBoundaryExpansionStates(
-      current => {
-        const next = { ...current };
-
-        keysToExpand.forEach((key) => {
-          next[key] = 1;
-        });
-
-        return next;
-      }
+    const keys = BOUNDARY_KEYS.filter(
+      key => boundaryExpansionStates[key] === 0
     );
-
-    keysToExpand.forEach((key) => {
-      scheduleBoundaryReveal(key);
-    });
+    keys.forEach(expandBoundaryRow);
   };
 
   const collapseAllBoundaries = () => {
-    BOUNDARY_KEYS.forEach(clearBoundaryTimer);
-
-    /*
-     * First return every expanded RHS to its compact form,
-     * while leaving the rows in their left-hand positions.
-     */
-    setBoundaryExpansionStates(
-      current => {
-        const next = { ...current };
-
-        BOUNDARY_KEYS.forEach((key) => {
-          if (next[key] > 0) {
-            next[key] = 1;
-          }
-        });
-
-        return next;
-      }
-    );
-
-    /*
-     * Then slide all compact equations back to the right.
-     */
-    boundaryTimersRef.current.__collapseAll =
-      window.setTimeout(() => {
-        setBoundaryExpansionStates({
-          time: 0,
-          length: 0,
-          charge: 0,
-          temperature: 0,
-          mass: 0,
-        });
-
-        delete boundaryTimersRef.current.__collapseAll;
-      }, 40);
+    BOUNDARY_KEYS.forEach(collapseBoundaryRow);
   };
 
   useEffect(() => {
     return () => {
       Object.values(
         boundaryTimersRef.current
-      ).forEach((timer) => {
-        window.clearTimeout(timer);
+      ).forEach((timers) => {
+        timers.forEach(window.clearTimeout);
       });
     };
   }, []);
@@ -872,6 +1287,11 @@ export default function PlanckConstants() {
    */
   const BOUNDARY_ROW_GAP = 0.50;
   const BOUNDARY_EXPANDED_RHS_Y = -2.75;
+  // TEMPORARY: horizontal position of all five expanded equations.
+  const boundaryExpandedGroupX = -12;
+
+  // TEMPORARY: move only the three ellipsis dots.
+  const boundaryEllipsisX = -1;
 
   const geometryRelationRows = [
     {
@@ -974,6 +1394,20 @@ export default function PlanckConstants() {
       rhsSrc: '/equations/boundary_rhs_0.svg',
       expandedRhsSrc:
         '/equations/boundary_rhs_0_expanded.svg',
+      noTenSrc: '/equations/boundary_rhs_0_no10.svg',
+      expandedNoTenSrc: '/equations/boundary_rhs_0_expanded_no10.svg',
+      tenSrc: '/equations/boundary_rhs_0_ten.svg',
+      symbolicCoreSrc: '/equations/boundary_rhs_0_symbolic_core_animated.svg',
+      symbolicExponentSrc: '/equations/boundary_rhs_0_symbolic_exponent_animated.svg',
+      digitsSrc: '/equations/boundary_rhs_0_digits_tuned.svg',
+      ellipsisSrc: '/equations/boundary_rhs_0_ellipsis_tuned.svg',
+      exponentSrc: '/equations/boundary_rhs_0_exponent_animated.svg',
+      expandedSvgWidth: 211.2196,
+      compactSvgWidth: 69.039192,
+      compactSvgHeight: 14.695312,
+      expandedSvgHeight: 12.882813,
+      tenMoveX: 133.802810,
+      tenMoveY: -0.127230,
     },
     {
       key: 'length',
@@ -988,6 +1422,20 @@ export default function PlanckConstants() {
       rhsSrc: '/equations/boundary_rhs_1.svg',
       expandedRhsSrc:
         '/equations/boundary_rhs_1_expanded.svg',
+      noTenSrc: '/equations/boundary_rhs_1_no10.svg',
+      expandedNoTenSrc: '/equations/boundary_rhs_1_expanded_no10.svg',
+      tenSrc: '/equations/boundary_rhs_1_ten.svg',
+      symbolicCoreSrc: '/equations/boundary_rhs_1_symbolic_core_animated.svg',
+      symbolicExponentSrc: '/equations/boundary_rhs_1_symbolic_exponent_animated.svg',
+      digitsSrc: '/equations/boundary_rhs_1_digits_tuned.svg',
+      ellipsisSrc: '/equations/boundary_rhs_1_ellipsis_tuned.svg',
+      exponentSrc: '/equations/boundary_rhs_1_exponent_animated.svg',
+      expandedSvgWidth: 217.65723,
+      compactSvgWidth: 68.679665,
+      compactSvgHeight: 14.695312,
+      expandedSvgHeight: 13.226562,
+      tenMoveX: 134.162200,
+      tenMoveY: 0.044333,
     },
     {
       key: 'charge',
@@ -1002,6 +1450,20 @@ export default function PlanckConstants() {
       rhsSrc: '/equations/boundary_rhs_2.svg',
       expandedRhsSrc:
         '/equations/boundary_rhs_2_expanded.svg',
+      noTenSrc: '/equations/boundary_rhs_2_no10.svg',
+      expandedNoTenSrc: '/equations/boundary_rhs_2_expanded_no10.svg',
+      tenSrc: '/equations/boundary_rhs_2_ten.svg',
+      symbolicCoreSrc: '/equations/boundary_rhs_2_symbolic_core_animated.svg',
+      symbolicExponentSrc: '/equations/boundary_rhs_2_symbolic_exponent_animated.svg',
+      digitsSrc: '/equations/boundary_rhs_2_digits_tuned.svg',
+      ellipsisSrc: '/equations/boundary_rhs_2_ellipsis_tuned.svg',
+      exponentSrc: '/equations/boundary_rhs_2_exponent_animated.svg',
+      expandedSvgWidth: 213.34482,
+      compactSvgWidth: 69.039192,
+      compactSvgHeight: 14.695312,
+      expandedSvgHeight: 12.960938,
+      tenMoveX: 133.802910,
+      tenMoveY: -0.088167,
     },
     {
       key: 'temperature',
@@ -1016,6 +1478,20 @@ export default function PlanckConstants() {
       rhsSrc: '/equations/boundary_rhs_3.svg',
       expandedRhsSrc:
         '/equations/boundary_rhs_3_expanded.svg',
+      noTenSrc: '/equations/boundary_rhs_3_no10.svg',
+      expandedNoTenSrc: '/equations/boundary_rhs_3_expanded_no10.svg',
+      tenSrc: '/equations/boundary_rhs_3_ten.svg',
+      symbolicCoreSrc: '/equations/boundary_rhs_3_symbolic_core_animated.svg',
+      symbolicExponentSrc: '/equations/boundary_rhs_3_symbolic_exponent_animated.svg',
+      digitsSrc: '/equations/boundary_rhs_3_digits_tuned.svg',
+      ellipsisSrc: '/equations/boundary_rhs_3_ellipsis_tuned.svg',
+      exponentSrc: '/equations/boundary_rhs_3_exponent_animated.svg',
+      expandedSvgWidth: 206.17969,
+      compactSvgWidth: 69.039192,
+      compactSvgHeight: 14.695312,
+      expandedSvgHeight: 12.960938,
+      tenMoveX: 133.804490,
+      tenMoveY: -0.088167,
     },
     {
       key: 'mass',
@@ -1030,6 +1506,20 @@ export default function PlanckConstants() {
       rhsSrc: '/equations/boundary_rhs_4.svg',
       expandedRhsSrc:
         '/equations/boundary_rhs_4_expanded.svg',
+      noTenSrc: '/equations/boundary_rhs_4_no10.svg',
+      expandedNoTenSrc: '/equations/boundary_rhs_4_expanded_no10.svg',
+      tenSrc: '/equations/boundary_rhs_4_ten.svg',
+      symbolicCoreSrc: '/equations/boundary_rhs_4_symbolic_core_animated.svg',
+      symbolicExponentSrc: '/equations/boundary_rhs_4_symbolic_exponent_animated.svg',
+      digitsSrc: '/equations/boundary_rhs_4_digits_tuned.svg',
+      ellipsisSrc: '/equations/boundary_rhs_4_ellipsis_tuned.svg',
+      exponentSrc: '/equations/boundary_rhs_4_exponent_animated.svg',
+      expandedSvgWidth: 214.08551,
+      compactSvgWidth: 69.039192,
+      compactSvgHeight: 14.695312,
+      expandedSvgHeight: 16.335938,
+      tenMoveX: 133.804400,
+      tenMoveY: -1.775667,
     },
   ];
 
@@ -1318,97 +1808,144 @@ export default function PlanckConstants() {
         <div style={{ height: '2.0rem' }} />
 
         {/* -------------------------------------------------- */}
-        {/* Phase plots                                        */}
-        {/* -------------------------------------------------- */}
 
-        <div
-          style={{
-            width: '100%',
-            maxWidth: '1320px',
-            margin: '0 auto 0.7rem',
-            textAlign: 'center',
+        {/* Phase plot selector: same visual style as Surface plots. */}
+        <div style={{
+          position: 'relative',
+          width: '100%',
+          maxWidth: '1320px',
+          minHeight: '2rem',
+          margin: '0 auto 0.7rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          <div style={{
             fontSize: '0.88rem',
             lineHeight: 1,
             fontWeight: 'normal',
             color: 'rgba(255, 255, 255, 0.40)',
-          }}
-        >
-          Phase plots
-        </div>
+          }}>
+            Phase plots
+          </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
-            gap: 'clamp(0.45rem, 1.15vw, 1rem)',
-            width: '100%',
-            maxWidth: '1320px',
-            margin: '0 auto',
-            alignItems: 'start',
-          }}
-        >
-          {videoFiles.map((file, index) => (
-            <div
-              key={file}
-              style={{
-                textAlign: 'center',
-                minWidth: 0,
-              }}
-            >
-              <div
+          <div style={{
+            position: 'absolute',
+            right: 0,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: `${PHASE_TOGGLE_WIDTH}px`,
+            boxSizing: 'border-box',
+            gap: `${PHASE_DIVIDER_GAP}px`,
+            color: 'rgba(242, 237, 224, 0.94)',
+            padding: '0.12rem 0.28rem',
+            border: '1px solid rgba(214, 207, 188, 0.48)',
+            borderRadius: '8px',
+            background: 'rgba(22, 22, 18, 0.36)',
+            fontSize: '0.82rem',
+          }}>
+            {[
+              ['normal', '/equations/G_k_of_z.svg'],
+              ['inverted', '/equations/G_k_of_inverse_z.svg'],
+            ].map(([mode, label], index) => (
+              <span
+                key={mode}
                 style={{
-                  position: 'relative',
-                  width: '100%',
-                  aspectRatio: '16 / 9',
-                  margin: '0 auto',
+                  display: 'inline-flex',
+                  gap: `${PHASE_DIVIDER_GAP}px`,
+                  alignItems: 'center',
                 }}
               >
-                <img
-                  src={`/videos/${file.replace('.mp4', '_thumbnail.jpg')}`}
-                  alt={constants[index]}
-                  onClick={() => setModalVideo(file)}
-                  style={{
-                    display: 'block',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '0.4rem',
-                    boxShadow: '0 0 8px rgba(0,0,0,0.3)',
-                    cursor: 'pointer',
-                    objectFit: 'cover',
-                  }}
-                />
+                {index > 0 && (
+                  <span style={{ opacity: 0.6 }}>|</span>
+                )}
 
-                <div
+                <button
+                  type="button"
+                  onClick={() => setPhasePlotMode(mode)}
+                  aria-pressed={phasePlotMode === mode}
                   style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    pointerEvents: 'none',
+                    font: 'inherit',
+                    padding: 0,
+                    border: 0,
+                    cursor:
+                      phasePlotMode === mode
+                        ? 'default'
+                        : 'pointer',
+                    color:
+                      phasePlotMode === mode
+                        ? 'rgba(255, 250, 236, 1)'
+                        : 'rgba(242, 237, 224, 0.58)',
+                    background:
+                      phasePlotMode === mode
+                        ? 'rgba(232, 223, 200, 0.10)'
+                        : 'transparent',
+                    borderRadius: '5px',
+                    transition:
+                      'background 160ms ease, color 160ms ease',
                   }}
                 >
-                  <div
+                  <img
+                    src={label}
+                    alt={mode === 'normal' ? 'G_k(z)' : 'G_k(1/z)'}
                     style={{
-                      width: 0,
-                      height: 0,
-                      borderTop: '6.4px solid transparent',
-                      borderBottom: '6.4px solid transparent',
-                      borderLeft: '9.6px solid white',
-                      filter: 'drop-shadow(0 0 1.5px black)',
+                      display: 'block',
+                      width: 'auto',
+                      height: '18px',
+                      maxWidth: 'none',
+                      transform: `scale(${PHASE_SVG_SCALE})`,
+                      transformOrigin: 'center center',
+                      opacity: phasePlotMode === mode ? 1 : 0.58,
+                      transition: 'opacity 160ms ease',
                     }}
                   />
-                </div>
-              </div>
+                </button>
+              </span>
+            ))}
+          </div>
+        </div>
 
-              <div
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
+          gap: 'clamp(0.45rem, 1.15vw, 1rem)',
+          width: '100%',
+          maxWidth: '1320px',
+          margin: '0 auto',
+          alignItems: 'start',
+        }}>
+          {PHASE_IDS.map((id, index) => (
+            <div key={id} style={{ minWidth: 0, textAlign: 'center' }}>
+              <button
+                type="button"
+                onClick={() => setExpandedPhase(index)}
+                aria-label={`Expand ${constants[index]} phase preview`}
                 style={{
-                  marginTop: '0.5rem',
-                  whiteSpace: 'nowrap',
-                  fontSize: 'clamp(0.75rem, 1.25vw, 1rem)',
+                  width: '100%',
+                  padding: 0,
+                  border: 0,
+                  background: 'transparent',
+                  cursor: 'zoom-in',
                 }}
               >
+                <SignedPhaseCanvas
+                  id={id}
+                  halfWidth={phaseZooms[phasePlotMode][index]}
+                  inverted={phasePlotMode === "inverted"}
+                />
+              </button>
+
+              <div style={{
+                marginTop: '0.4rem',
+                fontSize: 'clamp(0.75rem, 1.25vw, 1rem)',
+              }}>
                 {constants[index]}
               </div>
+
+
             </div>
           ))}
         </div>
@@ -2211,8 +2748,16 @@ export default function PlanckConstants() {
                 boundaryExpansionStates[row.key];
 
               const isExpanded = stage > 0;
-              const showExpandedEquation =
-                stage === 2;
+              const showExpandedEquation = stage >= 2;
+              const digitCount = boundaryDigitCounts[row.key];
+              const stops = BOUNDARY_DIGIT_STOPS[
+                BOUNDARY_KEYS.indexOf(row.key)
+              ];
+              const digitClip = row.expandedSvgWidth - (
+                digitCount >= stops.length - 1
+                  ? stops[stops.length - 1] + 10
+                  : stops[Math.min(digitCount, stops.length - 1)]
+              );
 
               return (
                 <div
@@ -2247,12 +2792,13 @@ export default function PlanckConstants() {
                             ? (
                                 BOUNDARY_EXPANDED_EQUATIONS_X +
                                 row.expandedAnchorCorrectionX +
-                                BOUNDARY_UNIT_GROUP_X
+                                BOUNDARY_UNIT_GROUP_X +
+                                boundaryExpandedGroupX
                               )
                             : BOUNDARY_COLLAPSED_EQUATIONS_X
                         }px)`,
                       transition:
-                        'transform 320ms ease',
+                        `transform ${BOUNDARY_SYMBOL_TRAVEL_MS}ms ease`,
                     }}
                   >
                     <img
@@ -2287,43 +2833,155 @@ export default function PlanckConstants() {
                             ? (
                                 BOUNDARY_EXPANDED_EQUATIONS_X +
                                 row.expandedAnchorCorrectionX +
-                                BOUNDARY_UNIT_GROUP_X
+                                BOUNDARY_UNIT_GROUP_X +
+                                boundaryExpandedGroupX
                               )
                             : BOUNDARY_COLLAPSED_EQUATIONS_X
                         }px)`,
                       transition:
-                        'transform 320ms ease',
+                        `transform ${BOUNDARY_SYMBOL_TRAVEL_MS}ms ease`,
                     }}
                   >
-                    <img
-                      key={
-                        `boundary-rhs-${row.key}-${showExpandedEquation ? 'expanded' : 'compact'}`
-                      }
-                      src={
-                        showExpandedEquation
-                          ? row.expandedRhsSrc
-                          : row.rhsSrc
-                      }
-                      alt={
-                        showExpandedEquation
-                          ? `Expanded normalized Planck ${row.label} relation`
-                          : `Symbolic normalized Planck ${row.label} relation`
-                      }
+                    <div
                       style={{
-                        width: 'auto',
-                        height: 'auto',
-                        maxWidth: 'none',
-                        display: 'block',
+                        position: 'relative',
+                        width: `${row.compactSvgWidth}px`,
+                        height: `${row.compactSvgHeight}px`,
                         flexShrink: 0,
-                        transform: showExpandedEquation
-                          ? `translateY(${BOUNDARY_EXPANDED_RHS_Y}px) scale(${COMPACT_RELATION_SCALE})`
-                          : `scale(${COMPACT_RELATION_SCALE})`,
-                        transformOrigin:
-                          'left center',
-                        transition:
-                          'opacity 220ms ease, transform 120ms ease',
+                        transform: `scale(${COMPACT_RELATION_SCALE})`,
+                        transformOrigin: 'left center',
                       }}
-                    />
+                    >
+                      <img
+                        src={row.symbolicCoreSrc}
+                        alt={`Symbolic ${row.label} equation`}
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: '50%',
+                          width: 'auto',
+                          height: 'auto',
+                          maxWidth: 'none',
+                          transform: 'translateY(-50%)',
+                          opacity: showExpandedEquation ? 0 : 1,
+                          transition: 'opacity 80ms ease',
+                          pointerEvents: 'none',
+                        }}
+                      />
+
+                      {/* Persistent equals sign: remains visible
+                          when the symbolic phi_k fades away. */}
+                      <img
+                        src={row.symbolicCoreSrc}
+                        alt=""
+                        aria-hidden="true"
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: '50%',
+                          width: 'auto',
+                          height: 'auto',
+                          maxWidth: 'none',
+                          transform: 'translateY(-50%)',
+                          clipPath: 'inset(0 calc(100% - 16px) 0 0)',
+                          pointerEvents: 'none',
+                        }}
+                      />
+
+                      <img
+                        src={row.digitsSrc}
+                        alt={`Numerical ${row.label} equation`}
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: `calc(50% + ${BOUNDARY_EXPANDED_RHS_Y / COMPACT_RELATION_SCALE}px)`,
+                          width: 'auto',
+                          height: 'auto',
+                          maxWidth: 'none',
+                          transform: 'translateY(-50%)',
+                          opacity: stage >= 2 ? 1 : 0,
+                          clipPath: `inset(0 ${Math.max(0, digitClip)}px 0 0)`,
+                          transition: 'opacity 80ms ease',
+                          pointerEvents: 'none',
+                        }}
+                      />
+
+                      {/* Independently positioned SVG ellipsis. */}
+                      <img
+                        src={row.ellipsisSrc}
+                        alt=""
+                        aria-hidden="true"
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: `calc(50% + ${BOUNDARY_EXPANDED_RHS_Y / COMPACT_RELATION_SCALE}px)`,
+                          width: 'auto',
+                          height: 'auto',
+                          maxWidth: 'none',
+                          transform: `translate(${boundaryEllipsisX}px, -50%)`,
+                          opacity:
+                            stage >= 2 &&
+                            digitCount >= stops.length - 1
+                              ? 1 : 0,
+                          pointerEvents: 'none',
+                        }}
+                      />
+
+                      {/* Symbolic exponent remains until 2 seconds. */}
+                      <img
+                        src={row.symbolicExponentSrc}
+                        alt=""
+                        aria-hidden="true"
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: '50%',
+                          width: 'auto',
+                          height: 'auto',
+                          maxWidth: 'none',
+                          transform: `translate(${isExpanded ? row.tenMoveX : 0}px, calc(-50% + ${isExpanded ? row.tenMoveY : 0}px))`,
+                          opacity: stage < 3 ? 1 : 0,
+                          transition: `opacity 80ms ease, transform ${BOUNDARY_SYMBOL_TRAVEL_MS}ms ease`,
+                          pointerEvents: 'none',
+                        }}
+                      />
+
+                      {/* Numerical exponent is revealed last. */}
+                      <img
+                        src={row.exponentSrc}
+                        alt=""
+                        aria-hidden="true"
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: `calc(50% + ${BOUNDARY_EXPANDED_RHS_Y / COMPACT_RELATION_SCALE}px)`,
+                          width: 'auto',
+                          height: 'auto',
+                          maxWidth: 'none',
+                          transform: 'translate(10px, -50%)',
+                          opacity: stage >= 3 ? 1 : 0,
+                          transition: 'opacity 100ms ease',
+                          pointerEvents: 'none',
+                        }}
+                      />
+
+                      <img
+                        src={row.tenSrc}
+                        alt=""
+                        aria-hidden="true"
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: '50%',
+                          width: 'auto',
+                          height: 'auto',
+                          maxWidth: 'none',
+                          transform: `translate(${isExpanded ? row.tenMoveX : 0}px, calc(-50% + ${isExpanded ? row.tenMoveY : 0}px))`,
+                          transition: `transform ${BOUNDARY_SYMBOL_TRAVEL_MS}ms ease`,
+                          pointerEvents: 'none',
+                        }}
+                      />
+                    </div>
                   </div>
 
                   {/* Fixed coherent SI unit.
@@ -2543,6 +3201,42 @@ export default function PlanckConstants() {
           <GFunctionsExplorer />
         </div>
       </section>
+
+
+      {expandedPhase !== null && (
+        <div
+          onClick={() => setExpandedPhase(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 10010,
+            background: 'rgba(0,0,0,0.92)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 0,
+          }}
+        >
+          <div
+            onClick={event => event.stopPropagation()}
+            style={{
+              width: '100vw',
+              height: '100dvh',
+              overflow: 'hidden',
+              textAlign: 'center',
+            }}
+          >
+<NavigablePhaseCanvas
+              key={`${phasePlotMode}-${expandedPhase}`}
+              id={PHASE_IDS[expandedPhase]}
+              initialHalfWidth={phaseZooms[phasePlotMode][expandedPhase]}
+              inverted={phasePlotMode === "inverted"}
+              zoomLimits={phaseZoomLimits[phasePlotMode][expandedPhase]}
+              onClose={() => setExpandedPhase(null)}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Image Modal */}
       {modalImage && (
