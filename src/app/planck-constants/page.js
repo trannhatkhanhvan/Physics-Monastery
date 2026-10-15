@@ -260,7 +260,7 @@ function NavigablePhaseCanvas({
     let lastTime = null;
     let lastRender = 0;
 
-    const traverseMs = 25000;
+    const traverseMs = 20000;
     const renderIntervalMs = 140;
 
     const animate = time => {
@@ -592,6 +592,7 @@ function SurfaceAppearanceMenu({
   changeOrbitSeconds,
   orbitSeconds,
   resetLightOrbit,
+  stopLightOrbit,
 }) {
   const hostRef = useRef(null);
   const popupRef = useRef(null);
@@ -842,7 +843,7 @@ function SurfaceAppearanceMenu({
             alignItems: 'center',
             columnGap: 8,
           }}>
-            <span>Azimuth</span>
+            <span>{lightOrbit.period > 0 ? "Orbit phase" : "Azimuth"}</span>
             <div style={{
               minWidth: 0,
               transform: 'translateY(6px)',
@@ -855,7 +856,7 @@ function SurfaceAppearanceMenu({
                 value={displayedAzimuth}
                 aria-label="Light azimuth"
                 onChange={event => {
-                  resetLightOrbit();
+                  stopLightOrbit();
                   setAppearance(current => ({
                     ...current,
                     direction: Number(event.target.value),
@@ -899,14 +900,14 @@ function SurfaceAppearanceMenu({
             alignItems: 'center',
             columnGap: 8,
           }}>
-            <span>Elevation</span>
+            <span>{lightOrbit.period > 0 ? "Inclination" : "Elevation"}</span>
             <div style={{
               minWidth: 0,
               transform: 'translateY(6px)',
             }}>
               <input
                 type="range"
-                min="0"
+                min="-90"
                 max="90"
                 step="1"
                 value={appearance.elevation ?? 10}
@@ -930,7 +931,7 @@ function SurfaceAppearanceMenu({
                     #b5b0a7 var(--progress),
                     #b5b0a7 100%)`,
                   '--progress':
-                    `${(appearance.elevation ?? 10) / 90 * 100}%`,
+                    `${((appearance.elevation ?? 10) + 90) / 180 * 100}%`,
                 }}
               />
               <div style={{
@@ -940,8 +941,8 @@ function SurfaceAppearanceMenu({
                 lineHeight: '12px',
                 opacity: 0.85,
               }}>
+                <span>−π/2</span>
                 <span>0</span>
-                <span>π/4</span>
                 <span>π/2</span>
               </div>
             </div>
@@ -1454,6 +1455,14 @@ export default function PlanckConstants() {
     });
   };
 
+  const stopLightOrbit = () => {
+    setLightOrbit({
+      period: 0,
+      phase: 0,
+      anchor: performance.now(),
+    });
+  };
+
   const resetLightOrbit = () => {
     setOrbitSeconds(20);
     setLightOrbit({
@@ -1635,8 +1644,8 @@ export default function PlanckConstants() {
 
     const decades = logSpan / Math.log(10);
     const traverseMs = Math.max(
-      19200,
-      Math.min(76800, 25600 * decades)
+      15360,
+      Math.min(61440, 20480 * decades)
     );
 
     const motion = surfacePlaybackRef.current;
@@ -2976,22 +2985,41 @@ export default function PlanckConstants() {
                       surfaceFirstInverted===inverse
                     }
                     style={{
-                      border:0,
-                      padding:0,
-                      font:'inherit',
-                      background:
-                        surfaceFirstInverted === inverse
-                          ? 'rgba(232, 223, 200, 0)'
-                          : 'transparent',
+                      position: 'relative',
+                      border: 0,
+                      padding: 0,
+                      font: 'inherit',
+                      background: 'transparent',
                       borderRadius: 5,
-                      cursor:'pointer',
+                      cursor: 'pointer',
                       color:
                         surfaceFirstInverted === inverse
                           ? 'rgba(255, 250, 236, 1)'
                           : 'rgba(242, 237, 224, 0.34)',
                     }}
                   >
-                    {label}
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        position: 'absolute',
+                        left: '50%',
+                        top: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: label === 'z' ? 20 : 30,
+                        height: 20,
+                        borderRadius: 999,
+                        border: 'none',
+                        boxSizing: 'border-box',
+                        pointerEvents: 'none',
+                      }}
+                    />
+                    <span style={{
+                      position: 'relative',
+                      zIndex: 1,
+                      pointerEvents: 'none',
+                    }}>
+                      {label}
+                    </span>
                   </button>
                 </span>
               ))}
@@ -3073,6 +3101,7 @@ export default function PlanckConstants() {
               changeOrbitSeconds={changeOrbitSeconds}
               orbitSeconds={orbitSeconds}
               resetLightOrbit={resetLightOrbit}
+              stopLightOrbit={stopLightOrbit}
               appearance={
                 surfaceFirstInverted
                   ? appearanceRight
@@ -4680,7 +4709,7 @@ export default function PlanckConstants() {
                 title={
                   surfaceDomainPlaying
                     ? "Pause"
-                    : "Sweep domain range in 20 seconds"
+                    : "Play mathematical-domain sweep"
                 }
                 style={{
                   width: 32,

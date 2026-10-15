@@ -380,25 +380,32 @@ export default function PlanckTimeSurface({
             )
           : 0;
 
-        const azimuth = (
-          lighting.direction + phase
-        ) * Math.PI / 180;
-
-        const elevation =
-          lighting.elevation * Math.PI / 180;
-
+        const angle = (lighting.direction + phase) * Math.PI / 180;
+        const tilt = lighting.elevation * Math.PI / 180;
         const radius = Math.sqrt(146);
-        const horizontal =
-          radius * Math.cos(elevation);
+        const base = Math.atan2(-4, 7);
 
-        const bearing =
-          Math.atan2(-4, 7) - azimuth;
-
-        light.position.set(
-          horizontal * Math.sin(bearing),
-          radius * Math.sin(elevation),
-          horizontal * Math.cos(bearing)
-        );
+        if (orbit?.period > 0) {
+          // True inclined circular orbit.
+          // Opposite points have opposite elevations.
+          const east = Math.cos(angle);
+          const north = Math.cos(tilt) * Math.sin(angle);
+          const up = Math.sin(tilt) * Math.sin(angle);
+          light.position.set(
+            radius * (Math.sin(base) * east - Math.cos(base) * north),
+            radius * up,
+            radius * (Math.cos(base) * east + Math.sin(base) * north)
+          );
+        } else {
+          // Orbit off: fixed azimuth and signed elevation.
+          const horizontal = radius * Math.cos(tilt);
+          const bearing = base - angle;
+          light.position.set(
+            horizontal * Math.sin(bearing),
+            radius * Math.sin(tilt),
+            horizontal * Math.cos(bearing)
+          );
+        }
       }
 
       applySurfaceProjection(
@@ -500,10 +507,14 @@ export default function PlanckTimeSurface({
     // Adaptive mathematical surface reconstruction.
     // F0(w) = pi * exp(5.39125836832313/44) * sinh(w/4)^2.
     // w is z or 1/z, according to the selected preview.
-    // Conservative preview limits to reduce GPU pressure.
+    // Approved fullscreen sampling matches the phase renderer.
+    // Keep thumbnails at their existing lighter resolution.
     // Shared regular lattice: adjacent cells have matching edges.
-    const baseSteps = fullscreen
-      ? (constantIndex === 0 ? 220 : 150)
+    const stepsX = fullscreen
+      ? 512
+      : (constantIndex === 0 ? 160 : 100);
+    const stepsZ = fullscreen
+      ? 288
       : (constantIndex === 0 ? 160 : 100);
     // Mathematical domain:
     // vertical span remains [-scale,+scale]
@@ -525,6 +536,10 @@ export default function PlanckTimeSurface({
     const colors = [];
     const indices = [];
     const heightCache = new Map();
+
+    // Neighboring triangles reuse the same lattice vertices.
+    // Clipped boundary vertices retain their own coordinates.
+    const vertexIndexCache = new WeakMap();
 
 
     // Complex arithmetic for the five reference functions.
@@ -724,11 +739,16 @@ export default function PlanckTimeSurface({
       return result;
     }
 
+    const lowSurfaceColor = new THREE.Color("#a85a12");
+    const midSurfaceColor = new THREE.Color("#d8891c");
+    const highSurfaceColor = new THREE.Color("#f2d24f");
+    const workingSurfaceColor = new THREE.Color();
+
     function warmSurfaceColor(t) {
-      const low = new THREE.Color("#a85a12");
-      const mid = new THREE.Color("#d8891c");
-      const high = new THREE.Color("#f2d24f");
-      const color = new THREE.Color();
+      const low = lowSurfaceColor;
+      const mid = midSurfaceColor;
+      const high = highSurfaceColor;
+      const color = workingSurfaceColor;
 
       if (t < 0.58) {
         color.copy(low).lerp(mid, t / 0.58);
@@ -766,7 +786,11 @@ export default function PlanckTimeSurface({
     }
 
     function addVertex(point) {
+      const cached = vertexIndexCache.get(point);
+      if (cached !== undefined) return cached;
+
       const index = positions.length / 3;
+      vertexIndexCache.set(point, index);
 
       positions.push(
         point.x * (meshWidth / spanX),
@@ -797,6 +821,17 @@ export default function PlanckTimeSurface({
         return;
       }
 
+      // Fast path: the triangle is entirely inside the
+      // approved height range, so clipping is unnecessary.
+      if (
+        a.h >= verticalMin && a.h <= verticalMax &&
+        b.h >= verticalMin && b.h <= verticalMax &&
+        c.h >= verticalMin && c.h <= verticalMax
+      ) {
+        indices.push(addVertex(a), addVertex(b), addVertex(c));
+        return;
+      }
+
       let polygon = [a, b, c];
 
       polygon = clipPolygon(polygon, verticalMin, true);
@@ -822,13 +857,13 @@ export default function PlanckTimeSurface({
     // Conforming regular triangulation.
     // Every neighboring cell uses identical boundary coordinates.
     // Undefined singular points remain absent.
-    for (let iy = 0; iy < baseSteps; iy++) {
-      const z0 = -spanY / 2 + spanY * iy / baseSteps;
-      const z1 = -spanY / 2 + spanY * (iy + 1) / baseSteps;
+    for (let iy = 0; iy < stepsZ; iy++) {
+      const z0 = -spanY / 2 + spanY * iy / stepsZ;
+      const z1 = -spanY / 2 + spanY * (iy + 1) / stepsZ;
 
-      for (let ix = 0; ix < baseSteps; ix++) {
-        const x0 = -spanX / 2 + spanX * ix / baseSteps;
-        const x1 = -spanX / 2 + spanX * (ix + 1) / baseSteps;
+      for (let ix = 0; ix < stepsX; ix++) {
+        const x0 = -spanX / 2 + spanX * ix / stepsX;
+        const x1 = -spanX / 2 + spanX * (ix + 1) / stepsX;
 
         const a = sample(x0, z0);
         const b = sample(x1, z0);
@@ -1061,7 +1096,31 @@ export default function PlanckTimeSurface({
         indices[k + 2],
       ];
 
+      const x0 = Math.min(
+        surfacePosition.getX(triangle[0]),
+        surfacePosition.getX(triangle[1]),
+        surfacePosition.getX(triangle[2])
+      );
+      const x1 = Math.max(
+        surfacePosition.getX(triangle[0]),
+        surfacePosition.getX(triangle[1]),
+        surfacePosition.getX(triangle[2])
+      );
+      const z0 = Math.min(
+        surfacePosition.getZ(triangle[0]),
+        surfacePosition.getZ(triangle[1]),
+        surfacePosition.getZ(triangle[2])
+      );
+      const z1 = Math.max(
+        surfacePosition.getZ(triangle[0]),
+        surfacePosition.getZ(triangle[1]),
+        surfacePosition.getZ(triangle[2])
+      );
+
       for (const coordinate of gridXCoordinates) {
+        if (coordinate < x0 - gridTolerance ||
+            coordinate > x1 + gridTolerance) continue;
+
         const hits = gridIntersections(
           triangle,
           'x',
@@ -1074,6 +1133,9 @@ export default function PlanckTimeSurface({
       }
 
       for (const coordinate of gridZCoordinates) {
+        if (coordinate < z0 - gridTolerance ||
+            coordinate > z1 + gridTolerance) continue;
+
         const hits = gridIntersections(
           triangle,
           'z',

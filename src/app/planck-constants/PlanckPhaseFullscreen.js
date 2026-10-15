@@ -237,24 +237,32 @@ export default function PlanckPhaseFullscreen({
             )
           : 0;
 
-        const azimuth = (
-          lighting.direction + phase
-        ) * Math.PI / 180;
-
-        const elevation =
-          lighting.elevation * Math.PI / 180;
-
+        const angle = (lighting.direction + phase) * Math.PI / 180;
+        const tilt = lighting.elevation * Math.PI / 180;
         const radius = Math.sqrt(146);
-        const horizontal =
-          radius * Math.cos(elevation);
-        const bearing =
-          Math.atan2(-4, 7) - azimuth;
+        const base = Math.atan2(-4, 7);
 
-        phaseLight.position.set(
-          horizontal * Math.sin(bearing),
-          radius * Math.sin(elevation),
-          horizontal * Math.cos(bearing)
-        );
+        if (orbit?.period > 0) {
+          // True inclined circular orbit.
+          // Opposite points have opposite elevations.
+          const east = Math.cos(angle);
+          const north = Math.cos(tilt) * Math.sin(angle);
+          const up = Math.sin(tilt) * Math.sin(angle);
+          phaseLight.position.set(
+            radius * (Math.sin(base) * east - Math.cos(base) * north),
+            radius * up,
+            radius * (Math.cos(base) * east + Math.sin(base) * north)
+          );
+        } else {
+          // Orbit off: fixed azimuth and signed elevation.
+          const horizontal = radius * Math.cos(tilt);
+          const bearing = base - angle;
+          phaseLight.position.set(
+            horizontal * Math.sin(bearing),
+            radius * Math.sin(tilt),
+            horizontal * Math.cos(bearing)
+          );
+        }
       }
 
       renderer.render(scene, camera);
@@ -452,7 +460,7 @@ export default function PlanckPhaseFullscreen({
 
       const sweep = sweepRef.current;
 
-      sweep.position += sweep.direction * dt / 25000;
+      sweep.position += sweep.direction * dt / 20000;
 
       if (sweep.position >= 1) {
         sweep.position = 2 - sweep.position;
