@@ -630,19 +630,43 @@ function SurfaceAppearanceMenu({
     lightOrbit.anchor,
   ]);
 
-  // Exactly the same phase calculation used by both renderers.
-  const displayedAzimuth = (
-    (
-      appearance.direction +
-      lightOrbit.phase +
-      (
-        lightOrbit.period > 0
-          ? 360 * (orbitDisplayTime - lightOrbit.anchor) /
-              (lightOrbit.period * 1000)
-          : 0
-      )
-    ) % 360 + 360
-  ) % 360;
+  // Match the inclined-circle geometry used in all renderers.
+  // Display instantaneous coordinates, not orbit parameters.
+  const orbitAngle = (
+    appearance.direction + lightOrbit.phase +
+    (lightOrbit.period > 0
+      ? 360 * (orbitDisplayTime - lightOrbit.anchor) /
+          (lightOrbit.period * 1000)
+      : 0)
+  ) * Math.PI / 180;
+
+  const inclination =
+    (appearance.elevation ?? 10) * Math.PI / 180;
+
+  const displayedAzimuth = lightOrbit.period > 0
+    ? ((Math.atan2(
+        Math.cos(inclination) * Math.sin(orbitAngle),
+        Math.cos(orbitAngle)
+      ) * 180 / Math.PI) + 360) % 360
+    : ((appearance.direction + lightOrbit.phase) % 360 + 360) % 360;
+
+  const displayedElevation = lightOrbit.period > 0
+    ? Math.asin(Math.max(-1, Math.min(1,
+        Math.sin(inclination) * Math.sin(orbitAngle)
+      ))) * 180 / Math.PI
+    : (appearance.elevation ?? 10);
+
+  const pauseAtCurrentPosition = () => {
+    if (lightOrbit.period <= 0) return;
+
+    stopLightOrbit();
+
+    setAppearance(current => ({
+      ...current,
+      direction: displayedAzimuth,
+      elevation: displayedElevation,
+    }));
+  };
 
   // Approved Lighting popup height.
   const LIGHTING_POPUP_HEIGHT = 126;
@@ -843,7 +867,7 @@ function SurfaceAppearanceMenu({
             alignItems: 'center',
             columnGap: 8,
           }}>
-            <span>{lightOrbit.period > 0 ? "Orbit phase" : "Azimuth"}</span>
+            <span>Azimuth</span>
             <div style={{
               minWidth: 0,
               transform: 'translateY(6px)',
@@ -856,10 +880,11 @@ function SurfaceAppearanceMenu({
                 value={displayedAzimuth}
                 aria-label="Light azimuth"
                 onChange={event => {
-                  stopLightOrbit();
+                  pauseAtCurrentPosition();
                   setAppearance(current => ({
                     ...current,
                     direction: Number(event.target.value),
+                    elevation: displayedElevation,
                   }));
                 }}
                 className="planck-lighting-range"
@@ -900,7 +925,9 @@ function SurfaceAppearanceMenu({
             alignItems: 'center',
             columnGap: 8,
           }}>
-            <span>{lightOrbit.period > 0 ? "Inclination" : "Elevation"}</span>
+            <span title={lightOrbit.period > 0
+              ? `Orbit inclination: ${appearance.elevation ?? 10}°`
+              : "Manual light elevation"}>Elevation</span>
             <div style={{
               minWidth: 0,
               transform: 'translateY(6px)',
@@ -910,14 +937,16 @@ function SurfaceAppearanceMenu({
                 min="-90"
                 max="90"
                 step="1"
-                value={appearance.elevation ?? 10}
+                value={displayedElevation}
                 aria-label="Light elevation"
-                onChange={event =>
+                onChange={event => {
+                  pauseAtCurrentPosition();
                   setAppearance(current => ({
                     ...current,
+                    direction: displayedAzimuth,
                     elevation: Number(event.target.value),
-                  }))
-                }
+                  }));
+                }}
                 className="planck-lighting-range"
                 style={{
 
@@ -931,7 +960,7 @@ function SurfaceAppearanceMenu({
                     #b5b0a7 var(--progress),
                     #b5b0a7 100%)`,
                   '--progress':
-                    `${((appearance.elevation ?? 10) + 90) / 180 * 100}%`,
+                    `${(displayedElevation + 90) / 180 * 100}%`,
                 }}
               />
               <div style={{
@@ -964,7 +993,13 @@ function SurfaceAppearanceMenu({
               <button
                 type="button"
                 aria-pressed={lightOrbit.period > 0}
-                onClick={toggleLightOrbit}
+                onClick={() => {
+                  if (lightOrbit.period > 0) {
+                    pauseAtCurrentPosition();
+                  } else {
+                    toggleLightOrbit();
+                  }
+                }}
                 style={{
                   padding: 0,
                   margin: 0,
