@@ -3,8 +3,79 @@
 import { useEffect, useRef, useState } from 'react';
 import LayoutWrapper from '@/components/LayoutWrapper';
 import GFunctionsExplorer, { renderSignedGPhase } from '../g-functions/GFunctionsExplorer';
+import PlanckTimeSurface from './PlanckTimeSurface';
+import PlanckPhaseSurface from './PlanckPhaseSurface';
+import PlanckPhaseFullscreen from './PlanckPhaseFullscreen';
 import '../globals.css';
 
+
+// Final calibrated mathematical windows and camera sizes.
+// Keys: constant index - real/imaginary - direct/inverted.
+// All twenty entries were approved on October 14, 2026.
+// EXPERIMENT: set to false to restore the original
+// solid dark backgrounds in all fullscreen surface viewers.
+const FULLSCREEN_DIMMED_BACKDROP = false;
+
+const PLANCK_SURFACE_SETTINGS = {
+  // Planck time
+  '0-re-z':   { domain: 10.0000, cutoff: 1.9953, size: 2.95 },
+  '0-im-z':   { domain:  7.7625, cutoff: 1.9953, size: 2.95 },
+  '0-re-inv': { domain:  0.9120, cutoff: 2.0000, size: 2.95 },
+  '0-im-inv': { domain:  1.0000, cutoff: 2.0000, size: 2.95 },
+
+  // Planck length
+  '1-re-z':   { domain:  5.8884, cutoff: 3.5481, size: 2.95 },
+  '1-im-z':   { domain:  6.6069, cutoff: 3.7584, size: 2.70 },
+  '1-re-inv': { domain:  0.0977, cutoff: 2.0000, size: 2.95 },
+  '1-im-inv': { domain:  0.0759, cutoff: 2.0000, size: 2.95 },
+
+  // Planck charge
+  '2-re-z':   { domain:  2.3988, cutoff: 2.9854, size: 2.95 },
+  '2-im-z':   { domain:  1.7378, cutoff: 1.9953, size: 2.95 },
+  '2-re-inv': { domain:  0.7762, cutoff: 2.0000, size: 2.95 },
+  '2-im-inv': { domain:  0.8913, cutoff: 2.0000, size: 2.95 },
+
+  // Planck temperature
+  '3-re-z':   { domain:  1.7783, cutoff: 1.9953, size: 2.95 },
+  '3-im-z':   { domain:  0.9333, cutoff: 1.9953, size: 2.95 },
+  '3-re-inv': { domain:  2.2909, cutoff: 2.0000, size: 2.95 },
+  '3-im-inv': { domain: 10.0000, cutoff: 2.0000, size: 2.95 },
+
+  // Planck mass
+  '4-re-z':   { domain:  3.0903, cutoff: 1.9953, size: 2.95 },
+  '4-im-z':   { domain:  1.2303, cutoff: 1.9953, size: 2.95 },
+  '4-re-inv': { domain:  1.1749, cutoff: 2.0000, size: 2.95 },
+  '4-im-inv': { domain: 10.0000, cutoff: 2.0000, size: 2.95 },
+};
+
+// Approved full-screen mathematical windows.
+// Separate from PLANCK_SURFACE_SETTINGS (the small plots).
+// Only the ten explicitly marked Set are baked in.
+const FULLSCREEN_APPROVED_WINDOWS = {
+  // Re F_k(z): calibrated full-screen mathematical windows.
+  '0-re-z': { domain: 137, minDomain: 3, maxDomain: 137 },
+  '1-re-z': { domain: 100, minDomain: 2, maxDomain: 100 },
+  '2-re-z': { domain: 80, minDomain: 1, maxDomain: 80 },
+  '3-re-z': { domain: 12, minDomain: 2, maxDomain: 12 },
+
+  // Im F_k(z): approved full-screen domain windows.
+  '0-im-z': { domain: 100, minDomain: 3, maxDomain: 100 },
+  '1-im-z': { domain: 80, minDomain: 2, maxDomain: 80 },
+  '2-im-z': { domain: 44, minDomain: 1.05, maxDomain: 44 },
+  '3-im-z': { domain: 10, minDomain: 1, maxDomain: 10 },
+  '4-im-z': { domain: 1.2303, minDomain: 1, maxDomain: 10 },
+
+  '0-re-inv': { domain: 8.0, minDomain: 0.001, maxDomain: 8.0 },
+  '0-im-inv': { domain: 1.0, minDomain: 0.001, maxDomain: 10.0 },
+  '1-re-inv': { domain: 0.24802963, minDomain: 0.025, maxDomain: 0.25 },
+  '1-im-inv': { domain: 0.1, minDomain: 0.02, maxDomain: 0.1 },
+  '2-re-inv': { domain: 1.0, minDomain: 0.0035, maxDomain: 1.0 },
+  '2-im-inv': { domain: 0.079853179, minDomain: 0.07, maxDomain: 1.618 },
+  '3-re-inv': { domain: 18.0, minDomain: 0.015, maxDomain: 18.0 },
+  '3-im-inv': { domain: 99.457009, minDomain: 0.015, maxDomain: 100.0 },
+  '4-re-inv': { domain: 8.0, minDomain: 0.0055, maxDomain: 8.0 },
+  '4-im-inv': { domain: 195.54412, minDomain: 0.007, maxDomain: 200.0 },
+};
 
 const PHASE_IDS = ['G0', 'G1', 'G2', 'G3', 'G4'];
 const PHASE_INITIAL_ZOOM = {
@@ -473,6 +544,694 @@ function NavigablePhaseCanvas({
 
 const BOUNDARY_DIGIT_STOPS = [[15.22426999999999,24.2837,36.4243,45.2836,54.143,63.0023,72.2568,81.5113,90.7657,100.0202,109.2747,118.5291,127.7836,137.0381,160.7778],[15.224299999999971,24.2837,36.4243,45.2836,54.143,63.0023,71.8617,81.1655,90.4694,99.7732,109.0771,118.3809,127.6847,136.9886,160.7777],[15.224280000000022,24.2837,36.4243,45.2837,54.1431,63.0025,71.8619,80.7213,89.5807,99.0326,108.4846,117.9365,127.3884,136.8404,160.7779],[15.225889999999993,24.2853,36.4259,45.2853,54.1447,63.0041,71.8635,81.1673,90.4711,99.7749,109.0787,118.3825,127.6863,136.9901,160.7795],[15.225929999999948,24.2853,36.4259,45.2852,54.1446,63.0039,72.2584,81.5129,90.7673,100.0218,109.2763,118.5307,127.7852,137.0397,160.7794]];
 
+
+// Custom appearance controls; no native browser color picker.
+function surfaceHexFromHsv(h, s, v) {
+  const k = n => (n + h / 60) % 6;
+  const f = n => v - v * s *
+    Math.max(0, Math.min(k(n), 4 - k(n), 1));
+
+  return `#${[f(5), f(3), f(1)].map(value =>
+    Math.round(value * 255).toString(16).padStart(2, '0')
+  ).join('').toUpperCase()}`;
+}
+
+function surfaceHsvFromHex(hex) {
+  const raw = hex.replace('#', '');
+  const [r, g, b] = [0, 2, 4].map(i =>
+    parseInt(raw.slice(i, i + 2), 16) / 255
+  );
+
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const delta = max - min;
+
+  let h = 0;
+
+  if (delta > 0) {
+    if (max === r) h = ((g - b) / delta + 6) % 6;
+    else if (max === g) h = (b - r) / delta + 2;
+    else h = (r - g) / delta + 4;
+  }
+
+  return {
+    h: h * 60,
+    s: max === 0 ? 0 : delta / max,
+    v: max,
+  };
+}
+
+function SurfaceAppearanceMenu({
+  id,
+  appearance,
+  setAppearance,
+  colorWidth,
+  directionWidth,
+  lightOrbit,
+  toggleLightOrbit,
+  changeOrbitSeconds,
+  orbitSeconds,
+  resetLightOrbit,
+}) {
+  const hostRef = useRef(null);
+  const popupRef = useRef(null);
+
+  const [panel, setPanel] = useState(null);
+
+  // Display-only clock for the Azimuth slider.
+  // It does not control or restart the light orbit.
+  const [orbitDisplayTime, setOrbitDisplayTime] = useState(0);
+
+  useEffect(() => {
+    if (panel !== 'lighting') return undefined;
+
+    let frame;
+
+    const update = () => {
+      setOrbitDisplayTime(performance.now());
+
+      if (lightOrbit.period > 0) {
+        frame = requestAnimationFrame(update);
+      }
+    };
+
+    update();
+
+    return () => {
+      if (frame !== undefined) {
+        cancelAnimationFrame(frame);
+      }
+    };
+  }, [
+    panel,
+    lightOrbit.period,
+    lightOrbit.phase,
+    lightOrbit.anchor,
+  ]);
+
+  // Exactly the same phase calculation used by both renderers.
+  const displayedAzimuth = (
+    (
+      appearance.direction +
+      lightOrbit.phase +
+      (
+        lightOrbit.period > 0
+          ? 360 * (orbitDisplayTime - lightOrbit.anchor) /
+              (lightOrbit.period * 1000)
+          : 0
+      )
+    ) % 360 + 360
+  ) % 360;
+
+  // Approved Lighting popup height.
+  const LIGHTING_POPUP_HEIGHT = 126;
+
+  // Approved Lighting slider dimensions and alignment.
+
+
+
+  const [draft, setDraft] = useState(() =>
+    surfaceHsvFromHex(appearance.color)
+  );
+
+  const color = surfaceHexFromHsv(
+    draft.h,
+    surfaceHsvFromHex('#FFAC0A').s,
+    1
+  );
+
+  useEffect(() => {
+    if (!panel) return undefined;
+
+    const dismiss = event => {
+      if (
+        !hostRef.current?.contains(event.target) &&
+        !popupRef.current?.contains(event.target)
+      ) {
+
+        setPanel(null);
+      }
+    };
+
+    const escape = event => {
+      if (event.key === 'Escape') {
+
+        setPanel(null);
+      }
+    };
+
+    document.addEventListener('pointerdown', dismiss);
+    document.addEventListener('keydown', escape);
+
+    return () => {
+      document.removeEventListener('pointerdown', dismiss);
+      document.removeEventListener('keydown', escape);
+    };
+  }, [panel]);
+
+  const chooseDirection = event => {
+    const rect = event.currentTarget.getBoundingClientRect();
+
+    const dx = event.clientX - rect.left - rect.width / 2;
+    const dy = event.clientY - rect.top - rect.height / 2;
+
+    const angle = Math.round(
+      Math.atan2(dx, -dy) * 180 / Math.PI
+    );
+
+    setAppearance(current => ({
+      ...current,
+      direction: angle,
+    }));
+  };
+
+  const buttonStyle = {
+    border: '1px solid rgba(214,207,188,0.55)',
+    borderRadius: 6,
+    background: 'rgba(22,22,18,0.88)',
+    color: '#f0cf78',
+    padding: '5px 10px',
+    cursor: 'pointer',
+    font: 'inherit',
+  };
+
+  return (
+    <div
+      ref={hostRef}
+      style={{
+        position: 'relative',
+        zIndex: panel ? 20 : 1,
+      }}
+    >
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+      }}>
+        <button
+          type="button"
+          aria-expanded={panel === 'color'}
+          aria-label="Surface color"
+          style={{
+            ...buttonStyle,
+            color: 'rgba(242, 237, 224, 0.94)',
+            padding: '0.12rem 0.28rem',
+            borderRadius: '8px',
+            background: 'rgba(22, 22, 18, 0.36)',
+            border: '1px solid rgba(214, 207, 188, 0.48)',
+            fontSize: '0.82rem',
+            lineHeight: 'inherit',
+            whiteSpace: 'nowrap',
+            width: colorWidth,
+            boxSizing: 'border-box',
+            textAlign: 'center',
+          }}
+          onClick={() => {
+            setDraft(surfaceHsvFromHex(appearance.color));
+            setPanel(current =>
+              current === 'color' ? null : 'color'
+            );
+          }}
+        >
+          Color
+        </button>
+        <button
+          type="button"
+          aria-expanded={panel === 'lighting'}
+          aria-label="Surface lighting"
+          onClick={() =>
+            setPanel(current =>
+              current === 'lighting' ? null : 'lighting'
+            )
+          }
+          style={{
+            ...buttonStyle,
+            color: 'rgba(242, 237, 224, 0.94)',
+            padding: '0.12rem 0.28rem',
+            borderRadius: 8,
+            background: 'rgba(22,22,18,0.36)',
+            border: '1px solid rgba(214,207,188,0.48)',
+            fontSize: '0.82rem',
+            lineHeight: 'inherit',
+            width: directionWidth,
+            boxSizing: 'border-box',
+          }}
+        >
+          Lighting
+        </button>
+      </div>
+
+      {panel === 'lighting' && (
+        <div
+          ref={popupRef}
+          style={{
+            position: 'absolute',
+            right: 0,
+            bottom: 'calc(100% + 7px)',
+            width: 390,
+            maxWidth: 'calc(100vw - 32px)',
+            height: LIGHTING_POPUP_HEIGHT,
+            '--light-track-thickness': '2px',
+            '--light-thumb-size': '10px',
+            maxHeight: 'calc(100dvh - 16px)',
+            overflowY: 'auto',
+            zIndex: 50,
+            display: 'grid',
+            gap: 2,
+            padding: '5px 9px',
+            boxSizing: 'border-box',
+            background: 'rgba(14,17,20,0.96)',
+            border: '1px solid rgba(214,207,188,0.45)',
+            borderRadius: 8,
+            color: '#eee',
+            fontSize: 11,
+          }}
+        >
+          <style jsx global>{`
+            .planck-lighting-range {
+              -webkit-appearance: none;
+              appearance: none;
+              height: var(--light-track-thickness);
+              border: none;
+              border-radius: 999px;
+              outline-offset: 5px;
+            }
+            .planck-lighting-range::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              appearance: none;
+              width: var(--light-thumb-size);
+              height: var(--light-thumb-size);
+              border: none;
+              border-radius: 50%;
+              background: #1676ed;
+              cursor: pointer;
+            }
+            .planck-lighting-range::-moz-range-thumb {
+              width: var(--light-thumb-size);
+              height: var(--light-thumb-size);
+              border: none;
+              border-radius: 50%;
+              background: #1676ed;
+              cursor: pointer;
+            }
+          `}</style>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '62px minmax(0,1fr)',
+            alignItems: 'center',
+            columnGap: 8,
+          }}>
+            <span>Azimuth</span>
+            <div style={{
+              minWidth: 0,
+              transform: 'translateY(6px)',
+            }}>
+              <input
+                type="range"
+                min="0"
+                max="360"
+                step="1"
+                value={displayedAzimuth}
+                aria-label="Light azimuth"
+                onChange={event => {
+                  resetLightOrbit();
+                  setAppearance(current => ({
+                    ...current,
+                    direction: Number(event.target.value),
+                  }));
+                }}
+                className="planck-lighting-range"
+                style={{
+
+                  display: 'block',
+                  width: '100%',
+                  margin: 0,
+                  cursor: 'pointer',
+                  background: `linear-gradient(to right,
+                    #1676ed 0%,
+                    #1676ed var(--progress),
+                    #b5b0a7 var(--progress),
+                    #b5b0a7 100%)`,
+                  '--progress':
+                    `${displayedAzimuth / 360 * 100}%`,
+                }}
+              />
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                fontSize: 9,
+                lineHeight: '12px',
+                opacity: 0.85,
+              }}>
+                <span>0</span>
+                <span>π/2</span>
+                <span>π</span>
+                <span>3π/2</span>
+                <span>2π</span>
+              </div>
+            </div>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '62px minmax(0,1fr)',
+            alignItems: 'center',
+            columnGap: 8,
+          }}>
+            <span>Elevation</span>
+            <div style={{
+              minWidth: 0,
+              transform: 'translateY(6px)',
+            }}>
+              <input
+                type="range"
+                min="0"
+                max="90"
+                step="1"
+                value={appearance.elevation ?? 10}
+                aria-label="Light elevation"
+                onChange={event =>
+                  setAppearance(current => ({
+                    ...current,
+                    elevation: Number(event.target.value),
+                  }))
+                }
+                className="planck-lighting-range"
+                style={{
+
+                  display: 'block',
+                  width: '100%',
+                  margin: 0,
+                  cursor: 'pointer',
+                  background: `linear-gradient(to right,
+                    #1676ed 0%,
+                    #1676ed var(--progress),
+                    #b5b0a7 var(--progress),
+                    #b5b0a7 100%)`,
+                  '--progress':
+                    `${(appearance.elevation ?? 10) / 90 * 100}%`,
+                }}
+              />
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                fontSize: 9,
+                lineHeight: '12px',
+                opacity: 0.85,
+              }}>
+                <span>0</span>
+                <span>π/4</span>
+                <span>π/2</span>
+              </div>
+            </div>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '62px minmax(0,1fr)',
+            alignItems: 'center',
+            columnGap: 8,
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 3,
+              whiteSpace: 'nowrap',
+            }}>
+              <span>Orbit</span>
+              <button
+                type="button"
+                aria-pressed={lightOrbit.period > 0}
+                onClick={toggleLightOrbit}
+                style={{
+                  padding: 0,
+                  margin: 0,
+                  border: 'none',
+                  background: 'none',
+                  color: lightOrbit.period > 0
+                    ? '#7fc2ff'
+                    : 'rgba(245,238,220,0.92)',
+                  font: 'inherit',
+                  lineHeight: 'inherit',
+                  cursor: 'pointer',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '0.12em',
+                }}
+              >
+                {lightOrbit.period > 0 ? 'On' : 'Off'}
+              </button>
+            </div>
+
+            <div style={{
+              minWidth: 0,
+              transform: 'translateY(6px)',
+            }}>
+              <input
+                type="range"
+                min="2"
+                max="60"
+                step="1"
+                value={orbitSeconds}
+                aria-label="Orbit seconds per revolution"
+                title="Orbit speed in seconds per revolution"
+                onChange={event =>
+                  changeOrbitSeconds(event.target.value)
+                }
+                className="planck-lighting-range"
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  margin: 0,
+                  cursor: 'pointer',
+                  background: `linear-gradient(to right,
+                    #1676ed 0%,
+                    #1676ed var(--progress),
+                    #b5b0a7 var(--progress),
+                    #b5b0a7 100%)`,
+                  '--progress':
+                    `${((orbitSeconds - 2) / 58) * 100}%`,
+                }}
+              />
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                fontSize: 9,
+                lineHeight: '12px',
+                opacity: 0.85,
+              }}>
+                <span>2s</span>
+                <span>15s</span>
+                <span>30s</span>
+                <span>45s</span>
+                <span>60s</span>
+              </div>
+            </div>
+          </div>
+
+          <div style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            gap: 8,
+            marginTop: 0,
+          }}>
+
+
+            <button
+              type="button"
+              style={{
+                ...buttonStyle,
+                color: 'rgba(242,237,224,0.94)',
+                padding: '0.12rem 0.28rem',
+                fontSize: '0.82rem',
+                lineHeight: 'inherit',
+                background: 'rgba(22,22,18,0.36)',
+                borderRadius: 8,
+              }}
+              onClick={() => setPanel(null)}
+            >
+              Set
+            </button>
+
+            <button
+              type="button"
+              style={{
+                ...buttonStyle,
+                color: 'rgba(242,237,224,0.94)',
+                padding: '0.12rem 0.28rem',
+                fontSize: '0.82rem',
+                lineHeight: 'inherit',
+                background: 'rgba(22,22,18,0.36)',
+                borderRadius: 8,
+              }}
+              onClick={() => {
+                resetLightOrbit();
+                setAppearance(current => ({
+                  ...current,
+                  direction: 144,
+                  elevation: 10,
+                }));
+              }}
+            >
+              Reset
+            </button>
+          </div>
+
+
+        </div>
+      )}
+
+      {panel === 'color' && (
+        <div style={{
+          position: 'absolute',
+          right: 0,
+          bottom: 'calc(100% + 7px)',
+          width: 410,
+          maxWidth: 'calc(100vw - 36px)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          gap: 8,
+          padding: 0,
+          boxSizing: 'border-box',
+          background: 'transparent',
+          border: 'none',
+          borderRadius: 0,
+          boxShadow: 'none',
+          zIndex: 50,
+        }}>
+          <style jsx global>{`
+            .planck-inline-hue {
+              appearance: none;
+              -webkit-appearance: none;
+              height: 10px;
+              border-radius: 999px;
+              border: 0;
+              outline-offset: 4px;
+              background: linear-gradient(
+                to right,
+                #ff0a0a 0%,
+                #ffff0a 16.67%,
+                #0aff0a 33.33%,
+                #0affff 50%,
+                #0a0aff 66.67%,
+                #ff0aff 83.33%,
+                #ff0a0a 100%
+              );
+              cursor: pointer;
+            }
+
+            .planck-inline-hue::-webkit-slider-thumb {
+              appearance: none;
+              -webkit-appearance: none;
+              width: 14px;
+              height: 14px;
+              border-radius: 50%;
+              background: white;
+              border: 2px solid #333;
+              box-shadow: 0 0 0 1px white;
+            }
+
+            .planck-inline-hue::-moz-range-thumb {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background: white;
+              border: 2px solid #333;
+              box-shadow: 0 0 0 1px white;
+            }
+          `}</style>
+
+          <input
+            className="planck-inline-hue"
+            type="range"
+            min="0"
+            max="360"
+            step="1"
+            value={draft.h}
+            aria-label="Surface hue"
+            onChange={event => {
+              const h = Number(event.target.value);
+              const liveColor = surfaceHexFromHsv(
+                h,
+                surfaceHsvFromHex('#FFAC0A').s,
+                1
+              );
+
+              setDraft(current => ({
+                ...current,
+                h,
+                s: surfaceHsvFromHex('#FFAC0A').s,
+                v: 1,
+              }));
+
+              setAppearance(current => ({
+                ...current,
+                color: liveColor,
+              }));
+            }}
+            style={{
+              flex: 1,
+              minWidth: 90,
+              width: '100%',
+              margin: 0,
+              padding: 0,
+            }}
+          />
+
+          <button
+            type="button"
+            style={{
+              ...buttonStyle,
+              color: 'rgba(242, 237, 224, 0.94)',
+              padding: '0.12rem 0.28rem',
+              fontSize: '0.82rem',
+              lineHeight: 'inherit',
+              borderRadius: 8,
+              background: 'rgba(22,22,18,0.36)',
+              border: '1px solid rgba(214,207,188,0.48)',
+              boxSizing: 'border-box',
+              whiteSpace: 'nowrap',
+            }}
+            onClick={() => {
+              setPanel(null);
+            }}
+          >
+            Set
+          </button>
+          <button
+            type="button"
+            style={{
+              ...buttonStyle,
+              color: 'rgba(242, 237, 224, 0.94)',
+              padding: '0.12rem 0.28rem',
+              fontSize: '0.82rem',
+              lineHeight: 'inherit',
+              borderRadius: 8,
+              background: 'rgba(22,22,18,0.36)',
+              border: '1px solid rgba(214,207,188,0.48)',
+              boxSizing: 'border-box',
+              whiteSpace: 'nowrap',
+            }}
+            onClick={() => {
+              setDraft(surfaceHsvFromHex('#FFAC0A'));
+              setAppearance(current => ({
+                ...current,
+                color: '#FFAC0A',
+              }));
+            }}
+          >
+            Reset
+          </button>
+        </div>
+      )}
+
+
+    </div>
+  );
+}
+
 export default function PlanckConstants() {
     const constants = [
     'Planck time',
@@ -504,17 +1263,500 @@ export default function PlanckConstants() {
   // Toggle 1: 3D vs 2D
   const [is3D, setIs3D] = useState(true);
 
+  // Approved switch contrast: brightness 66%, opacity 0%.
+
   // Toggle 2: Real vs Imaginary
-  const [isReal, setIsReal] = useState(true);
+  const [isReal, setIsReal] = useState(false);
+  const [surfaceFirstInverted, setSurfaceFirstInverted] =
+    useState(true);
+
+
+
+  // TEMPORARY: visual magnification of both 3D previews.
+  const [surfaceDomainLeft, setSurfaceDomainLeft] = useState(1);
+  const [surfaceDomainRight, setSurfaceDomainRight] = useState(1);
+
+
+  // TEMPORARY: independent vertical ranges and plot sizes.
+  const [surfaceHeightLeft, setSurfaceHeightLeft] = useState(5);
+  const [surfaceHeightRight, setSurfaceHeightRight] = useState(2);
+  const [surfaceSizeLeft, setSurfaceSizeLeft] = useState(1);
+  const [surfaceSizeRight, setSurfaceSizeRight] = useState(1);
+
+  // Temporary visual calibration; no geometry changes.
+  const [appearanceLeft, setAppearanceLeft] = useState({
+    ambient: 0.65,
+    lighting: 2.4,
+    direction: 144,
+    elevation: 10,
+    color: '#FFAC0A',
+  });
+
+  const [appearanceRight, setAppearanceRight] = useState({
+    ambient: 0.50,
+    lighting: 5.00,
+    direction: 144,
+    elevation: 10,
+    color: '#FFAC0A',
+  });
+
+  // Additional Planck-time previews.
+  const [surfaceDomainRealZ, setSurfaceDomainRealZ] = useState(1);
+  const [surfaceHeightRealZ, setSurfaceHeightRealZ] = useState(5);
+  const [surfaceSizeRealZ, setSurfaceSizeRealZ] = useState(1);
+
+  const [surfaceDomainImagInv, setSurfaceDomainImagInv] = useState(1);
+  const [surfaceHeightImagInv, setSurfaceHeightImagInv] = useState(2);
+  const [surfaceSizeImagInv, setSurfaceSizeImagInv] = useState(1);
+
+  const [appearanceRealZ, setAppearanceRealZ] = useState({
+    ambient: 0.65,
+    lighting: 2.4,
+    direction: 144,
+    elevation: 10,
+    color: '#FFAC0A',
+  });
+
+  const [appearanceImagInv, setAppearanceImagInv] = useState({
+    ambient: 0.50,
+    lighting: 5.00,
+    direction: 144,
+    elevation: 10,
+    color: '#FFAC0A',
+  });
+
+  const [renderDomainRealZ, setRenderDomainRealZ] = useState(1);
+  const [renderHeightRealZ, setRenderHeightRealZ] = useState(5);
+
+  const [renderDomainImagInv, setRenderDomainImagInv] = useState(1);
+  const [renderHeightImagInv, setRenderHeightImagInv] = useState(2);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setRenderDomainRealZ(surfaceDomainRealZ);
+      setRenderHeightRealZ(surfaceHeightRealZ);
+    }, 350);
+    return () => window.clearTimeout(timer);
+  }, [surfaceDomainRealZ, surfaceHeightRealZ]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setRenderDomainImagInv(surfaceDomainImagInv);
+      setRenderHeightImagInv(surfaceHeightImagInv);
+    }, 350);
+    return () => window.clearTimeout(timer);
+  }, [surfaceDomainImagInv, surfaceHeightImagInv]);
+
+  // Delay costly mathematical resampling while sliders move.
+  const [renderDomainLeft, setRenderDomainLeft] = useState(1);
+  const [renderDomainRight, setRenderDomainRight] = useState(1);
+  const [renderHeightLeft, setRenderHeightLeft] = useState(5);
+  const [renderHeightRight, setRenderHeightRight] = useState(2);
+
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setRenderDomainLeft(surfaceDomainLeft);
+      setRenderHeightLeft(surfaceHeightLeft);
+    }, 350);
+    return () => window.clearTimeout(timer);
+  }, [surfaceDomainLeft, surfaceHeightLeft]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setRenderDomainRight(surfaceDomainRight);
+      setRenderHeightRight(surfaceHeightRight);
+    }, 350);
+    return () => window.clearTimeout(timer);
+  }, [surfaceDomainRight, surfaceHeightRight]);
+
+  // Logarithmic domain scale: 0.001 through 10.
+  const surfaceSliderToDomain = value =>
+    Math.pow(10, Number(value) / 100 - 3);
+
+  const surfaceDomainToSlider = domain =>
+    100 * (Math.log10(domain) + 3);
 
   const [modalImage, setModalImage] = useState(null);
   const [modalVideo, setModalVideo] = useState(null);
   const phaseZooms = PHASE_INITIAL_ZOOM;
+
   const [expandedPhase, setExpandedPhase] = useState(null);
-  const [phasePlotMode, setPhasePlotMode] = useState("normal");
-  const PHASE_SVG_SCALE = 0.77;
-  const PHASE_TOGGLE_WIDTH = 120;
-  const PHASE_DIVIDER_GAP = 1;
+
+  const [expandedSurface, setExpandedSurface] = useState(null);
+
+  // Shared orientation for the five thumbnail cameras.
+  // Mutable ref avoids rebuilding React or Three.js scenes
+  // on every rotation frame.
+  const thumbnailOrientationRef = useRef({
+    owner: null,
+    position: null,
+    up: null,
+    version: 0,
+  });
+
+  // Approved widths of the three surface controls.
+  // Approved Lighting button width.
+  const lightingButtonWidth = 64;
+
+  // Shared light orbit. Angles remain in degrees internally.
+  const [lightOrbit, setLightOrbit] = useState({
+    period: 20,
+    phase: 0,
+    anchor: 0,
+  });
+
+  // Continuous orbit speed: seconds per revolution.
+  const [orbitSeconds, setOrbitSeconds] = useState(20);
+
+  const toggleLightOrbit = () => {
+    setLightOrbit(previous => {
+      const now = performance.now();
+
+      const phase = previous.period > 0
+        ? (
+            previous.phase +
+            360 * (now - previous.anchor) /
+              (previous.period * 1000)
+          ) % 360
+        : previous.phase;
+
+      return {
+        period: previous.period > 0 ? 0 : orbitSeconds,
+        phase,
+        anchor: now,
+      };
+    });
+  };
+
+  const changeOrbitSeconds = value => {
+    const seconds = Math.max(
+      2, Math.min(60, Number(value))
+    );
+    const now = performance.now();
+
+    setOrbitSeconds(seconds);
+
+    setLightOrbit(previous => {
+      const phase = previous.period > 0
+        ? (
+            previous.phase +
+            360 * (now - previous.anchor) /
+              (previous.period * 1000)
+          ) % 360
+        : previous.phase;
+
+      return {
+        period: previous.period > 0 ? seconds : 0,
+        phase,
+        anchor: now,
+      };
+    });
+  };
+
+  const resetLightOrbit = () => {
+    setOrbitSeconds(20);
+    setLightOrbit({
+      period: 20,
+      phase: 0,
+      anchor: performance.now(),
+    });
+  };
+
+  const surfaceControlWidths = {
+    contours: 107,
+    color: 49,
+    direction: 98,
+  };
+
+  const surfaceArgumentWidth = 55;
+  const [surfaceLineMode, setSurfaceLineMode] =
+    useState("contours");
+
+  // Full-screen mathematical-domain playback.
+  // A complete minimum-to-maximum sweep takes 20 seconds.
+  const [surfaceDomainPlaying, setSurfaceDomainPlaying] = useState(false);
+  const surfacePlaybackRef = useRef({
+    key: null,
+    position: 0,
+    direction: 1,
+  });
+
+
+  // TEMPORARY: twenty independent full-screen plotting windows.
+  // These never change the five small calibrated previews.
+  const [surfaceWindowDrafts, setSurfaceWindowDrafts] = useState(
+    () => Object.fromEntries(
+      Object.entries(PLANCK_SURFACE_SETTINGS).map(
+        ([key, values]) => [
+          key, {
+            ...values,
+            domain: FULLSCREEN_APPROVED_WINDOWS[key]?.domain
+              ?? values.domain,
+            zoom: 1,
+          }
+        ]
+      )
+    )
+  );
+
+  const [surfaceWindowRendered, setSurfaceWindowRendered] = useState(
+    () => Object.fromEntries(
+      Object.entries(PLANCK_SURFACE_SETTINGS).map(
+        ([key, values]) => [
+          key, {
+            ...values,
+            domain: FULLSCREEN_APPROVED_WINDOWS[key]?.domain
+              ?? values.domain,
+            zoom: 1,
+          }
+        ]
+      )
+    )
+  );
+
+  const [surfaceWindowSaved, setSurfaceWindowSaved] = useState(
+    () => Object.fromEntries(
+      Object.entries(FULLSCREEN_APPROVED_WINDOWS).map(
+        ([key, values]) => [
+          key,
+          {
+            ...PLANCK_SURFACE_SETTINGS[key],
+            ...values,
+            zoom: 1,
+          },
+        ]
+      )
+    )
+  );
+
+  // TEMPORARY: independent domain slider endpoints, per state.
+  const [surfaceDomainBounds, setSurfaceDomainBounds] = useState(
+    () => Object.fromEntries(
+      Object.entries(PLANCK_SURFACE_SETTINGS).map(([key, v]) => [
+        key,
+        {
+          min: FULLSCREEN_APPROVED_WINDOWS[key]?.minDomain
+            ?? Math.max(0.000001, v.domain / 10),
+          max: FULLSCREEN_APPROVED_WINDOWS[key]?.maxDomain
+            ?? v.domain * 10,
+        },
+      ])
+    )
+  );
+
+  const changeDomainBound = (key, end, value) => {
+    if (!Number.isFinite(value) || value <= 0) return;
+
+    const current = surfaceDomainBounds[key];
+    if (end === 'min' && value >= current.max) return;
+    if (end === 'max' && value <= current.min) return;
+
+    setSurfaceDomainBounds(previous => ({
+      ...previous,
+      [key]: { ...previous[key], [end]: value },
+    }));
+
+    const selected = surfaceWindowDrafts[key].domain;
+    const next = end === 'min'
+      ? Math.max(value, selected)
+      : Math.min(value, selected);
+
+    if (next !== selected) {
+      updateSurfaceWindow(key, 'domain', next);
+    }
+  };
+
+  const currentSurfaceWindowKey = expandedSurface === null
+    ? null
+    : `${expandedSurface.index}-${isReal ? 're' : 'im'}-` +
+      `${surfaceFirstInverted ? 'inv' : 'z'}`;
+
+  // Debounce mesh reconstruction, not camera magnification.
+  useEffect(() => {
+    if (!currentSurfaceWindowKey) return undefined;
+
+    const key = currentSurfaceWindowKey;
+    const draft = surfaceWindowDrafts[key];
+
+    const timer = window.setTimeout(() => {
+      setSurfaceWindowRendered(previous => ({
+        ...previous,
+        [key]: {
+          ...previous[key],
+          domain: draft.domain,
+          cutoff: draft.cutoff,
+        },
+      }));
+    }, surfaceDomainPlaying ? 35 : 260);
+
+    return () => window.clearTimeout(timer);
+  }, [
+    currentSurfaceWindowKey,
+    surfaceWindowDrafts,
+    surfaceDomainPlaying,
+  ]);
+
+  const updateSurfaceWindow = (key, field, value) => {
+    if (!Number.isFinite(value)) return;
+
+    const limits = field === 'zoom'
+      ? [0.1, 10]
+      : [0.000001, Number.MAX_SAFE_INTEGER];
+
+    const selected = Math.max(
+      limits[0],
+      Math.min(limits[1], value)
+    );
+
+    setSurfaceWindowDrafts(previous => ({
+      ...previous,
+      [key]: {
+        ...previous[key],
+        [field]: selected,
+      },
+    }));
+  };
+
+  // Animate in logarithmic domain coordinates.
+  // One decade takes 40 seconds, capped at 120 seconds.
+  // Pause/resume retains position and direction.
+  useEffect(() => {
+    if (!surfaceDomainPlaying || !currentSurfaceWindowKey) {
+      return undefined;
+    }
+
+    const key = currentSurfaceWindowKey;
+    const bounds = surfaceDomainBounds[key];
+    const logMin = Math.log(bounds.min);
+    const logSpan = Math.log(bounds.max) - logMin;
+
+    if (!(logSpan > 0)) return undefined;
+
+    const decades = logSpan / Math.log(10);
+    const traverseMs = Math.max(
+      19200,
+      Math.min(76800, 25600 * decades)
+    );
+
+    const motion = surfacePlaybackRef.current;
+    let frameId;
+    let lastTime = null;
+    let lastUpdate = -Infinity;
+
+    const tick = now => {
+      if (lastTime === null) lastTime = now;
+
+      // Avoid large jumps after an inactive browser tab.
+      const dt = Math.max(0, Math.min(now - lastTime, 250));
+      lastTime = now;
+
+      motion.position += motion.direction * dt / traverseMs;
+
+      // Reflect smoothly at either end of the slider.
+      if (motion.position >= 1) {
+        motion.position = 2 - motion.position;
+        motion.direction = -1;
+      } else if (motion.position <= 0) {
+        motion.position = -motion.position;
+        motion.direction = 1;
+      }
+
+      motion.position = Math.max(
+        0,
+        Math.min(1, motion.position)
+      );
+
+      // Throttle costly mesh rebuilds while remaining smooth.
+      if (now - lastUpdate >= 140) {
+        const domain = Math.exp(
+          logMin + motion.position * logSpan
+        );
+
+        updateSurfaceWindow(key, 'domain', domain);
+        lastUpdate = now;
+      }
+
+      frameId = requestAnimationFrame(tick);
+    };
+
+    frameId = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(frameId);
+  }, [surfaceDomainPlaying, currentSurfaceWindowKey]);
+
+  const copyFiveImagDirectWindows = async () => {
+    const names = [
+      'Planck time',
+      'Planck length',
+      'Planck charge',
+      'Planck temperature',
+      'Planck mass',
+    ];
+
+    const rows = names.map((name, index) => {
+      const key = `${index}-im-z`;
+      const draft = surfaceWindowDrafts[key];
+      const bounds = surfaceDomainBounds[key];
+
+      return (
+        `${name} — Im F${index}(z)\n` +
+        `Domain: ±${draft.domain.toPrecision(10)}\n` +
+        `Minimum domain: ${bounds.min.toPrecision(10)}\n` +
+        `Maximum domain: ${bounds.max.toPrecision(10)}`
+      );
+    });
+
+    const report = rows.join('\n\n');
+
+    try {
+      await navigator.clipboard.writeText(report);
+    } catch {
+      window.prompt('Copy all five Im(z) settings:', report);
+    }
+  };
+
+  const copyAllSurfaceWindows = async () => {
+    const names = [
+      'Planck time', 'Planck length', 'Planck charge',
+      'Planck temperature', 'Planck mass'
+    ];
+
+    const rows = [];
+
+    for (let index = 0; index < 5; index++) {
+      for (const component of ['re', 'im']) {
+        for (const argument of ['z', 'inv']) {
+          const key = `${index}-${component}-${argument}`;
+          const saved = surfaceWindowSaved[key];
+          const draft = surfaceWindowDrafts[key];
+          const bounds = surfaceDomainBounds[key];
+
+          const domain = saved?.domain ?? draft.domain;
+          const minimum = saved?.minDomain ?? bounds.min;
+          const maximum = saved?.maxDomain ?? bounds.max;
+
+          rows.push(
+            `${names[index]} — ${component === 're' ? 'Re' : 'Im'} ` +
+            `F${index}(${argument === 'z' ? 'z' : '1/z'})\n` +
+            `Domain: ±${domain.toPrecision(8)}\n` +
+            `Minimum domain: ${minimum.toPrecision(8)}\n` +
+            `Maximum domain: ${maximum.toPrecision(8)}\n` +
+            `Status: ${saved ? 'Set' : 'Not set'}`
+          );
+        }
+      }
+    }
+
+    const report = rows.join('\n\n');
+
+    try {
+      await navigator.clipboard.writeText(report);
+    } catch {
+      window.prompt('Copy all 20 settings:', report);
+    }
+  };
+  const phasePlotMode = surfaceFirstInverted ? "inverted" : "normal";
   const phaseZoomLimits = {
     normal: [
       { out: 2.42, in: 2.96 },  // G0(z)
@@ -1562,34 +2804,24 @@ export default function PlanckConstants() {
             margin: '0 auto 0.45rem',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'flex-start',
           }}
         >
           <div
             style={{
-              fontSize: '0.88rem',
-              lineHeight: 1,
-              fontWeight: 'normal',
-              color: 'rgba(255, 255, 255, 0.40)',
-              textAlign: 'center',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Surface plots
-          </div>
-
-          <div
-            style={{
-              position: 'absolute',
-              right: 0,
-              top: '50%',
-              transform: 'translateY(-50%)',
               display: 'flex',
+              width: '100%',
               alignItems: 'center',
-              gap: '0.4rem',
+              justifyContent: 'space-between',
+              gap: '1rem',
               fontSize: '0.82rem',
+              flexWrap: 'wrap',
             }}
           >
+            <div style={{
+              display: 'flex', alignItems: 'center',
+              gap: '0.4rem', flexWrap: 'wrap',
+            }}>
             {/* 2D | 3D */}
             <div
               style={{
@@ -1612,10 +2844,10 @@ export default function PlanckConstants() {
                   cursor: is3D ? 'pointer' : 'default',
                   color: !is3D
                     ? 'rgba(255, 250, 236, 1)'
-                    : 'rgba(242, 237, 224, 0.58)',
+                    : 'rgba(242, 237, 224, 0.34)',
                   fontWeight: 400,
                   background: !is3D
-                    ? 'rgba(232, 223, 200, 0.10)'
+                    ? 'rgba(232, 223, 200, 0)'
                     : 'transparent',
                   borderRadius: '5px',
                   padding: '0',
@@ -1635,10 +2867,10 @@ export default function PlanckConstants() {
                   cursor: !is3D ? 'pointer' : 'default',
                   color: is3D
                     ? 'rgba(255, 250, 236, 1)'
-                    : 'rgba(242, 237, 224, 0.58)',
+                    : 'rgba(242, 237, 224, 0.34)',
                   fontWeight: 400,
                   background: is3D
-                    ? 'rgba(232, 223, 200, 0.10)'
+                    ? 'rgba(232, 223, 200, 0)'
                     : 'transparent',
                   borderRadius: '5px',
                   padding: '0',
@@ -1673,10 +2905,10 @@ export default function PlanckConstants() {
                   cursor: !isReal ? 'pointer' : 'default',
                   color: isReal
                     ? 'rgba(255, 250, 236, 1)'
-                    : 'rgba(242, 237, 224, 0.58)',
+                    : 'rgba(242, 237, 224, 0.34)',
                   fontWeight: 400,
                   background: isReal
-                    ? 'rgba(232, 223, 200, 0.10)'
+                    ? 'rgba(232, 223, 200, 0)'
                     : 'transparent',
                   borderRadius: '5px',
                   padding: '0',
@@ -1696,10 +2928,10 @@ export default function PlanckConstants() {
                   cursor: isReal ? 'pointer' : 'default',
                   color: !isReal
                     ? 'rgba(255, 250, 236, 1)'
-                    : 'rgba(242, 237, 224, 0.58)',
+                    : 'rgba(242, 237, 224, 0.34)',
                   fontWeight: 400,
                   background: !isReal
-                    ? 'rgba(232, 223, 200, 0.10)'
+                    ? 'rgba(232, 223, 200, 0)'
                     : 'transparent',
                   borderRadius: '5px',
                   padding: '0',
@@ -1711,242 +2943,324 @@ export default function PlanckConstants() {
                 Im
               </span>
             </div>
+
+            {/* Switch which surface row appears first. */}
+            <div style={{
+              display:'flex',
+              alignItems:'center',
+              gap:'0.35rem',
+              padding:'0.12rem 0.45rem',
+              border:'1px solid rgba(214,207,188,0.48)',
+              borderRadius:8,
+              background:'rgba(22,22,18,0.36)',
+              width: surfaceArgumentWidth,
+              boxSizing: 'border-box',
+              justifyContent: 'center',
+              flexShrink: 0,
+            }}>
+              {[
+                [false,'z'],
+                [true,'1/z'],
+              ].map(([inverse,label],i)=>(
+                <span key={label} style={{
+                  display:'inline-flex',
+                  gap:6,
+                }}>
+                  {i>0 && <span style={{opacity:0.5}}>|</span>}
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setSurfaceFirstInverted(inverse)
+                    }
+                    aria-pressed={
+                      surfaceFirstInverted===inverse
+                    }
+                    style={{
+                      border:0,
+                      padding:0,
+                      font:'inherit',
+                      background:
+                        surfaceFirstInverted === inverse
+                          ? 'rgba(232, 223, 200, 0)'
+                          : 'transparent',
+                      borderRadius: 5,
+                      cursor:'pointer',
+                      color:
+                        surfaceFirstInverted === inverse
+                          ? 'rgba(255, 250, 236, 1)'
+                          : 'rgba(242, 237, 224, 0.34)',
+                    }}
+                  >
+                    {label}
+                  </button>
+                </span>
+              ))}
+            </div>
+
+
+
+            </div>
+            <div style={{
+              display: 'flex', alignItems: 'center',
+              gap: '0.4rem', flexWrap: 'wrap',
+            }}>
+            {/* Contours | Grid: shared surface overlay mode. */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.45rem',
+                color: 'rgba(242, 237, 224, 0.94)',
+                padding: '0.12rem 0.28rem',
+                border: '1px solid rgba(214, 207, 188, 0.48)',
+                borderRadius: '8px',
+                background: 'rgba(22, 22, 18, 0.36)',
+                boxSizing: 'border-box',
+                justifyContent: 'center',
+                width: surfaceControlWidths.contours,
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {[
+                ['contours', 'Contours'],
+                ['grid', 'Grid'],
+              ].map(([mode, label], index) => (
+                <span
+                  key={mode}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.45rem',
+                  }}
+                >
+                  {index > 0 && (
+                    <span style={{ opacity: 0.6 }}>|</span>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => setSurfaceLineMode(mode)}
+                    aria-pressed={surfaceLineMode === mode}
+                    style={{
+                      cursor: surfaceLineMode === mode
+                        ? 'default' : 'pointer',
+                      color: surfaceLineMode === mode
+                        ? 'rgba(255, 250, 236, 1)'
+                        : 'rgba(242, 237, 224, 0.34)',
+                      fontWeight: 400,
+                      background: surfaceLineMode === mode
+                        ? 'rgba(232, 223, 200, 0)'
+                        : 'transparent',
+                      border: 0,
+                      borderRadius: '5px',
+                      padding: 0,
+                      font: 'inherit',
+                      transition:
+                        'background 160ms ease, color 160ms ease',
+                    }}
+                  >
+                    {label}
+                  </button>
+                </span>
+              ))}
+            </div>
+
+            <SurfaceAppearanceMenu
+              id="surface-plots"
+              colorWidth={surfaceControlWidths.color}
+              directionWidth={lightingButtonWidth}
+              lightOrbit={lightOrbit}
+              toggleLightOrbit={toggleLightOrbit}
+              changeOrbitSeconds={changeOrbitSeconds}
+              orbitSeconds={orbitSeconds}
+              resetLightOrbit={resetLightOrbit}
+              appearance={
+                surfaceFirstInverted
+                  ? appearanceRight
+                  : appearanceLeft
+              }
+              setAppearance={
+                surfaceFirstInverted
+                  ? setAppearanceRight
+                  : setAppearanceLeft
+              }
+            />            </div>
+
           </div>
         </div>
 
-        {/* -------------------------------------------------- */}
-        {/* Surface plot row                                  */}
-        {/* -------------------------------------------------- */}
-
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
-            gap: 'clamp(0.45rem, 1.15vw, 1rem)',
-            width: '100%',
-            maxWidth: '1320px',
-            margin: '0 auto',
-            alignItems: 'start',
-          }}
-        >
-          {constantKeys.map((key, index) => {
-            const filename = getImageFilename(key);
+        {/* Two aligned rows: five constants, four function states. */}
+        <div style={{
+          display:'grid',
+          gap:'1rem',
+          width:'100%',
+          maxWidth:'1320px',
+          margin:'0 auto 1.5rem',
+        }}>
+          {[surfaceFirstInverted].map(inverted=>{
+            const appearance=
+              inverted ? appearanceRight : appearanceLeft;
 
             return (
-              <div
-                key={key}
-                style={{
-                  textAlign: 'center',
-                  minWidth: 0,
-                }}
-              >
-                <div
-                  style={{
-                    width: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <img
-                    src={`/images/${filename}`}
-                    alt={constants[index]}
-                    onClick={() =>
-                      setModalImage(`/images/${filename}`)
-                    }
-                    style={{
-                      display: 'block',
-                      width: '100%',
-                      height: 'auto',
-                      maxWidth: 'none',
-                      cursor: 'pointer',
-                      borderRadius: '0.3rem',
-                      boxShadow: '0 0 8px rgba(0,0,0,0.3)',
-
-                      transform:
-                        !is3D &&
-                        filename ===
-                          `planck_temperature_${isReal ? 'real' : 'imag'}_2d.png`
-                          ? 'translateX(6px)'
-                          : 'none',
-                    }}
-                  />
-                </div>
-
-                <a
-                  href={constantLinks[index]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    marginTop: '0.5rem',
-                    display: 'inline-block',
-                    color: 'inherit',
-                    textDecoration: 'none',
-                    cursor: 'pointer',
+              <div key={inverted ? 'inverse-row' : 'direct-row'}>
+                <div style={{
+                  display:'grid',
+                  position:'relative',
+                  gridTemplateColumns:
+                    'repeat(5, minmax(0, 1fr))',
+                  gap:'clamp(0.45rem, 1.15vw, 1rem)',
+                  alignItems:'start',
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    left: '-34px',
+                    top: '50%',
+                    writingMode: 'vertical-rl',
+                    transform: 'translateY(-50%) rotate(180deg)',
                     whiteSpace: 'nowrap',
-                    fontSize: 'clamp(0.75rem, 1.25vw, 1rem)',
+                    fontSize: '0.88rem',
+                    color: 'rgba(255, 255, 255, 0.40)',
+                  }}>Surface plots</div>
+                  {constantKeys.map((key,index)=>(
+                    <div
+                      key={`${key}-${inverted}`}
+                      style={{
+                        minWidth:0,
+                        textAlign:'center',
+                      }}
+                    >
 
-                    transform:
-                      index === 3
-                        ? 'translateY(5px)'
-                        : 'none',
-                  }}
-                  onMouseOver={(e) =>
-                    (e.currentTarget.style.color = 'yellow')
-                  }
-                  onMouseOut={(e) =>
-                    (e.currentTarget.style.color = 'inherit')
-                  }
-                >
-                  {constants[index]}
-                </a>
+                        <PlanckTimeSurface
+                          orientationLink={thumbnailOrientationRef}
+                          lineMode={surfaceLineMode}
+                          is3D={is3D}
+                          onOpen={view => {
+                            const key =
+                              `${index}-${isReal ? 're' : 'im'}-` +
+                              `${surfaceFirstInverted ? 'inv' : 'z'}`;
+
+                            const starter = PLANCK_SURFACE_SETTINGS[key];
+
+                            // Open at the small graph's exact domain.
+                            // Keep the calibrated slider endpoints.
+                            setSurfaceWindowDrafts(previous => ({
+                              ...previous,
+                              [key]: {
+                                ...previous[key],
+                                domain: starter.domain,
+                              },
+                            }));
+                            setSurfaceWindowRendered(previous => ({
+                              ...previous,
+                              [key]: {
+                                ...previous[key],
+                                domain: starter.domain,
+                              },
+                            }));
+                            setExpandedSurface({ index, view });
+                          }}
+                          constantIndex={index}
+                          inverted={inverted}
+                          real={isReal}
+                          scale={
+                            PLANCK_SURFACE_SETTINGS[
+                              `${index}-${isReal ? 're' : 'im'}-${inverted ? 'inv' : 'z'}`
+                            ].domain
+                          }
+                          heightRange={
+                            PLANCK_SURFACE_SETTINGS[
+                              `${index}-${isReal ? 're' : 'im'}-${inverted ? 'inv' : 'z'}`
+                            ].cutoff
+                          }
+                          displayScale={
+                            PLANCK_SURFACE_SETTINGS[
+                              `${index}-${isReal ? 're' : 'im'}-${inverted ? 'inv' : 'z'}`
+                            ].size
+                          }
+                          ambientStrength={appearance.ambient}
+                          lightStrength={appearance.lighting}
+                          lightDirection={appearance.direction}
+                          lightElevation={appearance.elevation}
+                          lightOrbit={lightOrbit}
+                          surfaceColor={appearance.color}
+                        />
+
+
+                    </div>
+                  ))}
+                </div>
               </div>
             );
           })}
         </div>
 
-        <div style={{ height: '2.0rem' }} />
-
-        {/* -------------------------------------------------- */}
-
-        {/* Phase plot selector: same visual style as Surface plots. */}
-        <div style={{
-          position: 'relative',
-          width: '100%',
-          maxWidth: '1320px',
-          minHeight: '2rem',
-          margin: '0 auto 0.7rem',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <div style={{
-            fontSize: '0.88rem',
-            lineHeight: 1,
-            fontWeight: 'normal',
-            color: 'rgba(255, 255, 255, 0.40)',
-          }}>
-            Phase plots
-          </div>
-
-          <div style={{
-            position: 'absolute',
-            right: 0,
-            top: '50%',
-            transform: 'translateY(-50%)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: `${PHASE_TOGGLE_WIDTH}px`,
-            boxSizing: 'border-box',
-            gap: `${PHASE_DIVIDER_GAP}px`,
-            color: 'rgba(242, 237, 224, 0.94)',
-            padding: '0.12rem 0.28rem',
-            border: '1px solid rgba(214, 207, 188, 0.48)',
-            borderRadius: '8px',
-            background: 'rgba(22, 22, 18, 0.36)',
-            fontSize: '0.82rem',
-          }}>
-            {[
-              ['normal', '/equations/G_k_of_z.svg'],
-              ['inverted', '/equations/G_k_of_inverse_z.svg'],
-            ].map(([mode, label], index) => (
-              <span
-                key={mode}
-                style={{
-                  display: 'inline-flex',
-                  gap: `${PHASE_DIVIDER_GAP}px`,
-                  alignItems: 'center',
-                }}
-              >
-                {index > 0 && (
-                  <span style={{ opacity: 0.6 }}>|</span>
-                )}
-
-                <button
-                  type="button"
-                  onClick={() => setPhasePlotMode(mode)}
-                  aria-pressed={phasePlotMode === mode}
-                  style={{
-                    font: 'inherit',
-                    padding: 0,
-                    border: 0,
-                    cursor:
-                      phasePlotMode === mode
-                        ? 'default'
-                        : 'pointer',
-                    color:
-                      phasePlotMode === mode
-                        ? 'rgba(255, 250, 236, 1)'
-                        : 'rgba(242, 237, 224, 0.58)',
-                    background:
-                      phasePlotMode === mode
-                        ? 'rgba(232, 223, 200, 0.10)'
-                        : 'transparent',
-                    borderRadius: '5px',
-                    transition:
-                      'background 160ms ease, color 160ms ease',
-                  }}
-                >
-                  <img
-                    src={label}
-                    alt={mode === 'normal' ? 'G_k(z)' : 'G_k(1/z)'}
-                    style={{
-                      display: 'block',
-                      width: 'auto',
-                      height: '18px',
-                      maxWidth: 'none',
-                      transform: `scale(${PHASE_SVG_SCALE})`,
-                      transformOrigin: 'center center',
-                      opacity: phasePlotMode === mode ? 1 : 0.58,
-                      transition: 'opacity 160ms ease',
-                    }}
-                  />
-                </button>
-              </span>
-            ))}
-          </div>
-        </div>
-
         <div style={{
           display: 'grid',
+          position: 'relative',
           gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
           gap: 'clamp(0.45rem, 1.15vw, 1rem)',
           width: '100%',
           maxWidth: '1320px',
           margin: '0 auto',
           alignItems: 'start',
+          marginTop: '-9px',
         }}>
+          <div style={{
+            position: 'absolute',
+            left: '-34px',
+            top: '50%',
+            writingMode: 'vertical-rl',
+            transform: 'translateY(-50%) rotate(180deg)',
+            whiteSpace: 'nowrap',
+            fontSize: '0.88rem',
+            color: 'rgba(255, 255, 255, 0.40)',
+          }}>Phase plots</div>
           {PHASE_IDS.map((id, index) => (
             <div key={id} style={{ minWidth: 0, textAlign: 'center' }}>
-              <button
-                type="button"
-                onClick={() => setExpandedPhase(index)}
-                aria-label={`Expand ${constants[index]} phase preview`}
-                style={{
-                  width: '100%',
-                  padding: 0,
-                  border: 0,
-                  background: 'transparent',
-                  cursor: 'zoom-in',
-                }}
-              >
-                <SignedPhaseCanvas
-                  id={id}
-                  halfWidth={phaseZooms[phasePlotMode][index]}
-                  inverted={phasePlotMode === "inverted"}
-                />
-              </button>
-
-              <div style={{
-                marginTop: '0.4rem',
-                fontSize: 'clamp(0.75rem, 1.25vw, 1rem)',
-              }}>
-                {constants[index]}
-              </div>
-
+              <PlanckPhaseSurface
+                id={id}
+                halfWidth={phaseZooms[phasePlotMode][index]}
+                inverted={phasePlotMode === "inverted"}
+                orientationLink={thumbnailOrientationRef}
+                is3D={is3D}
+                lightDirection={
+                  (surfaceFirstInverted
+                    ? appearanceRight
+                    : appearanceLeft).direction
+                }
+                lightElevation={
+                  (surfaceFirstInverted
+                    ? appearanceRight
+                    : appearanceLeft).elevation
+                }
+                lightOrbit={lightOrbit}
+                onOpen={() => setExpandedPhase(index)}
+              />
 
             </div>
+          ))}
+        </div>
+
+        {/* One shared title row for the five paired columns. */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
+          gap: 'clamp(0.45rem, 1.15vw, 1rem)',
+          maxWidth: '1320px',
+          width: '100%',
+          margin: '0.4rem auto 0',
+          textAlign: 'center',
+          fontSize: 'clamp(0.75rem, 1.25vw, 1rem)',
+        }}>
+          {constants.map((name, index) => (
+            <a
+              key={name}
+              href={constantLinks[index]}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'inherit', textDecoration: 'none' }}
+            >
+              {name}
+            </a>
           ))}
         </div>
 
@@ -3203,6 +4517,212 @@ export default function PlanckConstants() {
       </section>
 
 
+      {expandedSurface !== null && (() => {
+        const index = expandedSurface.index;
+        const key = currentSurfaceWindowKey;
+
+        const draft = surfaceWindowDrafts[key];
+        const rendered = surfaceWindowRendered[key];
+        // Use the calibrated minimum and maximum as the
+        // actual slider endpoints. The saved domain is the
+        // initial thumb position, not the upper limit.
+        const bounds = surfaceDomainBounds[key];
+
+        const baseline = PLANCK_SURFACE_SETTINGS[key];
+
+        const appearance = surfaceFirstInverted
+          ? appearanceRight : appearanceLeft;
+
+        // Keep the previously chosen full-screen framing.
+        const expandedDisplayScale = baseline.size * 0.82;
+
+        // Logarithmic domain slider, bounded independently
+        // for each of the twenty function configurations.
+        const position = Math.max(0, Math.min(1,
+          (Math.log(draft.domain) - Math.log(bounds.min)) /
+          (Math.log(bounds.max) - Math.log(bounds.min))
+        ));
+
+        return (
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${constants[index]} surface viewer`}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 10020,
+              background: FULLSCREEN_DIMMED_BACKDROP
+                ? 'rgba(16,19,24,0.82)'
+                : '#101318',
+            }}
+          >
+            <PlanckTimeSurface
+              key={`expanded-${index}-${isReal}-${surfaceFirstInverted}`}
+              constantIndex={index}
+              is3D={true}
+              fullscreen
+              initialOverhead={!is3D}
+              transparentBackground={FULLSCREEN_DIMMED_BACKDROP}
+              lineMode={surfaceLineMode}
+              initialView={
+                is3D
+                  ? expandedSurface.view
+                  : {
+                      position: [0, 10.9, 0.0001],
+                      up: [0, 0, -1],
+                    }
+              }
+              inverted={surfaceFirstInverted}
+              real={isReal}
+              scale={rendered.domain}
+              heightRange={baseline.cutoff}
+              displayScale={expandedDisplayScale}
+              ambientStrength={appearance.ambient}
+              lightStrength={appearance.lighting}
+              lightDirection={appearance.direction}
+                          lightElevation={appearance.elevation}
+                          lightOrbit={lightOrbit}
+              surfaceColor={appearance.color}
+            />
+
+            {/* Mathematical domain slider, bottom right. */}
+            <div style={{
+              position: 'absolute',
+              bottom: 12,
+              right: 12,
+              zIndex: 6,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+            }}>
+              <div style={{
+                width: 185,
+                height: 30,
+                boxSizing: 'border-box',
+                padding: '0 8px',
+                display: 'flex',
+                alignItems: 'center',
+                borderRadius: 7,
+                background: 'rgba(0,0,0,0.65)',
+              }}>
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.0005"
+                  value={position}
+                  onChange={event => {
+                    setSurfaceDomainPlaying(false);
+                    const p = Number(event.target.value);
+                    surfacePlaybackRef.current = {
+                      key,
+                      position: p,
+                      direction: p >= 1 ? -1 : 1,
+                    };
+                    const domain = Math.exp(
+                      Math.log(bounds.min) +
+                      p * (Math.log(bounds.max) -
+                           Math.log(bounds.min))
+                    );
+                    updateSurfaceWindow(key, 'domain', domain);
+                  }}
+                  aria-label="Mathematical domain range"
+                  style={{
+                    width: '100%',
+                    accentColor: '#75c7ff',
+                    cursor: 'pointer',
+                  }}
+                />
+              </div>
+
+              <button
+                type="button"
+                onClick={() => {
+                  if (!surfaceDomainPlaying) {
+                    const current = surfaceWindowDrafts[key].domain;
+                    const logSpan =
+                      Math.log(bounds.max) - Math.log(bounds.min);
+
+                    const position = logSpan > 0
+                      ? Math.max(0, Math.min(1,
+                          (Math.log(current) - Math.log(bounds.min))
+                            / logSpan
+                        ))
+                      : 0;
+
+                    const previous = surfacePlaybackRef.current;
+
+                    surfacePlaybackRef.current = {
+                      key,
+                      position,
+                      direction: previous.key === key
+                        ? previous.direction
+                        : 1,
+                    };
+
+                    // At the maximum, begin moving inward.
+                    if (position >= 1) {
+                      surfacePlaybackRef.current.direction = -1;
+                    }
+                    if (position <= 0) {
+                      surfacePlaybackRef.current.direction = 1;
+                    }
+                  }
+
+                  setSurfaceDomainPlaying(playing => !playing);
+                }}
+                aria-label={
+                  surfaceDomainPlaying
+                    ? "Pause domain sweep"
+                    : "Play domain sweep"
+                }
+                title={
+                  surfaceDomainPlaying
+                    ? "Pause"
+                    : "Sweep domain range in 20 seconds"
+                }
+                style={{
+                  width: 32,
+                  height: 30,
+                  padding: 0,
+                  color: '#fff',
+                  background: 'rgba(0,0,0,0.7)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  borderRadius: 6,
+                  fontSize: 15,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                {surfaceDomainPlaying ? 'Ⅱ' : '▶'}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setSurfaceDomainPlaying(false);
+                  setExpandedSurface(null);
+                }}
+                style={{
+                  padding: '7px 11px',
+                  color: '#fff',
+                  background: 'rgba(0,0,0,0.7)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  borderRadius: 6,
+                  fontSize: 14,
+                  cursor: 'pointer',
+                }}
+              >
+                Close ×
+              </button>
+            </div>
+          </div>
+        );
+      })()}
+
       {expandedPhase !== null && (
         <div
           onClick={() => setExpandedPhase(null)}
@@ -3226,14 +4746,31 @@ export default function PlanckConstants() {
               textAlign: 'center',
             }}
           >
-<NavigablePhaseCanvas
-              key={`${phasePlotMode}-${expandedPhase}`}
-              id={PHASE_IDS[expandedPhase]}
-              initialHalfWidth={phaseZooms[phasePlotMode][expandedPhase]}
-              inverted={phasePlotMode === "inverted"}
-              zoomLimits={phaseZoomLimits[phasePlotMode][expandedPhase]}
-              onClose={() => setExpandedPhase(null)}
-            />
+{(
+              <PlanckPhaseFullscreen
+                key={`3d-${phasePlotMode}-${expandedPhase}`}
+                id={PHASE_IDS[expandedPhase]}
+                initialHalfWidth={phaseZooms[phasePlotMode][expandedPhase]}
+                inverted={phasePlotMode === "inverted"}
+                zoomLimits={phaseZoomLimits[phasePlotMode][expandedPhase]}
+                initialOrientation={
+                  is3D ? thumbnailOrientationRef.current : null
+                }
+                initialOverhead={!is3D}
+                lightDirection={
+                  (surfaceFirstInverted
+                    ? appearanceRight
+                    : appearanceLeft).direction
+                }
+                lightElevation={
+                  (surfaceFirstInverted
+                    ? appearanceRight
+                    : appearanceLeft).elevation
+                }
+                lightOrbit={lightOrbit}
+                onClose={() => setExpandedPhase(null)}
+              />
+            )}
           </div>
         </div>
       )}

@@ -215,6 +215,13 @@ function complexAbs(z) {
   return Math.hypot(z.re, z.im);
 }
 
+function invertComplexArgument(z) {
+  if (z.re === 0 && z.im === 0) {
+    return complex(NaN, NaN);
+  }
+  return complexDiv(complex(1, 0), z);
+}
+
 function complexArg(z) {
   return Math.atan2(z.im, z.re);
 }
@@ -877,6 +884,62 @@ function evaluatePlanckLogPolar(
 }
 
 
+function evaluatePlanckAlgebra(a, b, op, z, sheet) {
+  const first = evaluatePlanckLogPolar(
+    a, z, sheet, "planck"
+  );
+
+  if (!b) return first;
+
+  const second = evaluatePlanckLogPolar(
+    b, z, sheet, "planck"
+  );
+
+  if (op === "mul") {
+    return logPolarMul(first, second);
+  }
+
+  if (op === "div") {
+    return logPolarDiv(first, second);
+  }
+
+  // Mixed dimensions: compare dimensionless phi functions.
+  // Equal dimensions: add the physical Planck quantities.
+  const mixedDimensions = a !== b;
+
+  const leftLogAbs = mixedDimensions
+    ? first.logAbs - PLANCK_BOUNDARIES[a].n * Math.LN10
+    : first.logAbs;
+
+  const rightLogAbs = mixedDimensions
+    ? second.logAbs - PLANCK_BOUNDARIES[b].n * Math.LN10
+    : second.logAbs;
+
+  // Stable addition/subtraction at a common logarithmic scale.
+  const m = Math.max(leftLogAbs, rightLogAbs);
+
+  if (m === -Infinity) {
+    return { logAbs: -Infinity, arg: 0 };
+  }
+
+  const sign = op === "sub" ? -1 : 1;
+
+  const re =
+    Math.exp(leftLogAbs - m) * Math.cos(first.arg) +
+    sign * Math.exp(rightLogAbs - m) * Math.cos(second.arg);
+
+  const im =
+    Math.exp(leftLogAbs - m) * Math.sin(first.arg) +
+    sign * Math.exp(rightLogAbs - m) * Math.sin(second.arg);
+
+  const polar = complexToLogPolar(complex(re, im));
+
+  return {
+    logAbs: m + polar.logAbs,
+    arg: polar.arg,
+  };
+}
+
 function evaluatePowerProductLogPolar(
   exponents,
   z
@@ -1011,7 +1074,8 @@ function hslToRgb(
 
 
 function derivedDomainColorLogPolar(
-  value
+  value,
+  hueOffset = 0
 ) {
   if (
     !value ||
@@ -1034,7 +1098,8 @@ function derivedDomainColorLogPolar(
   const hue =
     argument /
       (2 * Math.PI) +
-    0.5;
+    0.5 +
+    hueOffset;
 
   /*
    * Convert natural-log magnitude to base-10 only for the
@@ -2818,6 +2883,63 @@ function marker(
   );
 }
 
+
+// Shared mathematical sampler for the 2D and 3D phase views.
+// The returned color uses exactly the existing domain coloring.
+export function sampleSignedGPhase(
+  id, re, im, inverted = false, hueDegrees = 180
+) {
+  const point = { re, im };
+  const z = inverted ? invertComplexArgument(point) : point;
+  const polar = evaluateSingleGLogPolar(id, z);
+
+  return {
+    logAbs: polar.logAbs,
+    arg: polar.arg,
+    rgba: derivedDomainColorLogPolar(
+      polar, hueDegrees / 360
+    ),
+  };
+}
+
+export function renderSignedGPhase(
+  canvas, id, halfWidth, inverted = false, hueDegrees = 180,
+  centerRe = 0, centerIm = 0
+) {
+  if (!canvas || !(halfWidth > 0)) return;
+  const context = canvas.getContext("2d", { alpha: false });
+  if (!context) return;
+
+  const width = canvas.width;
+  const height = canvas.height;
+  const halfHeight = halfWidth * height / width;
+  const image = context.createImageData(width, height);
+  const pixels = image.data;
+
+  for (let py = 0; py < height; py++) {
+    const im = centerIm + halfHeight * (1 - 2 * (py + 0.5) / height);
+
+    for (let px = 0; px < width; px++) {
+      const re = centerRe + halfWidth * (2 * (px + 0.5) / width - 1);
+      const position = { re, im };
+      const z = inverted ? invertComplexArgument(position) : position;
+
+      const rgba = derivedDomainColorLogPolar(
+        evaluateSingleGLogPolar(id, z),
+        hueDegrees / 360
+      );
+
+      const offset = 4 * (py * width + px);
+      pixels[offset] = rgba[0];
+      pixels[offset + 1] = rgba[1];
+      pixels[offset + 2] = rgba[2];
+      pixels[offset + 3] = 255;
+    }
+  }
+
+  context.putImageData(image, 0, 0);
+}
+
 export default function GFunctionsExplorer() {
   const svgRef = useRef(null);
   const domainCanvasRef = useRef(null);
@@ -2825,7 +2947,60 @@ export default function GFunctionsExplorer() {
 
   const [center, setCenter] = useState({ re: 0, im: 0 });
   const [spanX, setSpanX] = useState(34);
+
+  // Fixed limits shared by all three tabs.
+  const scaleLimits = { min: 0.00217847, max: 423.862 };
+
+  const scaleSliderValue =
+    1000 *
+    Math.log(spanX / scaleLimits.min) /
+    Math.log(scaleLimits.max / scaleLimits.min);
+
+  const setScaleFromSlider = value => {
+    const fraction = Number(value) / 1000;
+    setSpanX(
+      scaleLimits.min *
+      Math.pow(
+        scaleLimits.max / scaleLimits.min,
+        fraction
+      )
+    );
+  };
+  const [scalePlaying, setScalePlaying] = useState(false);
   const [wheelZoomEnabled, setWheelZoomEnabled] = useState(false);
+
+  // One logarithmic sweep, 70 seconds per direction.
+  useEffect(() => {
+    if (!scalePlaying) return;
+
+    const minLog = Math.log(scaleLimits.min);
+    const logRange = Math.log(scaleLimits.max) - minLog;
+    let position = Math.max(0, Math.min(1,
+      (Math.log(spanX) - minLog) / logRange
+    ));
+    let direction = position >= 1 ? -1 : 1;
+    let lastTime = performance.now();
+
+    const timer = window.setInterval(() => {
+      const now = performance.now();
+      const delta = Math.min((now - lastTime) / 70000, 0.05);
+      lastTime = now;
+
+      position += direction * delta;
+
+      if (position >= 1) {
+        position = 2 - position;
+        direction = -1;
+      } else if (position <= 0) {
+        position = -position;
+        direction = 1;
+      }
+
+      setSpanX(Math.exp(minLog + logRange * position));
+    }, 100);
+
+    return () => window.clearInterval(timer);
+  }, [scalePlaying]);
 
   const [probe, setProbe] = useState({
     re: 1,
@@ -2848,6 +3023,11 @@ export default function GFunctionsExplorer() {
   const [sharedField, setSharedField] =
     useState(null);
 
+  const [sharedInvertedField, setSharedInvertedField] =
+    useState(null);
+
+  const invertedHueDegrees = 180;
+
   const [planckId, setPlanckId] =
     useState("G0");
 
@@ -2856,6 +3036,11 @@ export default function GFunctionsExplorer() {
 
   const [planckDisplay, setPlanckDisplay] =
     useState("field");
+
+  const [planckA, setPlanckA] = useState("G0");
+  const [planckB, setPlanckB] = useState(null);
+  const [planckOp, setPlanckOp] = useState("div");
+  const [planckArgument, setPlanckArgument] = useState("z");
 
   const [
     planckContinuationIndex,
@@ -2902,6 +3087,9 @@ export default function GFunctionsExplorer() {
 
   const [algebraOp, setAlgebraOp] =
     useState("div");
+
+  const [algebraArgument, setAlgebraArgument] =
+    useState("z");
 
   const [pendingOperator, setPendingOperator] =
     useState(false);
@@ -3548,7 +3736,7 @@ export default function GFunctionsExplorer() {
      */
     const showSharedField =
       viewMode === "shared" &&
-      Boolean(sharedField);
+      Boolean(sharedField || sharedInvertedField);
 
     const showAlgebraField =
       viewMode === "algebra" &&
@@ -3678,17 +3866,34 @@ export default function GFunctionsExplorer() {
           im,
         };
 
+        const algebraZ =
+          viewMode === "algebra" &&
+          algebraArgument === "inverse"
+            ? invertComplexArgument(z)
+            : z;
+
         let pixelColor;
 
         if (
           viewMode === "shared"
         ) {
+          const fieldId =
+            sharedInvertedField || sharedField;
+
+          const argument =
+            sharedInvertedField
+              ? invertComplexArgument(z)
+              : z;
+
           pixelColor =
             derivedDomainColorLogPolar(
               evaluateSingleGLogPolar(
-                sharedField,
-                z
-              )
+                fieldId,
+                argument
+              ),
+              sharedInvertedField
+                ? invertedHueDegrees / 360
+                : 0
             );
         } else if (
           viewMode === "planck"
@@ -3728,17 +3933,31 @@ export default function GFunctionsExplorer() {
               PLANCK_STACK_OFFSETS[bandIndex];
           }
 
-          pixelColor =
-            planckDomainColor(
-              evaluatePlanckLogPolar(
+          const planckArgumentZ =
+            planckArgument === "inverse"
+              ? invertComplexArgument(sampleZ)
+              : sampleZ;
+
+          pixelColor = planckDisplay === "algebra"
+            ? derivedDomainColorLogPolar(
+                evaluatePlanckAlgebra(
+                  planckA,
+                  planckB,
+                  planckOp,
+                  planckArgumentZ,
+                  sampleSheet
+                )
+              )
+            : planckDomainColor(
+                evaluatePlanckLogPolar(
+                  planckId,
+                  planckArgumentZ,
+                  sampleSheet,
+                  "phi"
+                ),
                 planckId,
-                sampleZ,
-                sampleSheet,
                 "phi"
-              ),
-              planckId,
-              "phi"
-            );
+              );
 
           /*
            * In stack mode, brighten the preimage of the
@@ -3757,7 +3976,7 @@ export default function GFunctionsExplorer() {
             const principalPhi =
               evaluatePhiComplex(
                 planckId,
-                sampleZ,
+                planckArgumentZ,
                 0
               );
 
@@ -3804,7 +4023,7 @@ export default function GFunctionsExplorer() {
               logPolarIntegerPow(
                 evaluateSingleGLogPolar(
                   algebraA,
-                  z
+                  algebraZ
                 ),
                 algebraAPower
               )
@@ -3817,7 +4036,7 @@ export default function GFunctionsExplorer() {
             logPolarIntegerPow(
               evaluateSingleGLogPolar(
                 algebraA,
-                z
+                algebraZ
               ),
               algebraAPower
             );
@@ -3826,7 +4045,7 @@ export default function GFunctionsExplorer() {
             logPolarIntegerPow(
               evaluateSingleGLogPolar(
                 algebraB,
-                z
+                algebraZ
               ),
               algebraBPower
             );
@@ -3852,7 +4071,7 @@ export default function GFunctionsExplorer() {
             complexIntegerPow(
               evaluateSingleG(
                 algebraA,
-                z
+                algebraZ
               ),
               algebraAPower
             );
@@ -3861,7 +4080,7 @@ export default function GFunctionsExplorer() {
             complexIntegerPow(
               evaluateSingleG(
                 algebraB,
-                z
+                algebraZ
               ),
               algebraBPower
             );
@@ -3917,15 +4136,22 @@ export default function GFunctionsExplorer() {
     bounds,
     viewMode,
     sharedField,
+    sharedInvertedField,
+    invertedHueDegrees,
     planckId,
     planckSheet,
     planckDisplay,
+    planckA,
+    planckB,
+    planckOp,
+    planckArgument,
     algebraGraphReady,
     algebraA,
     algebraB,
     algebraOp,
     algebraAPower,
     algebraBPower,
+    algebraArgument,
     showDerived,
   ]);
 
@@ -4067,15 +4293,16 @@ export default function GFunctionsExplorer() {
     }
 
     event.preventDefault();
+    setScalePlaying(false);
 
     const factor = Math.exp(
       event.deltaY * 0.001
     );
 
-    setSpanX((current) =>
+    setSpanX(current =>
       Math.max(
-        2,
-        Math.min(200, current * factor)
+        scaleLimits.min,
+        Math.min(scaleLimits.max, current * factor)
       )
     );
   }
@@ -4256,14 +4483,18 @@ export default function GFunctionsExplorer() {
       )
     );
 
+  // Approximately 10–15 grid intervals across the plane.
+  const targetGridStep = spanX / 12;
+  const gridMagnitude = Math.pow(
+    10,
+    Math.floor(Math.log10(targetGridStep))
+  );
+  const gridNormalized = targetGridStep / gridMagnitude;
   const gridStep =
-    spanX > 80
-      ? 10
-      : spanX > 35
-      ? 5
-      : spanX > 15
-      ? 2
-      : 1;
+    (gridNormalized <= 1 ? 1 :
+     gridNormalized <= 2 ? 2 :
+     gridNormalized <= 5 ? 5 : 10) *
+    gridMagnitude;
 
   const xGrid = integerRange(
     bounds.minX / gridStep,
@@ -4603,6 +4834,25 @@ export default function GFunctionsExplorer() {
             overflow: visible;
           }
 
+          /* Two-column Shared controls only in stacked layout. */
+          @media (max-width: 1000px) {
+            .g-side-panel .g-toolbar-shared {
+              display: grid;
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              column-gap: 20px;
+              row-gap: 16px;
+              align-items: start;
+            }
+
+            .g-side-panel .g-toolbar-shared > .g-group:first-child {
+              grid-column: 1 / -1;
+            }
+
+            .g-side-panel .g-toolbar-shared > .g-group {
+              min-width: 0;
+            }
+          }
+
           .g-side-panel .g-group {
             display: flex;
             flex-wrap: wrap;
@@ -4668,11 +4918,12 @@ export default function GFunctionsExplorer() {
           }
 
           .g-plane-panel {
+            position: relative;
             display: flex;
             flex-direction: column;
             min-height: 0;
             min-width: 0;
-            overflow: hidden;
+            overflow: visible;
           }
 
           .g-side-panel {
@@ -4689,15 +4940,66 @@ export default function GFunctionsExplorer() {
           }
 
           .g-plane-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
             display: flex;
             justify-content: space-between;
             gap: 12px;
             padding: 8px 11px;
-            border-bottom: 1px solid #303030;
+            background: rgba(0, 0, 0, 0.55);
+            pointer-events: none;
           }
 
           .g-plane-title {
             font-size: 15px;
+          }
+
+          /* Plane scale: match the enlarged-photo slider. */
+          #g-shared-scale {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            border-radius: 999px;
+            background: rgba(18, 23, 29, 0.65);
+            cursor: pointer;
+          }
+
+          #g-shared-scale::-webkit-slider-runnable-track {
+            height: 4px;
+            border-radius: 999px;
+            background: transparent;
+          }
+
+          #g-shared-scale::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            margin-top: -5px;
+            border: none;
+            border-radius: 50%;
+            background: #63bfee;
+            cursor: grab;
+          }
+
+          #g-shared-scale::-moz-range-track {
+            height: 4px;
+            border: none;
+            border-radius: 999px;
+            background: transparent;
+          }
+
+          #g-shared-scale::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            border: none;
+            border-radius: 50%;
+            background: #63bfee;
+            cursor: grab;
           }
 
           .g-range {
@@ -4714,7 +5016,7 @@ export default function GFunctionsExplorer() {
             min-width: 0;
             aspect-ratio: auto;
             background: rgba(0, 0, 0, 0.72);
-            overflow: hidden;
+            overflow: visible;
           }
 
           .g-domain-canvas {
@@ -4742,7 +5044,32 @@ export default function GFunctionsExplorer() {
             cursor: grabbing;
           }
 
+          .g-coordinate-x {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 18px;
+            pointer-events: none;
+            color: #cccccc;
+            font: 10px Menlo, Monaco, Consolas, monospace;
+            z-index: 3;
+          }
+
+          .g-coordinate-y {
+            position: absolute;
+            right: 100%;
+            top: 0;
+            width: 53px;
+            height: 100%;
+            pointer-events: none;
+            color: #cccccc;
+            font: 10px Menlo, Monaco, Consolas, monospace;
+            z-index: 3;
+          }
+
           .g-footer {
+            position: relative;
             display: flex;
             justify-content: space-between;
             gap: 12px;
@@ -4750,6 +5077,11 @@ export default function GFunctionsExplorer() {
             color: #777777;
             border-top: 1px solid #303030;
             font-size: 10px;
+          }
+
+          .g-footer > span {
+            position: relative;
+            top: 5px;
           }
 
           .g-side-panel {
@@ -4990,15 +5322,19 @@ export default function GFunctionsExplorer() {
 
           @media (max-width: 1000px) {
             .g-functions-page {
-              height: auto;
-              min-height: 100dvh;
-              overflow: visible;
+              height: 100dvh;
+              min-height: 0;
+              overflow-x: hidden;
+              overflow-y: auto;
+              overscroll-behavior-y: contain;
+              -webkit-overflow-scrolling: touch;
             }
 
             .g-layout {
               grid-template-columns: 1fr;
               flex: none;
               min-height: 0;
+              row-gap: 20px;
             }
 
             .g-plane-wrap {
@@ -5008,6 +5344,17 @@ export default function GFunctionsExplorer() {
 
             .g-side-panel {
               overflow-y: visible;
+            }
+
+            /* In stacked layout, keep tabs in normal flow
+               above the controls instead of over the graph. */
+            .g-floating-tabs {
+              position: static;
+              left: auto;
+              right: auto;
+              bottom: auto;
+              width: 100%;
+              flex: 0 0 auto;
             }
           }
         `}</style>
@@ -5042,6 +5389,8 @@ export default function GFunctionsExplorer() {
                   ? "Shared z-plane"
                   : viewMode === "algebra"
                   ? "Algebra graph"
+                  : planckDisplay === "algebra"
+                  ? "Planck algebra graph"
                   : `${PLANCK_BOUNDARIES[planckId].name} · ${
                       PLANCK_BOUNDARIES[planckId].phiLabel
                     }${
@@ -5051,12 +5400,6 @@ export default function GFunctionsExplorer() {
                     }`}
               </span>
 
-              <span className="g-range">
-                Re [{formatNumber(bounds.minX)},{" "}
-                {formatNumber(bounds.maxX)}] · Im [
-                {formatNumber(bounds.minY)},{" "}
-                {formatNumber(bounds.maxY)}]
-              </span>
             </div>
 
             <div className="g-plane-wrap">
@@ -5069,6 +5412,7 @@ export default function GFunctionsExplorer() {
                 ref={svgRef}
                 className="g-plane"
                 viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
+                preserveAspectRatio="none"
                 onPointerDown={handlePointerDown}
                 onPointerMove={handlePointerMove}
                 onPointerUp={handlePointerUp}
@@ -5099,7 +5443,7 @@ export default function GFunctionsExplorer() {
                   fill={
                     (
                       viewMode === "shared" &&
-                      sharedField
+                      (sharedField || sharedInvertedField)
                     ) ||
                     (
                       viewMode === "algebra" &&
@@ -5544,6 +5888,7 @@ export default function GFunctionsExplorer() {
                 {viewMode === "algebra" &&
                   algebraReady &&
                   showDerived &&
+                  algebraArgument === "z" &&
                   derivedLandmarks.exactGeometry && (
                     <g>
                       {show.zeros &&
@@ -5594,6 +5939,7 @@ export default function GFunctionsExplorer() {
 
                 {viewMode === "algebra" &&
                   algebraReady &&
+                  algebraArgument === "z" &&
                   derivedLandmarks.exactGeometry &&
                   derivedCommonPoints.length <= 20 &&
                   derivedCommonPoints.map(
@@ -5735,6 +6081,85 @@ export default function GFunctionsExplorer() {
                 )}
 
               </svg>
+
+              {/* Coordinates outside the full plotting area. */}
+              <div className="g-coordinate-x" aria-hidden="true">
+                {xGrid
+                  .filter(value =>
+                    Math.round(value / gridStep) %
+                      Math.max(
+                        1,
+                        Math.ceil(
+                          100 * spanX / (SVG_WIDTH * gridStep)
+                        )
+                      ) === 0
+                  )
+                  .map(value => {
+                    const percent =
+                      100 * toScreen({
+                        re: value,
+                        im: 0
+                      }).x / SVG_WIDTH;
+
+                    if (percent < 5 || percent > 95) return null;
+
+                    return (
+                      <span
+                        key={`x-coordinate-${value}`}
+                        style={{
+                          position: "absolute",
+                          left: `${percent}%`,
+                          top: 3,
+                          transform: "translateX(-50%)",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {formatNumber(value)}
+                      </span>
+                    );
+                  })}
+              </div>
+
+              {!(viewMode === "planck" &&
+                planckDisplay === "stack") && (
+                <div className="g-coordinate-y" aria-hidden="true">
+                  {yGrid
+                    .filter(value =>
+                      Math.round(value / gridStep) %
+                        Math.max(
+                          1,
+                          Math.ceil(
+                            62 * spanY /
+                            (SVG_HEIGHT * gridStep)
+                          )
+                        ) === 0
+                    )
+                    .map(value => {
+                      const percent =
+                        100 * toScreen({
+                          re: 0,
+                          im: value
+                        }).y / SVG_HEIGHT;
+
+                      if (percent < 3 || percent > 97) return null;
+
+                      return (
+                        <span
+                          key={`y-coordinate-${value}`}
+                          style={{
+                            position: "absolute",
+                            right: 5,
+                            top: `${percent}%`,
+                            transform: "translateY(-50%)",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {formatNumber(value)}
+                        </span>
+                      );
+                    })}
+                </div>
+              )}
             </div>
 
             <div className="g-footer">
@@ -5744,11 +6169,15 @@ export default function GFunctionsExplorer() {
 
               <span>
                 {viewMode === "shared"
-                  ? sharedField
-                    ? `field = ${FUNCTIONS[sharedField].label} · landmarks can be toggled independently`
+                  ? sharedInvertedField
+                    ? `field = ${FUNCTIONS[sharedInvertedField].label}(1/z) · landmarks can be toggled independently`
+                    : sharedField
+                    ? `field = ${FUNCTIONS[sharedField].label}(z) · landmarks can be toggled independently`
                     : "shared geometry · color field off · toggle any combination of G-functions"
                   : viewMode === "planck"
-                  ? planckDisplay === "stack"
+                  ? planckDisplay === "algebra"
+                    ? "Planck algebra · dimensionful complex field"
+                    : planckDisplay === "stack"
                     ? `${PLANCK_BOUNDARIES[planckId].name} · ${PLANCK_BOUNDARIES[planckId].phiLabel} · sheets ${planckSheet + 2} to ${planckSheet - 2} · bright seam = adjacent-sheet gluing`
                     : `${PLANCK_BOUNDARIES[planckId].name} · ${PLANCK_BOUNDARIES[planckId].phiLabel} · sheet m = ${planckSheet}`
                   : !algebraA
@@ -5816,123 +6245,61 @@ export default function GFunctionsExplorer() {
 
 
 
-        <div className="g-toolbar">
-          {viewMode === "shared" && (
-            <div className="g-group">
-              <span className="g-label">
-                Functions
-              </span>
 
-              {Object.entries(FUNCTIONS).map(
-                ([id, info]) => (
-                  <button
-                    key={id}
-                    type="button"
-                    className={`g-button ${
-                      active[id]
-                        ? "active"
-                        : ""
-                    }`}
-                    style={{
-                      borderColor:
-                        active[id]
-                          ? info.color
-                          : undefined,
-                    }}
-                    onClick={() =>
-                      setActive((old) => ({
-                        ...old,
-                        [id]: !old[id],
-                      }))
-                    }
-                  >
-                    {info.label}
-                  </button>
-                )
-              )}
-
-            </div>
-          )}
-
-          {viewMode === "shared" && (
-            <div className="g-group">
-              <span className="g-label">
-                Color field
-              </span>
-
-              {Object.entries(FUNCTIONS).map(
-                ([id, info]) => (
-                  <button
-                    key={`field-${id}`}
-                    type="button"
-                    className={`g-button ${
-                      sharedField === id
-                        ? "active"
-                        : ""
-                    }`}
-                    style={{
-                      borderColor:
-                        sharedField === id
-                          ? info.color
-                          : undefined,
-                    }}
-                    onClick={() =>
-                      setSharedField((current) =>
-                        current === id
-                          ? null
-                          : id
-                      )
-                    }
-                  >
-                    {info.label}
-                  </button>
-                )
-              )}
-            </div>
-          )}
-
-          {viewMode !== "planck" && (
-            <div className="g-group">
-              <span className="g-label">
-                Geometry
-              </span>
-
-              {[
-                ["zeros", "Zeros"],
-                ["poles", "Poles"],
-                ["critical", "Critical"],
-                ["shifts", "Shifts"],
-              ].map(([id, label]) => (
-                <button
-                  key={id}
-                  type="button"
-                  className={`g-button ${
-                    show[id] ? "active" : ""
-                  }`}
-                  onClick={() =>
-                    setShow((old) => ({
-                      ...old,
-                      [id]: !old[id],
-                    }))
-                  }
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-          )}
-
-
+        <div className={`g-toolbar ${
+          viewMode === "shared" ? "g-toolbar-shared" : ""
+        }`}>
           <div className="g-group">
+            <label className="g-label" htmlFor="g-shared-scale">
+              Plane scale
+            </label>
+
+            <input
+              id="g-shared-scale"
+              type="range"
+              min="0"
+              max="1000"
+              step="1"
+              value={scaleSliderValue}
+              onChange={event => {
+                setScalePlaying(false);
+                setWheelZoomEnabled(true);
+                setScaleFromSlider(event.target.value);
+              }}
+              style={{
+                display: "block",
+                width: "100%",
+                marginTop: 9,
+                accentColor: "#75c7ff",
+              }}
+            />
+
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 6,
+              flexWrap: "nowrap",
+              width: "100%",
+              marginTop: 10,
+            }}>
+            <button
+              type="button"
+              className={`g-button ${scalePlaying ? "active" : ""}`}
+              aria-pressed={scalePlaying}
+              onClick={() => setScalePlaying(playing => !playing)}
+            >
+              {scalePlaying ? "Stop" : "Play"}
+            </button>
             <button
               type="button"
               className="g-button"
               title="Zoom out"
               aria-label="Zoom out"
               onClick={() => {
+                setScalePlaying(false);
                 setWheelZoomEnabled(true);
                 setSpanX(current =>
-                  Math.min(200, current * 1.2)
+                  Math.min(scaleLimits.max, current * 1.2)
                 );
               }}
             >
@@ -5945,18 +6312,23 @@ export default function GFunctionsExplorer() {
               title="Zoom in"
               aria-label="Zoom in"
               onClick={() => {
+                setScalePlaying(false);
                 setWheelZoomEnabled(true);
                 setSpanX(current =>
-                  Math.max(2, current / 1.2)
+                  Math.max(scaleLimits.min, current / 1.2)
                 );
               }}
             >
               +
-            </button>            <button
+            </button>
+
+            <button
               className="g-button"
               onClick={() => {
+                setScalePlaying(false);
                 setCenter({ re: 0, im: 0 });
                 setSpanX(34);
+
                 setWheelZoomEnabled(false);
                 setProbe({ re: 1, im: 0 });
                 setShowProbe(false);
@@ -5965,6 +6337,7 @@ export default function GFunctionsExplorer() {
 
                 setViewMode("shared");
                 setSharedField(null);
+                setSharedInvertedField(null);
 
                 setPlanckId("G0");
                  setPlanckSheet(0);
@@ -6003,7 +6376,150 @@ export default function GFunctionsExplorer() {
             </button>
 
 
+            </div>
+
           </div>
+          {viewMode === "shared" && (
+            <div className="g-group">
+              <span className="g-label">
+                Functions
+              </span>
+
+              {Object.entries(FUNCTIONS).map(
+                ([id, info]) => (
+                  <button
+                    key={id}
+                    type="button"
+                    className={`g-button ${
+                      active[id]
+                        ? "active"
+                        : ""
+                    }`}
+                    style={{
+                      borderColor:
+                        active[id]
+                          ? info.color
+                          : undefined,
+                    }}
+                    onClick={() =>
+                      setActive((old) => ({
+                        ...old,
+                        [id]: !old[id],
+                      }))
+                    }
+                  >
+                    {info.label}
+                  </button>
+                )
+              )}
+
+            </div>
+          )}
+
+          {viewMode !== "planck" && (
+            <div className="g-group">
+              <span className="g-label">
+                Geometry
+              </span>
+
+              {[
+                ["zeros", "Zeros"],
+                ["poles", "Poles"],
+                ["critical", "Critical"],
+                ["shifts", "Shifts"],
+              ].map(([id, label]) => (
+                <button
+                  key={id}
+                  type="button"
+                  className={`g-button ${
+                    show[id] ? "active" : ""
+                  }`}
+                  onClick={() =>
+                    setShow((old) => ({
+                      ...old,
+                      [id]: !old[id],
+                    }))
+                  }
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          )}
+
+
+          {viewMode === "shared" && (
+            <div className="g-group">
+              <span className="g-label">
+                Color field
+              </span>
+
+              {Object.entries(FUNCTIONS).map(
+                ([id, info]) => (
+                  <button
+                    key={`field-${id}`}
+                    type="button"
+                    className={`g-button ${
+                      sharedField === id
+                        ? "active"
+                        : ""
+                    }`}
+                    style={{
+                      borderColor:
+                        sharedField === id
+                          ? info.color
+                          : undefined,
+                    }}
+                    onClick={() => {
+                      setSharedInvertedField(null);
+                      setSharedField((current) =>
+                        current === id ? null : id
+                      );
+                    }}
+                  >
+                    {info.label}
+                  </button>
+                )
+              )}
+            </div>
+          )}
+
+          {viewMode === "shared" && (
+            <div className="g-group">
+              <span className="g-label">
+                Inverted color field
+              </span>
+
+              {Object.entries(FUNCTIONS).map(
+                ([id, info]) => (
+                  <button
+                    key={`inverse-field-${id}`}
+                    type="button"
+                    className={`g-button ${
+                      sharedInvertedField === id
+                        ? "active"
+                        : ""
+                    }`}
+                    style={{
+                      borderColor:
+                        sharedInvertedField === id
+                          ? info.color
+                          : undefined,
+                    }}
+                    onClick={() => {
+                      setSharedField(null);
+                      setSharedInvertedField((current) =>
+                        current === id ? null : id
+                      );
+                    }}
+                  >
+                    {info.label}
+                  </button>
+                )
+              )}
+            </div>
+          )}
+
         </div>
 
             {viewMode === "shared" ? (
@@ -6051,8 +6567,10 @@ export default function GFunctionsExplorer() {
                       }}
                     >
                       Color field:{" "}
-                      {sharedField
-                        ? FUNCTIONS[sharedField].label
+                      {sharedInvertedField
+                        ? `${FUNCTIONS[sharedInvertedField].label}(1/z)`
+                        : sharedField
+                        ? `${FUNCTIONS[sharedField].label}(z)`
                         : "Off"}
                     </div>
                   </div>
@@ -6061,12 +6579,88 @@ export default function GFunctionsExplorer() {
             ) : viewMode === "algebra" ? (
               <>
                 <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    gap: 12,
+                    width: "100%",
+                  }}
+                >
+                <div
                   className="g-side-title"
                   style={{
                     color: DERIVED_COLOR,
                   }}
                 >
                   Algebra graph
+                </div>
+
+                <div
+                  className="g-group"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-end",
+                    gap: 7,
+                    marginLeft: "auto",
+                    marginBottom: 0,
+                  }}
+                >
+                  <span
+                    className="g-label"
+                    style={{
+                      marginBottom: 0,
+                      textAlign: "right",
+                    }}
+                  >
+                    Color argument
+                  </span>
+                  <div className="g-compare-buttons">
+                    <button
+                      type="button"
+                      className={`g-compare-button ${
+                        algebraArgument === "z" ? "active" : ""
+                      }`}
+                      style={{
+                        background: algebraArgument === "z"
+                          ? "#245c85" : "#242424",
+                        border: algebraArgument === "z"
+                          ? "2px solid #75c7ff"
+                          : "2px solid #444",
+                        color: algebraArgument === "z"
+                          ? "#ffffff" : "#aaaaaa",
+                        fontWeight: algebraArgument === "z"
+                          ? 700 : 400,
+                      }}
+                      aria-pressed={algebraArgument === "z"}
+                      onClick={() => setAlgebraArgument("z")}
+                    >
+                      z
+                    </button>
+                    <button
+                      type="button"
+                      className={`g-compare-button ${
+                        algebraArgument === "inverse" ? "active" : ""
+                      }`}
+                      style={{
+                        background: algebraArgument === "inverse"
+                          ? "#245c85" : "#242424",
+                        border: algebraArgument === "inverse"
+                          ? "2px solid #75c7ff"
+                          : "2px solid #444",
+                        color: algebraArgument === "inverse"
+                          ? "#ffffff" : "#aaaaaa",
+                        fontWeight: algebraArgument === "inverse"
+                          ? 700 : 400,
+                      }}
+                      aria-pressed={algebraArgument === "inverse"}
+                      onClick={() => setAlgebraArgument("inverse")}
+                    >
+                      1/z
+                    </button>
+                  </div>
+                </div>
                 </div>
 
                 <div className="g-detail-box">
@@ -6169,6 +6763,26 @@ export default function GFunctionsExplorer() {
                           </button>
                         )
                       )}
+                      {algebraA && (
+                        <div style={{ marginLeft: 8 }}>
+                        <button
+                          type="button"
+                          className="g-button"
+                          onClick={() => {
+                            setAlgebraA(null);
+                            setAlgebraAPower(1);
+                            setAlgebraB(null);
+                            setAlgebraBPower(1);
+                            setAlgebraOp("div");
+                            setPendingOperator(false);
+                            setShowDerived(true);
+                            setSelectedLandmark(null);
+                          }}
+                        >
+                          Clear
+                        </button>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -6247,28 +6861,6 @@ export default function GFunctionsExplorer() {
                         Click the selected function again to increase its power.
                       </div>
 
-                      <div
-                        style={{
-                          marginTop: 9,
-                        }}
-                      >
-                        <button
-                          type="button"
-                          className="g-button"
-                          onClick={() => {
-                            setAlgebraA(null);
-                            setAlgebraAPower(1);
-                            setAlgebraB(null);
-                            setAlgebraBPower(1);
-                            setAlgebraOp("div");
-                            setPendingOperator(false);
-                            setShowDerived(true);
-                            setSelectedLandmark(null);
-                          }}
-                        >
-                          Clear
-                        </button>
-                      </div>
                     </div>
                   )}
                 </div>
@@ -6423,16 +7015,69 @@ export default function GFunctionsExplorer() {
               </>
             ) : (
               <>
-                <div
-                  className="g-side-title"
-                  style={{
-                    color: "#f2c94c",
-                  }}
-                >
-                  Planck view
+                <div style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  gap: 12,
+                }}>
+                  <div
+                    className="g-side-title"
+                    style={{ color: "#f2c94c" }}
+                  >
+                    Planck view
+                  </div>
+
+                  <div style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-end",
+                    gap: 6,
+                    flexShrink: 0,
+                  }}>
+                    <span
+                      className="g-label"
+                      style={{ marginBottom: 0 }}
+                    >
+                      Color argument
+                    </span>
+
+                    <div
+                      className="g-compare-buttons"
+                      style={{ justifyContent: "flex-end" }}
+                    >
+                      <button
+                        type="button"
+                        className={`g-compare-button ${
+                          planckArgument === "z"
+                            ? "selected"
+                            : ""
+                        }`}
+                        aria-pressed={planckArgument === "z"}
+                        onClick={() => setPlanckArgument("z")}
+                      >
+                        z
+                      </button>
+
+                      <button
+                        type="button"
+                        className={`g-compare-button ${
+                          planckArgument === "inverse"
+                            ? "selected"
+                            : ""
+                        }`}
+                        aria-pressed={planckArgument === "inverse"}
+                        onClick={() => setPlanckArgument("inverse")}
+                      >
+                        1/z
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="g-detail-box">
+                  {planckDisplay !== "algebra" && (
+                    <>
                   <div className="g-compare-label">
                     1. Select boundary
                   </div>
@@ -6466,6 +7111,9 @@ export default function GFunctionsExplorer() {
                     )}
                   </div>
 
+                    </>
+                  )}
+
                   <div
                     className="g-compare-row"
                     style={{
@@ -6473,7 +7121,7 @@ export default function GFunctionsExplorer() {
                     }}
                   >
                     <div className="g-compare-label">
-                      2. Display
+                      Display
                     </div>
 
                     <div className="g-compare-buttons">
@@ -6507,6 +7155,20 @@ export default function GFunctionsExplorer() {
                         }
                       >
                         Sheet stack
+                      </button>
+
+                      <button
+                        type="button"
+                        className={`g-compare-button ${
+                          planckDisplay === "algebra"
+                            ? "selected"
+                            : ""
+                        }`}
+                        onClick={() =>
+                          setPlanckDisplay("algebra")
+                        }
+                      >
+                        Algebra
                       </button>
                     </div>
                   </div>
@@ -6560,6 +7222,196 @@ export default function GFunctionsExplorer() {
                     </div>
                   </div>
 
+                  {planckDisplay === "algebra" && (
+                    <div
+                      style={{
+                        marginTop: 14,
+                        paddingTop: 12,
+                        borderTop: "1px solid #333",
+                      }}
+                    >
+                      <div className="g-compare-label">
+                        1. First Planck quantity
+                      </div>
+
+                      <div className="g-compare-buttons">
+                        {Object.entries(PLANCK_BOUNDARIES).map(
+                          ([id, boundary]) => (
+                            <button
+                              key={`pa-${id}`}
+                              type="button"
+                              className={`g-compare-button ${
+                                planckA === id ? "selected" : ""
+                              }`}
+                              onClick={() => setPlanckA(id)}
+                            >
+                              {boundary.planckLabel}
+                            </button>
+                          )
+                        )}
+                      </div>
+
+                      <div
+                        className="g-compare-label"
+                        style={{ marginTop: 12 }}
+                      >
+                        2. Operation
+                      </div>
+
+                      <div className="g-compare-buttons">
+                        {[
+                          ["add", "+"],
+                          ["sub", "−"],
+                          ["mul", "×"],
+                          ["div", "÷"],
+                        ].map(([op, symbol]) => (
+                          <button
+                            key={op}
+                            type="button"
+                            className={`g-compare-button ${
+                              planckOp === op ? "selected" : ""
+                            }`}
+                            onClick={() => setPlanckOp(op)}
+                          >
+                            {symbol}
+                          </button>
+                        ))}
+
+                        <button
+                          type="button"
+                          className="g-compare-button"
+                          onClick={() => {
+                            setPlanckA("G0");
+                            setPlanckB(null);
+                            setPlanckOp("div");
+                          }}
+                        >
+                          Clear
+                        </button>
+                      </div>
+
+                      <div
+                        className="g-compare-label"
+                        style={{ marginTop: 12 }}
+                      >
+                        3. Second Planck quantity
+                      </div>
+
+                      <div className="g-compare-buttons">
+                        {Object.entries(PLANCK_BOUNDARIES).map(
+                          ([id, boundary]) => (
+                            <button
+                              key={`pb-${id}`}
+                              type="button"
+                              className={`g-compare-button ${
+                                planckB === id ? "selected" : ""
+                              }`}
+                              onClick={() => setPlanckB(id)}
+                            >
+                              {boundary.planckLabel}
+                            </button>
+                          )
+                        )}
+                      </div>
+
+                      <div
+                        style={{
+                          marginTop: 14,
+                          fontFamily: "Menlo, monospace",
+                          fontSize: 11,
+                          lineHeight: 1.8,
+                          overflowWrap: "anywhere",
+                        }}
+                      >
+                        <div>
+                          {planckB &&
+                          planckB !== planckA &&
+                          (planckOp === "add" ||
+                           planckOp === "sub")
+                            ? PLANCK_BOUNDARIES[planckA].phiLabel
+                            : PLANCK_BOUNDARIES[planckA].planckLabel}
+                          {planckB
+                            ? ` ${
+                                {
+                                  add: "+",
+                                  sub: "−",
+                                  mul: "×",
+                                  div: "÷",
+                                }[planckOp]
+                              } ${
+                                planckB !== planckA &&
+                                (planckOp === "add" ||
+                                 planckOp === "sub")
+                                  ? PLANCK_BOUNDARIES[planckB].phiLabel
+                                  : PLANCK_BOUNDARIES[planckB].planckLabel
+                              }`
+                            : ""}
+                        </div>
+
+                        {planckB &&
+                         planckA !== planckB &&
+                         (planckOp === "add" ||
+                          planckOp === "sub") ? (
+                          <div style={{
+                            color: "#f2c94c",
+                            marginTop: 6,
+                            lineHeight: 1.6,
+                          }}>
+                            Formal normalized comparison (dimensionless).
+                            <div style={{ color: "#aaa" }}>
+                              The physical quantities have incompatible
+                              SI dimensions. Their dimensionless
+                              logarithmic factors are combined instead.
+                            </div>
+                            <div style={{ color: "#999" }}>
+                              Individual scales: 10
+                              <sup>{PLANCK_BOUNDARIES[planckA].n}</sup>
+                              {" "}{PLANCK_BOUNDARIES[planckA].unit}
+                              {" and "}10
+                              <sup>{PLANCK_BOUNDARIES[planckB].n}</sup>
+                              {" "}{PLANCK_BOUNDARIES[planckB].unit}
+                            </div>
+                          </div>
+                        ) : (
+                        <div style={{ color: "#f2c94c" }}>
+                          Scale: 10
+                          <sup>
+                            {!planckB
+                              ? PLANCK_BOUNDARIES[planckA].n
+                              : planckOp === "mul"
+                              ? PLANCK_BOUNDARIES[planckA].n +
+                                PLANCK_BOUNDARIES[planckB].n
+                              : planckOp === "div"
+                              ? PLANCK_BOUNDARIES[planckA].n -
+                                PLANCK_BOUNDARIES[planckB].n
+                              : PLANCK_BOUNDARIES[planckA].n}
+                          </sup>
+                          {" "}
+                          {!planckB ||
+                          planckOp === "add" ||
+                          planckOp === "sub"
+                            ? PLANCK_BOUNDARIES[planckA].unit
+                            : `${
+                                PLANCK_BOUNDARIES[planckA].unit
+                              }${
+                                planckOp === "mul" ? "·" : "/"
+                              }${
+                                PLANCK_BOUNDARIES[planckB].unit
+                              }`}
+                        </div>
+                        )}
+
+                        <div style={{ color: "#999" }}>
+                          Color represents complex phase and
+                          logarithmic magnitude.
+                          Both operands use {planckArgument === "inverse" ? "1/z" : "z"} and sheet m = {planckSheet}.
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {planckDisplay !== "algebra" && (
+                    <>
                   <div
                     className="g-compare-expression"
                     style={{
@@ -6595,11 +7447,15 @@ export default function GFunctionsExplorer() {
                       }}
                     >
                       {PLANCK_BOUNDARIES[planckId].phiLabel}
-                      {"(z) = Log("}
+                      {"("}
+                      {planckArgument === "inverse" ? "1/z" : "z"}
+                      {") = Log("}
                       {PLANCK_BOUNDARIES[planckId].n}
                       {" / "}
                       {FUNCTIONS[planckId].label}
-                      {"(z)) + 2πi("}
+                      {"("}
+                      {planckArgument === "inverse" ? "1/z" : "z"}
+                      {")) + 2πi("}
                       {planckSheet}
                       {")"}
                     </div>
@@ -6614,9 +7470,13 @@ export default function GFunctionsExplorer() {
                       }}
                     >
                       {PLANCK_BOUNDARIES[planckId].planckLabel}
-                      {"(z) = "}
+                      {"("}
+                      {planckArgument === "inverse" ? "1/z" : "z"}
+                      {") = "}
                       {PLANCK_BOUNDARIES[planckId].phiLabel}
-                      {"(z) × 10"}
+                      {"("}
+                      {planckArgument === "inverse" ? "1/z" : "z"}
+                      {") × 10"}
                       <sup>
                         {PLANCK_BOUNDARIES[planckId].n}
                       </sup>
@@ -6696,6 +7556,8 @@ export default function GFunctionsExplorer() {
                       (3^(1/3) · 2^(5/4) · √(7π) · e^(π/8))
                       ≈ {G2_C2.toPrecision(10)}.
                     </div>
+                  )}
+                    </>
                   )}
                 </div>
               </>

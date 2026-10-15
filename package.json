@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "dev": "next dev --webpack",
-  "build": "next build --webpack",
-  "start": "next start",
-  "lint": "next lint"
-},
-
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
     "katex": "^0.16.22",
     "next": "^16.0.7",
@@ -17,7 +16,8 @@
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-katex": "^3.1.0",
-    "resend": "^4.6.0"
+    "resend": "^4.6.0",
+    "three": "^0.186.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

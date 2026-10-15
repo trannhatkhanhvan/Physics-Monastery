@@ -433,7 +433,7 @@ export default function SymbolLegend() {
       ),
       right: (
           <a
-              href="https://www.wolframalpha.com/"
+              href="/hyperbolic-partition-eq"
               target="_blank"
               rel="noopener noreferrer"
               className="legend-link"
@@ -463,7 +463,7 @@ export default function SymbolLegend() {
       ),
       right: (
           <a
-              href="https://www.wolframalpha.com/"
+              href="/hyperbolic-partition-eq"
               target="_blank"
               rel="noopener noreferrer"
               className="legend-link"
