@@ -75,6 +75,7 @@ export default function PlanckTimeSurface({
   initialOverhead = false,
   transparentBackground = false,
   lineMode = "contours",
+  showGridLabels = false,
   initialView = null,
   orientationLink = null,
   onOpen = null,
@@ -220,6 +221,7 @@ export default function PlanckTimeSurface({
       saved3D: {
         position: camera.position.clone(),
         up: camera.up.clone(),
+        zoom: camera.zoom,
       },
     };
 
@@ -231,7 +233,9 @@ export default function PlanckTimeSurface({
       // Fit the entire mathematical rectangle when
       // fullscreen was entered from a 2D thumbnail.
       // Preserve the approved 3D camera zoom otherwise.
-      if (fullscreen && initialOverhead) {
+      if (fullscreen && initialOverhead &&
+          runtimeRef.current?.mode3D === false &&
+          !runtimeRef.current?.transition) {
         camera.zoom = surface2DZoom(
           camera,
           camera.position.distanceTo(controls.target)
@@ -410,9 +414,10 @@ export default function PlanckTimeSurface({
 
       applySurfaceProjection(
         runtime,
-        fullscreen ? 0 : runtime.projectionMix,
+        runtime.projectionMix,
         displayScale
       );
+      runtime?.updateGridLabels?.(performance.now());
       renderer.render(scene, camera);
     };
     animate();
@@ -443,6 +448,7 @@ export default function PlanckTimeSurface({
       runtime.saved3D = {
         position: camera.position.clone(),
         up: camera.up.clone(),
+        zoom: camera.zoom,
       };
     }
 
@@ -484,7 +490,9 @@ export default function PlanckTimeSurface({
       toRadius: toOffset.length(),
       fromZoom: camera.zoom,
       toZoom: is3D
-        ? displayScale
+        ? (fullscreen
+            ? (runtime.saved3D.zoom ?? displayScale)
+            : displayScale)
         : surface2DZoom(camera, toOffset.length()),
       fromProjectionMix: runtime.projectionMix,
       toProjectionMix: is3D ? 0 : 1,
@@ -909,6 +917,86 @@ export default function PlanckTimeSurface({
     runtime.surfaceMaterial = material;
     material.color.set(surfaceColor);
 
+    // TEMP: outline exposed upper clipping edges in fullscreen.
+    // These are actual triangle edges at the height cutoff,
+    // not edges of the triangulation or invented contours.
+    let topEdgeLines = null;
+    let topEdgeGeometry = null;
+    let topEdgeMaterial = null;
+
+    if (fullscreen) {
+      const topY = verticalMax * 0.35;
+      const tolerance = 1e-5;
+      const topPositions = [];
+      const seen = new Set();
+      const surfaceVertices = geometry.getAttribute("position");
+
+      const pointKey = index => [
+        surfaceVertices.getX(index),
+        surfaceVertices.getY(index),
+        surfaceVertices.getZ(index),
+      ].map(value => Math.round(value * 1e5)).join(",");
+
+      for (let k = 0; k < indices.length; k += 3) {
+        const triangle = [
+          indices[k],
+          indices[k + 1],
+          indices[k + 2],
+        ];
+
+        for (let edge = 0; edge < 3; edge++) {
+          const a = triangle[edge];
+          const b = triangle[(edge + 1) % 3];
+
+          if (
+            Math.abs(surfaceVertices.getY(a) - topY) > tolerance ||
+            Math.abs(surfaceVertices.getY(b) - topY) > tolerance
+          ) continue;
+
+          const ka = pointKey(a);
+          const kb = pointKey(b);
+          if (ka === kb) continue;
+
+          const id = ka < kb
+            ? ka + "|" + kb
+            : kb + "|" + ka;
+
+          if (seen.has(id)) continue;
+          seen.add(id);
+
+          topPositions.push(
+            surfaceVertices.getX(a),
+            surfaceVertices.getY(a),
+            surfaceVertices.getZ(a),
+            surfaceVertices.getX(b),
+            surfaceVertices.getY(b),
+            surfaceVertices.getZ(b)
+          );
+        }
+      }
+
+      topEdgeGeometry = new THREE.BufferGeometry();
+      topEdgeGeometry.setAttribute(
+        "position",
+        new THREE.Float32BufferAttribute(topPositions, 3)
+      );
+
+      topEdgeMaterial = new THREE.LineBasicMaterial({
+        color: "#241609",
+        transparent: true,
+        opacity: 0.9,
+        depthTest: true,
+        depthWrite: false,
+      });
+
+      topEdgeLines = new THREE.LineSegments(
+        topEdgeGeometry,
+        topEdgeMaterial
+      );
+      topEdgeLines.renderOrder = 1;
+      plotGroup.add(topEdgeLines);
+    }
+
     // Constant-height contours ON the mathematical surface.
     // These are not x/y coordinate-grid lines.
     const contourPositions = [];
@@ -1078,15 +1166,52 @@ export default function PlanckTimeSurface({
       return hits;
     }
 
-    // Eleven grid coordinates in each direction.
-    const gridXCoordinates = Array.from(
-      { length: 11 },
-      (_, i) => -meshWidth / 2 + i * meshWidth / 10
+    // Shared mathematical coordinates for grid lines AND labels.
+    // Fullscreen uses nice 1/2/5 decimal intervals.
+    // Thumbnails retain their original eleven-line grid.
+    const niceStep = span => {
+      const rough = span / 8;
+      const power = 10 ** Math.floor(Math.log10(rough));
+      const multiple = rough / power;
+      const nice = multiple <= 1 ? 1
+        : multiple <= 2 ? 2
+        : multiple <= 5 ? 5 : 10;
+      return nice * power;
+    };
+
+    const gridStepX = niceStep(spanX);
+    const gridStepZ = niceStep(spanY);
+
+    const coordinateValues = (span, step) => {
+      const count = Math.floor(
+        (span / 2 + step * 1e-9) / step
+      );
+      return Array.from(
+        { length: count * 2 + 1 },
+        (_, i) => (i - count) * step
+      );
+    };
+
+    const mathematicalX = fullscreen
+      ? coordinateValues(spanX, gridStepX)
+      : Array.from(
+          { length: 11 },
+          (_, i) => -spanX / 2 + i * spanX / 10
+        );
+
+    const mathematicalZ = fullscreen
+      ? coordinateValues(spanY, gridStepZ)
+      : Array.from(
+          { length: 11 },
+          (_, i) => -spanY / 2 + i * spanY / 10
+        );
+
+    const gridXCoordinates = mathematicalX.map(
+      x => x * meshWidth / spanX
     );
 
-    const gridZCoordinates = Array.from(
-      { length: 11 },
-      (_, i) => -meshDepth / 2 + i * meshDepth / 10
+    const gridZCoordinates = mathematicalZ.map(
+      z => z * meshDepth / spanY
     );
 
     for (let k = 0; k < indices.length; k += 3) {
@@ -1168,17 +1293,313 @@ export default function PlanckTimeSurface({
 
     plotGroup.add(gridLines);
 
+    // Mathematical coordinate labels for the EXISTING grid.
+    // These are baked flat onto the surface rather than floating above it.
+    const gridLabelGroup = new THREE.Group();
+    const gridLabelResources = [];
+    plotGroup.add(gridLabelGroup);
+
+    if (fullscreen) {
+      const formatCoordinate = (value, step) => {
+        const absStep = Math.abs(step);
+        const tolerance = absStep * 1e-4;
+
+        if (Math.abs(value) < tolerance) return "0";
+
+        if (absStep >= 1) {
+          const rounded = Math.round(value);
+          if (Math.abs(value - rounded) < tolerance) {
+            return String(rounded);
+          }
+        }
+
+        const decimals = absStep >= 1
+          ? 0
+          : Math.max(1, Math.min(
+              12, Math.ceil(-Math.log10(absStep)) + 1
+            ));
+
+        if (absStep < 1e-12) {
+          return value.toExponential(2);
+        }
+
+        return String(Number(value.toFixed(decimals)));
+      };
+
+      const gridLabelEntries = [];
+
+      const addFlatLabel = ({
+        text,
+        x,
+        z,
+        h,
+      }) => {
+        // A clipped or undefined height must not erase a valid
+        // mathematical grid coordinate in the overhead view.
+        // In 3D, such labels remain hidden.
+        const onSurface = Number.isFinite(h) &&
+          h >= verticalMin && h <= verticalMax;
+        const anchorHeight = onSurface ? h : 0;
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
+
+        ctx.font = 'normal 48px "Times New Roman", Georgia, serif';
+        const textWidth = Math.ceil(ctx.measureText(text).width);
+
+        canvas.width = Math.max(64, textWidth + 20);
+        canvas.height = 76;
+
+        const draw = canvas.getContext("2d");
+        if (!draw) return;
+
+        draw.clearRect(0, 0, canvas.width, canvas.height);
+        draw.fillStyle = "#ffffff";
+        draw.strokeStyle = "rgba(0,0,0,0.9)";
+        draw.lineWidth = 3;
+        draw.lineJoin = "round";
+        draw.font = 'normal 48px "Times New Roman", Georgia, serif';
+        draw.textAlign = "center";
+        draw.textBaseline = "middle";
+        draw.strokeText(text, canvas.width / 2, canvas.height / 2);
+        draw.fillText(text, canvas.width / 2, canvas.height / 2);
+
+        const texture = new THREE.CanvasTexture(canvas);
+        texture.colorSpace = THREE.SRGBColorSpace;
+
+        const material = new THREE.SpriteMaterial({
+          map: texture,
+          color: "#ffffff",
+          transparent: true,
+          depthTest: true,
+          depthWrite: false,
+          sizeAttenuation: true,
+        });
+
+        const sprite = new THREE.Sprite(material);
+        sprite.position.set(
+          x * meshWidth / spanX,
+          anchorHeight * 0.35 + 0.025,
+          z * meshDepth / spanY
+        );
+        sprite.renderOrder = 50;
+
+        gridLabelGroup.add(sprite);
+        gridLabelEntries.push({
+          sprite,
+          aspect: canvas.width / canvas.height,
+          x,
+          z,
+          baseHeight: anchorHeight,
+          onSurface,
+        });
+        gridLabelResources.push({ texture, material });
+      };
+
+      // Keep labels camera-facing and approximately 19 screen
+      // pixels high. Suppress overlapping or offscreen labels.
+      const projectedLabelPosition = new THREE.Vector3();
+      let lastLabelLayout = -Infinity;
+
+      runtime.updateGridLabels = time => {
+        if (!gridLabelGroup.visible) return;
+        if (time - lastLabelLayout < 100) return;
+        lastLabelLayout = time;
+
+        const camera = runtime.camera;
+        const heightPixels = Math.max(1, hostRef.current?.clientHeight || 1);
+        const widthPixels = Math.max(1, hostRef.current?.clientWidth || 1);
+
+        camera.updateMatrixWorld();
+
+        const occupied = [];
+        const fontHeight = 19;
+
+        // A completed overhead view is an annotation view:
+        // numbers must not be cut apart by the surface depth
+        // buffer. Preserve true depth testing in 3D.
+        const overhead =
+          runtime.mode3D === false && !runtime.transition;
+
+        for (const entry of gridLabelEntries) {
+          const { sprite, aspect, x, z, baseHeight, onSurface } = entry;
+
+          sprite.material.depthTest = !overhead;
+
+          const cameraDistance = camera.position.distanceTo(
+            sprite.position
+          );
+
+          // World-space size corresponding to a stable
+          // screen-space font size for a perspective camera.
+          const worldHeight = (
+            2 * cameraDistance *
+            Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2)
+          ) * fontHeight / (heightPixels * camera.zoom);
+
+          sprite.scale.set(
+            worldHeight * aspect,
+            worldHeight,
+            1
+          );
+
+          // Measure the surface around the full screen-facing
+          // label footprint, not just its central grid point.
+          // Keep the mathematical X/Z anchor exactly unchanged.
+          const radiusX = Math.min(
+            spanX / 2,
+            worldHeight * aspect * spanX / meshWidth * 0.65
+          );
+          const radiusZ = Math.min(
+            spanY / 2,
+            worldHeight * aspect * spanY / meshDepth * 0.65
+          );
+
+          const samples = [
+            [0, 0],
+            [-radiusX, 0], [radiusX, 0],
+            [0, -radiusZ], [0, radiusZ],
+            [-radiusX, -radiusZ], [-radiusX, radiusZ],
+            [radiusX, -radiusZ], [radiusX, radiusZ],
+          ];
+
+          // When viewing from underneath, clearance must be
+          // measured toward the camera on the lower side.
+          const above = camera.position.y >= baseHeight * 0.35;
+          let requiredClearance = 0;
+          let validSamples = 0;
+
+          for (const [dx, dz] of samples) {
+            const sx = x + dx;
+            const sz = z + dz;
+
+            if (Math.abs(sx) > spanX / 2 ||
+                Math.abs(sz) > spanY / 2) continue;
+
+            const neighbor = heightAt(sx, sz);
+
+            if (!Number.isFinite(neighbor) ||
+                neighbor < verticalMin ||
+                neighbor > verticalMax) continue;
+
+            validSamples += 1;
+
+            const difference = above
+              ? (neighbor - baseHeight) * 0.35
+              : (baseHeight - neighbor) * 0.35;
+
+            requiredClearance = Math.max(
+              requiredClearance, difference
+            );
+          }
+
+          // Do not let labels float far from their grid point.
+          // Extreme slopes are better left without a number.
+          const maxClearance = 0.16;
+          const clearanceAllowed =
+            validSamples >= 3 &&
+            requiredClearance <= maxClearance;
+
+          sprite.position.y =
+            baseHeight * 0.35 +
+            (above ? 1 : -1) *
+              (0.025 + Math.min(requiredClearance, maxClearance));
+
+          projectedLabelPosition.copy(sprite.position)
+            .project(camera);
+
+          const px = (projectedLabelPosition.x + 1) *
+            widthPixels / 2;
+          const py = (1 - projectedLabelPosition.y) *
+            heightPixels / 2;
+
+          const halfW = fontHeight * aspect / 2 + 7;
+          const halfH = fontHeight / 2 + 5;
+
+          const visible =
+            (overhead || (onSurface && clearanceAllowed)) &&
+            projectedLabelPosition.z > -1 &&
+            projectedLabelPosition.z < 1 &&
+            px - halfW > 8 &&
+            px + halfW < widthPixels - 8 &&
+            py - halfH > 8 &&
+            py + halfH < heightPixels - 8 &&
+            !occupied.some(box =>
+              px - halfW < box.right &&
+              px + halfW > box.left &&
+              py - halfH < box.bottom &&
+              py + halfH > box.top
+            );
+
+          sprite.visible = visible;
+
+          if (visible) {
+            occupied.push({
+              left: px - halfW,
+              right: px + halfW,
+              top: py - halfH,
+              bottom: py + halfH,
+            });
+          }
+        }
+      };
+
+      // Use the EXACT same mathematical coordinates as
+      // the lines created by gridIntersections above.
+      // Thus every number belongs to an actual grid line.
+      for (const x of mathematicalX) {
+        if (Math.abs(x) < gridStepX * 1e-8) continue;
+
+        addFlatLabel({
+          text: formatCoordinate(x, gridStepX),
+          x,
+          z: 0,
+          h: heightAt(x, 0),
+          font: 'normal 26px "Times New Roman", Georgia, serif',
+          heightWorld: 0.06,
+        });
+      }
+
+      for (const z of mathematicalZ) {
+        if (Math.abs(z) < gridStepZ * 1e-8) continue;
+
+        addFlatLabel({
+          text: formatCoordinate(z, gridStepZ),
+          x: 0,
+          z,
+          h: heightAt(0, z),
+          font: 'normal 26px "Times New Roman", Georgia, serif',
+          heightWorld: 0.06,
+        });
+      }
+    }
+    runtime.gridLabelGroup = gridLabelGroup;
     runtime.contourLines = contourLines;
     runtime.gridLines = gridLines;
 
     // Both thumbnails and fullscreen plots use the selected overlay.
     contourLines.visible = lineMode !== "grid";
     gridLines.visible = lineMode === "grid";
+    gridLabelGroup.visible =
+      fullscreen && lineMode === "grid" && showGridLabels;
 
     return () => {
       plotGroup.remove(surface);
       plotGroup.remove(contourLines);
       plotGroup.remove(gridLines);
+      plotGroup.remove(gridLabelGroup);
+      if (runtime.gridLabelGroup === gridLabelGroup) {
+        runtime.gridLabelGroup = null;
+      }
+      if (runtime.updateGridLabels) {
+        runtime.updateGridLabels = null;
+      }
+      for (const resource of gridLabelResources) {
+        resource.texture.dispose();
+        resource.material.dispose();
+      }
+      if (topEdgeLines) plotGroup.remove(topEdgeLines);
 
       if (runtime.contourLines === contourLines) {
         runtime.contourLines = null;
@@ -1187,6 +1608,8 @@ export default function PlanckTimeSurface({
         runtime.gridLines = null;
       }
 
+      if (topEdgeGeometry) topEdgeGeometry.dispose();
+      if (topEdgeMaterial) topEdgeMaterial.dispose();
       gridGeometry.dispose();
       gridMaterial.dispose();
       contourGeometry.dispose();
@@ -1211,7 +1634,12 @@ export default function PlanckTimeSurface({
     if (runtime.gridLines) {
       runtime.gridLines.visible = lineMode === "grid";
     }
-  }, [lineMode, fullscreen]);
+
+    if (runtime.gridLabelGroup) {
+      runtime.gridLabelGroup.visible =
+        fullscreen && lineMode === "grid" && showGridLabels;
+    }
+  }, [lineMode, fullscreen, showGridLabels]);
 
   // Appearance-only color update: geometry remains fixed.
   useEffect(() => {

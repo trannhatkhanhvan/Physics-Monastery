@@ -53,13 +53,14 @@ const PLANCK_SURFACE_SETTINGS = {
 // Only the ten explicitly marked Set are baked in.
 const FULLSCREEN_APPROVED_WINDOWS = {
   // Re F_k(z): calibrated full-screen mathematical windows.
-  '0-re-z': { domain: 137, minDomain: 3, maxDomain: 137 },
+  '0-re-z': { domain: 137, minDomain: 2.9215048314585137, maxDomain: 56.73878527793171 },
   '1-re-z': { domain: 100, minDomain: 2, maxDomain: 100 },
   '2-re-z': { domain: 80, minDomain: 1, maxDomain: 80 },
   '3-re-z': { domain: 12, minDomain: 2, maxDomain: 12 },
+  '4-re-z': { domain: 3.0903, minDomain: 1.1403675783360743, maxDomain: 7.728173103959562 },
 
   // Im F_k(z): approved full-screen domain windows.
-  '0-im-z': { domain: 100, minDomain: 3, maxDomain: 100 },
+  '0-im-z': { domain: 100, minDomain: 4.685508854104738, maxDomain: 44.80277938495379 },
   '1-im-z': { domain: 80, minDomain: 2, maxDomain: 80 },
   '2-im-z': { domain: 44, minDomain: 1.05, maxDomain: 44 },
   '3-im-z': { domain: 10, minDomain: 1, maxDomain: 10 },
@@ -70,7 +71,7 @@ const FULLSCREEN_APPROVED_WINDOWS = {
   '1-re-inv': { domain: 0.24802963, minDomain: 0.025, maxDomain: 0.25 },
   '1-im-inv': { domain: 0.1, minDomain: 0.02, maxDomain: 0.1 },
   '2-re-inv': { domain: 1.0, minDomain: 0.0035, maxDomain: 1.0 },
-  '2-im-inv': { domain: 0.079853179, minDomain: 0.07, maxDomain: 1.618 },
+  '2-im-inv': { domain: 0.079853179, minDomain: 0.0021086281499332893, maxDomain: 1.3931568029453052 },
   '3-re-inv': { domain: 18.0, minDomain: 0.015, maxDomain: 18.0 },
   '3-im-inv': { domain: 99.457009, minDomain: 0.015, maxDomain: 100.0 },
   '4-re-inv': { domain: 8.0, minDomain: 0.0055, maxDomain: 8.0 },
@@ -1418,8 +1419,40 @@ export default function PlanckConstants() {
   const phaseZooms = PHASE_INITIAL_ZOOM;
 
   const [expandedPhase, setExpandedPhase] = useState(null);
+  const [phaseFullscreenResetVersion, setPhaseFullscreenResetVersion] =
+    useState(0);
 
   const [expandedSurface, setExpandedSurface] = useState(null);
+  const [fullscreenSurface3D, setFullscreenSurface3D] =
+    useState(true);
+
+  // Escape closes whichever fullscreen Planck viewer is active.
+  useEffect(() => {
+    const closeOnEscape = event => {
+      if (event.key !== 'Escape') return;
+
+      if (expandedSurface !== null) {
+        setSurfaceDomainPlaying(false);
+        setExpandedSurface(null);
+      } else if (expandedPhase !== null) {
+        setExpandedPhase(null);
+      } else if (modalImage !== null) {
+        setModalImage(null);
+      } else if (modalVideo !== null) {
+        setModalVideo(null);
+      } else {
+        return;
+      }
+
+      event.preventDefault();
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [expandedSurface, expandedPhase, modalImage, modalVideo]);
 
   // Shared orientation for the five thumbnail cameras.
   // Mutable ref avoids rebuilding React or Three.js scenes
@@ -1434,6 +1467,8 @@ export default function PlanckConstants() {
   // Approved widths of the three surface controls.
   // Approved Lighting button width.
   const lightingButtonWidth = 64;
+
+
 
   // Shared light orbit. Angles remain in degrees internally.
   const [lightOrbit, setLightOrbit] = useState({
@@ -1516,6 +1551,8 @@ export default function PlanckConstants() {
   const surfaceArgumentWidth = 55;
   const [surfaceLineMode, setSurfaceLineMode] =
     useState("contours");
+  const [surfaceGridLabels, setSurfaceGridLabels] =
+    useState(false);
 
   // Full-screen mathematical-domain playback.
   // A complete minimum-to-maximum sweep takes 20 seconds.
@@ -3147,7 +3184,32 @@ export default function PlanckConstants() {
                   ? setAppearanceRight
                   : setAppearanceLeft
               }
-            />            </div>
+            />
+
+            {/* Reset all Planck page settings to reload defaults. */}
+            <button
+              type="button"
+              onClick={() => window.location.reload()}
+              aria-label="Reset Planck constants page"
+              title="Restore the initial page state"
+              style={{
+                width: 49,
+                boxSizing: 'border-box',
+                textAlign: 'center',
+                color: 'rgba(242, 237, 224, 0.94)',
+                padding: '0.12rem 0.28rem',
+                border: '1px solid rgba(214, 207, 188, 0.48)',
+                borderRadius: 8,
+                background: 'rgba(22, 22, 18, 0.36)',
+                font: 'inherit',
+                lineHeight: 'inherit',
+                whiteSpace: 'nowrap',
+                cursor: 'pointer',
+              }}
+            >
+              Reset
+            </button>
+            </div>
 
           </div>
         </div>
@@ -3220,7 +3282,12 @@ export default function PlanckConstants() {
                                 domain: starter.domain,
                               },
                             }));
-                            setExpandedSurface({ index, view });
+                            setSurfaceGridLabels(false);
+                            setFullscreenSurface3D(is3D);
+                            setExpandedSurface({
+                              index,
+                              view,
+                            });
                           }}
                           constantIndex={index}
                           inverted={inverted}
@@ -4622,13 +4689,16 @@ export default function PlanckConstants() {
             }}
           >
             <PlanckTimeSurface
-              key={`expanded-${index}-${isReal}-${surfaceFirstInverted}`}
+              key={`expanded-${index}-${isReal}-${surfaceFirstInverted}-${expandedSurface.resetVersion ?? 0}`}
               constantIndex={index}
-              is3D={true}
+              is3D={fullscreenSurface3D}
               fullscreen
               initialOverhead={!is3D}
               transparentBackground={FULLSCREEN_DIMMED_BACKDROP}
               lineMode={surfaceLineMode}
+              showGridLabels={
+                surfaceLineMode === "grid" && surfaceGridLabels
+              }
               initialView={
                 is3D
                   ? expandedSurface.view
@@ -4764,6 +4834,223 @@ export default function PlanckConstants() {
                 {surfaceDomainPlaying ? 'Ⅱ' : '▶'}
               </button>
 
+              {/* Independent fullscreen camera-mode selector. */}
+              <div
+                role="group"
+                aria-label="Fullscreen 2D or 3D view"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 7,
+                  padding: '7px 9px',
+                  color: '#fff',
+                  background: 'rgba(0,0,0,0.7)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  borderRadius: 6,
+                  fontSize: 14,
+                  lineHeight: '16px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {[
+                  [false, '2D'],
+                  [true, '3D'],
+                ].map(([mode, label], index) => (
+                  <span
+                    key={label}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 7,
+                    }}
+                  >
+                    {index > 0 && (
+                      <span aria-hidden="true" style={{ opacity: 0.5 }}>
+                        |
+                      </span>
+                    )}
+                    <button
+                      type="button"
+                      aria-pressed={fullscreenSurface3D === mode}
+                      onClick={() => setFullscreenSurface3D(mode)}
+                      style={{
+                        padding: 0,
+                        margin: 0,
+                        border: 0,
+                        background: 'transparent',
+                        color: fullscreenSurface3D === mode
+                          ? '#fff'
+                          : 'rgba(255,255,255,0.4)',
+                        font: 'inherit',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {label}
+                    </button>
+                  </span>
+                ))}
+              </div>
+
+              {/* Fullscreen Contours | Grid selector. */}
+              <div
+                role="group"
+                aria-label="Fullscreen surface line mode"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 7,
+                  padding: '7px 9px',
+                  color: '#fff',
+                  background: 'rgba(0,0,0,0.7)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  borderRadius: 6,
+                  fontSize: 14,
+                  lineHeight: '16px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {[
+                  ['contours', 'Contours'],
+                  ['grid', 'Grid'],
+                ].map(([mode, label], index) => (
+                  <span
+                    key={mode}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 7,
+                    }}
+                  >
+                    {index > 0 && (
+                      <span
+                        aria-hidden="true"
+                        style={{ opacity: 0.5 }}
+                      >
+                        |
+                      </span>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => setSurfaceLineMode(mode)}
+                      aria-pressed={surfaceLineMode === mode}
+                      style={{
+                        padding: 0,
+                        margin: 0,
+                        border: 0,
+                        background: 'transparent',
+                        color: surfaceLineMode === mode
+                          ? '#fff'
+                          : 'rgba(255,255,255,0.4)',
+                        font: 'inherit',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {label}
+                    </button>
+                  </span>
+                ))}
+              </div>
+
+              {surfaceLineMode === "grid" && (
+                <button
+                  type="button"
+                  aria-label="Toggle fullscreen grid labels"
+                  aria-pressed={surfaceGridLabels}
+                  title="Show or hide mathematical coordinate labels"
+                  onClick={() =>
+                    setSurfaceGridLabels(value => !value)
+                  }
+                  style={{
+                    padding: '7px 11px',
+                    color: surfaceGridLabels
+                      ? '#fff'
+                      : 'rgba(255,255,255,0.4)',
+                    background: 'rgba(0,0,0,0.7)',
+                    border: '1px solid rgba(255,255,255,0.3)',
+                    borderRadius: 6,
+                    fontSize: 14,
+                    cursor: 'pointer',
+                  }}
+                >
+                  Labels
+                </button>
+              )}
+
+              <button
+                type="button"
+                aria-label="Reset fullscreen surface view"
+                title="Restore this surface's opening orientation, size and domain"
+                onClick={() => {
+                  // Stop the current mathematical-domain sweep.
+                  setSurfaceDomainPlaying(false);
+
+                  // Restore this plot's opening mathematical domain.
+                  const initialDomain =
+                    PLANCK_SURFACE_SETTINGS[key].domain;
+
+                  setSurfaceWindowDrafts(previous => ({
+                    ...previous,
+                    [key]: {
+                      ...previous[key],
+                      domain: initialDomain,
+                    },
+                  }));
+
+                  setSurfaceWindowRendered(previous => ({
+                    ...previous,
+                    [key]: {
+                      ...previous[key],
+                      domain: initialDomain,
+                    },
+                  }));
+
+                  // Reset the playback position without changing
+                  // this plot's approved animation endpoints.
+                  const logMin = Math.log(bounds.min);
+                  const logSpan =
+                    Math.log(bounds.max) - logMin;
+
+                  const initialPosition = logSpan > 0
+                    ? Math.max(0, Math.min(1,
+                        (Math.log(initialDomain) - logMin) /
+                        logSpan
+                      ))
+                    : 0;
+
+                  surfacePlaybackRef.current = {
+                    key,
+                    position: initialPosition,
+                    direction: initialPosition >= 1 ? -1 : 1,
+                  };
+
+                  // Restore the camera mode at fullscreen opening.
+                  setFullscreenSurface3D(is3D);
+
+                  // Remount only this fullscreen surface renderer.
+                  // Its initialView and calibrated displayScale
+                  // are reapplied; the fullscreen dialog stays open.
+                  setExpandedSurface(previous => previous
+                    ? {
+                        ...previous,
+                        resetVersion:
+                          (previous.resetVersion ?? 0) + 1,
+                      }
+                    : previous
+                  );
+                }}
+                style={{
+                  padding: '7px 11px',
+                  color: '#fff',
+                  background: 'rgba(0,0,0,0.7)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  borderRadius: 6,
+                  fontSize: 14,
+                  cursor: 'pointer',
+                }}
+              >
+                Reset
+              </button>
+
               <button
                 type="button"
                 onClick={() => {
@@ -4812,7 +5099,7 @@ export default function PlanckConstants() {
           >
 {(
               <PlanckPhaseFullscreen
-                key={`3d-${phasePlotMode}-${expandedPhase}`}
+                key={`3d-${phasePlotMode}-${expandedPhase}-${phaseFullscreenResetVersion}`}
                 id={PHASE_IDS[expandedPhase]}
                 initialHalfWidth={phaseZooms[phasePlotMode][expandedPhase]}
                 inverted={phasePlotMode === "inverted"}
@@ -4832,6 +5119,9 @@ export default function PlanckConstants() {
                     : appearanceLeft).elevation
                 }
                 lightOrbit={lightOrbit}
+                onReset={() =>
+                  setPhaseFullscreenResetVersion(value => value + 1)
+                }
                 onClose={() => setExpandedPhase(null)}
               />
             )}

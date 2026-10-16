@@ -17,6 +17,7 @@ export default function PlanckPhaseFullscreen({
   lightDirection = 144,
   lightElevation = 10,
   lightOrbit = null,
+  onReset,
   onClose,
 }) {
   const hostRef = useRef(null);
@@ -568,6 +569,23 @@ export default function PlanckPhaseFullscreen({
           }}
         >
           {playing ? "Ⅱ" : "▶"}
+        </button>
+
+        <button
+          type="button"
+          onClick={onReset}
+          aria-label="Reset fullscreen phase view"
+          title="Restore this phase plot's opening orientation, zoom and domain"
+          style={{
+            padding: "7px 11px",
+            color: "#fff",
+            background: "rgba(0,0,0,0.7)",
+            border: "1px solid #777",
+            borderRadius: 6,
+            cursor: "pointer",
+          }}
+        >
+          Reset
         </button>
 
         <button
