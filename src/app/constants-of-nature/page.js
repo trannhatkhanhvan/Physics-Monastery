@@ -70946,8 +70946,8 @@ J ⋮ kg{" "}
 <div
   style={{
     position: "fixed",
-    left: "165px",
-    right: 0,
+    left: "calc(var(--sidebar-width, 142px) + 50px)",
+    right: "50px",
     bottom: 0,
     zIndex: 5,
     display: "flex",
