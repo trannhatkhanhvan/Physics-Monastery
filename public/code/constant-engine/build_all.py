@@ -504,6 +504,13 @@ def collect_dependencies(recipe: Dict[str, Any]) -> Tuple[List[str], List[str]]:
             if tok_s == "ten":
                 raise ValueError("Recipe contains forbidden token 'ten'. It is not allowed.")
 
+            # Im(ipt) and Re(ipt) are literal CSV symbol names.
+            # Do not split them into function names and dependencies.
+            if tok_s in {"Im(ipt)", "Re(ipt)"}:
+                display_set.add(tok_s)
+                required_set.add(tok_s)
+                continue
+
             if _EXPR_PAREN_RE.match(tok_s):
                 for nm in _names_in_expression_token(tok_s):
                     display_set.add(nm)

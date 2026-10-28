@@ -137,10 +137,10 @@ const GROUP_SPACER_HEIGHT = '35px';
         51: "Newtonian constant of gravitation over h-bar c",
         52: "neutron mass",
         53: "proton mass",
-        54: "deuteron-electron magnetic moment ratio",
-        55: "electron-deuteron magnetic moment ratio",
-        56: "muon mass",
-        57: "deuteron mass",
+        54: "muon mass",
+        55: "deuteron mass",
+        56: "deuteron-electron magnetic moment ratio",
+        57: "electron-deuteron magnetic moment ratio",
         58: "deuteron-proton magnetic moment ratio",
         59: "deuteron-neutron magnetic moment ratio",
         60: "deuteron magnetic moment",
@@ -10869,17 +10869,6 @@ A<sub>mdm</sub>{" "}
                     = the trition mass,{" "}
 
                     <img
-                        src="/equations/l_ll.svg"
-                        alt="L_LL"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Laplace limit,{" "}
-
-                    <img
                         src="/equations/zhe_r.svg"
                         alt="zhe_r"
                         style={{
@@ -10934,7 +10923,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 1.06663991754137...
+      = 1.06663991211076...
 </span>
 
                     <span>prediction</span>
@@ -10983,7 +10972,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 0.65"}
+                        {", σ = − 3.23"}
   </span>
                 </div>
 
@@ -11018,7 +11007,7 @@ A<sub>mdm</sub>{" "}
       = 1.0666399191(21)
   </span>
                     <span>
-    CODATA 2018, σ = − 0.74
+    CODATA 2018, σ = − 3.33
   </span>
                 </div>
 
@@ -12986,531 +12975,9 @@ A<sub>mdm</sub>{" "}
 
 
 
+
+
 54: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "-25px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    deuteron-electron magnetic moment ratio
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-end"}}
->
-                    <img
-                        src="/equations/deuteron-electron_magnetic_moment_ratio.svg"
-                        alt="deuteron-electron magnetic moment ratio equation"
-                        className="popup-equation"
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "14px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
-                        style={{
-                            height: "1.0em",
-                            verticalAlign: "-0.4em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the universal parabolic constant,{" "}
-
-                    <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
-                        style={{
-                            height: "0.5em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the arc length of the unit lemniscate,{" "}
-
-                    <img
-                        src="/equations/pi.svg"
-                        alt="pi"
-                        style={{
-                            height: "0.56em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/electron_mass_symbol.svg"
-                        alt="m_e"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the electron mass,{" "}
-
-                    <img
-                        src="/equations/deuteron_mass_symbol.svg"
-                        alt="m_de"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the deuteron mass,{" "}
-
-                    <img
-                        src="/equations/1st_lemniscate_constant.svg"
-                        alt="L_1"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> lemniscate constant,{" "}
-
-                    <img
-                        src="/equations/zhe_r.svg"
-                        alt="zhe_r"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic radius constant, and {" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.82em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/mu_de_symbol.svg"
-      alt="me_de"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/
-    <img
-        src="/equations/mu_e_symbol.svg"
-        alt="mu_e"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />{" "}
-      = – 4.66434558966557... &times; 10<sup>&minus;4</sup>
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/mu_de_symbol.svg"
-      alt="me_de"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/
-    <img
-        src="/equations/mu_e_symbol.svg"
-        alt="mu_e"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />{" "}
-      = – 4.664345550(12)... &times; 10<sup>&minus;4</sup>
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?mudsmuem|search_for=deuteron"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = − 3.31"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- <img
-     src="/equations/mu_de_symbol.svg"
-     alt="me_de"
-     style={{
-         height: "0.75em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />/
-    <img
-        src="/equations/mu_e_symbol.svg"
-        alt="mu_e"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />{" "}
-      = – 4.664345551(12)... &times; 10<sup>&minus;4</sup>
-  </span>
-                    <span>
-    CODATA 2018, σ = − 3.22
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-
-
-
-55: (
-            <div
-                style={{
-                    fontFamily: "'Times New Roman', Times, serif",
-                    lineHeight: "1.5em",
-                    marginTop: "-25px",
-                    color: "white"
-                }}
-            >
-                {/* 1. Bold Title, left-aligned */}
-                <div style={{fontWeight: "bold", textAlign: "left"}}>
-                    electron-deuteron magnetic moment ratio
-                </div>
-
-                {/* 2. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 3. Equation Image, right-aligned */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-end"}}
->
-                    <img
-                        src="/equations/electron-deuteron_magnetic_moment_ratio.svg"
-                        alt="electron-deuteron magnetic moment ratio equation"
-                        className="popup-equation"
-                    />
-                </div>
-
-                {/* 4. Empty Line */}
-                <div style={{height: "18px"}}/>
-
-                {/* 5. Single continuous, fully justified paragraph */}
-                <div
-                    style={{
-                        textAlign: "justify",
-                        textJustify: "inter-word",
-                        color: "white",
-                        margin: "0",
-                        fontSize: "14px",
-                        lineHeight: "1.5em"
-                    }}
-                >
-                    Where{" "}
-
-                    <img
-                        src="/equations/universal_parabolic_constant.svg"
-                        alt="P_up"
-                        style={{
-                            height: "1.00em",
-                            verticalAlign: "-0.35em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the universal parabolic constant,{" "}
-
-                    <img
-                        src="/equations/pi.svg"
-                        alt="pi"
-                        style={{
-                            height: "0.56em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/s_symbol.svg"
-                        alt="s"
-                        style={{
-                            height: "0.5em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the arc length of the unit lemniscate,{" "}
-
-                    <img
-                        src="/equations/deuteron_mass_symbol.svg"
-                        alt="m_de"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the deuteron mass,{" "}
-
-                    <img
-                        src="/equations/electron_mass_symbol.svg"
-                        alt="m_e"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the electron mass,{" "}
-
-                    <img
-                        src="/equations/1st_lemniscate_constant.svg"
-                        alt="L_1"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 1<sup>st</sup> lemniscate constant,{" "}
-
-                    <img
-                        src="/equations/zhe_r.svg"
-                        alt="zhe_r"
-                        style={{
-                            height: "0.8em",
-                            verticalAlign: "-0.3em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic radius constant, and{" "}
-
-                    <img
-                        src="/equations/hyperbolic_inversion_boundary.svg"
-                        alt="☐"
-                        style={{
-                            height: "0.82em",
-                            verticalAlign: "-0.1em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the hyperbolic inversion boundary.
-
-                </div>
-
-                {/* 6. Empty Line */}
-                <div style={{height: "24px"}}/>
-
-                {/* 7. Prediction */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/mu_e_symbol.svg"
-      alt="me_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/
-    <img
-        src="/equations/mu_de_symbol.svg"
-        alt="mu_de"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />{" "}
-      = – 2.14392347388586... &times; 10<sup>3</sup>
-</span>
-
-                    <span>prediction</span>
-                </div>
-
-                {/* 8. CODATA 2022 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
-  <img
-      src="/equations/mu_e_symbol.svg"
-      alt="me_e"
-      style={{
-          height: "0.75em",
-          verticalAlign: "-0.2em",
-          display: "inline",
-      }}
-  />/
-    <img
-        src="/equations/mu_de_symbol.svg"
-        alt="mu_de"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />{" "}
-      = – 2.1439234921(56) &times; 10<sup>3</sup>
-</span>
-                    <span>
-    <a
-        href="https://physics.nist.gov/cgi-bin/cuu/Value?muemsmud|search_for=deuteron"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-            color: "#66b3ff", // lighter shade of blue
-            textDecoration: "underline"
-        }}
-    >
-  CODATA 2022
-</a>
-
-                        {", σ = + 3.25"}
-  </span>
-                </div>
-
-                {/* 9. CODATA 2018 */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "baseline",
-                        margin: "0 0 4px 0"
-                    }}
-                >
-  <span>
- <img
-     src="/equations/mu_e_symbol.svg"
-     alt="me_e"
-     style={{
-         height: "0.75em",
-         verticalAlign: "-0.2em",
-         display: "inline",
-     }}
- />/
-    <img
-        src="/equations/mu_de_symbol.svg"
-        alt="mu_de"
-        style={{
-            height: "0.75em",
-            verticalAlign: "-0.2em",
-            display: "inline",
-        }}
-    />{" "}
-      = – 2.1439234915(56) &times; 10<sup>3</sup>
-  </span>
-                    <span>
-    CODATA 2018, σ = + 3.15
-  </span>
-                </div>
-
-            </div>
-        ),
-
-
-
-
-
-56: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -13725,7 +13192,7 @@ A<sub>mdm</sub>{" "}
 
 
 
-57: (
+55: (
             <div
                 style={{
                     fontFamily: "'Times New Roman', Times, serif",
@@ -13861,7 +13328,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 3.34358377540376... &times; 10<sup>&minus;27</sup> kg
+      = 3.34358377526195... &times; 10<sup>&minus;27</sup> kg
 </span>
 
                     <span>prediction</span>
@@ -13901,7 +13368,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 1.40"}
+                        {", σ = − 1.54"}
   </span>
                 </div>
 
@@ -13927,7 +13394,7 @@ A<sub>mdm</sub>{" "}
       = 3.3435837724(10) &times; 10<sup>&minus;27</sup> kg
   </span>
                     <span>
-    CODATA 2018, σ = + 3.00
+    CODATA 2018, σ = + 2.86
   </span>
                 </div>
 
@@ -13935,6 +13402,531 @@ A<sub>mdm</sub>{" "}
         ),
 
 
+
+
+
+
+
+
+56: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "-25px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    deuteron-electron magnetic moment ratio
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "18px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
+                    <img
+                        src="/equations/deuteron-electron_magnetic_moment_ratio.svg"
+                        alt="deuteron-electron magnetic moment ratio equation"
+                        className="popup-equation"
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "18px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "14px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/universal_parabolic_constant.svg"
+                        alt="P_up"
+                        style={{
+                            height: "1.0em",
+                            verticalAlign: "-0.4em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the universal parabolic constant,{" "}
+
+                    <img
+                        src="/equations/s_symbol.svg"
+                        alt="s"
+                        style={{
+                            height: "0.5em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the arc length of the unit lemniscate,{" "}
+
+                    <img
+                        src="/equations/pi.svg"
+                        alt="pi"
+                        style={{
+                            height: "0.56em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/electron_mass_symbol.svg"
+                        alt="m_e"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the electron mass,{" "}
+
+                    <img
+                        src="/equations/deuteron_mass_symbol.svg"
+                        alt="m_de"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the deuteron mass,{" "}
+
+                    <img
+                        src="/equations/1st_lemniscate_constant.svg"
+                        alt="L_1"
+                        style={{
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 1<sup>st</sup> lemniscate constant,{" "}
+
+                    <img
+                        src="/equations/zhe_r.svg"
+                        alt="zhe_r"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic radius constant, and {" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/mu_de_symbol.svg"
+      alt="me_de"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />/
+    <img
+        src="/equations/mu_e_symbol.svg"
+        alt="mu_e"
+        style={{
+            height: "0.75em",
+            verticalAlign: "-0.2em",
+            display: "inline",
+        }}
+    />{" "}
+      = – 4.66434558986339... &times; 10<sup>&minus;4</sup>
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/mu_de_symbol.svg"
+      alt="me_de"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />/
+    <img
+        src="/equations/mu_e_symbol.svg"
+        alt="mu_e"
+        style={{
+            height: "0.75em",
+            verticalAlign: "-0.2em",
+            display: "inline",
+        }}
+    />{" "}
+      = – 4.664345550(12)... &times; 10<sup>&minus;4</sup>
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?mudsmuem|search_for=deuteron"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = − 3.32"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ <img
+     src="/equations/mu_de_symbol.svg"
+     alt="me_de"
+     style={{
+         height: "0.75em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />/
+    <img
+        src="/equations/mu_e_symbol.svg"
+        alt="mu_e"
+        style={{
+            height: "0.75em",
+            verticalAlign: "-0.2em",
+            display: "inline",
+        }}
+    />{" "}
+      = – 4.664345551(12)... &times; 10<sup>&minus;4</sup>
+  </span>
+                    <span>
+    CODATA 2018, σ = − 3.23
+  </span>
+                </div>
+
+            </div>
+        ),
+
+
+
+
+
+57: (
+            <div
+                style={{
+                    fontFamily: "'Times New Roman', Times, serif",
+                    lineHeight: "1.5em",
+                    marginTop: "-25px",
+                    color: "white"
+                }}
+            >
+                {/* 1. Bold Title, left-aligned */}
+                <div style={{fontWeight: "bold", textAlign: "left"}}>
+                    electron-deuteron magnetic moment ratio
+                </div>
+
+                {/* 2. Empty Line */}
+                <div style={{height: "18px"}}/>
+
+                {/* 3. Equation Image, right-aligned */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end"}}
+>
+                    <img
+                        src="/equations/electron-deuteron_magnetic_moment_ratio.svg"
+                        alt="electron-deuteron magnetic moment ratio equation"
+                        className="popup-equation"
+                    />
+                </div>
+
+                {/* 4. Empty Line */}
+                <div style={{height: "18px"}}/>
+
+                {/* 5. Single continuous, fully justified paragraph */}
+                <div
+                    style={{
+                        textAlign: "justify",
+                        textJustify: "inter-word",
+                        color: "white",
+                        margin: "0",
+                        fontSize: "14px",
+                        lineHeight: "1.5em"
+                    }}
+                >
+                    Where{" "}
+
+                    <img
+                        src="/equations/universal_parabolic_constant.svg"
+                        alt="P_up"
+                        style={{
+                            height: "1.00em",
+                            verticalAlign: "-0.35em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the universal parabolic constant,{" "}
+
+                    <img
+                        src="/equations/pi.svg"
+                        alt="pi"
+                        style={{
+                            height: "0.56em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Archimedes&apos; constant,{" "}
+
+                    <img
+                        src="/equations/s_symbol.svg"
+                        alt="s"
+                        style={{
+                            height: "0.5em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the arc length of the unit lemniscate,{" "}
+
+                    <img
+                        src="/equations/deuteron_mass_symbol.svg"
+                        alt="m_de"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the deuteron mass,{" "}
+
+                    <img
+                        src="/equations/electron_mass_symbol.svg"
+                        alt="m_e"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.2em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the electron mass,{" "}
+
+                    <img
+                        src="/equations/1st_lemniscate_constant.svg"
+                        alt="L_1"
+                        style={{
+                            height: "0.95em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the 1<sup>st</sup> lemniscate constant,{" "}
+
+                    <img
+                        src="/equations/zhe_r.svg"
+                        alt="zhe_r"
+                        style={{
+                            height: "0.8em",
+                            verticalAlign: "-0.3em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic radius constant, and{" "}
+
+                    <img
+                        src="/equations/hyperbolic_inversion_boundary.svg"
+                        alt="☐"
+                        style={{
+                            height: "0.82em",
+                            verticalAlign: "-0.1em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the hyperbolic inversion boundary.
+
+                </div>
+
+                {/* 6. Empty Line */}
+                <div style={{height: "24px"}}/>
+
+                {/* 7. Prediction */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/mu_e_symbol.svg"
+      alt="me_e"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />/
+    <img
+        src="/equations/mu_de_symbol.svg"
+        alt="mu_de"
+        style={{
+            height: "0.75em",
+            verticalAlign: "-0.2em",
+            display: "inline",
+        }}
+    />{" "}
+      = – 2.14392347379493... &times; 10<sup>3</sup>
+</span>
+
+                    <span>prediction</span>
+                </div>
+
+                {/* 8. CODATA 2022 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+  <img
+      src="/equations/mu_e_symbol.svg"
+      alt="me_e"
+      style={{
+          height: "0.75em",
+          verticalAlign: "-0.2em",
+          display: "inline",
+      }}
+  />/
+    <img
+        src="/equations/mu_de_symbol.svg"
+        alt="mu_de"
+        style={{
+            height: "0.75em",
+            verticalAlign: "-0.2em",
+            display: "inline",
+        }}
+    />{" "}
+      = – 2.1439234921(56) &times; 10<sup>3</sup>
+</span>
+                    <span>
+    <a
+        href="https://physics.nist.gov/cgi-bin/cuu/Value?muemsmud|search_for=deuteron"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+            color: "#66b3ff", // lighter shade of blue
+            textDecoration: "underline"
+        }}
+    >
+  CODATA 2022
+</a>
+
+                        {", σ = + 3.27"}
+  </span>
+                </div>
+
+                {/* 9. CODATA 2018 */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        margin: "0 0 4px 0"
+                    }}
+                >
+  <span>
+ <img
+     src="/equations/mu_e_symbol.svg"
+     alt="me_e"
+     style={{
+         height: "0.75em",
+         verticalAlign: "-0.2em",
+         display: "inline",
+     }}
+ />/
+    <img
+        src="/equations/mu_de_symbol.svg"
+        alt="mu_de"
+        style={{
+            height: "0.75em",
+            verticalAlign: "-0.2em",
+            display: "inline",
+        }}
+    />{" "}
+      = – 2.1439234915(56) &times; 10<sup>3</sup>
+  </span>
+                    <span>
+    CODATA 2018, σ = + 3.16
+  </span>
+                </div>
+
+            </div>
+        ),
 
 
 
@@ -14110,7 +14102,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = 3.07012209387134... &times; 10<sup>&minus;1</sup>
+      = 3.07012209400154... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -14159,7 +14151,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.11"}
+                        {", σ = + 0.13"}
   </span>
                 </div>
 
@@ -14194,7 +14186,7 @@ A<sub>mdm</sub>{" "}
       = 3.0701220939(79) &times; 10<sup>&minus;1</sup>
   </span>
                     <span>
-    CODATA 2018, σ = + 0.00
+    CODATA 2018, σ = + 0.01
   </span>
                 </div>
 
@@ -14372,7 +14364,7 @@ A<sub>mdm</sub>{" "}
             display: "inline",
         }}
     />{" "}
-      = – 4.48206589656941... &times; 10<sup>&minus;1</sup>
+      = – 4.48206589675950... &times; 10<sup>&minus;1</sup>
 </span>
 
                     <span>prediction</span>
@@ -14670,7 +14662,7 @@ A<sub>mdm</sub>{" "}
           display: "inline",
       }}
   />{" "}
-      = 4.33073505988037... &times; 10<sup>&minus;27</sup> J/T
+      = 4.33073506006404... &times; 10<sup>&minus;27</sup> J/T
 </span>
 
                     <span>prediction</span>
@@ -14710,7 +14702,7 @@ A<sub>mdm</sub>{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 2.47"}
+                        {", σ = − 2.45"}
   </span>
                 </div>
 
@@ -14736,7 +14728,7 @@ A<sub>mdm</sub>{" "}
       = 4.330735094(11) &times; 10<sup>&minus;27</sup> J/T
   </span>
                     <span>
-    CODATA 2018, σ = − 3.10
+    CODATA 2018, σ = − 3.09
   </span>
                 </div>
 
@@ -69022,6 +69014,17 @@ J ⋮ kg{" "}
                     = the Planck mass,{" "}
 
                     <img
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Catalan&apos;s constant,{" "}
+
+                    <img
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
@@ -69092,7 +69095,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>mfd</sub>{" "}
-      = 2.35051756770603... &times; 10<sup>5</sup> T
+      = 2.35051756920560... &times; 10<sup>5</sup> T
 </span>
 
                     <span>prediction</span>
@@ -69124,7 +69127,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = - 4.20"}
+                        {", σ = − 2.14"}
   </span>
                 </div>
 
@@ -69142,7 +69145,7 @@ J ⋮ kg{" "}
       = 2.35051756758(71) &times; 10<sup>5</sup> T
   </span>
                     <span>
-    CODATA 2018, σ = + 0.18
+    CODATA 2018, σ = + 2.29
   </span>
                 </div>
 
@@ -69261,28 +69264,6 @@ J ⋮ kg{" "}
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/plastic_constant.svg"
-                        alt="P"
-                        style={{
-                            height: "0.7em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the plastic constant,{" "}
-
-                    <img
-                        src="/equations/l_2.svg"
-                        alt="L_2"
-                        style={{
-                            height: "0.87em",
-                            verticalAlign: "-0.26em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the 2<sup>nd</sup> lemniscate constant,{" "}
-
-                    <img
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
@@ -69292,17 +69273,6 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = Archimedes&apos; constant,{" "}
-                    
-                    <img
-                        src="/equations/factorial_function.svg"
-                        alt="n!"
-                        style={{
-                            height: "0.80em",
-                            verticalAlign: "-0.00em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the factorial function,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -69364,7 +69334,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>edm</sub>{" "}
-      = 8.47835362016674... &times; 10<sup>&minus;30</sup> m C
+      = 8.47835361829680... &times; 10<sup>&minus;30</sup> m C
 </span>
 
                     <span>prediction</span>
@@ -69396,7 +69366,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 0.28"}
+                        {", σ = − 1.16"}
   </span>
                 </div>
 
@@ -69414,7 +69384,7 @@ J ⋮ kg{" "}
       = 8.4783536255(13) &times; 10<sup>&minus;30</sup> m C
   </span>
                     <span>
-    CODATA 2018, σ = − 4.10
+    CODATA 2018, σ = − 5.54
   </span>
                 </div>
 
@@ -69528,17 +69498,6 @@ J ⋮ kg{" "}
                     = the electron mass,{" "}
 
                     <img
-                        src="/equations/l_ll.svg"
-                        alt="L_LL"
-                        style={{
-                            height: "0.95em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Laplace limit,{" "}
-
-                    <img
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
@@ -69609,7 +69568,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>mag</sub>{" "}
-      = 7.89103656936017... &times; 10<sup>&minus;29</sup> J/T<sup>2</sup>
+      = 7.89103657987750... &times; 10<sup>&minus;29</sup> J/T<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -69641,7 +69600,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 2.05"}
+                        {", σ = + 1.10"}
   </span>
                 </div>
 
@@ -69659,7 +69618,7 @@ J ⋮ kg{" "}
       = 7.8910366008(48) &times; 10<sup>&minus;29</sup> J/T<sup>2</sup>
   </span>
                     <span>
-    CODATA 2018, σ = − 6.55
+    CODATA 2018, σ = − 4.36
   </span>
                 </div>
 
@@ -69773,6 +69732,17 @@ J ⋮ kg{" "}
                     = the electron mass,{" "}
 
                     <img
+                        src="/equations/catalan_s_constant.svg"
+                        alt="K"
+                        style={{
+                            height: "0.7em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = Catalan&apos;s constant,{" "}
+
+                    <img
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
@@ -69843,7 +69813,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>eqm</sub>{" "}
-      = 4.48655151342649... &times; 10<sup>&minus;40</sup> m<sup>2</sup> C
+      = 4.48655151688122... &times; 10<sup>&minus;40</sup> m<sup>2</sup> C
 </span>
 
                     <span>prediction</span>
@@ -69875,7 +69845,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 3.62"}
+                        {", σ = − 1.16"}
   </span>
                 </div>
 
@@ -69893,7 +69863,7 @@ J ⋮ kg{" "}
       = 4.4865515246(14) &times; 10<sup>&minus;40</sup> m<sup>2</sup> C
   </span>
                     <span>
-    CODATA 2018, σ = − 9.87
+    CODATA 2018, σ = − 5.51
   </span>
                 </div>
 
@@ -70019,6 +69989,17 @@ J ⋮ kg{" "}
                     = the electron mass,{" "}
 
                     <img
+                        src="/equations/derangement_symbol.svg"
+                        alt="!n"
+                        style={{
+                            height: "0.75em",
+                            verticalAlign: "-0.0em",
+                            display: "inline",
+                        }}
+                    />{" "}
+                    = the derangement function,{" "}
+
+                    <img
                         src="/equations/pi.svg"
                         alt="pi"
                         style={{
@@ -70089,7 +70070,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>1<sup>st</sup> hp</sub>{" "}
-      = 3.20636129566261... &times; 10<sup>&minus;53</sup> m<sup>3</sup> C<sup>3</sup>/J<sup>2</sup>
+      = 3.20636129236964... &times; 10<sup>&minus;53</sup> m<sup>3</sup> C<sup>3</sup>/J<sup>2</sup>
 </span>
 
                     <span>prediction</span>
@@ -70121,7 +70102,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = − 2.62"}
+                        {", σ = − 4.82"}
   </span>
                 </div>
 
@@ -70139,7 +70120,7 @@ J ⋮ kg{" "}
       = 3.2063613061(15) &times; 10<sup>&minus;53</sup> m<sup>3</sup> C<sup>3</sup>/J<sup>2</sup>
   </span>
                     <span>
-    CODATA 2018, σ = − 6.96
+    CODATA 2018, σ = − 9.15
   </span>
                 </div>
 
@@ -70262,17 +70243,6 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = the electron mass,{" "}
-                    
-                    <img
-                        src="/equations/d_do.svg"
-                        alt="D_Do"
-                        style={{
-                            height: "0.9em",
-                            verticalAlign: "-0.2em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the Dottie number,{" "}
 
                     <img
                         src="/equations/pi.svg"
@@ -70284,17 +70254,6 @@ J ⋮ kg{" "}
                         }}
                     />{" "}
                     = Archimedes&apos; constant,{" "}
-
-                    <img
-                        src="/equations/derangement_symbol.svg"
-                        alt="!n"
-                        style={{
-                            height: "0.75em",
-                            verticalAlign: "-0.0em",
-                            display: "inline",
-                        }}
-                    />{" "}
-                    = the derangement function,{" "}
 
                     <img
                         src="/equations/zhe_2.svg"
@@ -70356,7 +70315,7 @@ J ⋮ kg{" "}
                 >
   <span>
   A<sub>2<sup>nd</sup> hp</sub>{" "}
-      = 6.23537998029131... &times; 10<sup>&minus;65</sup> m<sup>4</sup> C<sup>4</sup>/J<sup>3</sup>
+      = 6.23537998272850... &times; 10<sup>&minus;65</sup> m<sup>4</sup> C<sup>4</sup>/J<sup>3</sup>
 </span>
 
                     <span>prediction</span>
@@ -70388,7 +70347,7 @@ J ⋮ kg{" "}
   CODATA 2022
 </a>
 
-                        {", σ = + 1.74"}
+                        {", σ = + 2.37"}
   </span>
                 </div>
 
@@ -70406,7 +70365,7 @@ J ⋮ kg{" "}
       = 6.2353799905(38) &times; 10<sup>&minus;65</sup> m<sup>4</sup> C<sup>4</sup>/J<sup>3</sup>
   </span>
                     <span>
-    CODATA 2018, σ = − 2.69
+    CODATA 2018, σ = − 2.05
   </span>
                 </div>
 
@@ -70520,10 +70479,13 @@ J ⋮ kg{" "}
         <div style={{ position: "relative", zIndex: 2, minHeight: "100vh" }}>
          
             
-            {/* Title (centered across the area to the right of the sidebar) */}
+            {/* Title centered across the full viewport */}
 <div
   style={{
-    width: "calc(100vw - 165px)",
+    position: "relative",
+    marginLeft: "50px",
+    width: "calc(100vw - var(--sidebar-width, 142px) - 100px)",
+    boxSizing: "border-box",
     textAlign: "center",
     fontSize: "24px",
     fontWeight: "normal",
@@ -70640,10 +70602,10 @@ J ⋮ kg{" "}
                                                                                                                                                                                                                                 eqNumber === 51 ? "/equations/newtonian_constant_of_gravitation_over_h-bar_c.svg" :
                                                                                                                                                                                                                                     eqNumber === 52 ? "/equations/neutron_mass.svg" :
                                                                                                                                                                                                                                         eqNumber === 53 ? "/equations/proton_mass.svg" :
-                                                                                                                                                                                                                                            eqNumber === 54 ? "/equations/deuteron-electron_magnetic_moment_ratio.svg" :
-                                                                                                                                                                                                                                                eqNumber === 55 ? "/equations/electron-deuteron_magnetic_moment_ratio.svg" :
-                                                                                                                                                                                                                                                    eqNumber === 56 ? "/equations/muon_mass.svg" :
-                                                                                                                                                                                                                                                        eqNumber === 57 ? "/equations/deuteron_mass.svg" :
+                                                                                                                                                                                                                                            eqNumber === 54 ? "/equations/muon_mass.svg" :
+                                                                                                                                                                                                                                                eqNumber === 55 ? "/equations/deuteron_mass.svg" :
+                                                                                                                                                                                                                                                    eqNumber === 56 ? "/equations/deuteron-electron_magnetic_moment_ratio.svg" :
+                                                                                                                                                                                                                                                        eqNumber === 57 ? "/equations/electron-deuteron_magnetic_moment_ratio.svg" :
                                                                                                                                                                                                                                                             eqNumber === 58 ? "/equations/deuteron-proton_magnetic_moment_ratio.svg" :
                                                                                                                                                                                                                                                                 eqNumber === 59 ? "/equations/deuteron-neutron_magnetic_moment_ratio.svg" :
                                                                                                                                                                                                                                                                     eqNumber === 60 ? "/equations/deuteron_magnetic_moment.svg" :
@@ -70939,7 +70901,7 @@ J ⋮ kg{" "}
   height: "auto",
   display: "block",
   transform:
-  ([38, 40, 55, 263].includes(Number(eqNumber)))
+  ([38, 40, 57, 263].includes(Number(eqNumber)))
     ? "translateX(15.5px)"
     : "none",
 }}
@@ -71028,8 +70990,9 @@ J ⋮ kg{" "}
     aria-modal="false"
     style={{
       position: "fixed",
-      left: "165px",                   // span the area to the right of the sidebar
-      right: 0,
+      // Track the inner edges of the two 40px arrows.
+      left: "calc(var(--sidebar-width, 142px) + 57px)",
+      right: "57px",
       top: "50%",
       transform: "translateY(-50%)",  // vertical center only
       zIndex: 1000,
@@ -71043,7 +71006,8 @@ J ⋮ kg{" "}
         // Center the box horizontally within the wrapper
         margin: "0 auto",
         // Old feel: max ~800px, but responsive with small side gutters
-        width: "min(720px, calc(100vw - 165px - 90px))", // 20px gutter on each side
+        width: "100%",
+        boxSizing: "border-box",
         maxHeight: "calc(100vh - 140px)",
         overflowY: "auto",
 
@@ -71061,7 +71025,14 @@ J ⋮ kg{" "}
       }}
     >
       {/* Top-right Close button */}
-      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "8px" }}>
+      <div style={{
+        display: "flex",
+        justifyContent: "flex-end",
+        alignItems: "center",
+        gap: "16px",
+        marginBottom: "8px"
+      }}>
+
         <button
           onClick={() => setPopupEq(null)}
           style={{

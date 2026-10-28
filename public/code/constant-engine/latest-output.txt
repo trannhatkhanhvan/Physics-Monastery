@@ -340,11 +340,11 @@ sigma:    +0.48
 within 5.2σ: yes
 
 045. μ_tri/μ_+  —  triton to proton magnetic moment ratio   [built on pass 2]
-deps: D_Do, L_LL, S, m_+, m_tri, pi, zhe_r, IB
-computed: 1.06663991754138 × 10^⁰ -
+deps: D_Do, S, m_+, m_tri, pi, zhe_r, IB
+computed: 1.06663991211076 × 10^⁰ -
 expected: 1.0666399189(21) × 10^⁰ -   (SI measured)
-abs err:  1.35862473585692 × 10^⁻⁹ -
-sigma:    -0.65
+abs err:  6.78923830308892 × 10^⁻⁹ -
+sigma:    -3.23
 within 5.2σ: yes
 
 046. μ_tri/μ_N  —  triton magnetic moment to nuclear magneton ratio   [built on pass 2]
@@ -411,23 +411,7 @@ abs err:  6.98352259189495 × 10^⁻³⁷ kg
 sigma:    -1.34
 within 5.2σ: yes
 
-054. μ_de/μ_e  —  deuteron-electron magnetic moment ratio   [built on pass 3]
-deps: L_1, P_up, m_de, m_e, pi, s, zhe_r, IB
-computed: -4.66434558966557 × 10^⁻⁴ -
-expected: -4.664345550(12) × 10^⁻⁴ -   (SI measured)
-abs err:  3.96655700401982 × 10^⁻¹² -
-sigma:    -3.31
-within 5.2σ: yes
-
-055. μ_e/μ_de  —  electron-deuteron magnetic moment ratio   [built on pass 3]
-deps: L_1, P_up, m_de, m_e, pi, s, zhe_r, IB
-computed: -2.14392347388586 × 10^³ -
-expected: -2.1439234921(56) × 10^³ -   (SI measured)
-abs err:  1.82141397884307 × 10^⁻⁵ -
-sigma:    +3.25
-within 5.2σ: yes
-
-056. m_μ  —  muon mass   [built on pass 2]
+054. m_μ  —  muon mass   [built on pass 2]
 deps: A_mass, K_-6, pi, s, zhe_r, IB
 computed: 1.88353161502363 × 10^⁻²⁸ kg
 expected: 1.883531627(42) × 10^⁻²⁸ kg   (SI measured)
@@ -435,36 +419,52 @@ abs err:  1.19763698141403 × 10^⁻³⁶ kg
 sigma:    -0.29
 within 5.2σ: yes
 
-057. m_de  —  deuteron mass   [built on pass 2]
-deps: A_mass, K_-6, pi, s, zhe_r, IB
-computed: 3.34358377540376 × 10^⁻²⁷ kg
+055. m_de  —  deuteron mass   [built on pass 2]
+deps: A_mass, Im(ipt), S*, pi, s, zhe_r, IB
+computed: 3.34358377526195 × 10^⁻²⁷ kg
 expected: 3.3435837768(10) × 10^⁻²⁷ kg   (SI measured)
-abs err:  1.39624168889586 × 10^⁻³⁶ kg
-sigma:    -1.40
+abs err:  1.53804540509222 × 10^⁻³⁶ kg
+sigma:    -1.54
+within 5.2σ: yes
+
+056. μ_de/μ_e  —  deuteron-electron magnetic moment ratio   [built on pass 2]
+deps: L_1, P_up, m_de, m_e, pi, s, zhe_r, IB
+computed: -4.66434558986339 × 10^⁻⁴ -
+expected: -4.664345550(12) × 10^⁻⁴ -   (SI measured)
+abs err:  3.98633881846492 × 10^⁻¹² -
+sigma:    -3.32
+within 5.2σ: yes
+
+057. μ_e/μ_de  —  electron-deuteron magnetic moment ratio   [built on pass 2]
+deps: L_1, P_up, m_de, m_e, pi, s, zhe_r, IB
+computed: -2.14392347379493 × 10^³ -
+expected: -2.1439234921(56) × 10^³ -   (SI measured)
+abs err:  1.83050650758645 × 10^⁻⁵ -
+sigma:    +3.27
 within 5.2σ: yes
 
 058. μ_de/μ_+  —  deuteron-proton magnetic moment ratio   [built on pass 2]
 deps: !5, S, m_+, m_de, pi, s, zhe_r, φ, IB
-computed: 3.07012209387134 × 10^⁻¹ -
+computed: 3.07012209400154 × 10^⁻¹ -
 expected: 3.0701220930(79) × 10^⁻¹ -   (SI measured)
-abs err:  8.71336549833322 × 10^⁻¹¹ -
-sigma:    +0.11
+abs err:  1.00154256569826 × 10^⁻¹⁰ -
+sigma:    +0.13
 within 5.2σ: yes
 
 059. μ_de/μ_n  —  deuteron-neutron magnetic moment ratio   [built on pass 2]
 deps: C_CFP, Im(omega_1), m_de, m_n, pi, s, zhe_r, IB
-computed: -4.48206589656941 × 10^⁻¹ -
+computed: -4.48206589675950 × 10^⁻¹ -
 expected: -4.4820652(11) × 10^⁻¹ -   (SI measured)
-abs err:  6.96569409131123 × 10^⁻⁸ -
+abs err:  6.96759496666860 × 10^⁻⁸ -
 sigma:    -0.63
 within 5.2σ: yes
 
 060. μ_de  —  deuteron magnetic moment   [built on pass 2]
 deps: l_p, t_p, q_p, m_p, m_de, omega_2, pi, s, zhe_1, zhe_2, zhe_r, IB
-computed: 4.33073505988037 × 10^⁻²⁷ J/T
+computed: 4.33073506006404 × 10^⁻²⁷ J/T
 expected: 4.330735087(11) × 10^⁻²⁷ J/T   (SI measured)
-abs err:  2.71196328964946 × 10^⁻³⁵ J/T
-sigma:    -2.47
+abs err:  2.69359634069198 × 10^⁻³⁵ J/T
+sigma:    -2.45
 within 5.2σ: yes
 
 061. μ_he'/μ_B  —  shielded helion magnetic moment to Bohr magneton ratio   [built on pass 3]
@@ -687,10 +687,10 @@ within 5.2σ: yes
 
 089. E_de ̇  —  deuteron mass energy equivalent in MeV   [built on pass 2]
 deps: l_p, t_p, Im(ipt), MeV, m_de, zhe_3, zhe_4, IB
-computed: 1.87561294257595 × 10^³ MeV
+computed: 1.87561294249641 × 10^³ MeV
 expected: 1.87561294500(58) × 10^³ MeV   (SI measured)
-abs err:  2.42404829594202 × 10^⁻⁶ MeV
-sigma:    -4.18
+abs err:  2.50359434690679 × 10^⁻⁶ MeV
+sigma:    -4.32
 within 5.2σ: yes
 
 090. E_he ̇  —  helion mass energy equivalent in MeV   [built on pass 2]
@@ -807,10 +807,10 @@ within 5.2σ: yes
 
 105. E_de  —  deuteron mass energy equivalent   [built on pass 2]
 deps: l_p, t_p, Im(ipt), m_de, zhe_3, zhe_4, IB
-computed: 3.00506323143612 × 10^⁻¹⁰ J
+computed: 3.00506323130867 × 10^⁻¹⁰ J
 expected: 3.00506323491(94) × 10^⁻¹⁰ J   (SI measured)
-abs err:  3.47387899191876 × 10^⁻¹⁹ J
-sigma:    -3.70
+abs err:  3.60132581611900 × 10^⁻¹⁹ J
+sigma:    -3.83
 within 5.2σ: yes
 
 106. E_he  —  helion mass energy equivalent   [built on pass 2]
@@ -1201,10 +1201,10 @@ within 5.2σ: yes
 
 156. A_r(de)  —  deuteron relative atomic mass   [built on pass 2]
 deps: L, P_up, m_de, m_e, zhe_1, zhe_2, IB
-computed: 2.01355321257299 × 10^⁰ -
+computed: 2.01355321248759 × 10^⁰ -
 expected: 2.013553212544(15) × 10^⁰ -   (SI measured)
-abs err:  2.89898898918387 × 10^⁻¹¹ -
-sigma:    +1.93
+abs err:  5.64063039772638 × 10^⁻¹¹ -
+sigma:    -3.76
 within 5.2σ: yes
 
 157. A_r(he)  —  helion relative atomic mass   [built on pass 2]
@@ -1281,10 +1281,10 @@ within 5.2σ: yes
 
 166. m_de/A_mass  —  deuteron mass in u   [built on pass 2]
 deps: L, P_up, m_de, m_e, zhe_1, zhe_2, IB
-computed: 2.01355321257299 × 10^⁰ u
+computed: 2.01355321248759 × 10^⁰ u
 expected: 2.013553212544(15) × 10^⁰ u   (SI measured)
-abs err:  2.89898898918387 × 10^⁻¹¹ u
-sigma:    +1.93
+abs err:  5.64063039772638 × 10^⁻¹¹ u
+sigma:    -3.76
 within 5.2σ: yes
 
 167. m_he/A_mass  —  helion mass in u   [built on pass 2]
@@ -2037,10 +2037,10 @@ within 5.2σ: yes
 
 270. M_de  —  deuteron molar mass   [built on pass 2]
 deps: q_p, m_p, C_Q, coulomb, e, kilogram, m_de, zhe_1, zhe_3, zhe_4, γ, IB
-computed: 2.01355321531501 × 10^⁻³ kg/mol
+computed: 2.01355321522961 × 10^⁻³ kg/mol
 expected: 2.01355321466(63) × 10^⁻³ kg/mol   (SI measured)
-abs err:  6.55006833973671 × 10^⁻¹³ kg/mol
-sigma:    +1.04
+abs err:  5.69610639988278 × 10^⁻¹³ kg/mol
+sigma:    +0.90
 within 5.2σ: yes
 
 271. M_he  —  helion molar mass   [built on pass 2]
@@ -2132,51 +2132,51 @@ sigma:    -3.78
 within 5.2σ: yes
 
 283. A_mfd  —  atomic unit of magnetic flux density   [built on pass 1]
-deps: t_p, q_p, m_p, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
-computed: 2.35051756883524 × 10^⁵ T
+deps: t_p, q_p, m_p, K, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 2.35051756920560 × 10^⁵ T
 expected: 2.35051757077(73) × 10^⁵ T   (SI measured)
-abs err:  1.93475935048898 × 10^⁻⁴ T
-sigma:    -2.65
+abs err:  1.56439643738174 × 10^⁻⁴ T
+sigma:    -2.14
 within 5.2σ: yes
 
 284. A_edm  —  atomic unit of electric dipole moment   [built on pass 1]
-deps: l_p, q_p, m_p, 5!, L_2, P, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
-computed: 8.47835362016677 × 10^⁻³⁰ m*C
+deps: l_p, q_p, m_p, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 8.47835361829680 × 10^⁻³⁰ m*C
 expected: 8.4783536198(13) × 10^⁻³⁰ m*C   (SI measured)
-abs err:  3.66767849445790 × 10^⁻⁴⁰ m*C
-sigma:    +0.28
+abs err:  1.50320430121983 × 10^⁻³⁹ m*C
+sigma:    -1.16
 within 5.2σ: yes
 
 285. A_mag  —  atomic unit of magnetizability   [built on pass 1]
-deps: l_p, q_p, m_p, L_LL, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
-computed: 7.89103656936022 × 10^⁻²⁹ J/T^2
+deps: l_p, q_p, m_p, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 7.89103657987750 × 10^⁻²⁹ J/T^2
 expected: 7.8910365794(49) × 10^⁻²⁹ J/T^2   (SI measured)
-abs err:  1.00397820514135 × 10^⁻³⁷ J/T^2
-sigma:    -2.05
+abs err:  4.77500272201038 × 10^⁻³⁹ J/T^2
+sigma:    +0.10
 within 5.2σ: yes
 
 286. A_eqm  —  atomic unit of electric quadrupole moment   [built on pass 1]
-deps: l_p, q_p, m_p, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
-computed: 4.48655151529887 × 10^⁻⁴⁰ m^2*C
+deps: l_p, q_p, m_p, K, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 4.48655151688122 × 10^⁻⁴⁰ m^2*C
 expected: 4.4865515185(14) × 10^⁻⁴⁰ m^2*C   (SI measured)
-abs err:  3.20113232111466 × 10^⁻⁴⁹ m^2*C
-sigma:    -2.29
+abs err:  1.61878200945371 × 10^⁻⁴⁹ m^2*C
+sigma:    -1.16
 within 5.2σ: yes
 
 287. A_1^st_hp  —  atomic unit of 1st hyperpolarizability   [built on pass 1]
-deps: l_p, t_p, q_p, m_p, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
-computed: 3.20636129566258 × 10^⁻⁵³ m^3*C^3/J^2
+deps: l_p, t_p, q_p, m_p, !5, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 3.20636129236964 × 10^⁻⁵³ m^3*C^3/J^2
 expected: 3.2063612996(15) × 10^⁻⁵³ m^3*C^3/J^2   (SI measured)
-abs err:  3.93741604795674 × 10^⁻⁶² m^3*C^3/J^2
-sigma:    -2.62
+abs err:  7.23035877155678 × 10^⁻⁶² m^3*C^3/J^2
+sigma:    -4.82
 within 5.2σ: yes
 
 288. A_2^nd_hp  —  atomic unit of 2nd hyperpolarizability   [built on pass 1]
-deps: l_p, t_p, q_p, m_p, !5, D_Do, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
-computed: 6.23537998029124 × 10^⁻⁶⁵ m^4*C^4/J^3
+deps: l_p, t_p, q_p, m_p, m_e, pi, zhe_1, zhe_2, zhe_3, zhe_4, IB
+computed: 6.23537998272850 × 10^⁻⁶⁵ m^4*C^4/J^3
 expected: 6.2353799735(39) × 10^⁻⁶⁵ m^4*C^4/J^3   (SI measured)
-abs err:  6.79123572287357 × 10^⁻⁷⁴ m^4*C^4/J^3
-sigma:    +1.74
+abs err:  9.22850264535000 × 10^⁻⁷⁴ m^4*C^4/J^3
+sigma:    +2.37
 within 5.2σ: yes
 
 Build complete.
