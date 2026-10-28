@@ -408,9 +408,10 @@ export default function ConstantEnginePage() {
                         </p>
 
                         <pre style={smallCodeBoxStyle}>
-                            <code>{`source /Users/thadroberts/manim-venv/bin/activate
-cd /Users/thadroberts/physics-monastery-site
-python constant_engine/src/build_all.py > public/code/constant-engine/latest-output.txt 2>&1`}</code>
+                            <code>{`cd /path/to/physics-monastery-site
+source /path/to/your/venv/bin/activate
+set -o pipefail
+python constant_engine/src/build_all.py 2>&1 | tee public/code/constant-engine/latest-output.txt`}</code>
                         </pre>
 
                         <p>
