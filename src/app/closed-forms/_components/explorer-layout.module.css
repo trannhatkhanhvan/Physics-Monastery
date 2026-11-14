@@ -1,0 +1,1450 @@
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "input input"
+    "constants constants"
+    "search search"
+    "verified raw";
+  grid-template-rows:
+    auto minmax(150px, 26dvh) auto minmax(180px, 1fr);
+  gap: 9px;
+  height: calc(100dvh - 134px);
+  min-height: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.workspace > section {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  margin: 0 !important;
+  padding: 12px !important;
+}
+
+.workspace input,
+.workspace button,
+.workspace select,
+.workspace textarea {
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+.inputPanel {
+  grid-area: input;
+}
+
+.constantsPanel {
+  grid-area: constants;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.constantsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.constantsActions {
+  display: flex;
+  gap: 8px;
+}
+
+.constantsActions button {
+  padding: 5px 12px !important;
+  font-size: 14px;
+}
+
+.constantList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  row-gap: 0;
+  column-gap: 12px;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  align-content: start;
+}
+
+.constantList > label {
+  min-width: 0;
+}
+
+.customNumberRow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 4px;
+  font-size: 14px;
+}
+
+.customNumberRow > span {
+  overflow-wrap: anywhere;
+}
+
+.customNumberRow input[type="text"] {
+  min-width: 0;
+  flex: 1;
+  background: #0d1420;
+  color: #eaf0f9;
+  border: 1px solid #54677f;
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+
+.removeNumber {
+  border: none;
+  background: none;
+  color: #b7d5f5;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.numberError {
+  color: #ffc2c2;
+  font-size: 12px;
+}
+
+.searchPanel {
+  grid-area: search;
+}
+
+.verifiedPanel {
+  grid-area: verified;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.rawPanel {
+  grid-area: raw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.rawPanel > div:last-child {
+  min-height: 0;
+  max-height: none !important;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.constantsPanel h2,
+.verifiedPanel h2,
+.rawPanel h2 {
+  font-size: 18px !important;
+}
+
+@media (max-width: 980px) {
+  .workspace {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .workspace > section {
+    flex: none;
+  }
+
+
+  .constantList {
+    max-height: 210px;
+    min-height: 180px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .verifiedPanel,
+  .rawPanel {
+    max-height: 300px;
+  }
+
+  .rawPanel > div:last-child {
+    max-height: 190px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .constantList {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+/* Closed-Form Explorer: Number | Roots */
+.inputPanel > div:first-child {
+  display: grid !important;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr) !important;
+  gap: 20px !important;
+  align-items: start !important;
+}
+
+.inputPanel > div:first-child > div {
+  min-width: 0;
+}
+
+.inputPanel input,
+.inputPanel select {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Both sliders occupy their own grid columns. */
+.inputPanel input[type="range"] {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  margin-top: 0 !important;
+}
+
+/* Align both top-row sliders with the input boxes. */
+.inputPanel > div:first-child > div > input[type="range"] {
+  margin-top: 24px !important;
+}
+
+/* Thin slider track. */
+.inputPanel input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 20px;
+  min-width: 0;
+}
+
+.inputPanel input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #1684f9;
+  border-radius: 10px;
+}
+
+.inputPanel input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -6px;
+  border: 0;
+  border-radius: 50%;
+  background: #1684f9;
+}
+
+.inputPanel input[type="range"]::-moz-range-track {
+  height: 4px;
+  background: #1684f9;
+  border-radius: 10px;
+}
+
+.inputPanel input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  border-radius: 50%;
+  background: #1684f9;
+}
+
+/* Root-action selector */
+
+.rootPicker {
+  position: relative;
+  min-width: 0;
+}
+
+.rootPicker > label {
+  display: block;
+}
+
+.rootPickerButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-sizing: border-box;
+  margin-top: 8px;
+  width: 100%;
+  min-height: 43px;
+  padding: 8px 12px;
+  background: #0d1420;
+  border: 1px solid #54677f;
+  border-radius: 7px;
+  color: #eaf0f9;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.rootPickerButton > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rootPickerMenu {
+  position: absolute;
+  top: calc(100% + 7px);
+  right: 0;
+  z-index: 100;
+  box-sizing: border-box;
+  width: min(760px, calc(100vw - 100px));
+  max-width: calc(100vw - 30px);
+  max-height: 65vh;
+  overflow-y: auto;
+  padding: 12px;
+  background: #101a2b;
+  border: 1px solid #607c9a;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.65);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.rootPickerColumns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.rootPickerColumn {
+  min-width: 0;
+}
+
+.rootPickerColumn h3 {
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #52657e;
+  color: #f4f7fd;
+  font-size: 19px;
+  font-weight: normal;
+}
+
+.rootPickerGroup {
+  margin-bottom: 14px;
+}
+
+.rootPickerGroup h4 {
+  margin: 0 0 5px;
+  color: #9fbbe0;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.rootPickerChoice {
+  display: block;
+  width: 100%;
+  padding: 7px 9px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #f0f4fb;
+  font: inherit;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.rootPickerChoice:hover:not(:disabled),
+.rootPickerChoice[aria-pressed="true"] {
+  background: #304f73;
+}
+
+.rootPickerChoice:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.rootPickerButton:focus-visible,
+.rootPickerChoice:focus-visible {
+  outline: 2px solid #80b7ff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  .inputPanel > div:first-child {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .rootPickerMenu {
+    left: 0;
+    right: auto;
+    width: min(100%, 760px);
+    max-height: 55vh;
+  }
+
+  .rootPickerColumns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+/* Vertical root-family headings */
+.rootVerticalSection {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 9px;
+  row-gap: 8px;
+  align-items: start;
+  min-width: 0;
+}
+
+.rootVerticalHeading {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+
+  margin: 0;
+  padding: 6px 3px;
+
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  color: #f0f4fb;
+
+  border-left: 1px solid #52657e;
+}
+
+.rootVerticalSection > div {
+  grid-column: 2;
+  min-width: 0;
+}
+
+
+/* Root menu common heading alignment */
+
+/* Anchor both vertical family titles to the same top position. */
+.rootVerticalHeading {
+  align-self: start !important;
+  justify-content: center !important;
+  height: 128px;
+  min-height: 128px;
+  box-sizing: border-box;
+}
+
+/* Align the contents of both families at their upper edge. */
+.rootVerticalSection {
+  align-items: start !important;
+}
+
+/* Polar Radial / Radian headings. */
+.rootVerticalSection > div > h4 {
+  line-height: 22px !important;
+  padding: 0 8px !important;
+  margin: 0 0 8px !important;
+}
+
+/* Cartesian Product / Sum / Quadrance headings. */
+.rootVerticalSection table thead th {
+  vertical-align: top !important;
+  line-height: 22px !important;
+  padding-top: 0 !important;
+  padding-bottom: 8px !important;
+}
+
+/* Avoid extra spacing above the Cartesian table. */
+.rootVerticalSection table {
+  margin-top: 0 !important;
+}
+
+
+/* TEMPORARY ROOT SPACING CALIBRATION */
+
+.rootPickerMenu {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  max-height: 72vh;
+  overflow: hidden !important;
+  box-sizing: border-box;
+}
+
+.rootPickerScrollArea {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  overscroll-behavior: contain;
+}
+
+.rootPickerCalibration {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  padding: 12px;
+  margin-top: 8px;
+  background: #172940;
+  border: 1px solid #6383a5;
+  border-radius: 7px;
+}
+
+.rootPickerCalibration > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.rootPickerCalibration label {
+  font-size: 14px;
+  color: #eaf0f9;
+}
+
+.rootPickerCalibration input[type="range"] {
+  width: 100%;
+  margin: 0;
+}
+
+.rootPolarSection .rootPickerChoice,
+.rootCartesianSection .rootPickerChoice {
+  margin-bottom: 0 !important;
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+  line-height: 1.25 !important;
+}
+
+/* Position both vertical family titles at the upper edge. */
+.rootVerticalHeading {
+  align-self: start !important;
+  justify-content: flex-start !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 700px) {
+  .rootPickerCalibration {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Compact root popup geometry */
+.rootPickerMenu {
+  width: min(650px, calc(100vw - 32px)) !important;
+  max-width: calc(100vw - 32px) !important;
+  right: 0 !important;
+  left: auto !important;
+}
+
+/* Give Polar only the width it needs. */
+.rootPickerScrollArea > div {
+  grid-template-columns: 130px minmax(0, 1fr) !important;
+  gap: 10px !important;
+  min-width: 0;
+}
+
+/* The Cartesian content must not impose a larger popup width. */
+.rootCartesianSection,
+.rootCartesianSection > div {
+  min-width: 0 !important;
+}
+
+.rootCartesianSection table {
+  width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+}
+
+.rootCartesianSection th,
+.rootCartesianSection td {
+  box-sizing: border-box;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+
+.rootCartesianSection .rootPickerChoice {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+
+/* Only narrow viewports need horizontal scrolling. */
+@media (max-width: 800px) {
+  .rootPickerScrollArea {
+    overflow-x: auto;
+  }
+
+  .rootPickerScrollArea > div {
+    min-width: 690px !important;
+  }
+}
+
+
+/* Uniform mathematical root indices */
+.rootMathLabel {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.rootMathLabel sub,
+.rootMathLabel sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 0.72em;
+  line-height: 0;
+  font-weight: inherit;
+}
+
+.rootMathLabel sub {
+  bottom: -0.28em;
+}
+
+.rootMathLabel sup {
+  top: -0.52em;
+}
+
+/* Permanent SVG constants list */
+.constantEntry {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  min-width: 0;
+  padding: 0.25em 0.3em;
+  font-size: 12pt;
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.constantEntry > input[type="checkbox"] {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.constantSymbol {
+  display: inline-block;
+  height: auto;
+  max-width: none;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.constantSymbolFallback {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.constantName {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* Wolfram constants two-column layout refinement */
+@media (min-width: 601px) {
+  .constantList {
+    grid-template-columns: max-content max-content;
+    column-gap: 12px;
+    width: max-content;
+    max-width: none;
+  }
+
+  /* Number entry stays below the LEFT column. */
+  .constantList > .customNumberRow:last-child {
+    grid-column: 1;
+    justify-self: start;
+    width: min(100%, 27rem);
+    box-sizing: border-box;
+  }
+
+  /* Shorten the actual input without moving its grid cell. */
+  .constantList > .customNumberRow:last-child input[type="text"] {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+
+  .constantList > .constantEntry {
+    width: max-content;
+    min-width: max-content;
+  }
+
+  .constantList .constantName {
+    flex: 0 0 auto;
+    min-width: max-content;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: nowrap;
+  }
+}
+
+/* Wolfram Explorer side-by-side constants and search */
+@media (min-width: 700px) {
+  .workspace {
+    display: grid !important;
+    height: calc(100dvh - 110px) !important;
+    min-height: 0;
+    box-sizing: border-box;
+    grid-template-columns: max-content minmax(0, 1fr) !important;
+    grid-template-areas:
+      "input input"
+      "constants search"
+      "verified raw" !important;
+    grid-template-rows:
+      auto
+      minmax(0, 1fr)
+      minmax(0, 1fr) !important;
+  }
+
+  .constantsPanel {
+    min-width: 0;
+  }
+
+  .constantsHeader {
+    flex-wrap: nowrap;
+  }
+
+  .constantsActions {
+    flex-shrink: 0;
+  }
+
+  .searchPanel > div:first-child {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .searchPanel > div:first-child > button {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .searchPanel > div:first-child > span {
+    display: block;
+    width: 100%;
+    margin-left: 0 !important;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    line-height: 1.4;
+  }
+}
+
+
+/* Search usage information: separate rows */
+.searchUsageLines {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  color: #cbd9e9;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.searchUsageLines > span {
+  display: block;
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+
+
+/* Custom verified-candidates sort dropdown */
+.candidateSortPicker {
+  position: relative;
+  width: 240px;
+  max-width: 100%;
+  flex: 0 0 auto;
+  z-index: 20;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.candidateSortButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 43px;
+  padding: 8px 12px;
+  border: 1px solid #54677f;
+  border-radius: 7px;
+  background: #0d1420;
+  color: #eaf0f9;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.candidateSortChevron {
+  flex: 0 0 auto;
+  color: #d9e6f5;
+  font-size: 12px;
+}
+
+.candidateSortMenu {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  z-index: 30;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #607c9a;
+  border-radius: 7px;
+  background: #101a2b;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+}
+
+.candidateSortOption {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #eaf0f9;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.candidateSortOption:hover,
+.candidateSortOption[aria-selected="true"] {
+  background: #304f73;
+}
+
+.candidateSortButton:focus-visible,
+.candidateSortOption:focus-visible {
+  outline: 2px solid #80b7ff;
+  outline-offset: 2px;
+}
+
+
+/* Full-page candidate results: two solutions per row. */
+
+/* Allow the browser page to grow and scroll naturally. */
+.workspace {
+  height: auto !important;
+  min-height: calc(100dvh - 110px);
+  overflow: visible;
+}
+
+/* Keep the existing upper panels side by side.
+   Give the results and details their own full-width rows. */
+@media (min-width: 700px) {
+  .workspace {
+    grid-template-areas:
+      "input input"
+      "constants search"
+      "verified verified"
+      "raw raw" !important;
+
+    grid-template-rows:
+      auto
+      minmax(240px, 34dvh)
+      auto
+      auto !important;
+  }
+}
+
+/* Results grow with their content rather than scrolling internally. */
+.verifiedPanel {
+  overflow: visible !important;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  align-content: start;
+}
+
+/* The Verified candidates heading and sort menu span both columns. */
+.verifiedPanel > div:first-child {
+  grid-column: 1 / -1;
+  margin-bottom: 8px;
+}
+
+/* Candidate equations occupy individual grid cells. */
+.verifiedPanel > div:not(:first-child) {
+  min-width: 0;
+}
+
+/* The empty-results message spans the full width. */
+.verifiedPanel > p {
+  grid-column: 1 / -1;
+}
+
+/* Search details sit below the candidate results. */
+.rawPanel {
+  overflow: visible !important;
+  min-height: 0;
+}
+
+.rawPanel > div:last-child {
+  overflow: visible !important;
+  flex: none;
+}
+
+/* Use one candidate per row on narrower screens. */
+@media (max-width: 850px) {
+  .verifiedPanel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+/* Compact matching panels with independent scrolling */
+@media (min-width: 700px) {
+  .workspace {
+    height: auto !important;
+    min-height: calc(100dvh - 110px);
+    grid-template-rows:
+      auto
+      340px
+      auto !important;
+  }
+
+  .constantsPanel,
+  .searchPanel {
+    height: 100%;
+    min-height: 0;
+    box-sizing: border-box;
+  }
+
+  .constantsPanel {
+    overflow: hidden;
+  }
+
+  .constantList {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .searchPanel {
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+}
+
+
+/* Show slider: match Tolerance and Complexity */
+.verifiedPanel input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 20px;
+  min-width: 0;
+}
+
+.verifiedPanel input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #1684f9;
+  border-radius: 10px;
+}
+
+.verifiedPanel input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -6px;
+  border: 0;
+  border-radius: 50%;
+  background: #1684f9;
+}
+
+.verifiedPanel input[type="range"]::-moz-range-track {
+  height: 4px;
+  background: #1684f9;
+  border-radius: 10px;
+}
+
+.verifiedPanel input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  border-radius: 50%;
+  background: #1684f9;
+}
+
+
+/* Responsive verified-candidate columns */
+.verifiedPanel {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  column-gap: 16px;
+  row-gap: 0;
+  align-content: start;
+}
+
+/* Keep the title and Show slider above the results. */
+.verifiedPanel > div:first-child {
+  grid-column: 1 / -1;
+}
+
+/* Keep each closed form inside its own grid cell. */
+.verifiedPanel > div:not(:first-child) {
+  min-width: 0;
+}
+
+/* Empty-result message spans the full width. */
+.verifiedPanel > p {
+  grid-column: 1 / -1;
+}
+
+
+/* Adapt candidate columns to narrower viewports. */
+@media (max-width: 1199px) {
+  .verifiedPanel {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 949px) {
+  .verifiedPanel {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 699px) {
+  .verifiedPanel {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 449px) {
+  .verifiedPanel {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* All-roots results need room for appended root expressions. */
+.verifiedPanel.allRootCandidates {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+@media (max-width: 950px) {
+  .verifiedPanel.allRootCandidates {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .verifiedPanel.allRootCandidates {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+
+/* Closed-Form Explorer search settings dropdown */
+
+.inputPanel {
+  position: relative;
+  overflow: visible;
+}
+
+.settingsPicker {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  z-index: 200;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.settingsButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: #eaf0f9;
+  background: rgba(17, 25, 38, 0.85);
+  border: 1px solid #54677f;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.settingsButton:hover,
+.settingsButton[aria-expanded="true"] {
+  background: #304f73;
+}
+
+.settingsButton:focus-visible {
+  outline: 2px solid #80b7ff;
+  outline-offset: 2px;
+}
+
+.settingsMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  box-sizing: border-box;
+  width: 300px;
+  max-width: calc(100vw - 32px);
+  padding: 16px;
+  background: #101a2b;
+  border: 1px solid #607c9a;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
+  color: #eaf0f9;
+}
+
+.settingsTitle {
+  font-size: 18px;
+  margin-bottom: 18px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #52657e;
+}
+
+.settingsControl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px 12px;
+  margin-bottom: 19px;
+  font-size: 16px;
+}
+
+.settingsControl:last-child {
+  margin-bottom: 0;
+}
+
+.settingsControl strong {
+  font-weight: normal;
+  color: #c3d8f2;
+  font-variant-numeric: tabular-nums;
+}
+
+.settingsControl input[type="range"] {
+  grid-column: 1 / -1;
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+.settingsControl input[type="range"]:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Search settings: explicit 3px tracks and 14px thumbs. */
+.settingsControl input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.settingsControl input[type="range"]::-webkit-slider-runnable-track {
+  height: 3px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    to right,
+    #1684f9 0%,
+    #1684f9 var(--settings-progress),
+    #e5e7eb var(--settings-progress),
+    #e5e7eb 100%
+  );
+}
+
+.settingsControl input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  margin-top: -5.5px;
+  border: 0;
+  border-radius: 50%;
+  background: #1684f9;
+}
+
+.settingsControl input[type="range"]::-moz-range-track {
+  height: 3px;
+  border: 0;
+  border-radius: 10px;
+  background: #e5e7eb;
+}
+
+.settingsControl input[type="range"]::-moz-range-progress {
+  height: 3px;
+  border-radius: 10px;
+  background: #1684f9;
+}
+
+.settingsControl input[type="range"]::-moz-range-thumb {
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 50%;
+  background: #1684f9;
+}
+
+
+@media (max-width: 760px) {
+  .settingsPicker {
+    top: -54px;
+    right: 0;
+  }
+}
+
+
+/* Prevent the desktop grid from stretching the input panel
+   to consume unused viewport height. */
+@media (min-width: 700px) {
+  .workspace {
+    align-content: start !important;
+  }
+
+  .inputPanel {
+    align-self: start;
+    height: auto !important;
+  }
+}
+
+
+/* Shared input geometry for both mathematical explorers.
+   Keep these measurements identical across routes. */
+
+.matchedInputPanel {
+  box-sizing: border-box;
+  padding: 12px !important;
+  border: 1px solid #334156 !important;
+  border-radius: 12px !important;
+  background: rgba(17, 25, 38, 0.80) !important;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.matchedInputRow {
+  display: grid !important;
+  grid-template-columns:
+    minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 20px !important;
+  align-items: start !important;
+  width: 100%;
+}
+
+.matchedInputRow label {
+  display: block;
+  line-height: normal;
+}
+
+.matchedEntryField {
+  display: block;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 43px !important;
+  min-height: 43px !important;
+  margin-top: 8px !important;
+  font-family: inherit !important;
+}
+
+.matchedActionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100% !important;
+  height: 43px !important;
+  min-height: 43px !important;
+  margin-top: 8px !important;
+  font-family: inherit !important;
+}
+
+@media (max-width: 760px) {
+  .matchedInputRow {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+
+
+/* Function Geometry only: match the gap between the plots. */
+.matchedInputRow.geometryInputRow {
+  column-gap: 12px !important;
+}
+
+/* Function Geometry: action buttons beside function entry. */
+.geometryActionRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-left: 0;
+  box-sizing: border-box;
+  min-width: 0;
+  margin-top: 8px;
+}
+
+.geometryActionRow > button {
+  box-sizing: border-box;
+  height: 43px !important;
+  min-height: 43px !important;
+  margin-top: 0 !important;
+  white-space: nowrap;
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+.geometryActionRow .matchedActionButton {
+  flex: 1 1 auto;
+  width: auto !important;
+  min-width: 0;
+}
+
+@media (max-width: 560px) {
+  .geometryActionRow {
+    flex-wrap: wrap;
+  }
+
+  .geometryActionRow .matchedActionButton {
+    flex-basis: 100%;
+  }
+}
+
+
+/* Closed-Form Explorer: smoked-glass button styling */
+
+.workspace button:not(.rootPickerChoice) {
+  background: #0d1420 !important;
+  color: #f0f4fb;
+  border-color: #465a70;
+}
+
+/* Root menu options retain their transparent background
+   unless they are selected. */
+.workspace .rootPickerChoice:not([aria-pressed="true"]) {
+  background: transparent !important;
+}
+
+/* Selected root options and other persistent choices. */
+.workspace button[aria-pressed="true"],
+.workspace button[aria-selected="true"] {
+  background:
+    linear-gradient(
+      155deg,
+      rgba(205,225,246,0.25) 0%,
+      rgba(91,115,145,0.13) 42%,
+      rgba(12,19,30,0.92) 100%
+    ) !important;
+
+  border-color: #a6c8ed !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    inset 0 -1px 0 rgba(120,155,190,0.12),
+    0 0 7px rgba(155,195,235,0.12);
+
+  color: #ffffff;
+}
+
+/* Subtle hover feedback, without blue fill. */
+.workspace button:not(:disabled):hover {
+  border-color: #849bb5;
+}
+
+.workspace button[aria-pressed="true"]:hover,
+.workspace button[aria-selected="true"]:hover {
+  border-color: #c1daf3 !important;
+}
+
+/* Keep disabled controls visually distinct. */
+.workspace button:disabled {
+  cursor: not-allowed;
+}
+
+/* Settings gear uses the same dark background. */
+.settingsButton {
+  background: #0d1420 !important;
+}
+
+.settingsButton[aria-expanded="true"] {
+  background:
+    linear-gradient(
+      155deg,
+      rgba(205,225,246,0.25) 0%,
+      rgba(91,115,145,0.13) 42%,
+      rgba(12,19,30,0.92) 100%
+    ) !important;
+
+  border-color: #a6c8ed;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    inset 0 -1px 0 rgba(120,155,190,0.12),
+    0 0 7px rgba(155,195,235,0.12);
+}
+
+
+/* Uniform smoked glass: Start Full Run ready state only. */
+
+.workspace button:is(
+  .fullRunReady,
+  .resumeReady
+):not(:disabled) {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(192, 211, 231, 0.30) 0%,
+      rgba(110, 138, 168, 0.18) 35%,
+      rgba(24, 38, 54, 0.90) 100%
+    ) !important;
+
+  border: 1px solid #a8c2dd !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.38),
+    inset 0 -1px 1px rgba(140,175,210,0.14),
+    0 0 7px rgba(170,205,240,0.20) !important;
+
+  color: #ffffff !important;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.55);
+  cursor: pointer;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.workspace button:is(
+  .fullRunReady,
+  .resumeReady
+):not(:disabled):hover {
+  border-color: #c8ddf1 !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.48),
+    inset 0 -1px 1px rgba(150,190,225,0.20),
+    0 0 10px rgba(180,215,245,0.27) !important;
+}
