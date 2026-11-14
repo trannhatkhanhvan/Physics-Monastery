@@ -308,7 +308,36 @@ export default function FunctionGeometryExplorer() {
   const [secondPlane3D, setSecondPlane3D] =
     useState(true);
   const [viewsLocked, setViewsLocked] = useState(false);
-  const [showExtraPlots, setShowExtraPlots] = useState(false);
+  const [visiblePlots, setVisiblePlots] = useState(['surface', 'phase']);
+  const showExtraPlots = visiblePlots.includes('surface2') ||
+    visiblePlots.includes('magnitude');
+
+  const closePlot = id => {
+    const remaining = visiblePlots.filter(view => view !== id);
+    const link = cameraLinkRef.current;
+
+    if (link.beforeLock) delete link.beforeLock[id];
+    if (link.driver === id) link.driver = remaining[0] || null;
+    if (link.lastMoved === id) link.lastMoved = remaining[0] || null;
+
+    if (link.locked && remaining.length === 0) {
+      link.locked = false;
+      link.driver = null;
+      link.beforeLock = null;
+      link.movedWhileLocked = false;
+      setViewsLocked(false);
+    }
+
+    if (remaining.length === 0) {
+      setZoomViews(current => Object.fromEntries(
+        VIEW_IDS.map(view => [
+          view, { ...current[view], playing: false }
+        ])
+      ));
+    }
+
+    setVisiblePlots(remaining);
+  };
 
   const cameraLinkRef = useRef({
     locked: false,
@@ -400,8 +429,8 @@ export default function FunctionGeometryExplorer() {
     setZoomStops(stops);
   };
 
-  const toggleZoomPlayback = viewId => {
-    // Every Play button controls the same animation.
+  const toggleZoomPlayback = () => {
+    // The toolbar Play button controls all four graphs.
     const nextPlaying = !zoomViews.surface.playing;
     const stops = zoomViews.surface.stops;
 
@@ -623,9 +652,7 @@ export default function FunctionGeometryExplorer() {
 
   const toggleViewLock = () => {
     const link = cameraLinkRef.current;
-    const ids = showExtraPlots
-      ? ['surface', 'phase', 'surface2', 'magnitude']
-      : ['surface', 'phase'];
+    const ids = VIEW_IDS.filter(id => visiblePlots.includes(id));
 
     if (link.locked) {
       const original = link.beforeLock;
@@ -1201,10 +1228,51 @@ export default function FunctionGeometryExplorer() {
           />
         </div>
 
-        <div style={{ minWidth: 0 }}>
-          <label htmlFor="geometry-plot-button">
-            Plot action
-          </label>
+        <div style={{
+          minWidth: 0,
+          position: 'relative'
+        }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 8,
+            width: '100%',            marginBottom: 4
+          }}>
+            <label htmlFor="geometry-plot-button">
+              Plot action
+            </label>
+            <button
+              type="button"
+              title={zoomPlaying
+                ? 'Pause mathematical zoom sweep'
+                : 'Play logarithmic zoom sweep'}
+              aria-label={zoomPlaying
+                ? 'Pause mathematical zoom sweep'
+                : 'Play mathematical zoom sweep'}
+              aria-pressed={zoomPlaying}
+              onClick={toggleZoomPlayback}
+              style={{
+                ...tab(zoomPlaying),
+                position: 'absolute',
+                top: -4,
+                right: 0,
+                zIndex: 1,
+                boxSizing: 'border-box',
+                width: 31,
+                minWidth: 31,
+                height: 31,
+                padding: 0,
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 17,
+                flex: '0 0 auto'
+              }}
+            >
+              {zoomPlaying ? 'Ⅱ' : '▶'}
+            </button>
+          </div>
 
           <div
             className={styles.geometryActionRow}
@@ -1216,7 +1284,8 @@ export default function FunctionGeometryExplorer() {
               gap: 8,
               width: '100%',
               minWidth: 0,
-              boxSizing: 'border-box'
+              boxSizing: 'border-box',
+
             }}
           >
             <button
@@ -1344,6 +1413,7 @@ export default function FunctionGeometryExplorer() {
                 {zoomScale.toFixed(2)}×
               </span>
             </label>
+
           </div>
         </div>
       </form>
@@ -1352,14 +1422,17 @@ export default function FunctionGeometryExplorer() {
           Function error: {inputError || parsed.error}
         </div>
       ) : null}
-      {parsed.evaluate && (
+      {parsed.evaluate &&
+        (visiblePlots.includes('surface') ||
+         visiblePlots.includes('phase')) && (
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))',
           gap: 12, alignItems: 'start', marginTop: 12
         }}>
+          {visiblePlots.includes('surface') && (
           <div style={{ minWidth: 0 }}>
-            <FunctionGeometryViewer kind="surface" viewId="surface" cameraLink={cameraLinkRef.current} evaluate={parsed.evaluate} part={surfacePart}
+            <FunctionGeometryViewer kind="surface" viewId="surface" onClose={() => closePlot('surface')} cameraLink={cameraLinkRef.current} evaluate={parsed.evaluate} part={surfacePart}
               domain={domain / scaleForView('surface')} heightRange={heightRange} inverted={inverted}
               is3D={surface3D} showGrid={false} lineMode={lineMode}
               surfaceColor={surfaceColor}
@@ -1376,12 +1449,13 @@ export default function FunctionGeometryExplorer() {
               zoomFactor={scaleForView('surface')}
               onZoomStopsChange={value => changeZoomManually(value, 'surface')}
               zoomPlaying={zoomViews['surface'].playing}
-              onToggleZoomPlayback={() => toggleZoomPlayback('surface')}
               functionLatex={plottedLatex}
               />
           </div>
+          )}
+          {visiblePlots.includes('phase') && (
           <div style={{ minWidth: 0 }}>
-            <FunctionGeometryViewer kind="phase" viewId="phase" cameraLink={cameraLinkRef.current} evaluate={parsed.evaluate} part="re"
+            <FunctionGeometryViewer kind="phase" viewId="phase" onClose={() => closePlot('phase')} cameraLink={cameraLinkRef.current} evaluate={parsed.evaluate} part="re"
               domain={domain / scaleForView('phase')} heightRange={heightRange} inverted={inverted}
               is3D={phase3D} showGrid={lineMode === 'grid'} lineMode={lineMode}
               lightDirection={lightDirection} lightElevation={lightElevation}
@@ -1395,34 +1469,12 @@ export default function FunctionGeometryExplorer() {
               zoomFactor={scaleForView('phase')}
               onZoomStopsChange={value => changeZoomManually(value, 'phase')}
               zoomPlaying={zoomViews['phase'].playing}
-              onToggleZoomPlayback={() => toggleZoomPlayback('phase')}
               functionLatex={plottedLatex}
               />
 
-            {!showExtraPlots && (
-              <button
-                type="button"
-                aria-label="Show plots 3 and 4"
-                title="Show two additional plots"
-                onClick={() => setShowExtraPlots(true)}
-                style={{
-                  ...tab(false),
-                  width: 34,
-                  height: 34,
-                  padding: 0,
-                  marginTop: 12,
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: 24,
-                  fontWeight: 400,
-                  lineHeight: 1
-                }}
-              >
-                +
-              </button>
-            )}
+
           </div>
+          )}
         </div>
       )}
       
@@ -1436,10 +1488,11 @@ export default function FunctionGeometryExplorer() {
           alignItems: 'start',
           marginTop: 12
         }}>
+          {visiblePlots.includes('surface2') && (
           <div style={{ minWidth: 0 }}>
             <FunctionGeometryViewer
               kind="surface"
-              viewId="surface2"
+              viewId="surface2" onClose={() => closePlot('surface2')}
               cameraLink={cameraLinkRef.current}
               evaluate={parsed.evaluate}
               part={secondSurfacePart}
@@ -1480,15 +1533,16 @@ export default function FunctionGeometryExplorer() {
               zoomFactor={scaleForView('surface2')}
               onZoomStopsChange={value => changeZoomManually(value, 'surface2')}
               zoomPlaying={zoomViews['surface2'].playing}
-              onToggleZoomPlayback={() => toggleZoomPlayback('surface2')}
               functionLatex={plottedLatex}
             />
           </div>
+          )}
 
+          {visiblePlots.includes('magnitude') && (
           <div style={{ minWidth: 0 }}>
             <FunctionGeometryViewer
               kind="surface"
-              viewId="magnitude"
+              viewId="magnitude" onClose={() => closePlot('magnitude')}
               cameraLink={cameraLinkRef.current}
               evaluate={parsed.evaluate}
               part={secondMagnitudePart}
@@ -1533,11 +1587,35 @@ export default function FunctionGeometryExplorer() {
               zoomFactor={scaleForView('magnitude')}
               onZoomStopsChange={value => changeZoomManually(value, 'magnitude')}
               zoomPlaying={zoomViews['magnitude'].playing}
-              onToggleZoomPlayback={() => toggleZoomPlayback('magnitude')}
               functionLatex={plottedLatex}
             />
           </div>
+          )}
         </div>
+      )}
+
+      {parsed.evaluate && visiblePlots.length < VIEW_IDS.length && (
+        <button
+          type="button"
+          aria-label="Restore missing graphs"
+          title="Show all four graphs"
+          onClick={() => setVisiblePlots([...VIEW_IDS])}
+          style={{
+            ...tab(false),
+            width: 34,
+            height: 34,
+            padding: 0,
+            marginTop: 12,
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: 24,
+            fontWeight: 400,
+            lineHeight: 1
+          }}
+        >
+          +
+        </button>
       )}
     </div>
   );

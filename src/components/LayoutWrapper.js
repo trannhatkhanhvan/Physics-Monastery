@@ -197,12 +197,6 @@ export default function LayoutWrapper({ children }) {
         <div className="separator"></div>
 
         <nav className="menu">
-          <a href="/constants-of-nature" className="menu-text-link">Constants of Nature</a>
-          <a href="/symbol-legend" className="menu-text-link">Legend</a>
-          <a href="/288" className="menu-text-link">288 Closed Forms</a>
-          <a href="/closed-forms" className="menu-text-link">Closed-Forms</a>
-          <a href="/graphs" className="menu-text-link">Graphs</a>
-          <a href="/code/constant-engine" className="menu-text-link">Code</a>
           <div className="tooltip-container">
   <a
     href="https://www.wolframalpha.com/"
@@ -216,6 +210,16 @@ export default function LayoutWrapper({ children }) {
     />
   </a>
 </div>
+          <a href="/closed-forms" className="menu-text-link">Closed-Forms</a>
+          <a href="/graphs" className="menu-text-link">Graphs</a>
+          <div className="separator"></div>
+
+          <a href="/constants-of-nature" className="menu-text-link">Constants of Nature</a>
+          <a href="/symbol-legend" className="menu-text-link">Legend</a>
+          <a href="/288" className="menu-text-link">288 Closed Forms</a>
+          <a href="/code/constant-engine" className="menu-text-link">Code</a>
+
+
 
           <div className="separator"></div>
 

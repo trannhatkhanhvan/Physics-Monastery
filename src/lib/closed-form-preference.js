@@ -20,6 +20,23 @@ function cachedGeometricBonus(candidate) {
 // Display and ranking preferences only.
 // Never change the mathematical search acceptance rules.
 
+// Integer exponents cost their numerical magnitude, not
+// their number of digits. Fractional root operations retain
+// their existing single-point cost.
+function exponentComplexity(exponent) {
+  if (!exponent) return 0;
+
+  if (
+    exponent === '0.5' ||
+    exponent === '0.3333333333333333'
+  ) return 1;
+
+  if (!/^[1-9][0-9]*$/.test(exponent)) return null;
+
+  const value = Number(exponent);
+  return Number.isSafeInteger(value) ? value : null;
+}
+
 export const FIRST_TIER = Object.freeze([
   44, 35, 18, 32, 8
 ]);
@@ -232,17 +249,11 @@ export function scoreCandidatePreference(
         /^([A-Za-z_][A-Za-z_0-9]*)\^(.+)$/.exec(atom);
 
       const exponent = power?.[2];
-      // Fractional powers are mathematical root operations,
-// not the digits of their internal decimal encoding.
-const exponentCost =
-  exponent === '0.5' ||
-  exponent === '0.3333333333333333'
-    ? 1
-    : exponent
-      ? exponent.length
-      : 0;
+      const exponentCost = exponentComplexity(exponent);
 
-const cost = 1 + exponentCost;
+      if (exponentCost === null) return fallback;
+
+      const cost = 1 + exponentCost;
 
       fixedCost += cost;
       baseline += cost;
@@ -263,7 +274,7 @@ const cost = 1 + exponentCost;
             ? 0
             : left === 1
               ? 1
-              : 1 + String(left).length;
+              : 1 + left;
 
           piChoices.push({
             side,
@@ -488,15 +499,12 @@ export function structuralProfile(expression, fallback = 0) {
       if (named) {
         const [, name, exponent] = named;
 
-        // A named constant costs one. An exponent
-        // adds its decimal digit count; fractional
-        // root operations cost one additional unit.
-        const exponentCost = !exponent
-          ? 0
-          : exponent === '0.5' ||
-            exponent === '0.3333333333333333'
-            ? 1
-            : exponent.length;
+        // Named constant: one point. Integer exponent:
+        // its numerical magnitude. Square and cube roots:
+        // one additional operation point.
+        const exponentCost = exponentComplexity(exponent);
+
+        if (exponentCost === null) return unknown;
 
         factorCounts[side]++;
         cost += 1 + exponentCost;

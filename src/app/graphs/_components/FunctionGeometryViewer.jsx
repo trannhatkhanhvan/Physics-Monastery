@@ -442,13 +442,13 @@ export default function FunctionGeometryViewer({
   lightOrbit, resolution = DEFAULT_RESOLUTION,
   ambientStrength = 0.65, lightStrength = 2.4,
   onPartChange, onModeChange, cameraLink, viewId, headerAccessory,
+  onClose,
   onFullscreenSettingsHostChange,
   functionLatex = '',
   zoomStops = 0,
   zoomFactor = 1,
   onZoomStopsChange,
-  zoomPlaying = false,
-  onToggleZoomPlayback
+  zoomPlaying = false
 }) {
   const hostRef = useRef(null);
   const panelRef = useRef(null);
@@ -961,7 +961,15 @@ export default function FunctionGeometryViewer({
       }
       litMaterial.dispose();
       flatMaterial.dispose();
+
       renderer.dispose();
+
+      // Release the browser's WebGL context when this graph
+      // is removed. Disposing Three.js resources alone does
+      // not immediately release the underlying context.
+      // A restored graph receives a new renderer and context.
+      renderer.forceContextLoss();
+
       renderer.domElement.remove();
       if (runtimeRef.current === runtime) runtimeRef.current = null;
     };
@@ -1486,26 +1494,6 @@ export default function FunctionGeometryViewer({
             </>
           )}
 
-          <button
-            type="button"
-            title={zoomPlaying
-              ? 'Pause mathematical zoom sweep'
-              : 'Play logarithmic zoom sweep'}
-            aria-label={zoomPlaying
-              ? 'Pause mathematical zoom sweep'
-              : 'Play mathematical zoom sweep'}
-            aria-pressed={zoomPlaying}
-            onClick={onToggleZoomPlayback}
-            style={{
-              ...headerButton(zoomPlaying),
-              width: 32,
-              minWidth: 32,
-              padding: 0
-            }}
-          >
-            {zoomPlaying ? 'Ⅱ' : '▶'}
-          </button>
-
           {expanded && (
             <label style={{
               display: 'flex',
@@ -1582,6 +1570,24 @@ export default function FunctionGeometryViewer({
                 flex: '0 0 34px'
               }}
             />
+          )}
+          {onClose && (
+            <button
+              type="button"
+              title="Remove this graph"
+              aria-label="Remove this graph"
+              onClick={onClose}
+              style={{
+                ...headerButton(false),
+                width: 32,
+                minWidth: 32,
+                padding: 0,
+                fontSize: 18,
+                lineHeight: 1
+              }}
+            >
+              ×
+            </button>
           )}
         </div>
       </div>
