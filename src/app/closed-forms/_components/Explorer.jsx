@@ -6,10 +6,13 @@ import {
   scoreCandidatePreference,
   compareCandidatePreference,
   compareCandidateGroupPreference,
+  fractionalGroupRank,
   hasNamedGeometricConstant
 } from '../../../lib/closed-form-preference';
 // Full Run merges candidates by displayed numerical value.
-import { certifyFullRunTop1000 } from '../../../lib/closed-form-early-stop';
+import {
+  certifyFractionalTop1000
+} from '../../../lib/closed-form-fractional-stop';
 import rootActions from './root-actions.json';
 import { CLOSED_FORM_ADDITIONS } from
   '../../../lib/closed-form-library';
@@ -1075,10 +1078,10 @@ export default function Explorer({ initialConstants = [] }) {
   }, []);
   // Preserve old saved runs without mixing ranking versions.
   const checkpointStorageKey = customRootsSelected
-    ? 'closed-form-custom-run-rank-v3'
+    ? 'closed-form-custom-run-rank-v5'
     : allRootsSelected
-      ? 'closed-form-all-run-rank-v3'
-      : 'closed-form-full-run-rank-v3';
+      ? 'closed-form-all-run-rank-v5'
+      : 'closed-form-full-run-rank-v5';
   const [rootMenuOpen, setRootMenuOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const settingsRef = useRef(null);
@@ -1455,8 +1458,7 @@ export default function Explorer({ initialConstants = [] }) {
       .filter(candidate =>
         candidate.passes &&
         hasNamedGeometricConstant(candidate.expression) &&
-        candidate.z <= sigma &&
-        candidate.preference.adjustedComplexity <= complexity
+        candidate.z <= sigma
       );
 
     const bins = Array(10).fill(0);
@@ -1744,6 +1746,7 @@ export default function Explorer({ initialConstants = [] }) {
             cursor: 0,
             total: 0,
             matches: 0,
+            discardedPotentialFloor: null,
             rootCursors: multiRootMode
               ? Array(rootActions.length).fill(0)
               : null,
@@ -1821,6 +1824,13 @@ export default function Explorer({ initialConstants = [] }) {
 
         if (
           data.batchStartCursor !== batchStart ||
+          !Object.prototype.hasOwnProperty.call(
+            data, 'discardedPotentialFloor'
+          ) ||
+          !(
+            data.discardedPotentialFloor === null ||
+            Number.isFinite(data.discardedPotentialFloor)
+          ) ||
           !Number.isSafeInteger(data.nextCursor) ||
           data.nextCursor <= batchStart ||
           !Number.isSafeInteger(data.totalMonomialPositions) ||
@@ -1914,9 +1924,25 @@ export default function Explorer({ initialConstants = [] }) {
           }
         }
 
-        const best = [...byValue.values()]
-          .sort(compareCandidateGroupPreference)
-          .slice(0, 1000);
+        const ranked = [...byValue.values()]
+          .sort(compareCandidateGroupPreference);
+
+        const best = ranked.slice(0, 1000);
+
+        // Include groups discarded while merging batches.
+        const omittedGlobalFloor = ranked.slice(1000).reduce(
+          (minimum, candidate) => Math.min(
+            minimum,
+            fractionalGroupRank(candidate, true)
+          ),
+          Infinity
+        );
+
+        const discardedPotentialFloor = Math.min(
+          checkpoint.discardedPotentialFloor ?? Infinity,
+          data.discardedPotentialFloor ?? Infinity,
+          omittedGlobalFloor
+        );
 
         // Compare this batch's Top 1000 with the preceding one.
         const previousBest = checkpoint.candidates;
@@ -1941,8 +1967,6 @@ export default function Explorer({ initialConstants = [] }) {
         if (
           best.length > 1000 ||
           best.some((candidate, i) =>
-            candidate.preference.adjustedComplexity >
-              complexity ||
             (i > 0 &&
               compareCandidateGroupPreference(best[i - 1], candidate) > 0)
           )
@@ -1972,6 +1996,9 @@ export default function Explorer({ initialConstants = [] }) {
             Math.max(1, Date.now() - batchStartedAt),
           matches:
             checkpoint.matches + data.totalMatches,
+          discardedPotentialFloor:
+            Number.isFinite(discardedPotentialFloor)
+              ? discardedPotentialFloor : null,
           candidates: best,
           lastBatchMatches: data.totalMatches,
           lastBatchNewTop: newTopEntries,
@@ -1984,19 +2011,21 @@ export default function Explorer({ initialConstants = [] }) {
             : null
         };
 
-        // Certify the global Top 1000 against every remaining
-        // original-complexity layer and selected root action.
-        const certificate = certifyFullRunTop1000({
-          candidates: best,
-          tokens: chosen,
-          numbers: checkedNumbers,
-          factorCount: selectedFactorCount,
+        // Certify only when all remaining constructions and
+        // omitted groups are unable to enter the Top 1000.
+        const certificate = certifyFractionalTop1000({
+          candidates: checkpoint.candidates,
+          matches: checkpoint.matches,
+          factorCount: chosen.length,
+          hasCustomNumbers: checkedNumbers.length > 0,
           searchDepth: fullSearchDepth,
           cursors: multiRootMode
             ? selectedRootIndices.map(
                 index => nextRootCursors[index]
               )
-            : [data.nextCursor]
+            : [data.nextCursor],
+          discardedPotentialFloor:
+            checkpoint.discardedPotentialFloor
         });
 
         if (certificate) {
@@ -2033,13 +2062,14 @@ export default function Explorer({ initialConstants = [] }) {
 
         if (checkpoint.earlyStopped) {
           setMessage(
-            `Full search reached the conservative Top 1000 ranking cutoff. ` +
-            `Remaining structural complexity is at least ` +
-            `${checkpoint.rankingCertificate.remainingMinimum}; ` +
-            `the 1000th result has complexity ` +
-            `${checkpoint.rankingCertificate.cutoff}. ` +
+            `Full search certified Top 1000 group membership. ` +
+            `Remaining score bound: ` +
+            `${checkpoint.rankingCertificate.remainingMinimum.toFixed(3)}; ` +
+            `1000th score: ` +
+            `${checkpoint.rankingCertificate.cutoff.toFixed(3)}. ` +
             `${checkpoint.cursor.toLocaleString()} of ` +
-            `${checkpoint.total.toLocaleString()} positions examined.`
+            `${checkpoint.total.toLocaleString()} positions examined. ` +
+            `Equivalent-form lists may be incomplete.`
           );
           break;
         }
@@ -2115,7 +2145,7 @@ export default function Explorer({ initialConstants = [] }) {
       query: 'Restored Full Run',
       incomplete: false,
       coverage: fullSaved.earlyStopped
-        ? 'Structural ranking cutoff (not exhaustive alternatives)'
+        ? 'Fractional ranking cutoff (equivalents not exhaustive)'
         : 'Completed Full Run',
       highestCompletedMonomialComplexity: fullSearchDepth
     }]);

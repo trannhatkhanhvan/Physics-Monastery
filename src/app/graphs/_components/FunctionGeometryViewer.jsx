@@ -448,6 +448,7 @@ export default function FunctionGeometryViewer({
   zoomStops = 0,
   zoomFactor = 1,
   onZoomStopsChange,
+  onZoomPlaybackToggle,
   zoomPlaying = false
 }) {
   const hostRef = useRef(null);
@@ -1492,6 +1493,34 @@ export default function FunctionGeometryViewer({
                 Y
               </button>
             </>
+          )}
+
+          {expanded && (
+            <button
+              type="button"
+              title={zoomPlaying
+                ? 'Pause mathematical zoom sweep'
+                : 'Play mathematical zoom sweep'}
+              aria-label={zoomPlaying
+                ? 'Pause mathematical zoom sweep'
+                : 'Play mathematical zoom sweep'}
+              aria-pressed={zoomPlaying}
+              onClick={onZoomPlaybackToggle}
+              style={{
+                ...headerButton(zoomPlaying),
+                width: 34,
+                minWidth: 34,
+                height: 34,
+                padding: 0,
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 17,
+                lineHeight: 1
+              }}
+            >
+              {zoomPlaying ? 'Ⅱ' : '▶'}
+            </button>
           )}
 
           {expanded && (

@@ -346,6 +346,15 @@ export function parseMathFunction(source) {
 
       const canonical = resolveFunction(name);
 
+      // Conventional function-power notation:
+      // sinh^2(z) means (sinh(z))^2, not sinh(z^2).
+      // The exponent is parsed before the argument list,
+      // but applied after the function call is constructed.
+      const functionExponent =
+        canonical && accept('^')
+          ? expression(40)
+          : null;
+
       if (
         canonical &&
         ['(', '{'].includes(peek().value)
@@ -364,11 +373,15 @@ export function parseMathFunction(source) {
 
         expect(closing);
 
-        left = {
+        const call = {
           type: 'call',
           name: canonical,
           args
         };
+
+        left = functionExponent === null
+          ? call
+          : binary('^', call, functionExponent);
       } else if (
         name.toLowerCase() === 'z' ||
         ['pi', 'e', 'i'].includes(name.toLowerCase())

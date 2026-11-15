@@ -1,6 +1,10 @@
 import {
   geometricPreference
 } from './closed-form-geometric-preferences';
+import {
+  fractionalConstruction,
+  FRACTIONAL_WEIGHTS
+} from './closed-form-fractional-rank';
 
 const geometricBonusCache = new WeakMap();
 
@@ -171,7 +175,7 @@ function numericFactorOptions(number) {
   return options;
 }
 
-export function scoreCandidatePreference(
+function legacyScoreCandidatePreference(
   expression,
   originalComplexity
 ) {
@@ -403,6 +407,22 @@ export function scoreCandidatePreference(
 }
 
 
+// The new construction score is independent of search eligibility.
+export function scoreCandidatePreference(expression, originalComplexity) {
+  const old = legacyScoreCandidatePreference(
+    expression, originalComplexity
+  );
+
+  const construction = fractionalConstruction(expression);
+
+  return {
+    ...old,
+    adjustedComplexity:
+      construction?.complexity ?? originalComplexity,
+    construction
+  };
+}
+
 // Ignore scientific-notation exponent markers when
 // identifying actual named constants.
 export function hasNamedGeometricConstant(expression) {
@@ -561,49 +581,72 @@ export function structuralProfile(expression, fallback = 0) {
 }
 
 // Negative means a ranks before b.
+// Both individual and grouped results use fractional preferences.
 export function compareCandidatePreference(a, b) {
-  const ap = a.preference || scoreCandidatePreference(
-    a.expression, a.complexity
-  );
-  const bp = b.preference || scoreCandidatePreference(
-    b.expression, b.complexity
-  );
+  const ap = a.preference ||
+    scoreCandidatePreference(a.expression, a.complexity);
 
-  const as = structuralProfile(
-    a.expression, a.complexity
-  );
-  const bs = structuralProfile(
-    b.expression, b.complexity
-  );
+  const bp = b.preference ||
+    scoreCandidatePreference(b.expression, b.complexity);
+
+  const ar =
+    ap.adjustedComplexity -
+    FRACTIONAL_WEIGHTS.geometric *
+      Number(cachedGeometricBonus(a) > 0);
+
+  const br =
+    bp.adjustedComplexity -
+    FRACTIONAL_WEIGHTS.geometric *
+      Number(cachedGeometricBonus(b) > 0);
 
   return (
-    as.structuralComplexity - bs.structuralComplexity ||
-    as.distinctConstants - bs.distinctConstants ||
-    as.partitionImbalance - bs.partitionImbalance ||
-    (as.magnitudeBits - cachedGeometricBonus(a)) -
-      (bs.magnitudeBits - cachedGeometricBonus(b)) ||
-    as.largestNumber - bs.largestNumber ||
-    bp.motifBonus - ap.motifBonus ||
-    ap.adjustedComplexity - bp.adjustedComplexity ||
+    ar - br ||
     a.z - b.z ||
     a.expression.localeCompare(b.expression)
   );
 }
 
-// Rank numerical groups by their simplest representative.
-// Multiple forms receive a capped half-point advantage.
-// Do not use this comparator to select a group's representative.
-export function compareCandidateGroupPreference(a, b) {
-  const effectiveComplexity = candidate =>
-    structuralProfile(
+// Shared group score before numerical-error tie-breaking.
+// assumeEquivalent models the best future equivalence bonus.
+export function fractionalGroupRank(
+  candidate, assumeEquivalent = false
+) {
+  const preference = candidate.preference ||
+    scoreCandidatePreference(
       candidate.expression, candidate.complexity
-    ).structuralComplexity -
-    (
-      Array.isArray(candidate.equivalentExpressions) &&
-      candidate.equivalentExpressions.length > 0
-        ? 0.5 : 0
     );
 
-  return effectiveComplexity(a) - effectiveComplexity(b) ||
-    compareCandidatePreference(a, b);
+  return preference.adjustedComplexity -
+    FRACTIONAL_WEIGHTS.geometric *
+      Number(cachedGeometricBonus(candidate) > 0) -
+    FRACTIONAL_WEIGHTS.equivalence *
+      Number(
+        assumeEquivalent ||
+        (candidate.equivalentExpressions || []).length > 0
+      );
+}
+
+// Keep the existing ranked list and equivalent-expression groups.
+export function compareCandidateGroupPreference(a, b) {
+  const rank = candidate => {
+    const preference = candidate.preference ||
+      scoreCandidatePreference(
+        candidate.expression, candidate.complexity
+      );
+
+    return (
+      preference.adjustedComplexity -
+      FRACTIONAL_WEIGHTS.geometric *
+        Number(cachedGeometricBonus(candidate) > 0) -
+      FRACTIONAL_WEIGHTS.equivalence *
+        Number(
+          (candidate.equivalentExpressions || []).length > 0
+        )
+    );
+  };
+
+  return (
+    rank(a) - rank(b) ||
+    compareCandidatePreference(a, b)
+  );
 }

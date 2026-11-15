@@ -2,6 +2,7 @@ import {
   scoreCandidatePreference,
   compareCandidatePreference,
   compareCandidateGroupPreference,
+  fractionalGroupRank,
   hasNamedGeometricConstant
 } from './closed-form-preference';
 // Numerical grouping uses the same 15 significant digits as the UI.
@@ -285,6 +286,15 @@ export function searchMultiplicative({
   let monomials = 0;
   let inspected = 0;
   let totalMatches = 0;
+  let discardedPotentialFloor = Infinity;
+
+  // Track the strongest possible future rank of an omitted group.
+  const recordDiscarded = candidate => {
+    discardedPotentialFloor = Math.min(
+      discardedPotentialFloor,
+      fractionalGroupRank(candidate, true)
+    );
+  };
   let incomplete = false;
   let highestCompletedComplexity = -1;
 
@@ -377,11 +387,6 @@ export function searchMultiplicative({
           candidate.complexity
         );
 
-        if (
-          candidate.preference.adjustedComplexity >
-          reportComplexity
-        ) continue;
-
         totalMatches++;
 
         const identity = candidate.value.toPrecision(15);
@@ -428,12 +433,16 @@ export function searchMultiplicative({
           heapPush(heap, candidate);
           retainedKeys.set(identity, candidate);
         } else if (worse(candidate, heap[0]) < 0) {
+          recordDiscarded(heap[0]);
+
           retainedKeys.delete(
             heap[0].value.toPrecision(15)
           );
 
           heapReplaceTop(heap, candidate);
           retainedKeys.set(identity, candidate);
+        } else {
+          recordDiscarded(candidate);
         }
       }
     }
@@ -567,6 +576,9 @@ export function searchMultiplicative({
   return {
     candidates: heap.sort((a, b) => worse(a, b)),
     totalMatches,
+    discardedPotentialFloor:
+      Number.isFinite(discardedPotentialFloor)
+        ? discardedPotentialFloor : null,
     inspected,
     monomials,
     incomplete: batchMode

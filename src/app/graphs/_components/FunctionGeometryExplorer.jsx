@@ -1448,6 +1448,7 @@ export default function FunctionGeometryExplorer() {
               zoomStops={zoomViews['surface'].stops}
               zoomFactor={scaleForView('surface')}
               onZoomStopsChange={value => changeZoomManually(value, 'surface')}
+              onZoomPlaybackToggle={toggleZoomPlayback}
               zoomPlaying={zoomViews['surface'].playing}
               functionLatex={plottedLatex}
               />
@@ -1468,6 +1469,7 @@ export default function FunctionGeometryExplorer() {
               zoomStops={zoomViews['phase'].stops}
               zoomFactor={scaleForView('phase')}
               onZoomStopsChange={value => changeZoomManually(value, 'phase')}
+              onZoomPlaybackToggle={toggleZoomPlayback}
               zoomPlaying={zoomViews['phase'].playing}
               functionLatex={plottedLatex}
               />
@@ -1532,6 +1534,7 @@ export default function FunctionGeometryExplorer() {
               zoomStops={zoomViews['surface2'].stops}
               zoomFactor={scaleForView('surface2')}
               onZoomStopsChange={value => changeZoomManually(value, 'surface2')}
+              onZoomPlaybackToggle={toggleZoomPlayback}
               zoomPlaying={zoomViews['surface2'].playing}
               functionLatex={plottedLatex}
             />
@@ -1586,6 +1589,7 @@ export default function FunctionGeometryExplorer() {
               zoomStops={zoomViews['magnitude'].stops}
               zoomFactor={scaleForView('magnitude')}
               onZoomStopsChange={value => changeZoomManually(value, 'magnitude')}
+              onZoomPlaybackToggle={toggleZoomPlayback}
               zoomPlaying={zoomViews['magnitude'].playing}
               functionLatex={plottedLatex}
             />
