@@ -69,7 +69,11 @@ export function certifyFractionalTop1000({
 
     // The cursor traverses original-complexity layers
     // in ascending order.
-    let layer = 0;
+    // Layer zero contains only the identity monomial.
+    // It cannot produce an eligible named-constant result.
+    // The first eligible construction layer is one.
+    // countSearchMonomials requires depth >= 1.
+    let layer = 1;
 
     while (
       layer < searchDepth &&
@@ -80,11 +84,13 @@ export function certifyFractionalTop1000({
       layer++;
     }
 
-    // At least ceil(layer/2) distinct constants are
-    // required for a construction in this layer.
+    // Layer cost includes named factors (at most 2 each),
+    // a reduced rational coefficient (at most 2), and one
+    // optional radical (at most 1). Therefore L <= 2k + 3.
+    // Never infer ceil(L/2) named constants from total cost.
     const k = Math.max(
       1,
-      Math.ceil(layer / 2)
+      Math.ceil((layer - 3) / 2)
     );
 
     const w = FRACTIONAL_WEIGHTS;

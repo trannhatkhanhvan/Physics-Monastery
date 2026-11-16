@@ -281,6 +281,10 @@ export function searchMultiplicative({
 
   const heap = [];
   const retainedKeys = new Map();
+
+  // Groups outside the displayed Top 1000 that may become
+  // competitive after discovering an equivalent expression.
+  const reserveKeys = new Map();
   const used = [];
 
   let monomials = 0;
@@ -295,6 +299,38 @@ export function searchMultiplicative({
       fractionalGroupRank(candidate, true)
     );
   };
+  // Do not cap the reserve arbitrarily: that would discard
+  // precisely the candidates this change is intended to save.
+  const reserveOrDiscard = (candidate, identity) => {
+    if (
+      batchMode &&
+      fractionalGroupRank(candidate, true) <=
+        fractionalGroupRank(heap[0]) + 1e-10
+    ) {
+      reserveKeys.set(identity, candidate);
+    } else {
+      recordDiscarded(candidate);
+    }
+  };
+
+  const admit = (candidate, identity) => {
+    if (heap.length < MAX_RETURNED) {
+      heapPush(heap, candidate);
+      retainedKeys.set(identity, candidate);
+    } else if (worse(candidate, heap[0]) < 0) {
+      const evicted = heap[0];
+      const evictedIdentity = evicted.value.toPrecision(15);
+
+      retainedKeys.delete(evictedIdentity);
+      reserveOrDiscard(evicted, evictedIdentity);
+
+      heapReplaceTop(heap, candidate);
+      retainedKeys.set(identity, candidate);
+    } else {
+      reserveOrDiscard(candidate, identity);
+    }
+  };
+
   let incomplete = false;
   let highestCompletedComplexity = -1;
 
@@ -391,23 +427,28 @@ export function searchMultiplicative({
 
         const identity = candidate.value.toPrecision(15);
 
-        const previous = retainedKeys.get(identity);
+        const previous = retainedKeys.get(identity) ||
+          reserveKeys.get(identity);
 
         if (previous) {
           const alternatives = [...new Set([
             previous.expression,
             ...(previous.equivalentExpressions || []),
-            candidate.expression,
-            ...(candidate.equivalentExpressions || [])
+            candidate.expression
           ])];
 
-          // Preserve all discovered expressions sharing
-          // the displayed 15-significant-digit value.
-          if (compareCandidatePreference(candidate, previous) < 0) {
-            candidate.equivalentExpressions =
-              alternatives.filter(
-                expression => expression !== candidate.expression
-              );
+          const preferred =
+            compareCandidatePreference(candidate, previous) < 0
+              ? candidate : previous;
+
+          const merged = {
+            ...preferred,
+            equivalentExpressions: alternatives.filter(
+              item => item !== preferred.expression
+            )
+          };
+
+          if (retainedKeys.has(identity)) {
             const position = heap.indexOf(previous);
 
             if (position < 0) {
@@ -416,33 +457,17 @@ export function searchMultiplicative({
               );
             }
 
-            heap[position] = candidate;
-            retainedKeys.set(identity, candidate);
+            heap[position] = merged;
+            retainedKeys.set(identity, merged);
 
+            // An equivalence bonus may change the ordering.
+            heap.sort((a, b) => worse(b, a));
           } else {
-            previous.equivalentExpressions =
-              alternatives.filter(
-                expression => expression !== previous.expression
-              );
+            reserveKeys.delete(identity);
+            admit(merged, identity);
           }
-
-          // A new equivalent form may activate the ranking bonus.
-          // Reorder even when the representative stays unchanged.
-          heap.sort((a, b) => worse(b, a));
-        } else if (heap.length < MAX_RETURNED) {
-          heapPush(heap, candidate);
-          retainedKeys.set(identity, candidate);
-        } else if (worse(candidate, heap[0]) < 0) {
-          recordDiscarded(heap[0]);
-
-          retainedKeys.delete(
-            heap[0].value.toPrecision(15)
-          );
-
-          heapReplaceTop(heap, candidate);
-          retainedKeys.set(identity, candidate);
         } else {
-          recordDiscarded(candidate);
+          admit(candidate, identity);
         }
       }
     }
@@ -573,8 +598,26 @@ export function searchMultiplicative({
     highestCompletedComplexity = cost;
   }
 
+  // Remove reserve groups that are no longer competitive
+  // against the final cutoff for this batch.
+  if (heap.length === MAX_RETURNED) {
+    const cutoff = fractionalGroupRank(heap[0]);
+
+    for (const [identity, candidate] of reserveKeys) {
+      if (
+        fractionalGroupRank(candidate, true) >
+          cutoff + 1e-10
+      ) {
+        reserveKeys.delete(identity);
+        recordDiscarded(candidate);
+      }
+    }
+  }
+
   return {
     candidates: heap.sort((a, b) => worse(a, b)),
+    reserveCandidates:
+      batchMode ? [...reserveKeys.values()] : [],
     totalMatches,
     discardedPotentialFloor:
       Number.isFinite(discardedPotentialFloor)

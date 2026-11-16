@@ -3,6 +3,11 @@
 import styles from './explorer-layout.module.css';
 import { createPortal } from 'react-dom';
 import {
+  loadFullCheckpoint,
+  saveFullCheckpoint,
+  deleteFullCheckpoint
+} from '../../../lib/closed-form-checkpoint-storage';
+import {
   scoreCandidatePreference,
   compareCandidatePreference,
   compareCandidateGroupPreference,
@@ -1078,10 +1083,10 @@ export default function Explorer({ initialConstants = [] }) {
   }, []);
   // Preserve old saved runs without mixing ranking versions.
   const checkpointStorageKey = customRootsSelected
-    ? 'closed-form-custom-run-rank-v5'
+    ? 'closed-form-custom-run-rank-v6'
     : allRootsSelected
-      ? 'closed-form-all-run-rank-v5'
-      : 'closed-form-full-run-rank-v5';
+      ? 'closed-form-all-run-rank-v6'
+      : 'closed-form-full-run-rank-v6';
   const [rootMenuOpen, setRootMenuOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const settingsRef = useRef(null);
@@ -1133,13 +1138,29 @@ export default function Explorer({ initialConstants = [] }) {
   const fullAbort = useRef(null);
 
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(checkpointStorageKey);
-      setFullSaved(saved ? JSON.parse(saved) : null);
-    } catch {
-      // Invalid saved checkpoint cannot be resumed.
-    }
-  }, [rootAction]);
+    let cancelled = false;
+
+    // Prevent an old root-selection load from replacing
+    // the checkpoint belonging to the new selection.
+    setFullSaved(null);
+
+    loadFullCheckpoint(checkpointStorageKey)
+      .then(saved => {
+        if (!cancelled) setFullSaved(saved);
+      })
+      .catch(error => {
+        if (!cancelled) {
+          console.error('Checkpoint loading failed:', error);
+          setMessage(
+            `Could not load saved Full Run: ${error.message}`
+          );
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [checkpointStorageKey]);
   const [message, setMessage] = useState('');
   const [showCount, setShowCount] = useState(200);
 
@@ -1751,7 +1772,8 @@ export default function Explorer({ initialConstants = [] }) {
               ? Array(rootActions.length).fill(0)
               : null,
             nextRootIndex: multiRootMode ? selectedRootIndices[0] : 0,
-            candidates: []
+            candidates: [],
+            reserveCandidates: []
           };
 
     if (!resume) {
@@ -1831,6 +1853,7 @@ export default function Explorer({ initialConstants = [] }) {
             data.discardedPotentialFloor === null ||
             Number.isFinite(data.discardedPotentialFloor)
           ) ||
+          !Array.isArray(data.reserveCandidates) ||
           !Number.isSafeInteger(data.nextCursor) ||
           data.nextCursor <= batchStart ||
           !Number.isSafeInteger(data.totalMonomialPositions) ||
@@ -1871,13 +1894,15 @@ export default function Explorer({ initialConstants = [] }) {
             )
           : 0;
 
-        // A Top 1000 from each batch is sufficient to
-        // reconstruct the global Top 1000 exactly.
+        // Merge displayed groups and potentially competitive
+        // reserve groups from previous and current batches.
         const byValue = new Map();
 
         for (const incoming of [
           ...checkpoint.candidates,
-          ...data.candidates
+          ...(checkpoint.reserveCandidates || []),
+          ...data.candidates,
+          ...data.reserveCandidates
         ]) {
           if (!hasNamedGeometricConstant(
             incoming.expression
@@ -1886,6 +1911,10 @@ export default function Explorer({ initialConstants = [] }) {
           // Never trust a preference stored by an older scorer.
           const candidate = {
             ...incoming,
+            rootActionId: incoming.rootActionId ||
+              (multiRootMode
+                ? rootActions[batchRootIndex]?.id
+                : undefined),
             preference: scoreCandidatePreference(
               incoming.expression,
               incoming.complexity
@@ -1929,8 +1958,32 @@ export default function Explorer({ initialConstants = [] }) {
 
         const best = ranked.slice(0, 1000);
 
-        // Include groups discarded while merging batches.
+        const cutoff = best.length === 1000
+          ? fractionalGroupRank(best[999])
+          : Infinity;
+
+        // Do not discard a group that could earn its way
+        // into the displayed results through equivalence.
+        const reserveCandidates = ranked.slice(1000).filter(
+          candidate =>
+            fractionalGroupRank(candidate, true) <=
+              cutoff + 1e-10
+        );
+
+        // Only provably noncompetitive groups are discarded.
         const omittedGlobalFloor = ranked.slice(1000).reduce(
+          (minimum, candidate) =>
+            fractionalGroupRank(candidate, true) >
+              cutoff + 1e-10
+              ? Math.min(
+                  minimum,
+                  fractionalGroupRank(candidate, true)
+                )
+              : minimum,
+          Infinity
+        );
+
+        const reservePotentialFloor = reserveCandidates.reduce(
           (minimum, candidate) => Math.min(
             minimum,
             fractionalGroupRank(candidate, true)
@@ -2000,6 +2053,7 @@ export default function Explorer({ initialConstants = [] }) {
             Number.isFinite(discardedPotentialFloor)
               ? discardedPotentialFloor : null,
           candidates: best,
+          reserveCandidates,
           lastBatchMatches: data.totalMatches,
           lastBatchNewTop: newTopEntries,
           lastBatchChangedPositions: changedPositions,
@@ -2017,15 +2071,21 @@ export default function Explorer({ initialConstants = [] }) {
           candidates: checkpoint.candidates,
           matches: checkpoint.matches,
           factorCount: chosen.length,
-          hasCustomNumbers: checkedNumbers.length > 0,
+          hasCustomNumbers:
+            checkedNumbers.length > 0 ||
+            chosen.includes('i'),
           searchDepth: fullSearchDepth,
           cursors: multiRootMode
             ? selectedRootIndices.map(
                 index => nextRootCursors[index]
               )
             : [data.nextCursor],
-          discardedPotentialFloor:
-            checkpoint.discardedPotentialFloor
+          // Reserved groups may still enter the Top 1000
+          // after a future equivalent expression is found.
+          discardedPotentialFloor: Math.min(
+            checkpoint.discardedPotentialFloor ?? Infinity,
+            reservePotentialFloor
+          )
         });
 
         if (certificate) {
@@ -2037,9 +2097,9 @@ export default function Explorer({ initialConstants = [] }) {
         }
 
         // Save the completed batch before proceeding.
-        localStorage.setItem(
+        await saveFullCheckpoint(
           checkpointStorageKey,
-          JSON.stringify(checkpoint)
+          checkpoint
         );
 
         setFullSaved(checkpoint);
@@ -3712,15 +3772,22 @@ export default function Explorer({ initialConstants = [] }) {
                     fullRunning || running || !fullSaved ? 0.45 : 1
                 }}
                 disabled={fullRunning || running || !fullSaved}
-                onClick={() => {
-                  localStorage.removeItem(checkpointStorageKey);
-                  localStorage.removeItem(
-                    'closed-form-full-run-v1'
-                  );
-                  setFullSaved(null);
-                  setResponses([]);
-                  setProgress(0);
-                  setMessage('');
+                onClick={async () => {
+                  try {
+                    await deleteFullCheckpoint(checkpointStorageKey);
+                    localStorage.removeItem(
+                      'closed-form-full-run-v1'
+                    );
+
+                    setFullSaved(null);
+                    setResponses([]);
+                    setProgress(0);
+                    setMessage('');
+                  } catch (error) {
+                    setMessage(
+                      `Could not delete Full Run: ${error.message}`
+                    );
+                  }
                 }}
               >
                 Delete
