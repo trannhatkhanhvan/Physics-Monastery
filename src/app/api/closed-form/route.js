@@ -47,6 +47,11 @@ export async function GET() {
 }
 
 export async function POST(request) {
+  return NextResponse.json(
+    { error: 'Closed-Form Explorer temporarily unavailable' },
+    { status: 503 }
+  );
+
   let body;
   try {
     body = await request.json();
