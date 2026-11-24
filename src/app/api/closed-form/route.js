@@ -49,7 +49,7 @@ export async function GET() {
 export async function POST(request) {
   return NextResponse.json(
     { error: 'Closed-Form Explorer temporarily unavailable' },
-    { status: 503 }
+    { status: 503, headers: { 'Cache-Control': 'no-store' } }
   );
 
   let body;
@@ -68,7 +68,7 @@ export async function POST(request) {
     numbers = [],
     rootAction = '',
     mode = 'quick',
-    fullSearchDepth = 6,
+    fullSearchDepth = 5,
     startMonomial = 0,
     rootIndex = null,
     batchSize = 25000
@@ -83,9 +83,9 @@ export async function POST(request) {
     typeof rootAction !== 'string' ||
     !['quick', 'full-batch'].includes(mode) ||
     !Number.isInteger(fullSearchDepth) ||
-    (!Number.isInteger(complexity) || complexity < 1 || complexity > 6) ||
+    (!Number.isInteger(complexity) || complexity < 1 || complexity > 5) ||
     fullSearchDepth < 1 ||
-    fullSearchDepth > 6 ||
+    fullSearchDepth > 5 ||
     !Number.isSafeInteger(startMonomial) ||
     startMonomial < 0 ||
     (rootIndex !== null &&

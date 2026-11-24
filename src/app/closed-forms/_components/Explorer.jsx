@@ -1,6 +1,7 @@
 'use client';
 
 import styles from './explorer-layout.module.css';
+import { localClosedFormRequest } from './closed-form-local';
 import { createPortal } from 'react-dom';
 import {
   loadFullCheckpoint,
@@ -974,6 +975,13 @@ function CandidateMath({ expression, hasRoot }) {
   );
 }
 
+function formatRunClock(ms) {
+  const seconds = Math.ceil(Math.max(0, ms) / 1000);
+  return `${Math.floor(seconds / 60)}:${String(
+    seconds % 60
+  ).padStart(2, '0')}`;
+}
+
 function formatSearchDuration(ms) {
   if (!Number.isFinite(ms) || ms < 0) return 'calculating';
   const seconds = Math.ceil(ms / 1000);
@@ -1131,8 +1139,24 @@ export default function Explorer({ initialConstants = [] }) {
   const [usage, setUsage] = useState(null);
   const [running, setRunning] = useState(false);
   const [fullRunning, setFullRunning] = useState(false);
+  const [fullRunClock, setFullRunClock] = useState(null);
+  const [fullClockNow, setFullClockNow] = useState(
+    () => Date.now()
+  );
+
+  useEffect(() => {
+    if (!fullRunning) return;
+
+    const timer = setInterval(
+      () => setFullClockNow(Date.now()),
+      250
+    );
+
+    return () => clearInterval(timer);
+  }, [fullRunning]);
   const [fullSelectionMode, setFullSelectionMode] = useState(false);
-  const [fullSearchDepth, setFullSearchDepth] = useState(5);
+  const [computationLimitMinutes, setComputationLimitMinutes] = useState(1);
+  const [fullSearchDepth, setFullSearchDepth] = useState(4);
   const [fullSaved, setFullSaved] = useState(null);
   const fullStop = useRef(false);
   const fullAbort = useRef(null);
@@ -1416,7 +1440,7 @@ export default function Explorer({ initialConstants = [] }) {
       (1 + 2 * (chosen.length + checkedNumbers.length))
     : 0;
 
-  const minimumQuickDepth = Math.max(4, complexity);
+  const minimumQuickDepth = Math.min(5, Math.max(4, complexity));
 
   const quickLimit = useMemo(
     () => maxQuickFactors(minimumQuickDepth),
@@ -1448,7 +1472,7 @@ export default function Explorer({ initialConstants = [] }) {
   const proposedFullDuration =
     1000 * proposedFullPositions / estimateRate;
 
-  const quickSearchDepth = Math.max(4, complexity);
+  const quickSearchDepth = Math.min(5, Math.max(4, complexity));
 
   const quickMonomialCount = quickSearchDepth
     ? countSearchMonomials(
@@ -1591,10 +1615,7 @@ export default function Explorer({ initialConstants = [] }) {
       for (const id of customRootIds) {
         if (cancel.current) return;
 
-        const response = await fetch('/api/closed-form', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
+        const response = await localClosedFormRequest({
             center: parsed.value.center,
             oneSigma: parsed.value.oneSigma,
             sigma,
@@ -1602,9 +1623,7 @@ export default function Explorer({ initialConstants = [] }) {
             tokens: chosen,
             numbers: checkedNumbers,
             rootAction: id
-          }),
-          signal: abort.current.signal
-        });
+          }, constants, abort.current.signal);
 
         const data = await response.json();
         if (!response.ok) {
@@ -1677,12 +1696,7 @@ export default function Explorer({ initialConstants = [] }) {
     abort.current = new AbortController();
 
     try {
-      const request = await fetch('/api/closed-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
+      const request = await localClosedFormRequest({
           center: parsed.value.center,
           oneSigma: parsed.value.oneSigma,
           sigma,
@@ -1690,9 +1704,7 @@ export default function Explorer({ initialConstants = [] }) {
           tokens: chosen,
           numbers: checkedNumbers,
           rootAction
-        }),
-        signal: abort.current.signal
-      });
+        }, constants, abort.current.signal);
 
       const data = await request.json();
 
@@ -1734,12 +1746,15 @@ export default function Explorer({ initialConstants = [] }) {
   }
 
 
+  const DEFAULT_FULL_RUN_TIME_LIMIT_MS = 120000;
+
   async function runFull(resume = false) {
     if (
       running ||
       fullRunning ||
       !parsed.value ||
-      !validRoot
+      !validRoot ||
+      (resume && fullSaved?.timeLimited)
     ) return;
 
     const signature = JSON.stringify({
@@ -1773,8 +1788,16 @@ export default function Explorer({ initialConstants = [] }) {
               : null,
             nextRootIndex: multiRootMode ? selectedRootIndices[0] : 0,
             candidates: [],
-            reserveCandidates: []
+            reserveCandidates: [],
+            elapsedMs: 0,
+            timeLimitMs: computationLimitMinutes * 60000,
+            timeLimited: false
           };
+
+    const FULL_RUN_TIME_LIMIT_MS = resume
+      ? (checkpoint.timeLimitMs ??
+          DEFAULT_FULL_RUN_TIME_LIMIT_MS)
+      : computationLimitMinutes * 60000;
 
     if (!resume) {
       setResponses([]);
@@ -1786,8 +1809,60 @@ export default function Explorer({ initialConstants = [] }) {
     setFullRunning(true);
     setMessage('Full search started.');
 
+    const previouslyUsedMs = resume
+      ? Math.max(
+          0,
+          checkpoint.elapsedMs ?? checkpoint.activeMs ?? 0
+        )
+      : 0;
+
+    const sessionStartedAt = Date.now();
+
+    setFullClockNow(sessionStartedAt);
+
+    setFullRunClock({
+      startedAt: sessionStartedAt,
+      usedBeforeMs: previouslyUsedMs,
+      limitMs: FULL_RUN_TIME_LIMIT_MS
+    });
+
+    let adaptiveBatchSize = 1000;
+
+    let timeLimitReached =
+      previouslyUsedMs >= FULL_RUN_TIME_LIMIT_MS;
+
+    const timeLimitTimer = setTimeout(() => {
+      timeLimitReached = true;
+      fullStop.current = true;
+      fullAbort.current?.abort();
+    }, Math.max(
+      0,
+      FULL_RUN_TIME_LIMIT_MS - previouslyUsedMs
+    ));
+
+    if (timeLimitReached) {
+      fullStop.current = true;
+    }
+
     try {
+      let completedBatches = 0;
+
       while (!fullStop.current) {
+        if (
+          previouslyUsedMs +
+          Date.now() -
+          sessionStartedAt >= FULL_RUN_TIME_LIMIT_MS
+        ) {
+          timeLimitReached = true;
+          fullStop.current = true;
+          break;
+        }
+
+        if (completedBatches > 0) {
+          await new Promise(resolve => setTimeout(resolve, 250));
+          if (fullStop.current) break;
+        }
+
         if (
           checkpoint.total > 0 &&
           checkpoint.cursor >= checkpoint.total
@@ -1805,10 +1880,7 @@ export default function Explorer({ initialConstants = [] }) {
           ? checkpoint.rootCursors[batchRootIndex]
           : checkpoint.cursor;
 
-        const request = await fetch('/api/closed-form', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
+        const request = await localClosedFormRequest({
             center: parsed.value.center,
             oneSigma: parsed.value.oneSigma,
             sigma,
@@ -1820,29 +1892,16 @@ export default function Explorer({ initialConstants = [] }) {
             fullSearchDepth,
             startMonomial: batchStart,
             rootIndex: batchRootIndex,
-            batchSize: multiRootMode
-              ? (
-                  checkpoint.activeMs > 0 &&
-                  checkpoint.cursor > 0
-                    ? Math.max(1000, Math.min(
-                        25000,
-                        Math.floor(
-                          2500 * checkpoint.cursor /
-                          checkpoint.activeMs
-                        )
-                      ))
-                    : 1000
-                )
-              : 25000
-          }),
-          signal: controller.signal
-        });
+            batchSize: adaptiveBatchSize
+          }, constants, controller.signal);
 
         const data = await request.json();
 
         if (!request.ok) {
           throw Error(data.error || `HTTP ${request.status}`);
         }
+
+        completedBatches++;
 
         if (
           data.batchStartCursor !== batchStart ||
@@ -1864,6 +1923,26 @@ export default function Explorer({ initialConstants = [] }) {
         ) {
           throw Error('Invalid Full Run checkpoint response');
         }
+
+        const completedBatchMs = Math.max(
+          1,
+          Date.now() - batchStartedAt
+        );
+
+        const completedBatchPositions =
+          data.nextCursor - batchStart;
+
+        adaptiveBatchSize = Math.max(
+          100,
+          Math.min(
+            25000,
+            adaptiveBatchSize * 3,
+            Math.round(
+              completedBatchPositions *
+              1000 / completedBatchMs
+            )
+          )
+        );
 
         const nextRootCursors = multiRootMode
           ? [...checkpoint.rootCursors]
@@ -2034,6 +2113,8 @@ export default function Explorer({ initialConstants = [] }) {
             uncertaintyText,
             complexity,
             fullSearchDepth,
+            computationLimitMinutes:
+              FULL_RUN_TIME_LIMIT_MS / 60000,
             sigma,
             chosen,
             checkedNumbers,
@@ -2047,6 +2128,12 @@ export default function Explorer({ initialConstants = [] }) {
           lastRootIndex: batchRootIndex,
           activeMs: (checkpoint.activeMs || 0) +
             Math.max(1, Date.now() - batchStartedAt),
+          elapsedMs: Math.min(
+            FULL_RUN_TIME_LIMIT_MS,
+            previouslyUsedMs + Date.now() - sessionStartedAt
+          ),
+          timeLimitMs: FULL_RUN_TIME_LIMIT_MS,
+          timeLimited: false,
           matches:
             checkpoint.matches + data.totalMatches,
           discardedPotentialFloor:
@@ -2110,6 +2197,11 @@ export default function Explorer({ initialConstants = [] }) {
           totalMatches: checkpoint.matches,
           monomials: checkpoint.cursor,
           query: 'Full search',
+          coverage: checkpoint.earlyStopped
+            ? 'Certified Top 1000 membership; equivalent forms may be incomplete'
+            : checkpoint.cursor >= checkpoint.total
+              ? 'Completed: entire selected search space examined'
+              : 'Partial: search still in progress',
           incomplete:
             !checkpoint.earlyStopped &&
             checkpoint.cursor < checkpoint.total
@@ -2144,7 +2236,10 @@ export default function Explorer({ initialConstants = [] }) {
         }
       }
     } catch (error) {
-      if (error.name === 'AbortError') {
+      if (timeLimitReached) {
+        // The finalizer below retains the last
+        // successfully completed batch.
+      } else if (error.name === 'AbortError') {
         setMessage('Full search paused. Progress saved.');
       } else {
         setMessage(
@@ -2153,7 +2248,72 @@ export default function Explorer({ initialConstants = [] }) {
         );
       }
     } finally {
+      clearTimeout(timeLimitTimer);
+
+      // An interrupted batch produces no completed
+      // results, but its elapsed time still counts.
+      if (!timeLimitReached && fullStop.current) {
+        checkpoint = {
+          ...checkpoint,
+          searchDepth: fullSearchDepth,
+          total: checkpoint.total ||
+            proposedFullPositions,
+          elapsedMs: Math.min(
+            FULL_RUN_TIME_LIMIT_MS,
+            previouslyUsedMs +
+            Date.now() -
+            sessionStartedAt
+          ),
+          timeLimitMs: FULL_RUN_TIME_LIMIT_MS
+        };
+
+        try {
+          await saveFullCheckpoint(
+            checkpointStorageKey,
+            checkpoint
+          );
+
+          setFullSaved(checkpoint);
+        } catch (error) {
+          setMessage(
+            `Pause checkpoint saving failed: ${
+              error.message
+            }`
+          );
+        }
+      }
+
+      if (timeLimitReached) {
+        checkpoint = {
+          ...checkpoint,
+          elapsedMs: FULL_RUN_TIME_LIMIT_MS,
+          timeLimitMs: FULL_RUN_TIME_LIMIT_MS,
+          timeLimited: true
+        };
+
+        try {
+          await saveFullCheckpoint(
+            checkpointStorageKey,
+            checkpoint
+          );
+
+          setFullSaved(checkpoint);
+          setMessage(
+            `${FULL_RUN_TIME_LIMIT_MS / 60000}-minute Full Run limit reached. ` +
+            'Best candidates from completed batches retained. ' +
+            'Start a new Full Run for another search.'
+          );
+        } catch (error) {
+          setMessage(
+            `${FULL_RUN_TIME_LIMIT_MS / 60000}-minute Full Run limit reached. ` +
+            'The last completed batch remains available, ' +
+            `but final checkpoint saving failed: ${error.message}`
+          );
+        }
+      }
+
       fullAbort.current = null;
+      setFullRunClock(null);
       setFullRunning(false);
     }
   }
@@ -2175,7 +2335,8 @@ export default function Explorer({ initialConstants = [] }) {
     (fullSaved?.searchDepth ?? 8) === fullSearchDepth &&
     fullSaved?.total === proposedFullPositions &&
     fullSaved?.cursor < fullSaved?.total &&
-    !fullSaved?.earlyStopped;
+    !fullSaved?.earlyStopped &&
+    !fullSaved?.timeLimited;
 
   // A completed Full Run retains its candidates in the
   // checkpoint. Restore those candidates to the results panel
@@ -2194,6 +2355,7 @@ export default function Explorer({ initialConstants = [] }) {
       !(fullSaved.total > 0) ||
       !(
         fullSaved.earlyStopped ||
+        fullSaved.timeLimited ||
         fullSaved.cursor >= fullSaved.total
       )
     ) return;
@@ -2203,10 +2365,16 @@ export default function Explorer({ initialConstants = [] }) {
       totalMatches: fullSaved.matches,
       monomials: fullSaved.cursor,
       query: 'Restored Full Run',
-      incomplete: false,
-      coverage: fullSaved.earlyStopped
-        ? 'Fractional ranking cutoff (equivalents not exhaustive)'
-        : 'Completed Full Run',
+      incomplete: Boolean(
+        fullSaved.timeLimited ||
+        (!fullSaved.earlyStopped &&
+          fullSaved.cursor < fullSaved.total)
+      ),
+      coverage: fullSaved.timeLimited
+        ? 'Time-limited: partial search; ranking not exhaustive'
+        : fullSaved.earlyStopped
+          ? 'Fractional ranking cutoff (equivalents not exhaustive)'
+          : 'Completed Full Run',
       highestCompletedMonomialComplexity: fullSearchDepth
     }]);
 
@@ -2219,6 +2387,64 @@ export default function Explorer({ initialConstants = [] }) {
     running,
     fullRunning
   ]);
+
+  const displayedRunBudgetMs =
+    fullRunning && fullRunClock
+      ? fullRunClock.limitMs
+      : (
+          fullSaved?.timeLimitMs ??
+          computationLimitMinutes * 60000
+        );
+
+  const displayedRunElapsedMs =
+    fullRunning && fullRunClock
+      ? Math.min(
+          displayedRunBudgetMs,
+          fullRunClock.usedBeforeMs +
+          Math.max(
+            0,
+            fullClockNow - fullRunClock.startedAt
+          )
+        )
+      : Math.min(
+          displayedRunBudgetMs,
+          fullSaved?.elapsedMs || 0
+        );
+
+  const displayedRunRemainingMs = Math.max(
+    0,
+    displayedRunBudgetMs -
+    displayedRunElapsedMs
+  );
+
+  // Once a search finishes early, its actual duration
+  // becomes the full scale of the time-progress bar.
+  // The computation limit itself remains unchanged.
+  const fullRunFinishedEarly =
+    !fullRunning &&
+    !fullSaved?.timeLimited &&
+    (
+      fullSaved?.earlyStopped ||
+      (
+        fullSaved?.total > 0 &&
+        fullSaved.cursor >= fullSaved.total
+      )
+    );
+
+  const displayedTimeScaleMs = fullRunFinishedEarly
+    ? Math.max(1, displayedRunElapsedMs)
+    : displayedRunBudgetMs;
+
+  const resultCoverageLabel = fullSaved?.timeLimited
+    ? 'Time-limited: partial search; ranking not exhaustive'
+    : fullSaved?.earlyStopped
+      ? 'Certified Top 1000 membership; equivalent forms may be incomplete'
+      : (
+          fullSaved?.total > 0 &&
+          fullSaved.cursor >= fullSaved.total
+        )
+        ? 'Completed: entire selected search space examined'
+        : 'Partial: search still in progress';
 
   // Four buttons appear together when Restore and Return are available.
   const fourFullRunButtons =
@@ -3006,9 +3232,9 @@ export default function Explorer({ initialConstants = [] }) {
                 <input
                   id="complexity"
                   type="range"
-                  style={{ '--settings-progress': `${100 * (complexity - 1) / 5}%` }}
+                  style={{ '--settings-progress': `${100 * (complexity - 1) / 4}%` }}
                   min="1"
-                  max="6"
+                  max="5"
                   step="1"
                   value={complexity}
                   disabled={fullRunning || fullCanResume}
@@ -3027,15 +3253,45 @@ export default function Explorer({ initialConstants = [] }) {
                 <input
                   id="full-search-depth"
                   type="range"
-                  style={{ '--settings-progress': `${100 * (fullSearchDepth - 1) / 5}%` }}
+                  style={{ '--settings-progress': `${100 * (fullSearchDepth - 1) / 4}%` }}
                   min="1"
-                  max="6"
+                  max="5"
                   step="1"
                   value={fullSearchDepth}
                   disabled={fullRunning}
                   onChange={event =>
                     setFullSearchDepth(Number(event.target.value))
                   }
+                />
+              </div>
+
+              <div className={styles.settingsControl}>
+                <label htmlFor="computation-limit">
+                  Computation limit
+                </label>
+                <strong>
+                  {computationLimitMinutes}
+                  {computationLimitMinutes === 1
+                    ? ' minute' : ' minutes'}
+                </strong>
+                <input
+                  id="computation-limit"
+                  type="range"
+                  style={{
+                    '--settings-progress':
+                      `${100 * (computationLimitMinutes - 1) / 3}%`
+                  }}
+                  min="1"
+                  max="4"
+                  step="1"
+                  value={computationLimitMinutes}
+                  disabled={fullRunning || fullCanResume}
+                  onChange={event => {
+                    if (fullRunning || fullCanResume) return;
+                    setComputationLimitMinutes(
+                      Number(event.target.value)
+                    );
+                  }}
                 />
               </div>
 
@@ -3083,6 +3339,18 @@ export default function Explorer({ initialConstants = [] }) {
                 type="button"
                 style={{ ...button, height: 32, boxSizing: 'border-box' }}
                 disabled={running || fullRunning}
+                className={
+                  fullSelectionMode &&
+                  visibleConstants.length > 0 &&
+                  visibleConstants.every(c =>
+                    chosen.includes(c.token)
+                  ) &&
+                  additionalNumbers.every(number =>
+                    checkedNumbers.includes(number)
+                  )
+                    ? styles.fullRunReady
+                    : undefined
+                }
                 onClick={() => {
                   setFullSelectionMode(true);
                   setChosen(visibleConstants.map(c => c.token));
@@ -3482,6 +3750,8 @@ export default function Explorer({ initialConstants = [] }) {
                             ) + 1
                           }/${selectedRootIndices.length}`
                         : 'Full Run in progress')
+                    : fullSaved?.timeLimited
+                      ? `Full Run stopped at ${(fullSaved?.timeLimitMs ?? 120000) / 60000}-minute limit`
                     : fullSaved?.earlyStopped
                       ? 'Full Run stopped at structural ranking cutoff'
                     : fullSaved?.cursor >= fullSaved?.total
@@ -3539,64 +3809,9 @@ export default function Explorer({ initialConstants = [] }) {
                   transition: 'width 180ms ease'
                 }} />
               </div>
+
             </div>
           )}
-
-          {(fullSelectionMode) && (
-            <div style={{
-              width: '100%',
-              padding: '10px 0 4px',
-              display: 'grid',
-              gap: 8
-            }}>
-              <div style={{
-                fontSize: 13,
-                lineHeight: 1.5,
-                color: '#c3d8f2'
-              }}>
-                <div>
-                  Proposed positions: {
-                    proposedFullPositions.toLocaleString()
-                  }
-                </div>
-                <div>
-                  Estimated runtime: {
-                    multiRootMode && !measuredFullRate
-                      ? 'measuring first batch'
-                      : formatSearchDuration(proposedFullDuration)
-                  }
-                  {measuredFullRate
-                    ? ' (observed processing rate)'
-                    : multiRootMode
-                      ? ' (no estimate until measured)'
-                      : ' (reference rate: 500,000 positions/s)'}
-                </div>
-                <div>
-                  Maximum adjusted complexity: {complexity}
-                </div>
-                {fullSearchDepth < 7 && (
-                  <div style={{ color: '#ffd39b' }}>
-                    Limited-depth search: deeper expressions
-                    with low adjusted complexity may be missed.
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          <p style={{
-            margin: '8px 0 4px', fontSize: 13, lineHeight: 1.45,
-            color: fullSelectionMode || quickAllowed ? '#a9c4e9' : '#ffc2c2'
-          }}>
-            {fullSelectionMode ? (
-              <>Full Run selection: {selectedFactorCount} factors.
-                {' '}Limit lifted; select additional constants if needed.</>
-            ) : (
-              <>Quick search: {selectedFactorCount} of {quickLimit} allowed
-                {' '}at complexity {complexity}. Search depth: {quickSearchDepth}.
-                {!quickAllowed && ''}</>
-            )}
-          </p>
 
           {(fullSaved || fullRunning ||
             fullSelectionMode) && (
@@ -3634,15 +3849,20 @@ export default function Explorer({ initialConstants = [] }) {
                 const saved = fullSaved.inputs;
                 setNumberText(saved.numberText);
                 setUncertaintyText(saved.uncertaintyText);
-                setComplexity(Math.min(6, saved.complexity));
-                setFullSearchDepth(Math.min(6, saved.fullSearchDepth ?? 8));
+                setComplexity(Math.min(5, saved.complexity));
+                setFullSearchDepth(Math.min(5, saved.fullSearchDepth ?? 8));
+                setComputationLimitMinutes(
+                  Math.min(4, Math.max(1,
+                    saved.computationLimitMinutes ?? 2
+                  ))
+                );
                 setSigma(saved.sigma);
                 setChosen(saved.chosen);
                 setCheckedNumbers(saved.checkedNumbers);
                 setRootAction(saved.rootAction);
                 setMessage(
-                  (saved.fullSearchDepth ?? 8) > 6 || saved.complexity > 6
-                    ? 'Settings restored within the new maximum of 6. Older runs exceeding these limits cannot resume; start a new Full Run.'
+                  (saved.fullSearchDepth ?? 8) > 5 || saved.complexity > 5
+                    ? 'Settings restored within the new maximum of 5. Older runs exceeding these limits cannot resume; start a new Full Run.'
                     : 'Saved Full Run restored. Press Resume.'
                 );
               }}
@@ -3795,6 +4015,69 @@ export default function Explorer({ initialConstants = [] }) {
             </div>
           )}
 
+          {fullSaved && !fullRunning && (
+            <div style={{
+              width: '100%',
+              fontSize: 12,
+              color: '#c3d8f2',
+              marginTop: 4
+            }}>
+              {resultCoverageLabel}
+            </div>
+          )}
+
+          {(fullSelectionMode) && (
+            <div style={{
+              width: '100%',
+              padding: '10px 0 4px',
+              display: 'grid',
+              gap: 8
+            }}>
+              <div style={{
+                fontSize: 13,
+                lineHeight: 1.5,
+                color: '#c3d8f2'
+              }}>
+                <div>
+                  Proposed positions: {
+                    proposedFullPositions.toLocaleString()
+                  }
+                </div>
+                <div>
+                  Computation limit: {
+                    computationLimitMinutes
+                  }
+                  {computationLimitMinutes === 1
+                    ? ' minute'
+                    : ' minutes'}
+                </div>
+                <div>
+                  Maximum adjusted complexity: {complexity}
+                </div>
+                {fullSearchDepth < 7 && (
+                  <div style={{ color: '#ffd39b' }}>
+                    Limited-depth search: deeper expressions
+                    with low adjusted complexity may be missed.
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          <p style={{
+            margin: '8px 0 4px', fontSize: 13, lineHeight: 1.45,
+            color: fullSelectionMode || quickAllowed ? '#a9c4e9' : '#ffc2c2'
+          }}>
+            {fullSelectionMode ? (
+              <>Full Run selection: {selectedFactorCount} factors.
+                {' '}Limit lifted; select additional constants if needed.</>
+            ) : (
+              <>Quick search: {selectedFactorCount} of {quickLimit} allowed
+                {' '}at complexity {complexity}. Search depth: {quickSearchDepth}.
+                {!quickAllowed && ''}</>
+            )}
+          </p>
+
           {running && (
             <button
               type="button"
@@ -3822,6 +4105,8 @@ export default function Explorer({ initialConstants = [] }) {
             width: '100%', boxSizing: 'border-box'
           }}>
             <strong>{fullRunning ? 'Full Run in progress' :
+              fullSaved.timeLimited
+                ? `Full Run stopped at ${(fullSaved?.timeLimitMs ?? 120000) / 60000}-minute limit` :
               fullSaved.earlyStopped
                 ? 'Full Run stopped at structural ranking cutoff' :
               fullSaved.cursor >= fullSaved.total

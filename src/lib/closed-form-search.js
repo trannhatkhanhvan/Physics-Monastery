@@ -214,7 +214,7 @@ export function searchMultiplicative({
     !Number.isInteger(sigma) ||
     sigma < 1 || sigma > 5 ||
     !Number.isInteger(complexity) ||
-    complexity < 1 || complexity > 8 ||
+    complexity < 1 || complexity > 5 ||
     !Number.isInteger(reportComplexity) ||
     reportComplexity < 1 || reportComplexity > 10 ||
     !Number.isInteger(maxMonomials) ||
